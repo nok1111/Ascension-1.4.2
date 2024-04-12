@@ -93,7 +93,7 @@ bool IOMapSerialize::saveHouseItems()
 	//End the transaction
 	bool success = transaction.commit();
 	std::cout << "> Saved house items in: " <<
-	          (OTSYS_TIME() - start) / (1000.) << " s" << std::endl;
+		(OTSYS_TIME() - start) / (1000.) << " s" << std::endl;
 	return success;
 }
 
@@ -141,13 +141,15 @@ bool IOMapSerialize::loadItem(PropStream& propStream, Cylinder* parent)
 
 				parent->internalAddThing(item);
 				item->startDecaying();
-			} else {
+			}
+			else {
 				std::cout << "WARNING: Unserialization error in IOMapSerialize::loadItem()" << id << std::endl;
 				delete item;
 				return false;
 			}
 		}
-	} else {
+	}
+	else {
 		// Stationary items like doors/beds/blackboards/bookcases
 		Item* item = nullptr;
 		if (const TileItemVector* items = tile->getItemList()) {
@@ -155,10 +157,12 @@ bool IOMapSerialize::loadItem(PropStream& propStream, Cylinder* parent)
 				if (findItem->getID() == id) {
 					item = findItem;
 					break;
-				} else if (iType.isDoor() && findItem->getDoor()) {
+				}
+				else if (iType.isDoor() && findItem->getDoor()) {
 					item = findItem;
 					break;
-				} else if (iType.isBed() && findItem->getBed()) {
+				}
+				else if (iType.isBed() && findItem->getBed()) {
 					item = findItem;
 					break;
 				}
@@ -173,10 +177,12 @@ bool IOMapSerialize::loadItem(PropStream& propStream, Cylinder* parent)
 				}
 
 				g_game.transformItem(item, id);
-			} else {
+			}
+			else {
 				std::cout << "WARNING: Unserialization error in IOMapSerialize::loadItem()" << id << std::endl;
 			}
-		} else {
+		}
+		else {
 			//The map changed since the last save, just read the attributes
 			std::unique_ptr<Item> dummy(Item::CreateItem(id));
 			if (dummy) {
@@ -186,7 +192,8 @@ bool IOMapSerialize::loadItem(PropStream& propStream, Cylinder* parent)
 					if (!loadContainer(propStream, container)) {
 						return false;
 					}
-				} else if (BedItem* bedItem = dynamic_cast<BedItem*>(dummy.get())) {
+				}
+				else if (BedItem* bedItem = dynamic_cast<BedItem*>(dummy.get())) {
 					uint32_t sleeperGUID = bedItem->getSleeper();
 					if (sleeperGUID != 0) {
 						g_game.removeBedSleeper(sleeperGUID);
@@ -300,7 +307,8 @@ bool IOMapSerialize::saveHouseInfo()
 		DBResult_ptr result = db.storeQuery(fmt::format("SELECT `id` FROM `houses` WHERE `id` = {:d}", house->getId()));
 		if (result) {
 			db.executeQuery(fmt::format("UPDATE `houses` SET `owner` = {:d}, `paid` = {:d}, `warnings` = {:d}, `name` = {:s}, `town_id` = {:d}, `rent` = {:d}, `size` = {:d}, `beds` = {:d} WHERE `id` = {:d}", house->getOwner(), house->getPaidUntil(), house->getPayRentWarnings(), db.escapeString(house->getName()), house->getTownId(), house->getRent(), house->getTiles().size(), house->getBedCount(), house->getId()));
-		} else {
+		}
+		else {
 			db.executeQuery(fmt::format("INSERT INTO `houses` (`id`, `owner`, `paid`, `warnings`, `name`, `town_id`, `rent`, `size`, `beds`) VALUES ({:d}, {:d}, {:d}, {:d}, {:s}, {:d}, {:d}, {:d}, {:d})", house->getId(), house->getOwner(), house->getPaidUntil(), house->getPayRentWarnings(), db.escapeString(house->getName()), house->getTownId(), house->getRent(), house->getTiles().size(), house->getBedCount()));
 		}
 	}
@@ -312,7 +320,7 @@ bool IOMapSerialize::saveHouseInfo()
 
 		std::string listText;
 		if (house->getAccessList(GUEST_LIST, listText) && !listText.empty()) {
-			if (!stmt.addRow(fmt::format("{:d}, {}, {:s}", house->getId(), GUEST_LIST, db.escapeString(listText)))) {
+			if (!stmt.addRow(fmt::format("{:d}, {:d}, {:s}", house->getId(), static_cast<int>(GUEST_LIST), db.escapeString(listText)))) {
 				return false;
 			}
 
@@ -320,7 +328,7 @@ bool IOMapSerialize::saveHouseInfo()
 		}
 
 		if (house->getAccessList(SUBOWNER_LIST, listText) && !listText.empty()) {
-			if (!stmt.addRow(fmt::format("{:d}, {}, {:s}", house->getId(), SUBOWNER_LIST, db.escapeString(listText)))) {
+			if (!stmt.addRow(fmt::format("{:d}, {:d}, {:s}", house->getId(), static_cast<int>(SUBOWNER_LIST), db.escapeString(listText)))) {
 				return false;
 			}
 
@@ -356,7 +364,7 @@ bool IOMapSerialize::saveHouse(House* house)
 	}
 
 	uint32_t houseId = house->getId();
-	
+
 	//clear old tile data
 	if (!db.executeQuery(fmt::format("DELETE FROM `tile_store` WHERE `house_id` = {:d}", houseId))) {
 		return false;
