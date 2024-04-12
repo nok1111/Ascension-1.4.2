@@ -381,6 +381,9 @@ void ProtocolGame::onRecvFirstMessage(NetworkMessage& msg)
 		return;
 	}
 
+	if (operatingSystem == CLIENTOS_OTCLIENT_WINDOWS) {
+		isMehah = true;
+	}
 	if (version < CLIENT_VERSION_MIN || version > CLIENT_VERSION_MAX) {
 		disconnectClient(fmt::format("Only clients with protocol {:s} allowed!", CLIENT_VERSION_STR));
 		return;
@@ -587,7 +590,7 @@ void ProtocolGame::GetTileDescription(const Tile* tile, NetworkMessage& msg)
 	int32_t count;
 	Item* ground = tile->getGround();
 	if (ground) {
-		msg.addItem(ground);
+		msg.addItem(ground, isMehah);
 		count = 1;
 	} else {
 		count = 0;
@@ -596,7 +599,7 @@ void ProtocolGame::GetTileDescription(const Tile* tile, NetworkMessage& msg)
 	const TileItemVector* items = tile->getItemList();
 	if (items) {
 		for (auto it = items->getBeginTopItem(), end = items->getEndTopItem(); it != end; ++it) {
-			msg.addItem(*it);
+			msg.addItem(*it, isMehah);
 
 			if (++count == 10) {
 				break;
@@ -621,7 +624,7 @@ void ProtocolGame::GetTileDescription(const Tile* tile, NetworkMessage& msg)
 
 	if (items && count < 10) {
 		for (auto it = items->getBeginDownItem(), end = items->getEndDownItem(); it != end; ++it) {
-			msg.addItem(*it);
+			msg.addItem(*it, isMehah);
 
 			if (++count == 10) {
 				return;
@@ -1538,10 +1541,10 @@ void ProtocolGame::sendContainer(uint8_t cid, const Container* container, bool h
 	msg.addByte(cid);
 
 	if (container->getID() == ITEM_BROWSEFIELD) {
-		msg.addItem(ITEM_BAG, 1);
+		msg.addItem(ITEM_BAG, 1, isMehah);
 		msg.addString("Browse Field");
 	} else {
-		msg.addItem(container);
+		msg.addItem(container, isMehah);
 		msg.addString(container->getName());
 	}
 
@@ -1560,7 +1563,7 @@ void ProtocolGame::sendContainer(uint8_t cid, const Container* container, bool h
 
 		msg.addByte(itemsToSend);
 		for (auto it = container->getItemList().begin() + firstIndex, end = it + itemsToSend; it != end; ++it) {
-			msg.addItem(*it);
+			msg.addItem(*it, isMehah);
 		}
 	} else {
 		msg.addByte(0x00);
@@ -2149,11 +2152,11 @@ void ProtocolGame::sendTradeItemRequest(const std::string& traderName, const Ite
 
 		msg.addByte(itemList.size());
 		for (const Item* listItem : itemList) {
-			msg.addItem(listItem);
+			msg.addItem(listItem, isMehah);
 		}
 	} else {
 		msg.addByte(0x01);
-		msg.addItem(item);
+		msg.addItem(item, isMehah);
 	}
 	writeToOutputBuffer(msg);
 }
@@ -2378,7 +2381,7 @@ void ProtocolGame::sendAddTileItem(const Position& pos, uint32_t stackpos, const
 	msg.addByte(0x6A);
 	msg.addPosition(pos);
 	msg.addByte(stackpos);
-	msg.addItem(item);
+	msg.addItem(item, isMehah);
 	writeToOutputBuffer(msg);
 }
 
@@ -2392,7 +2395,7 @@ void ProtocolGame::sendUpdateTileItem(const Position& pos, uint32_t stackpos, co
 	msg.addByte(0x6B);
 	msg.addPosition(pos);
 	msg.addByte(stackpos);
-	msg.addItem(item);
+	msg.addItem(item, isMehah);
 	writeToOutputBuffer(msg);
 }
 
@@ -2660,7 +2663,7 @@ void ProtocolGame::sendInventoryItem(slots_t slot, const Item* item)
 	if (item) {
 		msg.addByte(0x78);
 		msg.addByte(slot);
-		msg.addItem(item);
+		msg.addItem(item, isMehah);
 	} else {
 		msg.addByte(0x79);
 		msg.addByte(slot);
@@ -2696,7 +2699,7 @@ void ProtocolGame::sendAddContainerItem(uint8_t cid, uint16_t slot, const Item* 
 	msg.addByte(0x70);
 	msg.addByte(cid);
 	msg.add<uint16_t>(slot);
-	msg.addItem(item);
+	msg.addItem(item, isMehah);
 	writeToOutputBuffer(msg);
 }
 
@@ -2706,7 +2709,7 @@ void ProtocolGame::sendUpdateContainerItem(uint8_t cid, uint16_t slot, const Ite
 	msg.addByte(0x71);
 	msg.addByte(cid);
 	msg.add<uint16_t>(slot);
-	msg.addItem(item);
+	msg.addItem(item, isMehah);
 	writeToOutputBuffer(msg);
 }
 
@@ -2717,7 +2720,7 @@ void ProtocolGame::sendRemoveContainerItem(uint8_t cid, uint16_t slot, const Ite
 	msg.addByte(cid);
 	msg.add<uint16_t>(slot);
 	if (lastItem) {
-		msg.addItem(lastItem);
+		msg.addItem(lastItem, isMehah);
 	} else {
 		msg.add<uint16_t>(0x00);
 	}
@@ -2729,7 +2732,7 @@ void ProtocolGame::sendTextWindow(uint32_t windowTextId, Item* item, uint16_t ma
 	NetworkMessage msg;
 	msg.addByte(0x96);
 	msg.add<uint32_t>(windowTextId);
-	msg.addItem(item);
+	msg.addItem(item, isMehah);
 
 	if (canWrite) {
 		msg.add<uint16_t>(maxlen);
@@ -2762,7 +2765,7 @@ void ProtocolGame::sendTextWindow(uint32_t windowTextId, uint32_t itemId, const 
 	NetworkMessage msg;
 	msg.addByte(0x96);
 	msg.add<uint32_t>(windowTextId);
-	msg.addItem(itemId, 1);
+	msg.addItem(itemId, 1, isMehah);
 	msg.add<uint16_t>(text.size());
 	msg.addString(text);
 	msg.add<uint16_t>(0x00);
