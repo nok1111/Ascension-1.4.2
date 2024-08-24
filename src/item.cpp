@@ -622,6 +622,25 @@ Attr_ReadValue Item::readAttr(AttrTypes_t attr, PropStream& propStream)
 			break;
 		}
 
+		case ATTR_PETID: {
+			uint32_t petId;
+			if (!propStream.read<uint32_t>(petId)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_PETID, petId);
+			break;
+		}
+
+		case ATTR_OWNER_ID: {
+			uint32_t ownerId;
+			if (!propStream.read<uint32_t>(ownerId)) {
+				return ATTR_READ_ERROR;
+			}
+
+			setIntAttr(ITEM_ATTRIBUTE_OWNER, ownerId);
+			break;
+		}
 		//these should be handled through derived classes
 		//If these are called then something has changed in the items.xml since the map was saved
 		//just read the values
@@ -830,6 +849,11 @@ void Item::serializeAttr(PropWriteStream& propWriteStream) const
 	if (hasAttribute(ITEM_ATTRIBUTE_SHOOTRANGE)) {
 		propWriteStream.write<uint8_t>(ATTR_SHOOTRANGE);
 		propWriteStream.write<uint8_t>(getIntAttr(ITEM_ATTRIBUTE_SHOOTRANGE));
+	}
+
+	if (hasAttribute(ITEM_ATTRIBUTE_PETID)) {
+		propWriteStream.write<uint8_t>(ATTR_PETID);
+		propWriteStream.write<uint32_t>(getIntAttr(ITEM_ATTRIBUTE_PETID));
 	}
 
 	if (hasAttribute(ITEM_ATTRIBUTE_DECAYTO)) {
