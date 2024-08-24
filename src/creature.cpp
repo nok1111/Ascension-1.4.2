@@ -19,6 +19,7 @@ extern CreatureEvents* g_creatureEvents;
 
 Creature::Creature()
 {
+	isPet = false;
 	onIdleStatus();
 }
 
@@ -59,6 +60,28 @@ bool Creature::canSee(const Position& myPos, const Position& pos, int32_t viewRa
 	const int_fast32_t offsetz = myPos.getZ() - pos.getZ();
 	return (pos.getX() >= myPos.getX() - viewRangeX + offsetz) && (pos.getX() <= myPos.getX() + viewRangeX + offsetz)
 		&& (pos.getY() >= myPos.getY() - viewRangeY + offsetz) && (pos.getY() <= myPos.getY() + viewRangeY + offsetz);
+}
+
+
+
+const std::string& Creature::getExtraName() const
+{
+	return extraName;
+}
+
+void Creature::setExtraName(std::string name)
+{
+	extraName = name;
+}
+
+const bool Creature::isCreaturePet() const
+{
+	return isPet;
+}
+
+void Creature::setCreaturePet(bool aIsPet)
+{
+	isPet = aIsPet;
 }
 
 bool Creature::canSee(const Position& pos) const

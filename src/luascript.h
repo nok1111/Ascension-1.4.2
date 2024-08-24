@@ -37,6 +37,7 @@ using Combat_ptr = std::shared_ptr<Combat>;
 class Condition;
 class Npc;
 class Monster;
+class Pet;
 class InstantSpell;
 
 enum {
@@ -63,6 +64,7 @@ enum LuaDataType {
 	LuaData_Monster,
 	LuaData_Npc,
 	LuaData_Tile,
+	LuaData_Pet,
 };
 
 struct LuaVariant {
@@ -401,6 +403,7 @@ class LuaScriptInterface
 		static void pushCombatDamage(lua_State* L, const CombatDamage& damage);
 		static void pushInstantSpell(lua_State* L, const InstantSpell& spell);
 		static void pushPosition(lua_State* L, const Position& position, int32_t stackpos = 0);
+		static void pushPet(lua_State* L, const Pet& pet);
 		static void pushOutfit(lua_State* L, const Outfit_t& outfit);
 		static void pushOutfit(lua_State* L, const Outfit* outfit);
 		static void pushWing(lua_State* L, const Wing* wing);
@@ -1082,6 +1085,13 @@ class LuaScriptInterface
 		static int luaPlayerGetFightMode(lua_State* L);
 
 		static int luaPlayerGetStoreInbox(lua_State* L);
+
+		static int luaPlayerSummonPet(lua_State* L);
+		static int luaPlayerRespawnPet(lua_State* L);
+		static int luaPlayerUpdatePet(lua_State* L);
+		static int luaPlayerHidePet(lua_State* L);
+		static int luaPlayerChangePetName(lua_State* L);
+		static int luaPlayerGetPet(lua_State* L);
 
 		// Monster
 		static int luaMonsterCreate(lua_State* L);

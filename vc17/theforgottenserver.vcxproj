@@ -200,7 +200,8 @@
     <ClCompile Include="..\src\map.cpp" />
     <ClCompile Include="..\src\monster.cpp" />
     <ClCompile Include="..\src\monsters.cpp" />
-	<ClCompile Include="..\src\wings.cpp" />
+    <ClCompile Include="..\src\pet.cpp" />
+    <ClCompile Include="..\src\wings.cpp" />
     <ClCompile Include="..\src\effects.cpp" />
     <ClCompile Include="..\src\auras.cpp" />
     <ClCompile Include="..\src\shaders.cpp" />
@@ -294,7 +295,8 @@
     <ClInclude Include="..\src\map.h" />
     <ClInclude Include="..\src\monster.h" />
     <ClInclude Include="..\src\monsters.h" />
-	<ClInclude Include="..\src\wings.h" />
+    <ClInclude Include="..\src\pet.h" />
+    <ClInclude Include="..\src\wings.h" />
     <ClInclude Include="..\src\effects.h" />
     <ClInclude Include="..\src\auras.h" />
     <ClInclude Include="..\src\shaders.h" />
