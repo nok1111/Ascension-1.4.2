@@ -19,6 +19,7 @@
 #include "groups.h"
 #include "town.h"
 #include "mounts.h"
+#include "pet.h"
 #include "storeinbox.h"
 
 #include <bitset>
@@ -733,6 +734,9 @@ class Player final : public Creature, public Cylinder
 		bool removeOutfitAddon(uint16_t lookType, uint8_t addons);
 		bool getOutfitAddons(const Outfit& outfit, uint8_t& addons) const;
 
+		void addPet(Pet* newPet);
+		Pet* getPetById(uint32_t petId);
+
 		size_t getMaxVIPEntries() const;
 		size_t getMaxDepotItems() const;
 
@@ -987,6 +991,13 @@ class Player final : public Creature, public Cylinder
 				client->sendCreatureHealth(creature);
 			}
 		}
+
+		void sendCreatureName(const Creature* creature) const {
+			if (client) {
+				client->sendCreatureName(creature);
+			}
+		}
+
 		void sendDistanceShoot(const Position& from, const Position& to, unsigned char type) const {
 			if (client) {
 				client->sendDistanceShoot(from, to, type);
@@ -1285,6 +1296,8 @@ class Player final : public Creature, public Cylinder
 		std::map<uint32_t, DepotLocker_ptr> depotLockerMap;
 		std::map<uint32_t, DepotChest*> depotChests;
 		std::map<uint32_t, int32_t> storageMap;
+
+		std::map<uint32_t, Pet*> petMap;
 
 		std::vector<OutfitEntry> outfits;
 		std::unordered_set<uint16_t> wings;

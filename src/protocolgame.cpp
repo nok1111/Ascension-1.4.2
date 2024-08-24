@@ -2350,6 +2350,15 @@ void ProtocolGame::sendMagicEffect(const Position& pos, uint8_t type)
 	writeToOutputBuffer(msg);
 }
 
+void ProtocolGame::sendCreatureName(const Creature* creature)
+{
+	NetworkMessage msg;
+	msg.addByte(0x8B);
+	msg.add<uint32_t>(creature->getID());
+	msg.addString(creature->getExtraName());
+	writeToOutputBuffer(msg);
+}
+
 void ProtocolGame::sendCreatureHealth(const Creature* creature)
 {
 	NetworkMessage msg;
@@ -3032,7 +3041,12 @@ void ProtocolGame::AddCreature(NetworkMessage& msg, const Creature* creature, bo
 		msg.add<uint32_t>(remove);
 		msg.add<uint32_t>(creature->getID());
 		msg.addByte(creatureType);
-		msg.addString(creature->getName());
+		if (creature->isCreaturePet()) {
+			msg.addString(creature->getExtraName());
+		}
+		else {
+			msg.addString(creature->getName());
+		}
 	}
 
 	if (creature->isHealthHidden()) {
@@ -3069,8 +3083,14 @@ void ProtocolGame::AddCreature(NetworkMessage& msg, const Creature* creature, bo
 			const Player* masterPlayer = master->getPlayer();
 			if (masterPlayer) {
 				if (masterPlayer == player) {
-					creatureType = CREATURETYPE_SUMMON_OWN;
-				} else {
+					if (creature->isCreaturePet()) {
+						creatureType = CREATURETYPE_SUMMON_PET;
+					}
+					else {
+						creatureType = CREATURETYPE_SUMMON_OWN;
+					}
+				}
+				else {
 					creatureType = CREATURETYPE_SUMMON_OTHERS;
 				}
 			}

@@ -442,6 +442,10 @@ class Game
 		bool combatChangeMana(Creature* attacker, Creature* target, CombatDamage& damage);
 
 		//animation help functions
+
+		void updateCreatureName(const Creature* target);
+		static void updateCreatureName(const SpectatorVec& spectators, const Creature* target);
+
 		void addCreatureHealth(const Creature* target);
 		static void addCreatureHealth(const SpectatorVec& spectators, const Creature* target);
 		void addMagicEffect(const Position& pos, uint8_t effect);

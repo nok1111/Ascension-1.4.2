@@ -90,11 +90,16 @@ enum AttrTypes_t {
 	ATTR_WRAPID = 36,
 	ATTR_STOREITEM = 37,
 	ATTR_ATTACK_SPEED = 38,
+	
 
 	// version 12.x
 	ATTR_OPENCONTAINER = 39,
 	ATTR_PODIUMOUTFIT = 40,
 	ATTR_TIER = 41,
+
+	//custom
+	ATTR_PETID = 42,
+	ATTR_OWNER_ID = 43
 };
 
 enum Attr_ReadValue {
@@ -178,6 +183,13 @@ class ItemAttributes
 		}
 		uint32_t getOwner() const {
 			return getIntAttr(ITEM_ATTRIBUTE_OWNER);
+		}
+
+		void setPet(uint32_t pet) {
+			setIntAttr(ITEM_ATTRIBUTE_PETID, pet);
+		}
+		uint32_t getPet() const {
+			return getIntAttr(ITEM_ATTRIBUTE_PETID);
 		}
 
 		void setCorpseOwner(uint32_t corpseOwner) {
@@ -752,6 +764,16 @@ class Item : virtual public Thing
 				return 0;
 			}
 			return getIntAttr(ITEM_ATTRIBUTE_OWNER);
+		}
+
+		void setPet(uint32_t pet) {
+			setIntAttr(ITEM_ATTRIBUTE_PETID, pet);
+		}
+		uint32_t getPet() const {
+			if (!attributes) {
+				return 0;
+			}
+			return getIntAttr(ITEM_ATTRIBUTE_PETID);
 		}
 
 		void setCorpseOwner(uint32_t corpseOwner) {
