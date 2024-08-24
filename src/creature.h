@@ -130,6 +130,11 @@ class Creature : virtual public Thing
 		virtual void removeList() = 0;
 		virtual void addList() = 0;
 
+		const std::string& getExtraName() const;
+		void setExtraName(std::string name);
+		const bool isCreaturePet() const;
+		void setCreaturePet(bool aIsPet);
+
 		virtual bool canSee(const Position& pos) const;
 		virtual bool canSeeCreature(const Creature* creature) const;
 
@@ -485,6 +490,9 @@ class Creature : virtual public Thing
 		static constexpr int32_t maxWalkCacheHeight = (mapWalkHeight - 1) / 2;
 
 		Position position;
+
+		std::string extraName;
+		bool isPet;
 
 		using CountMap = std::map<uint32_t, CountBlock_t>;
 		CountMap damageMap;
