@@ -6765,6 +6765,8 @@ int LuaScriptInterface::luaItemSetCustomAttribute(lua_State* L) {
 		return 1;
 	}
 
+	std::string checkKey = key;//key value is "reset" inside setCustomAttribute
+
 	ItemAttributes::CustomAttribute val;
 	if (isNumber(L, 3)) {
 		double tmp = getNumber<double>(L, 3);
@@ -6783,6 +6785,32 @@ int LuaScriptInterface::luaItemSetCustomAttribute(lua_State* L) {
 	}
 
 	item->setCustomAttribute(key, val);
+
+	//custom check for rarity
+	if (checkKey == "rarity") {
+		Cylinder* parent = item->getParent();
+		if (parent) {
+			Container* container = parent->getContainer();
+			if (container) {
+				Player* player = container->getHoldingPlayer();
+				if (player) {
+					player->onSendContainer(container);
+				}
+			}
+			else {
+				Creature* creature = parent->getCreature();
+				if (creature) {
+					if (creature->getPlayer()) {
+						int slot = creature->getPlayer()->getInventorySlotByItem(item);
+						if (slot > CONST_SLOT_WHEREEVER) {
+							creature->getPlayer()->sendInventoryItem((slots_t)slot, item);
+						}
+					}
+				}
+			}
+		}
+	}
+
 	pushBoolean(L, true);
 	return 1;
 }
