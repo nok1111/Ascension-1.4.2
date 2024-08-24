@@ -176,6 +176,19 @@ Item* Player::getInventoryItem(slots_t slot) const
 	return inventory[slot];
 }
 
+slots_t Player::getInventorySlotByItem(Item* aItem) const
+{
+	for (int i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; ++i) {
+		const Item* item = inventory[i];
+		if (item) {
+			if (item == aItem) {
+				return (slots_t)i;
+			}
+		}
+	}
+	return CONST_SLOT_WHEREEVER;
+}
+
 void Player::addConditionSuppressions(uint32_t conditions)
 {
 	conditionSuppressions |= conditions;
