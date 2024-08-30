@@ -244,6 +244,18 @@ void Creature::onWalk(Direction& dir)
 		return;
 	}
 
+	else if (hasCondition(CONDITION_FEAR)) {
+		uint32_t r = uniform_random(0, 4);
+		if (r <= DIRECTION_DIAGONAL_MASK) {
+			if (r < DIRECTION_DIAGONAL_MASK) {
+				dir = static_cast<Direction>(r);
+			}
+		}
+
+		g_game.addMagicEffect(this->getPosition(), CONST_ME_STUN); //CHANGE LATER FOR FEAR EFFECT
+		g_game.internalCreatureSay(this, TALKTYPE_MONSTER_SAY, "FEARED!", false);
+	}
+
 	uint16_t rand = uniform_random(0, 399);
 	if (rand / 4 > getDrunkenness()) {
 		return;

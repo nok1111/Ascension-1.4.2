@@ -348,6 +348,7 @@ enum ConditionType_t {
 	CONDITION_SPELLCOOLDOWN = 1 << 26,
 	CONDITION_SPELLGROUPCOOLDOWN = 1 << 27,
 	CONDITION_STUN = 1 << 28,
+	CONDITION_FEAR = 1 << 29, 
 };
 
 enum ConditionId_t : int8_t {
