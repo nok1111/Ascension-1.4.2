@@ -2400,6 +2400,10 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Creature", "getShader", LuaScriptInterface::luaCreatureGetShader);
 	registerMethod("Creature", "setShader", LuaScriptInterface::luaCreatureSetShader);
 
+#ifdef PROGRESSBAR
+	registerMethod("Creature", "sendProgressbar", LuaScriptInterface::luaCreatureSetProgressbar);
+#endif
+
 	// Player
 	registerClass("Player", "Creature", LuaScriptInterface::luaPlayerCreate);
 	registerMetaMethod("Player", "__eq", LuaScriptInterface::luaUserdataCompare);
@@ -18133,3 +18137,22 @@ void LuaEnvironment::executeTimerEvent(uint32_t eventIndex)
 		luaL_unref(luaState, LUA_REGISTRYINDEX, parameter);
 	}
 }
+
+#ifdef PROGRESSBAR
+int LuaScriptInterface::luaCreatureSetProgressbar(lua_State* L)
+{
+	// creature:sendProgressbar(duration, leftToRight)
+	Creature* creature = getUserdata<Creature>(L, 1);
+	uint32_t duration = getNumber<uint32_t>(L, 2);
+	bool ltr = getBoolean(L, 3);
+	if (creature) {
+		g_game.startProgressbar(creature, duration, ltr);
+		pushBoolean(L, true);
+	}
+	else {
+		lua_pushnil(L);
+	}
+
+	return 1;
+}
+#endif

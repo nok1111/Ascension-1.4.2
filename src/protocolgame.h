@@ -293,6 +293,9 @@ class ProtocolGame final : public Protocol
 		void sendDetachEffect(const Creature* creature, uint16_t effectId);
 		void sendShader(const Creature* creature, const std::string& shaderName);
 		void sendMapShader(const std::string& shaderName);
+#ifdef PROGRESSBAR
+		void sendProgressbar(uint32_t id, uint32_t duration, bool ltr = true);
+#endif
 
 		friend class Player;
 

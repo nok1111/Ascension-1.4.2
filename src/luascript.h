@@ -1093,6 +1093,10 @@ class LuaScriptInterface
 		static int luaPlayerChangePetName(lua_State* L);
 		static int luaPlayerGetPet(lua_State* L);
 
+#ifdef PROGRESSBAR
+		static int luaCreatureSetProgressbar(lua_State* L);
+#endif
+
 		// Monster
 		static int luaMonsterCreate(lua_State* L);
 
