@@ -458,9 +458,9 @@ class Game
 		void updateCreatureShader(const Creature* creature);
 		void refreshItem(const Item* item);
 
-#ifdef PROGRESSBAR
+
 		void startProgressbar(Creature* creature, uint32_t duration, bool ltr = true);
-#endif
+
 
 
 		void setAccountStorageValue(const uint32_t accountId, const uint32_t key, const int32_t value);

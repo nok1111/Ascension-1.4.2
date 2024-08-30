@@ -3243,6 +3243,11 @@ void Player::doAttacking(uint32_t)
 		return;
 	}
 
+	if (hasCondition(CONDITION_STUN)) {
+		sendCancelTarget(); // might need to add a 0 inbetween the brackets if you use older TFS build
+		return;
+	}
+
 	if ((OTSYS_TIME() - lastAttack) >= getAttackSpeed()) {
 		bool result = false;
 
@@ -3407,6 +3412,10 @@ void Player::onAddCombatCondition(ConditionType_t type)
 
 		case CONDITION_BLEEDING:
 			sendTextMessage(MESSAGE_STATUS_DEFAULT, "You are bleeding.");
+			break;
+
+		case CONDITION_STUN:
+			sendTextMessage(MESSAGE_STATUS_DEFAULT, "You have been stunned.");
 			break;
 
 		default:

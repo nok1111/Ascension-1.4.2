@@ -63,7 +63,7 @@ Game::~Game()
 	}
 }
 
-#ifdef PROGRESSBAR
+
 void Game::startProgressbar(Creature* creature, uint32_t duration, bool ltr)
 {
 	SpectatorVec spectators;
@@ -74,7 +74,7 @@ void Game::startProgressbar(Creature* creature, uint32_t duration, bool ltr)
 		}
 	}
 }
-#endif
+
 
 void Game::start(ServiceManager* manager)
 {
@@ -805,6 +805,10 @@ ReturnValue Game::internalMoveCreature(Creature* creature, Direction direction, 
 	const Position& currentPos = creature->getPosition();
 	Position destPos = getNextPosition(direction, currentPos);
 	Player* player = creature->getPlayer();
+
+	if (creature->hasCondition(CONDITION_STUN)) {
+		return RETURNVALUE_NOTPOSSIBLE;
+	}
 
 	bool diagonalMovement = (direction & DIRECTION_DIAGONAL_MASK) != 0;
 	if (player && !diagonalMovement) {
@@ -3716,6 +3720,10 @@ bool Game::isSightClear(const Position& fromPos, const Position& toPos, bool sam
 bool Game::internalCreatureTurn(Creature* creature, Direction dir)
 {
 	if (creature->getDirection() == dir) {
+		return false;
+	}
+
+	if (creature->hasCondition(CONDITION_STUN)) {
 		return false;
 	}
 

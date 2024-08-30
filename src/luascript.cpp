@@ -1234,6 +1234,8 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONDITION_SPELLCOOLDOWN)
 	registerEnum(CONDITION_SPELLGROUPCOOLDOWN)
 
+	registerEnum(CONDITION_STUN)
+
 	registerEnum(CONDITIONID_DEFAULT)
 	registerEnum(CONDITIONID_COMBAT)
 	registerEnum(CONDITIONID_HEAD)
@@ -2400,9 +2402,9 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Creature", "getShader", LuaScriptInterface::luaCreatureGetShader);
 	registerMethod("Creature", "setShader", LuaScriptInterface::luaCreatureSetShader);
 
-#ifdef PROGRESSBAR
+
 	registerMethod("Creature", "sendProgressbar", LuaScriptInterface::luaCreatureSetProgressbar);
-#endif
+
 
 	// Player
 	registerClass("Player", "Creature", LuaScriptInterface::luaPlayerCreate);
@@ -18138,7 +18140,7 @@ void LuaEnvironment::executeTimerEvent(uint32_t eventIndex)
 	}
 }
 
-#ifdef PROGRESSBAR
+
 int LuaScriptInterface::luaCreatureSetProgressbar(lua_State* L)
 {
 	// creature:sendProgressbar(duration, leftToRight)
@@ -18155,4 +18157,4 @@ int LuaScriptInterface::luaCreatureSetProgressbar(lua_State* L)
 
 	return 1;
 }
-#endif
+

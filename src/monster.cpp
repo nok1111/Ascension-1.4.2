@@ -804,6 +804,10 @@ void Monster::doAttacking(uint32_t interval)
 	bool resetTicks = interval != 0;
 	attackTicks += interval;
 
+	if (hasCondition(CONDITION_STUN)) {
+		updateLook = false;
+	}
+
 	const Position& myPos = getPosition();
 	const Position& targetPos = attackedCreature->getPosition();
 
@@ -858,6 +862,11 @@ bool Monster::canUseAttack(const Position& pos, const Creature* target) const
 		}
 		return false;
 	}
+
+	if (hasCondition(CONDITION_STUN)) {
+		return false;
+	}
+
 	return true;
 }
 
@@ -865,6 +874,10 @@ bool Monster::canUseSpell(const Position& pos, const Position& targetPos,
                           const spellBlock_t& sb, uint32_t interval, bool& inRange, bool& resetTicks)
 {
 	inRange = true;
+
+	if (hasCondition(CONDITION_STUN)) {
+		return false;
+	}
 
 	if (sb.isMelee) {
 		if (isFleeing() || (OTSYS_TIME() - lastMeleeAttack) < sb.speed) {
@@ -942,6 +955,10 @@ void Monster::onThinkDefense(uint32_t interval)
 {
 	bool resetTicks = true;
 	defenseTicks += interval;
+
+	if (hasCondition(CONDITION_STUN)) {
+		defenseTicks = 0;
+	}
 
 	for (const spellBlock_t& spellBlock : mType->info.defenseSpells) {
 		if (spellBlock.speed > defenseTicks) {
@@ -1180,6 +1197,10 @@ bool Monster::getNextStep(Direction& direction, uint32_t& flags)
 		return false;
 	}
 
+	if (hasCondition(CONDITION_STUN)) {
+		return false;
+	}
+
 	bool result = false;
 	if (!walkingToSpawn && (!followCreature || !hasFollowPath) && (!isSummon() || !isMasterInRange)) {
 		if (getTimeSinceLastMove() >= 1000) {
@@ -1332,6 +1353,10 @@ bool Monster::getDanceStep(const Position& creaturePos, Direction& direction,
 bool Monster::getDistanceStep(const Position& targetPos, Direction& direction, bool flee /* = false */)
 {
 	const Position& creaturePos = getPosition();
+
+	if (hasCondition(CONDITION_STUN)) {
+		return false;
+	}
 
 	int_fast32_t dx = Position::getDistanceX(creaturePos, targetPos);
 	int_fast32_t dy = Position::getDistanceY(creaturePos, targetPos);
