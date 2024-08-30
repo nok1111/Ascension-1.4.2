@@ -3418,6 +3418,10 @@ void Player::onAddCombatCondition(ConditionType_t type)
 			sendTextMessage(MESSAGE_STATUS_DEFAULT, "You have been stunned.");
 			break;
 
+		case CONDITION_FEAR:
+			sendTextMessage(MESSAGE_STATUS_DEFAULT, "You have fear.");
+			break;
+
 		default:
 			break;
 	}

@@ -218,6 +218,7 @@ Condition* Condition::createCondition(ConditionId_t id, ConditionType_t type, in
 			return new ConditionGeneric(id, type, ticks, buff, subId, aggressive);
 		case CONDITION_STUN:
 			return new ConditionGeneric(id, type, ticks, buff, subId);
+		case CONDITION_FEAR: 
 
 		default:
 			return nullptr;
@@ -359,6 +360,10 @@ uint32_t ConditionGeneric::getIcons() const
 			break;
 
 		case CONDITION_STUN:
+			icons |= ICON_DAZZLED;
+			break;
+
+		case CONDITION_FEAR:
 			icons |= ICON_DAZZLED;
 			break;
 

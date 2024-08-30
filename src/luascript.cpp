@@ -1235,6 +1235,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONDITION_SPELLGROUPCOOLDOWN)
 
 	registerEnum(CONDITION_STUN)
+	registerEnum(CONDITION_FEAR)
 
 	registerEnum(CONDITIONID_DEFAULT)
 	registerEnum(CONDITIONID_COMBAT)

@@ -3546,7 +3546,19 @@ void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 
 	uint32_t muteTime = player->isMuted();
 	if (muteTime > 0) {
-		player->sendTextMessage(MESSAGE_STATUS_SMALL, fmt::format("You are still muted for {:d} seconds.", muteTime));
+		std::ostringstream ss;
+		ss << "You are still ";
+		if (player->hasCondition(CONDITION_FEAR)) {
+			ss << "feared";
+		}
+		if (player->hasCondition(CONDITION_STUN)) {
+			ss << "stunned";
+		}
+		else {
+			ss << "muted";
+		}
+		ss << " for " << muteTime << " seconds.";
+		player->sendTextMessage(MESSAGE_STATUS_SMALL, ss.str());
 		return;
 	}
 

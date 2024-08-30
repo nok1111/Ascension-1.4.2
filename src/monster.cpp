@@ -808,6 +808,10 @@ void Monster::doAttacking(uint32_t interval)
 		updateLook = false;
 	}
 
+	if (hasCondition(CONDITION_FEAR)) {
+		updateLook = false;
+	}
+
 	const Position& myPos = getPosition();
 	const Position& targetPos = attackedCreature->getPosition();
 
@@ -866,6 +870,9 @@ bool Monster::canUseAttack(const Position& pos, const Creature* target) const
 	if (hasCondition(CONDITION_STUN)) {
 		return false;
 	}
+	if (hasCondition(CONDITION_FEAR)) {
+		return false;
+	}
 
 	return true;
 }
@@ -876,6 +883,9 @@ bool Monster::canUseSpell(const Position& pos, const Position& targetPos,
 	inRange = true;
 
 	if (hasCondition(CONDITION_STUN)) {
+		return false;
+	}
+	if (hasCondition(CONDITION_FEAR)) {
 		return false;
 	}
 
@@ -957,6 +967,9 @@ void Monster::onThinkDefense(uint32_t interval)
 	defenseTicks += interval;
 
 	if (hasCondition(CONDITION_STUN)) {
+		defenseTicks = 0;
+	}
+	if (hasCondition(CONDITION_FEAR)) {
 		defenseTicks = 0;
 	}
 
