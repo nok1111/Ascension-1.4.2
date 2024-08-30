@@ -1203,13 +1203,13 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
-#ifdef PROGRESSBAR
+
 		void sendProgressbar(uint32_t id, uint32_t duration, bool ltr = true) {
 			if (client) {
 				client->sendProgressbar(id, duration, ltr);
 			}
 		}
-#endif
+
 
 		void receivePing() {
 			lastPong = OTSYS_TIME();

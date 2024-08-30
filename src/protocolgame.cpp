@@ -3396,7 +3396,7 @@ void ProtocolGame::sendMapShader(const std::string& shaderName)
 	writeToOutputBuffer(playermsg);
 }
 
-#ifdef PROGRESSBAR
+
 void ProtocolGame::sendProgressbar(uint32_t id, uint32_t duration, bool ltr)
 {
 	NetworkMessage msg;
@@ -3406,4 +3406,4 @@ void ProtocolGame::sendProgressbar(uint32_t id, uint32_t duration, bool ltr)
 	msg.addByte(ltr);
 	writeToOutputBuffer(msg);
 }
-#endif
+
