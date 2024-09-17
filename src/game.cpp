@@ -4512,23 +4512,6 @@ bool Game::combatChangeMana(Creature* attacker, Creature* target, CombatDamage& 
 	return true;
 }
 
-
-void Game::updateCreatureName(const Creature* target)
-{
-	SpectatorVec spectators;
-	map.getSpectators(spectators, target->getPosition(), true, true);
-	updateCreatureName(spectators, target);
-}
-
-void Game::updateCreatureName(const SpectatorVec& spectators, const Creature* target)
-{
-	for (Creature* spectator : spectators) {
-		if (Player* tmpPlayer = spectator->getPlayer()) {
-			tmpPlayer->sendCreatureName(target);
-		}
-	}
-}
-
 void Game::addCreatureHealth(const Creature* target)
 {
 	SpectatorVec spectators;

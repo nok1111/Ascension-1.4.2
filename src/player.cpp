@@ -3757,21 +3757,6 @@ bool Player::hasOutfit(uint32_t lookType, uint8_t addons)
 	return false;
 }
 
-
-void Player::addPet(Pet* newPet) {
-	petMap[newPet->getPetId()] = newPet;
-	//std::cout << __FUNCTION__ << std::endl;
-	//std::cout << "count:" << petMap.size() << std::endl;
-}
-
-Pet* Player::getPetById(uint32_t petId) {
-	std::map<uint32_t, Pet*>::iterator vIt = petMap.find(petId);
-	if (vIt != petMap.end()) {
-		return vIt->second;
-	}
-	return nullptr;
-}
-
 void Player::genReservedStorageRange()
 {
 	//generate outfits range
