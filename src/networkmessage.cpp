@@ -101,7 +101,6 @@ void NetworkMessage::addItem(uint16_t id, uint8_t count, bool withDescription)
 		addString(""); // g_game.enableFeature(GameItemTooltipV8);
 
 	}
-	addByte(0);//rarity value
 }
 
 void NetworkMessage::addItem(const Item* item, bool withDescription)
@@ -124,23 +123,6 @@ void NetworkMessage::addItem(const Item* item, bool withDescription)
 		addString(item->getShader()); // g_game.enableFeature(GameItemShader)
 		addString(item->getDescription(0)); // g_game.enableFeature(GameItemTooltipV8);
 
-	}
-	if (item->hasAttributes()) {
-		//std::cout << "Item with attributes " << item->getName() << std::endl;
-		const ItemAttributes::CustomAttribute* attr;
-		attr = const_cast<Item*>(item)->getCustomAttribute("rarity");
-		if (attr) {
-			//std::cout << "attribute value: ";
-			const int64_t value = const_cast<ItemAttributes::CustomAttribute*>(attr)->get<int64_t>();
-			//std::cout << value << std::endl;
-			addByte((unsigned char)value);
-		}
-		else {
-			addByte(0);
-		}
-	}
-	else {
-		addByte(0);
 	}
 }
 
