@@ -27,17 +27,6 @@ g_game.enableFeature(GameItemShader)
 g_game.enableFeature(GameItemTooltipV8);
 ```
 DATA BASE
-```sql
-ALTER TABLE `players`
-ADD COLUMN `currentwing` smallint UNSIGNED NOT NULL DEFAULT '0',
-ADD COLUMN `randomizewing` tinyint NOT NULL DEFAULT '0',
-ADD COLUMN `currentaura` smallint UNSIGNED NOT NULL DEFAULT '0',
-ADD COLUMN `randomizeaura` tinyint NOT NULL DEFAULT '0',
-ADD COLUMN `currenteffect` smallint UNSIGNED NOT NULL DEFAULT '0',
-ADD COLUMN `randomizeeffect` tinyint NOT NULL DEFAULT '0',
-ADD COLUMN `currentshader` smallint UNSIGNED NOT NULL DEFAULT '0',
-ADD COLUMN `randomizeshader` tinyint NOT NULL DEFAULT '0';
-```
 
 
 ```sql
