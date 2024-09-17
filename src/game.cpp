@@ -63,6 +63,19 @@ Game::~Game()
 	}
 }
 
+
+void Game::startProgressbar(Creature* creature, uint32_t duration, bool ltr)
+{
+	SpectatorVec spectators;
+	map.getSpectators(spectators, creature->getPosition(), false, true);
+	for (Creature* spectator : spectators) {
+		if (Player* tmpPlayer = spectator->getPlayer()) {
+			tmpPlayer->sendProgressbar(creature->getID(), duration, ltr);
+		}
+	}
+}
+
+
 void Game::start(ServiceManager* manager)
 {
 	serviceManager = manager;
@@ -792,6 +805,10 @@ ReturnValue Game::internalMoveCreature(Creature* creature, Direction direction, 
 	const Position& currentPos = creature->getPosition();
 	Position destPos = getNextPosition(direction, currentPos);
 	Player* player = creature->getPlayer();
+
+	if (creature->hasCondition(CONDITION_STUN)) {
+		return RETURNVALUE_NOTPOSSIBLE;
+	}
 
 	bool diagonalMovement = (direction & DIRECTION_DIAGONAL_MASK) != 0;
 	if (player && !diagonalMovement) {
@@ -3529,7 +3546,19 @@ void Game::playerSay(uint32_t playerId, uint16_t channelId, SpeakClasses type,
 
 	uint32_t muteTime = player->isMuted();
 	if (muteTime > 0) {
-		player->sendTextMessage(MESSAGE_STATUS_SMALL, fmt::format("You are still muted for {:d} seconds.", muteTime));
+		std::ostringstream ss;
+		ss << "You are still ";
+		if (player->hasCondition(CONDITION_FEAR)) {
+			ss << "feared";
+		}
+		if (player->hasCondition(CONDITION_STUN)) {
+			ss << "stunned";
+		}
+		else {
+			ss << "muted";
+		}
+		ss << " for " << muteTime << " seconds.";
+		player->sendTextMessage(MESSAGE_STATUS_SMALL, ss.str());
 		return;
 	}
 
@@ -3703,6 +3732,10 @@ bool Game::isSightClear(const Position& fromPos, const Position& toPos, bool sam
 bool Game::internalCreatureTurn(Creature* creature, Direction dir)
 {
 	if (creature->getDirection() == dir) {
+		return false;
+	}
+
+	if (creature->hasCondition(CONDITION_STUN)) {
 		return false;
 	}
 

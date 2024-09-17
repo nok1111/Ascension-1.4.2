@@ -3375,3 +3375,15 @@ void ProtocolGame::sendMapShader(const std::string& shaderName)
 	playermsg.addString(shaderName);
 	writeToOutputBuffer(playermsg);
 }
+
+
+void ProtocolGame::sendProgressbar(uint32_t id, uint32_t duration, bool ltr)
+{
+	NetworkMessage msg;
+	msg.addByte(0x3b);
+	msg.add<uint32_t>(id);
+	msg.add<uint32_t>(duration);
+	msg.addByte(ltr);
+	writeToOutputBuffer(msg);
+}
+

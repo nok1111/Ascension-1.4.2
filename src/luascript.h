@@ -39,6 +39,8 @@ class Npc;
 class Monster;
 class InstantSpell;
 
+
+
 enum {
 	EVENT_ID_LOADING = 1,
 	EVENT_ID_USER = 1000,
@@ -216,6 +218,8 @@ class LuaScriptInterface
 		static bool reserveScriptEnv() {
 			return ++scriptEnvIndex < 16;
 		}
+
+
 
 		static void resetScriptEnv() {
 			assert(scriptEnvIndex >= 0);
@@ -1083,6 +1087,18 @@ class LuaScriptInterface
 
 		static int luaPlayerGetStoreInbox(lua_State* L);
 
+<<<<<<< HEAD
+		static int luaPlayerSummonPet(lua_State* L);
+		static int luaPlayerRespawnPet(lua_State* L);
+		static int luaPlayerUpdatePet(lua_State* L);
+		static int luaPlayerHidePet(lua_State* L);
+		static int luaPlayerChangePetName(lua_State* L);
+		static int luaPlayerGetPet(lua_State* L);
+
+
+
+=======
+>>>>>>> parent of 81cf9e8 (pets sources)
 		// Monster
 		static int luaMonsterCreate(lua_State* L);
 
@@ -1474,6 +1490,9 @@ class LuaScriptInterface
 
 		// Spells
 		static int luaSpellCreate(lua_State* L);
+
+		static int luaCreatureSetProgressbar(lua_State* L);
+
 
 		static int luaSpellOnCastSpell(lua_State* L);
 		static int luaSpellRegister(lua_State* L);

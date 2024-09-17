@@ -293,6 +293,9 @@ class ProtocolGame final : public Protocol
 		void sendShader(const Creature* creature, const std::string& shaderName);
 		void sendMapShader(const std::string& shaderName);
 
+		void sendProgressbar(uint32_t id, uint32_t duration, bool ltr = true);
+
+
 		friend class Player;
 
 		// Helpers so we don't need to bind every time
