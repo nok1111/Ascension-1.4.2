@@ -922,17 +922,6 @@ void LuaScriptInterface::pushInstantSpell(lua_State* L, const InstantSpell& spel
 	setMetatable(L, -1, "Spell");
 }
 
-void LuaScriptInterface::pushPet(lua_State* L, const Pet& pet) {
-	lua_createtable(L, 0, 4);
-
-	setField(L, "name", pet.getName());
-	setField(L, "exp", pet.getExp());
-	setField(L, "level", pet.getLevel());
-	setField(L, "monsterId", pet.getMonsterId());
-
-	setMetatable(L, -1, "Pet");
-}
-
 void LuaScriptInterface::pushPosition(lua_State* L, const Position& position, int32_t stackpos/* = 0*/)
 {
 	lua_createtable(L, 0, 4);
@@ -1556,7 +1545,6 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(ITEM_ATTRIBUTE_WRAPID)
 	registerEnum(ITEM_ATTRIBUTE_STOREITEM)
 	registerEnum(ITEM_ATTRIBUTE_ATTACK_SPEED)
-	registerEnum(ITEM_ATTRIBUTE_PETID)
 
 	registerEnum(ITEM_TYPE_DEPOT)
 	registerEnum(ITEM_TYPE_MAILBOX)
@@ -2579,14 +2567,6 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "getFightMode", LuaScriptInterface::luaPlayerGetFightMode);
 
 	registerMethod("Player", "getStoreInbox", LuaScriptInterface::luaPlayerGetStoreInbox);
-
-	registerMethod("Player", "summonPet", LuaScriptInterface::luaPlayerSummonPet);
-	registerMethod("Player", "respawnPet", LuaScriptInterface::luaPlayerRespawnPet);
-	registerMethod("Player", "updatePet", LuaScriptInterface::luaPlayerUpdatePet);
-	registerMethod("Player", "hidePet", LuaScriptInterface::luaPlayerHidePet);
-	registerMethod("Player", "changePetName", LuaScriptInterface::luaPlayerChangePetName);
-	registerMethod("Player", "getPet", LuaScriptInterface::luaPlayerGetPet);
-
 	// @ wings
 	registerMethod("Player", "addWing", LuaScriptInterface::luaPlayerAddWing);
 	registerMethod("Player", "removeWing", LuaScriptInterface::luaPlayerRemoveWing);
@@ -10534,155 +10514,6 @@ int LuaScriptInterface::luaPlayerGetFightMode(lua_State* L)
 		lua_pushnumber(L, player->fightMode);
 	} else {
 		lua_pushnil(L);
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaPlayerRespawnPet(lua_State* L)
-{
-	// player:respawnPet(petId, petName)
-	Player* player = getUserdata<Player>(L, 1);
-	if (player) {
-		uint32_t petId = getNumber<uint32_t>(L, 2);
-		std::string name = getString(L, 3);
-
-		Pet* tmpPet = player->getPetById(petId);
-		if (tmpPet) {
-
-			Monster* monster = Monster::createMonster(name);
-			if (!monster) {
-				lua_pushnil(L);
-				return 1;
-			}
-			monster->setMaster(player);
-			monster->setCreaturePet(true);
-			const Position& position = player->getPosition();
-			if (g_game.placeCreature(monster, position, false, true)) {
-				tmpPet->setMonsterId(monster->getID());
-				tmpPet->setName(tmpPet->getName());
-
-				lua_pushnumber(L, tmpPet->getPetId());
-			}
-			else {
-
-				delete monster;
-				lua_pushnil(L);
-			}
-		}
-		else {
-			lua_pushnil(L);
-		}
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaPlayerGetPet(lua_State* L)
-{
-	// player:getPet()
-	Player* player = getUserdata<Player>(L, 1);
-	if (player) {
-		int32_t value;
-		if (player->getStorageValue(45000, value)) {
-			Pet* pet = player->getPetById(value);
-			if (pet) {
-				pushPet(L, *pet);
-			}
-			else {
-				lua_pushnil(L);
-			}
-		}
-		else {
-			lua_pushnil(L);
-		}
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaPlayerChangePetName(lua_State* L)
-{
-	// player:changePetName(petId, petName)
-	Player* player = getUserdata<Player>(L, 1);
-	if (player) {
-		uint32_t petId = getNumber<uint32_t>(L, 2);
-		std::string name = getString(L, 3);
-
-		Pet* tmpPet = player->getPetById(petId);
-		if (!tmpPet) {
-			lua_pushnil(L);
-			return 1;
-		}
-		tmpPet->setName(name);
-		lua_pushnumber(L, tmpPet->getPetId());
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaPlayerSummonPet(lua_State* L)
-{
-	// player:summonPet(petName)
-	Player* player = getUserdata<Player>(L, 1);
-	if (player) {
-		std::string name = getString(L, 2);
-		Monster* monster = Monster::createMonster(name);
-		if (!monster) {
-			lua_pushnil(L);
-			return 1;
-		}
-		monster->setMaster(player);
-		const Position& position = player->getPosition();
-		monster->setCreaturePet(true);
-		monster->setExtraName(name);
-		Pet* newPet = Pet::createPet(name, 1, 1, 0, monster->getID(), 0);
-		player->addPet(newPet);
-		if (g_game.placeCreature(monster, position, false, true)) {
-			newPet->setMonsterId(monster->getID());
-			lua_pushnumber(L, newPet->getPetId());
-		}
-		else {
-			delete monster;
-			lua_pushnil(L);
-		}
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaPlayerUpdatePet(lua_State* L)
-{
-	// player:updatePet(petId, petLvl, petExp)
-	Player* player = getUserdata<Player>(L, 1);
-	if (player) {
-		uint32_t petId = getNumber<uint32_t>(L, 2);
-		uint8_t petLvl = getNumber<uint8_t>(L, 3);
-		uint32_t petExp = getNumber<uint16_t>(L, 4);
-		Pet* tmpPet = player->getPetById(petId);
-		if (tmpPet) {
-			tmpPet->setLevel(petLvl);
-			tmpPet->setExp(petExp);
-		}
-		else {
-			lua_pushnil(L);
-		}
-	}
-	return 1;
-}
-
-int LuaScriptInterface::luaPlayerHidePet(lua_State* L)
-{
-	// player:hidePet(petId)
-	Player* player = getUserdata<Player>(L, 1);
-	if (player) {
-		uint32_t petId = getNumber<uint32_t>(L, 2);
-		Pet* tmpPet = player->getPetById(petId);
-		if (tmpPet) {
-			Monster* tmpMonster = g_game.getMonsterByID(tmpPet->getMonsterId());
-			if (tmpMonster) {
-				g_game.removeCreature(tmpMonster);
-			}
-			tmpPet->setMonsterId(0);
-		}
-		else {
-			lua_pushnil(L);
-		}
 	}
 	return 1;
 }

@@ -427,20 +427,6 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		} while (result->next());
 	}
 
-	//load pets from db
-
-	if ((result = db.storeQuery(fmt::format("SELECT `player_id`, `pets` FROM `player_pets` WHERE `player_id` =  {:d}", player->getAccount())))) {
-		unsigned long petsSize;
-		const char* pets = result->getStream("pets", petsSize);
-		propStream.init(pets, petsSize);
-
-		Pet* pet = Pet::createPet(propStream);
-		while (pet) {
-			player->addPet(pet);
-			pet = Pet::createPet(propStream);
-		}
-	}
-
 	//load inventory items
 	ItemMap itemMap;
 
@@ -834,30 +820,6 @@ bool IOLoginData::savePlayer(Player* player)
 	}
 
 	if (!spellsQuery.execute()) {
-		return false;
-	}
-
-	//pets saving
-	if (!db.executeQuery(fmt::format("DELETE FROM `player_pets` WHERE `player_id` = {:d}", player->getAccount()))) {
-		return false;
-	}
-	//serialize pets
-	propWriteStream.clear();
-	for (auto petRecord : player->petMap) {
-		//std::cout << petRecord.first << std::endl;
-		petRecord.second->serialize(propWriteStream);
-		propWriteStream.write<uint8_t>(PET_END);
-	}
-
-	size_t petsSize;
-	const char* pets = propWriteStream.getStream(petsSize);
-
-	DBInsert petsQuery("INSERT INTO `player_pets` (`player_id`, `pets`) VALUES ");
-	std::stringstream ss;
-	ss << player->getAccount() << ',' << db.escapeBlob(pets, petsSize);
-	petsQuery.addRow(ss.str());
-
-	if (!petsQuery.execute()) {
 		return false;
 	}
 

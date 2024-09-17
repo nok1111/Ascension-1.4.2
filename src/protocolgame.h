@@ -164,7 +164,6 @@ class ProtocolGame final : public Protocol
 		void sendDistanceShoot(const Position& from, const Position& to, uint8_t type);
 		void sendMagicEffect(const Position& pos, uint8_t type);
 		void sendCreatureHealth(const Creature* creature);
-		void sendCreatureName(const Creature* creature);
 		void sendSkills();
 		void sendPing();
 		void sendPingBack();
