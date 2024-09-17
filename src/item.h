@@ -1035,15 +1035,6 @@ class Item : virtual public Thing
 
 		bool hasMarketAttributes() const;
 
-		bool hasAttributes() const {
-			if (!attributes) {
-				return false;
-			}
-			else {
-				return true;
-			}
-		}
-
 		std::unique_ptr<ItemAttributes>& getAttributes() {
 			if (!attributes) {
 				attributes.reset(new ItemAttributes());
