@@ -1223,6 +1223,9 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONDITION_SPELLCOOLDOWN)
 	registerEnum(CONDITION_SPELLGROUPCOOLDOWN)
 
+	registerEnum(CONDITION_STUN)
+	registerEnum(CONDITION_FEAR)
+
 	registerEnum(CONDITIONID_DEFAULT)
 	registerEnum(CONDITIONID_COMBAT)
 	registerEnum(CONDITIONID_HEAD)
@@ -2387,6 +2390,10 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Creature", "detachEffectById", LuaScriptInterface::luaCreatureDetachEffectById);
 	registerMethod("Creature", "getShader", LuaScriptInterface::luaCreatureGetShader);
 	registerMethod("Creature", "setShader", LuaScriptInterface::luaCreatureSetShader);
+
+
+	registerMethod("Creature", "sendProgressbar", LuaScriptInterface::luaCreatureSetProgressbar);
+
 
 	// Player
 	registerClass("Player", "Creature", LuaScriptInterface::luaPlayerCreate);
@@ -17936,3 +17943,22 @@ void LuaEnvironment::executeTimerEvent(uint32_t eventIndex)
 		luaL_unref(luaState, LUA_REGISTRYINDEX, parameter);
 	}
 }
+
+
+int LuaScriptInterface::luaCreatureSetProgressbar(lua_State* L)
+{
+	// creature:sendProgressbar(duration, leftToRight)
+	Creature* creature = getUserdata<Creature>(L, 1);
+	uint32_t duration = getNumber<uint32_t>(L, 2);
+	bool ltr = getBoolean(L, 3);
+	if (creature) {
+		g_game.startProgressbar(creature, duration, ltr);
+		pushBoolean(L, true);
+	}
+	else {
+		lua_pushnil(L);
+	}
+
+	return 1;
+}
+
