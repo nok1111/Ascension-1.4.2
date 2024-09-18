@@ -2353,7 +2353,7 @@ void ProtocolGame::sendMagicEffect(const Position& pos, uint8_t type)
 void ProtocolGame::sendCreatureName(const Creature* creature)
 {
 	NetworkMessage msg;
-	msg.addByte(0x8B);
+	msg.addByte(0x8A);
 	msg.add<uint32_t>(creature->getID());
 	msg.addString(creature->getExtraName());
 	writeToOutputBuffer(msg);
