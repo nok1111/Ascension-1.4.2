@@ -67,7 +67,7 @@ class Monster final : public Creature
 				return vRetStr;
 			}
 			else {
-				return nameDescription + '.';
+				return nameDescription + ", it is level " + std::to_string(level) + '.';
 			}
 		}
 
@@ -123,6 +123,10 @@ class Monster final : public Creature
 			this->spawn = spawn;
 		}
 		bool canWalkOnFieldType(CombatType_t combatType) const;
+
+		int32_t getLevel() const {
+			return level;
+		}
 
 		void onAttackedCreatureDisappear(bool isLogout) override;
 
