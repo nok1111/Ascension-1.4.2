@@ -523,8 +523,9 @@ void Creature::onCreatureMove(Creature* creature, const Tile* newTile, const Pos
 			std::forward_list<Creature*> despawnList;
 			for (Creature* summon : summons) {
 				const Position& pos = summon->getPosition();
-				if (Position::getDistanceZ(newPos, pos) > 2 || (std::max<int32_t>(Position::getDistanceX(newPos, pos), Position::getDistanceY(newPos, pos)) > 30)) {
-					despawnList.push_front(summon);
+				if (Position::getDistanceZ(newPos, pos) >= 1 || (std::max<int32_t>(Position::getDistanceX(newPos, pos), Position::getDistanceY(newPos, pos)) > 8)) {
+					//despawnList.push_front(summon); //original
+					g_game.internalTeleport(summon, summon->getMaster()->getPosition(), true);
 				}
 			}
 
