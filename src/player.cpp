@@ -736,6 +736,10 @@ bool Player::canWalkthrough(const Creature* creature) const
 		return false;
 	}
 
+	if (creature->isSummon() && creature->getMaster()->getPlayer()) {
+		return true;
+	}
+
 	const Tile* playerTile = player->getTile();
 	if (!playerTile || (!playerTile->hasFlag(TILESTATE_PROTECTIONZONE) && player->getLevel() > static_cast<uint32_t>(g_config.getNumber(ConfigManager::PROTECTION_LEVEL)))) {
 		return false;
