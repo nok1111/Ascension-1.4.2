@@ -132,6 +132,34 @@ CREATE TABLE IF NOT EXISTS `player_namelocks` (
   FOREIGN KEY (`namelocked_by`) REFERENCES `players` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
 
+CREATE TABLE `player_pets` (
+  `player_id` int(11) NOT NULL,
+  `pets` blob NOT NULL
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
+CREATE TABLE `player_profession` (
+  `player_id` int(11) NOT NULL,
+  `profession_id` int(11) NOT NULL,
+  `skill_blacksmith` int(11) NOT NULL,
+  `skill_blacksmith_points` int(11) NOT NULL,
+  `skill_alchemy` int(11) NOT NULL,
+  `skill_alchemy_points` int(11) NOT NULL,
+  `skill_cooking` int(11) NOT NULL,
+  `skill_cooking_points` int(11) NOT NULL,
+  `skill_enchanting` int(11) NOT NULL,
+  `skill_enchanting_points` int(11) NOT NULL,
+  `skill_mining` int(11) NOT NULL,
+  `skill_mining_points` int(11) NOT NULL,
+  `skill_herbalism` int(11) NOT NULL,
+  `skill_herbalism_points` int(11) NOT NULL,
+  `skill_fishing` int(11) NOT NULL,
+  `skill_fishing_points` int(11) NOT NULL,
+  `skill_rune_seeker` int(11) NOT NULL,
+  `skill_rune_seeker_points` int(11) NOT NULL,
+  `skill_temporal_crafting` int(11) NOT NULL,
+  `skill_temporal_crafting_points` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8;
+
 CREATE TABLE IF NOT EXISTS `account_viplist` (
   `account_id` int NOT NULL COMMENT 'id of account whose viplist entry it is',
   `player_id` int NOT NULL COMMENT 'id of target player of viplist entry',
