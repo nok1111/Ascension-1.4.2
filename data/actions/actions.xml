@@ -187,6 +187,13 @@
 	<action itemid="37857" allowfaruse="1" script="pets/apples.lua" />
 	<action itemid="37858" allowfaruse="1" script="pets/berries.lua" />
 	<action itemid="37859" allowfaruse="1" script="pets/rare_candy.lua" />
+	
+	
+	<!-- profession UI -->
+	<action actionid="33110" script="crafting/blacksmith/craftui.lua"/><!-- blacksmith -->
+	<action actionid="33111" script="crafting/alchemy/craftui.lua"/><!-- alchemy -->
+	<action actionid="33112" script="crafting/cooking/craftui.lua"/><!-- cooking -->
+	<action actionid="33113" script="crafting/enchanting/craftui.lua"/><!-- enchanting -->
 
 	
 	
