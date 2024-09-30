@@ -14,3 +14,7 @@ dofile('data/lib/npc_dialog.lua')
 
 dofile('data/lib/additional/tasklist.lua')
 dofile('data/lib/additional/tasksystem.lua')
+dofile('data/lib/additional/professionSystem.lua')
+dofile('data/lib/additional/craftingSystem.lua')
+
+

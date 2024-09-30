@@ -28,5 +28,8 @@ function onLogin(player)
 	-- Events
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
+	
+	-- Check login in profession system
+	ProfessionSystem:onPlayerLogin(player)
 	return true
 end
