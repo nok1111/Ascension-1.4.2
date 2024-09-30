@@ -7,7 +7,7 @@
 
 static constexpr int32_t NETWORKMESSAGE_MAXSIZE = 65500;
 
-enum MagicEffectClasses : uint8_t {
+enum MagicEffectClasses : uint16_t {
 	CONST_ME_NONE,
 
 	CONST_ME_DRAWBLOOD = 1,
