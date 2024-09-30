@@ -45,7 +45,7 @@ function onCastSpell(creature, variant)
 	creature:addMana(-manaCost)
 	creature:addManaSpent(manaCost)
 	creature:addSummon(summon)
-	position:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-	summon:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	position:sendMagicEffect(CONST_ME_PURPLESMOKE)
+	summon:getPosition():sendMagicEffect(CONST_ME_GREENSMOKE)
 	return true
 end

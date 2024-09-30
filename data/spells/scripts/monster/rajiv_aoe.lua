@@ -1,0 +1,92 @@
+local combatshoot = Combat()
+
+setCombatParam(combatshoot, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_VISBALLONE)
+
+-------------------------------------------------------
+local combataoe = createCombatObject()
+setCombatParam(combataoe, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+setCombatParam(combataoe, COMBAT_PARAM_EFFECT, CONST_ME_FIREAREA)
+setCombatParam(combataoe, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
+---------------------------------------------------------
+local combatwarning = createCombatObject()
+combatwarning:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_TUTORIALSQUARE)
+
+
+arr1 = {
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	}
+arr2 = {
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
+		{1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1}
+	}
+	
+
+local area_warning = createCombatArea(arr1)
+local area_damage = createCombatArea(arr2)
+setCombatArea(combataoe, area_damage)
+setCombatArea(combatwarning, area_warning)
+-----------------------------------------------------------
+
+
+function onCastSpell(creature, var)
+
+creature:say("FEEL THE PAIN!", TALKTYPE_ORANGE_2)
+
+addEvent(function()  creature:say("HELLFIRE RAIN!!", TALKTYPE_ORANGE_2) end, 5000)
+
+
+
+local position = creature:getPosition()
+  local positioneffect = position
+    positioneffect.x = position.x + 1
+    positioneffect.y = position.y + 1
+    positioneffect:sendMagicEffect(367)
+   
+   combatwarning:execute(creature, var)
+   creature:sendProgressbar(5000, true)
+   addEvent(function()  combatwarning:execute(creature, var) end, 1500)
+   addEvent(function()  combatwarning:execute(creature, var) end, 3000)
+   addEvent(function()  combatwarning:execute(creature, var) end, 4500)
+	--addEvent(function()  combatshoot:execute(creature, var) end, 1500)
+	addEvent(function()  combataoe:execute(creature, var) end, 6000)
+	addEvent(function()  combataoe:execute(creature, var) end, 6500)
+	addEvent(function()  combataoe:execute(creature, var) end, 7000)
+	addEvent(function()  combataoe:execute(creature, var) end, 7500)
+	addEvent(function()  combataoe:execute(creature, var) end, 8000)
+	addEvent(function()  combataoe:execute(creature, var) end, 8500)
+	addEvent(function()  combataoe:execute(creature, var) end, 9000)
+
+  return true
+end

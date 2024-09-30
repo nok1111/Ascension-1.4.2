@@ -1,3 +1,5 @@
+
+
 function onCastSpell(creature, variant, isHotkey)
 	local target = Creature(variant:getNumber())
 	if not target or not target:isMonster() then
@@ -31,6 +33,6 @@ function onCastSpell(creature, variant, isHotkey)
 	creature:addMana(-manaCost)
 	creature:addManaSpent(manaCost)
 	creature:addSummon(target)
-	creature:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+	creature:getPosition():sendMagicEffect(CONST_ME_GREENSMOKE)
 	return true
 end
