@@ -54,7 +54,7 @@ struct CombatParams {
 	CombatType_t combatType = COMBAT_NONE;
 	CombatOrigin origin = ORIGIN_SPELL;
 
-	uint8_t impactEffect = CONST_ME_NONE;
+	uint16_t impactEffect = CONST_ME_NONE;
 	uint8_t distanceEffect = CONST_ANI_NONE;
 
 	bool blockedByArmor = false;
