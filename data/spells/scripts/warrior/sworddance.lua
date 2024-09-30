@@ -9,19 +9,6 @@ local positions = {
     {-1,  0}
 }
 
-
-
-    local combat = Combat()
-    combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS) -- effect of spell
-    local condition = Condition(CONDITION_PARALYZE)
-    condition:setParameter(CONDITION_PARAM_TICKS, 20000) -- 20 seconds
-    --condition:setFormula(-0.25, 0, -0.45, 0) -- player speed -25% to -45%
-    combat:addCondition(condition)
-    local area = createCombatArea(AREA_SQUARE1X1)-- need to setup right area of effect
-    combat:setArea(area)
-    Combat:addCondition(condition)
-    
-
 local function sendEffcDragon(cid, max_iterations, iterations)
 	local pid = Player(cid)
 	if not pid then stopEvent(sendEffcDragon) return end
@@ -54,9 +41,9 @@ local function sendEffcDragon(cid, max_iterations, iterations)
 		local vit = pid:getMaxHealth() / 100
 		local min = (level/5) + (vit * 0.5) + (magic * 2) + 10
 		local max = (level/5) + (vit * 1.0) + (magic * 3.5) + 15
-        doAreaCombatHealth(pid, COMBAT_ENERGYDAMAGE, pos, {1}, min, max, CONST_ME_NONE)
+        doAreaCombatHealth(pid, COMBAT_ENERGYDAMAGE, pos, {1}, min, max, 585)
 		pid:addHealth(math.random(min/20, max/18))
-		doAreaCombatCondition(pid, pos, AREA_SQUARE1X1, condition, CONST_ME_NONE)
+	--	doAreaCombatCondition(pid, pos, AREA_SQUARE1X1, condition, CONST_ME_NONE)
 		
     end
 end
@@ -69,14 +56,14 @@ function onCastSpell(creature, variant)
        return false
    end
    
-	creature:sendProgressbar(18500, false)
-	player:sendAddBuffNotification(65, 17, 'Dragon Aura', 5, 0)
+	--creature:sendProgressbar(18500, false)
+	--player:sendAddBuffNotification(65, 17, 'Dragon Aura', 5, 0)
 	
     local times_to_run = 15 * #positions
     addEvent(sendEffcDragon, 150, creature.uid, times_to_run, times_to_run)
     return true
 end
---[[#######################################################################################]]--
+
 
 
 
