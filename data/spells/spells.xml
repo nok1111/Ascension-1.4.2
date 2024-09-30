@@ -42,4 +42,43 @@
 	<instant group="attack" spellid="911" name="flat" words="flat" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="test/flat_percent.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
+	
+	
+	
+	
+		<!-- warrior -->
+	<instant group="attack" spellid="1" name="Rend" words="rend" lvl="8" mana="20" range="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needweapon="1"  needtarget="1" script="warrior/rend.lua">
+	<vocation name="Dragon Knight" />
+	</instant>
+	<instant group="attack" spellid="4" name="Brutal Swing" words="brutal swing" lvl="18" mana="55"  needweapon="1" needtarget="1" range="1" casterTargetOrDirection="1" cooldown="6000" groupcooldown="1900" script="warrior/brutal_swing.lua">
+    <vocation name="Dragon Knight" />
+    </instant>
+	<instant group="support" spellid="7" name="Challenging Spear" words="Challenging Spear" lvl="20" mana="30"  range="4" needtarget="1" blockwalls="1" needweapon="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="warrior/chaspear.lua">
+	<vocation name="Dragon Knight" />
+	</instant>	
+	<instant group="attack" spellid="3" name="Fire Within" words="fire within" lvl="70" mana="75" premium="0" range="5" selftarget="1" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/fire_within.lua">
+	<vocation name="Dragon Knight" />
+	</instant>
+	<instant group="support" spellid="5" name="Charge" words="charge" lvl="40" mana="70" range="8" aggressive="1" blockwalls="1" needtarget="1" cooldown="15000" groupcooldown="1900" needweapon="0" needlearn="0" script="warrior/charge.lua">
+	<vocation name="Dragon Knight" />
+    </instant>
+	<instant group="attack" spellid="8" name="whirlwind" words="whirlwind" lvl="30" mana="85" prem="0" needweapon="0" cooldown="5000" groupcooldown="1900" needlearn="0" script="warrior/whirlwind.lua">
+	<vocation name="Dragon Knight" />
+	</instant>	
+	<instant group="support" spellid="10" name="Roar" words="roar" lvl="60" mana="20" cooldown="8000" groupcooldown="1900" script="warrior/shove.lua">
+	<vocation name="Dragon Knight" />
+	</instant>
+	<instant group="attack" spellid="11" name="Phoenix Wrath" words="phoenix wrath" lvl="125" mana="115" direction="1" cooldown="17000" groupcooldown="1900" blockwalls="1" needlearn="0" script="warrior/phoenix_wrath.lua">
+    <vocation name="Dragon Knight" />
+	</instant>
+	<instant group="attack" spellid="6" name="Dragon Aura" words="dragon aura" lvl="50" mana="75" selftarget="1" prem="0" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/sworddance.lua">
+	<vocation name="Dragon Knight" />
+	</instant>
+		<instant group="attack" spellid="2" name="Dragons Call" words="dragons call" lvl="100" mana="85" needtarget="1" needweapon="1" range="2" cooldown="30000" groupcooldown="1900" needlearn="0" script="warrior/dragon_decend.lua">
+	<vocation name="Dragon Knight" />
+	</instant>
+	<instant group="support" spellid="9" name="Dragon Shrine" words="dragon shrine" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_shrine.lua">
+	<vocation name="Dragon Knight" />
+	</instant>	
+
 </spells>
