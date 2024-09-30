@@ -8,11 +8,13 @@ local parameters = {
 	{key = CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, value = nil}
 }
 
+function onTargetCreature(creature, target)
+	target:addAttributeCondition(parameters)
+end
+
+combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
+
 function onCastSpell(creature, variant)
 	parameters[2].value = math.random(20, 70)
-
-	for _, target in ipairs(combat:getTargets(creature, variant)) do
-		target:addAttributeCondition(parameters)
-	end
-	return true
+	return combat:execute(creature, variant)
 end
