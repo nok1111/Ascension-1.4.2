@@ -1,5 +1,7 @@
 math.randomseed(os.time())
 dofile('data/lib/lib.lua')
+dofile('data/spells/lib/spellSystem.lua')
+
 
 
 ropeSpots = {
