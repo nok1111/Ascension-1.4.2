@@ -55,6 +55,16 @@ function Player.getLossPercent(self)
 	return lossPercent[blessings]
 end
 
+function Player.sendAddBuffNotification(self, buffId, timeSeconds, tooltipText, bgId, count)
+    self:sendExtendedOpcode(65, json.encode({buffId = buffId, timeSeconds = timeSeconds, tooltipText = tooltipText, bgId = bgId, count = count}))
+    return true
+end
+
+function Player.sendRemoveBuffNotification(self, buffId)
+    self:sendExtendedOpcode(66, json.encode({buffId = buffId}))
+    return true
+end
+
 function Player.getPremiumTime(self)
 	return math.max(0, self:getPremiumEndsAt() - os.time())
 end
