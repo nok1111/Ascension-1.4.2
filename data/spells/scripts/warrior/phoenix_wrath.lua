@@ -144,9 +144,13 @@ function onCastSpell(creature, var)
 		---directions
 		local direction = creature:getDirection()
 		
+		
+		
+		
+		
+		--match direction sprites here
         if direction == 1 then
-             
-			 
+             			 
 			local position1 = creature:getPosition()
 			local positioneffect1 = position1
 			positioneffect1.x = position1.x + 5
