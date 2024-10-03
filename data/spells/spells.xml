@@ -43,6 +43,20 @@
 	<vocation name="Dragon Knight" />
 	</instant>
 	
+	<instant name="massanimon" words="###952" aggressive="1" range="8" selftarget="1" blockwalls="1" needtarget="0" needlearn="0" script="new spells/mass_annihilation_monster.lua"/>
+	<instant group="attack" spellid="53" name="Blizzard" words="blizzard" lvl="50" mana="200" range="7"  cooldown="15000" groupcooldown="1900" needtarget="1" script="mage/blizzard.lua">
+	<vocation name="Magician" />
+	</instant>
+	<instant group="attack" spellid="304" name="Hells Core" words="hells core" lvl="100"  mana="400" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/hells_core.lua">
+	<vocation name="Magician" />
+	</instant>
+	
+	<instant group="attack" spellid="85" name="Dark Ambush" words="dark ambush" lvl="70" mana="250"  direction="0" blockwalls="1" range="3" needtarget="1" needweapon="0" cooldown="22000" groupcooldown="1900" needlearn="0" script="rogue/Assassination.lua">
+	<vocation name="Nightblade" />	
+	</instant>
+	<instant group="attack" spellid="102" name="Aery Wrath" words="aery wrath" lvl="18" mana="45" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="test/chain_spell.lua">
+    <vocation name="Stellar" />
+    </instant>
 	
 	
 	
@@ -80,5 +94,47 @@
 	<instant group="support" spellid="9" name="Dragon Shrine" words="dragon shrine" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_shrine.lua">
 	<vocation name="Dragon Knight" />
 	</instant>	
+	
+	
+	
+	
+	<!-- Templar -->		
+	<instant group="attack" spellid="20" name="Divine Punishment" words="divine punishment" lvl="100" mana="200"  range="3" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="templar/divine_clock.lua">
+    <vocation name="Templar" />
+    </instant>
+	<instant group="attack" spellid="21" name="Penitence" words="penitence" lvl="25" mana="60" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="1900" needweapon="0" needlearn="0" script="templar/penitence.lua">
+    <vocation name="Templar" />
+    </instant>
+	<instant group="attack" spellid="22" name="Holy Ground" words="holy ground" lvl="50" mana="75" prem="0" needweapon="0" selftarget="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/areaholy.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="healing" spellid="22" name="Sacred Ground" words="sacred Ground" lvl="40" mana="100" prem="0" needweapon="0" aggressive="0" cooldown="30000" groupcooldown="1900" needlearn="0" script="templar/sacred_ground.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="attack" spellid="23" name="Crusader Strike" words="crusader strike" lvl="18" mana="50" prem="0" range="1" needtarget="1" blockwalls="1" needweapon="1" cooldown="6000" groupcooldown="1900" needlearn="0" script="templar/crusader_strike.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="attack" spellid="24" name="Divine Storm" words="divine storm" lvl="70" mana="150" prem="0" needweapon="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/divine_storm.lua">
+	<vocation name="Templar" />
+	</instant>	
+
+	<instant group="attack" spellid="26" name="Exorcism" words="exorcism" lvl="999" mana="125" prem="0" needweapon="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/exorcism.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="support" spellid="27" name="Divine Force" words="divine force" lvl="999" mana="125" premium="0" range="8" casterTargetOrDirection="1" blockwalls="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/grab.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="attack" spellid="28" name="Smite" words="smite" lvl="8" mana="20" prem="0" range="5" needtarget="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="templar/smite.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="attack" spellid="29" name="Light Beam" words="light beam" lvl="30" mana="130" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="templar/lightbeam.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="support" spellid="30" name="Summon Guardian of Light" words="summon guardian" lvl="90" mana="250"  cooldown="100000" groupcooldown="1900" needlearn="0" script="templar/summon.lua">
+	<vocation name="Templar" />
+	</instant>
+	<instant group="support" spellid="31" name="Kings Blessing" words="Kings Blessing" lvl="60" mana="50" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="templar/party_kings.lua">	
+	<vocation name="templar" />
+    </instant>
 
 </spells>
