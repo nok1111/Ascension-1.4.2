@@ -2,8 +2,12 @@ local minTargets = 1
 local duration = 13000 -- Lasts 13 seconds
 local ticks = 3000 -- Hits every 2 seconds
 local meteor_effect = 632
-local meteor_explosion = 633
-local warning_effect = 668
+local meteor_explosion = 631
+local warning_effect = CONST_ME_TUTORIALSQUARE
+
+
+
+
 
 local area = createCombatArea({
     {0, 0, 1, 0, 0},
@@ -12,6 +16,8 @@ local area = createCombatArea({
     {0, 1, 1, 1, 0},
     {0, 0, 1, 0, 0},
     })
+
+
 
 function shuffle(t)
     local rand = math.random
@@ -35,8 +41,7 @@ local function strikeTarget(playeruid, targetuid, meteor_effect, meteor_explosio
         -- Adjust position for the meteor and explo effect
         local meteor_offset = Position(monsterPos.x + 1, monsterPos.y + 1, monsterPos.z)
         meteor_offset:sendMagicEffect(meteor_effect)
-		local explo_offset = Position(monsterPos.x + 3, monsterPos.y + 3, monsterPos.z)
-        explo_offset:sendMagicEffect(meteor_explosion)
+		
         
 
     end
@@ -48,6 +53,8 @@ local function strikeTarget_damage(playeruid, targetuid, monsterPos, combat)
     if creature and target then   
 
 		doAreaCombatHealth(creature, COMBAT_ENERGYDAMAGE, monsterPos, area, -900, -999, CONST_ME_NONE)
+		local explo_offset = Position(monsterPos.x + 3, monsterPos.y + 3, monsterPos.z)
+        explo_offset:sendMagicEffect(meteor_explosion)
     end
 end
 
@@ -55,7 +62,6 @@ local function meteorDuration(playeruid, count)
     -- Convert back to creature object
     local creature = Creature(playeruid)
     if creature then -- If creature still exists
-	print("player found")
         local playerPos = creature:getPosition()
         playerPos:sendMagicEffect(7)
         local playerTile = Tile(Position(playerPos))
@@ -90,16 +96,13 @@ local function meteorDuration(playeruid, count)
                     local target = validTargets[i]
                     local targetUid = target.uid
 					local monsterPos = validTargets[i]:getPosition()
-					local warning_offset = monsterPos
-                    warning_offset.x = warning_offset.x + 2
-					warning_offset.y = warning_offset.y + 2
-                    warning_offset:sendMagicEffect(warning_effect)
-					
+                    --warning_offset:sendMagicEffect(warning_effect)
+					doAreaCombatHealth(creature, COMBAT_ENERGYDAMAGE, monsterPos, area, 0, 0, warning_effect)
                     
-                    -- Schedule the strike with addEvent
-                    addEvent(strikeTarget, 1000, playeruid, targetUid, meteor_effect, meteor_explosion, combat, validTargets[i]:getPosition()) -- 1000ms delay
+                    -- Schedule the strike with addEvent (increase 1000 to add a bigger delay on meteors)
+                    addEvent(strikeTarget, 1500, playeruid, targetUid, meteor_effect, meteor_explosion, combat, validTargets[i]:getPosition()) -- 1000ms delay
 					  -- Schedule the strike with addEvent
-                    addEvent(strikeTarget_damage, 1500, playeruid, targetUid, validTargets[i]:getPosition(), combat) -- 1000ms delay
+                    addEvent(strikeTarget_damage, 2000, playeruid, targetUid, validTargets[i]:getPosition(), combat) -- 1000ms delay
                 end
             end
         end
@@ -118,7 +121,7 @@ end
 function onCastSpell(creature, var, isHotkey)
 
     addEvent(meteorDuration, 0, creature:getId(), math.floor(duration / ticks))
-	print("spell triggering")
+	--print("spell triggering")
 
     return true
 end
