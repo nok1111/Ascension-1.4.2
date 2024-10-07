@@ -61,6 +61,11 @@ enum tradestate_t : uint8_t {
 	TRADE_TRANSFER,
 };
 
+enum attackHand_t : uint8_t {
+	HAND_LEFT,
+	HAND_RIGHT,
+};
+
 struct VIPEntry {
 	VIPEntry(uint32_t guid, std::string name, std::string description, uint32_t icon, bool notify) :
 		guid(guid), name(std::move(name)), description(std::move(description)), icon(icon), notify(notify) {}
@@ -666,6 +671,28 @@ class Player final : public Creature, public Cylinder
 		BlockType_t getLastAttackBlockType() const {
 			return lastAttackBlockType;
 		}
+		//NEW! DUAL WIELD SYSTEM
+		void switchAttackHand() {
+			lastAttackHand = lastAttackHand == HAND_LEFT ? HAND_RIGHT : HAND_LEFT;
+
+		}
+		//NEW! DUAL WIELD SYSTEM
+		slots_t getAttackHand() const {
+			return lastAttackHand == HAND_LEFT ? CONST_SLOT_LEFT : CONST_SLOT_RIGHT;
+
+		}
+		//NEW! DUAL WIELD SYSTEM
+		void switchBlockSkillAdvance() {
+			blockSkillAdvance = !blockSkillAdvance;
+
+		}
+		//NEW! DUAL WIELD SYSTEM
+		bool getBlockSkillAdvance() {
+			return blockSkillAdvance;
+
+		}
+		//NEW! DUAL WIELD SYSTEM
+		bool isDualWielding() const;
 
 		Item* getWeapon(slots_t slot, bool ignoreAmmo) const;
 		Item* getWeapon(bool ignoreAmmo = false) const;
@@ -1407,6 +1434,12 @@ class Player final : public Creature, public Cylinder
 		tradestate_t tradeState = TRADE_NONE;
 		fightMode_t fightMode = FIGHTMODE_ATTACK;
 		AccountType_t accountType = ACCOUNT_TYPE_NORMAL;
+
+		//NEW! DUAL WIELD SYSTEM
+		attackHand_t lastAttackHand;
+
+		//NEW! DUAL WIELD SYSTEM
+		bool blockSkillAdvance;
 
 		bool chaseMode = false;
 		bool secureMode = false;

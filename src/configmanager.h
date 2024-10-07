@@ -15,6 +15,7 @@ class ConfigManager
 		ConfigManager();
 
 		enum boolean_config_t {
+			ALLOW_DUAL_WIELDING,
 			ALLOW_CHANGEOUTFIT,
 			ONE_PLAYER_ON_ACCOUNT,
 			AIMBOT_HOTKEY_ENABLED,
@@ -82,6 +83,8 @@ class ConfigManager
 		enum integer_config_t {
 			SQL_PORT,
 			MAX_PLAYERS,
+			DUAL_WIELDING_ATTACK_SPEED,
+			DUAL_WIELDING_DAMAGE_RATE,
 			PZ_LOCKED,
 			DEFAULT_DESPAWNRANGE,
 			DEFAULT_DESPAWNRADIUS,

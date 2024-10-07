@@ -303,6 +303,12 @@ int32_t Weapon::playerWeaponCheck(Player* player, Creature* target, uint8_t shoo
 		}
 
 		int32_t damageModifier = 100;
+
+		//NEW!
+		if (player->isDualWielding()) {
+			damageModifier = g_config.getNumber(ConfigManager::DUAL_WIELDING_DAMAGE_RATE);
+		}
+
 		if (player->getLevel() < getReqLevel()) {
 			damageModifier = (isWieldedUnproperly() ? damageModifier / 2 : 0);
 		}
@@ -428,27 +434,30 @@ void Weapon::onUsedWeapon(Player* player, Item* item, Tile* destTile) const
 	}
 
 	switch (action) {
-		case WEAPONACTION_REMOVECOUNT:
-			if (g_config.getBoolean(ConfigManager::REMOVE_WEAPON_AMMO)) {
-				Weapon::decrementItemCount(item);
-			}
-			break;
-
-		case WEAPONACTION_REMOVECHARGE: {
-			uint16_t charges = item->getCharges();
-			if (charges != 0 && g_config.getBoolean(ConfigManager::REMOVE_WEAPON_CHARGES)) {
-				g_game.transformItem(item, item->getID(), charges - 1);
-			}
-			break;
+	case WEAPONACTION_REMOVECOUNT:
+		if (g_config.getBoolean(ConfigManager::REMOVE_WEAPON_AMMO)) {
+			Weapon::decrementItemCount(item);
 		}
+		break;
 
-		case WEAPONACTION_MOVE:
-			g_game.internalMoveItem(item->getParent(), destTile, INDEX_WHEREEVER, item, 1, nullptr, FLAG_NOLIMIT);
-			break;
-
-		default:
-			break;
+	case WEAPONACTION_REMOVECHARGE: {
+		uint16_t charges = item->getCharges();
+		if (charges != 0 && g_config.getBoolean(ConfigManager::REMOVE_WEAPON_CHARGES)) {
+			g_game.transformItem(item, item->getID(), charges - 1);
+		}
+		break;
 	}
+
+	case WEAPONACTION_MOVE:
+		g_game.internalMoveItem(item->getParent(), destTile, INDEX_WHEREEVER, item, 1, nullptr, FLAG_NOLIMIT);
+		break;
+
+	default:
+		break;
+	}
+
+	//NEW!
+	player->switchAttackHand();
 }
 
 uint32_t Weapon::getManaCost(const Player* player) const

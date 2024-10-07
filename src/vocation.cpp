@@ -69,7 +69,10 @@ bool Vocations::loadFromXml()
 				voc.fromVocation = pugi::cast<uint32_t>(attrNode.value());
 			} else if (strcasecmp(attrName, "nopongkicktime") == 0) {
 				voc.noPongKickTime = pugi::cast<uint32_t>(attrNode.value()) * 1000;
-			} else {
+			} else if ((attr = vocationNode.attribute("dualwield"))) {
+				voc.dualWield = attr.as_bool();
+			}
+			else {
 				std::cout << "[Notice - Vocations::loadFromXml] Unknown attribute: \"" << attrName << "\" for vocation: " << voc.id << std::endl;
 			}
 		}

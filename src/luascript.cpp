@@ -2020,6 +2020,11 @@ void LuaScriptInterface::registerFunctions()
 	registerEnumIn("configKeys", ConfigManager::DEFAULT_PRIORITY)
 	registerEnumIn("configKeys", ConfigManager::MAP_AUTHOR)
 
+
+	registerEnumIn("configKeys", ConfigManager::ALLOW_DUAL_WIELDING)
+	registerEnumIn("configKeys", ConfigManager::DUAL_WIELDING_ATTACK_SPEED)
+	registerEnumIn("configKeys", ConfigManager::DUAL_WIELDING_DAMAGE_RATE)
+
 	registerEnumIn("configKeys", ConfigManager::SQL_PORT)
 	registerEnumIn("configKeys", ConfigManager::MAX_PLAYERS)
 	registerEnumIn("configKeys", ConfigManager::PZ_LOCKED)
