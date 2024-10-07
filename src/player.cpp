@@ -213,6 +213,14 @@ Item* Player::getWeapon(slots_t slot, bool ignoreAmmo) const
 
 Item* Player::getWeapon(bool ignoreAmmo/* = false*/) const
 {
+	// NEW! if player is dual wielding, we already assured he has weapons in both hands
+	if (isDualWielding()) {
+		Item* item = getWeapon(getAttackHand(), ignoreAmmo);
+		if (item) {
+			return item; //NEW!
+		}
+	}
+
 	Item* item = getWeapon(CONST_SLOT_LEFT, ignoreAmmo);
 	if (item) {
 		return item;
@@ -291,13 +299,30 @@ void Player::getShieldAndWeapon(const Item*& shield, const Item*& weapon) const
 	shield = nullptr;
 	weapon = nullptr;
 
-	for (uint32_t slot = CONST_SLOT_RIGHT; slot <= CONST_SLOT_LEFT; slot++) {
-		Item* item = inventory[slot];
-		if (!item) {
-			continue;
-		}
+	/*	for (uint32_t slot = CONST_SLOT_RIGHT; slot <= CONST_SLOT_LEFT; slot++) {
+			Item* item = inventory[slot];
+			if (!item) {
+				continue;
+			}*/
 
-		switch (item->getWeaponType()) {
+	if (isDualWielding()) {
+		if (lastAttackHand == HAND_LEFT) {
+			shield = inventory[CONST_SLOT_RIGHT];
+			weapon = inventory[CONST_SLOT_LEFT];
+		}
+		else {
+			shield = inventory[CONST_SLOT_LEFT];
+			weapon = inventory[CONST_SLOT_RIGHT];
+		}
+	}
+	else {
+		for (uint32_t slot = CONST_SLOT_RIGHT; slot <= CONST_SLOT_LEFT; slot++) {
+			Item* item = inventory[slot];
+			if (!item) {
+				continue;
+			}
+
+			switch (item->getWeaponType()) {
 			case WEAPON_NONE:
 				break;
 
@@ -312,8 +337,19 @@ void Player::getShieldAndWeapon(const Item*& shield, const Item*& weapon) const
 				weapon = item;
 				break;
 			}
+			}
 		}
 	}
+}
+
+//NEW! DUAL WIELD SYSTEM
+bool Player::isDualWielding() const
+{
+	/* Not checking dual wield because the player can't wear two weapons worn without it */
+	if (this->getWeapon(CONST_SLOT_LEFT, true) && this->getWeapon(CONST_SLOT_RIGHT, true)) {
+		return true;
+	}
+	return false;
 }
 
 int32_t Player::getDefense() const
@@ -348,14 +384,16 @@ int32_t Player::getDefense() const
 	return (defenseSkill / 4. + 2.23) * defenseValue * 0.15 * getDefenseFactor() * vocation->defenseMultiplier;
 }
 
+
 uint32_t Player::getAttackSpeed() const
 {
-	const Item* weapon = getWeapon(true);
-	if (!weapon || weapon->getAttackSpeed() == 0) {
-		return vocation->getAttackSpeed();
+	uint32_t ret = vocation->getAttackSpeed();
+	if (isDualWielding()) {
+		ret = vocation->getAttackSpeed() / 1.2;
 	}
+	//ret = ret - (ret * getCharacterStat(CHARSTAT_DEXTERITY) / 100.0);
 
-	return weapon->getAttackSpeed();
+	return ret;
 }
 
 float Player::getAttackFactor() const
@@ -2313,6 +2351,7 @@ bool Player::hasCapacity(const Item* item, uint32_t count) const
 	return itemWeight <= getFreeCapacity();
 }
 
+//CHANGED!
 ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, uint32_t flags, Creature*) const
 {
 	const Item* item = thing.getItem();
@@ -2334,181 +2373,211 @@ ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, 
 		return RETURNVALUE_CANNOTPICKUP;
 	}
 
-	if (item->isStoreItem()) {
-		return RETURNVALUE_ITEMCANNOTBEMOVEDTHERE;
-	}
-
-	ReturnValue ret = RETURNVALUE_NOTPOSSIBLE;
+	ReturnValue ret = RETURNVALUE_NOERROR;
 
 	const int32_t& slotPosition = item->getSlotPosition();
 	if ((slotPosition & SLOTP_HEAD) || (slotPosition & SLOTP_NECKLACE) ||
-	        (slotPosition & SLOTP_BACKPACK) || (slotPosition & SLOTP_ARMOR) ||
-	        (slotPosition & SLOTP_LEGS) || (slotPosition & SLOTP_FEET) ||
-	        (slotPosition & SLOTP_RING)) {
+		(slotPosition & SLOTP_BACKPACK) || (slotPosition & SLOTP_ARMOR) ||
+		(slotPosition & SLOTP_LEGS) || (slotPosition & SLOTP_FEET) ||
+		(slotPosition & SLOTP_RING)) {
 		ret = RETURNVALUE_CANNOTBEDRESSED;
-	} else if (slotPosition & SLOTP_TWO_HAND) {
+	}
+	else if (slotPosition & SLOTP_TWO_HAND) {
 		ret = RETURNVALUE_PUTTHISOBJECTINBOTHHANDS;
-	} else if ((slotPosition & SLOTP_RIGHT) || (slotPosition & SLOTP_LEFT)) {
+	}
+	else if ((slotPosition & SLOTP_RIGHT) || (slotPosition & SLOTP_LEFT)) {
 		if (!g_config.getBoolean(ConfigManager::CLASSIC_EQUIPMENT_SLOTS)) {
 			ret = RETURNVALUE_CANNOTBEDRESSED;
-		} else {
+		}
+		else {
 			ret = RETURNVALUE_PUTTHISOBJECTINYOURHAND;
 		}
 	}
 
 	switch (index) {
-		case CONST_SLOT_HEAD: {
-			if (slotPosition & SLOTP_HEAD) {
-				ret = RETURNVALUE_NOERROR;
-			}
-			break;
+	case CONST_SLOT_HEAD: {
+		if (slotPosition & SLOTP_HEAD) {
+			ret = RETURNVALUE_NOERROR;
 		}
+		break;
+	}
 
-		case CONST_SLOT_NECKLACE: {
-			if (slotPosition & SLOTP_NECKLACE) {
-				ret = RETURNVALUE_NOERROR;
-			}
-			break;
+	case CONST_SLOT_NECKLACE: {
+		if (slotPosition & SLOTP_NECKLACE) {
+			ret = RETURNVALUE_NOERROR;
 		}
+		break;
+	}
 
-		case CONST_SLOT_BACKPACK: {
-			if (slotPosition & SLOTP_BACKPACK) {
-				ret = RETURNVALUE_NOERROR;
-			}
-			break;
+	case CONST_SLOT_BACKPACK: {
+		if (slotPosition & SLOTP_BACKPACK) {
+			ret = RETURNVALUE_NOERROR;
 		}
+		break;
+	}
 
-		case CONST_SLOT_ARMOR: {
-			if (slotPosition & SLOTP_ARMOR) {
-				ret = RETURNVALUE_NOERROR;
-			}
-			break;
+	case CONST_SLOT_ARMOR: {
+		if (slotPosition & SLOTP_ARMOR) {
+			ret = RETURNVALUE_NOERROR;
 		}
+		break;
+	}
 
-		case CONST_SLOT_RIGHT: {
-			if (slotPosition & SLOTP_RIGHT) {
-				if (!g_config.getBoolean(ConfigManager::CLASSIC_EQUIPMENT_SLOTS)) {
-					if (item->getWeaponType() != WEAPON_SHIELD) {
-						ret = RETURNVALUE_CANNOTBEDRESSED;
-					} else {
-						const Item* leftItem = inventory[CONST_SLOT_LEFT];
-						if (leftItem) {
-							if ((leftItem->getSlotPosition() | slotPosition) & SLOTP_TWO_HAND) {
-								ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
-							} else {
-								ret = RETURNVALUE_NOERROR;
-							}
-						} else {
+	case CONST_SLOT_RIGHT: {
+		if (slotPosition & SLOTP_RIGHT) {
+			if (!g_config.getBoolean(ConfigManager::CLASSIC_EQUIPMENT_SLOTS)) {
+				if (item->getWeaponType() != WEAPON_SHIELD) {
+					ret = RETURNVALUE_CANNOTBEDRESSED;
+				}
+				else {
+					const Item* leftItem = inventory[CONST_SLOT_LEFT];
+					if (leftItem) {
+						if ((leftItem->getSlotPosition() | slotPosition) & SLOTP_TWO_HAND) {
+							ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
+						}
+						else {
 							ret = RETURNVALUE_NOERROR;
 						}
 					}
-				} else if (slotPosition & SLOTP_TWO_HAND) {
-					if (inventory[CONST_SLOT_LEFT] && inventory[CONST_SLOT_LEFT] != item) {
-						ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
-					} else {
+					else {
 						ret = RETURNVALUE_NOERROR;
 					}
-				} else if (inventory[CONST_SLOT_LEFT]) {
-					const Item* leftItem = inventory[CONST_SLOT_LEFT];
-					WeaponType_t type = item->getWeaponType(), leftType = leftItem->getWeaponType();
-
-					if (leftItem->getSlotPosition() & SLOTP_TWO_HAND) {
-						ret = RETURNVALUE_DROPTWOHANDEDITEM;
-					} else if (item == leftItem && count == item->getItemCount()) {
-						ret = RETURNVALUE_NOERROR;
-					} else if (leftType == WEAPON_SHIELD && type == WEAPON_SHIELD) {
-						ret = RETURNVALUE_CANONLYUSEONESHIELD;
-					} else if (leftType == WEAPON_NONE || type == WEAPON_NONE ||
-					           leftType == WEAPON_SHIELD || leftType == WEAPON_AMMO
-					           || type == WEAPON_SHIELD || type == WEAPON_AMMO) {
-						ret = RETURNVALUE_NOERROR;
-					} else {
-						ret = RETURNVALUE_CANONLYUSEONEWEAPON;
-					}
-				} else {
+				}
+			}
+			else if (slotPosition & SLOTP_TWO_HAND) {
+				if (inventory[CONST_SLOT_LEFT] && inventory[CONST_SLOT_LEFT] != item) {
+					ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
+				}
+				else {
 					ret = RETURNVALUE_NOERROR;
 				}
 			}
-			break;
+			else if (inventory[CONST_SLOT_LEFT]) {
+				const Item* leftItem = inventory[CONST_SLOT_LEFT];
+				WeaponType_t type = item->getWeaponType(), leftType = leftItem->getWeaponType();
+
+				if (leftItem->getSlotPosition() & SLOTP_TWO_HAND) {
+					ret = RETURNVALUE_DROPTWOHANDEDITEM;
+				}
+				else if (item == leftItem && count == item->getItemCount()) {
+					ret = RETURNVALUE_NOERROR;
+				}
+				else if (leftType == WEAPON_SHIELD && type == WEAPON_SHIELD) {
+					ret = RETURNVALUE_CANONLYUSEONESHIELD;
+				}
+				else if (leftType == WEAPON_NONE || type == WEAPON_NONE ||
+					leftType == WEAPON_SHIELD || leftType == WEAPON_AMMO
+					|| type == WEAPON_SHIELD || type == WEAPON_AMMO) {
+					ret = RETURNVALUE_NOERROR;
+				}
+				else if (type != WEAPON_DISTANCE && type != WEAPON_WAND &&
+					g_config.getBoolean(ConfigManager::ALLOW_DUAL_WIELDING) &&
+					vocation->canDualWield()) {
+					ret = RETURNVALUE_NOERROR;
+				}
+				else {
+					ret = RETURNVALUE_CANONLYUSEONEWEAPON;
+				}
+			}
+			else {
+				ret = RETURNVALUE_NOERROR;
+			}
 		}
+		break;
+	}
 
-		case CONST_SLOT_LEFT: {
-			if (slotPosition & SLOTP_LEFT) {
-				if (!g_config.getBoolean(ConfigManager::CLASSIC_EQUIPMENT_SLOTS)) {
-					WeaponType_t type = item->getWeaponType();
-					if (type == WEAPON_NONE || type == WEAPON_SHIELD || type == WEAPON_AMMO) {
-						ret = RETURNVALUE_CANNOTBEDRESSED;
-					} else if (inventory[CONST_SLOT_RIGHT] && (slotPosition & SLOTP_TWO_HAND)) {
-						ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
-					} else {
-						ret = RETURNVALUE_NOERROR;
-					}
-				} else if (slotPosition & SLOTP_TWO_HAND) {
-					if (inventory[CONST_SLOT_RIGHT] && inventory[CONST_SLOT_RIGHT] != item) {
-						ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
-					} else {
-						ret = RETURNVALUE_NOERROR;
-					}
-				} else if (inventory[CONST_SLOT_RIGHT]) {
-					const Item* rightItem = inventory[CONST_SLOT_RIGHT];
-					WeaponType_t type = item->getWeaponType(), rightType = rightItem->getWeaponType();
-
-					if (rightItem->getSlotPosition() & SLOTP_TWO_HAND) {
-						ret = RETURNVALUE_DROPTWOHANDEDITEM;
-					} else if (item == rightItem && count == item->getItemCount()) {
-						ret = RETURNVALUE_NOERROR;
-					} else if (rightType == WEAPON_SHIELD && type == WEAPON_SHIELD) {
-						ret = RETURNVALUE_CANONLYUSEONESHIELD;
-					} else if (rightType == WEAPON_NONE || type == WEAPON_NONE ||
-					           rightType == WEAPON_SHIELD || rightType == WEAPON_AMMO
-					           || type == WEAPON_SHIELD || type == WEAPON_AMMO) {
-						ret = RETURNVALUE_NOERROR;
-					} else {
-						ret = RETURNVALUE_CANONLYUSEONEWEAPON;
-					}
-				} else {
+	case CONST_SLOT_LEFT: {
+		if (slotPosition & SLOTP_LEFT) {
+			if (!g_config.getBoolean(ConfigManager::CLASSIC_EQUIPMENT_SLOTS)) {
+				WeaponType_t type = item->getWeaponType();
+				if (type == WEAPON_NONE || type == WEAPON_SHIELD) {
+					ret = RETURNVALUE_CANNOTBEDRESSED;
+				}
+				else if (inventory[CONST_SLOT_RIGHT] && (slotPosition & SLOTP_TWO_HAND)) {
+					ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
+				}
+				else {
 					ret = RETURNVALUE_NOERROR;
 				}
 			}
-			break;
-		}
+			else if (slotPosition & SLOTP_TWO_HAND) {
+				if (inventory[CONST_SLOT_RIGHT] && inventory[CONST_SLOT_RIGHT] != item) {
+					ret = RETURNVALUE_BOTHHANDSNEEDTOBEFREE;
+				}
+				else {
+					ret = RETURNVALUE_NOERROR;
+				}
+			}
+			else if (inventory[CONST_SLOT_RIGHT]) {
+				const Item* rightItem = inventory[CONST_SLOT_RIGHT];
+				WeaponType_t type = item->getWeaponType(), rightType = rightItem->getWeaponType();
 
-		case CONST_SLOT_LEGS: {
-			if (slotPosition & SLOTP_LEGS) {
+				if (rightItem->getSlotPosition() & SLOTP_TWO_HAND) {
+					ret = RETURNVALUE_DROPTWOHANDEDITEM;
+				}
+				else if (item == rightItem && count == item->getItemCount()) {
+					ret = RETURNVALUE_NOERROR;
+				}
+				else if (rightType == WEAPON_SHIELD && type == WEAPON_SHIELD) {
+					ret = RETURNVALUE_CANONLYUSEONESHIELD;
+				}
+				else if (rightType == WEAPON_NONE || type == WEAPON_NONE ||
+					rightType == WEAPON_SHIELD || rightType == WEAPON_AMMO
+					|| type == WEAPON_SHIELD || type == WEAPON_AMMO) {
+					ret = RETURNVALUE_NOERROR;
+				}
+				else if (type != WEAPON_DISTANCE && type != WEAPON_WAND &&
+					g_config.getBoolean(ConfigManager::ALLOW_DUAL_WIELDING) &&
+					vocation->canDualWield()) {
+					ret = RETURNVALUE_NOERROR;
+				}
+				else {
+					ret = RETURNVALUE_CANONLYUSEONEWEAPON;
+				}
+			}
+			else {
 				ret = RETURNVALUE_NOERROR;
 			}
-			break;
 		}
+		break;
+	}
 
-		case CONST_SLOT_FEET: {
-			if (slotPosition & SLOTP_FEET) {
-				ret = RETURNVALUE_NOERROR;
-			}
-			break;
+	case CONST_SLOT_LEGS: {
+		if (slotPosition & SLOTP_LEGS) {
+			ret = RETURNVALUE_NOERROR;
 		}
+		break;
+	}
 
-		case CONST_SLOT_RING: {
-			if (slotPosition & SLOTP_RING) {
-				ret = RETURNVALUE_NOERROR;
-			}
-			break;
+	case CONST_SLOT_FEET: {
+		if (slotPosition & SLOTP_FEET) {
+			ret = RETURNVALUE_NOERROR;
 		}
+		break;
+	}
 
-		case CONST_SLOT_AMMO: {
-			if ((slotPosition & SLOTP_AMMO) || g_config.getBoolean(ConfigManager::CLASSIC_EQUIPMENT_SLOTS)) {
-				ret = RETURNVALUE_NOERROR;
-			}
-			break;
+	case CONST_SLOT_RING: {
+		if (slotPosition & SLOTP_RING) {
+			ret = RETURNVALUE_NOERROR;
 		}
+		break;
+	}
 
-		case CONST_SLOT_WHEREEVER:
-		case -1:
-			ret = RETURNVALUE_NOTENOUGHROOM;
-			break;
+	case CONST_SLOT_AMMO: {
+		if ((slotPosition & SLOTP_AMMO) || g_config.getBoolean(ConfigManager::CLASSIC_EQUIPMENT_SLOTS)) {
+			ret = RETURNVALUE_NOERROR;
+		}
+		break;
+	}
 
-		default:
-			ret = RETURNVALUE_NOTPOSSIBLE;
-			break;
+	case CONST_SLOT_WHEREEVER:
+	case -1:
+		ret = RETURNVALUE_NOTENOUGHROOM;
+		break;
+
+	default:
+		ret = RETURNVALUE_NOTPOSSIBLE;
+		break;
 	}
 
 	if (ret != RETURNVALUE_NOERROR && ret != RETURNVALUE_NOTENOUGHROOM) {
@@ -2520,11 +2589,8 @@ ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, 
 		return RETURNVALUE_NOTENOUGHCAPACITY;
 	}
 
-	if (index != CONST_SLOT_WHEREEVER && index != -1) { // we don't try to equip whereever call
-		ret = g_moveEvents->onPlayerEquip(const_cast<Player*>(this), const_cast<Item*>(item), static_cast<slots_t>(index), true);
-		if (ret != RETURNVALUE_NOERROR) {
-			return ret;
-		}
+	if (ret != RETURNVALUE_NOERROR && ret != RETURNVALUE_NOTENOUGHROOM) {
+		return ret;
 	}
 
 	//need an exchange with source? (destination item is swapped with currently moved item)
