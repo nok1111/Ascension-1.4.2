@@ -69,6 +69,15 @@ const std::unordered_map<std::string, ItemParseAttributes_t> ItemParseAttributes
 	{"skillclub", ITEM_PARSE_SKILLCLUB},
 	{"skilldist", ITEM_PARSE_SKILLDIST},
 	{"skillfish", ITEM_PARSE_SKILLFISH},
+
+	{"skillblacksmith", ITEM_PARSE_SKILLBLACKSMITH},
+	{"skillalchemy", ITEM_PARSE_SKILLALCHEMY},
+	{"skillcooking", ITEM_PARSE_SKILLCOOKING},
+	{"skillenchanting", ITEM_PARSE_SKILLENCHANTING},
+	{"skillmining", ITEM_PARSE_SKILLMINING},
+	{"skillherbalism", ITEM_PARSE_SKILLHERBALISM},
+	{"skillruneseeker", ITEM_PARSE_SKILLRUNESEEKER},
+	
 	{"skillshield", ITEM_PARSE_SKILLSHIELD},
 	{"skillfist", ITEM_PARSE_SKILLFIST},
 	{"maxhitpoints", ITEM_PARSE_MAXHITPOINTS},
@@ -916,6 +925,35 @@ void Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id)
 
 				case ITEM_PARSE_SKILLFISH: {
 					abilities.skills[SKILL_FISHING] = pugi::cast<int32_t>(valueAttribute.value());
+					break;
+				}
+
+				case ITEM_PARSE_SKILLBLACKSMITH: {
+					abilities.skills[SKILL_BLACKSMITH] = pugi::cast<int32_t>(valueAttribute.value());
+					break;
+				}
+				case ITEM_PARSE_SKILLALCHEMY: {
+					abilities.skills[SKILL_ALCHEMY] = pugi::cast<int32_t>(valueAttribute.value());
+					break;
+				}
+				case ITEM_PARSE_SKILLCOOKING: {
+					abilities.skills[SKILL_COOKING] = pugi::cast<int32_t>(valueAttribute.value());
+					break;
+				}
+				case ITEM_PARSE_SKILLENCHANTING: {
+					abilities.skills[SKILL_ENCHANTING] = pugi::cast<int32_t>(valueAttribute.value());
+					break;
+				}
+				case ITEM_PARSE_SKILLMINING: {
+					abilities.skills[SKILL_MINING] = pugi::cast<int32_t>(valueAttribute.value());
+					break;
+				}
+				case ITEM_PARSE_SKILLHERBALISM: {
+					abilities.skills[SKILL_HERBALISM] = pugi::cast<int32_t>(valueAttribute.value());
+					break;
+				}
+				case ITEM_PARSE_SKILLRUNESEEKER: {
+					abilities.skills[SKILL_RUNE_SEEKER] = pugi::cast<int32_t>(valueAttribute.value());
 					break;
 				}
 
