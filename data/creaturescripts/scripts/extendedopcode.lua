@@ -2,7 +2,7 @@ local OPCODE_LANGUAGE = 1
 local OPCODE_CLIENT_SELECT_TASK = 52
 local OPCODE_CLIENT_SELECT_REWARD = 53
 local OPCODE_CLIENT_GET_TASK_LIST = 54
-local OPCODE_CLIENT_GET_CRAFTING = 55
+--local OPCODE_CLIENT_GET_CRAFTING = 55
 local OPCODE_CLIENT_DELETE_TASK = 56
 local OPCODE_CLIENT_STRART_DUNGEON = 60
 
@@ -111,9 +111,7 @@ function onExtendedOpcode(player, opcode, buffer)
 		
 		
 		
-		--CRAFTING
-		 elseif opcode == OPCODE_CLIENT_GET_CRAFTING then
-			Crafting:parseCraftRecipe(player, msg)
+		
 	else
 		-- other opcodes can be ignored, and the server will just work fine...
 	end
