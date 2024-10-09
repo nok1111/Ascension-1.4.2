@@ -31,5 +31,6 @@ function onLogin(player)
 	
 	-- Check login in profession system
 	ProfessionSystem:onPlayerLogin(player)
+
 	return true
 end
