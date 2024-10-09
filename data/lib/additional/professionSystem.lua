@@ -551,7 +551,7 @@ end
 -- protocol
 function ProfessionSystem:sendJobs(player)
 	local msg = NetworkMessage()
-	msg:addByte(0x35) -- 53
+	msg:addByte(0x3C)-- 60
 
 	local values = self:getProfessionValues(player)
 	if #values.skills == 0 then
