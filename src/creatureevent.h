@@ -8,6 +8,8 @@
 #include "baseevents.h"
 #include "enums.h"
 
+#include "networkmessage.h"
+
 class CreatureEvent;
 using CreatureEvent_ptr = std::unique_ptr<CreatureEvent>;
 
@@ -25,6 +27,7 @@ enum CreatureEventType_t {
 	CREATURE_EVENT_HEALTHCHANGE,
 	CREATURE_EVENT_MANACHANGE,
 	CREATURE_EVENT_EXTENDED_OPCODE, // otclient additional network opcodes
+	CREATURE_EVENT_PARSE_PACKET,
 };
 
 class CreatureEvent final : public Event
@@ -53,6 +56,13 @@ class CreatureEvent final : public Event
 			loaded = b;
 		}
 
+		void setRecvbyte(uint8_t recvbyte) {
+			this->recvbyte = recvbyte;
+		}
+		uint8_t getRecvbyte() {
+			return recvbyte;
+		}
+
 		void clearEvent();
 		void copyEvent(CreatureEvent* creatureEvent);
 
@@ -69,6 +79,7 @@ class CreatureEvent final : public Event
 		void executeHealthChange(Creature* creature, Creature* attacker, CombatDamage& damage);
 		void executeManaChange(Creature* creature, Creature* attacker, CombatDamage& damage);
 		void executeExtendedOpcode(Player* player, uint8_t opcode, const std::string& buffer);
+		void executeParsePacket(Player* player, uint8_t recvbyte, std::unique_ptr<NetworkMessage> message);
 		//
 
 	private:
@@ -77,6 +88,7 @@ class CreatureEvent final : public Event
 		std::string eventName;
 		CreatureEventType_t type;
 		bool loaded;
+		uint8_t recvbyte; // only for parse packet creaturescript
 };
 
 class CreatureEvents final : public BaseEvents

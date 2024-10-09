@@ -29,6 +29,12 @@ class NetworkMessage
 
 		NetworkMessage() = default;
 
+		NetworkMessage(NetworkMessage& other) {
+			info = other.info;
+			memcpy(&buffer, &other.buffer, sizeof(other.buffer) / sizeof(other.buffer[0]));
+		}
+
+
 		void reset() {
 			info = {};
 		}
