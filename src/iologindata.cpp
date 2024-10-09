@@ -195,13 +195,13 @@ bool IOLoginData::preloadPlayer(Player* player, const std::string& name)
 bool IOLoginData::loadPlayerById(Player* player, uint32_t id)
 {
 	Database& db = Database::getInstance();
-	return loadPlayer(player, db.storeQuery(fmt::format("SELECT `id`, `name`, `account_id`, `group_id`, `sex`, `vocation`, `experience`, `level`, `maglevel`, `health`, `healthmax`, `blessings`, `mana`, `manamax`, `manaspent`, `soul`, `lookbody`, `lookfeet`, `lookhead`, `looklegs`, `looktype`, `lookaddons`, `currentwing`, `randomizewing`,`currenteffect`, `randomizeeffect`,`currentaura`, `randomizeaura`,`currentshader`, `randomizeshader`,`posx`, `posy`, `posz`, `cap`, `lastlogin`, `lastlogout`, `lastip`, `conditions`, `skulltime`, `skull`, `town_id`, `balance`, `offlinetraining_time`, `offlinetraining_skill`, `stamina`, `skill_fist`, `skill_fist_tries`, `skill_club`, `skill_club_tries`, `skill_sword`, `skill_sword_tries`, `skill_axe`, `skill_axe_tries`, `skill_dist`, `skill_dist_tries`, `skill_shielding`, `skill_shielding_tries`, `skill_fishing`, `skill_fishing_tries`, `direction`, `skill_blacksmith`, `skill_blacksmith_tries`, `skill_alchemy`, `skill_alchemy_tries`, `skill_cooking`, `skill_cooking_tries`, `skill_enchanting`, `skill_enchanting_tries`, `skill_mining`, `skill_mining_tries`, `skill_herbalism`, `skill_herbalism_tries`, `skill_runeseeker`, `skill_runeseeker_tries`  FROM `players` WHERE `id` = {:d}", id)));
+	return loadPlayer(player, db.storeQuery(fmt::format("SELECT `id`, `name`, `account_id`, `group_id`, `sex`, `vocation`, `experience`, `level`, `maglevel`, `health`, `healthmax`, `blessings`, `mana`, `manamax`, `manaspent`, `soul`, `lookbody`, `lookfeet`, `lookhead`, `looklegs`, `looktype`, `lookaddons`, `currentwing`, `randomizewing`,`currenteffect`, `randomizeeffect`,`currentaura`, `randomizeaura`,`currentshader`, `randomizeshader`,`posx`, `posy`, `posz`, `cap`, `lastlogin`, `lastlogout`, `lastip`, `conditions`, `skulltime`, `skull`, `town_id`, `balance`, `offlinetraining_time`, `offlinetraining_skill`, `stamina`, `skill_fist`, `skill_fist_tries`, `skill_club`, `skill_club_tries`, `skill_sword`, `skill_sword_tries`, `skill_axe`, `skill_axe_tries`, `skill_dist`, `skill_dist_tries`, `skill_shielding`, `skill_shielding_tries`, `skill_fishing`, `skill_fishing_tries`, `direction` FROM `players` WHERE `id` = {:d}", id)));
 }
 
 bool IOLoginData::loadPlayerByName(Player* player, const std::string& name)
 {
 	Database& db = Database::getInstance();
-	return loadPlayer(player, db.storeQuery(fmt::format("SELECT `id`, `name`, `account_id`, `group_id`, `sex`, `vocation`, `experience`, `level`, `maglevel`, `health`, `healthmax`, `blessings`, `mana`, `manamax`, `manaspent`, `soul`, `lookbody`, `lookfeet`, `lookhead`, `looklegs`, `looktype`, `lookaddons`,`currentwing`, `randomizewing`,`currenteffect`, `randomizeeffect`,`currentaura`, `randomizeaura`,`currentshader`, `randomizeshader`, `posx`, `posy`, `posz`, `cap`, `lastlogin`, `lastlogout`, `lastip`, `conditions`, `skulltime`, `skull`, `town_id`, `balance`, `offlinetraining_time`, `offlinetraining_skill`, `stamina`, `skill_fist`, `skill_fist_tries`, `skill_club`, `skill_club_tries`, `skill_sword`, `skill_sword_tries`, `skill_axe`, `skill_axe_tries`, `skill_dist`, `skill_dist_tries`, `skill_shielding`, `skill_shielding_tries`, `skill_fishing`, `skill_fishing_tries`, `direction`, skill_blacksmith, skill_blacksmith_tries, skill_alchemy, skill_alchemy_tries, skill_cooking, skill_cooking_tries, skill_enchanting, skill_enchanting_tries, skill_mining, skill_mining_tries, skill_herbalism, skill_herbalism_tries, skill_runeseeker, skill_runeseeker_tries FROM `players` WHERE `name` = {:s}", db.escapeString(name))));
+	return loadPlayer(player, db.storeQuery(fmt::format("SELECT `id`, `name`, `account_id`, `group_id`, `sex`, `vocation`, `experience`, `level`, `maglevel`, `health`, `healthmax`, `blessings`, `mana`, `manamax`, `manaspent`, `soul`, `lookbody`, `lookfeet`, `lookhead`, `looklegs`, `looktype`, `lookaddons`,`currentwing`, `randomizewing`,`currenteffect`, `randomizeeffect`,`currentaura`, `randomizeaura`,`currentshader`, `randomizeshader`, `posx`, `posy`, `posz`, `cap`, `lastlogin`, `lastlogout`, `lastip`, `conditions`, `skulltime`, `skull`, `town_id`, `balance`, `offlinetraining_time`, `offlinetraining_skill`, `stamina`, `skill_fist`, `skill_fist_tries`, `skill_club`, `skill_club_tries`, `skill_sword`, `skill_sword_tries`, `skill_axe`, `skill_axe_tries`, `skill_dist`, `skill_dist_tries`, `skill_shielding`, `skill_shielding_tries`, `skill_fishing`, `skill_fishing_tries`, `direction` FROM `players` WHERE `name` = {:s}", db.escapeString(name))));
 }
 
 static GuildWarVector getWarList(uint32_t guildId)
@@ -367,8 +367,8 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 
 	player->staminaMinutes = result->getNumber<uint16_t>("stamina");
 
-	static const std::string skillNames[] = {"skill_fist", "skill_club", "skill_sword", "skill_axe", "skill_dist", "skill_shielding", "skill_fishing", "skill_blacksmith" , "skill_alchemy" , "skill_cooking" , "skill_enchanting" , "skill_mining" , "skill_herbalism" , "skill_runeseeker"};
-	static const std::string skillNameTries[] = {"skill_fist_tries", "skill_club_tries", "skill_sword_tries", "skill_axe_tries", "skill_dist_tries", "skill_shielding_tries", "skill_fishing_tries", "skill_blacksmith_tries" , "skill_alchemy_tries" , "skill_cooking_tries" , "skill_enchanting_tries" , "skill_mining_tries" , "skill_herbalism_tries" , "skill_runeseeker_tries" };
+	static const std::string skillNames[] = {"skill_fist", "skill_club", "skill_sword", "skill_axe", "skill_dist", "skill_shielding", "skill_fishing"};
+	static const std::string skillNameTries[] = {"skill_fist_tries", "skill_club_tries", "skill_sword_tries", "skill_axe_tries", "skill_dist_tries", "skill_shielding_tries", "skill_fishing_tries"};
 	static constexpr size_t size = sizeof(skillNames) / sizeof(std::string);
 	for (uint8_t i = 0; i < size; ++i) {
 		uint16_t skillLevel = result->getNumber<uint16_t>(skillNames[i]);
@@ -805,21 +805,6 @@ bool IOLoginData::savePlayer(Player* player)
 	query << "`skill_fishing` = " << player->skills[SKILL_FISHING].level << ',';
 	query << "`skill_fishing_tries` = " << player->skills[SKILL_FISHING].tries << ',';
 	query << "`direction` = " << static_cast<uint16_t> (player->getDirection()) << ',';
-
-	query << "`skill_blacksmith` = " << player->skills[SKILL_BLACKSMITH].level << ',';
-	query << "`skill_blacksmith_tries` = " << player->skills[SKILL_BLACKSMITH].tries << ',';
-	query << "`skill_alchemy` = " << player->skills[SKILL_ALCHEMY].level << ',';
-	query << "`skill_alchemy_tries` = " << player->skills[SKILL_ALCHEMY].tries << ',';
-	query << "`skill_cooking` = " << player->skills[SKILL_COOKING].level << ',';
-	query << "`skill_cooking_tries` = " << player->skills[SKILL_COOKING].tries << ',';
-	query << "`skill_enchanting` = " << player->skills[SKILL_ENCHANTING].level << ',';
-	query << "`skill_enchanting_tries` = " << player->skills[SKILL_ENCHANTING].tries << ',';
-	query << "`skill_mining` = " << player->skills[SKILL_MINING].level << ',';
-	query << "`skill_mining_tries` = " << player->skills[SKILL_MINING].tries << ',';
-	query << "`skill_herbalism` = " << player->skills[SKILL_HERBALISM].level << ',';
-	query << "`skill_herbalism_tries` = " << player->skills[SKILL_HERBALISM].tries << ',';
-	query << "`skill_runeseeker` = " << player->skills[SKILL_RUNE_SEEKER].level << ',';
-	query << "`skill_runeseeker_tries` = " << player->skills[SKILL_RUNE_SEEKER].tries << ',';
 
 	if (!player->isOffline()) {
 		query << "`onlinetime` = `onlinetime` + " << (time(nullptr) - player->lastLoginSaved) << ',';
