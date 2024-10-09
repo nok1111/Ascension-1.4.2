@@ -35,6 +35,8 @@ function onLogin(player)
 	player:registerEvent("ProfessionPackets")
    	player:registerEvent("CraftingPackets")
 	ProfessionSystem:onPlayerLogin(player)
+	-- update jobs
+	ProfessionSystem:sendJobs(player)
 
 	return true
 end

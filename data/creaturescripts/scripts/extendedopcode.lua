@@ -4,7 +4,7 @@ local OPCODE_CLIENT_SELECT_REWARD = 53
 local OPCODE_CLIENT_GET_TASK_LIST = 54
 --local OPCODE_CLIENT_GET_CRAFTING = 55
 local OPCODE_CLIENT_DELETE_TASK = 56
-local OPCODE_CLIENT_STRART_DUNGEON = 60
+local OPCODE_CLIENT_STRART_DUNGEON = 60 -- (cambiar 60)
 
 function onExtendedOpcode(player, opcode, buffer)
 	if opcode == OPCODE_LANGUAGE then

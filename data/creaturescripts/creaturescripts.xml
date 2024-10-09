@@ -9,6 +9,8 @@
 	<event type="death" name="DropLoot" script="droploot.lua" />
 	<event type="extendedopcode" name="ExtendedOpcode" script="extendedopcode.lua" />
 	
-	<event type="parsepacket" recvbyte="54" name="ProfessionPackets" script="parseProfessionPacket.lua" />
-	<event type="parsepacket" recvbyte="55" name="CraftingPackets" script="parseCraftingPacket.lua" />
+	<event type="parsepacket" recvbyte="57" name="ProfessionPackets" script="parseProfessionPacket.lua" /> 
+	<event type="parsepacket" recvbyte="58" name="CraftingPackets" script="parseCraftingPacket.lua" /> 
+	
+	
 </creaturescripts>
