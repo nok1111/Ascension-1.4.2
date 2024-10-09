@@ -211,6 +211,8 @@ class ProtocolGame final : public Protocol
 		void sendHouseWindow(uint32_t windowTextId, const std::string& text);
 		void sendOutfitWindow();
 
+		void sendAnimatedText(const std::string& message, const Position& pos, TextColor_t color);
+
 		void sendUpdatedVIPStatus(uint32_t guid, VipStatus_t newStatus);
 		void sendVIP(uint32_t guid, const std::string& name, const std::string& description, uint32_t icon, bool notify, VipStatus_t status);
 		void sendVIPEntries();
