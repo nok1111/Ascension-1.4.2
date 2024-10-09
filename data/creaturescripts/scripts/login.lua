@@ -29,7 +29,11 @@ function onLogin(player)
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
 	
+	
+	
 	-- Check login in profession system
+	player:registerEvent("ProfessionPackets")
+   	player:registerEvent("CraftingPackets")
 	ProfessionSystem:onPlayerLogin(player)
 
 	return true
