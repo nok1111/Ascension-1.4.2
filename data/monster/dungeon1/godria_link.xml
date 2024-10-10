@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Godria Link" nameDescription="link" race="fire" experience="20" speed="60">
+	<health now="800" max="800" />
+	<look type="1095" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="fire" interval="50" chance="100" radius="3" target="0" min="-80" max="-120">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1"/>
+		
+	
+	
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="You dare to enter our territory!" />
+		<voice sentence="your magic is weak!" />
+		<voice sentence="let my dogs dinner tonight!" />
+		<voice sentence="come at me!" />
+		<voice sentence="ill burn you to ashes!" />
+	</voices>
+	<loot>
+		
+	</loot>
+</monster>

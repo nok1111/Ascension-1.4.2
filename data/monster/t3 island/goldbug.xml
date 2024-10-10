@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Goldbug" nameDescription="a goldbug" race="venom" experience="20" speed="180" manacost="640">
+	<health now="6" max="6" />
+	<!--- Level --><level min="8" max="10" />
+	<look type="1288" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-20" />	
+	</attacks>
+<defenses armor="1" defense="1" />
+
+	<voices interval="5000" chance="10">
+		<voice sentence="wooooo!" />
+	</voices>
+	<loot>
+	<item id="37933" chance="1000" /><!-- pet egg -->
+	</loot>
+</monster>

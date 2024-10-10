@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Swan Helgi" nameDescription="a Swan Helgi" race="blood" experience="20" speed="240" manacost="420">
+	<health now="6" max="6" />
+	<level min="175" max="184" />
+	<look type="252" head="0" body="0" legs="0" feet="2" addons="3" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="15" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-368" />		
+<attack name="physical" interval="2000" chance="25" target="0" radius="1" min="-250" max="-368" >
+			<attribute key="areaeffect" value="whitenote" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="We are the true sons of the old swan!" />
+		<voice sentence="I will leave your remains to the gods!" />
+		<voice sentence="freeze!" />
+	</voices>
+	<loot>
+		<item id="29045" chance="17000" />
+		<item name="fur boots" chance="100" />
+		<item id="30836" chance="1000" />
+		<item id="38265" chance="3500" /><!--knecklace def health mana -->
+		<item id="38289" chance="3500" /><!--knecklace health mana maxmana -->
+		
+		<item id="38328" chance="3500" /><!--ring def health hpregen -->
+		<item id="38318" chance="3500" /><!--ring magic mana manaregen -->
+		
+		<item id="34026" chance="2300" />
+		<item id="30847" chance="2300" />
+		<item id="33166" chance="2300" />
+		<item id="32791" chance="2300" />
+		<item id="8878" chance="2300" />
+		<item id="32469" chance="2300" />
+		<item id="7892" chance="2300" />
+		
+		<item id="39133" countmax="2" chance="4000" /><!-- sell -->
+		  <item id="39153" countmax="1" chance="16000" /><!-- sell -->	 
+		  <item id="39127" countmax="3" chance="12000" /><!-- sell -->	
+
+	</loot>
+</monster>

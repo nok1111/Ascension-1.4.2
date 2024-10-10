@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Void healer" nameDescription="a warlock summon" race="undead" experience="0" speed="150" manacost="300" summonwalk="true">
+	<health now="6" max="6" />
+	<look type="2265" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="3" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+		
+	</flags>
+	<attacks>
+		
+	<attack name="summonmelee" interval="2000" range="1" chance="90"/>
+	</attacks>
+<defenses armor="1" defense="1">
+	<defense name="summonhealer" interval="2000" range="7" chance="90"/>
+	</defenses>
+	<elements>
+		<element physicalPercent="10" />
+		<element energyPercent="5" />
+	</elements>
+</monster>

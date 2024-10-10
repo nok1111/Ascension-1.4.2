@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Sand Crawler" nameDescription="sand crawler" race="blood" experience="20" speed="240" manacost="640">
+	<health now="6" max="6" />
+	<!--- Level --><level min="45" max="50" />
+	<look type="1282" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-100" />		
+<attack name="fire" interval="1000" chance="10" range="1" radius="1" target="1" min="-3" max="-150">
+			<attribute key="shootEffect" value="bottlebomb" />
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Ulderek futgyr human!" />
+	</voices>
+	<loot>
+		<item id="2207" chance="3920" />
+		<item name="Blackskull Longsword" chance="2800" />
+		<item name="throwing knife" countmax="4" chance="9950" />
+		<item name="broadsword" chance="610" />
+		<item id="2419" chance="1860" /><!-- scimitar -->
+		
+		<item name="king's pride" chance="1650" />
+		<item id="2464" chance="1500" />
+		<item id="32749" chance="300" />
+		<item id="32822" chance="300" />
+		<item id="2667" chance="29400" /><!-- fish -->
+		<item name="brown mushroom" chance="9650" />
+		<item name="royal spear" chance="2400" />
+		<item name="health potion" chance="550" />
+	
+		<item name="skull belt" chance="2008" />
+	</loot>
+</monster>

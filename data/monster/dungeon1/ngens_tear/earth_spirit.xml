@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Earth Spirit" nameDescription="an Earth Spirit" race="undead" experience="20" speed="250">
+	<health now="8" max="8" />
+	<level min="95" max="100" />
+	<look type="1610" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="300" />
+	</flags>
+	<elements>
+		<element energyPercent="15" />
+		<element icePercent="15" />
+		<element firePercent="15" />
+		<element holyPercent="15" />
+		<element earthPercent="15" />
+		<element physicalPercent="10" />
+		<element deathPercent="15" />
+	</elements>
+	<attacks>	
+		<attack name="melee" interval="2000" min="-2" max="-270" />		
+		<attack name="earth" interval="2000" chance="25" length="4" spread="4" min="-120" max="-300">
+			<attribute key="areaEffect" value="smallplants" />
+		</attack>
+		<attack name="earth" interval="2000" chance="25" target="1" min="-50" max="-230">
+			<attribute key="areaEffect" value="newearthquake2" />
+		</attack>
+		<attack name="earth" interval="2000" chance="20" length="6" spread="2" min="-80" max="-300">
+			<attribute key="areaEffect" value="carniphila" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="25" min="150" max="300">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="FCHHHHH" />
+		<voice sentence="HISSSS" />
+	</voices>
+	<loot>
+		<item name="small sapphire" chance="5000" />
+		<item id="8306" chance="10500" />
+		
+	</loot>
+</monster>

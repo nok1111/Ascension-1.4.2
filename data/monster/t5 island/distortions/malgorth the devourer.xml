@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Malgorth the Devourer" nameDescription="Malgorth the Devourer" race="fire" experience="20" speed="130" skull="Black">
+	<health now="120" max="120" />
+	<level min="300" max="300" />
+	<look type="2165" corpse="37129" />
+	<targetchange interval="6000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="1" />
+		<flag canwalkonfire="1" />
+		<flag canwalkonpoison="1" />
+	</flags>
+	
+	<attacks>		
+		<attack name="fire" interval="2500" chance="100" range="3" radius="3" target="1" min="-120" max="-1120">
+			<attribute key="shootEffect" value="newfireballtwo" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		
+		<attack name="garona wave" interval="5000" chance="30" range="2" min="-300" max="-600">
+		</attack>
+		
+		<attack name="death" interval="2000" chance="20" range="7" radius="7" target="1" min="-120" max="-820">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />	
+			</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-700" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+	
+<defenses armor="3" defense="2" >
+
+		<defense name="healing" interval="4000" chance="22" min="1250" max="2250">
+			<attribute key="areaEffect" value="redspark"/>
+		</defense>
+		
+	</defenses>
+	<elements>
+	   	<element energyPercent="50" />
+		<element icePercent="50" />
+		<element firePercent="50" />
+		<element holyPercent="50" />
+		<element earthPercent="50" />
+		<element physicalPercent="40" />
+		<element deathPercent="50" />
+	</elements>
+	<immunities>
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="Infernal souls shall fuel my power!" />
+	<voice sentence="You dare challenge me, mortal? Your fate is sealed!" />
+	<voice sentence="Witness the flames of damnation!" />
+	<voice sentence="Your feeble attempts amuse me. Embrace oblivion!" />
+	<voice sentence="I am Malgorth, lord of the abyss, and your doom incarnate!" />
+	<voice sentence="Feel the darkness envelop you, for I am its harbinger!" />
+	<voice sentence="Your defiance is futile, for I am the end of all things!" />
+	<voice sentence="Scream, mortal, as your world crumbles before my might!" />
+	<voice sentence="Bow before me, for I am the nightmare that lurks in your darkest dreams!" />
+	<voice sentence="Your soul shall be devoured, and your existence erased!" />
+	</voices>
+	<summons maxSummons="4">
+		<summon name="ashborne dragon" interval="3000" chance="100" />
+	</summons>
+</monster>

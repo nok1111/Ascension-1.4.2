@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Countess Green" nameDescription="a Countess Green" race="blood" experience="20" speed="250" manacost="0">
+	<health now="6" max="6" />
+	<level min="165" max="165" />
+	<look type="1657" head="101" body="18" legs="110" feet="82" addons="3" corpse="37129"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="fire" interval="2000" chance="100" range="6" radius="1" target="1" min="-3" max="-420">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="fire rain" interval="12000" chance="100" min="-20" max="-25"/>
+	</attacks>
+<defenses armor="2" defense="2" />
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="kneel!" yell="1" />
+		<voice sentence="who let you in?!" yell="1" />
+		<voice sentence="ill be the new ruler!" yell="1" />
+		<voice sentence="The king is an absolute idiot!" />
+		<voice sentence="we will rule now!" />
+	</voices>
+	<loot>
+		
+	</loot>
+</monster>

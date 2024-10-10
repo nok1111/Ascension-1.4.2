@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ghoul" nameDescription="a ghoul" race="blood" experience="20" speed="170" manacost="450">
+	<health now="6" max="6" />
+	<!--- Level --><level min="28" max="35" />
+	<look type="18" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-70" />		
+<attack name="lifedrain" interval="2000" chance="10" range="1" min="-3" max="-105">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="5" min="9" max="15">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<loot>
+		<item name="health potion" countmax="2" chance="490" />	<!-- health potion -->
+		<item id="2513" chance="500" />
+		<item id="2050" chance="5000" />					<!-- torch -->
+		<item id="2483" chance="1000" />					<!-- scale armor -->
+		<item id="5913" chance="1000" />					<!-- brown piece of cloth -->
+		<item id="2473" chance="990" />	
+		<item id="10563" countmax="2" chance="25000" />			<!-- quest book -->
+		<item id="2229" chance="540" />					<!-- skull -->
+		<item id="2168" chance="180" />					<!-- life ring -->	
+		<item id="36358" chance="500" />
+		<item id="36367" chance="500" />
+		<item id="2397" chance="500" />			
+		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
+		<item id="38291" chance="4500" /> <!-- regen resilence -->
+	
+	
+		<item id="39111" countmax="1" chance="8500" /><!-- sell -->
+		<item id="39167" countmax="1" chance="7500" /><!-- sell -->
+	</loot>
+</monster>

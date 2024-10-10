@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Desert Bandit" nameDescription="desert bandit" race="blood" experience="20" speed="185" manacost="640">
+	<health now="6" max="6" />
+	<level min="130" max="135" />
+	<look type="1306" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-270" />		
+<attack name="fire" interval="1000" chance="10" range="3" radius="1" target="1" min="-3" max="-400">
+			<attribute key="shootEffect" value="bottlebomb" />
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="gaaahh! " />
+		<voice sentence="who ammm gaah i! " />
+		<voice sentence="obeey! " />
+	</voices>
+	<loot>
+	
+		<item id="2207" chance="3920" />
+		<item name="broadsword" chance="610" />
+		<item id="2419" chance="1860" /><!-- scimitar -->
+		
+		<item id="2509" chance="2650" />
+		<item id="2464" chance="1500" />
+		<item id="32749" chance="300" />
+		<item id="32822" chance="300" />
+		<item id="2667" chance="29400" /><!-- fish -->
+		<item name="brown mushroom" chance="9650" />
+		<item name="royal spear" chance="2400" />
+		<item name="health potion" chance="550" />
+		<item id="22728" chance="7000" />
+		<item id="36359" chance="1300" />
+		<item id="36355" chance="1300" />
+		<item id="34508" countmax="2" chance="6000" />
+		
+		<item id="38244"  chance="4500" /><!--kneck hp -->
+
+		<item id="38287"  chance="4500" /><!--kneck crit melee  -->
+		<item id="38292"  chance="4500" /><!--kneck def health -->
+		<item id="38335"  chance="4500" /><!--doom crit -->
+		
+			<item id="39145" countmax="1" chance="4000" /><!-- sell -->
+		  <item id="39055" countmax="1" chance="6000" /><!-- sell -->
+		  <item id="39070" countmax="2" chance="12000" /><!-- sell -->	
+	</loot>
+</monster>

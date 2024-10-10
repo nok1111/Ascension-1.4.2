@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Garona Fragment" nameDescription=" Garona fragment" race="blood" experience="20" speed="0">
+	<health now="6" max="6" />
+	<look typeex="36614"/>
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="0" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="8" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>		
+		<attack name="death" interval="1000" chance="20" range="8" min="-50" max="-50">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="purpledeath" />
+		</attack>	
+	</attacks>
+<defenses armor="1" defense="1"/>
+</monster>

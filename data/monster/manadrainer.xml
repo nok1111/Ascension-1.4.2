@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Shadow Seeker" nameDescription="an shadow seeker" race="blood" experience="0" speed="200" summonwalk="true">
+	<health now="6" max="6" />
+	<look type="1236" head="88" body="87" legs="89" feet="127"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="80" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+		<attack name="sevantdrain" interval="8000" chance="100"/>
+		
+		<attack name="eyewave" interval="2000" chance="30" range="3" target="1"/>
+	</attacks>
+	<elements>
+		<element physicalPercent="50" />
+	</elements>
+	<immunities>
+		<immunity energy="1" />
+		<immunity fire="1" />
+		<immunity earth="1" />
+		<immunity death="1" />
+		<immunity invisible="1" />
+		<immunity paralyze="1" />
+	</immunities>
+	<loot>
+	</loot>
+</monster>

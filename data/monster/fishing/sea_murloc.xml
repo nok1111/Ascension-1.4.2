@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Sea Murloc" nameDescription="a murloc" race="blood" experience="20" speed="350" manacost="390">
+	<health now="6" max="6" />
+	<!--- Level --><level min="12" max="16" />
+	<look type="1443" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag staticattack="70" />
+		<flag targetdistance="0" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="30" min="70" max="273">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="400" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity ice="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+		<immunity drown="1" />
+	</immunities>
+	<elements>
+		<element firePercent="30" />
+		<element energyPercent="-5" />
+		<element physicalPercent="-15" />
+		<element deathPercent="10" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="CHHHRRRR" />
+		<voice sentence="HISSSS" />
+	</voices>
+	<loot>
+		<item id="35427" countmax="3" chance="56000" />
+		<item id="35422" countmax="3" chance="15000" />
+		<item id="35421" countmax="3" chance="15000" />
+
+	</loot>
+</monster>

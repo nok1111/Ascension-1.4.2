@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Dodo(m)" nameDescription="a dodo" race="blood" experience="20" speed="200">
+	<health now="6" max="6" />
+	<!--- Level --><level min="26" max="28" />
+	<look type="1553" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+		<flag passive="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-50" />	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="250" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="25" />
+		<element holyPercent="10" />
+		<element icePercent="-15" />
+		<element deathPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity outfit="1" />
+		<immunity drunk="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Eeeeek! Eeeeek" />
+		<voice sentence="Huh! Huh! Huh!" />
+		<voice sentence="Ahhuuaaa!" />
+	</voices>
+	<loot>
+		<item id="2366" countmax="3" chance="30060" />
+		<item name="orange" countmax="5" chance="19840" />
+		<item name="coconut" countmax="3" chance="1960" />
+	<item id="38613" chance="830" /><!-- blueprint -->
+	<item id="12470" countmax="2" chance="3000" /><!-- colourful feather -->
+	<item id="39053" countmax="3" chance="30000" /><!-- sell -->
+	<item id="39174" countmax="2" chance="10000" /><!-- sell -->
+	<item id="39173" countmax="1" chance="5000" /><!-- sell -->
+
+	</loot>
+</monster>

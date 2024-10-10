@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Viperion, the Serpentine Dragon" nameDescription="Viperion, the Serpentine Dragon" race="blood" experience="20" speed="160" manacost="0" skull="red">
+	<health now="50" max="50" />
+	<level min="110" max="110" />
+	<look type="1713" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag passive="1" />
+	</flags>
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<attacks>
+<attack name="melee" interval="2000" min="-100" max="-320" />		
+<attack name="viperion flame" interval="3000" chance="15" range="5" target="1" min="-300" max="-600" />
+		
+		<attack name="fire" interval="2000" chance="15" length="10" spread="2" min="-200" max="-450">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	
+	</attacks>
+<defenses armor="5" defense="1" >
+
+		<defense name="healing" interval="2000" chance="50" min="200" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+		
+	<voices interval="2000" chance="7">
+		<voice sentence="Shhhhhhhh" />
+	</voices>
+	<loot>
+		
+		
+		<item id="2147" countmax="5" chance="8970" /><!-- small ruby -->
+		<item id="37383"  chance="500" /><!-- novel -->
+		<item id="37384"  chance="500" /><!-- novel -->
+		<item id="37385"  chance="500" /><!-- novel -->
+		<item id="37386"  chance="500" /><!-- novel -->
+		<item id="37387"  chance="500" /><!-- novel -->
+		<item id="5881" chance="450" /><!-- lizard scale -->
+		<item id="5876" chance="220" /><!-- lizard leather -->
+		<item name="small amethyst" countmax="3" chance="4900" />
+		<item name="yellow gem" chance="1000" />
+		<item name="life ring" chance="770" />
+		<item name="Rod of the Earthflow" chance="1001" />
+		<item name="lizard leather" chance="980" />
+		<item name="lizard scale" chance="1130" />
+		<item name="strong mana potion" chance="12110" />
+		<item name="great mana potion" chance="7940" />
+		<item name="focus cape" chance="660" />
+		<item name="bunch of ripe rice" chance="960" />
+		<item id="36198"  chance="500" /><!-- shoes -->
+		
+		<item id="32761"  chance="500" /><!-- wand -->
+		<item id="36274"  chance="500" /><!-- wand -->
+		<item id="31935"  chance="500" /><!-- wand -->
+		
+		<item id="32438"  chance="500" /><!-- caster head -->
+		<item id="32641"  chance="500" /><!-- caster head -->
+		
+		<item id="36161"  chance="500" /><!-- tunic -->
+		<item id="30667"  chance="500" /><!-- tunic -->
+		<item id="32539"  chance="500" /><!-- legs -->
+		<item id="36198"  chance="500" /><!-- shoes -->
+		<item id="32538"  chance="500" /><!-- robe -->
+		
+	</loot>
+</monster>

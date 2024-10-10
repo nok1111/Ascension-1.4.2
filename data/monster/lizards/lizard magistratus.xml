@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Magistratus" nameDescription="a lizard magistratus" race="blood" experience="20" speed="200">
+	<health now="6" max="6" />
+	<level min="125" max="139" />
+	<look type="2313" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-380" />		
+<attack name="lizard magistratus curse" interval="2000" chance="10" range="5" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="50" min="-3" max="-10">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Shhhhhhhh" />
+	</voices>
+	<loot>
+		<item id="39126" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39125" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39075" countmax="1" chance="6500" /><!-- sell -->
+		<item id="39074" countmax="1" chance="3500" /><!-- sell -->
+		<item id="39175" countmax="1" chance="2500" /><!-- sell -->
+		<item id="39154" countmax="1" chance="1000" /><!-- sell -->
+		<item id="8901" chance="3500" /><!-- new spellbooks -->
+		<item name="strong mana potion" chance="6280" />
+		<item name="great mana potion" chance="4480" />
+	</loot>
+</monster>

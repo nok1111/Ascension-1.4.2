@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Angel" nameDescription="an Angel" race="blood" experience="20" speed="222">
+	<health now="6" max="6" />
+	<look type="1329" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" >				
+<attribute key="areaEffect" value="triplehit" />
+		</attack>
+		
+		<attack name="massanimon" interval="2000" chance="100" min="-999" max="-999"/>
+	
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-300" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="0" max="50">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+	<elements>
+	    <element holyPercent="30" />
+		<element firePercent="-20" />
+		
+	</elements>
+	<immunities>
+		<immunity lifedrain="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Ill kill you in name of the Gods!" />
+		<voice sentence="humans?! here?!" />
+		<voice sentence="Finally something interesting!" />
+	</voices>
+	<loot>
+		
+		
+		<item id="7899" chance="2000" />
+		<item id="32487" chance="2000" />
+		<item id="31889" chance="200" />
+		<item id="31864" chance="3000" />
+		<item id="2187" chance="2000" />
+		<item name="great mana potion" countmax="3" chance="20285" />
+	</loot>
+</monster>

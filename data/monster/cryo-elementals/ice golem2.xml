@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ice Golem" nameDescription="an ice golem" race="undead" experience="20" speed="195" manacost="0">
+	<health now="6" max="6" />
+	<level min="340" max="365" />
+	<look type="261" corpse="37129" />
+	<targetchange interval="2000" chance="5" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag staticattack="50" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+<attack name="speed" interval="1000" chance="13" length="8" spread="0" speedchange="-800" duration="20000">
+			<attribute key="areaEffect" value="energy" />
+		</attack>
+		<attack name="ice" interval="1000" chance="15" range="7" min="-50" max="-850">
+			<attribute key="shootEffect" value="smallice" />
+			<attribute key="areaEffect" value="iceattack" />
+		</attack>
+		<attack name="ice golem skill reducer" interval="2000" chance="10" />
+	</attacks>
+<defenses armor="2" defense="1" />
+	
+	<voices interval="2000" chance="5">
+		<voice sentence="Chrrr." />
+		<voice sentence="Crrrrk." />
+		<voice sentence="Gnarr." />
+	</voices>
+	<loot>
+		<item id="22646" chance="8000" /><!-- snow globe quest -->
+		<item id="24122" chance="3000" /><!-- revitalizing ice quest -->
+		
+		<item id="33163" chance="100" /><!--Frezan amulet-->
+	    <item id="32516" chance="800" /><!--Videm Robe--> 
+	    <item id="7897" chance="800" /><!--glacier robe-->
+	    <item id="33156" chance="800" /><!-- Soulkeeper backpack-->
+	    <item id="30835" chance="300" /><!--winter backpack -->
+	    <item id="7902" chance="700" /><!--glacier mask-->
+		<item id="10578" chance="11111" /><!-- frosty heart -->
+		<item id="7441" chance="5000" /><!-- ice cube -->
+		
+		<item id="2146" chance="578" /><!-- small sapphire -->
+	
+		<item id="7902" chance="111" /><!-- glacier mask -->
+		<item id="2145" chance="66" /><!-- small diamond -->
+		
+		<item id="30848" chance="578" /><!-- icy wall -->
+		<item id="32472" chance="578" /><!-- icy wall -->
+		<item id="33161" chance="578" /><!-- byfrist mnace -->
+		<item id="32456" chance="578" /><!-- icy wall -->
+		<item id="32455" chance="578" /><!-- icy wall -->
+	</loot>
+</monster>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Verilica, The Sleeper" nameDescription="Verilica, The Sleeper" race="undead" experience="20" speed="410" manacost="0" skull="red">
+		<health now="6" max="6" />
+		<level min="260" max="260" />
+	<look type="987" corpse="37129" />
+	<targetchange interval="5000" chance="8" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="366" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-100" max="-500" />
+		<attack name="fire" interval="2000" chance="20" range="12" radius="2" target="1" min="-720" max="-820">
+			<attribute key="shootEffect" value="newfireballthree" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		
+		
+		<attack name="physical" interval="2000" chance="10" range="12" min="-310" max="-600">		
+			<attribute key="areaEffect" value="rockhand" />
+		</attack>
+		
+	<attack name="garuda aoe" target="0" interval="3000" chance="15"  min="-900" max="-950" />
+	<attack name="fear" interval="15000" chance="100"/>
+	
+	</attacks>
+<defenses armor="5" defense="5" >
+    	<defense name="healing" interval="2000" chance="15" min="145" max="400">
+      		<attribute key="areaEffect" value="bluenote" />
+    	</defense>
+    	<defense name="melee" interval="2000" chance="10">
+      		<attribute key="areaEffect" value="smallplants" />
+    	</defense>
+  	</defenses>
+	
+	
+</monster>

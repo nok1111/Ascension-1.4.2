@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Frost Troll" nameDescription="a frost troll" race="blood" experience="20" speed="190" manacost="300">
+	<health now="6" max="6" />
+	<level min="185" max="190" />
+	<look type="1812" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="10" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-380" />	
+</attacks>
+<defenses armor="1" defense="1" />
+
+	<voices interval="2000" chance="7">
+		<voice sentence="Brrrr" />
+		<voice sentence="Broar!" />
+	</voices>
+	<loot>
+		<item id="24122" chance="3000" /><!-- revitalizing ice quest -->
+		<item id="2667" chance="18000" />				<!-- fish -->
+		<item id="34026" chance="1400" />
+		
+		<item id="39130" countmax="2" chance="6000" /><!-- sell -->
+		  <item id="39108" countmax="3" chance="17000" /><!-- sell -->	 
+
+	</loot>
+</monster>

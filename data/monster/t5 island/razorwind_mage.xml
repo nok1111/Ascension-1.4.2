@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Razorwind Mage" nameDescription="Razorwind Mage" race="blood" experience="20" speed="200">
+	<health now="6" max="6" />
+	<level min="201" max="210" />
+	<look type="1488" corpse="37129" />
+	<targetchange interval="5000" chance="8" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="5" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+		<attack name="fire" interval="2000" chance="100" range="6" radius="1" target="1" min="-80" max="-420">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="fire rain" interval="2000" chance="10" min="-40" max="-60"/>
+	</attacks>
+<defenses armor="1" defense="1"/>
+	
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Yooodelaaahooohooo!" />
+		<voice sentence="Yooodelaaaheeeheee!" />
+	</voices>
+	<loot>
+
+	<!-- rings-->
+
+        <item id="38309" chance="350" /> <!-- Sorcerer's Circle -->
+
+
+        <!-- amulets-->
+        <item id="38336" chance="350" /> <!-- magic amulet -->
+        <item id="38242" chance="350" /> <!-- max mana amulet -->
+
+
+	<item id="34107" chance="2000" /> <!-- inner force -->
+	<item id="34108" chance="2000" /> <!-- inner force -->
+	<item id="34109" chance="2000" /> <!-- inner force -->
+	<item id="34110" chance="2000" /> <!-- inner force -->
+	
+	<item id="13760" chance="4000" /> <!-- WAND -->
+	<item id="39118" countmax="1" chance="30000" /><!-- sell -->
+	<item id="39145" countmax="1" chance="10000" /><!-- sell -->
+	<item id="39151" countmax="2" chance="15000" /><!-- sell -->
+	<item id="39127" countmax="3" chance="20000" /><!-- sell -->
+	
+	</loot>
+</monster>

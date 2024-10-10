@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Lord Rajiv" nameDescription="Lord Rajiv" race="undead" experience="20" speed="150" skull="red">
+	<health now="6" max="6" />
+	<!--- Level --><level min="150" max="150" />
+	<look type="1062" head="132" body="132" legs="121" feet="132" corpse="37129" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" >		
+<attribute key="shootEffect" value="grayplasma" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		
+		<attack name="death" interval="2000" chance="60" range="8" radius="2" target="1" min="-300" max="-400">
+			<attribute key="shootEffect" value="shadowspirit" />
+			<attribute key="areaEffect" value="greenghosts" />
+		</attack>
+		
+		<attack name="rajiv wave" interval="10000" chance="30"  min="-1400" max="-2000" />
+		<attack name="rajiv aoe" interval="15000" chance="100"  min="-50" max="-50" />
+		
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<summons maxSummons="4">
+		<summon name="abomination" interval="3000" chance="50" />
+	</summons>
+	
+	<loot>
+		
+	</loot>
+</monster>

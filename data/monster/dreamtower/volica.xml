@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Volica" nameDescription="a volica" race="venom" experience="25" speed="80" manacost="0">
+	<health now="6" max="6" />
+	<level min="250" max="250" />
+	<look type="988" corpse="0" />
+  	<targetchange interval="5000" chance="20" />
+  	<strategy attack="100" defense="0" />
+  	<flags>
+    		<flag summonable="0" />
+    		<flag attackable="1" />
+    		<flag hostile="1" />
+    		<flag illusionable="0" />
+    		<flag convinceable="0" />
+    		<flag pushable="0" />
+    		<flag canpushitems="1" />
+    		<flag staticattack="90" />
+    		<flag canpushcreatures="1" />
+    		<flag targetdistance="0" />
+    		<flag runonhealth="0" />
+  	</flags>
+  	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-450" />		
+
+		<attack name="lifedrain" interval="2000" chance="11" target="0" radius="3" min="-200" max="-485">
+      		<attribute key="areaEffect" value="carniphila" />
+    	</attack>
+		<attack name="physical" interval="2000" chance="10" target="0" radius="1" min="-200" max="-600">
+      		<attribute key="areaEffect" value="groundshaker" />
+    	</attack>
+  	</attacks>
+<defenses armor="1" defense="1" >
+    	<defense name="healing" interval="2000" chance="15" min="145" max="200">
+      		<attribute key="areaEffect" value="bluenote" />
+    	</defense>
+    	<defense name="melee" interval="2000" chance="10">
+      		<attribute key="areaEffect" value="smallplants" />
+    	</defense>
+  	</defenses>
+	
+  	<voices interval="2000" chance="5">
+    		<voice sentence="WARAAAHAAARRRR!" />
+			<voice sentence="LOOK INTO THE LIGHT..." />
+    		<voice sentence="LEAVE THESE GROUNDS..." />
+			<voice sentence="THE DARK TIDE WILL SWALLOW YOU..." />
+  	</voices>
+	<loot>
+	
+	
+	</loot>
+</monster>

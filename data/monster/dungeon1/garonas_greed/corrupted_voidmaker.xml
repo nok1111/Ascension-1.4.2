@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Corrupted Voidmaker" nameDescription="a corrupted voidmaker" race="blood" experience="20" speed="222" >
+	<health now="12" max="12" />
+	<!--- Level --><level min="82" max="82" />
+	<look type="1600" head="58" body="57" legs="114" feet="57" addons="3" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-246" />		
+		<attack name="death" interval="2000" chance="10" range="6" radius="3" target="1" min="0" max="-300">
+			<attribute key="shootEffect" value="grayplasma" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		<attack name="firefield" interval="2000" chance="10" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		
+		<attack name="death" interval="2000" chance="65" range="6" min="0" max="-150">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="purpledeath" />
+		</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-300" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="0" max="50">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+
+	<immunities>
+		<immunity lifedrain="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	
+	<voices interval="3000" chance="10">
+		<voice sentence="death to the gods!" />
+		<voice sentence="humans, angels whats the difference!" />
+		<voice sentence="ill take your soul today!" />
+	</voices>
+	<loot>
+
+		</loot>
+</monster>

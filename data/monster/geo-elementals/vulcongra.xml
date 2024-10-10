@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Vulcongra" nameDescription="Vulcongra" race="fire" experience="20" speed="230">
+	<health now="6" max="6" />
+	<look type="509" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="220" />
+		<flag canwalkonenergy="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="fire" interval="2000" chance="10" length="8" spread="0" min="-195" max="-340">
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+		<attack name="fire" interval="2000" chance="15" range="7" target="1" min="-100" max="-200">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="vulcongra soulfire" interval="3000" chance="100" />
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Fuchah! Fuchah!" />
+		<voice sentence="Fuchah!" />
+		<voice sentence="Yag! Yag! Yag!" />
+	</voices>
+	<loot>
+		<item name="Wand Of Endless Fire" chance="1000" />
+		<item id="2207" chance="2920" />
+		<item name="fire sword" chance="260" />
+		<item name="banana" countmax="10" chance="10420" />
+		<item name="strong health potion" chance="7100" />
+		<item name="strong mana potion" chance="7100" />
+		<item name="magma amulet" chance="970" />
+		<item name="magma coat" chance="140" />
+		<item name="fiery heart" chance="9380" />
+		<item id="13757" chance="940" /><!-- coal -->
+		<item name="brown crystal splinter" chance="4850" />
+		<item name="magma clump" chance="12440" />
+		<item name="blazing bone" chance="8030" />
+	</loot>
+</monster>

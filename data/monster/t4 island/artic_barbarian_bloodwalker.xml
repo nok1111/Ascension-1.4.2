@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Artic Barbarian Bloodwalker" nameDescription="an Artic barbarian bloodwalker" race="blood" experience="20" speed="230" manacost="590">
+	<health now="6" max="6" />
+	<level min="195" max="205" />
+	<look type="255" head="114" body="132" legs="132" feet="132" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag staticattack="40" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-420" />	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="240" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="YAAAHEEE!" />
+		<voice sentence="SLAUGHTER!" />
+		<voice sentence="CARNAGE!" />
+		<voice sentence="You can run but you can't hide" />
+	</voices>
+	<loot>
+	    
+		
+		<item id="32002" chance="650" /><!--Soulmourne-->
+		<item id="31860" chance="500" /><!--Icewalker Blade-->
+		<item id="32477" chance="400" /><!--Winged Crossbow-->
+		<item id="32476" chance="250" /><!--Winged Bow-->
+		<item id="33163" chance="200" /><!--Frezan amulet-->
+	    <item id="31999" chance="450" /><!--Eternal Winter Boots-->
+	    <item id="21700" chance="850" /><!--icy culottes-->
+	    <item id="32516" chance="800" /><!--Videm Robe-->
+		<item id="8866" chance="800" /><!--the robe of the ice queen-->
+	    <item id="32612" chance="400" /><!--Helmet of Domination-->
+	    <item id="7902" chance="700" /><!--glacier mask-->
+	    <item id="30255" chance="500" /><!--Winter Fur backpack -->
+	    <item id="30835" chance="200" /><!--winter backpack -->
+		
+		<item id="7449" chance="90" /><!-- crystal sword -->
+		<item id="5913" chance="500" /><!-- brown piece of cloth -->
+		<item id="2168" chance="250" /><!-- life ring -->
+		<item id="7462" chance="100" /><!-- ragnir helmet -->
+		<item id="7457" chance="120" /><!-- fur boots -->
+		<item id="5804" chance="8500" /><!-- nosering quest -->
+		
+
+		<item id="38261" chance="3500" /><!--knecklace melee health -->
+		<item id="38289" chance="3500" /><!--knecklace health mana maxmana -->
+		
+
+		<item id="38322" chance="3500" /><!--ring crit melee -->
+		<item id="39127" countmax="1" chance="15000" /><!-- sell -->
+		  <item id="39136" countmax="3" chance="37000" /><!-- sell -->	 
+		  <item id="39139" countmax="1" chance="6000" /><!-- sell -->
+		  <item id="39146" countmax="1" chance="6000" /><!-- sell -->
+		  <item id="39171" countmax="1" chance="500" /><!-- sell -->
+	</loot>
+</monster>

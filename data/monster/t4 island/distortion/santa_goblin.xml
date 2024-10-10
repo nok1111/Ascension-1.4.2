@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Santa Goblin" nameDescription="a Santa Goblin" race="blood" experience="20" speed="220" manacost="420">
+	<health now="15" max="15" />
+	<level min="170" max="170" />
+	<look type="2225" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="15" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+
+		<attack name="melee" interval="2000" min="-2" max="-400" />		
+		<attack name="ice" interval="2000" chance="40" range="7" radius="1" target="1" min="-200" max="-340">
+			<attribute key="shootEffect" value="snowball" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="holydays!" />
+		<voice sentence="Eat this you f$%#!" />
+		<voice sentence="freeze!" />
+	</voices>
+	<loot>
+	
+
+		
+	</loot>
+</monster>

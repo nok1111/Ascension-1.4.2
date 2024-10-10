@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Uh'Rakan" nameDescription="a troll" race="blood" experience="20" speed="180" manacost="1000" skull="white">
+	<health now="6" max="6" />
+	<!--- Level --><level min="80" max="85" />
+	<look type="1551" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-230" />		
+<attack name="physical" interval="3000" chance="30" range="1" radius="2" target="1" min="0" max="-310">
+			<attribute key="areaEffect" value="newearthquake" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Il lorstok human!" />
+		<voice sentence="Toks utat." />
+		<voice sentence="Human, uh whil dyh!" />
+		<voice sentence="Youh ah trak!" />
+		<voice sentence="Let da mashing begin!" />
+	</voices>
+	<loot>
+			<item name="wolf tooth chain" chance="190" />
+		
+		<item id="6087" chance="5000" />
+
+		<item name="halberd" chance="1003" />
+		<item name="short sword" chance="8000" />
+		<item name="dark helmet" chance="220" />
+		<item name="plate shield" chance="2500" />
+		<item name="battle shield" chance="1400" />
+		<item name="meat" chance="30070" />
+		<item id="36355" chance="1000" />
+		<item id="36357" chance="1000" />
+		<item id="31879" chance="500" />
+		<item id="36381" chance="800" />
+		<item id="36324" chance="500" />
+
+
+	</loot>
+</monster>

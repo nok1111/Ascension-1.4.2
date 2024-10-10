@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ogre Shaman" nameDescription="a ogre shaman" race="blood" experience="20" speed="240" manacost="0">
+	<health now="6" max="6" />
+	<level min="235" max="242" />
+	<look type="1351" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-484" />		
+<attack name="fire" interval="2000" chance="100" range="6" radius="3" target="1" min="-3" max="-484">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>	
+		<attack name="outfit" interval="2000" chance="8" range="7" monster="chicken" duration="4000">
+			<attribute key="areaeffect" value="blueshimmer" />
+		</attack>
+		<attack name="earth" interval="2000" chance="20" length="8" spread="3" min="-300" max="-720">
+			<attribute key="areaEffect" value="carniphila" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="10" min="80" max="95">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	
+	<summons maxSummons="2">
+		<summon name="Dworc Fleshhunter" interval="1000" chance="30" max="2" />
+		<summon name="Fire Devil" interval="1000" chance="30" max="2" />
+	</summons>
+	
+	<voices interval="3000" chance="50">
+		<voice sentence="The spirits hunger!" />
+		<voice sentence="A sacrifice for Great Hunger!" />
+	    <voice sentence="Stay here, soul food!" />
+        <voice sentence="You more delicate than clomp!" />			
+	</voices>
+	<summons maxSummons="2">
+		<summon name="Dworc Fleshhunter" interval="2000" chance="20" max="1" />
+		<summon name="Dworc Voodoomaster" interval="2000" chance="20" max="1" />
+	</summons>
+	<loot>
+
+		<!-- rings-->
+        <item id="38304" chance="350" /> <!-- Healing Touch -->
+        <item id="38329" chance="350" /> <!-- Arcane Barrier -->
+
+        <!-- amulets-->
+
+        <item id="38258" chance="350" /> <!-- mana flow amulet -->
+        <item id="38336" chance="350" /> <!-- magic amulet -->
+
+	
+	<item id="33436" chance="2000" /> <!-- dark iron set -->
+	<item id="33437" chance="2000" /> <!-- dark iron set -->
+	
+	<item id="33468" chance="2000" /> <!-- dark iron set -->
+	<item id="33469" chance="2000" /> <!-- dark iron set -->
+	<item id="33470" chance="2000" /> <!-- dark iron set -->
+	
+	<item id="36375" chance="2000" /> <!-- 2h -->
+	<item id="32769" chance="2000" /> <!-- 2h -->
+	<item id="34016" chance="2000" /> <!-- 1h -->
+	<item id="32798" chance="2000" /> <!-- 1h -->
+	<item id="31731" chance="2000" /> <!-- wand -->
+	<item id="33465" chance="2000" /> <!-- wand -->
+	
+	<item id="39117" countmax="2" chance="17000" /><!-- sell -->
+		<item id="39046" countmax="2" chance="10000" /><!-- sell -->
+		<item id="39049" countmax="1" chance="10000" /><!-- sell -->
+		<item id="39176" countmax="1" chance="6000" /><!-- sell -->
+	</loot>
+</monster>

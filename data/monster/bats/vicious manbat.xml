@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Vicious Manbat" nameDescription="a vicious manbat" race="blood" experience="20" speed="220" manacost="0">
+	<health now="6" max="6" />
+	<look type="554" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="physical" interval="2000" chance="15" radius="3" target="0" min="-100" max="-250">
+			<attribute key="areaEffect" value="redspark" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" radius="1" target="1" speedchange="-400">
+			<attribute key="areaEffect" value="bats" />
+		</attack>
+		<attack name="bleedcondition" interval="2000" chance="20" radius="2" target="0" min="-400" max="-600">
+			<attribute key="areaEffect" value="redspark" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<immunities>
+		<immunity invisible="1" />
+		<immunity paralyze="1" />
+		
+	</immunities>
+	<loot>
+		
+	</loot>
+</monster>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Grull, The Goliath" nameDescription="Grull, The Goliath" race="blood" experience="40" speed="160" manacost="695" skull="red">
+	<health now="25" max="25" />
+	<level min="150" max="150" />
+	<look type="1885" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-450" />		
+<attack name="physical" interval="2000" chance="20" range="7" min="-3" max="-600">
+			<attribute key="shootEffect" value="whirlwindclub" />
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" duration="4000">
+			<attribute key="shootEffect" value="whirlwindclub" />
+			<attribute key="areaEffect" value="stun" />
+		</attack>
+	</attacks>
+<defenses armor="3" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="100" max="350">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Outis emoi g' onoma." />
+		<voice sentence="Whack da humy!" />
+		<voice sentence="Ai humy phary ty kaynon" />
+	</voices>
+	<loot>
+		
+		
+		<item id="15410" chance="520" /><!-- boots -->
+		<item id="33235" chance="520" /><!-- boots -->
+		<item id="36155" chance="220" /><!-- boots -->
+		<item id="7415" chance="520" /><!-- boots -->
+		<item id="32715" chance="520" /><!-- boots -->
+		<item id="7403" chance="520" /><!-- boots -->
+	
+		<item id="39176" countmax="2" chance="12500" /><!-- sell -->
+	    <item id="39175" countmax="1" chance="11200" /><!-- sell -->
+	    <item id="39046" countmax="1" chance="10500" /><!-- sell -->
+	    <item id="39146" countmax="2" chance="12500" /><!-- sell -->
+	</loot>
+</monster>

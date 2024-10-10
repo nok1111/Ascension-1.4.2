@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Dark Troll" nameDescription="a dark troll" race="blood" experience="20" speed="190" manacost="340">
+	<health now="6" max="6" />
+	<!--- Level --><level min="17" max="20" />
+	<look type="1991" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="15" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-40" />	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Meee maity!" />
+		<voice sentence="Grrrr" />
+		<voice sentence="Whaaaz up!?" />
+		<voice sentence="Gruntz!" />
+		<voice sentence="Groar" />
+	</voices>
+	<loot>
+		
+		<item name="silver amulet" chance="230" />
+		<item id="6087" chance="5000" />
+		<item id="5883" chance="45000" />
+		<item name="halberd" chance="1003" />
+		<item name="short sword" chance="8000" />
+		<item name="dark helmet" chance="220" />
+		<item name="plate shield" chance="2500" />
+		<item name="battle shield" chance="1400" />
+		<item name="meat" chance="30070" />
+		
+		<item id="39099" countmax="1" chance="10000" /><!-- sell -->
+		<item id="39070" countmax="1" chance="10000" /><!-- sell -->
+		<item id="39108" countmax="1" chance="10000" /><!-- sell -->
+
+	</loot>
+</monster>

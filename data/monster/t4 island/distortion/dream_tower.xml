@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Dream Tower" nameDescription="A dream tower" race="fire" experience="20" speed="0" skull="green">
+	<health now="6" max="6" />
+	<look typeex="31990" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="5" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="energy" interval="200" chance="100" range="7" radius="1" target="1" min="-55" max="-80">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+	</attacks>
+	
+<defenses armor="1" defense="1"/>
+	<elements>		
+	</elements>
+	<immunities>
+		<immunity death="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	
+	<voices interval="3000" chance="100">
+		<voice sentence="im watching you!" />
+		<voice sentence="ill eat your dreams..." />
+	</voices>
+	<loot>
+
+	</loot>
+</monster>

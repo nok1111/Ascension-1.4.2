@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Jotun Marauder" nameDescription="a Jotun Marauder" race="undead" experience="30" speed="230">
+	<health now="10" max="10" />
+	<level min="175" max="186" />
+	<look type="1634" corpse="37129" />
+	<targetchange interval="5000" chance="8" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-360" />		
+		<attack name="devourer wave" interval="1800" range="1" chance="15" min="-420" max="-600" />
+		
+		<attack name="physical" interval="2000" chance="15" range="4" min="-10" max="-420">
+			<attribute key="shootEffect" value="largerock" />
+			<attribute key="areaEffect" value="newearthquake" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Yooodelaaahooohooo!" />
+		<voice sentence="Yooodelaaaheeeheee!" />
+	</voices>
+	<loot>
+		<item id="30836" chance="1000" />
+		<item name="snowball" countmax="22" chance="10000" />		
+		<item name="meat" countmax="4" chance="33333" />
+		<item name="ham" countmax="5" chance="10000" />
+		<item id="4848" chance="5000" /><!-- ice cube -->
+		<item name="fur boots" chance="100" />
+		<item id="32476" chance="100" />		
+		<item id="38264" chance="3500" /><!--knecklace magic maxmana -->
+		<item id="38289" chance="3500" /><!--knecklace health mana maxmana -->		
+		<item id="38328" chance="3500" /><!--ring def health hpregen -->
+
+		<item id="32774" chance="2300" />
+		<item id="32002" chance="2300" />
+		<item id="32472" chance="2300" />
+		<item id="33161" chance="2300" />
+		<item id="32468" chance="2300" />
+		<item id="31898" chance="2300" />
+		<item id="31999" chance="2300" />
+		
+		<item id="39183" countmax="1" chance="5000" /><!-- sell -->
+		  <item id="39130" countmax="1" chance="7000" /><!-- sell -->	 
+		  <item id="39175" countmax="3" chance="16000" /><!-- sell -->
+		  <item id="39176" countmax="1" chance="6000" /><!-- sell -->
+		
+	</loot>
+</monster>

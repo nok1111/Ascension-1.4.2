@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Eternal Flame" nameDescription="an eternal fire" race="fire" experience="20" speed="120">
+	<health now="800" max="800" />
+	<look type="1413" corpse="0" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-80" />		
+<attack name="fire" interval="2000" chance="20" radius="2" target="1" min="-60" max="-150">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	</attacks>
+	
+	
+<defenses armor="1" defense="1" />
+
+	<immunities>
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="You dare to enter our territory!" />
+		<voice sentence="your magic is weak!" />
+		<voice sentence="let my dogs dinner tonight!" />
+		<voice sentence="come at me!" />
+		<voice sentence="ill burn you to ashes!" />
+	</voices>
+	<loot>
+		
+		<item id="31889" chance="200" />
+		<item id="31864" chance="3000" />
+		<item id="2187" chance="2000" />
+		<item name="great mana potion" countmax="3" chance="20285" />
+	</loot>
+</monster>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Goblin" nameDescription="a goblin" race="blood" experience="20" speed="150" manacost="290" >
+	<health now="6" max="6" />
+	<!--- Level --><level min="50" max="50" />
+	<look type="1692" corpse="37129" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="15" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-100" />		
+<attack name="physical" interval="2000" chance="10" range="7" min="-3" max="-150">
+			<attribute key="shootEffect" value="smallstone" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="him!" />
+		<voice sentence="raaaww gaw lotr!" />
+		<voice sentence="jhom! jhoom!" />
+		<voice sentence="Bauutraw! bauu!" />
+		<voice sentence="Me, eaw!" />
+	</voices>
+	<loot>
+		
+		<item id="2230" chance="1130" /><!-- bone -->
+		<item name="dagger" chance="1800" />
+		<item name="short sword" chance="8870" />
+		<item name="bone club" chance="4900" />
+		<item name="leather helmet" chance="1940" />
+		<item name="leather armor" chance="2510" />
+		<item id="31890" chance="300" />		
+		<item id="2541" chance="10000" />
+		<item id="21406" chance="8000" /><!-- quest -->
+		<item id="11076" chance="8000" /><!-- quest -->
+		<item id="21398" chance="8000" /><!-- quest -->
+		<item id="21407" chance="8000" /><!-- quest -->
+		<item id="2648" chance="3000" />
+		<item id="2455" chance="3000" />
+		<item id="31903" chance="3000" />
+		<item id="32789" chance="3000" />
+		<item id="36355" chance="500" />
+		<item id="32864" chance="500" />
+		<item id="31879" chance="500" />
+		<item id="2181" chance="500" />
+		<item id="32866" chance="500" />
+		<item id="36389" chance="500" />
+		<item id="38324" chance="4500" /> <!-- ring of the explorer -->
+		<item id="382941" chance="4500" /> <!-- regen resilence -->
+		
+		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39070" countmax="1" chance="15500" /><!-- sell -->
+		<item id="39101" countmax="1" chance="4000" /><!-- sell -->
+
+	</loot>
+</monster>

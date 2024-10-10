@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lord Vlastelin" nameDescription=" Lord Vlastelin" race="blood" experience="20" speed="200" manacost="0" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="30" max="30" />
+	<look type="1528" head="87" body="109" legs="114" feet="114" corpse="37129"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="85" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag rewardchest="1" />
+	</flags>
+	 
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="energy" interval="2000" chance="50" range="7" radius="2" target="1" min="-125" max="-352">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		<attack name="energy" interval="1000" chance="40" radius="3" target="0" min="-60" max="-150">
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		<attack name="energy elemental electrify" interval="2000" chance="20" />
+	</attacks>
+<defenses armor="1" defense="1" >
+	<defense name="corvinus summon" interval="5000" chance="100"/>
+		<defense name="healing" interval="2000" chance="10" min="90" max="150">
+			<attribute key="areaEffect" value="purplebossaura1" />
+		</defense>
+	</defenses>
+	<loot>
+		
+	</loot>
+</monster>

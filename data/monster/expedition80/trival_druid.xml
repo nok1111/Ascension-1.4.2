@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Trival Druid" nameDescription="Trival Druid" race="blood" experience="20" speed="190" manacost="0">
+	<health now="6" max="6" />
+	<level min="120" max="125" />
+	<look type="1615" head="119" body="115" legs="114" feet="121" addons="2" corpse="37129"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-250" />		
+		<attack name="holy" interval="2000" chance="15" length="6" spread="0" min="-3" max="-375">
+			<attribute key="areaEffect" value="newholy1" />
+		</attack>
+		<attack name="physical" interval="2000" chance="25" range="7" target="1" min="-3" max="-100">
+			<attribute key="shootEffect" value="enchantedspear" />
+			<attribute key="areaEffect" value="energy" />
+		</attack>
+	<attack name="heal aoe" interval="4000" chance="45"  min="-300" max="-350"/>
+	</attacks>
+<defenses armor="1" defense="1" />
+
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Light and death!" />
+		<voice sentence="death will purify you!" />
+		<voice sentence="kneel!" />
+	</voices>
+	<loot>
+	<item id="2510" chance="10000" />				<!-- plate shield -->
+		<item id="2789" chance="7000" />				<!-- brown mushroom -->
+		<item id="2197" chance="1000" />				<!-- stone skin amulet -->
+		<item id="2171" chance="850" />					<!-- platinum amulet -->
+		<item id="2169" chance="800" />					<!-- time ring -->
+		<item id="2438" chance="560" />					<!-- epee -->
+		<item id="7383" chance="490" />					<!-- relic sword -->
+		<item id="7428" chance="410" />					<!-- bonebreaker -->
+		<item id="7419" chance="150" />					<!-- dreaded cleaver -->
+		<item id="24743" chance="300" />
+		<item id="32538" chance="150" />
+		<item id="36274" chance="150" />
+		<item id="32761" chance="150" />
+		<item id="32641" chance="150" />
+		
+		<item id="36350" chance="100" />
+		
+		<item id="7495" countmax="2" chance="6500" /><!-- quest -->
+		<item id="32539" chance="560" /> <!-- armor -->
+		<item id="32537" chance="560" /> <!-- armor -->
+		<item id="32538" chance="560" /> <!-- armor -->
+		<item id="31832" chance="560" /> <!-- armor -->
+		<item id="31889" chance="560" /> <!-- armor -->
+
+		<item id="2217" chance="3500" /><!-- new spellbooks -->
+		<item id="36312" chance="560" /> <!-- armor -->
+		
+		<item id="36274" chance="560" /> <!-- wand -->
+		
+		<item id="38326"  chance="4500" /><!--doom ring (ml) -->
+
+		
+
+		<item id="38282"  chance="4500" /><!--emeral echanter (magic  + max mana) -->
+		
+		<item id="39146" countmax="2" chance="12500" /><!-- sell -->
+		<item id="39125" countmax="2" chance="6500" /><!-- sell -->
+		<item id="39127" countmax="1" chance="1500" /><!-- sell -->
+		<item id="39136" countmax="1" chance="1500" /><!-- sell -->
+	</loot>
+</monster>

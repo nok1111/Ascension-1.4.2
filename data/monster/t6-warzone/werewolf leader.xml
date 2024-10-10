@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Werewolf Leader" nameDescription="a werewolf leader" experience="80" speed="200" race="blood" manacost="0">
+	<health now="6" max="6" />
+	<level min="390" max="400" />
+	<targetchange interval="4000" chance="10" />
+	<look type="1712" corpse="37129" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-1500" />		
+<attack name="lifedrain" interval="2000" chance="10" radius="3" target="0" min="-380" max="-865">
+			<attribute key="areaEffect" value="rednote" />
+		</attack>
+		<attack name="physical" interval="3000" chance="10" range="1" radius="2" target="1" min="-250" max="-1350">
+			<attribute key="areaEffect" value="newearthquake" />
+		</attack>
+		<attack name="physical" interval="2000" chance="40" radius="3" target="0" min="-580" max="-665">
+			<attribute key="areaEffect" value="arenaspin" />
+		</attack>
+		<attack name="werewolf skill reducer" interval="2000" range="1" chance="15" />
+	</attacks>
+<defenses armor="4" defense="4" >
+
+		<defense name="healing" interval="2000" chance="15" min="10" max="3065">
+			<attribute key="areaEffect" value="greenshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" range="7" speedchange="300" duration="5000">
+			<attribute key="areaEffect" value="purplenote" />
+		</defense>
+	</defenses>
+	
+	<summons maxSummons="6">
+		<summon name="Giant Brown Wolf" interval="2000" chance="100" />
+	</summons>
+	<voices interval="2000" chance="7">
+		<voice sentence="GRRR" />
+		<voice sentence="GRROARR" />
+	</voices>
+	<loot>
+		
+		<item id="11234" chance="10500" />				<!-- werewolf fur -->
+		<item id="2510" chance="10000" />				<!-- plate shield -->
+		<item id="9809" chance="7770" />					<!-- rusty armor (semi-rare) -->
+		<item id="2789" chance="7000" />					<!-- brown mushroom -->
+		<item id="7588" chance="5000" />					<!-- strong health potion -->
+		<item id="2805" chance="5000" />					<!-- troll green -->
+		<item id="5897" chance="4500" />					<!-- wolf paw -->
+
+		<item id="7439" chance="1200" />					<!-- berserk potion -->
+		<item id="2197" chance="1000" />					<!-- stone skin amulet -->
+
+		<item id="2169" chance="800" />					<!-- time ring -->
+
+		<item id="24742" chance="500" />	
+		<item id="30220" chance="500" />
+		<item id="33989" chance="500" />
+		<item id="33990" chance="500" />	
+		<item id="33991" chance="500" />	
+		<item id="33992" chance="500" />
+
+		<item id="13760" chance="500" />
+
+		<!-- trash-->
+		<item id="39139" countmax="2" chance="7000" />
+		<item id="39146" countmax="3" chance="7000" />
+		<item id="39145" countmax="1" chance="1000" />
+		<!-- trash end-->
+
+				<!-- rings-->
+        <item id="38304" chance="350" /> <!-- Healing Touch -->
+        <item id="38319" chance="350" /> <!-- Lifestealer's Band -->
+
+
+        <!-- amulets-->
+        <item id="38278" chance="350" /> <!-- dist Amulet -->
+        <item id="38243" chance="350" /> <!-- sword amulet -->
+			
+	</loot>
+</monster>

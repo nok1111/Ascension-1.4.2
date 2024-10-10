@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Wild Fox" nameDescription="a wild fox" race="blood" experience="20" speed="175" manacost="305">
+	<health now="6" max="6" />
+	<!--- Level --><level min="120" max="130" />
+	<look type="1514" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="0" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="50" />
+		<flag runonhealth="12" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+		<flag passive="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-280" />	</attacks>
+<defenses armor="1" defense="1" />
+	<loot>
+		<item id="2220" chance="15000" /><!-- rat god doll -->	
+	<item id="35339" countmax="5" chance="35000" />	
+
+		 <item id="39108" countmax="3" chance="23000" /><!-- sell -->
+		  <item id="39132" countmax="2" chance="7000" /><!-- sell -->
+		  <item id="39128" countmax="2" chance="7000" /><!-- sell -->
+	</loot>
+</monster>

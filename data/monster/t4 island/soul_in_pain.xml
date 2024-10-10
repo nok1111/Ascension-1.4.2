@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Soul in Pain" nameDescription="a soul" race="undead" experience="20" speed="170">
+	<health now="6" max="6" />
+	<level min="185" max="190" />
+	<look type="1638" corpse="6070" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+		<flag passive="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-380" />	
+		<attack name="energy" interval="2000" chance="30" range="2" radius="2" target="1" min="-0" max="-350">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+		
+			<attack name="emerald wave" interval="3000" chance="25"  min="-600" max="-600" />
+			<attack name="fear" interval="5000" chance="20"/>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<loot>
+	
+		<item id="39133" countmax="3" chance="6000" /><!-- sell -->
+		  <item id="39145" countmax="2" chance="7000" /><!-- sell -->	 
+		  <item id="38156" countmax="1" chance="6000" /><!-- sell -->
+	</loot>
+	
+</monster>

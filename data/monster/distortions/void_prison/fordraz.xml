@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Fordraz" nameDescription="fordraz" race="blood" experience="20" speed="200" manacost="0" skull="red">
+	<health now="6" max="6" />
+	<level min="125" max="125" />
+	<look type="1967" corpse="37129"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="85" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+	</flags>
+
+	<attacks>
+<attack name="melee" interval="2000" min="-50" max="-380" />		
+<attack name="energy" interval="2000" chance="10" range="7" radius="2" target="1" min="-150" max="-400">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		<attack name="energy" interval="1000" chance="20" radius="3" target="0" min="-200" max="-220">
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		<attack name="energy elemental electrify" interval="2000" chance="20" />
+		<attack name="fordraz aoe" interval="45000"  chance="100" min="-150" max="-200" />
+	</attacks>
+<defenses armor="2" defense="1" >
+	<defense name="fordraz summon" interval="3000" chance="100"/>
+		<defense name="healing" interval="2000" chance="10" min="190" max="250">
+			<attribute key="areaEffect" value="purplebossaura1" />
+		</defense>
+	</defenses>
+		<elements>
+		<element energyPercent="50" />
+		<element icePercent="50" />
+		<element firePercent="50" />
+		<element holyPercent="50" />
+		<element earthPercent="50" />
+		<element physicalPercent="35" />
+		<element deathPercent="50" />
+		<element drownPercent="50" />
+	</elements>
+
+	<loot>
+		
+	</loot>
+</monster>

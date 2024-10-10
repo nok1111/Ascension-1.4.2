@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Chef Gorgon" nameDescription="chef gorgon" race="undead" experience="20" speed="180" manacost="300">
+	<health now="6" max="6" />
+	<level min="265" max="265" />
+	<look type="1299" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-650" />		
+<attack name="lifedrain" interval="2000" chance="15" range="1" min="-213" max="-350" />
+	</attacks>
+<defenses armor="1" defense="1" />
+		<elements>
+		<element energyPercent="20" />
+		<element icePercent="20" />
+		<element firePercent="20" />
+		<element holyPercent="20" />
+		<element earthPercent="20" />
+		<element physicalPercent="12" />
+		<element deathPercent="20" />
+	</elements>
+			<voices interval="5000" chance="10">
+		<voice sentence="taste this!" />
+		<voice sentence="more food?!" />
+		<voice sentence="bring that meat!" />
+		<voice sentence="delicious!" />
+	</voices>
+	<loot>
+	</loot>
+</monster>

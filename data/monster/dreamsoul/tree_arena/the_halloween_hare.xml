@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="The Halloween Hare" nameDescription="The Halloween Hare" race="blood" experience="5" speed="150" skull="white" manacost="0">
+	<health now="6" max="6" />
+	<level min="450" max="460" />
+	<look type="1776" />
+	<targetchange interval="2000" chance="95" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="2" />
+		<flag staticattack="10" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-300" max="-1322" />
+		
+	</attacks>
+	<defenses armor="3" defense="3">
+		<defense name="healing" interval="1000" chance="50" min="1500" max="5000">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+</monster>

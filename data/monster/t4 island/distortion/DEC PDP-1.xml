@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="DEC PDP-1" nameDescription="a DEC PDP-1" race="undead" experience="20" speed="200" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="400" max="410" />
+	<look type="1613" corpse="37129" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="1" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<elements>
+	   	<element energyPercent="25" />
+		<element icePercent="25" />
+		<element firePercent="25" />
+		<element holyPercent="25" />
+		<element earthPercent="25" />
+		<element physicalPercent="20" />
+		<element deathPercent="25" />
+	</elements>
+
+	<attacks>
+		
+<attack name="melee" interval="2000" min="-2" max="-1210" >		
+<attribute key="areaEffect" value="slashexplode" />
+	</attack>
+		
+		<attack name="emerald wave" interval="3000" chance="10" min="-1800" max="-1800" />
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<loot>
+		
+	</loot>
+</monster>

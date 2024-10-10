@@ -1,0 +1,51 @@
+<monster name="Snow Giant Wolf" nameDescription="a Snow Giant Wolf" race="blood" experience="20" speed="210">
+	<health now="6" max="6" />
+	<level min="150" max="160" />
+	<look type="1637" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-320" />
+		<attack name="physical" interval="2000" chance="15" range="8" target="1" min="-0" max="-480">
+			<attribute key="areaEffect" value="redspark" />
+		</attack>
+		
+	</attacks>
+	
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="57" max="93">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="ZCHHHHH" yell="1" />
+		<voice sentence="YOU WILL BURN!" yell="1" />
+	</voices>
+	<loot>
+		<item name="meat" countmax="4" chance="33333" />
+		<item name="ham" countmax="5" chance="10000" />		
+		
+		<item name="fur boots" chance="100" />
+		
+		  <item id="39132" countmax="2" chance="11000" /><!-- sell -->
+		  <item id="39108" countmax="4" chance="36000" /><!-- sell -->	 
+		  <item id="39113" countmax="1" chance="12000" /><!-- sell -->	
+		  <item id="39126" countmax="2" chance="12000" /><!-- sell -->	
+		
+		
+	</loot>
+</monster>

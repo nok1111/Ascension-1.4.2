@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Chosen" nameDescription="a lizard chosen" race="blood" experience="20" speed="260">
+	<health now="6" max="6" />
+	<!--- Level --><level min="182" max="190" />
+	<look type="2312" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="50" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-425" />		
+<attack name="poisoncondition" interval="2000" chance="15" length="3" spread="2" min="-3" max="-510">
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+		<attack name="earth" interval="2000" chance="15" target="0" radius="3" min="-3" max="-310">
+			<attribute key="areaEffect" value="greenspark" />
+		</attack>
+		<attack name="earth" interval="2000" chance="10" length="8" spread="0" min="-3" max="-440">
+			<attribute key="areaEffect" value="greenbubble" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="10" min="75" max="125">
+			<attribute key="areaEffect" value="greenshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Grzzzzzzz!" />
+		<voice sentence="Garrrblarrrrzzzz!" />
+		<voice sentence="Kzzzzzz!" />
+	</voices>
+	<loot>
+		<item name="small diamond" countmax="5" chance="2550" />
+		
+		<item name="tower shield" chance="1100" />
+		<item name="lizard leather" chance="2000" />
+		<item name="lizard scale" countmax="3" chance="980" />
+		<item name="great health potion" countmax="3" chance="5350" />
+		<item name="Zaoan armor" chance="980" />
+		<item name="Zaoan helmet" chance="140" />
+		<item name="Zaoan shoes" chance="810" />
+		<item name="Zaoan legs" chance="940" />
+		<item name="spiked iron ball" chance="9890" />
+		<item name="corrupted flag" chance="3350" />
+		<item name="cursed shoulder spikes" chance="5800" />
+		<item name="scale of corruption" chance="2870" />
+	</loot>
+</monster>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Colliseum Champion Garuda" nameDescription="Colliseum Champion Garuda" race="blood" experience="20" speed="200" skull="Red">
+	<health now="50" max="50" />
+	<level min="170" max="170" />
+	<look type="1489" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="60" />
+		<flag runonhealth="0" />
+	</flags>
+	<script>
+		<event name="garuda_champion"/>
+	</script>
+	<attacks>
+<attack name="melee" interval="2000" min="-40" max="-500" />
+		<attack name="fire" interval="2000" chance="20" range="12" radius="2" target="1" min="-50" max="-300">
+			<attribute key="shootEffect" value="newfireballthree" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		
+		
+		<attack name="physical" interval="2000" chance="10" range="12" min="-350" max="-450">		
+			<attribute key="areaEffect" value="rockhand" />
+		</attack>
+		
+	<attack name="garuda aoe" target="0" interval="3000" chance="15"  min="-500" max="-650" />
+	<attack name="fear" interval="15000" chance="100"/>
+	
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="22" min="100" max="250">
+			<attribute key="areaEffect" value="redspark"/>
+		</defense>
+		
+	</defenses>
+
+	<immunities>	
+		<immunity lifedrain="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<elements>
+        <element holyPercent="30" />
+        <element deathPercent="30" />
+        <element firePercent="30" />
+        <element energyPercent="30" />
+        <element icePercent="30" />
+        <element earthPercent="30" />
+        <element physicalPercent="0" />
+    </elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Another Contender?!" />
+		<voice sentence="you are noth worth the challenge!" />
+		<voice sentence="meet your dead!" />
+
+	</voices>
+	<loot>
+		
+		
+		<item id="31889" chance="200" />
+		<item id="31864" chance="3000" />
+		<item id="2187" chance="2000" />
+		<item name="great mana potion" countmax="3" chance="20285" />
+	</loot>
+</monster>

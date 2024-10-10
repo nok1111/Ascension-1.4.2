@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Morvious Spider" nameDescription="a Morvious Spider" race="venom" experience="20" speed="170" manacost="305" skull="green">
+	<health now="6" max="6" />
+	<look type="1560" corpse="37129" />
+	<!--- Level --><level min="28" max="36" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+		<attack name="death" interval="2200" chance="70" range="7" min="-3" max="-10">
+			<attribute key="shootEffect" value="grayplasma" />
+			</attack>
+			
+		<attack name="death" interval="3000" chance="80" radius="3" target="0" min="-3" max="-10">
+			<attribute key="areaEffect" value="purpleliquid" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" />
+	<loot>
+		<item name="spider fangs" chance="950" />
+		<item name="poison arrow" countmax="12" chance="12500" />
+		<item name="plate armor" chance="10000" />
+		<item name="plate legs" chance="8000" />
+		<item name="two handed sword" chance="5000" />
+		<item name="amazonic helmet" chance="5000" />
+		<item name="strong health potion" chance="3571" />
+		<item name="spider silk" chance="2000" />
+		<item name="knight legs" chance="870" />
+		<item id="2169" chance="710" /><!-- time ring -->
+		<item name="explorer armor" chance="500" />
+		<item name="platinum amulet" chance="280" />
+		<item name="lightning headband" chance="270" />
+		
+		<item id="36242" chance="710" /><!-- time ring -->
+		<item id="36279" chance="710" /><!-- time ring -->
+		<item id="31859" chance="710" /><!-- time ring -->
+
+	
+	</loot>
+</monster>

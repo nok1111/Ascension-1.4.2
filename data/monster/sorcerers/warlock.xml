@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Warlock" nameDescription="a warlock" race="blood" experience="20" speed="220">
+	<health now="6" max="6" />
+	<!--- Level --><level min="250" max="255" />
+	<look type="1757" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="900" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-510" />		
+<attack name="energy" interval="2000" chance="25" range="7" min="-3" max="-610">
+			<attribute key="shootEffect" value="energy" />
+		</attack>
+		<attack name="warlock skill reducer" range="5" interval="2000" chance="5" />
+		<attack name="manadrain" interval="2000" chance="10" range="7" min="-3" max="-110"/>
+		<attack name="fire" interval="2000" chance="20" range="7" radius="3" target="1" min="-3" max="-610">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="firefield" interval="2000" chance="10" range="7" radius="2" target="1">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="energy" interval="2000" chance="10" length="8" spread="0" min="-3" max="-410">
+			<attribute key="areaEffect" value="bigclouds" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" range="7" speedchange="-600" duration="20000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="20" min="100" max="225">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="invisible" interval="2000" chance="20" duration="10000">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<summons maxSummons="1">
+		<summon name="stone golem" interval="2000" chance="10" max="1" />
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="Learn the secret of our magic! YOUR death!" />
+		<voice sentence="Even a rat is a better mage than you." />
+		<voice sentence="We don't like intruders!" />
+	</voices>
+	<loot>
+		
+		
+		<item name="ring of the sky" chance="430" />
+		<item id="2124" chance="700" /><!-- crystal ring -->
+		
+		
+		
+		<item name="stone skin amulet" chance="330" />
+		<item name="skull staff" chance="6370" />
+		<item name="golden armor" chance="240" />
+		<item name="blue robe" chance="1410" />
+		<item name="cherry" countmax="4" chance="19000" />
+		<item name="bread" chance="9000" />
+		<item name="dark mushroom" chance="3000" />
+		<item name="great mana potion" chance="4760" />
+		<item name="great health potion" chance="5190" />
+		<item name="lightning robe" chance="1000" />
+		<item id="32802" chance="500" />
+		<item id="36161" chance="500" />
+		<item id="32438" chance="500" />
+		
+		<item id="38244"  chance="1000" /><!--kneck hp -->
+		<item id="38284"  chance="1000" /><!--kneck magic mana -->
+		<item id="38279"  chance="1000" /><!--kneck magic  max mana + mana -->		
+		<item id="38333"  chance="1000" /><!--doom magic -->
+		<item id="38334"  chance="1000" /><!--doom magic + hp -->
+		
+		<item id="39182" countmax="1" chance="4000" /><!-- sell -->
+		  <item id="39153" countmax="1" chance="16000" /><!-- sell -->
+		  <item id="39078" countmax="2" chance="12000" /><!-- sell -->	
+
+	</loot>
+</monster>

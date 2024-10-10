@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Highlander Druid" nameDescription="a Highlander Druid" race="blood" experience="20" speed="160">
+	<health now="6" max="6" />
+	<look type="1303" body="103" legs="101" feet="1" corpse="37129"/>
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="4" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+		<attack name="earth" interval="1000" chance="10" range="4" radius="3" target="1" min="-3" max="-10">
+			<attribute key="shootEffect" value="earth" />
+			<attribute key="areaEffect" value="poisonplant" />
+		</attack>
+		<attack name="physical" interval="2000" chance="10" range="4" radius="1" target="1" min="-3" max="-10">
+			<attribute key="shootEffect" value="tornadoshoot" />
+		</attack>
+		
+		<attack name="death" interval="3000" chance="20" range="6" min="-3" max="-10">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="purpledeath" />
+		</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-200" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+	<defenses armor="25" defense="25">
+		<defense name="healing" interval="3000" chance="15" min="0" max="70">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+
+
+	
+	<voices interval="3000" chance="10">
+		<voice sentence="death to the gods!" />
+		<voice sentence="humans, angels whats the difference!" />
+		<voice sentence="ill take your soul today!" />
+	</voices>
+	<loot>
+
+		<item name="meat" chance="30070" />
+		<item id="6087" chance="5000" />
+		
+		
+		<item name="short sword" chance="8000" />
+		<item name="dark helmet" chance="220" />
+		<item name="plate shield" chance="2500" />
+		<item name="battle shield" chance="1400" />
+
+
+		<item name="hunting spear" countmax="2" chance="45000" />
+		<item name="venison" chance="21000" />
+		<item name="meat" chance="18000" />
+		
+		<item name="hunting spear" countmax="2" chance="8000" />
+		<item name="small emerald" chance="3600" />
+		<item name="crossbow" chance="2350" />
+		<item name="raspberry" countmax="3" chance="670" />
+		<item name="bullseye potion" chance="340" />
+		<item name="Rod of the Earthflow" chance="340" />
+		
+		<item id="36242" chance="600" />
+		<item id="31818" chance="1000" />
+		<item id="36388" chance="300" />
+		
+		<item id="30667" chance="200" />
+		<item id="32438" chance="200" />
+		<item id="31935" chance="200" />
+		</loot>
+</monster>

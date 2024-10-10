@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <monster name="Training Dummy40" nameDescription="a training dummy" race="undead" experience="20" speed="0">
+    <health now="6" max="6" />
+    <look typeex="5787" />
+	<targetchange interval="10000" chance="100" />
+    <flags>
+        <flag summonable="0" />
+        <flag attackable="1" />
+        <flag hostile="1" />
+        <flag illusionable="0" />
+        <flag convinceable="0" />
+        <flag pushable="0" />
+        <flag canpushitems="0" />
+        <flag canpushcreatures="0" />
+        <flag targetdistance="1" />
+        <flag staticattack="100" />
+        <flag runonhealth="0" />
+        <flag canwalkonenergy="0" />
+        <flag canwalkonfire="0" />
+        <flag canwalkonpoison="0" />
+    </flags>
+    <attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />    </attacks>
+<defenses armor="1" defense="1" >
+        <defense name="healing" interval="5000" chance="100" min="100000000" max="100000000">
+            <attribute key="areaEffect" value="blueshimmer" />
+        </defense>
+    </defenses>
+	
+    <immunities>
+        <immunity invisible="1" />
+    </immunities>
+</monster>

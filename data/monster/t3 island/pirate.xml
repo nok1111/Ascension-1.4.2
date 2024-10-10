@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Pirate" nameDescription="a pirate" race="blood" experience="20" speed="170" manacost="595">
+	<health now="6" max="6" />
+	<level min="150" max="160" />
+	<look type="1769" corpse="37129" />
+	<targetchange interval="4000" chance="15" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="50" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-320" />		
+<attack name="physical" interval="2000" chance="20" range="4" min="-3" max="-320">
+			<attribute key="shootEffect" value="throwingknife" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Give up!" />
+		<voice sentence="Hiyaa" />
+		<voice sentence="Plundeeeeer!" />
+	</voices>
+	<loot>
+
+	<item id="2031" chance="10000" /><!-- waterskin -->
+	<item id="8762" chance="7000" /><!-- cage key -->
+	
+	
+		<item id="2050" chance="10190" />				<!-- torch -->
+		
+		<item id="2238" chance="9900" />					<!-- worn leather boots -->
+		<item id="11219" chance="9780" />				<!-- compass -->
+		<item id="2513" chance="3850" />					<!-- battle shield -->
+		<item id="6095" chance="1200" />					<!-- pirate shirt -->
+		<item id="5091" chance="1050" />					<!-- treasure map -->
+		<item id="7588" chance="680" />					<!-- strong health potion -->
+		<item id="6126" chance="520" />					<!-- peg leg -->
+		<item id="6097" chance="450" />					<!-- hook -->
+		<item id="5926" chance="430" />					<!-- pirate backpack -->
+		<item id="6098" chance="410" />					<!-- eye patch -->
+		<item id="5553" chance="120" />					<!-- rum flask -->
+		<item id="5792" chance="50" />					<!-- die -->
+		
+		<item id="5909" chance="5000" />					<!-- cloth -->
+		<item id="5913" chance="5000" />					<!-- cloth -->
+		
+		<item id="5909" chance="5000" />					<!-- cloth -->
+		<item id="5913" chance="5000" />					<!-- cloth -->
+	
+		<item id="15410" chance="520" /><!-- boots -->
+		
+		
+		<item id="30259" chance="300" /><!--armor -->
+		
+		<item id="2532" chance="500" /><!--armor -->
+		
+		<item id="39161" countmax="1" chance="500" /><!-- sell -->
+	    <item id="39137" countmax="2" chance="7500" /><!-- sell -->
+	    <item id="39133" countmax="1" chance="3500" /><!-- sell -->
+	</loot>
+</monster>

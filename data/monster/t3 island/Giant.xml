@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Giant" nameDescription="a giant" race="blood" experience="20" speed="150" manacost="490">
+	<health now="6" max="6" />
+	<level min="135" max="143" />
+	<look type="1883" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-286" />	</attacks>
+<defenses armor="2" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="So... Tiny!" />
+		<voice sentence="Roaarrrrh." />
+		<voice sentence="You small!" />
+		<voice sentence="you die!" />
+		<voice sentence="weakies here!" />
+	</voices>
+	<loot>
+		
+		
+		<item id="15410" chance="520" /><!-- boots -->
+		<item id="33235" chance="520" /><!-- boots -->
+		<item id="36155" chance="220" /><!-- boots -->
+		<item id="7415" chance="520" /><!-- boots -->
+		<item id="32715" chance="520" /><!-- boots -->
+		
+		<item id="38244"  chance="4500" /><!--kneck hp -->
+		<item id="38292"  chance="4500" /><!--kneck def health -->
+		<item id="38334"  chance="4500" /><!--doom magic + hp -->
+
+		<item id="39176" countmax="2" chance="12500" /><!-- sell -->
+	    <item id="39175" countmax="1" chance="11200" /><!-- sell -->
+	    <item id="39046" countmax="1" chance="10500" /><!-- sell -->
+	    <item id="39146" countmax="2" chance="12500" /><!-- sell -->
+	</loot>
+</monster>

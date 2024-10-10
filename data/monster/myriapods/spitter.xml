@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Spitter" nameDescription="a spitter" race="venom" experience="20" speed="200" manacost="0">
+	<health now="6" max="6" />
+	<look type="461" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag runonhealth="40" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="earth" interval="2000" chance="20" range="7" radius="3" min="-100" max="-150">
+			<attribute key="areaEffect" value="poison" />
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" range="7" target="1" speedchange="-300" duration="15000">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="poisoncondition" interval="2000" chance="30" radius="5" target="0" min="-12" max="-12" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="250" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Spotz!" />
+	</voices>
+	<loot>
+		
+		<item id="15481" chance="18000" />					<!-- spitter nose -->
+		<item id="15486" chance="15000" />					<!-- compound eye -->
+		<item id="2150" countmax="2" chance="8100" />		<!-- small amethyst -->
+		<item id="7590" chance="7800" />						<!-- great mana potion -->
+		<item id="2789" countmax="3" chance="7500" />		<!-- brown mushroom -->
+		<item id="7591" chance="5000" />						<!-- great health potion -->
+		<item id="2169" chance="2400" />						<!-- time ring -->
+		<item id="7449" chance="2000" />						<!-- crystal sword -->
+		<item id="7440" chance="300" />						<!-- mastermind potion -->
+		<item id="2171" chance="260" />						<!-- platinum amulet -->
+		<item id="15489" chance="230" />						<!-- calopteryx cape -->
+		<item id="2497" chance="220" />						<!-- crusader helmet -->
+		<item id="2155" chance="210" />						<!-- green gem -->
+		<item id="15490" chance="140" />						<!-- grasshopper legs -->
+	</loot>
+</monster>

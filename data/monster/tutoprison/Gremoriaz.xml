@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Gremoriaz" nameDescription="gremoriaz" race="undead" experience="20" speed="270">
+	<health now="6" max="6" />
+	<look type="1220" corpse="37129"/>
+	<targetchange interval="20000" chance="15" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag staticattack="85" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="1" />
+		
+	</flags>
+	<script>
+	 
+</script>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="energy" interval="2000" chance="40" range="1" radius="3" target="1" min="-50" max="-25">
+			<attribute key="shootEffect" value="energy" />
+			<attribute key="areaEffect" value="purpleenergy" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="1" max="3">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+			<voices interval="5000" chance="10">
+		<voice sentence="kill him!" />
+		<voice sentence="ahhh my headd!" />
+		<voice sentence="coronel charl..gremoriaz!" />
+		<voice sentence="this will be your end!" />
+	</voices>
+	
+	<loot>
+
+
+		
+	</loot>
+	
+	
+</monster>

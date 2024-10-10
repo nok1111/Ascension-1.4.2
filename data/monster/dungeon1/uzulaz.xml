@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Uzulaz" nameDescription="Uzulaz" race="fire" experience="20" speed="130" skull="Black">
+	<health now="6" max="6" />
+	<!--- Level --><level min="180" max="180" />
+	<look type="1057" corpse="37129" />
+	<targetchange interval="6000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="2" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+	</flags>
+	
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="fire" interval="2000" chance="20" range="3" radius="3" target="1" min="-120" max="-320">
+			<attribute key="shootEffect" value="newfireballtwo" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="uzulaz summon" interval="3000" chance="100">
+		</attack>
+		<attack name="garuda aoe" interval="5000" chance="100" min="-450" max="-790"/>
+		<attack name="dragon fire" interval="9000" chance="100" min="-780" max="-890"/>
+		<attack name="death" interval="2000" chance="20" range="7" radius="7" target="1" min="-120" max="-220">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />	
+			</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-700" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+	
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="22" min="50" max="250">
+			<attribute key="areaEffect" value="redspark"/>
+		</defense>
+		<defense name="godria summon" interval="8000" chance="50"/>
+		<defense name="godria healing 2" interval="2000" chance="20"/>
+	</defenses>
+	<elements>
+	    <element energyPercent="-10" />
+		<element earthPercent="40" />
+		<element icePercent="-10" />
+		<element holyPercent="-20" />
+		<element physicalPercent="10" />
+		<element deathPercent="20" />
+		<element firePercent="60" />	
+	</elements>
+	<immunities>
+		<immunity lifedrain="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="You dare to enter our territory!" />
+		<voice sentence="your magic is weak!" />
+		<voice sentence="let my dogs dinner tonight!" />
+		<voice sentence="come at me!" />
+		<voice sentence="ill burn you to ashes!" />
+	</voices>
+
+</monster>

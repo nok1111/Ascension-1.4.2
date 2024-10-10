@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Mousthafar, The Non-Living" nameDescription="Mousthafar, The Non-Livinvg" race="blood" experience="20" speed="150" manacost="640">
+	<health now="35" max="35" />
+	<!--- Level --><level min="60" max="60" />
+	<look type="1334" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-130" />		
+<attack name="death" interval="1000" chance="10" range="1" radius="5" target="1" min="-3" max="-220">
+			<attribute key="shootEffect" value="grayplasma" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+
+		<attack name="death" interval="1000" chance="10" range="1" min="-3" max="-120">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="purpledeath" />
+		</attack>
+		<attack name="physical" interval="2000" chance="30" range="3" target="1" min="-3" max="-120">
+			<attribute key="shootEffect" value="bottlebomb" />
+			<attribute key="areaEffect" value="explodex" />
+		</attack>
+		<attack name="emerald wave" interval="3000" chance="25" min="-200" max="-260" />
+
+	</attacks>
+<defenses armor="1" defense="1" />
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<summons maxSummons="4">
+		<summon name="Dark Essence" interval="500" chance="10" />
+	</summons>
+	<voices interval="3000" chance="10">
+		<voice sentence="death to the gods!" />
+		<voice sentence="humans, angels whats the difference!" />
+		<voice sentence="ill take your soul today!" />
+	</voices>
+	<loot>
+		
+		<item id="2207" chance="3920" />
+		<item name="Blackskull Longsword" chance="2800" />
+		<item name="throwing knife" countmax="4" chance="9950" />
+		<item name="broadsword" chance="610" />
+		<item id="2419" chance="1860" /><!-- scimitar -->
+		
+		<item name="king's pride" chance="1650" />
+		<item id="2464" chance="1500" />
+		<item id="32749" chance="300" />
+		<item id="32822" chance="300" />
+		<item id="2667" chance="29400" /><!-- fish -->
+		<item name="brown mushroom" chance="9650" />
+		<item name="royal spear" chance="2400" />
+		<item name="health potion" chance="550" />
+	
+		<item name="skull belt" chance="2008" />
+	</loot>
+</monster>
+

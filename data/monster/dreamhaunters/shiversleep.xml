@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Shiversleep" nameDescription="Shiversleep" race="blood" experience="20" speed="270">
+	<health now="6" max="6" />
+	<look type="592" corpse="37129" />
+	<targetchange interval="5000" chance="8" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="earth" interval="1800" chance="10" length="7" spread="0" min="-300" max="-685">
+			<attribute key="areaEffect" value="stones" />
+		</attack>
+		<attack name="earth" interval="2000" chance="9" radius="6" min="-250" max="-590">
+			<attribute key="areaEffect" value="bigplants" />
+		</attack>
+	</attacks>
+	<defenses armor="55" defense="55">
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Knorrrr!" />
+	</voices>
+	<loot>
+		<item name="white pearl" countmax="1" chance="866" />
+		<item name="black pearl" countmax="1" chance="866" />
+		
+		<item name="Demonic Sword" chance="422" />
+		<item name="knight legs" chance="444" />
+		<item name="crown armor" chance="632" />
+		<item name="iron ore" countmax="2" chance="2195" />
+		<item name="magic sulphur" chance="632" />
+		<item name="great mana potion" countmax="4" chance="3100" />
+		<item name="ultimate health potion" countmax="2" chance="2195" />
+		<item name="crystal of power" chance="1066" />
+		<item name="shiny stone" chance="1032" />
+		<item name="wand of defiance" chance="1766" />
+		<item name="glacial rod" chance="1066" />
+		<item name="prismatic bolt" countmax="8" chance="366" />
+		<item name="crystalline sword" chance="603" />
+		<item name="crystal crossbow" chance="603" />
+	</loot>
+</monster>

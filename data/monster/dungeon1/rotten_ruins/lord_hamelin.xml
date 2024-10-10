@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lord Hamelin" nameDescription="Lord Hamelin" race="blood" experience="20" speed="75" manacost="0" skull="red">
+	<health now="50" max="50" />
+	<level min="140" max="140" />
+	<look type="1519" head="87" corpse="37129"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="85" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+	
+		<attack name="energy" interval="2000" range="7" radius="2" target="1" min="-5" max="-300">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		<attack name="energy" interval="2000" chance="20" radius="3" target="0" min="-100" max="-200">
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		
+		<attack name="hamelin aoe" interval="3000" chance="20"  min="-250" max="-300" />
+		
+		<defense name="hamelin summon" interval="2000" chance="20"/>
+		
+		
+	</attacks>
+<defenses armor="3" defense="1" >
+
+		<defense name="healing" interval="2000" chance="20" min="90" max="300">
+			<attribute key="areaEffect" value="purplebossaura1" />
+		</defense>
+	</defenses>
+		<elements>
+        <element holyPercent="30" />
+        <element deathPercent="30" />
+        <element firePercent="30" />
+        <element energyPercent="30" />
+        <element icePercent="30" />
+        <element earthPercent="30" />
+        <element physicalPercent="0" />
+    </elements>
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<loot>
+		
+		
+		
+	</loot>
+</monster>

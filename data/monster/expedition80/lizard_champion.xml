@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Champion" nameDescription="a lizard champion" race="blood" experience="33" speed="175" manacost="0" >
+	<health now="10" max="10" />
+	<!--- Level --><level min="140" max="142" />
+	<look type="1494" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="50" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-50" max="-320" />		
+<attack name="earth" interval="2000" chance="25" target="0" radius="3" min="-3" max="-410">
+			<attribute key="areaEffect" value="newearthquake" />
+			<attribute key="areaEffect" value="newstone2" />
+		</attack>
+		<attack name="earth" interval="2000" chance="10" length="8" spread="0" min="-3" max="-410">
+			<attribute key="areaEffect" value="earthbite" />
+		</attack>
+	</attacks>
+<defenses armor="3" defense="1" >
+
+		<defense name="healing" interval="2000" chance="10" min="75" max="500">
+			<attribute key="areaEffect" value="greenshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Grzzzzzzz!" />
+		<voice sentence="Garrrblarrrrzzzz!" />
+		<voice sentence="Kzzzzzz!" />
+	</voices>
+	<loot>
+	<item id="2339" chance="5000" /><!-- damaged helmet (quest) -->
+		
+		<item id="37383"  chance="500" /><!-- novel -->
+		<item id="37384"  chance="500" /><!-- novel -->
+		<item id="37385"  chance="500" /><!-- novel -->
+		<item id="37386"  chance="500" /><!-- novel -->
+		<item id="37387"  chance="500" /><!-- novel -->
+
+		<item id="38614" chance="200" /><!-- blueprint -->
+		<item name="tower shield" chance="1100" />
+		<item id="39134" countmax="2" chance="5500" /><!-- sell -->
+		<item name="great health potion" countmax="3" chance="5350" />
+		<item name="Zaoan armor" chance="980" />
+		<item name="Zaoan helmet" chance="140" />
+		<item id="30231"  chance="500" /><!-- armor -->
+		<item id="36198"  chance="500" /><!-- shoes -->
+		<item id="36312"  chance="500" /><!-- armor -->
+		<item name="Zaoan legs" chance="940" />
+		
+		<item id="36228"  chance="500" /><!-- shield -->
+		<item id="32802"  chance="500" /><!-- shield -->
+		<item id="32539"  chance="500" /><!-- legs -->
+		<item id="36232"  chance="500" /><!-- boots -->
+		<item id="36265"  chance="500" /><!-- sword -->
+		<item id="33458"  chance="500" /><!-- weapon -->
+		<item id="36322"  chance="500" /><!-- weapon -->
+		<item id="36165"  chance="1500" /><!-- weapon -->
+		
+
+		<item id="38332"  chance="4500" /><!--arcane resonance (max hp)-->
+		
+		<item id="38281"  chance="4500" /><!--natures embrace (def, ml) -->
+		<item id="38285"  chance="4500" /><!--mighty mamba crit + melee -->
+		
+		<item id="39126" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39125" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39075" countmax="1" chance="6500" /><!-- sell -->
+		<item id="39074" countmax="1" chance="3500" /><!-- sell -->
+		
+	</loot>
+</monster>

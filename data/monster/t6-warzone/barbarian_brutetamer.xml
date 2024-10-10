@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Barbarian Brutetamer" nameDescription="an barbarian brutetamer" race="blood" experience="20" speed="190">
+	<health now="6" max="6" />
+	<level min="380" max="400" />
+	<look type="264" head="78" body="116" legs="95" feet="121" corpse="37129" />
+	<targetchange interval="60000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag staticattack="90" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="4" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-900" />		
+<attack name="physical" interval="2000" chance="20" range="7" radius="1" target="1" min="-240" max="-390">
+			<attribute key="shootEffect" value="snowball" />
+		</attack>
+		<attack name="barbarian brutetamer skill reducer" range="5" interval="2000" chance="15" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="40" min="100" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<summons maxSummons="2">
+		<summon name="Snow Giant Wolf" interval="2000" chance="10" />
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="To me, creatures of the wild!" />
+		<voice sentence="My instincts tell me about your cowardice." />
+	</voices>
+	<loot>
+	
+	    <item id="30835" chance="200" /><!--winter backpack -->
+	    <item id="34080" chance="100" /><!--Ice Ramses Wand-->
+	    <item id="32806" chance="1200" /><!--Frostfire Wand-->
+	    <item id="4848" chance="500" /><!--Icicle-->
+	    <item id="30225" chance="250" /><!--Frostmourne-->	
+	    <item id="33159" chance="800" /><!--Ego Sword-->
+	    <item id="32467" chance="800" /><!--Blade of the damned-->
+	    <item id="32506" chance="650" /><!--Vampiric Wand-->
+	    <item id="30848" chance="650" /><!--Icy Shard Shield-->
+	    <item id="31885" chance="700" /><!--Freezing amulet-->
+	    <item id="31961" chance="450" /><!--Frost Dragon Boots-->
+	    <item id="32470" chance="600" /><!--Ice Legs-->
+	    <item id="7896" chance="900" /><!--glacier kilt-->
+	    <item id="8878" chance="350" /><!--crystalline armor-->
+        <item id="31899" chance="800" /><!--Keeper of Dusk Helmet-->	
+	    <item id="32553" chance="600" /><!--Banished Casque-->
+	    <item id="30255" chance="800" /><!--Winter Fur backpack -->
+
+		<item id="2050" chance="60500" /><!-- torch -->
+		<item id="2460" chance="19000" /><!-- brass helmet -->
+		<item id="2403" chance="15250" /><!-- knife -->
+		<item id="2473" chance="8000" /><!-- viking helmet -->
+		<item id="2483" chance="3850" /><!-- scale armor -->
+		<item id="2229" chance="3000" /><!-- skull -->
+		<item id="7449" chance="90" /><!-- crystal sword -->
+		<item id="7618" chance="930" /><!-- HP -->
+		<item id="5913" chance="500" /><!-- brown piece of cloth -->
+		<item id="2168" chance="250" /><!-- life ring -->
+		<item id="7462" chance="100" /><!-- ragnir helmet -->
+		<item id="7457" chance="120" /><!-- fur boots -->
+		<item id="5804" chance="8500" /><!-- nosering quest -->
+		
+		<item id="38266" chance="3500" /><!--knecklace crit magic distance -->
+		<item id="38262" chance="3500" /><!--knecklace crit max mana -->
+		<item id="38322" chance="3500" /><!--ring crit melee -->
+		<item id="38306" chance="3500" /><!--ring dist crit maxhealth -->
+		
+		<item id="39127" countmax="1" chance="15000" /><!-- sell -->
+		  <item id="39136" countmax="3" chance="37000" /><!-- sell -->	 
+		  <item id="39139" countmax="1" chance="6000" /><!-- sell -->
+		  <item id="39146" countmax="1" chance="6000" /><!-- sell -->
+		  <item id="39171" countmax="1" chance="500" /><!-- sell -->
+	</loot>
+</monster>

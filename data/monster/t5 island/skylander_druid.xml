@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Skylander Druid" nameDescription="Skylander Druid" race="blood" experience="20" speed="170">
+	<health now="6" max="6" />
+	<level min="225" max="235" />
+	<look type="1211" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="2" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		<attack name="physical" interval="2000" chance="100" range="4" min="-3" max="-470">
+			<attribute key="shootEffect" value="shadowspirit" />
+		</attack>
+		<attack name="energy" interval="2000" chance="10" range="7" min="-3" max="-610">
+			<attribute key="shootEffect" value="energy" />
+			<attribute key="areaEffect" value="energy" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" >
+		<defense name="heal aoe" interval="4000" chance="45"  min="-3" max="-10"/>
+		<defense name="healing" interval="2000" chance="15" min="40" max="60">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="i will cleanse your soul!" />
+		<voice sentence="For the Stars!" />
+		<voice sentence="I'll bring balance upon you!" />
+		<voice sentence="Tha'shi Cenath!" />
+		<voice sentence="Vihil Ealuel!" />
+	</voices>
+	<loot>
+	
+	<!-- rings-->
+        <item id="38304" chance="350" /> <!-- Healing Touch -->
+        <item id="38329" chance="350" /> <!-- Arcane Barrier -->
+        <item id="38305" chance="350" /> <!-- Mage's Seal -->
+
+
+        <!-- amulets-->
+
+        <item id="38258" chance="350" /> <!-- mana flow amulet -->
+
+        <item id="38242" chance="350" /> <!-- max mana amulet -->
+
+	<item id="31904" chance="2000" /> <!-- native set -->
+	<item id="31905" chance="2000" /> <!-- native set -->
+	<item id="31907" chance="2000" /> <!-- native set -->
+	
+	<item id="30260" chance="2000" /> <!-- wand -->
+	
+	<item id="39136" countmax="4" chance="17000" /><!-- sell -->
+	<item id="39157" countmax="1" chance="15000" /><!-- sell -->
+
+	
+	</loot>
+</monster>

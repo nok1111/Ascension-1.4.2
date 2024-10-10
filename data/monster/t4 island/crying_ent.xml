@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Crying Ent" nameDescription="a Crying Ent" race="undead" experience="20" speed="220">
+	<health now="6" max="6" />
+	<level min="160" max="165" />
+	<look type="1627" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="250" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-330" />
+		<attack name="speed" interval="2000" chance="20" target="0" length="5" spread="1" speedchange="-850" duration="2000">
+			<attribute key="areaEffect" value="blueleafs" />
+		</attack>		
+		<attack name="ice" interval="2000" chance="10" target="1" radius="1" min="-0" max="-495">
+			<attribute key="areaEffect" value="icearea" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" />
+  
+	<voices interval="5000" chance="30">
+		<voice sentence="YOU WILL FREEZE!" yell="1" />
+		<voice sentence="FEEL THE ETERNAL WINTER!" yell="1" />
+		<voice sentence="All my people is... gone." />
+	</voices>
+	<loot>
+	<item id="30836" chance="1000" />
+	<item id="7736" chance="20000" />
+	<item id="4848" chance="5000" /><!-- ice cube -->
+	<item name="fur boots" chance="100" />
+
+		<item id="38261" chance="3500" /><!--knecklace melee health -->
+		<item id="38289" chance="3500" /><!--knecklace health mana maxmana -->	
+		<item id="38328" chance="3500" /><!--ring def health hpregen -->
+		<item id="38318" chance="3500" /><!--ring magic mana manaregen -->
+		
+		<item id="34026" chance="2300" />
+		<item id="36296" chance="2300" />
+		<item id="30847" chance="2300" />
+		<item id="30444" chance="2300" />
+		<item id="31899" chance="2300" />
+		<item id="8878" chance="2300" />
+
+
+		<item id="39089" countmax="2" chance="5000" /><!-- sell -->
+		  <item id="39130" countmax="1" chance="7000" /><!-- sell -->	 
+
+	</loot>
+</monster>

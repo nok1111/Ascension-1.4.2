@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Goblin Assassin" nameDescription="a goblin assassin" race="blood" experience="20" speed="200" manacost="360">
+	<health now="6" max="6" />
+	<level min="40" max="45" />
+	<targetchange interval="10000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="15" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="drunk" interval="2000" chance="10" duration="10000">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="physical" interval="2000" chance="10" range="6" min="-3" max="-10">
+			<attribute key="shootEffect" value="throwingknife" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="invisible" interval="2000" chance="10" duration="2000">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="100" duration="3000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Goblin Powahhh!" />
+		<voice sentence="Me kill you!" />
+		<voice sentence="Me green menace!" />
+		<voice sentence="Gobabunga!" />
+		<voice sentence="Gooobliiiins!" />
+	</voices>
+	<loot>
+			<item name="small stone" countmax="3" chance="15290" />
+		<item id="2230" chance="1130" /><!-- bone -->
+		<item name="mouldy cheese" chance="1000" />
+		<item name="dagger" chance="1800" />
+		<item name="short sword" chance="8870" />
+		<item name="bone club" chance="4900" />
+		<item name="leather helmet" chance="1940" />
+		<item name="leather armor" chance="2510" />
+		<item id="31890" chance="300" />
+		<item id="2667" chance="12750" /><!-- fish -->
+		<item name="goblin ear" chance="910" />
+		
+		<item id="36350" chance="100" />
+		<item id="21406" chance="8000" /><!-- quest -->
+		<item id="11076" chance="8000" /><!-- quest -->
+		<item id="21398" chance="8000" /><!-- quest -->
+		<item id="21407" chance="8000" /><!-- quest -->
+		<item id="2648" chance="3000" />
+		<item id="2455" chance="3000" />
+		<item id="31903" chance="3000" />
+		<item id="32789" chance="3000" />
+		
+		<item id="32058" chance="1000" />
+	</loot>
+</monster>

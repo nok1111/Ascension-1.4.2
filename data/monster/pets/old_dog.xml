@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Old Dog*" nameDescription="a pet rooster" race="blood" experience="0" speed="170" manacost="0" summonwalk="true">
+	<health now="20" max="20"/>
+	<look type="1806" corpse="37129"/>
+	<targetchange interval="2000" chance="0"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="0"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="petmelee" interval="1000" range="1" chance="100"/>
+		<attack name="petparalyze" interval="3000"  range="1" chance="20"/>
+	</attacks>
+	<defenses armor="1" defense="2"/>
+</monster>

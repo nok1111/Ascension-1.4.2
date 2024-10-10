@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Tortoise" nameDescription="a tortoise" race="blood" experience="20" speed="120" manacost="445">
+	<health now="6" max="6" />
+	<look type="197" corpse="37129" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+		<flag passive="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />	</attacks>
+<defenses armor="1" defense="1" />
+	<elements>
+		<element physicalPercent="35" />
+		<element icePercent="20" />
+		<element earthPercent="20" />
+		<element firePercent="-10" />
+	</elements>
+	<loot>
+		<item name="battle hammer" chance="730" />
+		<item name="plate shield" chance="2850" />
+		<item id="2667" chance="4600" /><!-- fish -->
+		<item name="tortoise egg" countmax="2" chance="30000" />
+		<item name="turtle shell" chance="1300" />
+		<item name="tortoise shield" chance="2000" />
+	</loot>
+</monster>

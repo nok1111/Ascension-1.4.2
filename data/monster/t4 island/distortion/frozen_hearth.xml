@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Frozen Hearth" nameDescription="A Frozen Hearth" race="blood" experience="20" speed="0" skull="red">
+	<health now="2000" max="2000" />
+	<look typeex="5943" shader="soul" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="20" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+			<attack name="frozen_aoe" interval="3000" range="10" chance="25" min="-800" max="-1200" />
+	</attacks>
+	
+<defenses armor="1" defense="1"/>
+	<elements>		
+	</elements>
+	<immunities>
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<script>
+		<event name="FrozenHearth_Damage"/>
+	</script>
+	<voices interval="3000" chance="100">
+		<voice sentence="tun tun tun" />
+		<voice sentence="blood" />
+	</voices>
+	<loot>
+
+	</loot>
+</monster>

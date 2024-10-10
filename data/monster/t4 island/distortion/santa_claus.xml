@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Santa Claus" nameDescription="a Santa Claus" race="blood" experience="20" speed="0" manacost="0" skull="red">
+	<health now="120" max="120" />
+	<level min="180" max="180" />
+	<look type="2226" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="25" />
+		<flag staticattack="90" />
+		<flag runonhealth="30" />
+	</flags>
+	
+	
+	<attacks>
+		<attack name="melee" interval="2000" min="-2" max="-500" />	
+		<attack name="energy" interval="2000" chance="30" range="2" radius="2" target="1" min="-280" max="-360">
+			<attribute key="shootEffect" value="snowball" />
+			<attribute key="areaEffect" value="iceattack" />
+		</attack>
+		
+			<attack name="nightmare aoe" target="1" interval="3000" chance="25"  min="-200" max="-600" />
+			<attack name="nightmare wave" interval="3000" chance="25" min="-600" max="-650" />
+			<attack name="fear" interval="15000" chance="100"/>
+	</attacks>
+<defenses armor="3" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="300" duration="3000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+		<defense name="healing" interval="2000" chance="15" min="1000" max="1500" >
+		<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element energyPercent="50" />
+		<element icePercent="50" />
+		<element firePercent="50" />
+		<element holyPercent="50" />
+		<element earthPercent="50" />
+		<element physicalPercent="40" />
+		<element deathPercent="50" />
+	</elements>
+	<voices interval="2000" chance="50">
+		<voice sentence="HO HO HO!." yell="1" />
+		<voice sentence="It seems you didnt like your presents!" />
+		<voice sentence="cookies!" />
+		<voice sentence="Merry Christmass!" />
+	</voices>
+	<summons maxSummons="5">
+		<summon name="Exploding Cookie" interval="5000" chance="100" />
+	</summons>
+	<loot>
+	
+	  
+
+	</loot>
+</monster>

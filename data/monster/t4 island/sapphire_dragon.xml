@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Sapphire Dragon" nameDescription="a Sapphire dragon" race="blood" experience="20" speed="280">
+	<health now="6" max="6" />
+	<level min="300" max="320" />
+	<look type="1067" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag staticattack="80" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-740" />		
+<attack name="dragon wave" interval="2000" chance="15" min="-700" max="-1400"/>
+		
+		<attack name="energy" interval="2000" chance="20" range="7" min="-400" max="-725">
+			<attribute key="shootEffect" value="ice" />
+			<attribute key="areaEffect" value="bigfrost" />
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="10" length="4" spread="0" min="-298" max="-345">
+			<attribute key="areaEffect" value="airwavenew" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="100" max="150">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="effect" interval="2000" chance="10" radius="1">
+			<attribute key="areaEffect" value="yellownote" />
+		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="GRRR!" />
+		<voice sentence="GROOOOAAAAAAAAR!" />
+	</voices>
+	<loot>
+		<item id="4848" chance="5000" /><!-- ice cube -->
+		<item name="fur boots" chance="100" />
+		
+	</loot>
+</monster>
