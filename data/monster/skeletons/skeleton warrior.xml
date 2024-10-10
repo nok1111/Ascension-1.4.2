@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Skeleton Warrior" nameDescription="a skeleton warrior" race="undead" experience="20" speed="150" manacost="350">
+	<health now="6" max="6" />
+	<look type="298" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="lifedrain" interval="2000" chance="15" range="1" min="-3" max="-10" >
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+
+</monster>

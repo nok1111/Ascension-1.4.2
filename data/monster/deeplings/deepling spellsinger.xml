@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deepling Spellsinger" nameDescription="a deepling spellsinger" race="blood" experience="15" speed="190" manacost="0">
+	<health now="6" max="6" />
+	<level min="380" max="400" />
+	<look type="443" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="60" />
+		<flag runonhealth="60" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-610" />		
+<attack name="ice" interval="2000" chance="10" length="10" spread="3" min="-180" max="-1650">
+			<attribute key="areaEffect" value="icetornado" />
+		</attack>
+		<attack name="drown" interval="2000" chance="20" target="1" radius="4" min="-90" max="-1130">
+			<attribute key="areaEffect" value="bubbles" />
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="15" range="7" min="-60" max="-650">
+			<attribute key="areaEffect" value="smallplants" />
+		</attack>
+		<attack name="manadrain" interval="2000" chance="10" range="7" min="-60" max="-340">
+			<attribute key="areaEffect" value="smallplants" />
+		</attack>
+		<attack name="deepling spellsinger skill reducer" range="5" interval="2000" chance="5" />
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Jey Obu giotja!!" />
+		<voice sentence="Mmmmmoooaaaaaahaaa!!" />
+	</voices>
+	
+	<loot>
+		
+		
+		<item id="15421" chance="14285" /><!-- spellsinger's seal -->
+		<item id="15488" chance="14285" /><!-- deepling filet -->
+		<item id="15422" chance="10000" /><!-- key to the drowned library -->
+		<item id="2667" chance="3448" /> <!-- fish -->
+		<item id="2146" chance="2854" /><!-- small sapphire -->
+		<item id="13870" chance="2500" /><!-- eye of a deepling -->
+		<item id="2168" chance="2439" /> <!-- life ring -->
+		<item id="15400" chance="2000" /> <!-- deepling staff -->
+		<item id="15403" chance="813" /> <!-- necklace of the deep -->
+		<item id="5895" chance="498" /><!-- fish fin -->
+		<item id="15644" chance="220" /> <!-- ornate crossbow -->
+		
+		<item id="39091" countmax="2" chance="17000" /><!-- sell -->
+		<item id="39082" countmax="2" chance="20000" /><!-- sell -->
+		<item id="39048" countmax="1" chance="3000" /><!-- sell -->
+		<item id="39130" countmax="2" chance="13000" /><!-- sell -->
+	</loot>
+</monster>

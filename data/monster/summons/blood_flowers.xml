@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Creep" nameDescription="a warlock summon" race="blood" experience="0" speed="180" manacost="0">
+	<health now="6" max="6" />
+	<look type="1394"/>
+	<targetchange interval="4000" chance="10" />
+	<strategy attack="90"/>
+	<stats>
+		<stat attack="5"/>
+		<stat magicattack="5"/>
+		<stat defense="10"/>
+		<stat blockchance="15"/>
+		<stat blockamount="50"/>
+		<stat criticalhit="50"/>
+	</stats>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="1"/>
+		<flag hostile="1"/>
+		<flag illusionable="0"/>
+		<flag convinceable="0"/>
+		<flag pushable="0"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="3"/>
+		<flag staticattack="90"/>
+		<flag hidehealth="1"/>
+		<flag lightcolor="0"/>
+		<flag lightlevel="0"/>
+		<flag runonhealth="0"/>
+	</flags>
+</monster>

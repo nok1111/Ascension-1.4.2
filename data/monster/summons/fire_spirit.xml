@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Fire Spirit" nameDescription="a fire spirit" race="blood" experience="0" speed="700">
+	<health now="6" max="6" />
+	<look type="1406" corpse="" />
+	<targetchange interval="10000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="0" />
+		<flag hostile="0" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="0" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+	</attacks>
+<defenses armor="1" defense="1"/>
+	<voices interval="5000" chance="10">
+
+	</voices>
+	<loot>
+	</loot>
+</monster>

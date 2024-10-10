@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Amazon Tiger" nameDescription="a tiger" race="blood" experience="20" speed="170" manacost="305">
+	<health now="6" max="6" />
+	<level min="110" max="120" />
+	<look type="1495" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-390" />	</attacks>
+<defenses armor="1" defense="1" />
+	<loot>
+	<item id="2230" chance="15000" /><!-- bone (sell) -->
+		<item id="2231" chance="12000" /><!-- big bone (sell) -->
+		<item id="13830" chance="8500" /><!-- fleshy bone (sell) -->
+		<item name="meat" countmax="4" chance="35190" />
+		<item id="39126" countmax="2" chance="10500" /><!-- sell -->
+		<item id="39108" countmax="2" chance="10500" /><!-- sell -->
+		
+		
+		
+	</loot>
+</monster>

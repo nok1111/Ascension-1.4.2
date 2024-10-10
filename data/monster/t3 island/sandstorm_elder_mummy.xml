@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Sandstorm Elder Mummy" nameDescription="a mummy" race="undead" experience="26" speed="160" >
+<health now="12" max="12" />
+	<level min="135" max="138" />
+	<look type="87" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-275" />		
+<attack name="death" interval="2000" chance="20" range="1" target="1" min="-3" max="-405">
+			<attribute key="areaEffect" value="smallclouds" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" range="7" target="1" speedchange="-226" duration="10000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="2" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="I will ssswallow your sssoul!" />
+		<voice sentence="Mort ulhegh dakh visss." />
+		<voice sentence="Flesssh to dussst!" />
+		<voice sentence="I will tassste life again!" />
+		<voice sentence="Ahkahra exura belil mort!" />
+		<voice sentence="Yohag Sssetham!" />
+	</voices>
+	<loot>
+			
+		<item id="33694" chance="10000" /><!-- ancient rune -->
+		<item id="21391" chance="10000" /><!-- testament -->		
+		<item id="38244"  chance="4500" /><!--kneck hp -->
+		<item id="38284"  chance="4500" /><!--kneck magic mana -->
+		<item id="38287"  chance="4500" /><!--kneck crit melee  -->	
+		<item id="38333"  chance="4500" /><!--doom magic -->
+
+
+		<item id="13948" chance="3500" /><!-- new spellbooks -->
+
+		<item id="39168" countmax="2" chance="7500" /><!-- sell -->
+	    <item id="39167" countmax="2" chance="7000" /><!-- sell -->
+	    <item id="39170" countmax="1" chance="15500" /><!-- sell -->
+	    <item id="39133" countmax="2" chance="6500" /><!-- sell -->
+	</loot>
+</monster>

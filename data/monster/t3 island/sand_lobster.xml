@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Sand Lobster" nameDescription="sand lobster" race="venom" experience="20" speed="180">
+	<health now="6" max="6" />
+	<level min="135" max="145" />
+	<look type="1290" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="0" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-290" />		
+<attack name="sand aoe" interval="2000" chance="10" target="1" range="1" radius="3" min="-3" max="-410">
+			<attribute key="areaEffect" value="groundshaker" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="450" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="Eeeeeeyyyyh!" />
+		<voice sentence="Iiiiieeeeeh!" />
+	</voices>
+	<loot>
+		
+		
+		
+		
+		<item id="11229" countmax="2" chance="15000" /><!-- Lobster Scythe -->
+		<item id="38287"  chance="4500" /><!--kneck crit melee  -->
+		<item id="38292"  chance="4500" /><!--kneck def health -->
+		<item id="38335"  chance="4500" /><!--doom crit -->	
+		<item id="36309" chance="280" /><!-- armor-->
+		<item id="36159" chance="900" /><!-- armor-->
+		<item id="32478" chance="900" /><!-- legs-->
+		<item id="32715" chance="400" /><!-- shield-->
+		
+		<item id="39102" countmax="2" chance="18500" /><!-- sell -->
+		<item id="39117" countmax="1" chance="5500" /><!-- sell -->
+		<item id="39129" countmax="1" chance="16500" /><!-- sell -->
+	</loot>
+</monster>

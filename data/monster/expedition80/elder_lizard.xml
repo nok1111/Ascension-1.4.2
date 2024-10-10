@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Elder Lizard" nameDescription="a lizard" race="blood" experience="20" speed="160" manacost="0">
+	<health now="6" max="6" />
+	<!--- Level --><level min="125" max="139" />
+	<look type="1492" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-360" />		
+<attack name="lizard magistratus curse" interval="2000" chance="10" range="5" />
+		
+		<attack name="earth" interval="2000" chance="15" range="7" min="0" max="-410">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="earthbite" />
+		</attack>
+		<attack name="earth" interval="2000" chance="14" range="7" min="0" max="-410">
+			<attribute key="areaEffect" value="newearthquake" />
+			<attribute key="areaEffect" value="newstone2" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="50" min="200" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+		
+	<voices interval="2000" chance="7">
+		<voice sentence="Shhhhhhhh" />
+	</voices>
+	<loot>
+		<item id="38614" chance="200" /><!-- blueprint -->
+		
+		<item id="37383"  chance="500" /><!-- novel -->
+		<item id="37384"  chance="500" /><!-- novel -->
+		<item id="37385"  chance="500" /><!-- novel -->
+		<item id="37386"  chance="500" /><!-- novel -->
+		<item id="37387"  chance="500" /><!-- novel -->
+		<item id="5881" chance="450" /><!-- lizard scale -->
+		<item id="5876" chance="220" /><!-- lizard leather -->
+		
+		<item name="life ring" chance="770" />
+		<item name="Rod of the Earthflow" chance="1001" />
+		<item name="strong mana potion" chance="12110" />
+		<item name="great mana potion" chance="7940" />
+		<item name="focus cape" chance="660" />
+		<item id="36198"  chance="500" /><!-- shoes -->
+		
+		<item id="32761"  chance="500" /><!-- wand -->
+		<item id="36274"  chance="500" /><!-- wand -->
+		<item id="31935"  chance="500" /><!-- wand -->
+		
+		<item id="32438"  chance="500" /><!-- caster head -->
+		<item id="32641"  chance="500" /><!-- caster head -->
+		<item id="36232"  chance="500" /><!-- boots -->
+		<item id="36161"  chance="500" /><!-- tunic -->
+		<item id="30667"  chance="500" /><!-- tunic -->
+		<item id="32539"  chance="500" /><!-- legs -->
+		<item id="36198"  chance="500" /><!-- shoes -->
+		<item id="32538"  chance="500" /><!-- robe -->
+
+		<item id="8901" chance="4500" /><!-- new spellbooks -->
+		
+		<item id="36165"  chance="1500" /><!-- weapon -->
+		
+		<item id="38326"  chance="4500" /><!--doom ring (ml) -->
+	
+		<item id="38332"  chance="4500" /><!--arcane resonance (max hp)-->
+		
+		<item id="38281"  chance="4500" /><!--natures embrace (def, ml) -->
+	
+		<item id="38282"  chance="4500" /><!--emeral echanter (magic  + max mana) -->
+		
+		<item id="39134" countmax="2" chance="5500" /><!-- sell -->
+		<item id="39126" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39125" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39075" countmax="1" chance="6500" /><!-- sell -->
+		<item id="39074" countmax="1" chance="3500" /><!-- sell -->
+
+	</loot>
+</monster>

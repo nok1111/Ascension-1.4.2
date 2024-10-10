@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Triviewer" nameDescription="a Triviewer" race="venom" experience="20" speed="180">
+	<health now="8" max="8" />
+	<level min="42" max="49" />
+	<look type="2492" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="60" />
+		<flag runonhealth="5" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		
+		<attack name="melee" interval="2000" min="-2" max="-105" />
+		<attack name="fire" interval="2000" chance="20" range="3" radius="3" target="1" min="-3" max="-135">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+
+	</attacks>
+<defenses armor="1" defense="1"/>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Trikra shada!" />
+<voice sentence="Vrextra noran!" />
+<voice sentence="Frikna draxa!" />
+	</voices>
+	<loot>
+		<item id="2185" chance="600" /> <!--name="necrotic rod"-->
+		<item name="bag of apple slices" chance="920" />
+		<item id="2167" chance="400" />
+		<item id="2182" chance="800" />
+		<item id="31919" chance="800" />
+		<item id="36193" chance="500" />
+		<item id="32873" chance="530" />
+		<item id="36358" chance="530" />		
+		<item id="38294" chance="4500" /> <!-- mana master -->
+		<item id="38296" chance="4500" /> <!-- magic heaven -->
+		<item id="38325" chance="4500" /> <!-- ring of the witch -->
+		
+		<item id="32723" chance="3500" />
+		<item id="32723" chance="3500" />
+		<item id="39162" countmax="1" chance="5500" /><!-- sell -->
+		<item id="2674" countmax="2" chance="15500" /><!-- sell -->
+	</loot>
+</monster>

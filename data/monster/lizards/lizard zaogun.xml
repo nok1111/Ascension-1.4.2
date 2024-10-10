@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Zaogun" nameDescription="a lizard zaogun" race="blood" experience="20" speed="250">
+	<health now="6" max="6" />
+	<level min="125" max="139" />
+	<look type="2312" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-410" />		
+<attack name="earth" interval="2000" chance="15" range="7" radius="1" target="1" min="-3" max="-410">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="poison" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="10" min="175" max="275">
+			<attribute key="areaEffect" value="greenshimmer" />
+		</defense>
+	</defenses>
+	
+	<loot>
+		<item name="small emerald" countmax="5" chance="4830" />
+		<item name="tower shield" chance="1000" />
+		<item name="lizard leather" chance="14360" />
+		<item name="lizard scale" chance="12520" />
+		<item name="strong health potion" chance="1900" />
+		<item name="great health potion" countmax="3" chance="7000" />
+		<item name="red lantern" chance="2170" />
+		<item name="Zaoan armor" chance="530" />
+		<item name="Zaoan shoes" chance="1000" />
+		<item name="Zaoan legs" chance="1001" />
+	</loot>
+</monster>

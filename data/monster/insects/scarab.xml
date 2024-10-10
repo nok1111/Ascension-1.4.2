@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Scarab" nameDescription="a scarab" race="venom" experience="20" speed="170" manacost="395">
+	<health now="6" max="6" />
+	<look type="83" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="80" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag passive="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="earth" interval="2000" chance="10" range="1" min="0" max="-35">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="poisonfield" interval="2000" chance="10" radius="1" target="0" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="200" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	
+	<loot>
+		<item id="37933" chance="1000" /><!-- pet egg -->
+		<item id="37963" chance="1000" /><!-- pet egg -->
+		<item name="small emerald" chance="413" />
+		<item name="small amethyst" chance="540" />
+		<item name="scarab coin" chance="1098" />
+		<item name="daramian mace" chance="245" />
+		<item name="meat" countmax="2" chance="40000" />
+		<item name="piece of scarab shell" chance="4950" />
+	</loot>
+</monster>

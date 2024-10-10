@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Spearman" nameDescription="a lizard spearman" race="blood" experience="20" speed="180" manacost="0">
+	<health now="6" max="6" />
+	<!--- Level --><level min="125" max="139" />
+	<look type="1493" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="10" />
+	</flags>
+	<attacks>
+		
+		<attack name="physical" interval="2300" chance="100" range="4" min="0" max="-280">
+			<attribute key="shootEffect" value="huntingspear" />
+			<attribute key="areaEffect" value="redspark" />	
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1"/>
+
+	<voices interval="2000" chance="7">
+		<voice sentence="Tssss!" />
+	</voices>
+	<loot>
+	<item id="2339" chance="9000" /><!-- damaged helmet (quest) -->
+		<item id="37383"  chance="500" /><!-- novel -->
+		<item id="37384"  chance="500" /><!-- novel -->
+		<item id="37385"  chance="500" /><!-- novel -->
+		<item id="37386"  chance="500" /><!-- novel -->
+		<item id="37387"  chance="500" /><!-- novel -->
+		
+		
+		<item id="38614" chance="200" /><!-- blueprint -->
+		<item name="tower shield" chance="1040" />
+		<item name="lizard leather" chance="1000" />
+		<item name="lizard scale" chance="970" />
+		<item name="strong health potion" chance="11925" />
+		<item name="great health potion" chance="7070" />
+		
+		<item id="30231"  chance="500" /><!-- armor -->
+		<item id="36198"  chance="500" /><!-- shoes -->
+		<item name="Zaoan legs" chance="720" />
+
+		<item id="39134" countmax="2" chance="5500" /><!-- sell -->
+		<item id="36232"  chance="500" /><!-- boots -->
+		<item id="36245"  chance="500" /><!-- bow -->
+		<item id="30607"  chance="500" /><!-- bow -->
+		<item id="32539"  chance="500" /><!-- legs -->
+		<item id="36267"  chance="500" /><!-- dagger -->
+		
+		<item id="36165"  chance="1500" /><!-- weapon -->
+		
+		
+
+		<item id="38332"  chance="4500" /><!--arcane resonance (max hp)-->
+		
+		<item id="38281"  chance="4500" /><!--natures embrace (def, ml) -->
+
+		<item id="38283"  chance="4500" /><!--poisonous predrator (crit + distance) -->
+		<item id="39126" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39125" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39075" countmax="1" chance="6500" /><!-- sell -->
+		<item id="39074" countmax="1" chance="3500" /><!-- sell -->
+	</loot>
+</monster>

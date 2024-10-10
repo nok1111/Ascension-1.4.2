@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Hellfire Caster" nameDescription="a hellfire caster" race="blood" experience="20" speed="222">
+	<health now="6" max="6" />
+	<look type="1179" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+		<attack name="fire" interval="1000" chance="20" range="7" radius="7" target="1" min="-3" max="-10">
+			<attribute key="shootEffect" value="newfireballthree" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="firefield" interval="2000" chance="10" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="newfireballthree" />
+		</attack>
+		
+		<attack name="fire" interval="1000" chance="10" range="1" min="-3" max="-10">
+			<attribute key="shootEffect" value="newfireballthree" />
+		</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-300" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="0" max="50">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="this prison is no longer yours!" />
+		<voice sentence="your magic is weak!" />
+		<voice sentence="ill burn you to ashes!" />
+	</voices>
+	<loot>
+		
+		
+		<item id="7899" chance="2000" />
+		<item id="32487" chance="2000" />
+		<item id="31889" chance="200" />
+		<item id="31864" chance="3000" />
+		<item id="2187" chance="2000" />
+		<item name="great mana potion" countmax="3" chance="20285" />
+	</loot>
+</monster>

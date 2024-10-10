@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Vanguard Harpy" nameDescription="a varguard Harpy" race="blood" experience="40" speed="190" manacost="450">
+	<health now="6" max="6" />
+	<level min="395" max="400" />
+	<look type="1897" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-1250" />		
+<attack name="lifedrain" interval="2000" chance="10" radius="2" target="0" min="-300" max="-500">
+			<attribute key="areaEffect" value="bluenote" />
+		</attack>
+		<attack name="manadrain" interval="2000" chance="10" range="7" min="0" min="-300" max="-100" />
+		<attack name="energy" interval="2000" chance="10" length="8" spread="0" min="-500" max="-1500" >
+			<attribute key="areaEffect" value="bigclouds" />
+		</attack>
+		<attack name="drunk" interval="1000" chance="12" range="7" duration="20000">
+			<attribute key="areaEffect" value="hearts" />
+		</attack>
+	</attacks>
+<defenses armor="3" defense="3" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Another head for me!" />
+		<voice sentence="Head off!" />
+		<voice sentence="Your head will be mine!" />
+		<voice sentence="Stand still!" />
+		<voice sentence="One more head for me!" />
+	</voices>
+	<loot>
+		
+		<!-- rings-->
+
+		<item id="38329" chance="350" /> <!-- Arcane Barrier -->
+		<item id="38309" chance="350" /> <!-- Sorcerer's Circle -->
+
+		<item id="38305" chance="350" /> <!-- Mage's Seal -->
+
+		
+		<!-- amulets-->
+
+		<item id="38258" chance="350" /> <!-- mana flow amulet -->
+		<item id="38336" chance="350" /> <!-- magic amulet -->
+		<item id="38243" chance="350" /> <!-- sword amulet -->
+		<item id="38242" chance="350" /> <!-- max mana amulet -->
+
+		<!-- t5 loot-->
+		<item id="33991" chance="300" />
+		<item id="33990" chance="300" />
+		<item id="33992" chance="300" />
+		<item id="33989" chance="300" />
+		<item id="34016" chance="300" />
+		<item id="33993" chance="300" />
+
+		<item name="small diamond" chance="200" />
+
+		<item name="protection amulet" chance="1086" />
+		<item id="2229" chance="760" /><!-- skull -->
+		<!-- trash-->
+		<item id="39139" countmax="2" chance="7000" />
+		<item id="39146" countmax="3" chance="7000" />
+		<item id="39145" countmax="1" chance="1000" />
+		<!-- trash end-->
+		<item name="health potion" chance="591" />
+		<item name="girlish hair decoration" chance="5800" />
+		<item name="protective charm" chance="3400" />
+		
+		<item id="21310" chance="1700" /><!--feather for outfit-->
+		<item id="18221" chance="10550" /><!-- for task-->
+		<item id="2363" chance="1700" /><!-- for trader-->
+	</loot>
+</monster>

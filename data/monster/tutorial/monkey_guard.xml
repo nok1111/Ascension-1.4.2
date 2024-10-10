@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Monkey Guard" nameDescription="a monkey guard" race="blood" experience="20" speed="200">
+	<health now="6" max="6" />
+	<level min="9" max="12" />
+	<look type="1557" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="physical" interval="2000" chance="35" range="3" min="-5" max="-35">
+			<attribute key="shootEffect" value="whirlwindaxe" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="250" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element firePercent="25" />
+		<element holyPercent="10" />
+		<element icePercent="-15" />
+		<element deathPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity outfit="1" />
+		<immunity drunk="1" />
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Eeeeek! Eeeeek" />
+		<voice sentence="Huh! Huh! Huh!" />
+		<voice sentence="Ahhuuaaa!" />
+	</voices>
+	<loot>
+		<item name="small stone" countmax="3" chance="30060" />
+		<item name="orange" countmax="5" chance="19840" />
+		<item name="banana" countmax="12" chance="30000" />
+		<item name="coconut" countmax="3" chance="1960" />
+		<item name="melon" chance="1000" />
+		<item name="banana sash" chance="5000" />
+	</loot>
+</monster>

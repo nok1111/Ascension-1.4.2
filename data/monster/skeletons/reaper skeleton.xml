@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Reaper Skeleton" nameDescription="a reaper Skeleton" race="undead" experience="20" speed="200" manacost="0">
+	<health now="6" max="6" />
+	<look type="1722" corpse="37129" />
+	<targetchange interval="4000" chance="15" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="betrayed wraith skill reducer" chance="10" />
+		<attack name="death" interval="1000" chance="10" range="1" radius="5" target="1" min="-20" max="-605">
+			<attribute key="shootEffect" value="grayplasma" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		<attack name="speed" interval="2000" chance="20" range="7" target="1" speedchange="-300" duration="3000">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="10" length="8" spread="0" min="-150" max="-550">
+			<attribute key="areaEffect" value="purpleenergy" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="30" min="250" max="400">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="260" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Rrrah!" />
+		<voice sentence="Gnarr!" />
+		<voice sentence="Tcharrr!" />
+	</voices>
+	<loot>
+		<item name="ruby necklace" chance="1500" />
+		<item name="white pearl" countmax="3" chance="10000" />
+		<item name="black pearl" countmax="3" chance="12000" />
+		<item id="2156" chance="15000" /><!-- red gem -->
+		<item name="stone skin amulet" chance="2780" />
+		<item name="blank rune" countmax="3" chance="35250" />
+		<item name="skull staff" chance="850" />
+		<item id="2528" chance="740" /><!-- tower shield -->
+		<item id="5806" chance="4950" /><!-- silver goblet -->
+		<item name="soul orb" chance="15000" />
+		<item id="6300" chance="2170" /><!-- death ring -->
+		<item name="skeleton decoration" chance="1250" />
+		<item name="haunted blade" chance="740" />
+		<item name="titan axe" chance="1000" />
+		<item name="great mana potion" countmax="2" chance="14200" />
+		<item name="great health potion" countmax="2" chance="8800" />
+		<item id="9809" chance="3500" /><!-- rusty armor (semi-rare) -->
+		<item id="9810" chance="3500" /><!-- rusty armor (rare) -->
+		<item name="unholy bone" chance="33010" />
+		
+		<item id="32465" countmax="1" chance="15000" />		<!-- rotten core QUEST -->
+		<item id="10562" countmax="1" chance="18000" />		<!-- rotten core QUEST -->
+		<item id="10156" countmax="1" chance="5000" />		<!-- dark essense QUEST -->
+		
+		<item id="36285" chance="300" />	
+		<item id="32509" chance="300" />
+		<item id="5741" chance="300" />
+		<item id="36236" chance="300" />
+		<item id="31858" chance="300" />		
+		
+		<item id="37943" chance="300" />
+	</loot>
+</monster>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Mimic" nameDescription="a mimic" race="blood" experience="20" speed="170">
+	<health now="6" max="6" />
+	<look type="92" corpse="37129" />
+	<targetchange interval="5000" chance="8" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="5" />
+		<flag staticattack="0" />
+		<flag runonhealth="0" />
+	</flags>
+<defenses armor="1" defense="1"/>
+</monster>

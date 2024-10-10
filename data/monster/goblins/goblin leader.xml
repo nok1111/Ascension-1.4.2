@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Goblin Leader" nameDescription="a goblin leader" race="blood" experience="20" speed="200" manacost="290">
+	<health now="6" max="6" />
+	<level min="45" max="50" />
+	<look type="1693" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="10" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-126" />		
+<attack name="physical" interval="2000" chance="15" range="7" min="-3" max="-185">
+			<attribute key="shootEffect" value="smallstone" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	<voices interval="2000" chance="7">
+		<voice sentence="Go go, Gobo attack !!" />
+		<voice sentence="Me the greenest and the meanest!" />
+		<voice sentence="Me have power to crush you!" />
+		<voice sentence="Goblinkiller! Catch him !!" />
+	</voices>
+	<loot>
+		
+		<item id="2230" chance="1130" /><!-- bone -->
+		<item name="dagger" chance="1800" />
+		<item name="short sword" chance="8870" />
+		<item name="bone club" chance="4900" />
+		<item id="31890" chance="300" />	
+		<item id="2477" chance="10000" />
+		<item id="2541" chance="10000" />
+		<item id="21406" chance="8000" /><!-- quest -->
+		<item id="11076" chance="8000" /><!-- quest -->
+		<item id="21398" chance="8000" /><!-- quest -->
+		<item id="21407" chance="8000" /><!-- quest -->
+		<item id="2648" chance="3000" />
+		<item id="2455" chance="3000" />
+		<item id="31903" chance="3000" />
+		<item id="32789" chance="3000" />
+		<item id="36357" chance="690" /><!-- fire sword -->
+		<item id="36367" chance="3000" />
+		<item id="36355" chance="500" />
+		<item id="31879" chance="500" />
+		<item id="2181" chance="500" />
+		<item id="32866" chance="500" />
+		<item id="36389" chance="500" />
+		<item id="38294" chance="3000" /> <!-- regen resilence -->
+		<item id="38293" chance="3000" /> <!-- critical coup -->
+		<item id="38295" chance="3000" /> <!-- batle mage -->		
+		<item id="38323" chance="3000" /> <!-- ring of the guardian -->
+		
+		
+		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39070" countmax="1" chance="15500" /><!-- sell -->
+		<item id="39101" countmax="1" chance="4000" /><!-- sell -->
+	</loot>
+</monster>

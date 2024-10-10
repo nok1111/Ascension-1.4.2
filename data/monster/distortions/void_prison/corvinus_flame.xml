@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Corvinus Souls" nameDescription="A Soul" race="fire" experience="20" speed="60" skull="Red">
+	<health now="6" max="6" />
+	<look type="1410" corpse="0" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="death" interval="50" chance="20" radius="3" target="0" min="-60" max="-100">
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1"/>
+		
+		
+	</defenses>
+	<elements>		
+	</elements>
+	<immunities>
+		<immunity death="1" />
+		<immunity paralyze="1" />
+		<immunity invisible="1" />
+	</immunities>
+	
+	<voices interval="3000" chance="100">
+		<voice sentence="helppppp!" />
+		<voice sentence="saaave m..." />
+		<voice sentence="darkness is what i see!" />
+		<voice sentence="mom?! mom?!" />
+		<voice sentence="daddy is that you?!" />
+	</voices>
+	<loot>
+
+	</loot>
+</monster>

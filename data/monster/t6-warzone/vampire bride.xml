@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Vampire Bride" nameDescription="a vampire bride" race="blood" experience="25" speed="230" manacost="0">
+	<health now="6" max="6" />
+	<level min="390" max="400" />
+	<look type="312" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-1320" />		
+<attack name="lifedrain" interval="2000" chance="20"  radius="2" min="-300" max="-620">
+			<attribute key="areaEffect" value="bloodaura" />
+		</attack>
+		<attack name="death" interval="2000" chance="20" target="1" range="7" min="-260" max="-1050">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+		<attack name="death" interval="4000" chance="15" target="1" range="7" min="-260" max="-1250">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="hearts" />
+		</attack>
+		<attack name="energy" interval="2000" chance="15" target="1" range="7" min="-260" max="-950">
+			<attribute key="shootEffect" value="energy" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="80" max="100">
+			<attribute key="areaEffect" value="hpup" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Kneel before your Mistress!" />
+		<voice sentence="Dead is the new alive." />
+		<voice sentence="Come, let me kiss you, darling. Oh wait, I meant kill." />
+		<voice sentence="Enjoy the pain - I know you love it." />
+		<voice sentence="Are you suffering nicely enough?" />
+		<voice sentence="You won't regret you came to me, sweetheart." />
+	</voices>
+	<loot>
+		<item id="2363" countmax="2" chance="25000" />
+	
+	
+	
+		<!-- t5 loot-->
+		<item id="33430" chance="300" />
+		<item id="33431" chance="300" />
+		<item id="33432" chance="300" />
+		<item id="34131" chance="300" />
+		<item id="30220" chance="300" />
+		<item id="33465" chance="300" />
+		<item id="33165" chance="300" />
+		<item id="36369" chance="300" />
+		<item id="38578" chance="300" />
+		<!-- t5 loot end-->
+
+
+		<!-- rings-->
+        <item id="38304" chance="350" /> <!-- Healing Touch -->
+        <item id="38309" chance="350" /> <!-- Sorcerer's Circle -->
+        <item id="38319" chance="350" /> <!-- Lifestealer's Band -->
+        <item id="38305" chance="350" /> <!-- Mage's Seal -->
+   
+
+        <!-- amulets-->
+        <item id="38241" chance="350" /> <!-- tank amulet -->
+        <item id="38336" chance="350" /> <!-- magic amulet -->
+
+		<item id="7589" chance="10210" />				<!-- strong mana potion -->
+		<item id="10602" chance="10000" />				<!-- vampire teeth -->
+		
+		
+		<item id="7588" chance="5000" />					<!-- strong health potion -->
+		<item id="12405" chance="4950" />				<!-- blood preservation -->
+		<item id="2127" chance="1100" />					<!-- emerald bangle -->
+		<item id="8873" chance="1030" />					<!-- hibiscus dress -->
+		<item id="2145" countmax="2" chance="1020" />	<!-- small diamond -->
+		<item id="9809" chance="1010" />					<!-- rusty armor (semi-rare) -->
+		<item id="9837" chance="970" />					<!-- velvet tapestry -->
+		<item id="2195" chance="220" />					<!-- boots of haste -->
+		<item id="7733" chance="200" />					<!-- flower bouquet -->
+		<item id="5670" chance="170" />					<!-- mysterious voodo skull -->
+		<item id="9447" chance="60" />					<!-- blood goblet -->
+		<item id="13293" chance="20" />					<!-- leather whip -->
+		
+		<!-- trash-->
+		<item id="39160" countmax="2" chance="1000" />
+		<item id="39168" countmax="3" chance="500" />
+		<item id="39167" countmax="1" chance="400" />
+		<item id="39166" countmax="1" chance="400" />
+		<item id="39147" countmax="1" chance="400" />
+		<item id="39154" countmax="1" chance="200" />
+		<!-- trash end-->
+		
+
+
+	</loot>
+</monster>

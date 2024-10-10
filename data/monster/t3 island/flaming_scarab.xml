@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Flaming Scarab" nameDescription="Flaming Scarab" race="fire" experience="20" speed="230" manacost="0">
+	<health now="800" max="800" />
+	<look type="1888" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="220" />
+		<flag canwalkonenergy="1" />
+		<flag canwalkonpoison="1" />
+		<flag canwalkonfire="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-100" />		
+<attack name="vulcongra soulfire" interval="2000" chance="100" />
+		<attack name="fire" interval="2000" chance="30" length="8" spread="0" min="-103" max="-150">
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+		<attack name="fire" interval="500" chance="100" radius="2" target="0" min="-100" max="-150">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Fuchah! Fuchah!" />
+		<voice sentence="Fuchah!" />
+		<voice sentence="Yag! Yag! Yag!" />
+	</voices>
+	<loot>
+		
+		<item id="31857" chance="400" />
+		<item id="31858" chance="400" />
+		<item id="31923" chance="400" />
+		<item id="34016" chance="400" />
+		
+		<item id="36243" chance="400" />
+		<item id="36244" chance="400" />
+		<item id="33395" chance="400" />
+		<item id="36163" chance="400" />
+		
+		<item id="32769" chance="400" />
+		<item id="34068" chance="400" />
+		<item id="30222" chance="400" />
+		<item id="33165" chance="400" />
+		
+		<item id="30496" chance="400" />
+		<item id="34079" chance="400" />
+		<item id="33993" chance="400" />
+		<item id="34020" chance="400" />
+		
+		<item id="13760" chance="400" />
+		<item id="33465" chance="400" />
+		<item id="30260" chance="400" />
+	
+	</loot>
+</monster>

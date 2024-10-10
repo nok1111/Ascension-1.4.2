@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="abomination" nameDescription="an abomination" race="blood" experience="20" speed="200">
+	<health now="6" max="6" />
+   <look type="1299"  corpse="37129"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="20" min="200" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="Let's have a fight!" />
+		<voice sentence="Welcome to my battleground." />
+		<voice sentence="Have you seen princess Lumelia?" />
+		<voice sentence="I will sing a tune at your grave." />
+	</voices>
+	<loot>
+		
+	</loot>
+</monster>

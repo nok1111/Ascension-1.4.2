@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Hollow" nameDescription="a hollow" race="undead" experience="20" speed="210" manacost="0">
+	<health now="6" max="6" />
+	<level min="105" max="110" />
+	<look type="1419" head="114" body="95" legs="114" feet="114" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="85" />
+		<flag lightlevel="3" />
+		<flag lightcolor="214" />
+		<flag targetdistance="1" />
+		<flag runonhealth="80" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-250" />		
+		<attack name="death" interval="2000" chance="25" range="3" min="-80" max="-120">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+		
+		<attack name="manadrain" interval="2000" chance="35" range="7" min="-100" max="-200">
+			<attribute key="shootEffect" value="grayplasma" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		
+	</attacks>
+<defenses armor="1" defense="1" />
+		<elements>
+		<element energyPercent="20" />
+		<element icePercent="20" />
+		<element firePercent="20" />
+		<element holyPercent="20" />
+		<element earthPercent="20" />
+		<element physicalPercent="12" />
+		<element deathPercent="20" />
+	</elements>
+	<loot>
+		
+	</loot>
+</monster>

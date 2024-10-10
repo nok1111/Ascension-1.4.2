@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lord Tardis" nameDescription=" Lord Vlastelin" race="blood" experience="20" speed="200" manacost="0" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="30" max="30" />
+	<look type="1403" corpse="37129"/>
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="85" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag rewardchest="1" />
+	</flags>
+	 
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="poison" interval="2000" chance="50" range="7" radius="2" target="1" min="-125" max="-352">
+			<attribute key="shootEffect" value="threeshot" />
+			<attribute key="areaEffect" value="earthbite" />
+		</attack>
+		<attack name="fire" interval="1000" chance="40" radius="3" target="0" min="-60" max="-150">
+			<attribute key="areaEffect" value="newfireaura" />
+		</attack>
+		<attack name="energy elemental electrify" interval="2000" chance="20" />
+	</attacks>
+<defenses armor="1" defense="1" >
+	<defense name="healing" interval="1000" chance="100" min="35" max="65">
+	<attribute key="areaEffect" value="purplebossaura1" />
+		</defense>
+	</defenses>
+		<summons maxSummons="10">
+		<summon name="void fragment" interval="3500" chance="75" />
+	</summons>
+	<loot>
+	
+	</loot>
+</monster>

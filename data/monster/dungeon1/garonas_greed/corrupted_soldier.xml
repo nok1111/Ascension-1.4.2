@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Corrupted Soldier" nameDescription="corrupted soldier" race="blood" experience="20" speed="240" manacost="640">
+	<health now="12" max="12" />
+	<!--- Level --><level min="82" max="82" />
+	<look type="1600" head="58" body="57" legs="114" feet="57" addons="2" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-200" />		
+<attack name="fire" interval="3000" chance="10" range="1" radius="1" target="1" min="-120" max="-200">
+			<attribute key="shootEffect" value="bottlebomb" />
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+
+	</attacks>
+<defenses armor="2" defense="1" />
+
+	<voices interval="5000" chance="20">
+		<voice sentence="garona will rule upon all of us! " />
+		<voice sentence="who ammm gaah i! " />
+		<voice sentence="obeey! " />
+	</voices>
+	<loot>
+		
+	</loot>
+</monster>

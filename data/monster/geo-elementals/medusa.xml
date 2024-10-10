@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Medusa" nameDescription="a medusa" race="blood" experience="20" speed="210">
+	<health now="6" max="6" />
+	<!--- Level --><level min="120" max="125" />
+	<look type="1972" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="600" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-250" />		
+<attack name="lifedrain" interval="2000" chance="20" count="5" range="7" target="1" min="-21" max="-370">
+			<attribute key="shootEffect" value="earth" />
+			<attribute key="areaEffect" value="carniphila" />
+		</attack>
+		<attack name="earth" interval="2000" chance="15" length="8" spread="3" min="-250" max="-330">
+			<attribute key="areaEffect" value="carniphila" />
+		</attack>
+		<attack name="speed" interval="2000" chance="25" radius="7" target="1" speedchange="-900">
+			<attribute key="areaEffect" value="poff" />
+		</attack>
+		<attack name="outfit" interval="2000" chance="1" target="1" range="7" monster="clay guardian" duration="3000" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="25" min="150" max="300">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="You will make ssuch a fine ssstatue!" />
+		<voice sentence="There isss no chhhanccce of esscape" />
+		<voice sentence="Jusssst look at me!" />
+		<voice sentence="Are you tired or why are you moving thhat sslow&lt;chuckle&gt;" />
+	</voices>
+	<loot>
+		<item id="37383"  chance="3500" /><!-- novel -->
+		<item id="37384"  chance="3500" /><!-- novel -->
+		<item id="37385"  chance="3500" /><!-- novel -->
+		<item id="37386"  chance="3500" /><!-- novel -->
+		<item id="37387"  chance="3500" /><!-- novel -->
+		<item id="38636" countmax="1" chance="600" /><!-- recepie -->
+		
+		<item id="2476" chance="1000" />
+		<item name="medusa shield" chance="3040" />
+		<item name="titan axe" chance="1160" />
+		<item name="great mana potion" countmax="2" chance="10000" />
+		<item name="terra mantle" chance="870" />
+		<item name="terra legs" chance="420" />
+		<item name="terra amulet" chance="4060" />
+		<item name="ultimate health potion" countmax="2" chance="9290" />
+
+		<item name="sacred tree amulet" chance="850" />
+
+		
+		<item id="31859" chance="600" />
+		<item id="31832" chance="600" />
+		<item id="36285" chance="600" />
+		
+		<item id="36279" chance="600" />
+		<item id="31935" chance="600" />
+		
+		<item id="38326"  chance="3000" /><!--doom ring (ml) -->
+
+		<item id="16106" chance="4500" /><!-- new spellbooks -->
+		
+		<item id="38281"  chance="3000" /><!--natures embrace (def, ml) -->
+
+		<item id="38282"  chance="3000" /><!--emeral echanter (magic  + max mana) -->
+		<item id="38283"  chance="3000" /><!--poisonous predrator (crit + distance) -->
+		
+		
+		<item id="39077" countmax="2" chance="12500" /><!-- sell -->
+		<item id="39146" countmax="2" chance="6500" /><!-- sell -->
+		<item id="39172" countmax="1" chance="6500" /><!-- sell -->
+		<item id="39042" countmax="1" chance="6500" /><!-- sell -->
+	</loot>
+</monster>

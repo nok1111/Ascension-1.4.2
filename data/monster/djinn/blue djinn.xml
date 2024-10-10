@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Blue Djinn" nameDescription="a blue djinn" race="blood" experience="20" speed="180" manacost="0">
+	<health now="6" max="6" />
+	<!--- Level --><level min="65" max="75" />
+	<look type="1823" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-150" />		
+<attack name="fire" interval="2000" chance="15" range="7" min="0" max="-200">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="death" interval="2000" chance="10" radius="1" target="1" range="7" min="-75" max="-220">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="smallclouds" />
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" range="7" duration="5000">
+			<attribute key="shootEffect" value="energy" />
+		</attack>
+		<attack name="outfit" interval="2000" chance="1" range="7" monster="rabbit" duration="4000">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</attack>
+		<attack name="djinn electrify" interval="2000" range="5" chance="15" />
+		<attack name="djinn cancel invisibility" interval="2000" chance="10" />
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Simsalabim" />
+		<voice sentence="Feel the power of my magic, tiny mortal!" />
+		<voice sentence="Be careful what you wish for." />
+		<voice sentence="Wishes can come true." />
+	</voices>
+	<loot>
+	<item id="2344" chance="10000" /><!-- quest lamp -->
+		<item id="2359" chance="23480" /><!-- quest lamp -->
+		<item id="5912" chance="1920" /><!-- blue piece of cloth -->
+		<item id="26164" chance="5000" /><!-- crafting material -->
+		<item name="mana potion" countmax="2" chance="490" />	<!-- mana potion -->
+		<item id="2745" chance="440" /><!-- blue rose -->
+
+		<item id="2190" chance="2210" />
+		<item id="36193" chance="410" />
+		<item id="2656" chance="410" />
+
+		<item id="32734" chance="410" />
+		<item id="36193" chance="410" />
+		<item id="36389" chance="410" />
+		<item id="32829" chance="410" />
+		
+		<item id="38294" chance="4500" /> <!-- mana master -->
+		<item id="38296" chance="4500" /> <!-- magic heaven -->
+		
+		
+		<item id="38325" chance="4500" /> <!-- ring of the witch -->
+		
+		<item id="39066" countmax="2" chance="10500" /><!-- sell -->
+		<item id="39155" countmax="1" chance="800" /><!-- sell -->
+		<item id="39153" countmax="1" chance="6000" /><!-- sell -->
+
+	</loot>
+</monster>

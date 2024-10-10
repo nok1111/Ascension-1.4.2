@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Boar Cub*" nameDescription="a pet wasp" race="blood" experience="0" speed="170" manacost="0" summonwalk="true">
+	<health now="20" max="20"/>
+	<look type="1286" corpse="37129"/>
+	<targetchange interval="2000" chance="0"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="0"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="1"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="petmelee" interval="1000" range="1" chance="100"/>
+		<attack name="petcharge" interval="3000" range="6" chance="45"/>
+	</attacks>
+	<defenses armor="1" defense="2"/>
+	<voices interval="5000" chance="10">
+		<voice sentence="Grrrr" />
+		<voice sentence="Groar" />
+	</voices>
+	<loot>
+		<item name="meat" countmax="4" chance="39750" />
+		<item name="ham" countmax="3" chance="20000" />
+		<item id="39128" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39108" countmax="2" chance="27500" /><!-- sell -->
+	</loot>
+</monster>

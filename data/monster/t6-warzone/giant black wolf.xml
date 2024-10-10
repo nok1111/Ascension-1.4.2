@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Giant Black Wolf" nameDescription="a Giant Black Wolf" experience="25" speed="200" race="blood" manacost="0">
+	<health now="6" max="6" />
+	<level min="350" max="360" />
+	<targetchange interval="4000" chance="10" />
+	<look type="1705" corpse="37129" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-700" />		
+<attack name="lifedrain" interval="2000" chance="10" radius="3" target="0" min="-280" max="-835">
+			<attribute key="areaEffect" value="rednote" />
+		</attack>
+		<attack name="werewolf skill reducer" interval="2000" range="1" chance="15" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="10" max="125">
+			<attribute key="areaEffect" value="greenshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="GRRR" />
+		<voice sentence="GRROARR" />
+	</voices>
+	<loot>
+
+		<!-- trash-->
+		<item id="39114" countmax="2" chance="7000" />
+		<item id="39132" countmax="3" chance="1000" />
+		<item id="39108" countmax="1" chance="7000" />
+		<!-- trash end-->
+		
+		<item id="5897" chance="3300" />
+		<item id="35337" chance="3300" />
+		
+		<item id="27057" chance="8300" />
+	</loot>
+</monster>

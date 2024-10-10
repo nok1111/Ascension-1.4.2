@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Young Naga" nameDescription="a young naga" race="venom" experience="20" speed="500" manacost="0">
+	<health now="6" max="6" />
+	<level min="375" max="385" />
+	<look type="2104" head="78" body="103" legs="85" feet="121" corpse="37129" />
+  	<targetchange interval="5000" chance="20" />
+  	<strategy attack="100" defense="0" />
+  	<flags>
+    		<flag summonable="0" />
+    		<flag attackable="1" />
+    		<flag hostile="1" />
+    		<flag illusionable="0" />
+    		<flag convinceable="0" />
+    		<flag pushable="0" />
+    		<flag canpushitems="1" />
+    		<flag staticattack="90" />
+    		<flag canpushcreatures="1" />
+    		<flag targetdistance="0" />
+    		<flag runonhealth="0" />
+  	</flags>
+  	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-800" />		
+<attack name="death" interval="2000" chance="7" range="7" target="1" min="-200" max="-950">
+      		<attribute key="shootEffect" value="earth" />
+			<attribute key="areaEffect" value="rednote" />
+    	</attack>
+		<attack name="lifedrain" interval="2000" chance="11" target="0" radius="3" min="-200" max="-485">
+      		<attribute key="areaEffect" value="carniphila" />
+    	</attack>
+ 
+		<attack name="physical" interval="2000" chance="10" length="4" spread="0" min="-200" max="-800">
+      		<attribute key="areaEffect" value="blueshimmer" />
+    	</attack>
+  	</attacks>
+<defenses armor="1" defense="1" >
+    	<defense name="healing" interval="2000" chance="15" min="145" max="500">
+      		<attribute key="areaEffect" value="bluenote" />
+    	</defense>
+    	<defense name="melee" interval="2000" chance="10">
+      		<attribute key="areaEffect" value="smallplants" />
+    	</defense>
+  	</defenses>
+	
+  	<voices interval="2000" chance="5">
+    		<voice sentence="WARAAAHAAARRRR!" />
+			<voice sentence="LOOK INTO THE LIGHT..." />
+    		<voice sentence="LEAVE THESE GROUNDS..." />
+			<voice sentence="THE DARK TIDE WILL SWALLOW YOU..." />
+  	</voices>
+	<loot>
+		<item id="2672" countmax="1" chance="13040"/><!-- dragon ham -->
+		<item id="24170" countmax="1" chance="12040"/><!-- seacrest hair -->
+		<item id="7839" countmax="17" chance="7020"/><!-- shiver arrow -->
+		<item id="7902" chance="980"/><!-- glacier mask -->
+		<item id="24261" chance="400"/><!-- crest of the deep seas -->
+		<item id="7588" countmax="2" chance="7020"/><!-- strong health potion -->
+		<item id="7589" countmax="2" chance="10370"/><!-- strong mana potion -->
+		<item id="24116" countmax="1" chance="10030"/><!-- seacrest pearl -->
+		<item id="2143" countmax="2" chance="3680"/><!-- white pearl -->
+		<item id="2144" countmax="3" chance="2340"/><!-- black pearl -->
+		<item id="7632" countmax="1" chance="1000"/><!-- giant shimmering pearl -->
+		<item id="5944" countmax="1" chance="3340"/><!-- soul orb -->
+		<item id="2145" countmax="3" chance="5020"/><!-- small diamond -->
+		<item id="24169" countmax="1" chance="7390"/><!-- seacrest scale -->
+		<item id="7888" chance="670"/><!-- glacier amulet -->
+		<item id="7896" chance="680"/><!-- glacier kilt -->
+		<item id="7892" chance="910"/><!-- glacier shoes -->
+		<item id="18390" chance="270"/><!-- wand of defiance -->
+		<item id="8921" chance="370"/><!-- wand of draconia -->
+	</loot>
+</monster>

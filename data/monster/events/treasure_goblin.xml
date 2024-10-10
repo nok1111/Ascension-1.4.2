@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Treasure Goblin" nameDescription="a Treasure Goblin" race="blood"  experience="20" speed="300" manacost="695" skull="green">
+	<health now="6" max="6" />
+	<look type="2077" shader="Pulse" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="15" />
+		<flag runonhealth="100" />
+		<flag canwalkonenergy="1" />
+		<flag canwalkonfire="1" />
+		<flag canwalkonpoison="1" />
+	</flags>
+	
+	<script>
+    <event name="lootBossCE" />
+    <event name="lootBossDeath" />
+	</script>
+
+<defenses armor="1" defense="1" />
+	
+	<voices interval="1000" chance="100">
+		<voice sentence="This treasure is mine!!." />
+		<voice sentence="thief! thief! help!" />
+		<voice sentence="RUN!, RUN!" />
+	</voices>
+	<loot>
+	</loot>
+</monster>

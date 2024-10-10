@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Doom Assassin" nameDescription="a doom assassin" race="blood" experience="20" speed="220">
+	<health now="6" max="6" />
+	<look type="1352" head="114" body="114" legs="128" feet="114" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="physical" interval="2000" chance="10" range="1" radius="1" target="1" min="-3" max="-10">			
+		<attribute key="areaEffect" value="ragiaz" />	
+		</attack>
+		
+		<attack name="shadowstep" interval="9000" target="1" chance="100" min="-3" max="-10">
+		
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="20" min="200" max="250">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Let's have a fight!" />
+		
+	</voices>
+	<loot>
+		<item id="2165" chance="30" />
+		<item name="protection amulet" chance="2200" />
+		<item name="two handed sword" chance="1900" />
+		<item id="2419" chance="11280" /><!-- scimitar -->
+		<item name="knight axe" chance="280" />
+		<item name="plate armor" chance="1700" />
+		<item name="brass armor" chance="4700" />
+		<item name="ruined legs" chance="5500" />
+		<item name="dark helmet" chance="1460" />
+		<item name="crusader helmet" chance="100" />
+		<item name="plate legs" chance="2444" />
+		<item name="meat" countmax="2" chance="15000" />
+		<item name="flask of warrior's sweat" chance="210" />
+		<item name="health potion" chance="350" />
+		<item name="belted cape" chance="5000" />
+		<item name="broken gladiator shield" chance="5200" />
+		<item id="27756" chance="5000" />
+		<item id="36370" chance="5000" />
+		<item id="31969" chance="100" />
+		<item id="36282" chance="100" />
+		<item id="32537" chance="100" />
+		<item id="32829" chance="100" />
+		<item id="30536" chance="300" />
+	</loot>
+</monster>

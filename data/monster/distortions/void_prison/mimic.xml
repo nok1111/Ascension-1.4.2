@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Mimic" nameDescription="a mimic" race="blood" experience="20" speed="250" >
+	<health now="6" max="6" />
+	<level min="105" max="110" />
+	<look type="1241" head="128" body="108" legs="114" feet="91" addons="3" corpse="37129"/>
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-220" />	
+</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="250" max="650">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="320" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+		
+		<elements>
+		<element energyPercent="20" />
+		<element icePercent="20" />
+		<element firePercent="20" />
+		<element holyPercent="20" />
+		<element earthPercent="20" />
+		<element physicalPercent="12" />
+		<element deathPercent="20" />
+	</elements>
+	<voices interval="3000" chance="25">
+		<voice sentence="You dare to enter our territory!" />
+		<voice sentence="master give your blessing!" />
+		<voice sentence="why are you hereeeee!!!!!" />
+		<voice sentence="come at me!" />
+		<voice sentence="pray to zoth!" />
+	</voices>
+	<loot>
+		
+	</loot>
+</monster>

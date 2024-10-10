@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Sandstorm Prophet" nameDescription="a sandstorm prophet" race="blood" experience="20" speed="170" manacost="640">
+	<health now="6" max="6" />
+	<level min="160" max="163" />
+	<look type="1518" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-320" />
+		<attack name="physical" interval="2000" chance="10" radius="3" target="0" min="-3" max="-320">
+			<attribute key="areaEffect" value="newstone2" />
+		</attack>
+		<attack name="physical" interval="2200" chance="10" range="4" radius="3" target="1" min="-3" max="-320">
+			<attribute key="shootEffect" value="arenashoot" />
+			<attribute key="areaEffect" value="shinnytornado" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+
+	<voices interval="5000" chance="10">
+		<voice sentence="Neither the gods can help you now!" />
+	</voices>
+	<loot>
+	
+	<item id="2031" chance="10000" /><!-- waterskin -->
+	<item id="33694" chance="10000" /><!-- ancient rune -->
+	<item id="21391" chance="10000" /><!-- testament -->
+	<item id="12318" chance="390" /><!-- wand -->
+	<item id="32479" chance="390" /><!-- armor -->
+	<item id="32817" chance="390" /><!-- armor -->
+	<item id="32852" chance="200" /><!-- armor -->
+	<item id="30244" chance="390" /><!-- sword -->
+	<item id="9777" chance="390" /><!-- lehs -->
+	<item id="38615" chance="1030" /><!-- blueprint -->
+
+		<item id="38284"  chance="3000" /><!--kneck magic mana -->
+
+		<item id="38279"  chance="4500" /><!--kneck magic  max mana + mana -->
+		
+		<item id="38333"  chance="4500" /><!--doom magic -->
+		<item id="38334"  chance="4500" /><!--doom magic + hp -->
+
+		
+	</loot>
+</monster>

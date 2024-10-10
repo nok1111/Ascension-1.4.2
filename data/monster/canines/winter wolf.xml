@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Winter Wolf" nameDescription="a winter wolf" race="blood" experience="20" speed="160" manacost="260">
+	<health now="6" max="6" />
+	<look type="52" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Yoooohhuuuuu!" />
+	</voices>
+	<loot>
+		<item id="2666" countmax="2" chance="30000" /><!-- meat -->
+		<item id="11212" chance="10000" /><!-- winter wolf fur -->
+	</loot>
+</monster>

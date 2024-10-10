@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Crystal Bulk Scarab" nameDescription="a Crystal Bulk Scarab" race="undead" experience="20" speed="230">
+	<health now="6" max="6" />
+	<level min="170" max="180" />
+	<look type="1625" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="250" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-360" />		
+
+		<attack name="speed" interval="2000" chance="25" target="0" length="3" spread="2" speedchange="-850" duration="18000">
+			<attribute key="areaEffect" value="iceattack" />
+		</attack>
+		<attack name="ice" interval="2000" chance="20" radius="2" target="0" min="-100" max="-250">
+			<attribute key="areaEffect" value="icetornado" />
+		</attack>
+		<attack name="ice" interval="2000" chance="10" target="1" radius="3" min="-0" max="-540">
+			<attribute key="areaEffect" value="icearea" />
+		</attack>
+		<attack name="physical" interval="2000" chance="5" target="0" length="1" spread="0" min="0" max="-220">
+			<attribute key="areaEffect" value="poff" />
+		</attack>
+	</attacks>
+<defenses armor="3" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="290" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+     
+	<voices interval="5000" chance="10">
+		<voice sentence="YOU WILL FREEZE!" yell="1" />
+		<voice sentence="ZCHHHHH!" yell="1" />
+		<voice sentence="I am so cool" />
+		<voice sentence="Chill out!." />
+	</voices>
+	<loot>
+		<item id="4848" chance="5000" /><!-- ice cube -->	
+		<item id="8300"  countmax="3" chance="15000" />
+		<item name="fur boots" chance="100" />
+		<item id="7441" chance="4000" /><!-- ice cube -->
+	
+		<item id="38265" chance="3500" /><!--knecklace def health mana -->	
+		<item id="38328" chance="3500" /><!--ring def health hpregen -->
+		<item id="38318" chance="3500" /><!--ring magic mana manaregen -->
+		<item id="30836" chance="1000" />
+		<item id="36160" chance="500" />
+		<item id="36296" chance="2300" />
+		<item id="32779" chance="2300" />
+		<item id="32774" chance="1000" />
+		<item id="30848" chance="2000" />
+		<item id="32467" chance="500" />
+		<item id="3044" chance="1800" />
+		<item id="32457" chance="2300" />
+		<item id="32456" chance="1500" />
+		<item id="32455" chance="1500" />
+		<item id="31999" chance="500" />
+		
+		<item id="39185" countmax="1" chance="4000" /><!-- sell -->
+		  <item id="39121" countmax="2" chance="26000" /><!-- sell -->	 
+		  <item id="39078" countmax="1" chance="6000" /><!-- sell -->
+		
+	</loot>
+</monster>

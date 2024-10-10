@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Crystal Wolf" nameDescription="a crystal wolf" race="undead" experience="20" speed="200" manacost="0">
+	<health now="6" max="6" />
+	<level min="185" max="190" />
+	<look type="391" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="20" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-380" />		
+<attack name="earth" interval="2000" chance="10" length="3" spread="2" min="-60" max="-450">
+			<attribute key="areaEffect" value="stones" />
+		</attack>
+		<attack name="ice" interval="2000" chance="15" range="6" radius="3" target="1" min="-80" max="-400">
+			<attribute key="shootEffect" value="smallice" />
+			<attribute key="areaEffect" value="giantice" />
+		</attack>
+		<attack name="manadrain" interval="2000" chance="10" range="7" min="-25" max="-280" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="5" min="15" max="55">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="2000" chance="7">
+		<voice sentence="Raaarrr!" />
+		<voice sentence="Aaaauuuuuooooooo!" />
+	</voices>
+	<loot>
+		<item id="24122" chance="3000" /><!-- revitalizing ice quest -->
+		<item id="2666" countmax="4" chance="52000" /><!-- meat -->
+		<item id="7441" chance="5000" /><!-- ice cube -->
+		<item id="32456" chance="578" /><!-- icy wall -->
+		<item id="32455" chance="578" /><!-- icy wall -->
+		<item id="32506" chance="7400" /><!-- hailstorm rod -->
+		<item id="5897" chance="3700" /><!-- wolf paw -->
+		
+		<item id="32002" chance="578" /><!-- sword -->
+		<item id="31860" chance="578" /><!-- sword -->
+		<item id="31999" chance="578" /><!-- sword -->
+		
+		
+		<item id="39130" countmax="2" chance="6000" /><!-- sell -->
+		  <item id="39126" countmax="2" chance="7000" /><!-- sell -->	 
+
+	</loot>
+</monster>

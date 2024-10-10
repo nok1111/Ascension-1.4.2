@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Cu-Cu" nameDescription="a Cu-Cu" race="venom" experience="20" speed="230" manacost="0">
+	<health now="6" max="6" />
+	<level min="115" max="115" />
+	<look type="2113" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-250" />		
+<attack name="poisonfield" interval="2000" chance="10" range="7" radius="1" target="1">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+		<attack name="earth" interval="2000" chance="10" range="7" radius="1" target="1" min="-15" max="-280">
+			<attribute key="shootEffect" value="poison" />
+		</attack>
+	</attacks>
+<defenses armor="2" defense="2" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="390" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+
+	<immunities>
+		<immunity invisible="1" />
+	
+	</immunities>
+	<summons maxSummons="2">
+		<summon name="Poison Spider" interval="2000" chance="10" max="2" />
+	</summons>
+	<loot>
+	
+	</loot>
+</monster>

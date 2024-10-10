@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Lizard Legionnaire" nameDescription="a lizard legionnaire" race="blood" experience="20" speed="230">
+	<health now="6" max="6" />
+<level min="125" max="139" />
+	<look type="2312" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="10" />
+		<flag canwalkonenergy="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-430" />		
+<attack name="physical" interval="2000" chance="40" range="7" target="1" min="-3" max="-410">
+			<attribute key="shootEffect" value="spear" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Tssss!" />
+	</voices>
+	<loot>
+		
+		<item name="lizard leather" chance="970" />
+		<item name="lizard scale" countmax="3" chance="980" />
+		<item name="strong health potion" chance="3880" />
+
+		<item name="Zaoan armor" chance="70" />
+		<item name="Zaoan shoes" chance="460" />
+		<item name="drakinata" chance="710" />
+		<item name="Zaoan halberd" chance="960" />
+		<item name="lizard trophy" chance="20" />
+		
+		<item id="39126" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39125" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39075" countmax="1" chance="6500" /><!-- sell -->
+		<item id="39074" countmax="1" chance="3500" /><!-- sell -->
+		<item id="39175" countmax="1" chance="2500" /><!-- sell -->
+	</loot>
+</monster>

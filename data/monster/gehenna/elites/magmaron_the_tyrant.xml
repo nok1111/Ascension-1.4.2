@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Magmaron, The Tyrant" nameDescription="Magmaron, The Tyrant" race="fire" experience="200" speed="200" manacost="0" skull="red">
+	<health now="6" max="6" />
+	<level min="570" max="570" />
+	<look type="1867" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="220" />
+		<flag passive="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-1810" />		
+<attack name="fire" interval="2000" chance="15" length="8" spread="0" min="-1350" max="-1600">
+			<attribute key="areaEffect" value="fireattack" />
+		</attack>
+		<attack name="manadrain" interval="2000" chance="10" length="8" spread="0" min="-600" max="-1300">
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+		<attack name="lava golem soulfire" interval="2000" chance="15" />
+		<attack name="fire" interval="2000" chance="15" radius="4" target="1" min="-1220" max="-1800">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="speed" interval="2000" chance="10" target="0" length="5" spread="3" speedchange="-300" duration="10000">
+			<attribute key="areaEffect" value="yellowspark" />
+		</attack>
+		<attack name="fire" interval="2000" chance="30" target="0" radius="3" min="-280" max="-1200">
+			<attribute key="areaEffect" value="fire" />
+		</attack>
+	</attacks>
+<defenses armor="7" defense="7" >
+
+		<defense name="healing" interval="2000" chance="100" min="2500" max="3070">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+
+	<elements>
+		<element physicalPercent="12" />
+		<element firePercent="15" />
+		<element icePercent="15" />
+		<element earthPercent="15" />
+		<element energyPercent="15" />
+		<element holyPercent="15" />
+		<element energyPercent="15" />
+	</elements>
+	<voices interval="2000" chance="7">
+		<voice sentence="Fuchah! Fuchah!" />
+		<voice sentence="Fuchah!" />
+		<voice sentence="Yag! Yag! Yag!" />
+	</voices>
+	<loot>
+		
+		<item id="18424" chance="12440" />					<!-- Magma Clump -->
+		<item id="2676" countmax="10" chance="10000" />		<!-- banana -->
+		
+		<item id="18425" chance="8000" />					<!-- Blazing Bone -->
+	
+		<item id="18417" chance="4850" />					<!-- Brown Crystal Splinter -->
+		<item id="2207" chance="3000" />					<!-- sword ring -->
+		<item id="18420" chance="2300" />					<!-- Red Crystal Fragment -->
+		<item id="2187" chance="1000" />					<!-- Wand Of Endless Fire -->
+		<item id="7890" chance="920" />						<!-- magma amulet -->
+		<item id="13757" chance="890" />						
+		<item id="2392" chance="260" />						<!-- fire sword -->
+		<item id="7899" chance="130" />						<!-- magma coat -->
+		
+		
+		<item id="33472" chance="2000" /> <!-- dragonsoul -->
+		<item id="33473" chance="2000" /> <!-- dragonsoul -->
+		<item id="33474" chance="2000" /> <!-- dragonsoul -->
+		<item id="33475" chance="2000" /> <!-- dragonsoul shield -->
+		<item id="31910" chance="2000" /> <!-- dragonsoul -->
+	</loot>
+</monster>

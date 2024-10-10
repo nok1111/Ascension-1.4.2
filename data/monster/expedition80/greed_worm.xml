@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Greed Worm" nameDescription="a greed worm" race="venom" experience="20" speed="175" manacost="0">
+	<health now="6" max="6" />
+	<!--- Level --><level min="80" max="86" />
+	<look type="1567" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		
+<attack name="melee" interval="2000" min="0" max="-160" />		
+<attack name="poisonfield" interval="2000" chance="10" range="1" radius="1" target="1">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="greenliquid" />
+		</attack>
+		<attack name="earth" interval="2000" chance="15" range="7" radius="1" target="1" min="0" max="-240">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="newgreensplash" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	
+	
+	
+	<loot>
+		<item id="37383"  chance="500" /><!-- novel -->
+		<item id="37384"  chance="500" /><!-- novel -->
+		<item id="37385"  chance="500" /><!-- novel -->
+		<item id="37386"  chance="500" /><!-- novel -->
+		<item id="37387"  chance="500" /><!-- novel -->
+		
+	<item id="2230" chance="15000" /><!-- bone (sell) -->
+		<item id="2231" chance="12000" /><!-- big bone (sell) -->
+		<item id="13830" chance="8500" /><!-- fleshy bone (sell) -->
+		<item name="guardian shield" chance="2240" />
+		<item id="2553" chance="5280" /><!-- pick -->
+		<item name="worm" countmax="5" chance="4580" />
+		<item name="terra amulet" chance="2360" />
+		<item name="lump of earth" chance="15000" />
+		<item name="clay lump" chance="700" />
+		<item id="13757" chance="12130" /><!-- coal -->
+		
+		<item id="30536"  chance="300" /><!--helmet -->
+		
+		<item id="36279"  chance="300" /><!--weapon -->
+		<item id="31859"  chance="300" /><!--weapon -->
+		<item id="32761"  chance="300" /><!--weapon -->
+		<item id="36267"  chance="300" /><!--weapon -->
+		<item id="36286"  chance="300" /><!--weapon -->
+		
+		
+		<item id="38326"  chance="4500" /><!--doom ring (ml) -->
+
+		<item id="38283"  chance="4500" /><!--poisonous predrator (crit + distance) -->
+		<item id="39082" countmax="2" chance="10500" /><!-- sell -->
+		<item id="39162" countmax="1" chance="800" /><!-- sell -->
+
+		
+	</loot>
+</monster>

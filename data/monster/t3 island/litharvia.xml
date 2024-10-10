@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Litharvia" nameDescription="a Litharvia" race="venom" experience="20" speed="180" manacost="640">
+	<health now="6" max="6" />
+	<level min="135" max="142" />
+	<look type="1145" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-290" />	
+	</attacks>
+<defenses armor="2" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="100" max="350">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+</defenses>
+	<voices interval="5000" chance="10">
+		<voice sentence="wooooo!" />
+	</voices>
+	<loot>
+	
+	<item id="39083" countmax="3" chance="23000" /><!-- sell -->
+	<item id="39147" countmax="4" chance="7000" /><!-- sell -->
+	<item id="38587" chance="500" /><!-- blueprint -->
+	
+	</loot>
+</monster>

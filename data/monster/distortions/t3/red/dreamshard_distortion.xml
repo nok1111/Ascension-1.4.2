@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Dreamshard Distortion" nameDescription="a dreamshard" race="undead" experience="20" speed="0" skull="white">
+
+	<health now="6" max="6" />
+	<!--- Level --><level min="400" max="400" />
+	<look typeex="36828" corpse="37129"/>
+
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	
+<defenses armor="10" defense="10" >
+
+		<defense name="healing" interval="2000" chance="10" min="2000" max="2500">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<summons maxSummons="5">
+		<summon name="dreamshard" interval="200" chance="75" />
+	</summons>
+	
+	<loot>
+	
+	</loot>
+</monster>

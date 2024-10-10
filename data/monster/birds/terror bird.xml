@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Terror Bird" nameDescription="a terror bird" race="blood" experience="20" speed="220" manacost="490">
+	<health now="6" max="6" />
+	<!--- Level --><level min="100" max="108" />
+	<look type="218" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-550" />	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="CRAAAHHH!" />
+		<voice sentence="Gruuuh Gruuuh." />
+		<voice sentence="Carrah Carrah!" />
+	</voices>
+	<loot>
+		
+		<item id="38613" chance="830" /><!-- blueprint -->
+		<item id="12470" countmax="2" chance="3000" /><!-- colourful feather -->
+		<item name="strong health potion" countmax="1" chance="1070" />
+		<item id="3970" chance="150" /><!-- feather headdress -->
+		<item id="39173" countmax="1" chance="7500" /><!-- sell -->
+		<item id="39174" countmax="2" chance="6500" /><!-- sell -->
+		<item id="39064" countmax="2" chance="10500" /><!-- sell -->
+		<item id="39094" countmax="2" chance="5500" /><!-- sell -->
+	</loot>
+</monster>

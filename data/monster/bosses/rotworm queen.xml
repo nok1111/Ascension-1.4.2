@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Rotworm Queen" nameDescription="a rotworm queen" race="blood" experience="20" speed="126" manacost="0" skull="green">
+	<health now="6" max="6" />
+	<look type="295" corpse="37129" />
+	<targetchange interval="60000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="50" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+	</flags>
+	<script>
+    <event name="rotwormdeath" />
+    </script>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />	</attacks>
+<defenses armor="1" defense="1" />
+	<loot>
+		
+		<item id="8971" chance="3333" /><!-- gland -->
+		<item id="3976" countmax="45" chance="20000" /><!-- worm -->
+	</loot>
+</monster>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Ashborn Dragon" nameDescription="an Ashborn Dragon" race="blood" experience="30" speed="190">
+	<health now="10" max="10" />
+	<level min="245" max="255" />
+	<look type="1381"  corpse="37129" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-512" />		
+		<attack name="fire" interval="2000" chance="35" range="6" radius="3" target="1" min="-300" max="-600">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="dragon fire" interval="4000" range="6" chance="30"  min="-680" max="-750"/>
+		
+	</attacks>
+<defenses armor="2" defense="1" />
+	
+	<loot>
+
+	<!-- rings-->
+        <item id="38329" chance="350" /> <!-- Arcane Barrier -->
+
+        <!-- amulets-->
+        <item id="38241" chance="350" /> <!-- tank amulet -->
+        <item id="38336" chance="350" /> <!-- magic amulet -->
+
+        <item id="38242" chance="350" /> <!-- max mana amulet -->
+	
+	<item id="33472" chance="2000" /> <!-- dragonsoul -->
+	<item id="33473" chance="2000" /> <!-- dragonsoul -->
+	<item id="33474" chance="2000" /> <!-- dragonsoul -->
+	<item id="33475" chance="2000" /> <!-- dragonsoul shield -->
+	<item id="31910" chance="2000" /> <!-- dragonsoul -->
+	
+	<item id="31857" chance="2000" /> <!-- 1h -->
+	<item id="31923" chance="2000" /> <!-- 1h -->
+
+	<item id="30222" chance="2000" /> <!-- 2h -->
+	<item id="30496" chance="2000" /> <!-- 2h -->
+	<item id="34079" chance="2000" /> <!-- bow -->
+		
+	<item id="33165" chance="2000" /> <!-- 2h -->
+	<item id="32769" chance="2000" /> <!-- 2h -->
+	
+	<item id="39189" countmax="1" chance="4000" /><!-- sell -->
+	<item id="39058" countmax="1" chance="6000" /><!-- sell -->
+	<item id="39105" countmax="2" chance="15000" /><!-- sell -->
+	<item id="39057" countmax="1" chance="2000" /><!-- sell -->
+	</loot>
+</monster>

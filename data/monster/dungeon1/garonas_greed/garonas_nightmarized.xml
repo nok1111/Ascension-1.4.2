@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Garona Nightmarized" nameDescription=" Garona Nightmarized" race="blood" experience="20" speed="220" skull="red">
+	<health now="50" max="50" />
+	<!--- Level --><level min="85" max="85" />
+	<look type="1589" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<attacks>
+		<attack name="melee" interval="2000" min="0" max="-200" />		
+		<attack name="death" interval="1000" chance="25" range="7" radius="3" target="1" min="-50" max="-100">
+			<attribute key="shootEffect" value="grayplasma" />
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+		
+		<attack name="garona wave" interval="5000" chance="30" range="2" min="-200" max="-320">
+		</attack>
+		
+		<attack name="garona summon" interval="7700" chance="100">
+		</attack>
+		
+		<attack name="death" interval="2000" chance="10" range="6" radius="4" min="0" max="-150">
+			<attribute key="shootEffect" value="shadowbolt" />
+			<attribute key="areaEffect" value="purpledeath" />
+		</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-300" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="2" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="0" max="105">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+
+	
+	<voices interval="3000" chance="10">
+		<voice sentence="humans, how dare you challenge me?!" />
+		<voice sentence="humans, angels whats the difference!" />
+		<voice sentence="you will join my undead army!" />
+	</voices>
+	<loot>
+		
+	
+		</loot>
+</monster>

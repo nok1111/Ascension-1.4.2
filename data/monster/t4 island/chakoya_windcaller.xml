@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Chakoya Windcaller" nameDescription="a chakoya windcaller" race="blood" experience="20" speed="240" manacost="305">
+	<health now="4" max="4" />
+	<level min="180" max="190" />
+	<look type="260" corpse="37129" />
+	<targetchange interval="60000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag staticattack="40" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="4" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-380" />		
+<attack name="ice" interval="2000" chance="15" range="4" min="-280" max="-570">
+			<attribute key="shootEffect" value="ice" />
+			<attribute key="areaEffect" value="icearea" />
+		</attack>
+		<attack name="freezecondition" interval="2000" chance="25" target="0" radius="3" min="-50" max="-300">
+			<attribute key="areaEffect" value="icetornado" />
+		</attack>
+		<attack name="ice" interval="2000" chance="15" target="0" length="5" spread="2" min="-250" max="-300">
+			<attribute key="areaEffect" value="icearea" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="invisible" interval="2000" chance="15" duration="3000">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Mupi! Si siyoqua jinuma!" />
+		<voice sentence="Siqsiq ji jusipa!" />
+		<voice sentence="Jagura taluka taqua!" />
+		<voice sentence="Quatu nguraka!" />
+	</voices>
+	<loot>
+	<item id="30836" chance="1000" />
+
+		
+		<item id="2667" countmax="3" chance="29000" /><!-- fish -->
+
+		<item id="4848" chance="5000" /><!-- ice cube -->
+		<item name="fur boots" chance="100" />
+		<item id="38264" chance="3500" /><!--knecklace magic maxmana -->
+		<item id="38322" chance="3500" /><!--ring crit melee -->
+		
+			<item id="32477" chance="2300" />
+		<item id="32477" chance="2300" />
+		<item id="32476" chance="2300" />
+		<item id="32467" chance="2300" />
+		<item id="32779" chance="2300" />
+		<item id="32489" chance="2300" />
+		<item id="32457" chance="2300" />
+		<item id="7897" chance="2300" />
+		<item id="8878" chance="2300" />
+		<item id="32613" chance="2300" />
+		
+		<item id="39128" countmax="3" chance="15000" /><!-- sell -->
+		  <item id="39157" countmax="1" chance="17000" /><!-- sell -->	 
+		  <item id="39078" countmax="1" chance="16000" /><!-- sell -->
+	</loot>
+</monster>

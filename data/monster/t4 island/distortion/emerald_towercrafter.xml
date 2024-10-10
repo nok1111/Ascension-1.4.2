@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Emerald Towercrafter" nameDescription="a Emerald Towercrafter" race="undead" experience="20" speed="170" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="450" max="460" />
+	<look type="2236" corpse="37129" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="3" />
+		<flag runonhealth="20" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		
+		
+		<attack name="physical" interval="2000" chance="40" range="3" target="1" min="-350" max="-1550">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+
+		
+	</attacks>
+	
+	
+	
+<defenses armor="3" defense="2"/>
+			<elements>
+	   	<element energyPercent="25" />
+		<element icePercent="25" />
+		<element firePercent="25" />
+		<element holyPercent="25" />
+		<element earthPercent="25" />
+		<element physicalPercent="20" />
+		<element deathPercent="25" />
+	</elements>
+	
+	<summons maxSummons="3">
+		<summon name="Dream Tower" interval="500" chance="100" />
+	</summons>
+	<loot>
+		
+	</loot>
+</monster>

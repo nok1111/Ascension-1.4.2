@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Giant Champion" nameDescription="a giant champion" race="blood" experience="25" speed="160" manacost="695">
+	<health now="8" max="8" />
+	<level min="145" max="145" />
+	<look type="1885" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-320" />		
+<attack name="physical" interval="2000" chance="10" range="7" min="-3" max="-420">
+			<attribute key="shootEffect" value="whirlwindclub" />
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" duration="4000">
+			<attribute key="shootEffect" value="whirlwindclub" />
+			<attribute key="areaEffect" value="stun" />
+		</attack>
+	</attacks>
+<defenses armor="2" defense="1" />
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Outis emoi g' onoma." />
+		<voice sentence="Whack da humy!" />
+		<voice sentence="Ai humy phary ty kaynon" />
+	</voices>
+	<loot>
+		
+			
+			
+		<item id="15410" chance="520" /><!-- boots -->
+		<item id="33235" chance="520" /><!-- boots -->
+		<item id="36155" chance="220" /><!-- boots -->
+		<item id="7415" chance="520" /><!-- boots -->
+		<item id="32715" chance="520" /><!-- boots -->
+		<item id="7403" chance="520" /><!-- boots -->
+		<item id="38244"  chance="4500" /><!--kneck hp -->
+		<item id="38287"  chance="4500" /><!--kneck crit melee  -->
+		<item id="38292"  chance="4500" /><!--kneck def health -->
+		<item id="38335"  chance="4500" /><!--doom crit -->
+		
+		<item id="39176" countmax="2" chance="12500" /><!-- sell -->
+	    <item id="39175" countmax="1" chance="11200" /><!-- sell -->
+	    <item id="39046" countmax="1" chance="10500" /><!-- sell -->
+	    <item id="39146" countmax="2" chance="12500" /><!-- sell -->
+	</loot>
+</monster>

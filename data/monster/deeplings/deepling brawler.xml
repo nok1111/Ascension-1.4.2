@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Deepling Brawler" nameDescription="a deepling brawler" race="blood" experience="14" speed="190" manacost="0">
+	<health now="6" max="6" />
+	<level min="380" max="400" />
+	<look type="470" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="0" />
+		<flag runonhealth="40" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-1810" />		
+<attack name="drown" interval="2000" chance="15" range="7" target="1" min ="-60" max="-1200">
+			<attribute key="shootEffect" value="spear" />
+			<attribute key="areaEffect" value="bluebubble" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<loot>
+		
+		<item id="15430" chance="14500" /><!-- deepling scales -->
+		<item id="13870" chance="6600" /><!-- eye of a deepling -->
+		<item id="13838" chance="2940" /> <!-- heavy trident -->
+		<item id="13870" chance="6620" /><!-- eye of a deepling -->
+		<item id="5895" chance="740" /><!-- fish fin -->
+		<item id="2667" countmax="3" chance="19120" /><!-- fish-->
+		
+		<item id="39091" countmax="2" chance="17000" /><!-- sell -->
+		<item id="39082" countmax="2" chance="20000" /><!-- sell -->
+		<item id="39048" countmax="1" chance="3000" /><!-- sell -->
+		<item id="39130" countmax="2" chance="13000" /><!-- sell -->
+	</loot>
+</monster>

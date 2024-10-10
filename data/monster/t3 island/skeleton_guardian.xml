@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Skeleton Guardian" nameDescription="skeleton guardian" race="blood" experience="22" speed="170" manacost="640">
+	<health now="10" max="10" />
+	<level min="125" max="130" />
+	<look type="1961"  corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-260" />		
+<attack name="death" interval="2000" chance="25" range="1"  target="1" min="-3" max="-180">
+			<attribute key="areaEffect" value="blueskull" />
+		</attack>
+
+	</attacks>
+<defenses armor="3" defense="1" />
+
+	<voices interval="5000" chance="10">
+		<voice sentence="gaaahh! " />
+		<voice sentence="who ammm gaah i! " />
+		<voice sentence="obeey! " />
+	</voices>
+	<loot>
+			
+		<item id="33694" chance="10000" /><!-- ancient rune -->
+		<item id="38244"  chance="4500" /><!--kneck hp -->
+		<item id="38292"  chance="4500" /><!--kneck def health -->
+		<item id="38334"  chance="3000" /><!--doom magic + hp -->
+		<item id="39147" countmax="4" chance="7000" /><!-- sell -->
+		<item id="39055" countmax="1" chance="7500" /><!-- sell -->
+	    <item id="39180" countmax="1" chance="16000" /><!-- sell -->
+	    <item id="39178" countmax="2" chance="15500" /><!-- sell -->	
+	</loot>
+</monster>

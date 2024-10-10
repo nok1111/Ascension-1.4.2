@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dark Skeleton Guard" nameDescription="a Dark Skeleton Guard" race="undead" experience="20" speed="230" manacost="0">
+	<health now="6" max="6" />
+	<level min="175" max="182" />
+	<look type="1962" corpse="37129" />
+	<targetchange interval="4000" chance="15" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-364" />		
+<attack name="betrayed wraith skill reducer" chance="10" />
+<attack name="physical" interval="2000" chance="20" range="4" min="0" max="-400">
+			<attribute key="shootEffect" value="whirlwindsword" />
+		</attack>
+		<attack name="speed" interval="2000" chance="20" range="7" target="1" speedchange="-300" duration="3000">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+	</attacks>
+<defenses armor="3" defense="1" >
+
+		<defense name="healing" interval="2000" chance="30" min="350" max="600">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="260" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Rrrah!" />
+		<voice sentence="Gnarr!" />
+		<voice sentence="Tcharrr!" />
+	</voices>
+	<loot>
+
+		<item id="5741" chance="420" />						<!-- skull helmet -->
+		<item id="7416" chance="70" />						<!-- bloody edge -->
+		<item id="38265" chance="3500" /><!--knecklace def health mana -->
+		<item id="38328" chance="3500" /><!--ring def health hpregen -->
+		
+		<item id="33157" chance="2300" /><!-- t4 item -->
+		<item id="32553" chance="2300" /><!-- t4 item -->
+		<item id="36390" chance="2300" /><!-- t4 item -->
+		
+		<item id="33154" chance="2300" /><!-- t4 item -->
+		<item id="33153" chance="2300" /><!-- t4 item -->
+		<item id="33155" chance="2300" /><!-- t4 item -->
+		
+
+		<item id="39111" countmax="2" chance="36000" /><!-- sell -->
+		  <item id="39180" countmax="1" chance="7000" /><!-- sell -->	
+		  <item id="39178" countmax="2" chance="7000" /><!-- sell -->	
+		  <item id="39139" countmax="1" chance="17000" /><!-- sell -->	
+
+	</loot>
+</monster>

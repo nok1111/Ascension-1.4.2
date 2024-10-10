@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Crepuscula" nameDescription="crepuscula" race="undead" experience="20" speed="200" manacost="0" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="90" max="90" />
+	<look type="1166" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="85" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="energy" interval="2000" chance="50" range="1" target="1" min="-250" max="-385">
+			<attribute key="areaEffect" value="bigfrost" />
+		</attack>
+			<attack name="ice" interval="3000" chance="35" radius="2" target="0" min="-350" max="-550">
+			<attribute key="areaEffect" value="newice" />
+		</attack>
+		<attack name="death" interval="4000" chance="75" range="5" target="1" min="-140" max="-400">
+			<attribute key="areaEffect" value="newearthquake" />
+		</attack>
+		<attack name="energy elemental electrify" interval="2000" chance="20" />
+	</attacks>
+<defenses armor="1" defense="1" />
+	<summons maxSummons="2">
+		<summon name="energy elemental" interval="2800" chance="35" />
+	</summons>
+	<loot>
+
+	</loot>
+</monster>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Guardian of Light" nameDescription="a guardian of light" race="blood" experience="0" speed="170" manacost="300" summonwalk="true">
+    <health now="2200" max="2200"/>
+    <look type="2258" />
+    <targetchange interval="4000" chance="50"/>
+    <strategy attack="10" defense="90"/>
+    <flags>
+        <flag summonable="0"/>
+        <flag attackable="1"/>
+        <flag hostile="1"/>
+        <flag illusionable="0"/>
+        <flag convinceable="0"/>
+        <flag pushable="1"/>
+        <flag canpushitems="1"/>
+        <flag canpushcreatures="0"/>
+        <flag targetdistance="3"/>
+        <flag runonhealth="0"/>
+    </flags>
+
+    <attacks>
+		<attack name="melee" interval="2000" min="-80" max="-115" >
+				<attribute key="areaEffect" value="triplehit" />
+		</attack>
+    </attacks>
+    <defenses armor="30" defense="24">
+    <defense name="summonhealer-seraphin" interval="2000" chance="100" />
+    </defenses>
+	<elements>
+		<element physicalPercent="50" />
+	</elements>
+	<immunities>
+		<immunity energy="1" />
+		<immunity fire="1" />
+		<immunity earth="1" />
+		<immunity death="1" />
+		<immunity invisible="1" />
+		<immunity paralyze="1" />
+	</immunities>
+    <voices interval="15000" chance="300">
+        <voice sentence="For the light!" />
+        <voice sentence="light will heal you!" />
+    </voices>
+</monster>

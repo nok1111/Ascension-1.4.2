@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dream Watcher" nameDescription=" dream watcher" race="undead" experience="20" speed="200" manacost="0" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="30" max="30" />
+	<look type="1165" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag staticattack="85" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="3" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="energy" interval="1000" chance="100" range="7" radius="1" target="1" min="-3" max="-10">
+			<attribute key="shootEffect" value="visballthree" />
+			<attribute key="areaEffect" value="purpleenergy" />
+		</attack>		
+		
+	</attacks>
+<defenses armor="1" defense="1" />
+	<summons maxSummons="2">
+		<summon name="dream shard" interval="1000" chance="100" />
+	</summons>
+	<loot>
+		
+	</loot>
+</monster>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Goblin Scavenger" nameDescription="a goblin scavenger" race="blood" experience="20" speed="200" manacost="310">
+	<health now="6" max="6" />
+	<!--- Level --><level min="55" max="63" />
+	<look type="1698" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="10" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-126" />		
+<attack name="physical" interval="2000" chance="10" range="7" min="-3" max="-120">
+			<attribute key="shootEffect" value="spear" />
+		</attack>
+		<attack name="lifedrain" interval="2000" chance="5" range="7" min="-3" max="-80">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+		<attack name="death" interval="2000" chance="5" range="7" min="-3" max="-110">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="smallclouds" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="10" max="50">
+			<attribute key="areaEffect" value="energy" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Shiny, Shiny!" />
+		<voice sentence="You mean!" />
+		<voice sentence="All mine!" />
+		<voice sentence="Uhh!" />
+	</voices>
+	<loot>
+		
+		<item id="1294" countmax="2" chance="25560" /><!-- small stone -->
+		<item id="2379" chance="18280" /><!-- dagger -->
+		<item id="2230" chance="12450" /><!-- bone -->
+		<item id="2559" chance="9790" /><!-- small axe -->
+		<item id="2667" chance="13640" /><!-- fish -->
+		<item id="2461" chance="10180" /><!-- leather helmet -->
+		<item id="2235" chance="7000" /><!-- moldy cheese -->
+		<item id="2406" chance="8900" /><!-- short sword -->
+		<item id="2467" chance="7700" /><!-- leather armor -->
+		<item id="2449" chance="5000" /><!-- bone club -->
+		<item id="21406" chance="8000" /><!-- quest -->
+		<item id="11076" chance="8000" /><!-- quest -->
+		<item id="21398" chance="8000" /><!-- quest -->
+		<item id="21407" chance="8000" /><!-- quest -->
+		<item id="31919" chance="3000" />
+		<item id="36373" chance="3000" />
+
+		<item id="36355" chance="500" />
+		<item id="32864" chance="500" />
+		<item id="31879" chance="500" />
+		<item id="2181" chance="500" />
+		<item id="32866" chance="500" />
+		<item id="36389" chance="500" />
+		
+
+		<item id="38324" chance="1000" /> <!-- ring of the explorer -->
+
+		
+		<item id="382941" chance="1000" /> <!-- regen resilence -->
+
+	</loot>
+</monster>

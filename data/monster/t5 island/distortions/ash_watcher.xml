@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Ash Watcher" nameDescription="a Ash Watcher" race="blood" experience="20" speed="280" >
+	<health now="6" max="6" />
+	<level min="230" max="230" />
+	<look type="1328" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="60" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-690" />
+		<attack name="fire" interval="2500" chance="100" range="3" radius="3" target="1" min="-120" max="-700">
+			<attribute key="shootEffect" value="newfireballtwo" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="fire" interval="1500" chance="20" radius="3" target="0" min="-200" max="-500">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	</attacks>
+<defenses armor="2" defense="1" />
+	<elements>
+	   	<element energyPercent="25" />
+		<element icePercent="25" />
+		<element firePercent="25" />
+		<element holyPercent="25" />
+		<element earthPercent="25" />
+		<element physicalPercent="20" />
+		<element deathPercent="25" />
+	</elements>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="You dare to enter our territory!" />
+		<voice sentence="your strenght is weak!" />
+		<voice sentence="ill rip your tongue!" />
+		<voice sentence="come at me!" />
+		<voice sentence="ill burn you to ashes!" />
+	</voices>
+
+</monster>

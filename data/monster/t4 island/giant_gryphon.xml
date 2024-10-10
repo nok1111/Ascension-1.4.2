@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Giant Gryphon" nameDescription="a giant gryphon" race="blood" experience="28" speed="280">
+	<health now="10" max="10" />
+	<level min="210" max="215" />
+	<look type="1640" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag staticattack="80" />
+		<flag lightlevel="0" />
+		<flag lightcolor="0" />
+		<flag targetdistance="1" />
+		<flag runonhealth="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-430" />		
+		<attack name="energy" interval="2000" chance="12" length="5" spread="2" min="-60" max="-650">
+			<attribute key="areaEffect" value="purpleenergy" />
+		</attack>
+		<attack name="energy" interval="2000" chance="20" range="7" radius ="2" min="-50" max="-400">
+			<attribute key="shootEffect" value="arenashoot" />
+			<attribute key="areaEffect" value="yellowtornado" />
+		</attack>
+	</attacks>
+<defenses armor="2" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="100" max="150">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="effect" interval="2000" chance="10" radius="1">
+			<attribute key="areaEffect" value="yellownote" />
+		</defense>
+	</defenses>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="GRRR!" />
+		<voice sentence="GROOOOAAAAAAAAR!" />
+	</voices>
+	<loot>
+		<item id="30836" chance="1000" />
+		<item id="4848" chance="5000" /><!-- ice cube -->
+		<item id="19742" countmax="2" chance="15000" /><!-- ice cube -->
+		<item name="fur boots" chance="100" />
+		<item id="38261" chance="3500" /><!--knecklace melee health -->	
+		<item id="38328" chance="3500" /><!--ring def health hpregen -->	
+		<item id="38322" chance="3500" /><!--ring crit melee -->
+		<item name="meat" countmax="4" chance="33333" />
+		<item name="ham" countmax="5" chance="10000" />		
+		<item id="33158" chance="2300" />
+		<item id="30249" chance="1500" />
+		<item id="32476" chance="800" />
+		<item id="33154" chance="2300" />
+		<item id="33153" chance="2300" />
+		<item id="21700" chance="2300" />
+		<item id="31961" chance="2300" />
+		<item id="30265" chance="2300" />
+
+		<item id="39119" countmax="2" chance="6000" /><!-- sell -->
+		  <item id="39116" countmax="1" chance="7000" /><!-- sell -->	 
+		  <item id="38134" countmax="2" chance="4000" /><!-- sell -->
+		
+	</loot>
+</monster>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Ember Beetle" nameDescription="a Ember Beetle" race="fire" experience="38" speed="220" manacost="0">
+	<health now="12" max="12" />
+	<level min="200" max="210" />
+	<look type="1931" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="80" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-300" />		
+<attack name="fire" interval="2000" chance="20" range="7" radius="6" target="0" min="-120" max="-380">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="fireattack" />
+		</attack>
+		<attack name="fire" interval="2000" chance="10" target="0" length="4" spread="3" min="-150" max="-571">
+			<attribute key="areaEffect" value="fire" />
+		</attack>
+		<attack name="fire" interval="2000" chance="10" target="0" length="4" spread="0" min="-50" max="-570">
+			<attribute key="areaEffect" value="fireattack" />
+		</attack>
+		<attack name="speed" interval="2000" chance="10" radius="1" target="1" speedchange="-600" duration="15000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="2" defense="1" >
+
+		<defense name="healing" interval="2000" chance="5" min="100" max="150">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<voices interval="2000" chance="7">
+		<voice sentence="KHIIIIZZZ" yell="1" />
+		<voice sentence="TTZZZZ!" yell="1" />
+	</voices>
+	<loot>
+		
+		
+		
+		<item id="2789" chance="3846" /><!-- brown mushroom -->
+		<item id="2167" chance="1052" /><!-- energy ring -->
+		<item id="2187" chance="564" /><!-- Wand Of Endless Fire -->
+		<item id="7894" chance="155" /><!-- magma legs -->
+		<item id="38264" chance="3500" /><!--knecklace magic maxmana -->
+		<item id="38318" chance="3500" /><!--ring magic mana manaregen -->
+		
+		<item id="32806" chance="1200" /><!-- t4 item -->
+		<item id="36160" chance="1200" /><!-- t4 item -->
+		<item id="32555" chance="1200" /><!-- t4 item -->
+		
+		  <item id="39189" countmax="1" chance="6000" /><!-- sell -->
+		  <item id="39105" countmax="2" chance="7000" /><!-- sell -->	
+		  <item id="39058" countmax="2" chance="7000" /><!-- sell -->	
+
+
+	</loot>
+</monster>

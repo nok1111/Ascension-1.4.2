@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="White Owl*" nameDescription="a pet White Owl" race="blood" experience="0" speed="170" manacost="0" summonwalk="true">
+	<health now="20" max="20"/>
+	<look type="2220" corpse="37129"/>
+	<targetchange interval="2000" chance="0"/>
+	<strategy attack="100" defense="0"/>
+	<flags>
+		<flag summonable="0"/>
+		<flag attackable="0"/>
+		<flag hostile="1"/>
+		<flag illusionable="1"/>
+		<flag convinceable="1"/>
+		<flag pushable="1"/>
+		<flag canpushitems="0"/>
+		<flag canpushcreatures="0"/>
+		<flag targetdistance="3"/>
+		<flag staticattack="90"/>
+		<flag runonhealth="0"/>
+	</flags>
+	<attacks>
+		<attack name="petmelee" interval="900" range="1" chance="100"/>
+		<attack name="petrangewind" interval="2000" range="3" chance="25"/>
+	</attacks>
+	<defenses armor="1" defense="2"/>
+</monster>

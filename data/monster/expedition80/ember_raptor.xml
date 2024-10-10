@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Ember Raptor" nameDescription="a ember raptor" race="blood" experience="20" speed="180">
+	<health now="6" max="6" />
+	<!--- Level --><level min="86" max="97" />
+	<look type="1497" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-300" />		
+<attack name="fire" interval="3000" chance="10" length="5" spread="2" target="0" min="0" max="-480">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="fire" />
+		</attack>
+		<attack name="fire" interval="2000" chance="20" radius="3" target="0" min="0" max="-385">
+			<attribute key="areaEffect" value="explosion" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" target="1" radius="1" speedchange="-700" duration="16000">
+			<attribute key="shootEffect" value="explosion" />
+			<attribute key="areaEffect" value="stun" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="50" max="120">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="FCHHHHHHHHHHHHHHHH" />
+		<voice sentence="FI?" />
+	</voices>
+	<loot>
+		<item id="21401" countmax="2" chance="10000" />  <!-- fire essense -->
+		<item name="dragon ham" countmax="3" chance="65500" />
+	
+		<item name="dragon's tail" chance="9740" />
+		<item name="Blackskull Longsword" chance="4000" />
+		<item name="amazonic helmet" chance="3000" />
+		<item name="strong health potion" chance="1000" />
+		<item name="green dragon scale" chance="1000" />
+		<item name="Wand Of Endless Fire" chance="1000" />
+		<item name="headripper axe" chance="1000" />
+		<item name="dragon hammer" chance="560" />
+		<item name="serpent sword" chance="510" />
+		<item id="2516" chance="320" /><!-- dragon shield -->
+		<item name="dragonbone staff" chance="110" />
+		
+		
+		<item id="2230" chance="15000" /><!-- bone (sell) -->
+		<item id="2231" chance="12000" /><!-- big bone (sell) -->
+		<item id="13830" chance="8500" /><!-- fleshy bone (sell) -->
+		<item id="37383"  chance="500" /><!-- novel -->
+		<item id="37384"  chance="500" /><!-- novel -->
+		<item id="37385"  chance="500" /><!-- novel -->
+		<item id="37386"  chance="500" /><!-- novel -->
+		<item id="37387"  chance="500" /><!-- novel -->
+		
+		<item name="blazing bone" chance="12410" />
+		<item id="36165"  chance="500" /><!-- sword -->
+		<item id="36266"  chance="500" /><!-- sword -->
+		<item id="31967"  chance="500" /><!-- shield -->
+		
+		<item id="31960"  chance="500" /><!-- shoes -->
+		
+
+		<item id="38332"  chance="1000" /><!--arcane resonance (max hp)-->
+		
+
+		<item id="38282"  chance="1000" /><!--emeral echanter (magic  + max mana) -->
+
+		<item id="39071" countmax="2" chance="10500" /><!-- sell -->
+		<item id="39095" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39126" countmax="2" chance="10500" /><!-- sell -->
+	</loot>
+</monster>

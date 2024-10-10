@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Ghost" nameDescription="a ghost" race="undead" experience="20" speed="160" manacost="100">
+	<health now="6" max="6" />
+	<look type="48" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="lifedrain" interval="2000" chance="15" range="1" min="-20" max="-45">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Huh!" />
+		<voice sentence="Shhhhhh" />
+		<voice sentence="Buuuuuh" />
+	</voices>
+	<loot>
+		<item id="1962" chance="1310" /><!-- orange book -->
+		<item id="2165" chance="180" />
+		<item name="morning star" chance="10610" />
+		<item name="combat knife" chance="7002" />
+		<item name="ancient shield" chance="860" />
+		<item name="cape" chance="8800" />
+		<item name="shadow herb" chance="14400" />
+		<item name="white piece of cloth" chance="1940" />
+		<item name="ghostly tissue" chance="1870" />
+	</loot>
+</monster>

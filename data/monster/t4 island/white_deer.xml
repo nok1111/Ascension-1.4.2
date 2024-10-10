@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="White Deer" nameDescription="white deer" race="blood" experience="20" speed="230">
+	<health now="600" max="600" />
+	<look type="400" corpse="37129" />
+	<targetchange interval="5000" chance="8" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="50" />
+		<flag canwalkonfire="0" />
+		<flag passive="1" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-100" />		
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		
+	</voices>
+	<loot>
+		<item name="meat" countmax="4" chance="33333" />
+		<item name="ham" countmax="5" chance="10000" />
+		
+		 <item id="39132" countmax="2" chance="11000" /><!-- sell -->
+		  <item id="39108" countmax="4" chance="36000" /><!-- sell -->
+		  <item id="39135" countmax="1" chance="5000" /><!-- sell -->	
+		  <item id="39113" countmax="1" chance="12000" /><!-- sell -->	
+		  <item id="39089" countmax="2" chance="12000" /><!-- sell -->	
+	</loot>
+</monster>

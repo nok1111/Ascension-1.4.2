@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Abomination" nameDescription="an abomination" race="blood" experience="2600" speed="260" summonwalk="true">
+	<health now="6" max="6" />
+	<look type="1093" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="0" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+		<attack name="summonmelee" interval="2000" range="1" chance="70"/>
+		<attack name="abominationaoe" interval="2000" chance="50" range="3" target="1"/>
+		<attack name="abominationtaunt" interval="2000" chance="50" />
+	</attacks>
+	
+	
+	
+	<defenses armor="55" defense="95">
+		<defense name="healing" interval="3000"  min="350" max="800">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+	<elements>
+		<element physicalPercent="50" />
+	</elements>
+	<immunities>
+		<immunity energy="1" />
+		<immunity fire="1" />
+		<immunity earth="1" />
+		<immunity death="1" />
+		<immunity invisible="1" />
+		<immunity paralyze="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="baaa" />
+		<voice sentence="uuuh!?" />
+	</voices>
+	<loot>
+	
+	</loot>
+</monster>

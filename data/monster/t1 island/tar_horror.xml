@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Tar Horror" nameDescription="a tar horror" race="venom" experience="20" speed="150" manacost="305" skull="red">
+	<health now="6" max="6" />
+	<level min="200" max="200" />
+	<look type="1048" corpse="37129" />
+	
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-350" />		
+		<attack name="death" interval="2200" chance="70" range="7" min="-3" max="-310">
+		<attribute key="shootEffect" value="suddendeath" />
+		<attribute key="areaEffect" value="mortarea" />
+		</attack>
+			<attack name="death" interval="2000" chance="20" radius="2" target="0" min="-3" max="-410">
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+			
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	
+	<loot>
+		<item name="red apple" chance="20000" />
+		
+			<item id="36335" chance="500" />
+		<item id="6527" countmax="2" chance="50000" /><!-- gold coin -->
+			<item id="37978" chance="100000" />
+		<item id="36388" chance="500" />
+		<item id="36389" chance="500" />
+		<item id="36396" chance="500" />
+		<item id="36241" chance="500" />
+		<item id="31802" chance="500" />
+		<item id="32825" chance="500" />
+		<item id="36324" chance="500" />
+		<item id="32789" chance="500" />
+		<item id="36367" chance="500" />
+		<item id="36362" chance="500" />
+		<item id="36359" chance="500" />
+		<item id="2662" chance="500" />
+		<item id="36381" chance="500" />
+		<item id="32829" chance="500" />
+		<item id="2182" chance="500" />
+		<item id="2181" chance="500" />
+		<item id="2191" chance="500" />
+		<item id="32734" chance="500" />
+		<item id="31818" chance="2500" />
+		<item id="32863" chance="500" />
+		<item id="2648" chance="3500" />
+		<item id="2477" chance="3500" />
+		<item id="2513" chance="500" />
+		<item id="2511" chance="500" />
+		<item id="31879" chance="500" />
+		<item id="36193" chance="500" />
+		<item id="36357" chance="500" />
+		<item id="36373" chance="500" />
+		<item id="32721" chance="500" />
+		<item id="31919" chance="500" />
+		<item id="31903" chance="500" />
+		<item id="2182" chance="500" />
+		<item id="23544" chance="500" />
+		<item id="2509" chance="500" />
+		<item id="2541" chance="2500" />
+		<item id="2462" chance="500" />
+		<item id="36251" chance="500" />
+
+	
+	</loot>
+</monster>

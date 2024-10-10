@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Goblin Brute" nameDescription="a goblin brute" race="blood" experience="20" speed="110" manacost="290">
+	<health now="6" max="6" />
+	<level min="52" max="55" />
+	<look type="1696" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="10" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-170" />		
+<attack name="physical" interval="2000" chance="15" range="7" min="-3" max="-200">
+			<attribute key="shootEffect" value="smallstone" />
+		</attack>
+	</attacks>
+
+<defenses armor="1" defense="1" />
+	<voices interval="5000" chance="10">
+		<voice sentence="ya ramm wrooo!" />
+		<voice sentence="raaaww gaw lotr!" />
+		<voice sentence="ghrew gimo" />
+		<voice sentence="Bauutraw! bauu!" />
+		<voice sentence="Me, eaw!" />
+	</voices>
+	<loot>
+		<item id="2230" chance="1130" /><!-- bone -->
+		<item name="dagger" chance="1800" />
+		<item name="short sword" chance="8870" />
+		<item name="bone club" chance="4900" />
+
+		<item id="31890" chance="300" />
+		
+		<item id="2541" chance="10000" />
+		<item id="21406" chance="8000" /><!-- quest -->
+		<item id="11076" chance="8000" /><!-- quest -->
+		<item id="21398" chance="8000" /><!-- quest -->
+		<item id="21407" chance="8000" /><!-- quest -->
+		<item id="2648" chance="3000" />
+		<item id="2455" chance="3000" />
+		<item id="31903" chance="3000" />
+		<item id="32789" chance="3000" />
+		<item id="36324" chance="500" />
+		<item id="36381" chance="2200" />
+		<item id="36367" chance="3000" />
+		
+		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
+
+		<item id="38294" chance="4500" /> <!-- regen resilence -->
+		<item id="38293" chance="4500" /> <!-- critical coup -->
+		
+		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39070" countmax="1" chance="15500" /><!-- sell -->
+		<item id="39101" countmax="1" chance="4000" /><!-- sell -->
+
+
+	</loot>
+</monster>

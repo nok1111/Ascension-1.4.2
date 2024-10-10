@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Razowind Warlock" nameDescription="Razowind Warlock" race="blood" experience="20" speed="190">
+	<health now="6" max="6" />
+	<!--- Level --><level min="150" max="175" />
+	<look type="1487" corpse="37129" />
+	<targetchange interval="5000" chance="8" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonfire="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="physical" interval="1000" chance="15" radius="3" min="-300" max="-480">
+			<attribute key="areaEffect" value="bigfrost" />
+		</attack>
+		<attack name="energy" interval="1000" chance="12" length="3" spread="3" min="0" max="-575">
+			<attribute key="areaEffect" value="energyexplo1" />
+		</attack>
+	</attacks>
+	<defenses armor="0" defense="0" />
+	
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="5000" chance="10">
+		<voice sentence="Yooodelaaahooohooo!" />
+		<voice sentence="Yooodelaaaheeeheee!" />
+	</voices>
+	<loot>
+		<item name="snowball" countmax="22" chance="10000" />
+		
+		<item name="meat" countmax="4" chance="33333" />
+		<item name="ham" countmax="5" chance="10000" />
+		<item id="4848" chance="5000" /><!-- ice cube -->
+			
+
+
+		<item name="fur boots" chance="100" />
+		
+		
+		<item id="32476" chance="500" />
+		<item id="32477" chance="500" />
+		<item id="34026" chance="500" />
+		<item id="30249" chance="500" />
+		<item id="36249" chance="500" />
+		
+		
+		<item id="32806" chance="500" />
+		<item id="32555" chance="500" />
+		<item id="32506" chance="500" />
+		<item id="34080" chance="500" />
+		<item id="33164" chance="500" />
+		<item id="36296" chance="500" />
+		
+		
+		<item id="32779" chance="500" />
+		<item id="32774" chance="500" />
+		<item id="32002" chance="500" />
+		<item id="30847" chance="500" />
+		<item id="33160" chance="500" />
+		<item id="33159" chance="500" />
+		<item id="33158" chance="500" />
+		<item id="31860" chance="500" />
+		<item id="32772" chance="500" />
+		<item id="36153" chance="500" />
+		<item id="32467" chance="500" />
+		
+			
+		<item id="31965" chance="500" />
+		<item id="36160" chance="500" />
+		<item id="36234" chance="500" />
+		<item id="36390" chance="500" />
+		<item id="36387" chance="500" />
+		<item id="32472" chance="500" />
+		<item id="30848" chance="500" />
+		<item id="33166" chance="500" />
+		
+		
+		<item id="31803" chance="500" />
+		<item id="30265" chance="500" />
+		<item id="30225" chance="500" />
+		<item id="36197" chance="500" />
+		
+		<item id="33157" chance="500" />
+		<item id="33161" chance="500" />
+		<item id="30444" chance="500" />
+		
+		
+		<item id="33163" chance="500" />
+		<item id="31885" chance="500" />
+		
+		
+		<item id="31889" chance="500" />
+		<item id="32457" chance="500" />
+		<item id="33155" chance="500" />
+		<item id="32553" chance="500" />
+		<item id="32612" chance="100" />
+		<item id="7902" chance="500" />
+		
+		<item id="32468" chance="500" />
+		<item id="32456" chance="500" />
+		<item id="33154" chance="500" />
+		<item id="32791" chance="500" />
+		<item id="8878" chance="500" />
+		<item id="7897" chance="500" />
+		<item id="8866" chance="500" />
+		<item id="32471" chance="500" />
+		<item id="32516" chance="500" />
+		
+		<item id="31898" chance="500" />
+		<item id="32455" chance="500" />
+		<item id="33153" chance="500" />
+		<item id="32469" chance="500" />
+		<item id="32470" chance="500" />
+		<item id="7896" chance="500" />
+		<item id="21700" chance="500" />
+		
+		<item id="7892" chance="500" />
+		<item id="31999" chance="500" />
+		<item id="31961" chance="500" />
+		<item id="32489" chance="500" />
+		<item id="32613" chance="500" />
+		
+		<item id="33156" chance="500" />
+		<item id="30255" chance="500" />
+		<item id="30836" chance="500" />
+		<item id="30835" chance="500" />
+	</loot>
+</monster>

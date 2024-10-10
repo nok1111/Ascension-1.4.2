@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="S.E.R.N" nameDescription="S.E.R.N" race="undead" experience="20" speed="0" skull="red">
+	<health now="6" max="6" />
+	<!--- Level --><level min="150" max="150" />
+	<look type="1091" corpse="37129" />
+	<targetchange interval="5000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="90" />
+		<flag targetdistance="1" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" >		
+<attribute key="shootEffect" value="visballthree" />
+			<attribute key="areaEffect" value="purpleenergy" />
+		</attack>
+		
+		<attack name="energy" interval="2000" chance="60" range="8" radius="2" target="1" min="-300" max="-400">
+			<attribute key="shootEffect" value="visballthree" />
+			<attribute key="areaEffect" value="purpleenergy" />
+		</attack>
+		
+		<attack name="sern wave" interval="3000" chance="30"  min="-1400" max="-2000" />
+		<attack name="sern aoe" interval="30000" chance="100"  min="-1000" max="-1500" />
+		
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	<summons maxSummons="4">
+		<summon name="CODE 010101" interval="3000" chance="50" />
+	</summons>
+	
+	<loot>
+		
+	</loot>
+</monster>

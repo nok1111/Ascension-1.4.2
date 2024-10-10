@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Coronel Vragaz" nameDescription=" coronel vragaz" race="blood" experience="20" speed="150" manacost="300">
+	<health now="6" max="6" />
+	<look type="1242" head="94" body="94" legs="94" feet="114" addons="3" corpse="37129"/>
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="lifedrain" interval="2000" chance="15" range="1" min="-3" max="-9" />
+	</attacks>
+<defenses armor="1" defense="1" />
+	<elements>
+		<element holyPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity death="1" />
+		<immunity drown="1" />
+		<immunity lifedrain="1" />
+	</immunities>
+	<loot>
+
+		<item id="2568" chance="9880" /><!-- torch -->
+		<item id="2481" chance="49100" /><!-- helmet -->
+		<item id="2500" chance="33340" /><!-- robe -->
+<item name="meat" countmax="2" chance="43900" />
+		<item name="mace" chance="15000" />
+		<item id="32859" chance="7520" />
+
+	</loot>
+</monster>

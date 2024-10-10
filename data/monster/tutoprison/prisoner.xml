@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Prisoner" nameDescription="a prisoner" race="blood" experience="20" speed="150" manacost="300">
+	<health now="6" max="6" />
+	<!--- Level --><level min="6" max="9" />
+	<look type="1023" head="95" body="58" legs="58" feet="115" corpse="37129"/>
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />	</attacks>
+<defenses armor="1" defense="1" />
+	<elements>
+		<element holyPercent="-5" />
+	</elements>
+	<immunities>
+		<immunity death="1" />
+		<immunity drown="1" />
+		<immunity lifedrain="1" />
+	</immunities>
+			<voices interval="5000" chance="10">
+
+		<voice sentence="who...are you!" />
+		<voice sentence="how did you get here?" />
+		<voice sentence="you wont take my treasure!" />
+	</voices>
+	<loot>
+		<item id="2050" chance="99999" /><!-- torch -->
+		<item id="2482" chance="99999" /><!-- helmet -->
+		<item id="2508" chance="99999" /><!-- chest -->
+		<item id="2468" chance="99999" /><!-- legs -->
+		<item id="2643" chance="99999" /><!-- shoes -->
+		<item name="mace" chance="99999" />
+		<item name="meat" countmax="2" chance="43900" />
+
+	</loot>
+</monster>

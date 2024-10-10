@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Ash Bender" nameDescription="a Ash Bender" race="blood" experience="20" speed="250" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="180" max="180" />
+	<look type="1179" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+<attack name="manadrain" interval="2000" chance="10" range="7" min="0" max="-120" />
+		<attack name="fire" interval="2000" chance="20" range="7" radius="7" target="1" min="-350" max="-420">
+			<attribute key="shootEffect" value="newfireballthree" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		<attack name="fire rain" interval="12000" chance="100" min="-140" max="-160"/>
+		
+		<attack name="fire" interval="2000" chance="10" range="1" min="-310" max="-500">
+			<attribute key="shootEffect" value="newfireballthree" />
+		</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-700" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="80" max="200">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="320" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+
+	<summons maxSummons="2">
+		<summon name="flesh eater" interval="100" chance="20" />
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="You dare to enter our territory!" />
+		<voice sentence="your magic is weak!" />
+		<voice sentence="let my dogs dinner tonight!" />
+		<voice sentence="come at me!" />
+		<voice sentence="ill burn you to ashes!" />
+	</voices>
+
+</monster>

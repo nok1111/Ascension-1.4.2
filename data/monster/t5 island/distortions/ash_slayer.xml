@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Fire Slayer" nameDescription="Ash Slayer" race="blood" experience="20" speed="350" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="180" max="180" />
+	<look type="1123" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="60" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />
+		
+		<attack name="fire" interval="1500" chance="20" radius="3" target="0" min="-200" max="-320">
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" />
+	
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="You dare to enter our territory!" />
+		<voice sentence="your strenght is weak!" />
+		<voice sentence="ill rip your tongue!" />
+		<voice sentence="come at me!" />
+		<voice sentence="ill burn you to ashes!" />
+	</voices>
+
+</monster>

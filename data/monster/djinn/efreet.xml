@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Efreet" nameDescription="an efreet" race="blood" experience="20" speed="180">
+	<health now="20" max="20" />
+	<!--- Level --><level min="80" max="80" />
+	<look type="1866" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-3" />		
+<attack name="fire" interval="2000" chance="15" range="7" min="-3" max="-280">
+			<attribute key="shootEffect" value="fire" />
+		</attack>
+		<attack name="energy" interval="2000" chance="10" target="0" radius="3" min="-3" max="-330">
+			<attribute key="areaEffect" value="energy" />
+		</attack>
+		<attack name="energy" interval="2000" chance="15" range="7" min="-3" max="-410">
+			<attribute key="shootEffect" value="energy" />
+			<attribute key="areaEffect" value="energy" />
+		</attack>
+		<attack name="speed" interval="2000" chance="15" range="7" speedchange="-650" duration="15000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+		<attack name="drunk" interval="2000" chance="10" range="7" duration="6000">
+			<attribute key="shootEffect" value="energy" />
+		</attack>
+		<attack name="outfit" interval="2000" chance="1" range="7" monster="rat" duration="4000">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</attack>
+		<attack name="djinn electrify" interval="2000" range="5" chance="15" />
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="50" max="80">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<summons maxSummons="5">
+		<summon name="green djinn" interval="2000" chance="10" max="2" />
+		<summon name="fire devil" interval="2000" chance="10" max="2" />
+	</summons>
+	<voices interval="5000" chance="10">
+		<voice sentence="I grant you a deathwish!" />
+		<voice sentence="Good wishes are for fairytales" />
+	</voices>
+	<loot>
+		<item id="1860" chance="2200" /><!-- green tapestry -->
+		<item name="green gem" chance="200" />
+		<item id="2187" chance="390" /> <!-- name="Wand Of Endless Fire" -->
+		<item name="heavy machete" chance="5000" />
+		<item name="green piece of cloth" chance="3000" />
+		<item name="strong mana potion" chance="3500" />
+		<item id="26164" chance="5000" /><!-- crafting material -->	
+		<item id="39066" countmax="2" chance="10500" /><!-- sell -->
+		<item id="39155" countmax="1" chance="800" /><!-- sell -->
+		<item id="39153" countmax="1" chance="6000" /><!-- sell -->
+		<item id="38583" chance="6000" />
+		<item id="38586" chance="22530" /><!-- blueprint -->
+		<item id="37869" chance="2200" /><!-- pet -->
+	</loot>
+</monster>
