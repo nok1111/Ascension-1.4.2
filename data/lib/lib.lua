@@ -16,5 +16,6 @@ dofile('data/lib/additional/tasklist.lua')
 dofile('data/lib/additional/tasksystem.lua')
 dofile('data/lib/additional/professionSystem.lua')
 dofile('data/lib/additional/craftingSystem.lua')
+dofile('data/lib/additional/fameSystem.lua')
 
 

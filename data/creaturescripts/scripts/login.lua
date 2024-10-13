@@ -37,6 +37,8 @@ function onLogin(player)
 	ProfessionSystem:onPlayerLogin(player)
 	-- update jobs
 	ProfessionSystem:sendJobs(player)
+	-- Send Fame Info
+	FameSystem:sendUpdateFame(player)
 
 	return true
 end
