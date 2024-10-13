@@ -3452,7 +3452,7 @@ if recipe.craftedItemId == 32763 then
         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3461,54 +3461,54 @@ if recipe.craftedItemId == 32763 then
 
 elseif recipe.craftedItemId == 2287 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 elseif recipe.craftedItemId == 2311 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 2271 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 2292 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 2301 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35378 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35377 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35376 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35374 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3516,155 +3516,155 @@ elseif recipe.craftedItemId == 35374 then
 --blacksmith
 elseif recipe.craftedItemId == 35768 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35765 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35764 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35775 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 elseif recipe.craftedItemId == 35773 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35772 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35771 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35769 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35769 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35766 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35763 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35770 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35774 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35779 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 21401 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 
 elseif recipe.craftedItemId == 35782 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 
 elseif recipe.craftedItemId == 35767 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 
 elseif recipe.craftedItemId == 35762 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 
 elseif recipe.craftedItemId == 31819 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 
 elseif recipe.craftedItemId == 21402 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 6536 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 35780 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 elseif recipe.craftedItemId == 37284 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 elseif recipe.craftedItemId == 37283 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 
 elseif recipe.craftedItemId == 37282 then
                         --removed
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3674,7 +3674,7 @@ elseif recipe.craftedItemId == 32764 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3683,7 +3683,7 @@ elseif recipe.craftedItemId ==	32765 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3692,7 +3692,7 @@ elseif recipe.craftedItemId == 32766 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3701,7 +3701,7 @@ elseif recipe.craftedItemId == 32767 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3711,7 +3711,7 @@ elseif recipe.craftedItemId == 32788 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3721,7 +3721,7 @@ elseif recipe.craftedItemId == 32789 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3731,7 +3731,7 @@ elseif recipe.craftedItemId ==	2377 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3740,7 +3740,7 @@ elseif recipe.craftedItemId ==	30759 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3750,7 +3750,7 @@ elseif recipe.craftedItemId ==	32058 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3762,7 +3762,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
 
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
 
@@ -3775,7 +3775,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3785,7 +3785,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 		
@@ -3794,7 +3794,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3803,7 +3803,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 			
@@ -3812,7 +3812,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3821,7 +3821,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3830,7 +3830,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 			
@@ -3839,7 +3839,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3853,7 +3853,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3863,7 +3863,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3873,7 +3873,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3883,7 +3883,7 @@ elseif recipe.craftedItemId == 32739  then	--COMMON EQUIPMENT
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3897,7 +3897,7 @@ elseif recipe.craftedItemId == 32746 then	--roll rarity on equipment
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3908,7 +3908,7 @@ elseif recipe.craftedItemId ==	32747 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3917,7 +3917,7 @@ elseif recipe.craftedItemId ==	32748 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3926,7 +3926,7 @@ elseif recipe.craftedItemId ==	32749 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3935,7 +3935,7 @@ elseif recipe.craftedItemId ==	32750 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3945,7 +3945,7 @@ elseif recipe.craftedItemId ==	32751 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3954,7 +3954,7 @@ elseif recipe.craftedItemId ==	37138 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3963,7 +3963,7 @@ elseif recipe.craftedItemId ==	37139 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3972,7 +3972,7 @@ elseif recipe.craftedItemId ==	37140 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3981,7 +3981,7 @@ elseif recipe.craftedItemId ==	32467 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -3991,7 +3991,7 @@ elseif recipe.craftedItemId ==	36197 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4000,7 +4000,7 @@ elseif recipe.craftedItemId ==	8907 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4009,7 +4009,7 @@ elseif recipe.craftedItemId ==	34026 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4018,7 +4018,7 @@ elseif recipe.craftedItemId ==	32506 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4027,7 +4027,7 @@ elseif recipe.craftedItemId ==	37141 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4036,7 +4036,7 @@ elseif recipe.craftedItemId ==	37143 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4045,7 +4045,7 @@ elseif recipe.craftedItemId ==	37144 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4054,7 +4054,7 @@ elseif recipe.craftedItemId ==	37145 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4063,7 +4063,7 @@ elseif recipe.craftedItemId ==	37146 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4072,7 +4072,7 @@ elseif recipe.craftedItemId ==	37147 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 			
@@ -4083,7 +4083,7 @@ elseif recipe.craftedItemId ==	36228 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 			
@@ -4093,7 +4093,7 @@ elseif recipe.craftedItemId ==	31886 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 			
@@ -4102,7 +4102,7 @@ elseif recipe.craftedItemId ==	32439 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 			
@@ -4112,7 +4112,7 @@ elseif recipe.craftedItemId ==	36332 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 			
@@ -4121,7 +4121,7 @@ elseif recipe.craftedItemId ==	30607 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 			
@@ -4130,7 +4130,7 @@ elseif recipe.craftedItemId ==	36274 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 
@@ -4139,7 +4139,7 @@ elseif recipe.craftedItemId ==	3982 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 			
@@ -4148,7 +4148,7 @@ elseif recipe.craftedItemId ==	12318 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)			
 
@@ -4157,7 +4157,7 @@ elseif recipe.craftedItemId ==	31858 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4166,7 +4166,7 @@ elseif recipe.craftedItemId ==	31891 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4175,7 +4175,7 @@ elseif recipe.craftedItemId ==	32475 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4184,7 +4184,7 @@ elseif recipe.craftedItemId ==	9777 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4194,7 +4194,7 @@ elseif recipe.craftedItemId ==	12646 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4203,7 +4203,7 @@ elseif recipe.craftedItemId ==	36249 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4212,7 +4212,7 @@ elseif recipe.craftedItemId ==	36153 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4221,7 +4221,7 @@ elseif recipe.craftedItemId ==	36390 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4231,7 +4231,7 @@ elseif recipe.craftedItemId ==	34080 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4240,7 +4240,7 @@ elseif recipe.craftedItemId ==	31961 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4249,7 +4249,7 @@ elseif recipe.craftedItemId ==	34005 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4258,7 +4258,7 @@ elseif recipe.craftedItemId ==	30496 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4267,7 +4267,7 @@ elseif recipe.craftedItemId ==	36374 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4276,7 +4276,7 @@ elseif recipe.craftedItemId ==	32769 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4285,7 +4285,7 @@ elseif recipe.craftedItemId ==	31731 then
                         itemnew:setRarity(createRarity_craft())
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4300,31 +4300,31 @@ elseif recipe.craftedItemId ==	31731 then
 
 
 elseif recipe.craftedItemId == 32702 then --copper bars
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
                         ----removed
 
 elseif recipe.craftedItemId == 32703 then --bronce bars
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
                         ----removed
 
 elseif recipe.craftedItemId == 32704 then --arcanium bars
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
                         ----removed
 
 elseif recipe.craftedItemId == 37135 then --iron bars
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
                         ----removed
 
 elseif recipe.craftedItemId == 37136 then --crystal bars
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
                         ----removed
@@ -4339,7 +4339,7 @@ elseif recipe.craftedItemId ==	35379 then
                         itemnew:setUnique(15)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4348,7 +4348,7 @@ elseif recipe.craftedItemId ==	35380 then
                         itemnew:setUnique(16)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4357,7 +4357,7 @@ elseif recipe.craftedItemId ==	35381 then
                         itemnew:setUnique(17)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4366,7 +4366,7 @@ elseif recipe.craftedItemId ==	35382 then
                         itemnew:setUnique(18)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4375,7 +4375,7 @@ elseif recipe.craftedItemId ==	35383 then
                         itemnew:setUnique(19)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4384,7 +4384,7 @@ elseif recipe.craftedItemId ==	35384 then
                         itemnew:setUnique(20)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4393,7 +4393,7 @@ elseif recipe.craftedItemId ==	35385 then
                         itemnew:setUnique(21)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4402,7 +4402,7 @@ elseif recipe.craftedItemId ==	35386 then
                         itemnew:setUnique(22)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4415,7 +4415,7 @@ elseif recipe.craftedItemId ==	35387 then
                         itemnew:setUnique(23)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4424,7 +4424,7 @@ elseif recipe.craftedItemId ==	35388 then
                         itemnew:setUnique(24)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4433,7 +4433,7 @@ elseif recipe.craftedItemId ==	35389 then
                         itemnew:setUnique(25)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4442,7 +4442,7 @@ elseif recipe.craftedItemId ==	35390 then
                         itemnew:setUnique(26)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4451,7 +4451,7 @@ elseif recipe.craftedItemId ==	35391 then
                         itemnew:setUnique(27)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4461,7 +4461,7 @@ elseif recipe.craftedItemId ==	35392 then
                         itemnew:setUnique(28)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4470,7 +4470,7 @@ elseif recipe.craftedItemId ==	35393 then
                         itemnew:setUnique(29)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4479,7 +4479,7 @@ elseif recipe.craftedItemId ==	35394 then
                         itemnew:setUnique(30)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4491,7 +4491,7 @@ elseif recipe.craftedItemId ==	35395 then
                         itemnew:setUnique(31)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4500,7 +4500,7 @@ elseif recipe.craftedItemId ==	35396 then
                         itemnew:setUnique(32)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4509,7 +4509,7 @@ elseif recipe.craftedItemId ==	35397 then
                         itemnew:setUnique(33)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4518,7 +4518,7 @@ elseif recipe.craftedItemId ==	35398 then
                         itemnew:setUnique(34)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4527,7 +4527,7 @@ elseif recipe.craftedItemId ==	35399 then
                         itemnew:setUnique(35)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4536,7 +4536,7 @@ elseif recipe.craftedItemId ==	35400 then
                         itemnew:setUnique(36)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4545,7 +4545,7 @@ elseif recipe.craftedItemId ==	35401 then
                         itemnew:setUnique(37)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4554,7 +4554,7 @@ elseif recipe.craftedItemId ==	35402 then
                         --
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4568,7 +4568,7 @@ elseif recipe.craftedItemId ==	35403 then
                         itemnew:setUnique(38)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4577,7 +4577,7 @@ elseif recipe.craftedItemId ==	35404 then
                         itemnew:setUnique(39)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4586,7 +4586,7 @@ elseif recipe.craftedItemId ==	35405 then
                         itemnew:setUnique(40)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4595,7 +4595,7 @@ elseif recipe.craftedItemId ==	35406 then
                         itemnew:setUnique(41)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4604,7 +4604,7 @@ elseif recipe.craftedItemId ==	35407 then
                         itemnew:setUnique(42)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4613,7 +4613,7 @@ elseif recipe.craftedItemId ==	35408 then
                         itemnew:setUnique(43)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4622,7 +4622,7 @@ elseif recipe.craftedItemId ==	35409 then
                         itemnew:setUnique(44)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4632,7 +4632,7 @@ elseif recipe.craftedItemId ==	35410 then
                         --
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4645,7 +4645,7 @@ elseif recipe.craftedItemId ==	35411 then
                         --
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4654,7 +4654,7 @@ elseif recipe.craftedItemId ==	35412 then
                         itemnew:setUnique(45)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4663,7 +4663,7 @@ elseif recipe.craftedItemId ==	35413 then
                         itemnew:setUnique(46)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4672,7 +4672,7 @@ elseif recipe.craftedItemId ==	35414 then
                         itemnew:setUnique(47)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4681,7 +4681,7 @@ elseif recipe.craftedItemId ==	35415 then
                         itemnew:setUnique(48)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4690,7 +4690,7 @@ elseif recipe.craftedItemId ==	35416 then
                         itemnew:setUnique(49)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4699,7 +4699,7 @@ elseif recipe.craftedItemId ==	35417 then
                         itemnew:setUnique(50)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4708,7 +4708,7 @@ elseif recipe.craftedItemId ==	35418 then
                         itemnew:setUnique(51)
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
@@ -4717,12 +4717,12 @@ elseif recipe.craftedItemId ==	35419 then
                         --
                         itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
                         local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 
 else
-                        -- FameSystem:addPoints(player, recipe.fame)
+                         FameSystem:addPoints(player, recipe.fame)
                         Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
             player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
                         --removed
