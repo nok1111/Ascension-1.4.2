@@ -13,13 +13,8 @@ local positions = {
 
     local combat = Combat()
     combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS) -- effect of spell
-    local condition = Condition(CONDITION_PARALYZE)
-    condition:setParameter(CONDITION_PARAM_TICKS, 20000) -- 20 seconds
-    condition:setFormula(-0.50, 0, -0.50, 0) -- player speed -25% to -45%
-    combat:addCondition(condition)
-    local area = createCombatArea(AREA_SQUARE1X1)-- need to setup right area of effect
-    combat:setArea(area)
-    Combat:addCondition(condition)
+
+
     
 
 local function sendEffc(cid, max_iterations, iterations)
