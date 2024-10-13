@@ -42,21 +42,7 @@
 	<instant group="attack" spellid="911" name="flat" words="flat" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="test/flat_percent.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	
-	<instant name="massanimon" words="###952" aggressive="1" range="8" selftarget="1" blockwalls="1" needtarget="0" needlearn="0" script="new spells/mass_annihilation_monster.lua"/>
-	<instant group="attack" spellid="53" name="Blizzard" words="blizzard" lvl="50" mana="200" range="7"  cooldown="15000" groupcooldown="1900" needtarget="1" script="mage/blizzard.lua">
-	<vocation name="Magician" />
-	</instant>
-	<instant group="attack" spellid="304" name="Hells Core" words="hells core" lvl="100"  mana="400" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/hells_core.lua">
-	<vocation name="Magician" />
-	</instant>
-	
-	<instant group="attack" spellid="85" name="Dark Ambush" words="dark ambush" lvl="70" mana="250"  direction="0" blockwalls="1" range="3" needtarget="1" needweapon="0" cooldown="22000" groupcooldown="1900" needlearn="0" script="rogue/Assassination.lua">
-	<vocation name="Nightblade" />	
-	</instant>
-	<instant group="attack" spellid="102" name="Aery Wrath" words="aery wrath" lvl="18" mana="45" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="test/chain_spell.lua">
-    <vocation name="Stellar" />
-    </instant>
+
 	
 	
 	
@@ -136,5 +122,814 @@
 	<instant group="support" spellid="31" name="Kings Blessing" words="Kings Blessing" lvl="60" mana="50" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="templar/party_kings.lua">	
 	<vocation name="templar" />
     </instant>
+	
+	
+	
+	<!-- mage -->
+	
+	<instant group="attack" spellid="40" name="Living Bomb" words="living bomb" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="17000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/living_bomb.lua">
+    <vocation name="Magician" />
+    </instant>
+	<instant group="attack" spellid="41" name="Energy Blast" words="energy blast" lvl="10" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/energy_blast.lua">
+    <vocation name="Magician" />
+    </instant>
+	<instant group="attack" spellid="42" name="Fire Blast" words="fire blast" lvl="8" mana="25" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/fire_blast.lua">
+    <vocation name="Magician" />
+    </instant>
+	<instant group="attack" spellid="43" name="Elemental Blast" words="elemental blast" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/elemental_blast.lua">
+    <vocation name="Magician" />
+    </instant>
+	<instant group="attack" spellid="44" name="Ice Nova" words="ice nova" lvl="20" mana="180" prem="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="mage/ice_nova.lua">
+	<vocation name="Magician" />
+	</instant>
+	<instant group="support" spellid="46" name="Mana Distortion" words="mana distortion" lvl="80" mana="0" prem="0" needweapon="0"  cooldown="120000" groupcooldown="1900" needlearn="0" script="mage/distortion.lua">
+	<vocation name="Magician" />
+	</instant>
+    <instant group="healing" spellid="47" name="Mana Flow" words="mana flow" lvl="40" mana="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/mana_flow.lua">
+    <vocation name="Magician" />
+	</instant>
+	<instant group="attack" spellid="48" name="Hand of God" words="hand of god" lvl="30" mana="120" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/handofgod.lua">
+    <vocation name="Magician" />
+    </instant>
+	<instant group="attack" spellid="49" name="Frost Wave" words="frost wave" lvl="70" mana="200" direction="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="mage/frost_wave.lua">
+    <vocation name="Magician" />
+	</instant>
+	<instant group="attack" spellid="51" name="Arcane Missiles" words="arcane missiles" lvl="18" mana="80" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="6000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/arcane_missiles.lua">
+     <vocation name="Magician" />
+	</instant>
+	<instant group="support"  spellid="52" name="Teleport" words="teleport" lvl="60" mana="150" prem="0" aggressive="0" cooldown="12000" groupcooldown="1900" script="mage/teleport.lua">
+    <vocation name="Magician" />
+     </instant>
+	 <instant group="attack" spellid="53" name="Blizzard" words="blizzard" lvl="50" mana="200" range="7"  cooldown="15000" groupcooldown="1900" needtarget="1" script="mage/blizzard.lua">
+	<vocation name="Magician" />
+	</instant>
+	<instant group="attack" spellid="304" name="Hells Core" words="hells core" lvl="100"  mana="400" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/hells_core.lua">
+	<vocation name="Magician" />
+	</instant>
+	
+	
+	<!-- warlock -->
+	<instant group="attack" spellid="60" name="Void Recall" words="void recall" lvl="100" mana="300"  cooldown="15000" groupcooldown="2000" needlearn="0" script="warlock/void_recall.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="support" spellid="61" name="Zombie Wall" lvl="40" words="zombie wall" mana="50" cooldown="20000" needlearn="0" script="warlock/zombie_wall.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="attack" spellid="62" name="Curse" words="curse" lvl="8" mana="35" range="5" needlearn="0" aggressive="1" cooldown="2000" groupcooldown="1900" blockwalls="1" needtarget="1" script="warlock/curse.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="support" spellid="63" name="Fear" words="fear" lvl="60" mana="150" cooldown="30000" range="5" needlearn="0" aggressive="1" blockwalls="1" needtarget="1" script="warlock/stun.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="attack" spellid="64" name="Shadow Strike" words="shadow strike" lvl="30" mana="110" prem="0" range="6" casterTargetOrDirection="1" needtarget="1" blockwalls="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="warlock/death_strike.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="support" spellid="35" name="Summon Void Healer" words="summon void healer" lvl="70" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="0" script="warlock/summon_mage.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="healing" spellid="66" name="Blood Pact" words="blood pact" lvl="40" health="0" aggressive="0" selftarget="1" cooldown="1500" groupcooldown="1900" needlearn="0" script="warlock/mana_dot.lua">
+	<vocation name="Warlock" />
+	</instant>	
+	<instant group="support" spellid="67" name="Party Vitality" words="Party Vitality" lvl="60" mana="100" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="warlock/party_vit.lua">	
+	<vocation name="Warlock" />
+    </instant>
+	<instant group="support" spellid="68" name="Summon Void Guard" words="summon void guard" lvl="100" mana="480"  cooldown="4000" groupcooldown="1900" needlearn="0" script="warlock/summon_guard.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="support" spellid="69" name="Summon Void Archer" words="summon void archer" lvl="30" mana="150"  cooldown="10000" groupcooldown="1900" needlearn="0" script="warlock/summon_archer.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="support" spellid="70" name="Blood Wall" words="blood Wall" lvl="90" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="0" script="warlock/blood_wall.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="attack" spellid="71" name="Dark Plague" words="dark plague" lvl="100" mana="300" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="22000" groupcooldown="1900" needweapon="0" needlearn="0" script="warlock/dark_plague.lua">
+    <vocation name="Warlock" />
+    </instant>
+	<instant group="attack" spellid="73" name="Void Creep" words="creep" lvl="18" mana="60" needtarget="1" range="8" cooldown="6000" groupcooldown="1900" needlearn="0" script="warlock/void_creep.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="attack" spellid="74" name="Soul Rain" words="soul rain" lvl="50" mana="200" range="7"   cooldown="15000" groupcooldown="1900" needtarget="1" script="warlock/soul_rain.lua">
+	<vocation name="Warlock" />
+	</instant>
+	
+	<!-- Nightblade ROGUE -->
+	<instant group="attack" spellid="80" name="Stealth" words="stealth" lvl="40" mana="110"  cooldown="60000" groupcooldown="5000" needlearn="0"  script="rogue/cloak.lua">
+	<vocation name="Nightblade" />
+	</instant>
+	<instant group="attack" spellid="81" name="Mutilate" words="mutilate" lvl="8" mana="35" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="1" needlearn="0" script="rogue/mutilate.lua">
+    <vocation name="Nightblade" />
+    </instant>
+	<instant group="attack" spellid="82" name="Shadow Hunt" words="shadow hunt" lvl="18" mana="60" range="4" aggressive="1" blockwalls="1" needtarget="1" cooldown="6000" groupcooldown="1900"  needlearn="0" script="rogue/shadow_hunt.lua">
+    <vocation name="Nightblade" />
+    </instant>
+	<instant group="support" spellid="83" name="Shadowstep" words="shadowstep" lvl="90" mana="125"  blockwalls="1" needtarget="1" range="6" cooldown="15000" groupcooldown="1900"  script="rogue/shadowstep.lua">
+    <vocation name="Nightblade" />
+    </instant>
+	<instant group="attack" spellid="84" name="Backstab" words="backstab" lvl="15" mana="60" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="0" needweapon="1" needlearn="0" script="rogue/backstab.lua">
+    <vocation name="Nightblade" />
+	</instant>	
+	<instant group="attack" spellid="85" name="Dark Ambush" words="dark ambush" lvl="70" mana="250"  direction="0" blockwalls="1" range="3" needtarget="1" needweapon="0" cooldown="22000" groupcooldown="1900" needlearn="0" script="rogue/Assassination.lua">
+	<vocation name="Nightblade" />	
+	</instant>
+	<instant group="attack" spellid="86" name="Fan of Knives" words="fan of knives" lvl="50" mana="100" premium="0" direction="0" blockwalls="1" range="6" cooldown="5000" groupcooldown="1900" needlearn="0" script="rogue/knives_fan.lua">
+	<vocation name="Nightblade" />	
+	</instant>
+	<instant group="healing" spellid="87" name="Shadow Form" words="shadow form" lvl="60" mana="65" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="3000" needlearn="0" script="rogue/shadow_form.lua">
+	<vocation name="Nightblade" />
+	</instant>		
+	<instant group="attack" spellid="88" name="Dark Rupture" words="dark rupture" lvl="30" mana="45" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="6000" groupcooldown="1900" needweapon="1" needlearn="0" script="rogue/dark_rupture.lua">
+    <vocation name="Nightblade" />
+	</instant>	
+	<instant group="attack" spellid="89" name="Void Execution" words="Void Execution" lvl="100" mana="200" range="3" aggressive="1" blockwalls="1" selftarget="1" cooldown="22000" groupcooldown="1900" needweapon="1" needlearn="0" script="rogue/void_execution.lua">
+    <vocation name="Nightblade" />
+	</instant>
+	<instant group="support" spellid="90" name="Blood Blades" words="blood blades" lvl="35" mana="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="rogue/blood_blades.lua">
+    <vocation name="Nightblade" />
+	</instant>
+	
+		<!-- stelalr -->
+	<instant group="attack" spellid="100" name="Cosmic Force" words="cosmic force" lvl="8" mana="30" range="4" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/earth_call.lua">
+    <vocation name="Stellar" />
+    </instant>
+	<instant group="healing" spellid="101" name="Regrowth" words="regrowth" lvl="40"  mana="65" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="stellar/regrowth.lua">
+	<vocation name="Stellar" />
+ 	</instant>
+	<instant group="attack" spellid="102" name="Aery Wrath" words="aery wrath" lvl="18" mana="45" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/chain_spell.lua">
+    <vocation name="Stellar" />
+    </instant>
+	<instant group="attack" spellid="103" name="Star Fall" words="star fall" lvl="50" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="0" needweapon="0" needlearn="0" script="stellar/star_fall.lua">
+    <vocation name="Stellar" />
+    </instant>
+	<instant group="attack" spellid="104" name="Falling Star" words="falling star" lvl="30" mana="95" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/falling_sword.lua">
+    <vocation name="Stellar" />
+    </instant>	
+	<instant group="healing" spellid="105" name="Rain fall" words="rain fall" lvl="25" mana="100" cooldown="20000" groupcooldown="1900" needlearn="0" script="stellar/rain_fall.lua">
+	<vocation name="Stellar" />
+	</instant>
+	<instant group="healing" spellid="106" name="Heal Party" words="heal party" lvl="28" mana="150" prem="0" aggressive="0" selftarget="1" cooldown="4000" groupcooldown="1900" script="stellar/heal_party.lua">
+   <vocation name="Stellar" />
+   </instant>
+	<instant group="support" spellid="107" name="Grow" words="Grow" lvl="60" mana="100" params="1" needweapon="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="stellar/grow.lua">
+	 <vocation name="Stellar" />
+	 <vocation name="Druid" />
+	</instant>
+	<instant group="attack" spellid="108" name="Lunar Beam" words="Lunar Beam" lvl="60"  mana="185" premium="0" selftarget="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="stellar/lunar_beam.lua">
+	<vocation name="Stellar" />
+	</instant>
+	<instant group="attack" spellid="109" name="Aery Strikes" words="aery strikes" lvl="70" mana="135" prem="0"  cooldown="8000" groupcooldown="1900" needlearn="0" script="stellar/aery_dance.lua">
+	 <vocation name="Stellar" />
+	</instant>
+	<instant group="attack" spellid="111" name="Full Moon" words="full moon" lvl="100" mana="300" selftarget="1" prem="0" cooldown="45000" groupcooldown="1900" needlearn="0" script="stellar/full_moon.lua">
+	 <vocation name="Stellar" />
+	</instant>
+		
+		
+	<!-- Soul Weaver -->
+	<instant group="attack" spellid="120" name="Soul Fists" words="soul fists" lvl="8" mana="35" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/soul_fist.lua">
+    <vocation name="Soul Weaver" />
+    </instant>
+	<instant group="attack" spellid="121" name="Soul Barrage" words="soul barrage" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="0"  cooldown="6000" groupcooldown="1900" needlearn="0" script="soul weaver/soul_barrage.lua">
+	 <vocation name="Soul Weaver" />
+	</instant>
+	<instant group="attack" spellid="122" name="Anger Release" words="anger release" lvl="55" mana="70" prem="0"  cooldown="12000" groupcooldown="1900" needlearn="0" script="soul weaver/anger_release.lua">
+	<vocation name="Soul Weaver" />
+	</instant>
+	
+	<instant group="attack" spellid="124" name="Spectral Wave" words="spectral wave" lvl="50" mana="75" direction="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="soul weaver/spectral_wave.lua">
+    <vocation name="Soul Weaver" />
+	</instant>
+	<instant group="attack" spellid="125" name="Underworld Gaze" words="underworld gaze" lvl="70" mana="90"  blockwalls="1"   cooldown="16000" groupcooldown="1900"  needlearn="0" script="soul weaver/underworld_slash.lua">
+    <vocation name="Soul Weaver" />
+    </instant>
+	<instant group="attack" spellid="126" name="Hollow Blade" words="hollow Blade" lvl="18" mana="20" range="1" aggressive="1" needtarget="1" blockwalls="1"  cooldown="4000" needweapon="1" groupcooldown="1900"  needlearn="0" script="soul weaver/hollow_fist.lua">
+    <vocation name="Soul Weaver" />
+    </instant>
+	<instant group="support" spellid="127" name="Veil of Anguish" words="veil of anguish" lvl="40" mana="30" aggressive="0" selftarget="1" cooldown="7000" groupcooldown="0" needlearn="0" script="soul weaver/veil_of_anguish.lua">
+	<vocation name="Soul Weaver" />
+	</instant>
+	<instant group="attack" spellid="128" name="Absolute Denial" words="absolute denial" lvl="60" mana="120"  aggressive="1" selftarget="1" exhaustion="20000" groupcooldown="1900" script="soul weaver/absolute_denial.lua">
+	<vocation name="Soul Weaver" />
+	</instant>
+	<instant group="healing" spellid="129" name="Soul Link" words="soul link" lvl="90" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="50000" groupcooldown="1900" needlearn="0" script="soul weaver/soul_link.lua">
+    <vocation name="Soul Weaver" />
+    </instant>
+	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" selftarget="1" exhaustion="30000" groupcooldown="1900" script="soul weaver/drain_soul.lua">
+	<vocation name="Soul Weaver" />
+	</instant>
+	<instant group="support" spellid="131" name="Void Slumber" words="void slumber" lvl="70" mana="80" aggressive="0" selftarget="1" cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/void_slumber.lua">
+	<vocation name="Soul Weaver" />
+	</instant>
+	
+	
+	<!-- DRUID -->
+	<instant group="attack" spellid="140" name="Terra Strike" words="terra strike" lvl="8" mana="30" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/terra_strike.lua">
+    <vocation name="Druid" />
+    </instant>
+	<instant group="support" spellid="141" name="Living Seeds" words="living seeds" lvl="46" mana="150" soul="0" cooldown="35000" groupcooldown="1000" needlearn="0" script="druid/living_seeds.lua">
+	<vocation name="Druid" />
+	</instant>
+	<instant group="healing" spellid="142" name="Life Bloom" words="life bloom" lvl="25"  mana="70" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1900" needlearn="0" script="druid/life_bloom.lua">
+	<vocation name="Druid" />
+	</instant>
+	<instant group="healing" spellid="143" name="Rejuvenation" words="rejuvenation" lvl="40"  mana="100" aggressive="0" selftarget="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="druid/rejuvenation.lua">
+	<vocation name="Druid" />
+ 	</instant>
+	<instant group="attack" spellid="144" name="Seed Germination" words="seed germination" lvl="18" mana="75" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="15000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/seed_germination.lua">
+    <vocation name="Druid" />
+    </instant>
+	<instant group="support" spellid="145" name="Travel Form" words="travel form" lvl="25" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="druid/travel_form.lua">
+	<vocation name="Druid" />
+	</instant>
+	<instant group="attack" spellid="146" name="Carnivorous Vile" words="carnivorous vile" lvl="30" mana="85" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5500" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/carnivorous_vile.lua">
+    <vocation name="Druid" />
+    </instant>
+	<instant group="healing" spellid="147" name="living ground" words="living ground" lvl="60" mana="200"  premium="0" aggressive="0" selftarget="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="druid/nature_ground.lua">
+	<vocation name="Druid" />
+	</instant>	
+	<instant group="support" spellid="148" name="Thorns" words="thorns" lvl="60" faith="0" mana="50" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="druid/thorns.lua">
+	<vocation name="Druid" />
+	</instant>	
+	<instant group="attack" spellid="149" name="Piercing Wave" words="piercing wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="druid/peircing_wave.lua">
+    <vocation name="Druid" />
+	</instant>
+	<instant group="support" spellid="150" name="Bear Form" words="bear form" lvl="45" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="2000" needlearn="0" script="druid/bear_form.lua">
+	<vocation name="Druid" />
+	</instant>
+	<instant group="support" spellid="151" name="Bless of the Forest" words="bless of the forest" lvl="20" mana="50" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="druid/bless_of_the_forest.lua">
+	<vocation name="Druid" />
+	</instant>
+	<instant group="attack" spellid="152" name="Wrath of Nature" words="wrath of nature" lvl="100" mana="420" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="30000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/wrath_of_nature.lua">
+	<vocation name="Druid" />
+	</instant>
+	<instant group="support" spellid="153" name="Soul Form" words="soul form" lvl="999" mana="250" prem="0" aggressive="0" selftarget="1" cooldown="120000" groupcooldown="0" needlearn="0" script="druid/soul_form.lua">
+	<vocation name="Druid" />
+	</instant>
+	<instant group="attack" spellid="110" name="Earth Dance" words="earth dance" lvl="60" mana="225" direction="1" cooldown="16000" groupcooldown="1900" needlearn="0" script="druid/earth_wave.lua">
+    <vocation name="Druid" />
+	</instant>
+	
+	
+	
+	
+	<!-- Light Dancer -->
+	
+	<instant group="attack" spellid="160" name="Charged Strike" words="charged strike" lvl="8" mana="25" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="1" needlearn="0" script="light dancer/charged_strike.lua">
+    <vocation name="Light Dancer" />
+    </instant>
+	<instant group="attack" spellid="161" name="Static Charge" words="static charge" lvl="15" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="2200" groupcooldown="0" needweapon="0" needlearn="0" script="light dancer/static_charge.lua">
+    <vocation name="Light Dancer" />
+    </instant>
+	<instant group="attack" spellid="162" name="Light Dash" words="light dash" lvl="18" mana="65"  blockwalls="1" needtarget="1" range="6" cooldown="6000" groupcooldown="0"  script="light dancer/light_dash.lua">
+    <vocation name="Light Dancer" />
+    </instant>
+	<instant group="attack" spellid="163" name="Lightning Orb" words="lightning orb" lvl="80" mana="75" prem="0" needweapon="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="light dancer/lightning_orb.lua">
+    <vocation name="Light Dancer" />
+	</instant>
+		<instant group="support" spellid="164" name="Swift Elusion" words="swift elusion" lvl="70"  mana="0" premium="0" selftarget="1" needweapon="0" cooldown="15000" groupcooldown="1900" needlearn="0" script="light dancer/fission_break.lua">
+    <vocation name="Light Dancer" />
+	</instant>
+	<instant group="attack" spellid="165" name="Chain of Lightning" words="chain of lightning" lvl="50" mana="120" prem="0" needtarget="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="light dancer/aereal_shock.lua">
+	<vocation name="Light Dancer" />
+	</instant>
+	<instant group="attack" spellid="166" name="Lightning Spear" words="lightning spear" lvl="30" mana="85" range="6" aggressive="1" blockwalls="1" needtarget="1" cooldown="12000" groupcooldown="1900" needweapon="0" needlearn="0" script="light dancer/lightning_spear.lua">
+    <vocation name="Light Dancer" />
+    </instant>
+	<instant group="support" spellid="167" name="Overcharge" words="overcharge" lvl="45"  mana="115" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="0" needlearn="0" script="light dancer/overcharge.lua">
+	<vocation name="Light Dancer" />
+	</instant>
+	<instant group="support" spellid="168" name="Magnetic Field" words="magnetic field" lvl="90" mana="175"  premium="0" aggressive="0" selftarget="1" cooldown="35000" groupcooldown="1900" needlearn="0" script="light dancer/magnetic_field.lua">
+	<vocation name="Light Dancer" />
+	</instant>
+	<instant group="attack" spellid="169" name="Magnetic Orb" words="Magnetic Orb" lvl="100" mana="190" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="26000" groupcooldown="1900" needweapon="0" needlearn="0" script="light dancer/thunderstorm.lua">
+    <vocation name="Light Dancer" />
+    </instant>
+	
+		<!-- Archer -->
+	<instant group="attack" spellid="180" name="Flaming Shot" words="flaming shot" lvl="8" mana="30" range="5" needlearn="0" aggressive="1" blockwalls="1" needDistanceWeapon="1" needtarget="1" cooldown="3000" groupcooldown="1900" script="ranger/flaming_shot.lua">
+	<vocation name="Archer" />
+	</instant>
+	<instant group="support" spellid="181" name="Beer Barrel" words="beer barrel" lvl="15" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="2000" groupcooldown="1000" needweapon="0" needlearn="0" script="ranger/beer_barrel.lua">
+    <vocation name="Archer" />
+    </instant>
+	<instant group="attack" spellid="182" name="Explosive Shots" words="explosive shots" lvl="18" mana="90" range="5" needtarget="1" cooldown="15000" groupcooldown="1900" needDistanceWeapon="1" script="ranger/explosive_shot.lua">
+	<vocation name="Archer" />
+	</instant>	
+	<instant group="support" spellid="183" name="Wind Barrel" words="wind barrel" lvl="40" mana="40" selftarget="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="ranger/wind_barrel.lua">
+	 <vocation name="Archer" />
+	</instant>
+	<instant group="attack" spellid="184" name="Condemn Shot" words="condemn shot" lvl="28" mana="60" premium="0" direction="0" range="4" needtarget="1" needweapon="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="ranger/javelin_shot.lua">
+	<vocation name="Archer" />
+	</instant>	
+	<instant group="attack" spellid="185" name="Nail bomb" words="nail bomb" lvl="30" mana="90" range="4" needweapon="0" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="ranger/nail_bomb.lua">
+	<vocation name="Archer" />
+	</instant>	
+	<instant group="healing" spellid="186" name="Healing Barrel" words="healing barrel" lvl="60" mana="120" selftarget="1" cooldown="8000" groupcooldown="1900" needlearn="0" script="ranger/healing_barrel.lua">
+	 <vocation name="Archer" />
+	</instant>
+	<instant group="attack" spellid="187" name="Arrow rain" words="arrow rain" lvl="50" mana="130" range="7" needtarget="1" needDistanceWeapon="1" cooldown="15000" groupcooldown="1900" needtarget="1" script="ranger/arrow_rain.lua">
+	<vocation name="Archer" />
+	</instant>	
+	<instant group="support" spellid="188" name="Frost Barrel" words="frost barrel" lvl="70" mana="150" selftarget="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="ranger/frost_barrel.lua">
+	 <vocation name="Archer" />
+	</instant>
+	<instant group="attack" spellid="189" name="Destructive Shot" words="destructive shot" lvl="90" mana="250" premium="0" direction="0" range="8" needtarget="1" needDistanceWeapon="1" cooldown="22000" groupcooldown="1900" needlearn="0" script="ranger/destructive_shot.lua">
+	<vocation name="Archer" />
+	</instant>
+
+	<instant group="attack" spellid="123" name="Aspect Mastery" words="aspect mastery" lvl="100" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="ranger/aspect_mastery.lua">
+	<vocation name="Archer" />
+	</instant>
+	
+	
+		
+	<!-- mastery spells -->
+	<instant group="healing" spellid="200" name="Minor Heal" words="minor heal" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="0" script="healing/light healing.lua">
+	</instant>
+	<instant group="healing" spellid="201" name="Strong Heal" words="strong heal" lvl="25" mana="65" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="0" script="healing/strong healing.lua">
+	</instant>
+	<instant group="healing" spellid="202" name="Great Heal" words="great heal" lvl="50" mana="120" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="0" script="healing/great healing.lua">
+	</instant>
+	
+	<instant group="support" spellid="300" name="Shield Wall" words="Shield Wall" lvl="27" mana="0" prem="0"  aggressive="0" selftarget="1"  cooldown="15000" groupcooldown="1100" needlearn="0" script="warrior/shield_wall.lua">
+	<vocation name="Soul Weaver" />
+	<vocation name="Dragon Knight" />
+	<vocation name="Templar" />
+	</instant>
+	<instant group="support" spellid="301" name="Protection" words="protection" lvl="50" mana="50" prem="0" aggressive="0" selftarget="1" blockwalls="1"  cooldown="25000" groupcooldown="1100" needlearn="0" script="warrior/protection.lua">
+	<vocation name="Soul Weaver" />
+	<vocation name="Dragon Knight" />
+	<vocation name="Templar" />
+    </instant>
+	<instant group="support" spellid="302" name="Shield Bash" words="shield bash" lvl="25" mana="65" aggressive="1" needtarget="1" range="1"  cooldown="15000" groupcooldown="12000" script="mastery/shield_bash.lua"> 
+	<vocation name="Soul Weaver" />
+	<vocation name="Dragon Knight" />
+	<vocation name="Templar" />
+	</instant>
+	<instant group="support" spellid="303" name="Sphere" words="sphere" lvl="100" mana="100" faith="40" intelligence="55" selftarget="1" needweapon="0" cooldown="10000" groupcooldown="1100" needlearn="0" script="mastery/earth_sphere.lua">
+	</instant>
+	
+	<instant group="attack" spellid="305" name="Quick Chains" words="quick chains" lvl="50" dexterity="65"  mana="250" premium="0" direction="0" range="7" needtarget="1" needweapon="0" cooldown="17000" groupcooldown="1900" script="mastery/get_over_here.lua">
+	</instant>
+	<instant group="support" spellid="306" name="Blood Rage" words="blood rage" lvl="30" strenght="27" dexterity="0" mana="85" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1100" needlearn="0" script="warrior/blood_rage.lua">
+	<vocation name="Nightblade" />
+	<vocation name="Archer" />
+	<vocation name="Light Dancer" />
+	</instant>
+	<instant group="support" spellid="307" name="Magic Shield" words="Magic Shield" lvl="14" faith="0" intelligence="25" mana="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_shield.lua">
+	<vocation name="Magician" />
+	<vocation name="Warlock" />
+	<vocation name="Druid" />
+	<vocation name="Stellar" />
+	</instant>
+	<instant group="support" spellid="308" name="Find Person" words="exiva" lvl="8" mana="20" aggressive="0" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="support/find_person.lua">
+	</instant>	
+	<instant group="support" spellid="309" name="Food" words="exevo pan" lvl="10" faith="10" mana="15" soul="1" cooldown="2000" groupcooldown="2000" aggressive="0" needlearn="0" script="support/food.lua">
+	</instant>	
+
+	<instant group="support" spellid="311" name="Haste" words="utani hur" lvl="14" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/haste.lua">
+	</instant>
+	<instant group="healing" spellid="312" name="Heal Friend" words="exura sio" faith="28" intelligence="24" lvl="27" mana="140" prem="0" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="healing/heal_friend.lua">
+	<vocation name="Druid" />
+	<vocation name="Stellar" />
+	</instant>
+
+	<instant group="support" spellid="313" name="Invisibility" words="utana vid" lvl="35" magic="50" mana="440" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/invisible.lua">
+	<vocation name="Druid" />
+	<vocation name="Stellar" />
+	</instant>
+	<instant group="support" spellid="314" name="Levitate" words="exani hur" lvl="12" mana="50" prem="0" aggressive="0" cooldown="2000" groupcooldown="2000" params="1" needlearn="0" script="support/levitate.lua">
+	</instant>
+	<instant group="support" spellid="315" name="Light" words="utevo lux" lvl="8" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/light.lua">
+	</instant>
+	<instant group="healing" spellid="316" name="Light Healing" words="exura" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="healing/light_healing.lua">
+	</instant>
+	
+	<instant group="support" spellid="317" name="Magic Rope" words="exani tera" lvl="8" mana="20" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_rope.lua">
+	</instant>	
+	<instant group="healing" spellid="318" name="Mass Healing" words="exura gran mas res" lvl="36" faith="60" mana="150" prem="0" aggressive="0" cooldown="2000" groupcooldown="1900" needlearn="0" script="healing/mass_healing.lua">
+		<vocation name="Druid" />
+	<vocation name="Stellar" />
+	</instant>
+	<instant group="support" spellid="319" name="Protect Party" words="utamo mas sio" lvl="32" mana="90" faith="55" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="party/protect_party.lua">
+		<vocation name="Druid" />
+	<vocation name="Stellar" />
+	</instant>
+	<instant group="support" spellid="320" name="Protector" words="utamo tempo" lvl="55" mana="200" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/protector.lua">
+	</instant>
+	<instant group="support" spellid="322" name="Strong Haste" words="utani gran hur" lvl="40" faith="20"  mana="100" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/strong_haste.lua">
+	</instant>	
+	<instant group="support" spellid="323" name="Train Party" words="utito mas sio" lvl="32" faith="45" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="party/enchant_party.lua">
+	</instant>
+	<instant group="support" spellid="324" name="Taunt" words="Taunt" lvl="22"  mana="75" premium="0" aggressive="0" selftarget="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="mastery/taunting_cry.lua">
+	<vocation name="Soul Weaver" />
+	<vocation name="Dragon Knight" />
+	<vocation name="Templar" />
+	</instant>
+	
+	<instant group="support" spellid="325" name="Kings Call" words="kings call" lvl="8" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="3600000" groupcooldown="2000" needlearn="1" script="support/kings_call.lua">
+	</instant>	
+	
+	<!-- Oils -->
+	<rune group="attack" spellid="330" name="oilbomb" id="31819" allowfaruse="1" charges="20" lvl="8" maglv="0" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/oil_bomb.lua" />
+	
+	<!-- bombs -->
+	<rune group="attack" spellid="331" name="piratebomb" id="38130" allowfaruse="1" charges="5" lvl="250" maglv="0" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/pirate_bomb.lua" />
+
+	<!-- vocation Runes -->
+	<rune group="attack" spellid="380" name="Ice Field" id="38959" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid" needtarget="0" script="runes/avalanche_rune.lua" />
+	<rune group="attack" spellid="381" name="stellar Field" id="38976" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid" needtarget="0" script="runes/thunderstorm_rune.lua" />
+	<rune group="attack" spellid="382" name="Druid Field" id="38982" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid" needtarget="0" script="runes/hellfire_rune.lua" />
+	<rune group="attack" spellid="383" name="Dragon Field" id="38964" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid" needtarget="0" script="runes/naturegrasp_rune.lua" />
+	<rune group="attack" spellid="384" name="templar Field" id="38970" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid" script="runes/prismatic_rune.lua" />
+	<rune group="attack" spellid="385" name="night Field" id="38947" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid" selftarget="1" script="runes/steelskin_rune.lua" />
+	<rune group="attack" spellid="386" name="necro Field" id="38953" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid" needtarget="0" script="runes/death_rune.lua" />
+	<rune group="attack" spellid="387" name="archer Field" id="38941" allowfaruse="1" lvl="15" maglv="0" cooldown="8000" groupcooldown="2000" blocktype="solid"  script="runes/water_rune.lua" />
+	
+	<!-- Attack Runes -->
+	<rune group="attack" spellid="400" name="Poison Field" id="2285" allowfaruse="1" charges="3" lvl="14" maglv="0" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/poison_field_rune.lua" />
+	<rune group="attack" spellid="401" name="Poison Bomb" id="2286" allowfaruse="1" charges="2" lvl="25" maglv="4" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/poison_bomb_rune.lua" />
+	<rune group="attack" spellid="402" name="Poison Wall" id="2289" allowfaruse="1" charges="4" lvl="29" maglv="5" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/poison_wall_rune.lua" />
+	<rune group="attack" spellid="403" name="Fire Field" id="2301" allowfaruse="1" charges="3" lvl="20" maglv="1" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/fire_field_rune.lua" />
+	<rune group="attack" spellid="404" name="Firebomb" id="2305" allowfaruse="1" charges="2" lvl="27" maglv="5" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/fire_bomb_rune.lua" />
+	<rune group="attack" spellid="405" name="Fire Wall" id="2303" allowfaruse="1" charges="4" lvl="33" maglv="6" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/fire_wall_rune.lua" />
+	<rune group="attack" spellid="406" name="Soulfire" id="2308" allowfaruse="1" charges="3" lvl="27" maglv="7" cooldown="2000" groupcooldown="2000" needtarget="1" blocktype="solid" script="attack/soulfire_rune.lua" />
+	<rune group="attack" spellid="407" name="Fireball" id="2302" allowfaruse="1" charges="5" lvl="27" maglv="4" cooldown="2000" groupcooldown="2000" needtarget="1" blocktype="solid" script="attack/fireball_rune.lua" />
+	<rune group="attack" spellid="408" name="Great Fireball" id="2304" allowfaruse="1" charges="4" lvl="30" maglv="4" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/great_fireball_rune.lua" />
+	<rune group="attack" spellid="409" name="Energy Field" id="2277" allowfaruse="1" charges="3" lvl="18" maglv="3" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/energy_field_rune.lua" />
+	<rune group="attack" spellid="410" name="Energybomb" id="2262" allowfaruse="1" charges="2" lvl="37" maglv="10" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/energy_bomb_rune.lua" />
+	<rune group="attack" spellid="411" name="Energy Wall" id="2279" allowfaruse="1" charges="4" lvl="41" maglv="9" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/energy_wall_rune.lua" />
+	<rune group="attack" spellid="412" name="Light Magic Missile" id="2287" allowfaruse="1" charges="10" lvl="10" cooldown="2000" groupcooldown="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/light_magic_missile_rune.lua" />
+	<rune group="attack" spellid="413" name="Lightest Missile" id="23723" allowfaruse="1" charges="10" lvl="1" cooldown="2000" groupcooldown="2000" maglv="0" needtarget="1" blocktype="solid" script="attack/lightest_missile_rune.lua" />
+  	<rune group="attack" spellid="414" name="Heavy Magic Missile" id="2311" allowfaruse="1" charges="10" lvl="15" cooldown="2000" groupcooldown="2000" maglv="3" needtarget="1" blocktype="solid" script="attack/heavy_magic_missile_rune.lua" />
+	<rune group="attack" spellid="415" name="Explosion" id="2313" allowfaruse="1" charges="6" lvl="31" maglv="6" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/explosion_rune.lua" />
+	<rune group="attack" spellid="416" name="Sudden Death" id="2268" allowfaruse="1" charges="3" lvl="45" maglv="15" cooldown="2000" groupcooldown="2000" needtarget="1" blocktype="solid" script="attack/sudden_death_rune.lua" />
+	<rune group="attack" spellid="417" name="Icicle" id="2271" allowfaruse="1" charges="5" lvl="18" maglv="5" cooldown="2000" groupcooldown="2000" needtarget="1" script="attack/icicle_rune.lua" />	
+	<rune group="attack" spellid="418" name="Avalanche" id="2274" allowfaruse="1" charges="4" lvl="30" maglv="4" cooldown="2000" groupcooldown="2000" script="attack/avalanche_rune.lua" />	
+	<rune group="attack" spellid="419" name="Stone Shower" id="2288" allowfaruse="1" charges="4" lvl="28" maglv="4" cooldown="2000" groupcooldown="2000" script="attack/stone_shower_rune.lua" />	
+	<rune group="attack" spellid="420" name="Light Stone Shower" id="23722" allowfaruse="1" charges="4" lvl="1" maglv="0" cooldown="2000" groupcooldown="2000" script="attack/light_stone_shower_rune.lua" />	
+  	<rune group="attack" spellid="421" name="Thunderstorm2" id="2315" allowfaruse="1" charges="4" lvl="28" maglv="4" cooldown="2000" groupcooldown="2000" script="attack/thunderstorm_rune.lua" />	
+	<rune group="attack" spellid="422" name="Stalagmite" id="2292" allowfaruse="1" charges="10" lvl="18" maglv="5" cooldown="2000" groupcooldown="2000" needtarget="1" script="attack/stalagmite_rune.lua" />	
+	<rune group="attack" spellid="423" name="Magic Wall" id="2293" allowfaruse="1" charges="3" lvl="32" maglv="9" cooldown="2000" groupcooldown="2000" blocktype="all" script="support/magic_wall_rune.lua" />
+	
+
+	<!-- Healing Runes -->
+	<rune group="healing" spellid="450" name="Antidote Rune" id="2266" allowfaruse="1" charges="1" lvl="15" maglv="0" cooldown="2000" groupcooldown="2000" aggressive="0" needtarget="1" blocktype="solid" script="healing/cure_poison_rune.lua" />
+	<rune group="healing" spellid="451" name="Intense Healing Rune" id="2265" allowfaruse="1" charges="1" lvl="15" maglv="1" cooldown="2000" groupcooldown="2000" aggressive="0" needtarget="1" blocktype="solid" script="healing/intense_healing_rune.lua" />	
+	<rune group="healing" spellid="452" name="Ultimate Healing Rune" id="2273" allowfaruse="1" charges="1" lvl="24" maglv="4" cooldown="2000" groupcooldown="2000" aggressive="0" needtarget="1" blocktype="solid" script="healing/ultimate_healing_rune.lua" />
+	<!-- Summon Runes -->
+	<rune group="support" spellid="470" name="Convince Creature" id="2290" allowfaruse="1" charges="1" lvl="16" maglv="5" cooldown="2000" groupcooldown="2000" needtarget="1" blocktype="solid" script="support/convince_creature.lua" />
+	<rune group="support" spellid="471" name="Animate Dead" id="2316" allowfaruse="1" charges="1" lvl="27" maglv="4" cooldown="2000" groupcooldown="2000" blocktype="solid" script="support/animate_dead_rune.lua" />
+
+	<!-- Support Runes -->
+	<rune group="support" spellid="500" name="Disintegrate" id="2310" allowfaruse="0" charges="3" lvl="21" maglv="4" cooldown="2000" groupcooldown="2000" range="1" script="support/disintegrate_rune.lua" />
+	<rune group="support" spellid="501" name="Destroy Field" id="2261" allowfaruse="1" charges="3" lvl="17" maglv="3" cooldown="2000" groupcooldown="2000" aggressive="0" range="5" script="support/destroy_field_rune.lua" />
+	<rune group="support" spellid="502" name="Chameleon" id="2291" allowfaruse="1" charges="1" lvl="27" maglv="4" cooldown="2000" groupcooldown="2000" aggressive="0" selftarget="1" blocktype="solid" script="support/chameleon.lua" />
+	<rune group="support" spellid="503" name="Wild Growth" id="2269" allowfaruse="1" charges="2" lvl="27" maglv="8" cooldown="2000" groupcooldown="2000" blocktype="all" script="support/wild_growth_rune.lua" />
+	<rune group="support" spellid="504" name="Paralyze" id="2278" allowfaruse="1" charges="1" lvl="54" maglv="18" cooldown="2000" groupcooldown="2000" mana="1400" needtarget="1" blocktype="solid" script="support/paralyze_rune.lua"/>
+	
+	<!-- Conjure Spells -->
+	<conjure group="support" name="Blank Rune" words="adori blank" lvl="20" mana="50" soul="1" conjureId="2260" conjureCount="1" cooldown="2000" groupcooldown="2000" needlearn="0" function="conjureRune" />
+
+	<!-- House Spells -->
+	<instant name="House Door List" words="aleta grav" aggressive="0" script="house/edit_door_list.lua" />
+	<instant name="House Guest List" words="aleta sio" aggressive="0" script="house/edit_guest_list.lua" />
+	<instant name="House Kick" words="alana sio" aggressive="0" playernameparam="1" params="1" script="house/kick.lua" />
+	<instant name="House Subowner List" words="aleta som" aggressive="0" script="house/edit_subowner_list.lua" />
+	
+	<!-- Monster Spells -->
+	<instant name="renegade knight" words="##400" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/renegade knight.lua"/>
+	<instant name="vile grandmaster" words="##401" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/vile grandmaster.lua"/>
+	
+	<instant name="salamander trainer summon" words="##374" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/salamander trainer summon.lua"/>
+	<instant name="woodling paralyze" words="###375" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/woodling paralyze.lua"/>
+	<instant name="the imperor summon" words="###220" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the imperor summon.lua"/>
+	<instant name="ghastly dragon curse" words="###1"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/ghastly dragon curse.lua" />
+	<instant name="djinn electrify"  words="###2"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/djinn electrify.lua" />
+	<instant name="energy elemental electrify" words="###3"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/energy elemental electrify.lua" />
+	<instant name="massive energy elemental electrify" words="###4"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/massive energy elemental electrify.lua" />
+	<instant name="massive fire elemental soulfire" words="###5"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/massive fire elemental soulfire.lua" />
+	<instant name="hellfire fighter soulfire" words="###6"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/hellfire fighter soulfire.lua" />
+	<instant name="hellspawn soulfire" words="###7"   aggressive="1" blockwalls="1" range="7" needtarget="1" needlearn="1" script="monster/hellspawn soulfire.lua" />
+	<instant name="spectre drown" words="###8"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/spectre drown.lua" />
+	<instant name="phantasm drown" words="###9" direction="1"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/phantasm drown.lua" />
+	<instant name="undead dragon curse" words="###10"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/undead dragon curse.lua" />
+	<instant name="draken abomination curse" words="###11"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/draken abomination curse.lua" />
+	<instant name="lancer beetle curse" words="###12"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lancer beetle curse.lua" />
+	<instant name="lizard magistratus curse" words="###13"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lizard magistratus curse.lua" />
+	<instant name="death blob curse" words="###14"  aggressive="1"  blockwalls="1" needtarget="1" needlearn="1" script="monster/death blob curse.lua" />
+	<instant name="choking fear drown" words="###15"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/choking fear drown.lua" />
+	<instant name="blightwalker curse" words="###16"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/blightwalker curse.lua" />
+	<instant name="sea serpent drown" words="###17"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/sea serpent drown.lua" />
+	<instant name="young sea serpent drown" words="###18"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/young sea serpent drown.lua" />
+	<instant name="quara constrictor freeze" words="###19"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/quara constrictor freeze.lua" />
+	<instant name="quara constrictor electrify" words="###20"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/quara constrictor electrify.lua" />
+	<instant name="cliff strider electrify" words="###21"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/cliff strider electrify.lua" />
+	<instant name="war golem electrify" words="###22"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/war golem electrify.lua" />
+	<instant name="souleater drown" words="###23" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/souleater drown.lua" />
+	<instant name="mutated bat curse" words="###24" direction="1"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/mutated bat curse.lua" />
+	<instant name="vulcongra soulfire" words="###25"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/vulcongra soulfire.lua" />
+	<instant name="lava golem soulfire" words="###26"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/lava golem soulfire.lua" />
+	<instant name="magma crawler soulfire" words="###27"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/magma crawler soulfire.lua" />
+	<instant name="war golem skill reducer" words="###28"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/war golem skill reducer.lua" />
+	<instant name="silencer skill reducer" words="###29"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/silencer skill reducer.lua" />
+	<instant name="warlock skill reducer" words="###30"  aggressive="1"  blockwalls="1" needtarget="1" needlearn="1" script="monster/warlock skill reducer.lua" />
+	<instant name="cliff strider skill reducer" words="###31"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/cliff strider skill reducer.lua" />
+	<instant name="stampor skill reducer" words="###32"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/stampor skill reducer.lua" />
+	<instant name="diabolic imp skill reducer" words="###33"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/diabolic imp skill reducer.lua" />
+	<instant name="dark torturer skill reducer" words="###34" direction="1"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/dark torturer skill reducer.lua" />
+	<instant name="forest fury skill reducer" words="###35"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/forest fury skill reducer.lua" />
+	<instant name="demon outcast skill reducer" words="###36"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/demon outcast skill reducer.lua" />
+	<instant name="fury skill reducer" words="###37"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/fury skill reducer.lua" />
+	<instant name="barbarian brutetamer skill reducer" words="###38"   aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/barbarian_brutetamer_skill_reducer.lua" />
+	<instant name="deepling spellsinger skill reducer" words="###39"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/deepling spellsinger skill reducer.lua" />
+	<instant name="werewolf skill reducer" words="###40"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/werewolf skill reducer.lua" />
+	<instant name="ice golem skill reducer" words="###41"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/ice golem skill reducer.lua" />
+	<instant name="feversleep skill reducer" words="###42"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/feversleep skill reducer.lua" />
+	<instant name="shock head skill reducer 1" words="###43"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/shock head skill reducer 1.lua" />
+	<instant name="shock head skill reducer 2" words="###44"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/shock head skill reducer 2.lua" />
+	<instant name="enslaved dwarf skill reducer 1" words="###45"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/enslaved dwarf skill reducer 1.lua" />
+	<instant name="enslaved dwarf skill reducer 2" words="###46"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/enslaved dwarf skill reducer 2.lua" />
+	<instant name="djinn cancel invisibility" words="###47"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/djinn cancel invisibility.lua" />
+	<instant name="betrayed wraith skill reducer" words="###48"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/betrayed wraith skill reducer.lua" />
+	<instant name="pirate corsair skill reducer" words="###49"  direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/pirate corsair skill reducer.lua" />
+	<instant name="hellgorak skill reducer" words="###158" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/hellgorak skill reducer.lua" />
+	<instant name="mooh'tah master skill reducer" words="###190" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/mooh'tah master skill reducer.lua" />
+	<instant name="dreadbeast skill reducer" words="###297"  aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/dreadbeast skill reducer.lua" />
+	<instant name="frazzlemaw paralyze" words="###356" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/frazzlemaw paralyze.lua" />
+	<instant name="minotaur amazon paralyze" words="###363" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/minotaur amazon paralyze.lua" />
+	<instant name="worm priestess paralyze" words="###364" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/worm priestess paralyze.lua" />
+	<instant name="devourer wave" words="###365" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/devourer wave.lua" />
+	<instant name="devourer paralyze" words="###366" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/devourer paralyze.lua" />
+	<instant name="rot elemental paralyze" words="###367" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/rot elemental paralyze.lua" />
+	<instant name="rustheap golem electrify" words="###368" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/rustheap golem electrify.lua" />
+	<instant name="rustheap golem wave" words="###369" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/rustheap golem wave.lua" />
+	<instant name="metal gargoyle curse" words="###370" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/metal gargoyle curse.lua" />
+	<instant name="walker skill reducer" words="##371" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/walker skill reducer.lua" />
+	<instant name="glooth anemone summon" words="##372" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/glooth anemone summon.lua" />
+	<instant name="seacrest serpent wave" words="###373" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/seacrest serpent wave.lua" />
+
+	
+	    <!-- Bosses Spells -->
+		<instant name="sevantdrain" words="###600!" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/servantdrain.lua" />
+		<instant name="lisa skill reducer" words="###385" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/lisa skill reducer.lua"/>
+        <instant name="lisa heal" words="###386" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/lisa heal.lua"/>
+        <instant name="lisa paralyze" words="###387" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/lisa paralyze.lua"/>
+        <instant name="lisa wave" words="###388" direction="1" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/lisa wave.lua"/>
+        <instant name="lisa summon" words="###389" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/lisa summon.lua"/>
+		<instant name="bullwark summon" words="###380" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/bullwark summon.lua"/>
+        <instant name="bullwark paralyze" words="###381" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/bullwark paralyze.lua"/>
+			
+		<instant name="glooth fairy skill reducer" words="###382" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/glooth fairy skill reducer.lua"/>
+        <instant name="glooth fairy paralyze" words="###383" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/glooth fairy paralyze.lua"/>
+        <instant name="glooth fairy healing" words="###384" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/glooth fairy healing.lua"/>
+		
+	<instant name="prince drazzak tp" words="###353" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/prince drazzak tp.lua"/>
+	<instant name="furyosa soulfire" words="###119" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/furyosa soulfire.lua"/>
+        <instant name="furyosa skill reducer" words="###120"  aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/furyosa skill reducer.lua"/>
+        <instant name="furyosa manadrain" words="###121" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/furyosa manadrain.lua"/>
+        <instant name="furyosa deathball" words="###122" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/furyosa deathball.lua"/>
+  	<instant name="gaz'haragoth iceball" words="###123" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/gaz'haragoth iceball.lua"/>
+        <instant name="gaz'haragoth paralyze" words="###124" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/gaz'haragoth paralyze.lua"/>
+       	<instant name="furyosa summon" words="###141" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/furyosa summon.lua"/>
+  	<instant name="hirintror skill reducer" words="###163" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/hirintror skill reducer.lua"/>
+        <instant name="hirintror summon" words="###164" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/hirintror summon.lua"/>
+        <instant name="hirintror freeze" words="###165" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/hirintror freeze.lua"/>
+        <instant name="horadron paralyze" words="###166" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/horadron paralyze.lua"/>
+	<instant name="terofar curse" words="###213" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/terofar curse.lua"/>
+        <instant name="terofar skill reducer 1" words="###214" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/terofar skill reducer 1.lua"/>
+        <instant name="terofar skill reducer 2" words="###215" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/terofar skill reducer 2.lua"/>
+	<instant name="zavarash paralyze" words="###228" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/zavarash paralyze.lua"/>
+        <instant name="zavarash2 paralyze" words="###229" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/zavarash2 paralyze.lua"/>
+	<instant name="zushuka paralyze" words="###233" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/zushuka paralyze.lua"/>
+        <instant name="zushuka freeze" words="###234" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/zushuka freeze.lua"/>
+        <instant name="omrafir summon" words="###317"  aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/omrafir summon.lua"/>
+        <instant name="omrafir wave" words="###318" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/omrafir wave.lua"/>
+        <instant name="prince drazzak wave" words="###319" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/prince drazzak wave.lua"/>
+        <instant name="prince drazzak knight" words="###320" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/prince drazzak knight.lua"/>
+        <instant name="prince drazzak druid" words="###321" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/prince drazzak druid.lua"/>
+        <instant name="prince drazzak paladin" words="###322" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/prince drazzak paladin.lua"/>
+        <instant name="prince drazzak sorcerer" words="###323" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/prince drazzak sorcerer.lua"/>
+        <instant name="prince drazzak summon" words="###324" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/prince drazzak summon.lua"/>
+        <instant name="gaz'haragoth death" words="###325" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/gaz'haragoth death.lua"/>
+        <instant name="shlorg paralyze" words="###326" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/shlorg paralyze.lua"/>
+        <instant name="omrafir beam" words="###331" aggressive="1" blockwalls="1" needlearn="1" script="monster/omrafir beam.lua"/>
+        <instant name="the pale count bomb" words="###332" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/the pale count bomb.lua"/>
+        <instant name="the pale count manadrain" words="###333" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the pale count manadrain.lua"/>
+        <instant name="the pale count summon" words="###334" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the pale count summon.lua"/>
+        <instant name="the pale count wave" words="###335" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/the pale count wave.lua"/>
+        <instant name="the welter heal" words="###336" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the welter heal.lua"/>
+        <instant name="the welter summon" words="###337" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the welter summon.lua"/>
+        <instant name="the welter summon2" words="###338" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the welter summon2.lua"/>
+        <instant name="the welter paralyze" words="###339" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/the welter paralyze.lua"/>
+        <instant name="furyosa heal" words="###340" aggressive="0" blockwalls="1" needtarget="1" needlearn="1"  script="monster/furyosa heal.lua"/>
+        <instant name="hirintror heal" words="###341" aggressive="0" blockwalls="1" needtarget="1" needlearn="1" script="monster/hirintror heal.lua"/>
+        <instant name="zushuka heal" words="###342" aggressive="0" blockwalls="1" needtarget="1" needlearn="1"  script="monster/zushuka heal.lua"/>
+        <instant name="tyrn electrify" words="###343" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/tyrn electrify.lua"/>
+        <instant name="tyrn skill reducer" words="###344" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/tyrn skill reducer.lua"/>
+        <instant name="tyrn heal" words="###345" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/tyrn heal.lua"/>
+        <instant name="omrafir healing 2" words="###346" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/omrafir healing 2.lua"/>
+	<instant name="white pale paralyze" words="###350" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1"  script="monster/white pale paralyze.lua"/>
+        <instant name="white pale summon" words="###351" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/white pale summon.lua"/>
+        <instant name="white pale heal" words="###352" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/white pale heal.lua"/>
+	<instant name="serpent spawn paralyze" words="###153" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/serpent spawn paralyze.lua"/>
+	<instant name="ice golem paralyze" words="###162" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/ice golem paralyze.lua"/>
+
+	<instant name="greater jar summon" words="###397" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/greater jar summon.lua"/>
+        <instant name="the ravager heal" words="###398" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/the ravager heal.lua"/>
+	
+	<instant name="canopic jar heal" words="###390" aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/canopic jar heal.lua"/>
+		<instant name="sand aoe" words="###500" aggressive="1" blockwalls="1" range="1" needtarget="1" needlearn="1" script="monster/sandlobster_aoe.lua" />
+	<instant name="bloodaoe" words="###501" aggressive="1" blockwalls="1"  needtarget="1" needlearn="1" script="monster/bloodaoe.lua" />	
+	<instant name="random explode1" words="###502" aggressive="1" blockwalls="1" range="1" needtarget="1" needlearn="1" script="monster/random_explode1.lua" />
+	<instant name="random explode2" words="###503" aggressive="1" blockwalls="1" range="1" needtarget="1" needlearn="1" script="monster/random_explode2.lua" />		
+	<instant name="godria summon" words="###504"  aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/omrafir summon.lua"/>
+	<instant name="corvinus summon" words="###505"  aggressive="0" blockwalls="1" needtarget="0" needlearn="1" script="monster/corvinus summon.lua"/>
+    <instant name="godria wave" words="###506" direction="1" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/omrafir wave.lua"/>
+	<instant name="godria healing 2" words="###507" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/omrafir healing 2.lua"/>		 
+	<instant name="visspell" words="###508" aggressive="0" blockwalls="1" needtarget="0" needlearn="1"  script="monster/visspell.lua"/>
+	<instant name="summonmelee" words="###509" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonmelee.lua"/>
+	
+	<instant name="summonrange" words="###5101" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonrange.lua"/>
+	<instant name="summonvile" words="###5102" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonvile.lua"/>
+	<instant name="summonfrog" words="###510" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonfrog.lua"/>
+	<instant name="shadowbeam" words="###511" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/shadowbeam.lua"/>
+	<instant name="pirate wave" words="###512" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pirate_wave.lua"/>
+	<instant name="gryphon wave" words="###513" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pirate_wave.lua"/>
+	<instant name="dragon wave" words="###514" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/dragon_wave.lua"/>
+	<instant name="emerald wave" words="###515" aggressive="1" blockwalls="1" needtarget="0" needlearn="0" direction="1"  script="monster/emerald_wave.lua"/>
+	<instant name="electricity aoe" words="###516" aggressive="1" blockwalls="1" range="3" needtarget="1" needlearn="0" script="monster/electricity_aoe.lua" />	
+	
+	<instant name="sern wave" words="###517" aggressive="1" blockwalls="1" needtarget="0" needlearn="0" direction="1"  script="monster/sern_wave.lua"/>
+	<instant name="sern aoe" words="###518" aggressive="1" blockwalls="1" range="8" needtarget="0" needlearn="0" script="monster/sern_aoe.lua" />	
+	
+	<instant name="rajiv wave" words="###519" aggressive="1" blockwalls="1" selftarget="1" needlearn="0" direction="1"  script="monster/rajiv_wave.lua"/>
+	<instant name="rajiv summon" words="###520" aggressive="0" blockwalls="1" needtarget="0" needlearn="0" script="monster/rajiv_summon.lua" />	
+
+	<instant name="admin aoe" words="###521" aggressive="1" blockwalls="1" range="8" needtarget="0" needlearn="0" script="monster/admin_aoe.lua" />	
+	<instant name="c2 wave" words="###522" aggressive="1" blockwalls="1" needtarget="0" needlearn="0" direction="1"  script="monster/c2_wave.lua"/>
+	<instant name="hamelin summon" words="###523"  aggressive="0" blockwalls="1" needtarget="0" needlearn="0" script="monster/hamelin_summon.lua"/>
+	<instant name="godria aoe" words="###524" aggressive="1" blockwalls="1" range="22" needtarget="0" needlearn="0" script="monster/godria_aoe.lua" />	
+	<instant name="anubis aoe" words="###525" aggressive="1" blockwalls="1" range="22" needtarget="0" needlearn="0" script="monster/anubis_aoe.lua" />	
+	<instant name="nightmare wave" words="###526" aggressive="1" blockwalls="1" needtarget="0" needlearn="0" direction="1"  script="monster/nightmare_wave.lua"/>
+	<instant name="nightmare aoe" words="###527" aggressive="1" blockwalls="1" range="3" needtarget="1" needlearn="0" script="monster/nightmare_aoe.lua" />	
+	<instant name="fear" words="###528" aggressive="0" blockwalls="1" needtarget="1" range="5" needlearn="0" script="monster/fear.lua" />
+	<instant name="garuda aoe" words="###529" aggressive="1" blockwalls="1" range="3" needtarget="0" needlearn="0" script="monster/garuda_aoe.lua" />	
+	<instant name="typhoon monster" words="###530" aggressive="1" blockwalls="1"  needlearn="0" script="monster/typhoon_monster.lua" />	
+	<instant name="Self Destruct" words="!se332uct"  selftarget="1" script="monster/self_destruct.lua"/>
+	<instant name="fire rain" words="###531" aggressive="1" blockwalls="1" needtarget="1" range="6" needlearn="0" script="monster/fire_rain.lua" />
+	<instant name="shadowstep" words="###532" aggressive="1" blockwalls="1" needtarget="1" range="6" needlearn="0" script="monster/shadowstep.lua" />
+	<instant name="dragon fire" words="###533" aggressive="1" blockwalls="1" needtarget="1" range="6" needlearn="0" script="monster/dragon_fire.lua" />
+	<instant name="heal aoe" words="###534" aggressive="1" blockwalls="1" needlearn="0" script="monster/heal_aoe.lua" />
+	<instant name="front smash" words="###535" aggressive="1" blockwalls="1" needtarget="0" range="1" needlearn="0" script="monster/front_smash.lua" />
+	<instant name="mon charge" words="###536" aggressive="1" blockwalls="1" needtarget="1" range="1" needlearn="0" script="monster/charge.lua" />
+	<instant name="uzulaz summon" words="###537"  aggressive="0" blockwalls="1" needtarget="0" needlearn="0" script="monster/uzulaz_summon.lua"/>
+	<instant name="glooth aoe" words="###538" aggressive="1" blockwalls="1" range="3" needtarget="0" needlearn="0" script="monster/glooth_aoe.lua" />	
+	<instant name="glooth summon" words="###539"  aggressive="0" blockwalls="1" needtarget="0" needlearn="0" script="monster/glooth_summon.lua"/>
+	<instant name="commander barrage" words="###540" aggressive="1" blockwalls="1" range="8" needtarget="0" needlearn="0" script="monster/commander_barrage.lua" />	
+	<instant name="garona summon" words="###541"  aggressive="0" blockwalls="1" needtarget="0" needlearn="0" script="monster/garona_summon.lua"/>
+	<instant name="garona wave" words="###542" aggressive="1" blockwalls="1" needtarget="0" needlearn="0" direction="0"  script="monster/garona_wave.lua"/>
+	<instant name="spiritauto" words="###543" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/spiritauto.lua"/>
+	<instant name="eyewave" words="###544" aggressive="1" range="3" blockwalls="1" needtarget="1" direction="1" needlearn="0"  script="monster/eye_wave.lua"/>
+	<instant name="abominationaoe" words="###545" aggressive="1" range="3" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/abomination_aoe.lua"/>
+	<instant name="abominationtaunt" words="###546" aggressive="1" range="1" blockwalls="1" selftarget="1"  needlearn="0"  script="monster/abomination_taunt.lua"/>
+	<instant name="artifactaoe" words="###547" aggressive="1" range="3" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/artifactaoe.lua"/>
+	<instant name="barrelaoe" words="###548" aggressive="1" range="3" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/barrelaoe.lua"/>
+	<instant name="bobbomb" words="###549" aggressive="1" range="1" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/bob_bomb.lua"/>
+	<instant name="monster_charge" words="###550" aggressive="1" range="8" blockwalls="1" needtarget="1" needlearn="0"  script="monster/charge.lua"/>
+	<instant name="summonbeastmode" words="###551" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonbeastmode.lua"/>
+	<instant name="summonbeastmode2" words="###552" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonbeastmode2.lua"/>
+	<instant name="chickenbomb" words="###553" aggressive="1" range="1" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/chickenbomb.lua"/>
+	
+	<instant name="petmelee" words="###800" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/petmelee.lua"/>
+	<instant name="petrange" words="###801" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/petrange.lua"/>
+	<instant name="petcharge" words="###802" aggressive="1" range="6" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/charge.lua"/>
+	<instant name="petchallenge" words="###803" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/challenge.lua"/>
+	<instant name="petpoison" words="###804" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/poison.lua"/>
+	<instant name="petbleed" words="###805" aggressive="1" range="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/bleed.lua"/>
+	<instant name="petparalyze" words="###806" aggressive="1" range="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/paralyze.lua"/>
+	<instant name="petheal" words="###807" aggressive="1" range="3" blockwalls="1" needtarget="0" needlearn="0"  script="monster/pets/heal.lua"/>
+	<instant name="petfireaura" words="###808" aggressive="1" range="1" blockwalls="1" needtarget="0" needlearn="0"  script="monster/pets/fire_aura.lua"/>
+	<instant name="petdarksplash" words="###809" aggressive="1" range="1" blockwalls="1" needtarget="0" needlearn="0"  script="monster/pets/slime_splash_damage.lua"/>
+	<instant name="petweb" words="###810" aggressive="1" range="5" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/web.lua"/>
+	<instant name="petholyaoe" words="###811" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/shoot_aoe_holy.lua"/>
+	<instant name="petresist" words="###812" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/resist.lua"/>
+	<instant name="pethaste" words="###813" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/haste.lua"/>
+	<instant name="petresistelemental" words="###814" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/resist_elemental.lua"/>
+	<instant name="petfood" words="###815" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/food.lua"/>
+	<instant name="petfear" words="###816" aggressive="1" range="2" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/fear.lua"/>
+	<instant name="frozen_aoe" words="###817" aggressive="1" blockwalls="0" range="20" needtarget="0" direction="0" seltarget="1" needlearn="0" script="monster/frozen_hearth_waves.lua" />		
+	<instant name="petrangewind" words="###818" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/petrange_wind.lua"/>
+	<instant name="peticeblock" words="###819" aggressive="0" needtarget="0" needlearn="0"  script="monster/pets/peticeblock.lua"/>
+	<instant name="peteggs" words="###820" aggressive="0" needtarget="0" needlearn="0"  script="monster/pets/peteggs.lua"/>
+	<instant name="petfirewave" words="###821" aggressive="1" blockwalls="0" range="1" needtarget="1" direction="1" seltarget="1" needlearn="0" script="monster/pets/fire_wave.lua" />	
+	<instant name="rangefire" words="###822" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/range_fire.lua"/>
+	<instant name="rangeice" words="###823" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/range_ice.lua"/>
+	<instant name="petoutfit" words="###824" aggressive="0" needtarget="0" needlearn="0"  script="monster/pets/fairy_outfit.lua"/>
+	<instant name="petrangestars" words="###825" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/petrange_stars.lua"/>
+	<instant name="petoutfitmummy" words="###826" aggressive="0" needtarget="0" needlearn="0"  script="monster/pets/mummy_outfit.lua"/>
+	<instant name="petvectorwave" words="###827" aggressive="1" blockwalls="0" range="1" needtarget="1" direction="1" seltarget="1" needlearn="0" script="monster/pets/vector_beam.lua" />
+	<instant name="petbite" words="###828" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/bite.lua"/>
+	<instant name="petoutfitghost" words="###829" aggressive="0" needtarget="0" needlearn="0"  script="monster/pets/ghost_outfit.lua"/>
+	<instant name="petshootwater" words="###830" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/shoot_aoe_water.lua"/>
+	<instant name="petshootwater_squid" words="###831" aggressive="1" range="3" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/shoot_aoe_water_squid.lua"/>
+	<instant name="petfrogpoison" words="###832" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/pet_poison.lua"/>
+	<instant name="petpeanuts" words="###833" aggressive="0" needtarget="0" needlearn="0"  script="monster/pets/petpeanuts.lua"/>
+	<instant name="petdworcpoison" words="###834" aggressive="1" blockwalls="1" needtarget="1" needlearn="0"  script="monster/pets/pet_poison_dworc.lua"/>
+	<instant name="petmana" words="###835" aggressive="1" range="3" blockwalls="1" needtarget="0" needlearn="0"  script="monster/pets/mana.lua"/>
+	<instant name="peteyewave" words="###836" aggressive="1" blockwalls="0" range="1" needtarget="1" direction="1" seltarget="1" needlearn="0" script="monster/pets/eyebo_beam.lua" />
+	
+	<instant name="putrid wave" words="###860" aggressive="1" blockwalls="0" needtarget="0" needlearn="0" direction="1"  script="monster/putrid_wave.lua"/>
+	<instant name="pomelo summon1" words="###561"  aggressive="0" blockwalls="0" needtarget="1" needlearn="0" script="monster/pomelo_summon.lua"/>
+	<instant name="pomelo summon2" words="###562"  aggressive="0" blockwalls="0" needtarget="1" needlearn="0" script="monster/pomelo_summon2.lua"/>
+	
+	<instant name="undine follow" words="###563"  aggressive="1" blockwalls="0" needtarget="1" needlearn="0" script="monster/undine_follow.lua"/>
+	<instant name="fordraz summon" words="###564"  aggressive="1" blockwalls="0" needtarget="1" needlearn="0" script="monster/fordraz_summon.lua"/>
+	<instant name="fordraz aoe" words="###565"  aggressive="1" blockwalls="0" needtarget="0" needlearn="0" script="monster/fordraz_aoe.lua"/>
+	
+	<instant name="frost barrel2" words="###900" aggressive="1" selftarget="1" blockwalls="1"  needlearn="0"  script="monster/frost_barrel.lua"/>
+	<instant name="wind barrel2" words="###901" aggressive="0" selftarget="1" blockwalls="0"  needlearn="0"  script="monster/wind_barrel.lua"/>
+	<instant name="healing barrel2" words="###902" aggressive="0" selftarget="1" blockwalls="0"  needlearn="0"  script="monster/healing_barrel.lua"/>
+	<instant name="viperion flame" words="###903" aggressive="1" needtarget="1" blockwalls="0"  range="3"  script="monster/viperion_flame.lua"/>
+	
+	<instant name="shelleon wave" words="###904" aggressive="1" blockwalls="1" needtarget="0" needlearn="0" direction="1"  script="monster/shelleon_wave.lua"/>
+	<instant name="shelleon poison" words="###905" aggressive="1" blockwalls="1" range="8" needtarget="0" needlearn="0" script="monster/shelleon_poison.lua" />	
+	<instant name="hamelin aoe" words="###906" aggressive="1" blockwalls="1" range="8" needtarget="0" needlearn="0" script="monster/hamelin_aoe.lua" />	
+	
+	<instant name="voidaoe" words="###907" aggressive="1" range="1" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/void_aoe.lua"/>
+	<instant name="servant_explode" words="###908" aggressive="1" range="1" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/servant_explode.lua"/>
+	
+	<instant name="summonarcher" words="###909" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonarcher.lua"/>
+	<instant name="summonhealer" words="###910" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonheal.lua"/>
+	<instant name="summonhealer-seraphin" words="###911" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonheal-seraphin.lua"/>
+	
+	
+	
+	
+	
+	<instant name="" words="###951" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0" script="test/poison_explosion.lua"/>
+	<instant name="massanimon" words="###952" aggressive="1" range="8" selftarget="1" blockwalls="1" needtarget="0" needlearn="0" script="new spells/mass_annihilation_monster.lua"/>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 </spells>
