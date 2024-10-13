@@ -125,20 +125,6 @@
 		<attribute key="floorchange" value="down" />
 	</item>
 	
-	<item id="37776" name="stairs">
-		<attribute key="floorchange" value="east" />
-	</item>
-	<item id="37778" name="stairs">
-		<attribute key="floorchange" value="west" />
-	</item>
-	<item id="37777" name="stairs">
-		<attribute key="floorchange" value="south" />
-	</item>
-	<item id="37769" name="stairs">
-		<attribute key="floorchange" value="north" />
-	</item>
-	
-	
 	<item id="23933" name="stairs">
 		<attribute key="floorchange" value="east" />
 	</item>
@@ -151,9 +137,6 @@
 	<item id="23939" name="stairs">
 		<attribute key="floorchange" value="north" />
 	</item>
-	
-	
-	
 	
 	<item fromid="434" toid="445" name="wooden floor" />
 	<item fromid="446" toid="447" name="wooden floor">
@@ -1494,13 +1477,7 @@
 	<item id="1957" article="a" name="map">
 		<attribute key="weight" value="790" />
 	</item>
-	<item fromid="1958" toid="1961" article="a" name="book">
-		<attribute key="weight" value="1300" />
-	</item>
-	<item fromid="1963" toid="1966" article="a" name="book">
-		<attribute key="weight" value="1300" />
-	</item>
-	<item id="1962" name="Testimony of William Countwell">
+	<item fromid="1958" toid="1966" article="a" name="book">
 		<attribute key="weight" value="1300" />
 	</item>
 	<item id="1967" article="a" name="parchment">
@@ -12866,12 +12843,6 @@
 	<item fromid="6917" toid="6924" article="a" name="ramp">
 		<attribute key="floorchange" value="down" />
 	</item>
-	<item id="25221" article="a" name="ramp">
-		<attribute key="floorchange" value="north" />
-	</item>
-	<item id="25222" article="a" name="ramp">
-		<attribute key="floorchange" value="west" />
-	</item>
 	<item fromid="18533" toid="18536" article="a" name="ramp">
 		<attribute key="floorchange" value="down" />
 	</item>
@@ -14676,10 +14647,6 @@
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="7736" article="a" name="rotten heart">
-		<attribute key="weight" value="0" />
-		<attribute key="description" value="Someone may want this." />
-	</item>
-	<item id="26157" article="a" name="Condensed Energy">
 		<attribute key="weight" value="0" />
 		<attribute key="description" value="Someone may want this." />
 	</item>
@@ -21240,9 +21207,9 @@
 		<attribute key="weight" value="300" />
 		<attribute key="description" value="The Embrace of Tibia is contained in it." />
 	</item>
-	<item id="11260" article="a" name="Dreamlink Crystal">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Used to link dream bridges." />
+	<item id="11260" article="a" name="spiritual charm">
+		<attribute key="weight" value="300" />
+		<attribute key="description" value="The Spiritual Shielding is contained in it." />
 	</item>
 	<item id="11261" article="a" name="twin sun charm">
 		<attribute key="weight" value="300" />
@@ -31077,13 +31044,9 @@
 	<item id="21413" name="burning wall" />
 	<item fromid="21414" toid="21415" article="a" name="floating bone" />
 	<item id="21416" name="sand" />
-	<item id="21417" article="a" name="empty sample vial">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="used to collect honey samples." />
-	</item>
-	<item id="36401" article="a" name="elusive dream nectar">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="used to collect honey samples." />
+	<item id="21417" article="a" name="blood vial">
+		<attribute key="weight" value="180" />
+		<attribute key="description" value="Tomruk The Ruddy gave you this vial to collect blood samples." />
 	</item>
 	<item id="21418" article="a" name="blood vial">
 		<attribute key="weight" value="180" />
@@ -33418,7 +33381,10 @@
 		<attribute key="description" value="This helps romelia sleep." />
 		<attribute key="weight" value="30" />
 	</item>
-
+	<item id="27756" name="Circus Mask">
+		<attribute key="description" value="Someone may want this." />
+		<attribute key="weight" value="30" />
+	</item>
 	<item id="32465" name="Rotten Core">
 		<attribute key="description" value="someone may want this." />
 		<attribute key="weight" value="30" />
@@ -36262,7 +36228,6 @@
 	<item id="33342" article="a" name="Frostbite Shield">
 		<attribute key="weight" value="300" />
 		<attribute key="defense" value="100" />
-		<attribute key="absorbPercentEnergy" value="3" />
 		<attribute key="weaponType" value="shield" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
@@ -36271,6 +36236,7 @@
 		<attribute key="weight" value="500" />
 		<attribute key="attack" value="130" />
 		<attribute key="defense" value="60" />
+		<attribute key="absorbPercentEnergy" value="3" />
 		<attribute key="elementDeath" value="5" />		
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
@@ -36281,6 +36247,7 @@
 		<attribute key="weight" value="300" />
 		<attribute key="attack" value="75" />
 		<attribute key="defense" value="40" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="elementDeath" value="2" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="description" value="forged in a distorted field." />	
@@ -36290,7 +36257,7 @@
 		<attribute key="weight" value="300" />
 		<attribute key="attack" value="71" />
 		<attribute key="defense" value="40" />
-		<attribute key="absorbPercentEnergy" value="1" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="elementDeath" value="3" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="description" value="forged in a distorted field." />	
@@ -36299,6 +36266,7 @@
 	<item id="33335" article="a" name="Frostbite Helmet">
 		<attribute key="weight" value="200" />
 		<attribute key="armor" value="14" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="slotType" value="head" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
@@ -36306,7 +36274,7 @@
 	<item id="33336" article="a" name="Frostbite Armor">
 		<attribute key="weight" value="400" />
 		<attribute key="armor" value="21" />
-		<attribute key="absorbPercentEnergy" value="1" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="slotType" value="body" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
@@ -36314,7 +36282,7 @@
 	<item id="33337" name="Frostbite Legs">
 		<attribute key="weight" value="500" />
 		<attribute key="armor" value="14" />
-		<attribute key="absorbPercentEnergy" value="1" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="slotType" value="legs" />
 		<attribute key="description" value="forged in a distorted field." />
 	</item>
@@ -36376,7 +36344,7 @@
 		<attribute key="weight" value="500" />
 		<attribute key="attack" value="83" />
 		<attribute key="defense" value="50" />
-		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="absorbPercentEnergy" value="3" />
 		<attribute key="elementDeath" value="5" />		
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
@@ -36398,6 +36366,7 @@
 		<attribute key="weight" value="500" />
 		<attribute key="attack" value="80" />
 		<attribute key="defense" value="48" />
+		<attribute key="absorbPercentEnergy" value="2" />	
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="description" value="this weapon radiates banshees." />
@@ -36407,7 +36376,7 @@
 		<attribute key="weight" value="500" />
 		<attribute key="attack" value="78" />
 		<attribute key="defense" value="50" />
-		
+		<attribute key="absorbPercentEnergy" value="1" />		
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="description" value="a mace wielded by the giants." />
@@ -36417,7 +36386,7 @@
 		<attribute key="weight" value="500" />
 		<attribute key="attack" value="77" />
 		<attribute key="defense" value="46" />
-	
+		<attribute key="absorbPercentEnergy" value="2" />	
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="description" value="this axe is starting to like you." />
@@ -36446,12 +36415,14 @@
 	<item id="32457" article="a" name="Eternal Winter Helmet">
 		<attribute key="weight" value="200" />
 		<attribute key="armor" value="16" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="slotType" value="head" />
 	</item>
 	
 	<item id="33155" article="a" name="Soulkeeper Helm">
 		<attribute key="weight" value="200" />
 		<attribute key="armor" value="17" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="slotType" value="head" />
 	</item>
 	
@@ -36465,7 +36436,7 @@
 	<item id="32612" article="a" name="Helmet of Domination">
 		<attribute key="weight" value="200" />
 		<attribute key="armor" value="22" />
-		<attribute key="absorbPercentEnergy" value="1" />
+		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="slotType" value="head" />
 		<attribute key="description" value="You speak of justice? Of cowardice? I will show you the justice of the grave, and the true meaning... of FEAR!." />
 	</item>
@@ -36542,14 +36513,14 @@
 		<attribute key="weight" value="500" />
 		<attribute key="armor" value="19" />
 		<attribute key="slotType" value="legs" />
-		<attribute key="absorbPercentEnergy" value="1" />
+		<attribute key="absorbPercentEnergy" value="2" />
 	</item>
 	
 	<item id="32470" name="Ice Legs">
 		<attribute key="weight" value="500" />
 		<attribute key="armor" value="18" />
 		<attribute key="slotType" value="legs" />
-		<attribute key="absorbPercentPhysical" value="-1" />
+		<attribute key="absorbPercentPhysical" value="1" />
 		<attribute key="absorbPercentEnergy" value="2" />
 	</item>
 	
@@ -36558,7 +36529,7 @@
 		<attribute key="weight" value="250" />
 		<attribute key="armor" value="12" />
 		<attribute key="slotType" value="feet" />
-		<attribute key="absorbPercentPhysical" value="1" />
+		<attribute key="absorbPercentPhysical" value="2" />
 	</item>
 	
 		<item id="31961" name="Frost Dragon Boots">
@@ -39319,7 +39290,7 @@
 		<attribute key="weight" value="100" />
 		<attribute key="slotType" value="ring" />
 		<attribute key="absorbPercentPhysical" value="2" />
-		<attribute key="absorbPercentMagic" value="2" />		
+		<attribute key="absorbPercentMagic" value="20" />		
 		<attribute key="showattributes" value="1" />
 	</item>
 	
@@ -40491,7 +40462,14 @@
 		<attribute key="absorbPercentEnergy" value="3" />
 		<attribute key="elementHoly" value="4" />
 	</item>
-
+	<item id="36374" article="a" name="King's Chain">
+		<attribute key="weight" value="300" />
+		<attribute key="attack" value="70" />
+		<attribute key="defense" value="45" />
+		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="elementHoly" value="4" />
+		<attribute key="weaponType" value="sword" />
+	</item>
 	
 	
 	
@@ -40940,165 +40918,34 @@
 
 
 
-	<item id="38601" article="a" name="Emerald Shield Blueprint">
+	<item id="38612" article="a" name="Skullcracker Armor Blueprint">
 		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="38586" article="a" name="Unchained Energy Blueprint">
+	<item id="38668" article="a" name="Dragonbreath Blueprint">
 		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="38613" article="a" name="Quetzalcoatl Tunic Blueprint">
+	<item id="38574" article="a" name="Moonlight Rod Blueprint">
 		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="38585" article="a" name="Mercurial Sword Blueprint">
+	<item id="38583" article="a" name="Sweet Sadness Blueprint">
 		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="38670" article="a" name="Lucaria's Blueprint">
+	<item id="38584" article="a" name="Black Hammer Blueprint">
 		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="38575" article="a" name="Misfortune Rod Blueprint">
+	<item id="38669" article="a" name="Longbow Blueprint">
 		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="38614" article="a" name="crocodile boots Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-
-
-
-	<item id="38576" article="a" name="Living Shard Wand Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38587" article="a" name="Dream Eater Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38602" article="a" name="Demonic Bullwart Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38671" article="a" name="Spectral Crossbow Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38615" article="a" name="yalahari leg piece Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38616" article="a" name="draken boots Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-
-
-
-
-
-	<item id="38672" article="a" name="Soul Collector Bow Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38588" article="a" name="Frostfire Sword Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38603" article="a" name="Petrified Fear Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38577" article="a" name="Ice Ramses Wand Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38589" article="a" name="Cold Mirror Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38617" article="a" name="Frost Dragon Boots Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-
-
-
-
-
-	<item id="38604" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38673" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38590" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38591" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="38578" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-
-
-
-
-
-
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
-	<item id="0000" article="a" name="00000 Blueprint">
-		<attribute key="description" value="this is a crafting blueprint. (click to learn)." />
-		<attribute key="weight" value="50" />
-	</item>
+	
+	
+	
+	
 	
 	
 	
@@ -41901,195 +41748,4 @@
         <attribute key="description" value="Lucy may be interested in this type of products." />
         <attribute key="weight" value="1" />
     </item>
-	
-	
-	
-	
-	
-	
-	
-	
-	 <item id="38729" article="a" name="fire essence">
-        <attribute key="description" value="used to adquire powerfull objects in gehena." />
-        <attribute key="weight" value="1" />
-    </item>
-	
-	<item id="38735" article="a" name="dreams essence">
-        <attribute key="description" value="used to adquire powerfull objects in dreamsoul forest." />
-        <attribute key="weight" value="1" />
-    </item>
-	
-	<item id="38724" article="a" name="life essence">
-        <attribute key="description" value="used to adquire powerfull objects in dreamsoul forest." />
-        <attribute key="weight" value="1" />
-    </item>
-	
-	
-	<item id="34005" article="a" name="Luminensse Crest">
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="90" />
-		<attribute key="absorbPercentEnergy" value="1" />
-		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="30496" article="a" name="Wyvern's Wing Bow">
-		<attribute key="weight" value="200" />
-		<attribute key="attack" value="130" />
-		<attribute key="defense" value="60" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="adds the [frostbite] effect. (deals ice damage overtime.)" />	
-	</item>
-	
-	<item id="31731" article="a" name="Sovereign's Scepter">
-		<attribute key="attack" value="130" />
-		<attribute key="defense" value="60" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="Shoots multiple attacks at once." />	
-	</item>
-		
-	<item id="32769" article="a" name="Voidreaver">
-		<attribute key="description" value="This sword has been forged by the old gods." />
-		<attribute key="weight" value="500" />
-		<attribute key="attack" value="145" />
-		<attribute key="defense" value="90" />		
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
-	</item>
-	
-	<item id="36374" article="a" name="King's Chain">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="70" />
-		<attribute key="defense" value="45" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="elementHoly" value="4" />
-		<attribute key="weaponType" value="sword" />
-	</item>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<item id="34002" article="a" name="Blood Stone">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Required to increse reputation with the Blood Crafting Faction." />
-	</item>
-	<item id="26143" article="a" name="Celestial Insignia">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Required to increse reputation with the Celestial Guard Faction." />
-	</item>
-	<item id="27756" article="a" name="Circus Mask">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Required to increse reputation with the Shadow Council Faction." />
-	</item>
-	<item id="34370" article="a" name="Bones Relic">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Required to increse reputation with the Inmortals Faction." />
-	</item>
-	<item id="34363" article="a" name="Fighters Badge">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Required to increse reputation with the Brawlers Guild Faction." />
-	</item>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<item id="32494" article="a" name="Abyssmal Helmet">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="14" />
-		<attribute key="slotType" value="head" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="32499" article="a" name="Abyssmal Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="20" />
-		<attribute key="slotType" value="body" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="32498" name="Abyssmal Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="15" />
-		<attribute key="slotType" value="legs" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-	
-	<item id="32497" name="Abyssmal Boots">
-		<attribute key="weight" value="250" />
-		<attribute key="armor" value="5" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-	
-	<item id="32500" article="a" name="Abyssmal Sword">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="66" />
-		<attribute key="defense" value="24" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-		
-	<item id="32496" article="a" name="Abyssmal Wand">
-		<attribute key="attack" value="56" />
-		<attribute key="defense" value="40" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="-----." />	
-	</item>
-	
-	<item id="36308" article="a" name="Abyssmal Trinket">
-		<attribute key="weight" value="100" />
-		<attribute key="armor" value="20" />
-		<attribute key="slotType" value="ring" />
-		<attribute key="absorbPercentPhysical" value="2" />
-		<attribute key="absorbPercentMagic" value="5" />		
-		<attribute key="showattributes" value="1" />
-	</item>
-	
-		<item id="32495" article="a" name="Abyssmal Shield">
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="62" />
-		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
 </items>
