@@ -16,7 +16,7 @@ for i = 2, 4 do
 	combat[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SMALLCLOUDS)
 	combat[i]:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_DEATH)
 	combat[i]:setArea(createCombatArea(AREA_SQUAREWAVE7))
-	combat[i]:setCondition(condition)
+	combat[i]:addCondition(condition)
 end
 
 function onCastSpell(creature, variant)

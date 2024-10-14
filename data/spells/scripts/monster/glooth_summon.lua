@@ -20,7 +20,7 @@ for i = 1, #damageTable do
     condition:addDamage(t[1], 4000, t[2])
 end
 
-combat:setCondition(condition)
+combat:addCondition(condition)
 
 
 function onCastSpell(creature, var)

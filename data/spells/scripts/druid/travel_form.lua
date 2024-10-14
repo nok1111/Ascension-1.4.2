@@ -7,7 +7,7 @@ combat:setParameter(COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
 local haste = Condition(CONDITION_HASTE)
 haste:setParameter(CONDITION_PARAM_TICKS, 15000)
 haste:setFormula(1.4, -70, 1.5, -70)
-combat:setCondition(haste)
+combat:addCondition(haste)
 
 
 ----------------------------------
@@ -20,7 +20,7 @@ local outfit = createConditionObject(CONDITION_OUTFIT)
 outfit:setParameter(CONDITION_PARAM_TICKS, 15000)
 outfit:setParameter(CONDITION_PARAM_SUBID, 9)
 addOutfitCondition(outfit, {lookType = 1559, lookHead = 0, lookBody = 0, lookLegs = 0, lookFeet = 0, lookTypeEx = 0, lookAddons = 0})
-combat2:setCondition(outfit)
+combat2:addCondition(outfit)
 ---------------------------
 
 local combat3 = Combat()
@@ -46,27 +46,27 @@ combat7:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 local stunSpellDunno = Condition(CONDITION_SPELLGROUPCOOLDOWN)
 stunSpellDunno:setParameter(CONDITION_PARAM_TICKS, 15000)
 stunSpellDunno:setParameter(CONDITION_PARAM_SUBID, 0)
-combat3:setCondition(stunSpellDunno)
+combat3:addCondition(stunSpellDunno)
 
 local stunSpellAttacks = Condition(CONDITION_SPELLGROUPCOOLDOWN)
 stunSpellAttacks:setParameter(CONDITION_PARAM_TICKS, 15000)
 stunSpellAttacks:setParameter(CONDITION_PARAM_SUBID, 1)
-combat4:setCondition(stunSpellAttacks)
+combat4:addCondition(stunSpellAttacks)
 
 local stunSpellHealing = Condition(CONDITION_SPELLGROUPCOOLDOWN)
 stunSpellHealing:setParameter(CONDITION_PARAM_TICKS, 15000)
 stunSpellHealing:setParameter(CONDITION_PARAM_SUBID, 2)
-combat5:setCondition(stunSpellHealing)
+combat5:addCondition(stunSpellHealing)
 
 local stunSpellSupport = Condition(CONDITION_SPELLGROUPCOOLDOWN)
 stunSpellSupport:setParameter(CONDITION_PARAM_TICKS, 15000)
 stunSpellSupport:setParameter(CONDITION_PARAM_SUBID, 3)
-combat6:setCondition(stunSpellSupport)
+combat6:addCondition(stunSpellSupport)
 
 local stunSpellSpecial = Condition(CONDITION_SPELLGROUPCOOLDOWN)
 stunSpellSpecial:setParameter(CONDITION_PARAM_TICKS, 15000)
 stunSpellSpecial:setParameter(CONDITION_PARAM_SUBID, 4)
-combat7:setCondition(stunSpellSpecial)
+combat7:addCondition(stunSpellSpecial)
 
 function onCastSpell(creature, variant)
  local player = Player(creature)

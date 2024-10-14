@@ -92,7 +92,7 @@ local function doDamage(cid, variant)
         bleeding:setParameter(CONDITION_PARAM_DELAYED, true)
         bleeding:addDamage(4, 750, -min)
         bleeding:addDamage(4, 750, -max)
-        combat:setCondition(bleeding)
+        combat:addCondition(bleeding)
 
         combat:execute(creature, variant)
        -- Applying the stun

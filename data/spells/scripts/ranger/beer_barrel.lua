@@ -4,7 +4,7 @@ condition:setParameter(CONDITION_PARAM_SUBID, 25970)
 
 local combat = Combat()
 
-combat:setCondition(condition)
+combat:addCondition(condition)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 

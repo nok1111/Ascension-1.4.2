@@ -4,7 +4,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_CAKE)
 
 local condition = Condition(CONDITION_STUN)
 condition:setParameter(CONDITION_PARAM_TICKS, 6000)
-combat:setCondition(condition)
+combat:addCondition(condition)
 
 function onCastSpell(creature, var, tar)
 	if not combat:execute(creature, var) then

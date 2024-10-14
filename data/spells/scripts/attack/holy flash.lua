@@ -6,7 +6,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_SMALLHOLY)
 local condition = Condition(CONDITION_DAZZLED)
 condition:setParameter(CONDITION_PARAM_DELAYED, true)
 condition:addDamage(25, 7000, -10)
-combat:setCondition(condition)
+combat:addCondition(condition)
 
 function onCastSpell(creature, variant)
 	return combat:execute(creature, variant)

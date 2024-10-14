@@ -4,7 +4,7 @@
 	local condition = Condition(CONDITION_PARALYZE)
 	condition:setParameter(CONDITION_PARAM_TICKS, 20000)
 	condition:setFormula(-0.6, 0, -0.8, 0)
-	combat:setCondition(condition)
+	combat:addCondition(condition)
 
 	arr = {
 	{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},

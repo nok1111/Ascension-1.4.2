@@ -4,8 +4,8 @@
 	local condition = Condition(CONDITION_PARALYZE)
 	condition:setParameter(CONDITION_PARAM_TICKS, 3000)
 	condition:setFormula(-0.55, 0, -0.75, 0)
-	combat:setCondition(condition)
-	combat:setCondition(condition)
+	combat:addCondition(condition)
+	combat:addCondition(condition)
 
 function onCastSpell(creature, var)
 local master = creature:getMaster()
