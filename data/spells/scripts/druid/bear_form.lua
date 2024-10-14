@@ -27,7 +27,7 @@ combats[1] = Combat()
 combats[1]:setParameter(COMBAT_PARAM_EFFECT, 270)
 combats[1]:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 combats[1]:setParameter(COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
-combats[1]:setCondition(haste_bear)
+combats[1]:addCondition(haste_bear)
 
 -- Combat 2: Max Health Increase
 local maxhp_bear_bear = Condition(CONDITION_ATTRIBUTES)
@@ -49,7 +49,7 @@ stunSpellAttacks:setParameter(CONDITION_PARAM_SUBID, 1)
 combats[3] = Combat()
 combats[3]:setParameter(COMBAT_PARAM_EFFECT, 13)
 combats[3]:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
-combats[3]:setCondition(stunSpellAttacks)
+combats[3]:addCondition(stunSpellAttacks)
 
 
 
@@ -63,7 +63,7 @@ regen_bear:setParameter(CONDITION_PARAM_SUBID, 202)
 combats[4] = Combat()
 combats[4]:setParameter(COMBAT_PARAM_EFFECT, 313)
 combats[4]:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
-combats[4]:setCondition(regen_bear)
+combats[4]:addCondition(regen_bear)
 
 -- Combat 8: Outfit Change
 
@@ -74,7 +74,7 @@ addOutfitCondition(outfit_bear, {lookType = 1715, lookHead = 0, lookBody = 0, lo
 combats[5] = Combat()
 combats[5]:setParameter(COMBAT_PARAM_EFFECT, 13)
 combats[5]:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
-combats[5]:setCondition(outfit_bear)
+combats[5]:addCondition(outfit_bear)
 
 
     local player = Player(creature)

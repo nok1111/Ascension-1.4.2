@@ -16,7 +16,7 @@ for i = 10, 30 do
 	end
 
 	combat[i]:setArea(createCombatArea(AREA_CROSS6X6))
-	combat[i]:setCondition(condition)
+	combat[i]:addCondition(condition)
 end
 
 function onCastSpell(creature, variant)

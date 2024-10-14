@@ -35,7 +35,7 @@ local outfit = createConditionObject(CONDITION_OUTFIT)
 outfit:setParameter(CONDITION_PARAM_TICKS, 15000)
 outfit:setParameter(CONDITION_PARAM_SUBID, 13)
 addOutfitCondition(outfit, {lookType = 2076, lookHead = 0, lookBody = 0, lookLegs = 0, lookFeet = 0, lookTypeEx = 0, lookAddons = 0})
-combat2:setCondition(outfit)
+combat2:addCondition(outfit)
 
 
 

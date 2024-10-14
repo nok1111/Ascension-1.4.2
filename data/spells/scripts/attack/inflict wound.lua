@@ -6,7 +6,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_WEAPONTYPE)
 local condition = Condition(CONDITION_BLEEDING)
 condition:setParameter(CONDITION_PARAM_DELAYED, true)
 condition:addDamage(25, 4000, -45)
-combat:setCondition(condition)
+combat:addCondition(condition)
 
 function onCastSpell(creature, variant)
 	return combat:execute(creature, variant)

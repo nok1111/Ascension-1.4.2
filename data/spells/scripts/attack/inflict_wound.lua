@@ -6,7 +6,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_WEAPONTYPE)
 local condition = Condition(CONDITION_BLEEDING)
 condition:setParameter(CONDITION_PARAM_DELAYED, true)
 condition:addDamage(5, 2000, -3)
-combat:setCondition(condition)
+combat:addCondition(condition)
 
 function onGetFormulaValues(player, skill, attack, factor, target)
 	local min = (player:getLevel() / 5) + (skill * 0.3) + 2

@@ -17,7 +17,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_CAKE)
 
 local condition = Condition(CONDITION_STUN)
 condition:setParameter(CONDITION_PARAM_TICKS, t)
-combat:setCondition(condition)
+combat:addCondition(condition)
 
 
 	if not combat:execute(creature, var) then
