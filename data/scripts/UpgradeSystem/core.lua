@@ -433,50 +433,63 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
         local lifeStealTotal = 0
         local manaStealTotal = 0
         for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
-            local item = attacker:getSlotItem(slot)
-            if item then
-                if item:getType():usesSlot(slot) then
-                    local values = item:getBonusAttributes()
-                    if values then
-                        for key, value in pairs(values) do
-                            local attr = US_ENCHANTMENTS[value[1]]
-                            if attr then
-                                if attr.combatType and attr.combatType ~= US_TYPES.CONDITION then
-                                    if attr.combatType == US_TYPES.TRIGGER then
-                                        if attr.triggerType == US_TRIGGERS.ATTACK then
-                                            attr.execute(attacker, creature, value[2])
-                                        end
-                                    elseif attr.name == "Double Damage" then
-                                        doubleDamageTotal = doubleDamageTotal + value[2]
-                                    else
-                                        if attr.combatDamage then
-                                            if (attr.combatDamage % (primaryType + primaryType) >= primaryType) == true then
-                                                if attr.combatType == US_TYPES.OFFENSIVE then
-                                                    primaryDamageTotal = primaryDamageTotal + value[2]
-                                                end
-                                            end
-                                            if (attr.combatDamage % (secondaryType + secondaryType) >= secondaryType) == true then
-                                                if attr.combatType == US_TYPES.OFFENSIVE then
-                                                    secondaryDamageTotal = secondaryDamageTotal + value[2]
-                                                end
-                                            end
-                                        end
-
-                                        if attr.name == "Life Steal" then
-                                            lifeStealTotal = lifeStealTotal + value[2]
-                                        end
-
-                                        if attr.name == "Mana Steal" then
-                                            manaStealTotal = manaStealTotal + value[2]
-                                        end
-                                    end
-                                end
-                            end
-                        end
+      local item = attacker:getSlotItem(slot)
+      if item then
+        if item:getType():usesSlot(slot) then
+          local values = item:getBonusAttributes()
+          if values then
+            for key, value in pairs(values) do
+              local attr = US_ENCHANTMENTS[value[1]]
+              if attr then
+                if attr.combatType then
+                  if attr.combatType == US_TYPES.TRIGGER then
+                    if attr.triggerType == US_TRIGGERS.ATTACK then
+						if attr.cooldown ~= nil and attacker:getStorageValue(value[1]) > os.time() then
+									-- Attribute has a cooldown and it hasn't expired yet, do nothing
+									--print(tostring("off cooldown"))
+								else
+									-- Execute the attribute and set the cooldown if applicable
+									attr.execute(attacker, creature, value[2])
+									if attr.cooldown ~= nil then
+										attacker:setStorageValue(value[1], os.time() + attr.cooldown)
+										attacker:sendAddBuffNotification(16, attr.cooldown, 'Power Rune Internal Cooldown', 1, 0)
+									--	print(tostring("on cooldown"))
+									end
+								end
+						 
+						
                     end
+                  elseif attr.name == "Double Damage" then
+                    doubleDamageTotal = doubleDamageTotal + value[2]
+                  else
+                    if attr.combatDamage then
+                      if (attr.combatDamage % (primaryType + primaryType) >= primaryType) == true then
+                        if attr.combatType == US_TYPES.OFFENSIVE then
+                          primaryDamageTotal = primaryDamageTotal + value[2]
+                        end
+                      end
+                      if (attr.combatDamage % (secondaryType + secondaryType) >= secondaryType) == true then
+                        if attr.combatType == US_TYPES.OFFENSIVE then
+                          secondaryDamageTotal = secondaryDamageTotal + value[2]
+                        end
+                      end
+                    end
+
+                    if attr.name == "Life Steal" then
+                      lifeStealTotal = lifeStealTotal + value[2]
+                    end
+
+                    if attr.name == "Mana Steal" then
+                      manaStealTotal = manaStealTotal + value[2]
+                    end
+                  end
                 end
+              end
             end
+          end
         end
+      end
+    end
 
         if doubleDamageTotal > 0 then
             if math.random(100) < doubleDamageTotal then
@@ -513,44 +526,58 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
         end
     end
 
-    if creature:isPlayer() then
-        local primaryDamageTotal = 0
-        local secondaryDamageTotal = 0
-        for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
-            local item = creature:getSlotItem(slot)
-            if item then
-                if item:getType():usesSlot(slot) then
-                    local values = item:getBonusAttributes()
-                    if values then
-                        for key, value in pairs(values) do
-                            local attr = US_ENCHANTMENTS[value[1]]
-                            if attr then
-                                if attr.combatType and attr.combatType ~= US_TYPES.CONDITION then
-                                    if attr.combatType == US_TYPES.TRIGGER then
-                                        if attr.triggerType == US_TRIGGERS.HIT then
-                                            attr.execute(creature, attacker, value[2])
-                                        end
-                                    else
-                                        if attr.combatDamage then
-                                            if (attr.combatDamage % (primaryType + primaryType) >= primaryType) == true then
-                                                if attr.combatType == US_TYPES.DEFENSIVE and creature:isPlayer() then
-                                                    primaryDamageTotal = primaryDamageTotal + value[2]
-                                                end
-                                            end
-                                            if (attr.combatDamage % (secondaryType + secondaryType) >= secondaryType) == true then
-                                                if attr.combatType == US_TYPES.DEFENSIVE and creature:isPlayer() then
-                                                    secondaryDamageTotal = secondaryDamageTotal + value[2]
-                                                end
-                                            end
-                                        end
-                                    end
-                                end
-                            end
-                        end
+   if creature:isPlayer() then
+    local primaryDamageTotal = 0
+    local secondaryDamageTotal = 0
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+      local item = creature:getSlotItem(slot)
+      if item then
+        if item:getType():usesSlot(slot) then
+          local values = item:getBonusAttributes()
+          if values then
+            for key, value in pairs(values) do
+              local attr = US_ENCHANTMENTS[value[1]]
+              if attr then
+                if attr.combatType and attr.combatType ~= US_TYPES.CONDITION then
+                  if attr.combatType == US_TYPES.TRIGGER then
+                    if attr.triggerType == US_TRIGGERS.HIT then
+					
+						if attr.cooldown ~= nil and creature:getStorageValue(value[1]) > os.time() then
+									-- Attribute has a cooldown and it hasn't expired yet, do nothing
+									--print(tostring("off cooldown"))
+								else
+									-- Execute the attribute and set the cooldown if applicable
+									attr.execute(creature, attacker, value[2])
+									if attr.cooldown ~= nil then
+										attacker:setStorageValue(value[1], os.time() + attr.cooldown)
+										attacker:sendAddBuffNotification(16, attr.cooldown, 'Power Rune Internal Cooldown', 1, 0)
+									--	print(tostring("on cooldown"))
+									end
+								end
+					
+                      
                     end
+                  else
+                    if attr.combatDamage then
+                      if (attr.combatDamage % (primaryType + primaryType) >= primaryType) == true then
+                        if attr.combatType == US_TYPES.DEFENSIVE and creature:isPlayer() then
+                          primaryDamageTotal = primaryDamageTotal + value[2]
+                        end
+                      end
+                      if (attr.combatDamage % (secondaryType + secondaryType) >= secondaryType) == true then
+                        if attr.combatType == US_TYPES.DEFENSIVE and creature:isPlayer() then
+                          secondaryDamageTotal = secondaryDamageTotal + value[2]
+                        end
+                      end
+                    end
+                  end
                 end
+              end
             end
+          end
         end
+      end
+    end
         if primaryDamageTotal > 0 then
             primaryDamage = math.floor(primaryDamage - (primaryDamage * primaryDamageTotal / 100))
         end
@@ -613,10 +640,13 @@ function PrepareDeathEvent.onPrepareDeath(creature, killer)
                         if attr then
                             if attr.name == "Revive on death" then
                                 if math.random(100) < value[2] then
-                                    creature:addHealth(creature:getMaxHealth())
-                                    creature:addMana(creature:getMaxMana())
-                                    creature:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
-                                    creature:sendTextMessage(MESSAGE_INFO_DESCR, "You have been revived!")
+                                                     creature:addHealth(creature:getMaxHealth())
+													  creature:addMana(creature:getMaxMana())
+													  local reviveeffect = creature:getPosition()
+														reviveeffect.x = reviveeffect.x + 1
+														reviveeffect.y = reviveeffect.y + 1
+														reviveeffect:sendMagicEffect(366)
+													  creature:sendTextMessage(MESSAGE_INFO_DESCR, "You have been revived!")
                                     return false
                                 end
                             end
@@ -651,97 +681,220 @@ GainExperienceEvent.onGainExperience = function(player, source, exp, rawExp)
 end
 GainExperienceEvent:register()
 
-function us_CheckCorpse(monsterType, corpsePosition, killerId)
-    local killer = Player(killerId)
-    local corpse = Tile(corpsePosition):getTopDownItem()
-    if killer and killer:isPlayer() and corpse and corpse:isContainer() then
-        for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
-            local item = killer:getSlotItem(slot)
-            if item then
-                local values = item:getBonusAttributes()
-                if values then
-                    for key, value in pairs(values) do
-                        local attr = US_ENCHANTMENTS[value[1]]
-                        if attr then
-                            if attr.name == "Additonal Gold" then
-                                local cc, plat, gold = 0, 0, 0
-                                for i = 0, corpse:getSize() do
-                                    local item = corpse:getItem(i)
-                                    if item then
-                                        if item.itemid == 2160 then
-                                            gold = gold + (item:getCount() * 10000)
-                                        elseif item.itemid == 2152 then
-                                            gold = gold + (item:getCount() * 100)
-                                        elseif item.itemid == 2148 then
-                                            gold = gold + item:getCount()
-                                        end
-                                    end
-                                end
 
-                                gold = math.floor(gold * value[2] / 100)
 
-                                while gold >= 10000 do
-                                    gold = gold / 10000
-                                    cc = cc + 1
-                                end
-
-                                if cc > 0 then
-                                    local crystalCoin = Game.createItem(2160, cc)
-                                    corpse:addItemEx(crystalCoin)
-                                end
-
-                                while gold >= 100 do
-                                    gold = gold / 100
-                                    plat = plat + 1
-                                end
-
-                                if plat > 0 then
-                                    local platinumCoin = Game.createItem(2152, plat)
-                                    corpse:addItemEx(platinumCoin)
-                                end
-
-                                if gold > 0 then
-                                    local goldCoin = Game.createItem(2148, gold)
-                                    corpse:addItemEx(goldCoin)
-                                end
-                            end
-                        end
-                    end
-                end
-            end
-        end
-        local iLvl = monsterType:calculateItemLevel()
-        if iLvl >= US_CONFIG.CRYSTAL_FOSSIL_DROP_LEVEL then
-            if math.random(US_CONFIG.CRYSTAL_FOSSIL_DROP_CHANCE) == 1 then
-                corpse:addItem(US_CONFIG.CRYSTAL_FOSSIL, 1)
-                local specs = Game.getSpectators(corpsePosition, false, true, 9, 9, 8, 8)
-                if #specs > 0 then
-                    for i = 1, #specs do
-                        local player = specs[i]
-                        player:say("Crystal Fossil!", TALKTYPE_MONSTER_SAY, false, player, corpsePosition)
-                    end
-                end
-            end
-        end
-        for i = 0, corpse:getCapacity() do
-            local item = corpse:getItem(i)
-            if item then
-                local itemType = item:getType()
-                if itemType then
-                    if itemType:canHaveItemLevel() then
-                        item:setItemLevel(math.min(US_CONFIG.MAX_ITEM_LEVEL, math.random(math.max(1, iLvl - 5), iLvl)), true)
-                    end
-                    if itemType:isUpgradable() then
-                        if math.random(US_CONFIG.UNIDENTIFIED_DROP_CHANCE) == 1 then
-                            item:unidentify()
-                        else
-                            item:rollRarity()
-                        end
-                    end
-                end
-            end
+local function effectLoop(position, effect)
+    local bagIds = {37129, 37131, 37132, 37133}
+    local active = false
+    for _, bag in ipairs(bagIds) do
+        local lootBag = Tile(position):getItemById(bag)
+        if lootBag then
+            active = true
+            break
         end
     end
+    if active then
+        position:sendMagicEffect(effect)
+        addEvent(effectLoop, 480, position, effect)
+    end
+end
+
+local rarityList = {
+    {bag = 37129, effect = 13, tier = "", textcolor = TEXTCOLOR_NONE},
+    {bag = 37131, effect = 372, tier = "RARE", textcolor = TEXTCOLOR_LIGHTGREEN},
+    {bag = 37132, effect = 373, tier = "EPIC", textcolor = TEXTCOLOR_ELECTRICPURPLE},
+    {bag = 37133, effect = 374, tier = "LEGENDARY", textcolor = TEXTCOLOR_ORANGE},
+    {bag = 37133, effect = 374, tier = "CORRUPTED", textcolor = TEXTCOLOR_LIGHTGREEN},
+}
+
+local function classifyLoot(position)
+    local corpse = Tile(position):getTopDownItem()
+    if not corpse or not corpse:getType():isContainer() then
+        return false
+    end
+    -- Found max rarity
+    local foundRarity = 1
+    for i = corpse:getSize() - 1, 0, -1 do
+        local item = corpse:getItem(i)
+        if item then
+            local rarityIndex = item:getRarityId() or 1
+             if rarityIndex > foundRarity then
+                foundRarity = rarityIndex
+			       end
+        			if item:getId() > 38146 and item:getId() < 38207 then			
+        				foundRarity = 2
+              end
+          if item:isUnique() then     
+            foundRarity = 5
+          end
+        end
+    end
+    -- Transforming corpse
+    local transformation = rarityList[foundRarity]
+    if transformation then
+		local itemowner = corpse:getAttribute(ITEM_ATTRIBUTE_CORPSEOWNER)
+		corpse:transform(transformation.bag)
+		corpse:setAttribute(ITEM_ATTRIBUTE_CORPSEOWNER, itemowner)
+        position:sendMagicEffect(transformation.effect)
+		effectLoop(position, transformation.effect)
+        local spectators = Game.getSpectators(position, false, true, 7, 7, 5, 5)
+        if #spectators > 0 then
+           -- spectators[1]:say(transformation.tier, TALKTYPE_MONSTER_SAY, false, nil, position)
+			Game.sendAnimatedText(transformation.tier, position, transformation.textcolor)
+        end
+    end
+end
+
+local baseChance = 1000
+
+local enchantitems = {
+	[1] = {itemid = 38149, chance = 2},  --trash
+	[2] = {itemid = 38151, chance = 3},  --trash
+	[3] = {itemid = 38152, chance = 4},  --trash
+	[4] = {itemid = 38153, chance = 5},  --trash
+	[5] = {itemid = 38154, chance = 6},  --item loots
+	[6] = {itemid = 38155, chance = 7},  --item loots(fame)
+	[7] = {itemid = 38156, chance = 8},  --item loots(fame)
+	[8] = {itemid = 38157, chance = 9},  --item loots
+	[9] = {itemid = 38159, chance = 10},  --item loots
+	[10] = {itemid = 38160, chance = 11},  --item loots
+	[11] = {itemid = 38161, chance = 12},  --item loots
+	[12] = {itemid = 38162, chance = 13},  --item loots
+	[13] = {itemid = 38163, chance = 14},  --item loots
+	[14] = {itemid = 38165, chance = 15},  --item loots
+	[15] = {itemid = 38166, chance = 16},  --item loots
+	[16] = {itemid = 38167, chance = 17},  --item loots
+	[17] = {itemid = 38170, chance = 18},  --item loots
+	[18] = {itemid = 38171, chance = 19},  --item loots
+	[19] = {itemid = 38172, chance = 20},  --item loots
+	[20] = {itemid = 38173, chance = 21},  --item loots
+	[21] = {itemid = 38176, chance = 22},  --item loots
+	[22] = {itemid = 38177, chance = 23},  --item loots
+	[23] = {itemid = 38179, chance = 25},  --item loots
+	[24] = {itemid = 38180, chance = 26},  --item loots
+	[25] = {itemid = 38181, chance = 27},  --item loots
+	[26] = {itemid = 38182, chance = 28},  --item loots
+	[27] = {itemid = 38183, chance = 29},  --item loots
+	[28] = {itemid = 38184, chance = 30},  --item loots
+	[29] = {itemid = 38185, chance = 31},  --item loots
+	[30] = {itemid = 38186, chance = 32},  --item loots
+	[31] = {itemid = 38187, chance = 33}  --item loots
+}
+
+function us_CheckCorpse(monsterType, corpsePosition, killerId)
+   local killer = Player(killerId)
+  local corpse = Tile(corpsePosition):getTopDownItem()
+  if killer and killer:isPlayer() and corpse and corpse:isContainer() then
+  
+
+  for i = 1, #enchantitems do
+        if math.random(1, baseChance) == enchantitems[i].chance then
+            corpse:addItem(enchantitems[i].itemid, 1)
+			
+        end
+    end	
+	
+  
+  
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+      local item = killer:getSlotItem(slot)
+      if item then
+        local values = item:getBonusAttributes()
+        if values then
+          for key, value in pairs(values) do
+            local attr = US_ENCHANTMENTS[value[1]]
+            if attr then
+              if attr.name == "Additonal Gold" then
+                local cc, plat, gold = 0, 0, 0
+                for i = 0, corpse:getSize() do
+                  local item = corpse:getItem(i)
+                  if item then
+                    if item.itemid == 2160 then
+                      gold = gold + (item:getCount() * 10000)
+                    elseif item.itemid == 2152 then
+                      gold = gold + (item:getCount() * 100)
+                    elseif item.itemid == 2148 then
+                      gold = gold + item:getCount()
+                    end
+                  end
+                end
+
+                gold = math.floor(gold * value[2] / 100)
+
+                while gold >= 10000 do
+                  gold = gold / 10000
+                  cc = cc + 1
+                end
+
+                if cc > 0 then
+                  local crystalCoin = Game.createItem(2160, cc)
+                  corpse:addItemEx(crystalCoin)
+                end
+
+                while gold >= 100 do
+                  gold = gold / 100
+                  plat = plat + 1
+                end
+
+                if plat > 0 then
+                  local platinumCoin = Game.createItem(2152, plat)
+                  corpse:addItemEx(platinumCoin)
+                end
+
+                if gold > 0 then
+                  local goldCoin = Game.createItem(2148, gold)
+                  corpse:addItemEx(goldCoin)
+                end
+              end
+            end
+          end
+        end
+      end
+    end
+	local killerlvl = killer:getLevel() / 2
+    local iLvl = killerlvl
+    if iLvl >= US_CONFIG.CRYSTAL_FOSSIL_DROP_LEVEL then
+      if math.random(US_CONFIG.CRYSTAL_FOSSIL_DROP_CHANCE) == 1 then
+        corpse:addItem(US_CONFIG.CRYSTAL_FOSSIL, 1)
+        local specs = Game.getSpectators(corpsePosition, false, true, 9, 9, 8, 8)
+        if #specs > 0 then
+          for i = 1, #specs do
+            local player = specs[i]
+           -- player:say("Mystic Pouch!", TALKTYPE_MONSTER_SAY, false, player, corpsePosition)
+			Game.sendAnimatedText("Mystic Pouch!", corpsePosition, TEXTCOLOR_ELECTRICPURPLE)
+			corpsePosition:sendMagicEffect(12)
+			corpsePosition:sendMagicEffect(285)
+          end
+        end
+      end
+    end
+    for i = 0, corpse:getCapacity() do
+      local item = corpse:getItem(i)
+      if item then
+        local itemType = item:getType()
+        if itemType then
+          if itemType:canHaveItemLevel() then
+            item:setItemLevel(math.min(US_CONFIG.MAX_ITEM_LEVEL, 1), true)
+          end
+          if itemType:isUpgradable() then
+            if math.random(US_CONFIG.UNIDENTIFIED_DROP_CHANCE) == 1 then
+                 item:unidentify()
+               elseif math.random(1, US_CONFIG.UNIQUE_DROP_CHANCE) == 1 then
+                  item:RollUnique(killer, itemType, weaponType)
+                  addEvent(classifyLoot, 1, corpsePosition)
+                 else
+                  -- Roll rarity
+                 item:rollRarity()
+                 addEvent(classifyLoot, 1, corpsePosition)
+             end
+          end
+        end
+		if item:getId() > 38146 and item:getId() < 38207 then
+		 addEvent(classifyLoot, 1, corpsePosition)
+		end
+      end
+    end
+  end
 end
 
 function us_RemoveBuff(pid, buffId, buffName)
@@ -756,171 +909,213 @@ end
 
 local LookEvent = EventCallback
 LookEvent.onLook = function(player, thing, position, distance, description)
-    if thing:isItem() and thing.itemid == US_CONFIG.ITEM_MIND_CRYSTAL and thing:hasMemory() then
-        for i = 4, 1, -1 do
-            local enchant = thing:getBonusAttribute(i)
-            if enchant then
-                local attr = US_ENCHANTMENTS[enchant[1]]
-                description = description:gsub(thing:getName() .. "%.", "%1\n" .. attr.format(enchant[2]))
-            end
-        end
-    elseif thing:isItem() then
-        if thing:getType():isUpgradable() then
-            local upgrade = thing:getUpgradeLevel()
-            local itemLevel = thing:getItemLevel()
-            if upgrade > 0 then
-                description = description:gsub(thing:getName(), "%1 +" .. upgrade)
-            end
-            if description:find("(%)%.?)") then
-                description = description:gsub("(%)%.?)", "%1\nItem Level: " .. itemLevel)
-            else
-                if upgrade > 0 then
-                    description = description:gsub("+" .. upgrade .. "%.", "%1\nItem Level: " .. itemLevel)
-                else
-                    description = description:gsub(thing:getName(), "%1\nItem Level: " .. itemLevel)
-                end
-            end
-            if thing:isUnidentified() then
-                description = description:gsub(thing:getName(), "unidentified %1")
-                if thing:getArticle():len() > 0 and thing:getArticle() ~= "an" then
-                    description = description:gsub("You see (" .. thing:getArticle() .. "%S?)", "You see an")
-                end
-            else
-                description = description:gsub(thing:getName(), thing:getRarity().name .. " %1")
-                if thing:getArticle():len() > 0 and thing:getRarity().name == "epic" and thing:getArticle() ~= "an" then
-                    description = description:gsub("You see (" .. thing:getArticle() .. "%S?)", "You see an")
-                end
-                if thing:isUnique() then
-                    description = description:gsub("Item Level: " .. itemLevel, thing:getUniqueName() .. "\n%1")
-                end
-                for i = thing:getMaxAttributes(), 1, -1 do
-                    local enchant = thing:getBonusAttribute(i)
-                    if enchant then
-                        local attr = US_ENCHANTMENTS[enchant[1]]
-                        description = description:gsub("Item Level: " .. itemLevel, "%1\n" .. attr.format(enchant[2]))
-                    end
-                end
-            end
-            if US_CONFIG.REQUIRE_LEVEL then
-                if thing:isLimitless() then
-                    if description:find("It can only be wielded properly by") then
-                        description = description:gsub("It can only be wielded properly by (.-)%.", "Removed required Item Level to wear.")
-                    else
-                        description = description:gsub("It weighs", "Removed required Item Level to wear.\nIt weighs")
-                    end
-                else
-                    if description:find("of level (%d+) or higher") then
-                        for match in description:gmatch("of level (%d+) or higher") do
-                            if tonumber(match) < itemLevel then
-                                description = description:gsub("of level (%d+) or higher", "of level " .. itemLevel .. " or higher")
-                            end
-                        end
-                    elseif description:find("It can only be wielded properly by") then
-                        description =
-                            description:gsub(
-                            "It can only be wielded properly by (.+).\n",
-                            "It can only be wielded properly by %1 of level " .. itemLevel .. " or higher.\n"
-                        )
-                    else
-                        if description:find("It weighs") then
-                            description =
-                                description:gsub("It weighs", "It can only be wielded properly by players of level " .. itemLevel .. " or higher.\nIt weighs")
-                        else
-                            description = description .. "\nIt can only be wielded properly by players of level " .. itemLevel .. " or higher."
-                        end
-                    end
-                end
-            end
-            if thing:isMirrored() then
-                if description:find("It weighs") then
-                    description = description:gsub("oz.(.+)", "oz.%1\nMirrored")
-                else
-                    description = description .. "\nMirrored"
-                end
-            end
-        elseif thing:getType():canHaveItemLevel() then
-            local itemLevel = thing:getItemLevel()
-            if description:find("(%)%.?)") then
-                description = description:gsub("(%)%.?)", "%1\nItem Level: " .. itemLevel)
-            end
-        end
-    elseif thing:isPlayer() then
-        local iLvl = 0
-        for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
-            local item = thing:getSlotItem(slot)
-            if item then
-                iLvl = iLvl + item:getItemLevel()
-            end
-        end
-        description = description .. "\nTotal Item LeveL: " .. iLvl
+   if thing:isItem() and thing.itemid == US_CONFIG.ITEM_MIND_CRYSTAL and thing:hasMemory() then
+    for i = 4, 1, -1 do
+      local enchant = thing:getBonusAttribute(i)
+      if enchant then
+        local attr = US_ENCHANTMENTS[enchant[1]]
+        description = description:gsub(thing:getName() .. "%.", "%1\n" .. attr.format(enchant[2]))
+		
+      end
     end
-    return description
+  elseif thing:isItem() then
+    if thing:getType():isUpgradable() then
+      local upgrade = thing:getUpgradeLevel()
+      local itemLevel = thing:getItemLevel()
+	  local itemType = thing:getType() -- Assuming getType() returns an instance of the ItemType class
+	  
+	  
+	  
+	  	if itemType:isHelmet() or itemType:isLegs() then
+			itemLevelforequip = math.floor((math.pow(thing:getItemLevel(), 1.27) * 6)) 
+		elseif itemType:isArmor() then
+			itemLevelforequip = math.floor((math.pow(thing:getItemLevel(), 1.2) * 4)) 
+		elseif itemType:isShield() then        
+         itemLevelforequip = math.floor((math.pow(thing:getItemLevel(), 1.2) * 2.8)) 
+
+		elseif itemType:isWeapon() and not itemType:isTwoHanded() then        
+         itemLevelforequip = math.floor((math.pow(thing:getItemLevel(), 1.2) * 3.5)) 
+
+		elseif itemType:isTwoHanded() then        
+         itemLevelforequip = math.floor((math.pow(thing:getItemLevel(), 1.25) * 2))  
+       
+			
+			
+		elseif itemType:isRing() or itemType:isNecklace() or itemType:isBoots() then  
+		itemLevelforequip = math.floor(math.pow(thing:getItemLevel(), 2.18)) 
+		else
+			itemLevelforequip = math.floor(math.pow(thing:getItemLevel(), 1.2)) 
+		end
+	  
+	  
+	
+      
+		
+	
+		
+	--[=====[ 
+	if itemType:isShield() then        
+         itemLevelforequip = math.floor(math.pow(thing:getItemLevel(), 1.50)) 
+        end
+		if itemType:isWeapon() and not itemType:isTwoHanded() then        
+         itemLevelforequip = math.floor(math.pow(thing:getItemLevel(), 1.52)) 
+        end
+		if itemType:isTwoHanded() then        
+         itemLevelforequip = math.floor(math.pow(thing:getItemLevel(), 1.30)) 
+        end
+	--]=====]
+	
+      if upgrade > 0 then
+        description = description:gsub(thing:getName(), "%1 +" .. upgrade)
+		
+      end
+      if description:find("(%)%.?)") then
+        description = description:gsub("(%)%.?)", "%1\nItem Level: " .. itemLevel)
+      else
+        if upgrade > 0 then
+          description = description:gsub("+" .. upgrade .. "%.", "%1\nItem Level: " .. itemLevel)
+        else
+          description = description:gsub(thing:getName(), "%1\nItem Level: " .. itemLevel)
+        end
+      end
+      if thing:isUnidentified() then
+        description = description:gsub(thing:getName(), "unidentified %1")
+        if thing:getArticle():len() > 0 and thing:getArticle() ~= "an" then
+          description = description:gsub("You see (" .. thing:getArticle() .. "%S?)", "You see an")
+        end
+      else
+        description = description:gsub(thing:getName(), thing:getRarity().name .. " %1")
+        if thing:getArticle():len() > 0 and thing:getRarity().name == "epic" and thing:getArticle() ~= "an" then
+          description = description:gsub("You see (" .. thing:getArticle() .. "%S?)", "You see an")
+        end
+        if thing:isUnique() then
+          description = description:gsub("Item Level: " .. itemLevel, thing:getUniqueName() .. "\n%1")
+        end
+		
+        for i = thing:getMaxAttributes(), 1, -1 do
+          local enchant = thing:getBonusAttribute(i)
+          if enchant then
+            local attr = US_ENCHANTMENTS[enchant[1]]
+            description = description:gsub("Item Level: " .. itemLevel, "%1\n" .. attr.format(enchant[2]))
+          end
+        end
+      end
+      if US_CONFIG.REQUIRE_LEVEL then
+        if thing:isLimitless() then
+          if description:find("It can only be wielded properly by") then
+            description = description:gsub("It can only be wielded properly by (.-)%.", "Removed required Item Level to wear.")
+          else
+            description = description:gsub("It weighs", "Removed required Item Level to wear.\nIt weighs")
+          end
+        else
+          if description:find("of level (%d+) or higher") then
+            for match in description:gmatch("of level (%d+) or higher") do
+              if tonumber(match) < itemLevelforequip then
+                description = description:gsub("of level (%d+) or higher", "of level " .. itemLevelforequip .. " or higher")
+              end
+            end
+          elseif description:find("It can only be wielded properly by") then
+            description =
+              description:gsub("It can only be wielded properly by (.+).\n", "It can only be wielded properly by %1 of level " .. itemLevelforequip .. " or higher.\n")
+          else
+            if description:find("It weighs") then
+              description = description:gsub("It weighs", "It can only be wielded properly by players of level " .. itemLevelforequip .. " or higher.\nIt weighs")
+            else
+              description = description .. "\nIt can only be wielded properly by players of level " .. itemLevelforequip .. " or higher."
+            end
+          end
+        end
+      end
+      if thing:isMirrored() then
+        if description:find("It weighs") then
+          description = description:gsub("oz.(.+)", "oz.%1\nMirrored")
+        else
+          description = description .. "\nMirrored"
+        end
+      end
+    elseif thing:getType():canHaveItemLevel() then
+      local itemLevel = thing:getItemLevel()
+      if description:find("(%)%.?)") then
+        description = description:gsub("(%)%.?)", "%1\nItem Level: " .. itemLevel)
+      end
+    end
+  elseif thing:isPlayer() then
+    local iLvl = 0
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+      local item = thing:getSlotItem(slot)
+      if item then
+        iLvl = iLvl + item:getItemLevel()
+      end
+    end
+    description = description .. "\nTotal Item LeveL: " .. iLvl
+  end
+  return description
 end
 LookEvent:register(10)
 
 function Item.rollAttribute(self, player, itemType, weaponType, unidentify)
-    if not itemType:isUpgradable() or self:isUnique() then
-        return false
-    end
-    local attrIds = {}
-    local item_level = self:getItemLevel()
-    if unidentify then
-        if US_CONFIG.IDENTIFY_UPGRADE_LEVEL then
-            local upgrade_level = 1
-            for i = US_CONFIG.MAX_UPGRADE_LEVEL, 1, -1 do
-                if i >= US_CONFIG.UPGRADE_LEVEL_DESTROY then
-                    if math.random(100) <= US_CONFIG.UPGRADE_DESTROY_CHANCE[i] then
-                        upgrade_level = i
-                        break
-                    end
-                else
-                    if math.random(100) <= US_CONFIG.UPGRADE_SUCCESS_CHANCE[i] then
-                        upgrade_level = i
-                        break
-                    end
-                end
-            end
-            self:setUpgradeLevel(upgrade_level)
-        end
-        local slots = math.random(1, self:getMaxAttributes())
-        local usItemType = self:getItemType()
-        for i = 1, slots do
-            local attrId = math.random(1, #US_ENCHANTMENTS)
-            local attr = US_ENCHANTMENTS[attrId]
-            while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
-                attr.chance and math.random(100) >= attr.chance do
-                attrId = math.random(1, #US_ENCHANTMENTS)
-                attr = US_ENCHANTMENTS[attrId]
-            end
-            table.insert(attrIds, attrId)
-            local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
-            self:setCustomAttribute("Slot" .. i, attrId .. "|" .. value)
-        end
-        return true
-    else
-        local bonuses = self:getBonusAttributes()
-        if bonuses then
-            if #bonuses >= self:getMaxAttributes() then
-                player:sendTextMessage(MESSAGE_STATUS_WARNING, "Max number of bonuses reached!")
-                return false
-            end
-            for v, k in pairs(bonuses) do
-                table.insert(attrIds, k[1])
-            end
-        end
-        local usItemType = self:getItemType()
-        local attrId = math.random(1, #US_ENCHANTMENTS)
-        local attr = US_ENCHANTMENTS[attrId]
-        while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
-            attr.chance and math.random(100) >= attr.chance do
-            attrId = math.random(1, #US_ENCHANTMENTS)
-            attr = US_ENCHANTMENTS[attrId]
-        end
-        local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
-        self:setCustomAttribute("Slot" .. self:getLastSlot() + 1, attrId .. "|" .. value)
-        return true
-    end
+ if not itemType:isUpgradable() or self:isUnique() then
     return false
+  end
+  local attrIds = {}
+  local item_level = self:getItemLevel()
+  if unidentify then
+    if US_CONFIG.IDENTIFY_UPGRADE_LEVEL then
+      local upgrade_level = 1
+      for i = US_CONFIG.MAX_UPGRADE_LEVEL, 1, -1 do
+        if i >= US_CONFIG.UPGRADE_LEVEL_DESTROY then
+          if math.random(100) <= US_CONFIG.UPGRADE_DESTROY_CHANCE[i] then
+            upgrade_level = i
+            break
+          end
+        else
+          if math.random(100) <= US_CONFIG.UPGRADE_SUCCESS_CHANCE[i] then
+            upgrade_level = i
+            break
+          end
+        end
+      end
+      self:setUpgradeLevel(upgrade_level)
+    end
+    local slots = math.random(1, self:getMaxAttributes())
+    local usItemType = self:getItemType()
+    for i = 1, slots do
+      local attrId = math.random(1, #US_ENCHANTMENTS)
+      local attr = US_ENCHANTMENTS[attrId]
+      while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
+        attr.chance and math.random(100) >= attr.chance do
+        attrId = math.random(1, #US_ENCHANTMENTS)
+        attr = US_ENCHANTMENTS[attrId]
+      end
+      table.insert(attrIds, attrId)
+      local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
+      self:setCustomAttribute("Slot" .. i, attrId .. "|" .. value)
+    end
+    return true
+  else
+    local bonuses = self:getBonusAttributes()
+    if bonuses then
+      if #bonuses >= self:getMaxAttributes() then
+        player:sendTextMessage(MESSAGE_STATUS_WARNING, "Max number of bonuses reached!")
+        return false
+      end
+      for v, k in pairs(bonuses) do
+        table.insert(attrIds, k[1])
+      end
+    end
+    local usItemType = self:getItemType()
+    local attrId = math.random(1, #US_ENCHANTMENTS)
+    local attr = US_ENCHANTMENTS[attrId]
+    while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
+      attr.chance and math.random(100) >= attr.chance do
+      attrId = math.random(1, #US_ENCHANTMENTS)
+      attr = US_ENCHANTMENTS[attrId]
+    end
+    local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
+    self:setCustomAttribute("Slot" .. self:getLastSlot() + 1, attrId .. "|" .. value)
+    return true
+  end
+  return false
 end
 
 function Item.addAttribute(self, slot, attr, value)
@@ -971,108 +1166,109 @@ function Item.getLastSlot(self)
 end
 
 function Item.setItemLevel(self, level, first)
-    local oldLevel = self:getItemLevel()
-    local itemType = ItemType(self.itemid)
-    local finalValue = 0
-    local value = 0
-    if oldLevel < level then
-        value = (level - oldLevel)
+   local oldLevel = self:getItemLevel()
+  local itemType = ItemType(self.itemid)
+  local finalValue = 0
+  local value = 0
+  if oldLevel < level then
+    value = (level - oldLevel)
+  else
+    value = (oldLevel - level)
+  end
+  if itemType:getAttack() > 0 then
+    if value >= US_CONFIG.ATTACK_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.ATTACK_PER_ITEM_LEVEL) * US_CONFIG.ATTACK_FROM_ITEM_LEVEL)
     else
-        value = (oldLevel - level)
+      finalValue = 0
     end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ATTACK,
+        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + finalValue) or (itemType:getAttack() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ATTACK,
+        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - finalValue) or (itemType:getAttack() - finalValue)
+      )
+    end
+  end
+  if itemType:getDefense() > 0 then
+    if value >= US_CONFIG.DEFENSE_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.DEFENSE_PER_ITEM_LEVEL) * US_CONFIG.DEFENSE_FROM_ITEM_LEVEL)
+    else
+      finalValue = 0
+    end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_DEFENSE,
+        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + finalValue) or (itemType:getDefense() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_DEFENSE,
+        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - finalValue) or (itemType:getDefense() - finalValue)
+      )
+    end
+  end
+  if itemType:getArmor() > 0 then
+    if value >= US_CONFIG.ARMOR_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.ARMOR_PER_ITEM_LEVEL) * US_CONFIG.ARMOR_FROM_ITEM_LEVEL)
+    else
+      finalValue = 0
+    end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ARMOR,
+        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + finalValue) or (itemType:getArmor() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ARMOR,
+        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - finalValue) or (itemType:getArmor() - finalValue)
+      )
+    end
+  end
+  
+
+  if itemType:getHitChance() > 0 then
+    if value >= US_CONFIG.HITCHANCE_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.HITCHANCE_PER_ITEM_LEVEL) * US_CONFIG.HITCHANCE_FROM_ITEM_LEVEL)
+    else
+      finalValue = 0
+    end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_HITCHANCE,
+        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or
+          (itemType:getHitChance() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_HITCHANCE,
+        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or
+          (itemType:getHitChance() - finalValue)
+      )
+    end
+  end
+  
+  if first then
     if itemType:getAttack() > 0 then
-        if value >= US_CONFIG.ATTACK_PER_ITEM_LEVEL then
-            finalValue = math.floor((value / US_CONFIG.ATTACK_PER_ITEM_LEVEL) * US_CONFIG.ATTACK_FROM_ITEM_LEVEL)
-        else
-            finalValue = 0
-        end
-        if oldLevel < level then
-            self:setAttribute(
-                ITEM_ATTRIBUTE_ATTACK,
-                (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + finalValue) or
-                    (itemType:getAttack() + finalValue)
-            )
-        else
-            self:setAttribute(
-                ITEM_ATTRIBUTE_ATTACK,
-                (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - finalValue) or
-                    (itemType:getAttack() - finalValue)
-            )
-        end
+      level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
     end
     if itemType:getDefense() > 0 then
-        if value >= US_CONFIG.DEFENSE_PER_ITEM_LEVEL then
-            finalValue = math.floor((value / US_CONFIG.DEFENSE_PER_ITEM_LEVEL) * US_CONFIG.DEFENSE_FROM_ITEM_LEVEL)
-        else
-            finalValue = 0
-        end
-        if oldLevel < level then
-            self:setAttribute(
-                ITEM_ATTRIBUTE_DEFENSE,
-                (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + finalValue) or
-                    (itemType:getDefense() + finalValue)
-            )
-        else
-            self:setAttribute(
-                ITEM_ATTRIBUTE_DEFENSE,
-                (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - finalValue) or
-                    (itemType:getDefense() - finalValue)
-            )
-        end
+      level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
     end
     if itemType:getArmor() > 0 then
-        if value >= US_CONFIG.ARMOR_PER_ITEM_LEVEL then
-            finalValue = math.floor((value / US_CONFIG.ARMOR_PER_ITEM_LEVEL) * US_CONFIG.ARMOR_FROM_ITEM_LEVEL)
-        else
-            finalValue = 0
-        end
-        if oldLevel < level then
-            self:setAttribute(
-                ITEM_ATTRIBUTE_ARMOR,
-                (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + finalValue) or (itemType:getArmor() + finalValue)
-            )
-        else
-            self:setAttribute(
-                ITEM_ATTRIBUTE_ARMOR,
-                (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - finalValue) or (itemType:getArmor() - finalValue)
-            )
-        end
+      level = level + math.floor((itemType:getArmor() * 4.0) / US_CONFIG.ITEM_LEVEL_PER_ARMOR )
     end
+	
+	
     if itemType:getHitChance() > 0 then
-        if value >= US_CONFIG.HITCHANCE_PER_ITEM_LEVEL then
-            finalValue = math.floor((value / US_CONFIG.HITCHANCE_PER_ITEM_LEVEL) * US_CONFIG.HITCHANCE_FROM_ITEM_LEVEL)
-        else
-            finalValue = 0
-        end
-        if oldLevel < level then
-            self:setAttribute(
-                ITEM_ATTRIBUTE_HITCHANCE,
-                (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or
-                    (itemType:getHitChance() + finalValue)
-            )
-        else
-            self:setAttribute(
-                ITEM_ATTRIBUTE_HITCHANCE,
-                (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or
-                    (itemType:getHitChance() - finalValue)
-            )
-        end
+      level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
     end
-    if first then
-        if itemType:getAttack() > 0 then
-            level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
-        end
-        if itemType:getDefense() > 0 then
-            level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
-        end
-        if itemType:getArmor() > 0 then
-            level = level + math.floor(itemType:getArmor() / US_CONFIG.ITEM_LEVEL_PER_ARMOR)
-        end
-        if itemType:getHitChance() > 0 then
-            level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
-        end
-    end
-    return self:setCustomAttribute("item_level", level)
+  end
+  return self:setCustomAttribute("item_level", level)
 end
 
 function Item.getItemLevel(self)
@@ -1081,49 +1277,49 @@ end
 
 function Item.setUpgradeLevel(self, level)
     local itemType = ItemType(self.itemid)
-    local oldLevel = self:getUpgradeLevel()
-    if itemType:getAttack() > 0 then
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_ATTACK, self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + (level - oldLevel) * US_CONFIG.ATTACK_PER_UPGRADE)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_ATTACK, self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - (oldLevel - level) * US_CONFIG.ATTACK_PER_UPGRADE)
-        end
-    end
-    if itemType:getDefense() > 0 then
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_DEFENSE, self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + (level - oldLevel) * US_CONFIG.DEFENSE_PER_UPGRADE)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_DEFENSE, self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - (oldLevel - level) * US_CONFIG.DEFENSE_PER_UPGRADE)
-        end
-    end
-    if itemType:getExtraDefense() > 0 then
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, itemType:getExtraDefense() + (level - oldLevel) * US_CONFIG.EXTRADEFENSE_PER_UPGRADE)
-        else
-            self:setAttribute(
-                ITEM_ATTRIBUTE_EXTRADEFENSE,
-                self:getAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE) - (oldLevel - level) * US_CONFIG.EXTRADEFENSE_PER_UPGRADE
-            )
-        end
-    end
-    if itemType:getArmor() > 0 then
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_ARMOR, self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + (level - oldLevel) * US_CONFIG.ARMOR_PER_UPGRADE)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_ARMOR, self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - (oldLevel - level) * US_CONFIG.ARMOR_PER_UPGRADE)
-        end
-    end
-    if itemType:getHitChance() > 0 then
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + (level - oldLevel) * US_CONFIG.HITCHANCE_PER_UPGRADE)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - (oldLevel - level) * US_CONFIG.HITCHANCE_PER_UPGRADE)
-        end
-    end
-    self:setCustomAttribute("upgrade", level)
+  local oldLevel = self:getUpgradeLevel()
+  if itemType:getAttack() > 0 then
     if oldLevel < level then
-        self:setItemLevel(self:getItemLevel() + (US_CONFIG.ITEM_LEVEL_PER_UPGRADE * (level - oldLevel)))
+      self:setAttribute(ITEM_ATTRIBUTE_ATTACK, self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + (level - oldLevel) * US_CONFIG.ATTACK_PER_UPGRADE)
+    else
+      self:setAttribute(ITEM_ATTRIBUTE_ATTACK, self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - (oldLevel - level) * US_CONFIG.ATTACK_PER_UPGRADE)
     end
+  end
+  if itemType:getDefense() > 0 then
+    if oldLevel < level then
+      self:setAttribute(ITEM_ATTRIBUTE_DEFENSE, self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + (level - oldLevel) * US_CONFIG.DEFENSE_PER_UPGRADE)
+    else
+      self:setAttribute(ITEM_ATTRIBUTE_DEFENSE, self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - (oldLevel - level) * US_CONFIG.DEFENSE_PER_UPGRADE)
+    end
+  end
+  if itemType:getExtraDefense() > 0 then
+    if oldLevel < level then
+      self:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, itemType:getExtraDefense() + (level - oldLevel) * US_CONFIG.EXTRADEFENSE_PER_UPGRADE)
+    else
+      self:setAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE, self:getAttribute(ITEM_ATTRIBUTE_EXTRADEFENSE) - (oldLevel - level) * US_CONFIG.EXTRADEFENSE_PER_UPGRADE)
+    end
+  end
+  if itemType:getArmor() > 0 then
+    if oldLevel < level then
+      self:setAttribute(ITEM_ATTRIBUTE_ARMOR, self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + (level - oldLevel) * US_CONFIG.ARMOR_PER_UPGRADE)
+    else
+      self:setAttribute(ITEM_ATTRIBUTE_ARMOR, self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - (oldLevel - level) * US_CONFIG.ARMOR_PER_UPGRADE)
+    end
+  end
+  
+
+  if itemType:getHitChance() > 0 then
+    if oldLevel < level then
+      self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + (level - oldLevel) * US_CONFIG.HITCHANCE_PER_UPGRADE)
+    else
+      self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - (oldLevel - level) * US_CONFIG.HITCHANCE_PER_UPGRADE)
+    end
+  end
+  
+  self:setCustomAttribute("upgrade", level)
+  if oldLevel < level then
+    self:setItemLevel(self:getItemLevel() + (US_CONFIG.ITEM_LEVEL_PER_UPGRADE * (level - oldLevel)))
+  end
 end
 
 function Item.getUpgradeLevel(self)
@@ -1145,28 +1341,53 @@ end
 
 function Item.identify(self, player, itemType, weaponType)
     self:removeCustomAttribute("unidentified")
-    local usItemType = self:getItemType()
-    local canUnique = false
-    for i = 1, #US_UNIQUES do
-        if US_UNIQUES[i].minLevel <= self:getItemLevel() and bit.band(usItemType, US_UNIQUES[i].itemType) ~= 0 then
-            canUnique = true
-            break
-        end
+  local usItemType = self:getItemType()
+  local canUnique = false
+  for i = 1, #US_UNIQUES do
+    if US_UNIQUES[i].minLevel <= self:getItemLevel() and bit.band(usItemType, US_UNIQUES[i].itemType) ~= 0 then
+      canUnique = true
+      break
     end
-    self:rollRarity()
-    if canUnique and math.random(US_CONFIG.UNIQUE_CHANCE) == 1 then
-        local unique = math.random(#US_UNIQUES)
-        while US_UNIQUES[unique].minLevel > self:getItemLevel() or bit.band(usItemType, US_UNIQUES[unique].itemType) == 0 or
-            US_UNIQUES[unique].chance and math.random(100) >= US_UNIQUES[unique].chance do
-            unique = math.random(#US_UNIQUES)
-        end
-        self:setUnique(unique)
-        player:sendTextMessage(MESSAGE_INFO_DESCR, "Unique item " .. self:getUniqueName() .. " discovered!")
-    else
-        self:rollAttribute(player, itemType, weaponType, true)
-        player:sendTextMessage(MESSAGE_INFO_DESCR, "Item successfully identified!")
+  end
+  self:rollRarity()
+  if canUnique and math.random(US_CONFIG.UNIQUE_CHANCE) == 1 then
+    local unique = math.random(#US_UNIQUES)
+    while US_UNIQUES[unique].minLevel > self:getItemLevel() or bit.band(usItemType, US_UNIQUES[unique].itemType) == 0 or
+      US_UNIQUES[unique].chance and math.random(100) >= US_UNIQUES[unique].chance do
+      unique = math.random(#US_UNIQUES)
     end
-    return true
+    self:setUnique(unique)
+    player:sendTextMessage(MESSAGE_INFO_DESCR, "Corrupted item " .. self:getUniqueName() .. " discovered!")
+  else
+    self:rollAttribute(player, itemType, weaponType, true)
+    player:sendTextMessage(MESSAGE_INFO_DESCR, "Item successfully identified!")
+  end
+  return true
+end
+
+function Item.RollUnique(self, player, itemType, weaponType)
+  local usItemType = self:getItemType()
+  local canUnique = false
+  for i = 1, #US_UNIQUES do
+    if US_UNIQUES[i].minLevel <= self:getItemLevel() and bit.band(usItemType, US_UNIQUES[i].itemType) ~= 0 then
+      canUnique = true
+      break
+    end
+  end
+  self:rollRarity()
+  if canUnique then
+    local unique = math.random(#US_UNIQUES)
+    while US_UNIQUES[unique].minLevel > self:getItemLevel() or bit.band(usItemType, US_UNIQUES[unique].itemType) == 0 or
+      US_UNIQUES[unique].chance and math.random(100) >= US_UNIQUES[unique].chance do
+      unique = math.random(#US_UNIQUES)
+    end
+    self:setUnique(unique)
+    player:sendTextMessage(MESSAGE_INFO_DESCR, "Corrupted item " .. self:getUniqueName() .. " discovered!")
+  else
+    self:rollAttribute(player, itemType, weaponType, true)
+    player:sendTextMessage(MESSAGE_INFO_DESCR, "Item successfully identified!")
+  end
+  return true
 end
 
 function Item.setUnique(self, uniqueId)
@@ -1182,6 +1403,103 @@ function Item.setUnique(self, uniqueId)
     end
 end
 
+
+function Item.getEnchanted(self)
+  return self:getCustomAttribute("Enchanted") and self:getCustomAttribute("Enchanted") or nil
+end
+
+function Item.setEnchant(self, player, itemType, weaponType, enchantId)
+  if self:isUnique() then
+    return false
+  end
+  
+  
+  local attrIds = {}
+  local item_level = self:getItemLevel()
+  local bonuses = self:getBonusAttributes()
+    if bonuses then
+      if #bonuses >= self:getMaxAttributes() then
+        player:sendTextMessage(MESSAGE_STATUS_WARNING, "Max number of bonuses reached!")
+        return false
+      end
+      for v, k in pairs(bonuses) do
+        table.insert(attrIds, k[1])
+      end
+    end
+    local usItemType = self:getItemType()
+    local attrId = enchantId
+    local attr = US_ENCHANTMENTS[attrId]
+	
+	if attr.minLevel and  self:getItemLevel() < attr.minLevel    then
+     player:sendTextMessage(MESSAGE_STATUS_WARNING, "Item Level should be " .. attr.minLevel .. " or higher for this Power Rune!")
+        return false
+    end
+	if bit.band(usItemType, attr.itemType) == 0 then
+	 player:sendTextMessage(MESSAGE_STATUS_WARNING, "This item does not allow this type of Power Rune!")
+        return false
+    end
+	if self:getEnchanted() then
+	player:sendTextMessage(MESSAGE_STATUS_WARNING, "This item is already has a Power Rune!")
+        return false
+	end
+	
+    local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
+    self:setCustomAttribute("Slot" .. self:getLastSlot() + 1, attrId .. "|" .. value)
+	self:setCustomAttribute("Enchanted", self:getLastSlot())
+	
+    return true
+  end
+  
+  
+  
+  
+  function Item.setNormalEnchant(self, player, itemType, weaponType, enchantId)
+  if self:isUnique() then
+    return false
+  end
+  
+  
+  local attrIds = {}
+  local item_level = self:getItemLevel()
+  local bonuses = self:getBonusAttributes()
+    if bonuses then
+      if #bonuses >= self:getMaxAttributes() then
+        player:sendTextMessage(MESSAGE_STATUS_WARNING, "Max number of bonuses reached!")
+        return false
+      end
+      for v, k in pairs(bonuses) do
+        table.insert(attrIds, k[1])
+      end
+    end
+    local usItemType = self:getItemType()
+    local attrId = enchantId
+    local attr = US_ENCHANTMENTS[attrId]
+	
+	if attr.minLevel and  self:getItemLevel() < attr.minLevel    then
+     player:sendTextMessage(MESSAGE_STATUS_WARNING, "Item Level should be " .. attr.minLevel .. " or higher for this atributte!")
+        return false
+    end
+	if bit.band(usItemType, attr.itemType) == 0 then
+	 player:sendTextMessage(MESSAGE_STATUS_WARNING, "This item does not allow this type of Power Rune!")
+        return false
+    end
+	
+    local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
+    self:setCustomAttribute("Slot" .. self:getLastSlot() + 1, attrId .. "|" .. value)
+	
+    return true
+  end
+  
+  
+--enchanted*****
+function Item.isEnchanted(self)
+  return self:getCustomAttribute("Enchanted") and true or false
+end
+
+function Item.getEnchantedName(self)
+  return US_ENCHANTMENTS[self:getEnchanted()].name
+end
+-- end enchanted****
 function Item.getUnique(self)
     return self:getCustomAttribute("unique") and self:getCustomAttribute("unique") or nil
 end
@@ -1282,6 +1600,11 @@ function Item.getRarityId(self)
     return self:getCustomAttribute("rarity") and self:getCustomAttribute("rarity") or COMMON
 end
 
+function Item.isCommon(self)
+  return US_CONFIG.RARITY[COMMON] --or COMMON
+end
+
+
 function Item.getMaxAttributes(self)
     if self:isUnique() then
         return #US_UNIQUES[self:getUnique()].attributes
@@ -1292,60 +1615,56 @@ end
 
 function ItemType.isUpgradable(self)
     if self:isStackable() or self:getTransformEquipId() > 0 or self:getDecayId() > 0 or self:getDestroyId() > 0 or self:getCharges() > 0 then
-        return false
-    end
-    local slot = self:getSlotPosition() - SLOTP_LEFT - SLOTP_RIGHT
-
-    local weaponType = self:getWeaponType()
-    if weaponType > 0 then
-        if weaponType == WEAPON_AMMO then
-            return false
-        end
-        if
-            weaponType == WEAPON_SHIELD or weaponType == WEAPON_DISTANCE or weaponType == WEAPON_WAND or
-                isInArray({WEAPON_SWORD, WEAPON_CLUB, WEAPON_AXE}, weaponType)
-         then
-            return true
-        end
-    else
-        if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING then
-            return true
-        end
-    end
     return false
+  end
+  local slot = self:getSlotPosition() - SLOTP_LEFT - SLOTP_RIGHT
+
+  local weaponType = self:getWeaponType()
+  if weaponType > 0 then
+    if
+      weaponType == WEAPON_SHIELD or weaponType == WEAPON_DISTANCE or weaponType == WEAPON_WAND or
+        isInArray({WEAPON_SWORD, WEAPON_CLUB, WEAPON_AXE}, weaponType)
+     then
+      return true
+    end
+  else
+    if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING or slot == SLOTP_AMMO then
+      return true
+    end
+  end
+  return false
 end
 
 function ItemType.canHaveItemLevel(self)
-    if self:getTransformEquipId() > 0 or self:getDecayId() > 0 or self:getDestroyId() > 0 or self:getCharges() > 0 then
-        return false
-    end
-    local slot = self:getSlotPosition() - SLOTP_LEFT - SLOTP_RIGHT
-
-    local weaponType = self:getWeaponType()
-    if weaponType > 0 then
-        if weaponType == WEAPON_AMMO then
-            return false
-        end
-        if
-            weaponType == WEAPON_SHIELD or weaponType == WEAPON_DISTANCE or weaponType == WEAPON_WAND or
-                isInArray({WEAPON_SWORD, WEAPON_CLUB, WEAPON_AXE}, weaponType)
-         then
-            return true
-        end
-    else
-        if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING then
-            return true
-        end
-    end
+ if self:getTransformEquipId() > 0 or self:getDecayId() > 0 or self:getDestroyId() > 0 or self:getCharges() > 0 then
     return false
+  end
+  local slot = self:getSlotPosition() - SLOTP_LEFT - SLOTP_RIGHT
+
+  local weaponType = self:getWeaponType()
+  if weaponType > 0 then
+    if
+      weaponType == WEAPON_SHIELD or weaponType == WEAPON_DISTANCE or weaponType == WEAPON_WAND or
+        isInArray({WEAPON_SWORD, WEAPON_CLUB, WEAPON_AXE}, weaponType)
+     then
+      return true
+    end
+  else
+    if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING or slot == SLOTP_AMMO then
+      return true
+    end
+  end
+  return false
 end
 
 function MonsterType.calculateItemLevel(self)
-    local level = 1
-    local monsterValue = self:getMaxHealth() + self:getExperience()
-    level = math.ceil(math.pow(monsterValue, 0.478))
-    return math.max(1, level)
+  local level = 1
+  local monsterValue = self:getMaxHealth() + self:getExperience()
+  --level = math.ceil(math.pow(monsterValue, 0.478))
+ -- return math.max(1, level)
+   return 1
 end
+
 
 function Player.getNextSubId(self, itemSlot, attrSlot)
     local cid = self:getId()
