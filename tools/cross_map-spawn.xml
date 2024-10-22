@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<spawns>
+	<spawn centerx="480" centery="1025" centerz="0" radius="1">
+		<npc name="Alice" x="-1" y="0" z="0" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="495" centery="1027" centerz="1" radius="1">
+		<npc name="dicer" x="0" y="-1" z="1" spawntime="60" />
+	</spawn>
+	<spawn centerx="488" centery="1028" centerz="1" radius="1">
+		<npc name="Goblin Perk" x="-1" y="-1" z="1" spawntime="60" />
+	</spawn>
+	<spawn centerx="491" centery="1033" centerz="1" radius="1">
+		<npc name="Benjamin" x="0" y="0" z="1" spawntime="60" />
+	</spawn>
+	<spawn centerx="488" centery="1021" centerz="2" radius="1">
+		<npc name="King Berthel" x="0" y="0" z="2" spawntime="60" />
+	</spawn>
+	<spawn centerx="489" centery="1024" centerz="2" radius="1">
+		<npc name="Outfits" x="1" y="0" z="2" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="486" centery="1025" centerz="2" radius="1">
+		<npc name="Oberyn" x="0" y="-1" z="2" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="487" centery="1036" centerz="2" radius="1">
+		<npc name="Arena Master" x="1" y="0" z="2" spawntime="60" />
+	</spawn>
+	<spawn centerx="478" centery="1013" centerz="3" radius="1">
+		<npc name="Murim" x="0" y="1" z="3" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="509" centery="1022" centerz="3" radius="1">
+		<npc name="Lucy" x="-1" y="0" z="3" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="483" centery="1025" centerz="3" radius="1">
+		<npc name="alchemist hanna" x="1" y="0" z="3" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="477" centery="1026" centerz="3" radius="1">
+		<npc name="xodet" x="1" y="0" z="3" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="496" centery="1026" centerz="3" radius="1">
+		<npc name="frodo" x="1" y="0" z="3" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="496" centery="1030" centerz="3" radius="1">
+		<npc name="cooking supplies" x="0" y="-1" z="3" spawntime="60" direction="3" />
+	</spawn>
+	<spawn centerx="489" centery="1032" centerz="3" radius="1">
+		<npc name="blacksmith Sam" x="-1" y="0" z="3" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="401" centery="1013" centerz="4" radius="1">
+		<npc name="Captain Ataldair" x="1" y="0" z="4" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="400" centery="1026" centerz="4" radius="1">
+		<npc name="pet_squid" x="0" y="-1" z="4" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="487" centery="1049" centerz="4" radius="1">
+		<npc name="outfit_defender" x="1" y="0" z="4" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="458" centery="905" centerz="5" radius="1">
+		<monster name="Training Dummy" x="1" y="-1" z="5" spawntime="60" />
+		<monster name="Training Dummy" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="460" centery="905" centerz="5" radius="1">
+		<monster name="Training Dummy" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="459" centery="907" centerz="5" radius="1">
+		<monster name="Training Dummy" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="446" centery="919" centerz="5" radius="1">
+		<npc name="Goblin Champi" x="0" y="-1" z="5" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="446" centery="927" centerz="5" radius="1">
+		<npc name="Dream swantears" x="0" y="-1" z="5" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="408" centery="1036" centerz="5" radius="1">
+		<npc name="fish_buyer" x="1" y="0" z="5" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="671" centery="918" centerz="7" radius="1">
+		<monster name="Squirrel" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="647" centery="923" centerz="7" radius="1">
+		<monster name="Bug" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="675" centery="924" centerz="7" radius="1">
+		<monster name="Cow" x="1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="675" centery="927" centerz="7" radius="1">
+		<npc name="Farmer jhonson" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="678" centery="927" centerz="7" radius="1">
+		<monster name="Donkey" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="655" centery="929" centerz="7" radius="1">
+		<npc name="Farmer Gloria" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="673" centery="930" centerz="7" radius="1">
+		<monster name="Cow" x="-1" y="0" z="7" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="677" centery="930" centerz="7" radius="1">
+		<monster name="Cow" x="1" y="0" z="7" spawntime="60" direction="3" />
+	</spawn>
+</spawns>
