@@ -49,8 +49,9 @@ function onSay(player, message)
     -- Register the event for the modal window
     player:registerEvent("spellremove")
     
-    -- Store the spell choices for later use
-    player:setStorageValue("spellChoices", spellChoices)
+    -- Serialize the spell choices as a comma-separated string
+    player:setStorageValue("spellChoices", table.concat(spellChoices, ","))
+
 
     -- Display the modal window with spell choices directly here
     local modal = ModalWindow(100, "Remove Spell", "Choose a spell to remove:")
