@@ -12,5 +12,7 @@
 	<event type="parsepacket" recvbyte="57" name="ProfessionPackets" script="parseProfessionPacket.lua" /> 
 	<event type="parsepacket" recvbyte="58" name="CraftingPackets" script="parseCraftingPacket.lua" /> 
 	
+	<event type="ModalWindow" name="spellremove" script="spellremove_modal.lua" />
+	
 	
 </creaturescripts>

@@ -46,6 +46,11 @@
 	<talkaction words="!kills" script="kills.lua" />
 	<talkaction words="!online;/online" script="online.lua" />
 	<talkaction words="!serverinfo" script="serverinfo.lua" />
+	
+	<!-- player custom -->
+	<talkaction words="!removespell" script="removespell.lua"/>
+	
+	<talkaction words="!forgetspell" separator=" " script="forget_test.lua" />
 
 	<!-- test talkactions -->
 	<talkaction words="!z" separator=" " script="magiceffect.lua" />
