@@ -32,12 +32,12 @@ end
 function onSay(player, message)
     local learnedSpells = {}
     local spellChoices = {}
-    
+
     -- Gather learned spells
     for _, spell in pairs(SpellBooks) do
         if player:getStorageValue(spell.storageId) >= 0 then
-            table.insert(learnedSpells, spell.spellName)
-            table.insert(spellChoices, spell.storageId)  -- Store the storage ID for removal
+            table.insert(learnedSpells, spell.spellName)  -- Store the spell name
+            table.insert(spellChoices, spell.storageId)    -- Store the storage ID for removal
         end
     end
 
@@ -46,28 +46,20 @@ function onSay(player, message)
         return true
     end
 
-    -- Display the modal window with spell choices
-    player:onModalWindow(learnedSpells, spellChoices)
+    -- Register the event for the modal window
+    player:registerEvent("spellremove")
+    
+    -- Store the spell choices for later use
+    player:setStorageValue("spellChoices", spellChoices)
+
+    -- Display the modal window with spell choices directly here
+    local modal = ModalWindow(100, "Remove Spell", "Choose a spell to remove:")
+    for i, spellName in ipairs(learnedSpells) do
+        modal:addChoice(i, spellName)  -- Use actual spell names as choices
+    end
+    modal:addButton(1, "Remove")  -- Button ID for "Remove"
+    modal:addButton(2, "Close")    -- Button ID for "Close"
+    modal:sendToPlayer(player)
 
     return true
-end
-
--- Modal window function
-function Player:onModalWindow(spellList, spellChoices)
-    local modal = ModalWindow(100, "Remove Spell", "Choose a spell to remove:")
-    for i, spellName in ipairs(spellList) do
-        modal:addChoice(spellName, i)
-    end
-    modal:addButton("Remove", function(selectedIndex)
-        if selectedIndex > 0 and selectedIndex <= #spellChoices then
-            local storageIdToRemove = spellChoices[selectedIndex]
-            self:forgetSpell(SpellBooks[storageIdToRemove].spellName)  -- Use the native forgetSpell method
-            self:setStorageValue(storageIdToRemove, -1)  -- Reset the storage to -1
-            self:sendTextMessage(MESSAGE_INFO_DESCR, "You have removed the spell: " .. spellList[selectedIndex] .. "!")
-        end
-    end)
-    modal:addButton("Close", function()
-        modal:close()
-    end)
-    modal:sendToPlayer(self)
 end
