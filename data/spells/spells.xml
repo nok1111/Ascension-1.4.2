@@ -31,8 +31,10 @@
 	</instant>
 	
 	<instant group="support" spellid="909" name="push" words="push" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/push_out.lua">
-	<vocation name="Dragon Knight" />
+	<vocation name="None" />
 	</instant>	
+	
+	
 	
 		<instant group="support" spellid="910" name="rune" words="rune" lvl="1" mana="20" soul="0" cooldown="35000" groupcooldown="1000" needlearn="0" script="test/uh_create.lua">
 	<vocation name="Druid" />
@@ -42,7 +44,9 @@
 	<instant group="attack" spellid="911" name="flat" words="flat" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="test/flat_percent.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-
+<instant group="support" spellid="912" name="pull" words="pull" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/pull_in.lua">
+	<vocation name="None" />
+	</instant>		
 	
 	
 	
