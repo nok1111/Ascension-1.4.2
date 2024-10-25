@@ -1064,6 +1064,17 @@ class Item : virtual public Thing
 		bool isRemoved() const override {
 			return !parent || parent->isRemoved();
 		}
+
+		//TOOLTIPS
+		void setRealUID(uint32_t uid) {
+			realUId = uid;
+		}
+
+		uint32_t getRealUID() const {
+			return realUId;
+		}
+		//TOOLTIPS END
+
 		void setShader(const std::string& shaderName)
 		{
 			if (shaderName.empty()) {
@@ -1096,6 +1107,10 @@ class Item : virtual public Thing
 		std::unique_ptr<ItemAttributes> attributes;
 
 		uint32_t referenceCounter = 0;
+
+		//TOOLTIPS
+		uint32_t realUId = 0;
+		//TOOLTIPS END
 
 		uint8_t count = 1; // number of stacked items
 
