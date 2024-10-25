@@ -13,6 +13,8 @@
 	<event type="parsepacket" recvbyte="58" name="CraftingPackets" script="parseCraftingPacket.lua" /> 
 	
 	<event type="ModalWindow" name="spellremove" script="spellremove_modal.lua" />
+	<!-- waypoints -->
+	<event type="ModalWindow" name="revWaypoints" script="modal_windows.lua"/>
 	
 	
 </creaturescripts>
