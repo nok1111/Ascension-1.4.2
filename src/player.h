@@ -1271,6 +1271,9 @@ class Player final : public Creature, public Cylinder
 		bool hasLearnedInstantSpell(const std::string& spellName) const;
 
 		void updateRegeneration();
+		//TOOLTIPS
+		Item* getItemByUID(uint32_t uid) const;
+		//TOOLTIPS end
 		std::string getMapShader() const { return mapShader; }
 		void setMapShader(const std::string& shaderName) { mapShader = shaderName; }
 		bool isMehah() const { return client ? client->isMehah : false; }
