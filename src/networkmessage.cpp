@@ -98,7 +98,7 @@ void NetworkMessage::addItem(uint16_t id, uint8_t count, bool withDescription)
 	}
 	if (withDescription) {
 		addString(""); // g_game.enableFeature(GameItemShader)
-		addString(""); // g_game.enableFeature(GameItemTooltipV8);
+		//addString(""); // g_game.enableFeature(GameItemTooltipV8);
 
 	}
 }
@@ -121,7 +121,7 @@ void NetworkMessage::addItem(const Item* item, bool withDescription)
 	}
 	if (withDescription) {
 		addString(item->getShader()); // g_game.enableFeature(GameItemShader)
-		addString(item->getDescription(0)); // g_game.enableFeature(GameItemTooltipV8);
+		//addString(item->getDescription(0)); // g_game.enableFeature(GameItemTooltipV8);
 
 	}
 }
