@@ -18,4 +18,4 @@ dofile('data/lib/additional/professionSystem.lua')
 dofile('data/lib/additional/craftingSystem.lua')
 dofile('data/lib/additional/fameSystem.lua')
 dofile('data/lib/additional/spell_info.lua')
-
+dofile('data/lib/additional/waypoints_lib.lua')
