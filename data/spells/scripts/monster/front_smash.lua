@@ -13,22 +13,22 @@ setCombatParam(combatwarningsouth, COMBAT_PARAM_EFFECT, CONST_ME_TUTORIALSQUARE)
 local combatnorth = createCombatObject()
 setCombatParam(combatnorth, COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 setCombatParam(combatnorth, COMBAT_PARAM_EFFECT, 321)
-setCombatParam(combatnorth, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 local combatright = createCombatObject()
 setCombatParam(combatright, COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 setCombatParam(combatright, COMBAT_PARAM_EFFECT, 321)
-setCombatParam(combatright, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 local combatleft = createCombatObject()
 setCombatParam(combatleft, COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 setCombatParam(combatleft, COMBAT_PARAM_EFFECT, 321)
-setCombatParam(combatleft, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 local combatsouth = createCombatObject()
 setCombatParam(combatsouth, COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 setCombatParam(combatsouth, COMBAT_PARAM_EFFECT, 321)
-setCombatParam(combatsouth, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 	arr1 = {
 		{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},

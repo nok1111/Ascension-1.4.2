@@ -13,22 +13,22 @@ setCombatParam(combatwarningsouth, COMBAT_PARAM_EFFECT, CONST_ME_TUTORIALSQUARE)
 local combatnorth = createCombatObject()
 setCombatParam(combatnorth, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 setCombatParam(combatnorth, COMBAT_PARAM_EFFECT, 303)
-setCombatParam(combatnorth, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 local combatright = createCombatObject()
 setCombatParam(combatright, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 setCombatParam(combatright, COMBAT_PARAM_EFFECT, 303)
-setCombatParam(combatright, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 local combatleft = createCombatObject()
 setCombatParam(combatleft, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 setCombatParam(combatleft, COMBAT_PARAM_EFFECT, 303)
-setCombatParam(combatleft, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 local combatsouth = createCombatObject()
 setCombatParam(combatsouth, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 setCombatParam(combatsouth, COMBAT_PARAM_EFFECT, 303)
-setCombatParam(combatsouth, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 	local putridarr1 = {
 		{0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0},
