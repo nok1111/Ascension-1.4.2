@@ -734,6 +734,18 @@
 	<spawn centerx="1101" centery="1070" centerz="6" radius="1">
 		<monster name="jungle Stalker" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="284" centery="746" centerz="7" radius="1">
+		<monster name="Training Dummy" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="283" centery="748" centerz="7" radius="1">
+		<monster name="Training Dummy" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="285" centery="748" centerz="7" radius="1">
+		<monster name="Training Dummy" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="274" centery="757" centerz="7" radius="1">
+		<monster name="Training Dummy" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1035" centery="910" centerz="7" radius="1">
 		<monster name="jungle Stalker" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
