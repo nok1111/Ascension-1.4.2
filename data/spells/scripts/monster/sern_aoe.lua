@@ -6,7 +6,7 @@ setCombatParam(combatshoot, COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_VISBALLONE)
 local combataoe = createCombatObject()
 setCombatParam(combataoe, COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 setCombatParam(combataoe, COMBAT_PARAM_EFFECT, CONST_ME_BLUEBLOW)
-setCombatParam(combataoe, COMBAT_FORMULA_DAMAGE, -1000, 0, -1500, 0)
+
 
 ---------------------------------------------------------
 local combatwarning = createCombatObject()
