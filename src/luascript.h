@@ -601,6 +601,8 @@ class LuaScriptInterface
 		static int luaGameGetAccountStorageValue(lua_State* L);
 		static int luaGameSetAccountStorageValue(lua_State* L);
 		static int luaGameSaveAccountStorageValues(lua_State* L);
+		static int luaGameZoneRemoveByZoneId(lua_State* L);
+		static int luaGameZoneAddNewZone(lua_State* L);
 
 		static int luaGameGetWings(lua_State* L);
 		static int luaGameGetEffects(lua_State* L);
@@ -704,6 +706,8 @@ class LuaScriptInterface
 		static int luaTileAddItemEx(lua_State* L);
 
 		static int luaTileGetHouse(lua_State* L);
+		static int luaTileGetZoneId(lua_State* L);
+
 
 		// NetworkMessage
 		static int luaNetworkMessageCreate(lua_State* L);
@@ -1599,6 +1603,7 @@ class LuaScriptInterface
 		static int luaMoveEventTileItem(lua_State* L);
 		static int luaMoveEventItemId(lua_State* L);
 		static int luaMoveEventActionId(lua_State* L);
+		static int luaMoveEventZoneId(lua_State* L);
 		static int luaMoveEventUniqueId(lua_State* L);
 		static int luaMoveEventPosition(lua_State* L);
 
@@ -1649,6 +1654,21 @@ class LuaScriptInterface
 
 		// exclusively for wands & distance weapons
 		static int luaWeaponShootType(lua_State* L);
+
+	//Zone Multi functions:
+		static int luaGameZoneGetCreatureCount(lua_State* L);
+		//Zone Counts:
+		static int luaGameZoneGetPlayerCount(lua_State* L);
+		static int luaGameZoneGetNpcCount(lua_State* L);
+		static int luaGameZoneGetMonsterCount(lua_State* L);
+		static int luaGameZoneGetTileCount(lua_State* L);
+		//zone Vectors:
+		static int luaGameZoneGetPlayersVector(lua_State* L);
+		static int luaGameZoneGetNpcsVector(lua_State* L);
+		static int luaGameZoneGetMonstersVector(lua_State* L);
+		static int luaGameZoneGetPositionsVector(lua_State* L);
+		static int luaGameZoneGetTilesVector(lua_State* L);
+		static int luaGameZoneGetCreaturesVector(lua_State* L);
 
 		//
 		std::string lastLuaError;
