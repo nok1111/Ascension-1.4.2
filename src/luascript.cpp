@@ -1470,6 +1470,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONST_SLOT_FEET)
 	registerEnum(CONST_SLOT_RING)
 	registerEnum(CONST_SLOT_AMMO)
+	registerEnum(CONST_SLOT_STORE_INBOX)
 
 	registerEnum(CREATURE_EVENT_NONE)
 	registerEnum(CREATURE_EVENT_LOGIN)
@@ -2545,6 +2546,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "openChannel", LuaScriptInterface::luaPlayerOpenChannel);
 
 	registerMethod("Player", "getSlotItem", LuaScriptInterface::luaPlayerGetSlotItem);
+	registerMethod("Player", "getSlotPurse", LuaScriptInterface::luaPlayerGetSlotPurse);
 
 	registerMethod("Player", "getParty", LuaScriptInterface::luaPlayerGetParty);
 
@@ -9940,6 +9942,35 @@ int LuaScriptInterface::luaPlayerGetSlotItem(lua_State* L)
 		pushUserdata<Item>(L, item);
 		setItemMetatable(L, -1, item);
 	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+
+int LuaScriptInterface::luaPlayerGetSlotPurse(lua_State* L)
+{
+	// player:getInboxItem()
+	const Player* player = getUserdata<const Player>(L, 1);
+	if (!player) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	// Hardcoded to check only CONST_SLOT_STORE_INBOX (slot 11)
+	uint32_t inboxSlot = CONST_SLOT_STORE_INBOX;  // Ensure CONST_SLOT_STORE_INBOX is defined as 11
+	Thing* thing = player->getThing(inboxSlot);
+	if (!thing) {
+		lua_pushnil(L);
+		return 1;
+	}
+
+	Item* item = thing->getItem();
+	if (item) {
+		pushUserdata<Item>(L, item);
+		setItemMetatable(L, -1, item);
+	}
+	else {
 		lua_pushnil(L);
 	}
 	return 1;

@@ -1218,7 +1218,7 @@ const char* getReturnMessage(ReturnValue value)
 			return "You don't have the required profession.";
 
 		case RETURNVALUE_CANNOTMOVEITEMISNOTSTOREITEM:
-			return "You cannot move this item into your Store inbox as it was not bought in the Store.";
+			return "You cannot move this item into your spell Bag.";
 
 		case RETURNVALUE_ITEMCANNOTBEMOVEDTHERE:
 			return "This item cannot be moved there.";

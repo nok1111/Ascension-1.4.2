@@ -467,6 +467,8 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		}
 	}
 
+
+
 	//load depot items
 	itemMap.clear();
 
