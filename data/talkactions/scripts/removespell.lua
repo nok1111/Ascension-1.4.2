@@ -47,7 +47,7 @@ function onSay(player, message)
 
 
     -- Display the modal window with spell choices directly here
-    local modal = ModalWindow(100, "Remove Spell", "Choose a spell to remove:")
+    local modal = ModalWindow(100, "Active Spells", "You can have up to " .. commonSpellLimit .. " spells active.")
     for i, spellName in ipairs(learnedSpells) do
         modal:addChoice(i, spellName)  -- Use actual spell names as choices
     end
@@ -55,5 +55,5 @@ function onSay(player, message)
     modal:addButton(2, "Close")    -- Button ID for "Close"
     modal:sendToPlayer(player)
 
-    return true
+    return false
 end
