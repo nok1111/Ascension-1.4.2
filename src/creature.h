@@ -473,6 +473,7 @@ class Creature : virtual public Thing
 		void detachEffectById(uint16_t id);
 		const std::vector<uint16_t> getAttachedEffectList() const { return attachedEffectList; }
 
+		const std::vector<uint16_t>& getZoneIds() const;
 
 	protected:
 		virtual bool useCacheMap() const {

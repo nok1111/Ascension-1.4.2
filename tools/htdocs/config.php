@@ -668,7 +668,7 @@
 		// 60 * 15; // 15 minutes.
 		'lifespan' => 5,
 		// Store cache in memory/RAM? Requires PHP extension APCu
-		'memory' => true
+		'memory' => false
 	);
 
 	// WARNING! Account names written here will have admin access to web page!
