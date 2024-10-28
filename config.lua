@@ -66,8 +66,10 @@ timeBetweenExActions = 1000
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
+
 mapName = "cross_map"
 mapAuthor = "nokturno"
+
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
@@ -79,7 +81,7 @@ maxMarketOffersAtATimePerPlayer = 100
 mysqlHost = "127.0.0.1"
 mysqlUser = "root"
 mysqlPass = ""
-mysqlDatabase = "test"
+mysqlDatabase = "ascension"
 mysqlPort = 3306
 mysqlSock = ""
 

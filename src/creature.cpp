@@ -1664,6 +1664,12 @@ bool Creature::getPathTo(const Position& targetPos, std::vector<Direction>& dirL
 	return getPathTo(targetPos, dirList, fpp);
 }
 
+const std::vector<uint16_t>& Creature::getZoneIds() const
+{
+	static const std::vector<uint16_t> m_defaultZoneIds;
+	return tile ? tile->getZoneIds() : m_defaultZoneIds;
+}
+
 void Creature::attachEffectById(uint16_t id)
 {
 	auto it = std::find(attachedEffectList.begin(), attachedEffectList.end(), id);
