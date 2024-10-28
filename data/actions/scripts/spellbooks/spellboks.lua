@@ -1,5 +1,28 @@
 
 
+function addUniqueItemToStoreInbox(player, itemId)
+    local storeInbox = player:getStoreInbox()
+    
+    -- Check if an item with the same ID already exists in the store inbox
+    for i = 0, storeInbox:getSize() - 1 do
+        local item = storeInbox:getItem(i)
+        if item and item:getId() == itemId then
+            return false -- Item already exists, don't add a duplicate
+        end
+    end
+
+    -- Create the new item
+    local newItem = Game.createItem(itemId, 1)
+    if newItem then
+        newItem:setStoreItem(true)
+		storeInbox:addItemEx(newItem)                   
+    end
+    return false -- Operation failed
+end
+
+
+
+
 -- Function to count how many common spells a player has learned
 function Player:getLearnedCommonSpellCount()
     local count = 0
@@ -46,6 +69,17 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
         player:sendCancelMessage("You have already learned this spell.")
         return true
     end
+	
+	local storeInbox = player:getStoreInbox()
+    
+    -- Check if an item with the same ID already exists in the store inbox
+    for i = 0, storeInbox:getSize() - 1 do
+        local spellitem = storeInbox:getItem(i)
+        if spellitem and spellitem:getId() == item:getId() then
+           player:sendCancelMessage("You already have this spell in your spell bag.")
+        return true
+        end
+    end
 
     -- Handling common spells
     if spellType == "common" then
@@ -53,7 +87,12 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
             if player:learnSpell(spellName) then
                 player:incrementCommonSpellCounter()
                 player:sendTextMessage(MESSAGE_INFO_DESCR, "You have learned the common spell: " .. spellName .. "!")
-                item:remove(1)  
+				--item:setStoreItem(item)
+				addUniqueItemToStoreInbox(player, item:getId())
+				if not item:isStoreItem() then
+				item:remove(1)
+				end
+   
             else
                 player:sendCancelMessage("Failed to learn the spell.")
             end
@@ -67,7 +106,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
             if player:learnSpell(spellName) then
                 player:setStorageValue(storageId, 1)  -- Mark the ultimate spell as learned
                 player:sendTextMessage(MESSAGE_INFO_DESCR, "You have learned the ultimate spell: " .. spellName .. "!")
-                item:remove(1)
+                 player:moveToStoreInbox(CONST_SLOT_STORE_INBOX, item)
             else
                 player:sendCancelMessage("Failed to learn the ultimate spell.")
             end
