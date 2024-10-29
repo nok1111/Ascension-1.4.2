@@ -143,6 +143,14 @@ function Player:onGainExperience(source, exp, rawExp)
 		soulCondition:setParameter(CONDITION_PARAM_SOULTICKS, vocation:getSoulGainTicks() * 1000)
 		self:addCondition(soulCondition)
 	end
+	
+	-- Apply monster level exp
+	if source:isMonster() then
+        local bonusExperience = source:getMonsterLevel() * 0.03
+        if source:getMonsterLevel() > 0 and bonusExperience > 1 then
+            exp = exp * bonusExperience
+        end
+    end
 
 	-- Apply experience stage multiplier
 	exp = exp * Game.getExperienceStage(self:getLevel())
