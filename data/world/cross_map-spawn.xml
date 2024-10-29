@@ -746,6 +746,48 @@
 	<spawn centerx="274" centery="757" centerz="7" radius="1">
 		<monster name="Training Dummy" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
+	<spawn centerx="567" centery="784" centerz="7" radius="1">
+		<monster name="Squirrel" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="543" centery="789" centerz="7" radius="1">
+		<monster name="Bug" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="571" centery="790" centerz="7" radius="1">
+		<monster name="Cow" x="1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="571" centery="793" centerz="7" radius="1">
+		<npc name="Farmer jhonson" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="574" centery="793" centerz="7" radius="1">
+		<monster name="Donkey" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="551" centery="795" centerz="7" radius="1">
+		<npc name="Farmer Gloria" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="569" centery="796" centerz="7" radius="1">
+		<monster name="Cow" x="-1" y="0" z="7" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="573" centery="796" centerz="7" radius="1">
+		<monster name="Cow" x="1" y="0" z="7" spawntime="60" direction="3" />
+	</spawn>
+	<spawn centerx="555" centery="800" centerz="7" radius="1">
+		<monster name="Donkey" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="545" centery="806" centerz="7" radius="1">
+		<npc name="farmer brayle" x="1" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="554" centery="806" centerz="7" radius="1">
+		<npc name="Tokel" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="566" centery="807" centerz="7" radius="1">
+		<npc name="Farmer Saul" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="544" centery="811" centerz="7" radius="1">
+		<npc name="Horse Mount" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="546" centery="811" centerz="7" radius="1">
+		<npc name="Horse Mount" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="1035" centery="910" centerz="7" radius="1">
 		<monster name="jungle Stalker" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -1540,6 +1582,589 @@
 	</spawn>
 	<spawn centerx="1065" centery="1070" centerz="7" radius="1" />
 	<spawn centerx="1080" centery="1071" centerz="7" radius="1" />
+	<spawn centerx="888" centery="1642" centerz="7" radius="1" />
+	<spawn centerx="869" centery="1643" centerz="7" radius="1">
+		<monster name="Pork" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1643" centerz="7" radius="1">
+		<monster name="Swordman Blue Djinn" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1644" centerz="7" radius="1">
+		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1644" centerz="7" radius="1">
+		<monster name="Boar" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Boar Breeding" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1645" centerz="7" radius="1">
+		<monster name="Swordman Green Djinn" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="848" centery="1646" centerz="7" radius="1">
+		<monster name="Twigkin" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1646" centerz="7" radius="1">
+		<monster name="Slime" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1646" centerz="7" radius="1">
+		<monster name="Pork Rogue" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Pork Warrior" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1647" centerz="7" radius="1" />
+	<spawn centerx="896" centery="1647" centerz="7" radius="1">
+		<monster name="Lizard Sentinel" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1647" centerz="7" radius="1">
+		<monster name="Giant" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1647" centerz="7" radius="1">
+		<monster name="Mammoth" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1647" centerz="7" radius="1">
+		<monster name="Barbarian Brutetamer" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Barbarian Bloodwalker" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1647" centerz="7" radius="1">
+		<monster name="Native Crusher" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1647" centerz="7" radius="1">
+		<monster name="Werewolf" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="848" centery="1648" centerz="7" radius="1">
+		<monster name="Flaming Twigkin" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1648" centerz="7" radius="1">
+		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Wolf Cub" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1648" centerz="7" radius="1">
+		<monster name="Terror Bird" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1648" centerz="7" radius="1">
+		<monster name="Sandstorm Dragon" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1648" centerz="7" radius="1">
+		<monster name="Dark Skeleton Guard" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Dark Skeleton" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1648" centerz="7" radius="1">
+		<monster name="Calamary" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Deepling Spellsinger" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1649" centerz="7" radius="1">
+		<monster name="Rogue" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Hunter" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1649" centerz="7" radius="1">
+		<monster name="Blue Djinn" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Green Djinn" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1649" centerz="7" radius="1">
+		<monster name="Elder Lizard" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1649" centerz="7" radius="1">
+		<monster name="Lizard Legionnaire" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1649" centerz="7" radius="1">
+		<monster name="Giant Trooper" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1649" centerz="7" radius="1">
+		<monster name="White Deer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1649" centerz="7" radius="1">
+		<monster name="Barbarian Headsplitter" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Barbarian Skullhunter" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1649" centerz="7" radius="1">
+		<monster name="Werewolf Shaman" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="848" centery="1650" centerz="7" radius="1">
+		<monster name="Branchkin" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1650" centerz="7" radius="1">
+		<monster name="Bonelord" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1650" centerz="7" radius="1">
+		<monster name="Lizard Magistratus" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1650" centerz="7" radius="1">
+		<monster name="Energy Elemental" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1650" centerz="7" radius="1" />
+	<spawn centerx="950" centery="1650" centerz="7" radius="1">
+		<monster name="Native Defender" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Native Shaman" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1650" centerz="7" radius="1">
+		<monster name="Deepling Brawler" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1651" centerz="7" radius="1">
+		<monster name="Troll" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1651" centerz="7" radius="1">
+		<monster name="Lizard Warrior" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1651" centerz="7" radius="1">
+		<monster name="Snow Giant Wolf" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Tamed Swan Wolf" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1651" centerz="7" radius="1">
+		<monster name="Werewolf Leader" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="848" centery="1652" centerz="7" radius="1">
+		<monster name="Triviewer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1652" centerz="7" radius="1" />
+	<spawn centerx="861" centery="1652" centerz="7" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1652" centerz="7" radius="1">
+		<monster name="Plague Slayer" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Plague Witch" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1652" centerz="7" radius="1" />
+	<spawn centerx="934" centery="1652" centerz="7" radius="1">
+		<monster name="Chakoya Toolshaper" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Chakoya Tribewarden" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1652" centerz="7" radius="1">
+		<monster name="Deepling Elite" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1653" centerz="7" radius="1">
+		<monster name="Dragon Lord" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Dragon" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1653" centerz="7" radius="1">
+		<monster name="Lizard Brute" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1653" centerz="7" radius="1">
+		<monster name="Lizard Templar" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1653" centerz="7" radius="1">
+		<monster name="Charged Energy Elemental" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Energy Overlord" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="943" centery="1653" centerz="7" radius="1">
+		<monster name="Ember Beetle" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Ember Larve" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1653" centerz="7" radius="1">
+		<monster name="Harpy" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1654" centerz="7" radius="1">
+		<monster name="Zombie" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1654" centerz="7" radius="1">
+		<monster name="Greed Worm" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1654" centerz="7" radius="1">
+		<monster name="Xyn The Shadow" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="916" centery="1654" centerz="7" radius="1" />
+	<spawn centerx="934" centery="1654" centerz="7" radius="1">
+		<monster name="Chakoya Windcaller" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1654" centerz="7" radius="1">
+		<monster name="Undead Dragon" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1654" centerz="7" radius="1">
+		<monster name="Ashborn Dragon" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Vulcongra" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="951" centery="1654" centerz="7" radius="1" />
+	<spawn centerx="958" centery="1654" centerz="7" radius="1">
+		<monster name="Deepling Guard" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1655" centerz="7" radius="1">
+		<monster name="Dark Troll" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1655" centerz="7" radius="1">
+		<monster name="Minotaur" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1655" centerz="7" radius="1">
+		<monster name="Lizard Spearman" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1655" centerz="7" radius="1">
+		<monster name="Snow Gort" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Swan Helgi" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Swan Floki" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1655" centerz="7" radius="1">
+		<monster name="Vanguard Harpy" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1656" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="hollow willow" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1656" centerz="7" radius="1">
+		<monster name="sand bettle" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="916" centery="1656" centerz="7" radius="1">
+		<monster name="Lord Of The Elements" x="1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1656" centerz="7" radius="1">
+		<monster name="Yeti" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1656" centerz="7" radius="1">
+		<monster name="Deepling Master Librarian" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1657" centerz="7" radius="1">
+		<monster name="Mutated Zombie" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Abomination Specimen" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1657" centerz="7" radius="1">
+		<monster name="Minotaur Archer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1657" centerz="7" radius="1">
+		<monster name="Elephant" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1657" centerz="7" radius="1">
+		<monster name="Razorwind Archer" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1657" centerz="7" radius="1">
+		<monster name="Blood Spider" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1658" centerz="7" radius="1">
+		<monster name="Spider" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Tarantula" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1658" centerz="7" radius="1">
+		<monster name="Amazon Spider" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1658" centerz="7" radius="1">
+		<monster name="Elderbug" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1658" centerz="7" radius="1">
+		<monster name="Deepling Scout" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1659" centerz="7" radius="1" />
+	<spawn centerx="869" centery="1659" centerz="7" radius="1">
+		<monster name="Minotaur Guard" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1659" centerz="7" radius="1">
+		<monster name="Jungle Lion" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1659" centerz="7" radius="1">
+		<monster name="Icewalker Marauder" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Icewalker Pirate" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1659" centerz="7" radius="1">
+		<monster name="Rotten Crawler" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1659" centerz="7" radius="1">
+		<monster name="Blood Parasyte" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1660" centerz="7" radius="1">
+		<monster name="Medusa" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1660" centerz="7" radius="1">
+		<monster name="The Hollow Queen" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Trival Hunter" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1660" centerz="7" radius="1">
+		<monster name="Pyropteron" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Wild Fox" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1660" centerz="7" radius="1">
+		<monster name="Crystal Scarab" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Crystal Beetle" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1660" centerz="7" radius="1">
+		<monster name="Razorwind Assassin" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Razorwind Mage" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Razorwind Smasher" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1660" centerz="7" radius="1">
+		<monster name="Deepling Spellsinger" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1661" centerz="7" radius="1">
+		<monster name="Bahumash" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1661" centerz="7" radius="1">
+		<monster name="Giant Spider" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1661" centerz="7" radius="1">
+		<monster name="Minotaur Mage" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="907" centery="1661" centerz="7" radius="1">
+		<monster name="Mutated Worm" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1661" centerz="7" radius="1" />
+	<spawn centerx="934" centery="1661" centerz="7" radius="1">
+		<monster name="Icewalker Powder Monkey" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1661" centerz="7" radius="1">
+		<monster name="Behemoth" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1662" centerz="7" radius="1">
+		<monster name="Amazon Tiger" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1662" centerz="7" radius="1">
+		<monster name="Serpent Spawn" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1662" centerz="7" radius="1">
+		<monster name="Crystal Bulk Scarab" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1662" centerz="7" radius="1">
+		<monster name="Razorwind Warlock" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1662" centerz="7" radius="1">
+		<monster name="Humongous Fungus" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Humorless Fungus" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1662" centerz="7" radius="1">
+		<monster name="Deepling Tyrant" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1663" centerz="7" radius="1">
+		<monster name="Terramite" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1663" centerz="7" radius="1">
+		<monster name="Nomad" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1663" centerz="7" radius="1">
+		<monster name="Skeleton Guardian" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1663" centerz="7" radius="1">
+		<monster name="Litharvia" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1663" centerz="7" radius="1">
+		<monster name="Giant Black Wolf" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1664" centerz="7" radius="1">
+		<monster name="Witch" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Witch Apprentice" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1664" centerz="7" radius="1">
+		<monster name="Dreamer Oak" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1664" centerz="7" radius="1">
+		<monster name="Sandworm" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Sandbug" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1664" centerz="7" radius="1">
+		<monster name="Living Corpse" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="943" centery="1664" centerz="7" radius="1">
+		<monster name="Dodo(m)" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Dodo(f)" x="-1" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1664" centerz="7" radius="1">
+		<monster name="Hideous Fungus" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1664" centerz="7" radius="1">
+		<monster name="Deepling Worker" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1665" centerz="7" radius="1">
+		<monster name="Bandit" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1665" centerz="7" radius="1">
+		<monster name="Thief" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1665" centerz="7" radius="1">
+		<monster name="Hydra" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1665" centerz="7" radius="1">
+		<monster name="Iceborne Reaper" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Iceborne Hunter" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1665" centerz="7" radius="1">
+		<monster name="Giant Gryphon" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1665" centerz="7" radius="1">
+		<monster name="Giant Brown Wolf" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1666" centerz="7" radius="1">
+		<monster name="Goblin" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1666" centerz="7" radius="1">
+		<monster name="Sand Warrior" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1666" centerz="7" radius="1">
+		<monster name="Soul in Pain" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1666" centerz="7" radius="1">
+		<monster name="Ogre" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1667" centerz="7" radius="1">
+		<monster name="Earth Overlord" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1667" centerz="7" radius="1">
+		<monster name="Sand Giant Widow" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Sand Lobster" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1667" centerz="7" radius="1">
+		<monster name="Iceborne Mage" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="958" centery="1667" centerz="7" radius="1">
+		<monster name="Jellyfish" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1667" centerz="7" radius="1">
+		<monster name="Rebel Pirate" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Rebel Pirate Buccaneer" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1668" centerz="7" radius="1">
+		<monster name="Donkey" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1668" centerz="7" radius="1">
+		<monster name="Goblin Assassin" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1668" centerz="7" radius="1">
+		<monster name="Spearman Troll" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="877" centery="1668" centerz="7" radius="1">
+		<monster name="jungle Stalker" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Ember Raptor" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Desert Stalker" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1668" centerz="7" radius="1" />
+	<spawn centerx="906" centery="1668" centerz="7" radius="1">
+		<monster name="Sandstorm Mummy" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Pirate" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1668" centerz="7" radius="1">
+		<monster name="Desert Witch" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Desert Bandit" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1668" centerz="7" radius="1">
+		<monster name="Leaf Golem" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Wilting Leaf Golem" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1668" centerz="7" radius="1">
+		<monster name="Ogre Brute" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1668" centerz="7" radius="1">
+		<monster name="Rebel Pirate Corsair" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="886" centery="1669" centerz="7" radius="1">
+		<monster name="Earth Elemental" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1669" centerz="7" radius="1">
+		<monster name="Fenrir" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1669" centerz="7" radius="1">
+		<monster name="Crystal Wolf" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Crystal Spider" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1669" centerz="7" radius="1">
+		<monster name="Rebel Pirate Cutthroat" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1670" centerz="7" radius="1">
+		<monster name="Ghoul" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1670" centerz="7" radius="1">
+		<monster name="Goblin Brute" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="876" centery="1670" centerz="7" radius="1">
+		<monster name="Blazing Raptor" x="1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1670" centerz="7" radius="1">
+		<monster name="Pirate Cutthroat" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="942" centery="1670" centerz="7" radius="1" />
+	<spawn centerx="950" centery="1670" centerz="7" radius="1">
+		<monster name="Ogre Savage" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1670" centerz="7" radius="1">
+		<monster name="Rebel Pirate Ghost" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1671" centerz="7" radius="1">
+		<monster name="Skeleton" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1671" centerz="7" radius="1">
+		<monster name="Shaman Troll" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Blademaster Troll" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1671" centerz="7" radius="1">
+		<monster name="Sandstorm Warrior" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Sandstorm Priestess" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1671" centerz="7" radius="1">
+		<monster name="Captain Redbeard" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1671" centerz="7" radius="1">
+		<monster name="Necromancer" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1671" centerz="7" radius="1">
+		<monster name="Crying Ent" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1671" centerz="7" radius="1">
+		<monster name="Rebel Pirate Marauder" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1672" centerz="7" radius="1">
+		<monster name="Goblin Champion" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1672" centerz="7" radius="1" />
+	<spawn centerx="950" centery="1672" centerz="7" radius="1">
+		<monster name="Ogre Shaman" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1673" centerz="7" radius="1">
+		<monster name="Sandstorm Wolf" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="906" centery="1673" centerz="7" radius="1">
+		<monster name="Pirate Corsair" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Pirate Buccaneer" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="917" centery="1673" centerz="7" radius="1">
+		<monster name="Warlock" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1673" centerz="7" radius="1">
+		<monster name="Jotun" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1673" centerz="7" radius="1">
+		<monster name="Ice Golem" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Frost Troll" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="943" centery="1673" centerz="7" radius="1">
+		<monster name="Skylander Druid" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Skylander Paladin" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1673" centerz="7" radius="1">
+		<monster name="Rebel Pirate Skeleton" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Vampire" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1674" centerz="7" radius="1">
+		<monster name="Bear" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Bear Cub" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1674" centerz="7" radius="1">
+		<monster name="Goblin Leader" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="869" centery="1674" centerz="7" radius="1">
+		<monster name="Uh'Rakan" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="878" centery="1674" centerz="7" radius="1">
+		<monster name="Monkey Guard" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Old Ape" x="-1" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="896" centery="1674" centerz="7" radius="1" />
+	<spawn centerx="906" centery="1675" centerz="7" radius="1">
+		<monster name="Pirate Skeleton" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="926" centery="1675" centerz="7" radius="1">
+		<monster name="Jotun Marauder" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="934" centery="1675" centerz="7" radius="1" />
+	<spawn centerx="942" centery="1675" centerz="7" radius="1">
+		<monster name="Elite Springbringer" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="950" centery="1675" centerz="7" radius="1">
+		<monster name="Elite Runic Guardian" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="969" centery="1675" centerz="7" radius="1">
+		<monster name="Vampire Bride" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Vampire Viscount" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="854" centery="1676" centerz="7" radius="1" />
+	<spawn centerx="861" centery="1676" centerz="7" radius="1">
+		<monster name="Goblin Scavenger" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1678" centerz="7" radius="1">
+		<monster name="Goblin Sentinel" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1681" centerz="7" radius="1">
+		<monster name="Goblin Shaman" x="0" y="-1" z="7" spawntime="60" />
+		<monster name="Goblin Trooper" x="0" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="861" centery="1682" centerz="7" radius="1" />
 	<spawn centerx="971" centery="983" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
