@@ -1,29 +1,62 @@
+local purple_orb = 38572
+local green_orb = 38693
+local blue_orb = 38694
+local yellow_orb = 39941
+local orange_orb = 39940
+
+
+--38572,38693,38694,39940,39941
+
+local directions = {
+    {x = 1, y = 0, z = 0},   -- East
+    {x = -1, y = 0, z = 0},  -- West
+    {x = 0, y = -1, z = 0},  -- North
+    {x = 0, y = 1, z = 0}    -- South
+}
+
+function getAdjacentPosition(pos)
+    local dir = directions[math.random(#directions)]
+    return Position(pos.x + dir.x, pos.y + dir.y, pos.z)
+end
+
 local rewardTypes = {
-    {type = "Gold", itemId = 2148, chance = 70},
-    {type = "Loot", itemId = 2152, chance = 20},
-    {type = "Experience", itemId = 2160, chance = 10},
-    {type = "Death", itemId = 9999, chance = 5}  -- Example ID for the death orb
+    {type = "Gold", itemId = yellow_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW},
+    {type = "Loot", itemId = blue_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW},
+    {type = "Experience", itemId = green_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW},
+    {type = "Death", itemId = purple_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW}  -- Example ID for the death orb
 }
 
 local BossDamageModifier = 3.5
 local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty]", "[Terra]"}
 
-function spawnBoss(creature)
-    local monsterId = creature:getId()
-    local monsterName = creature:getName()
-    
-    -- Choose a random variation
-    local variation = nameVariations[math.random(#nameVariations)]
-    local bossName = monsterName .. " " .. variation
-    local boss = Game.createMonster(monsterId, creature:getPosition())
-    boss:rename(bossName)  -- Rename the boss with the new name
 
-    if boss then
-        boss:setMaxHealth(boss:getMaxHealth() * 2) -- Double the HP
-        return boss
+local Monster_orb = CreatureEvent("monsterorb")
+
+function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
+print("death start")
+    if math.random(100) <= rewardTypes[#rewardTypes].chance then
+        local rewardType = rewardTypes[math.random(#rewardTypes)]
+       local orbPosition = getAdjacentPosition(creature:getPosition())
+		local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
+        rewardOrb:setCustomAttribute("ownerId", killer:getId())
+        rewardOrb:setCustomAttribute("monsterLevel", creature:getMonsterLevel())
+        rewardOrb:setCustomAttribute("rewardType", rewardType.type)
+print("death of monster")
+        if rewardType.type == "Death" then
+           
+		  rewardOrb:setCustomAttribute("MonsterName", creature:getName()) 
+		   
+        end
+
+        --Game.createAnimatedText(rewardOrb:getPosition(), rewardType.type .. " Orb", TEXTCOLOR_YELLOW)
+		Game.sendAnimatedText(rewardType.type .. " Orb", rewardOrb:getPosition(), rewardType.textcolor)
     end
-    return nil
+    return true
 end
+
+Monster_orb:register()
+
+local healthChange = CreatureEvent("hpdamageorbs")
 
 function healthChange.onHealthChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
     if creature:isMonster() and (creature:getName():find("%[Shadow%]") or
@@ -38,6 +71,7 @@ function healthChange.onHealthChange(creature, attacker, primaryDamage, primaryT
     return true
 end
 
+local manaChange = CreatureEvent("manadamageorbs")
 function manaChange.onManaChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
     if creature:isMonster() and (creature:getName():find("%[Shadow%]") or
                                   creature:getName():find("%[Aqua%]") or
@@ -50,58 +84,89 @@ function manaChange.onManaChange(creature, attacker, primaryDamage, primaryType,
     return true
 end
 
-local collectRewardAction = Action()
+local StepOnOrb = MoveEvent()
+StepOnOrb:type("stepin")
 
-function collectRewardAction.onStepIn(player, item, fromPosition, toPosition)
+function StepOnOrb.onStepIn(creature, item, position, fromPosition)
+  	if not creature:isPlayer() or creature:isInGhostMode() then
+		return true
+	end
+
     local ownerId = item:getCustomAttribute("ownerId")
     local monsterLevel = item:getCustomAttribute("monsterLevel")
+	
+	print("owner: " .. ownerId)
+	print("monster level: " .. monsterLevel)
+
+
     
     -- Check if player is owner or in the party
-    if player:getId() ~= ownerId and not player:isInParty(ownerId) then
-        player:sendTextMessage(MESSAGE_INFO_DESCR, "This reward belongs to someone else.")
+    if creature:getId() ~= ownerId then
+	print("wrong owner")
+        creature:sendTextMessage(MESSAGE_INFO_DESCR, "This reward belongs to someone else.")
         return true
     end
     
     -- Reward logic based on the item type
-    local rewardType = item:getCustomAttribute("rewardType")
-    if rewardType == "Gold" then
-        local rewardAmount = getMonsterLevel() * 10  -- Example formula
-        player:addMoney(rewardAmount)
-        player:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. rewardAmount .. " gold.")
-    elseif rewardType == "Loot" then
+    
+    if item:getId() == yellow_orb then
+	print("gold")
+        local rewardAmount = monsterLevel * 10  -- Example formula
+        creature:addMoney(rewardAmount)
+        creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. rewardAmount .. " gold.")
+    elseif item:getId() == blue_orb then
+	print("loot")
         local lootTable = {
             {itemId = 2160, minLevel = 1, maxLevel = 10},
             {itemId = 2161, minLevel = 11, maxLevel = 20},
             {itemId = 2162, minLevel = 21, maxLevel = 30},
+			{itemId = 2162, minLevel = 31, maxLevel = 9999},
             -- Add more tiers as needed
         }
         -- Logic to select loot based on monster level
         for _, loot in ipairs(lootTable) do
             if monsterLevel >= loot.minLevel and monsterLevel <= loot.maxLevel then
-                player:addItem(loot.itemId, 1)
-                player:sendTextMessage(MESSAGE_INFO_DESCR, "You received a loot item.")
+                creature:addItem(loot.itemId, 1)
+                creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received a loot item.")
                 break
             end
         end
-    elseif rewardType == "Experience" then
-        local expAmount = getMonsterLevel() * 100  -- Example formula
-        player:addExperience(expAmount)
-        player:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. expAmount .. " experience.")
-    elseif rewardType == "Death" then
-        local boss = spawnBoss(item)  -- Spawn the stronger version of the creature
-        player:sendTextMessage(MESSAGE_INFO_DESCR, "A death orb has summoned a stronger boss!")
+    elseif item:getId() == green_orb then
+	print("experience")
+        local expAmount = monsterLevel * 100  -- Example formula
+        creature:addExperience(expAmount)
+        creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. expAmount .. " experience.")
+    elseif item:getId() == purple_orb then
+	print("death")
+			local monsterName = item:getCustomAttribute("MonsterName") 
+			-- Choose a random variation
+			local variation = nameVariations[math.random(#nameVariations)]
+			local bossName = monsterName .. " " .. variation
+			local boss = Game.createMonster(monsterName, position)
+			boss:setMaxHealth(boss:getMaxHealth() * 2) -- Double the HP
+			boss:rename(bossName)  -- Rename the boss with the new name
+			boss:registerEvent("hpdamageorbs")
+			boss:registerEvent("manadamageorbs")
+        creature:sendTextMessage(MESSAGE_INFO_DESCR, "A death orb has summoned a stronger boss!")
+	else
+	print("no reward type found")
+	return true
     end
 
     -- Cleanup the orb item after collecting the reward
     item:remove()
-    return true
+	return true
 end
 
-collectRewardAction:id(12345)  -- ID of the orb item
-collectRewardAction:register()
+StepOnOrb:id(38572,38693,38694,39940,39941)  -- ID of the orb item
+StepOnOrb:register()
 
--- Register creature events
-local bossScript = CreatureEvent("BossDamage")
-bossScript:onHealthChange(healthChange.onHealthChange)
-bossScript:onManaChange(manaChange.onManaChange)
-bossScript:register()
+
+local TargetCombatEvent = EventCallback
+TargetCombatEvent.onTargetCombat = function(creature, target)
+    target:registerEvent("monsterorb")
+    return RETURNVALUE_NOERROR
+end
+TargetCombatEvent:register()
+
+print(">> Loading Orbs")
