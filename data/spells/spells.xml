@@ -4,7 +4,7 @@
     </instant>
 	
 	
-	<instant group="attack" spellid="901" name="pingpong" words="pingpong" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/pingpong.lua">
+	<instant group="attack" spellid="901" name="Bouncing Sphere" words="bouncing sphere" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/pingpong.lua">
 	<vocation name="None" />
 	</instant>
 	<instant group="attack" spellid="902" name="cage" words="cage" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/cage.lua">
