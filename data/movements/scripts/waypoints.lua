@@ -1,6 +1,6 @@
 
 
-function onStepIn(player, item, position, fromPosition)
+function onStepIn(player, item, position, fromPosition, zoneid)
     if not player:isPlayer() then
         return false
     end
@@ -63,7 +63,7 @@ end
 end
 
 
-function onStepOut(creature, item, position, fromPosition)
+function onStepOut(creature, item, position, fromPosition, zoneid)
 	if creature:isPlayer() then
 		return true
 	end
