@@ -133,7 +133,7 @@ SpellBooks = {
     [20127] = {spellName = "Arrow Rain", spellType = "common", storageId = 20127},
     [20128] = {spellName = "Frost Barrel", spellType = "common", storageId = 20128},
     [20129] = {spellName = "Destructive Shot", spellType = "common", storageId = 20129},
-    [20130] = {spellName = "Aspect Mastery", spellType = "common", storageId = 20130}
+    [20130] = {spellName = "Aspect Mastery", spellType = "common", storageId = 20130},
     
 	
 	--only ultimate spells here
