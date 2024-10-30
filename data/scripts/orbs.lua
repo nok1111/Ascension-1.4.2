@@ -19,11 +19,27 @@ function getAdjacentPosition(pos)
     return Position(pos.x + dir.x, pos.y + dir.y, pos.z)
 end
 
+local function orbeffectLoop(position, text, color)
+    local bagIds = {purple_orb, green_orb, blue_orb, yellow_orb, orange_orb}
+    local active = false
+    for _, bag in ipairs(bagIds) do
+        local lootBag = Tile(position):getItemById(bag)
+        if lootBag then
+            active = true
+            break
+        end
+    end
+    if active then
+		Game.sendAnimatedText(text .. " Orb", position, color)
+        addEvent(orbeffectLoop, 1000, position, text, color)
+    end
+end
+
 local rewardTypes = {
     {type = "Gold", itemId = yellow_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW},
-    {type = "Loot", itemId = blue_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW},
-    {type = "Experience", itemId = green_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW},
-    {type = "Death", itemId = purple_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW}  -- Example ID for the death orb
+    {type = "Loot", itemId = blue_orb, chance = 70, textcolor = TEXTCOLOR_BLUE},
+    {type = "Experience", itemId = green_orb, chance = 70, textcolor = TEXTCOLOR_LIGHTGREEN},
+    {type = "Death", itemId = purple_orb, chance = 70, textcolor = TEXTCOLOR_PURPLE}  -- Example ID for the death orb
 }
 
 local BossDamageModifier = 3.5
@@ -47,9 +63,9 @@ print("death of monster")
 		  rewardOrb:setCustomAttribute("MonsterName", creature:getName()) 
 		   
         end
-
+		orbeffectLoop(orbPosition, rewardType.type, rewardType.textcolor)
         --Game.createAnimatedText(rewardOrb:getPosition(), rewardType.type .. " Orb", TEXTCOLOR_YELLOW)
-		Game.sendAnimatedText(rewardType.type .. " Orb", rewardOrb:getPosition(), rewardType.textcolor)
+		
     end
     return true
 end
@@ -144,6 +160,7 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
 			local bossName = monsterName .. " " .. variation
 			local boss = Game.createMonster(monsterName, position)
 			boss:setMaxHealth(boss:getMaxHealth() * 2) -- Double the HP
+			boss:addHealth(boss:getMaxHealth() * 2)
 			boss:rename(bossName)  -- Rename the boss with the new name
 			boss:registerEvent("hpdamageorbs")
 			boss:registerEvent("manadamageorbs")
