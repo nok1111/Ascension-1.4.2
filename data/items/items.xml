@@ -40346,11 +40346,29 @@
 	
 	
 	
-	
-	<item id="38572" article="a" name="Soul">
+	<item id="38693" article="a" name="Experience Orb">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="60" />
+	</item>
+	<item id="38694" article="a" name="Loot Orb">
 		<attribute key="description" value="this is a Soul can be gathered by soul weavers." />
 		<attribute key="decayTo" value="0" />
-		<attribute key="duration" value="5" />
+		<attribute key="duration" value="60" />
+	</item>
+	<item id="39941" article="a" name="Golden Orb">
+		<attribute key="description" value="this is a Soul can be gathered by soul weavers." />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="60" />
+	</item>
+	<item id="39940" article="a" name="Famous Orb">
+		<attribute key="description" value="this is a Soul can be gathered by soul weavers." />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="60" />
+	</item>
+	<item id="38572" article="a" name="Death Orb">
+		<attribute key="description" value="this is a Soul can be gathered by soul weavers." />
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="60" />
 	</item>
 	
 	
@@ -41748,4 +41766,8 @@
         <attribute key="description" value="Lucy may be interested in this type of products." />
         <attribute key="weight" value="1" />
     </item>
+	
+	
+	
+	
 </items>
