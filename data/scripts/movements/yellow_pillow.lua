@@ -1,7 +1,7 @@
 local yellowPillow = MoveEvent()
 yellowPillow:type("stepin")
 
-function yellowPillow.onStepIn(player, item, position, fromPosition)
+function yellowPillow.onStepIn(player, item, position, fromPosition, zoneid)
 	if not player or player:isInGhostMode() then
 		return true
 	end
