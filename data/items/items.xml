@@ -41768,6 +41768,9 @@
     </item>
 	
 	
-	
+	<item id="39942" article="a" name="ice spike">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="7" />
+	</item>
 	
 </items>
