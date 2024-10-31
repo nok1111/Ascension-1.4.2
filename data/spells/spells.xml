@@ -453,6 +453,10 @@
 	 <vocation name="None" />
 	</instant>
 	<!-- spell 192 already used in revscripts-->
+
+	<instant group="attack" spellid="193" name="temblor" words="temblor" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/earthquake.lua">
+	 <vocation name="None" />
+	</instant>
 	
 		
 	<!-- mastery spells -->
