@@ -13,7 +13,7 @@
 	<instant group="attack" spellid="903" name="explo" words="explo" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/poison_explosion.lua">
 	<vocation name="None" />
 	</instant>	
-	<instant group="attack" spellid="904" name="double" words="double" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" selftarget="1" needlearn="0" script="test/double_wave.lua">
+	<instant group="attack" spellid="904" name="Burning Ice" words="burning ic" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" selftarget="1" needlearn="0" script="test/double_wave.lua">
 	<vocation name="None" />
 	</instant>
 	
@@ -444,7 +444,15 @@
 	<instant group="attack" spellid="123" name="Aspect Mastery" words="aspect mastery" lvl="100" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="ranger/aspect_mastery.lua">
 	<vocation name="None" />
 	</instant>
-	
+
+	<instant group="attack" spellid="190" name="Ice Barrage" words="ice barrage" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/ice_barrage.lua">
+	 <vocation name="None" />
+	</instant>
+
+	<instant group="attack" spellid="191" name="Frost Shots" words="frost shots" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/frost_blast.lua">
+	 <vocation name="None" />
+	</instant>
+	<!-- spell 192 already used in revscripts-->
 	
 		
 	<!-- mastery spells -->
