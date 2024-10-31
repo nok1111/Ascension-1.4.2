@@ -102,6 +102,9 @@ SpellBooks = {
        [39776] = {spellName = "Ice Nova", spellType = "common", storageId = 20039},--
        [39778] = {spellName = "Frost Wave", spellType = "common", storageId = 20043},--
        [39789] = {spellName = "Blizzard", spellType = "common", storageId = 20046},--
+       [1968] = {spellName = "Burning Ice", spellType = "common", storageId = 20006},--making
+       [00000] = {spellName = "Frost Shots", spellType = "common", storageId = 20004},-- making
+       [00000] = {spellName = "Glacial Step", spellType = "common", storageId = 20018},--making  
 
 
       --Terra -- earth damage / Healing spells
@@ -126,9 +129,9 @@ SpellBooks = {
     
     ---------------------------------------------------------------------
     
-    [00000] = {spellName = "cage", spellType = "common", storageId = 20004},-- missing
+    
     [1967] = {spellName = "explo", spellType = "common", storageId = 20005},--missing
-    [1968] = {spellName = "double", spellType = "common", storageId = 20006},--missing
+   
     [1969] = {spellName = "anihilation", spellType = "common", storageId = 20007},--missing
     [1970] = {spellName = "mass ani", spellType = "common", storageId = 20008},--missing
     [1971] = {spellName = "mass ani mon", spellType = "common", storageId = 20009},--missing
@@ -136,7 +139,7 @@ SpellBooks = {
     [1973] = {spellName = "flat", spellType = "common", storageId = 20011},
     
     
-    [00000] = {spellName = "Roar", spellType = "common", storageId = 20018},--   
+    
     [1990] = {spellName = "Divine Storm", spellType = "common", storageId = 20028},    
     [1992] = {spellName = "Divine Force", spellType = "common", storageId = 20030},
     [1993] = {spellName = "Smite", spellType = "common", storageId = 20031},
