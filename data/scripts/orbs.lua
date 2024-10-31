@@ -95,7 +95,7 @@ function manaChange.onManaChange(creature, attacker, primaryDamage, primaryType,
                                   creature:getName():find("%[Sacred%]") or
                                   creature:getName():find("%[Mighty%]") or
                                   creature:getName():find("%[Terra%]")) then
-        -- Adjust mana-related behaviors if needed
+        -- might change this later
     end
     return true
 end
@@ -116,20 +116,22 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
 
 
     
-    -- Check if player is owner or in the party
+    -- Check if player is owner
     if creature:getId() ~= ownerId then
 	print("wrong owner")
         creature:sendTextMessage(MESSAGE_INFO_DESCR, "This reward belongs to someone else.")
         return true
     end
     
-    -- Reward logic based on the item type
+    -- Reward logic based on the item type  results
     
     if item:getId() == yellow_orb then
 	print("gold")
-        local rewardAmount = monsterLevel * 10  -- Example formula
+        local rewardAmount = monsterLevel * 10  -- gold formula
         creature:addMoney(rewardAmount)
         creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. rewardAmount .. " gold.")
+		
+		
     elseif item:getId() == blue_orb then
 	print("loot")
         local lootTable = {
@@ -137,7 +139,7 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
             {itemId = 2161, minLevel = 11, maxLevel = 20},
             {itemId = 2162, minLevel = 21, maxLevel = 30},
 			{itemId = 2162, minLevel = 31, maxLevel = 9999},
-            -- Add more tiers as needed
+            -- Add more items for loot orb
         }
         -- Logic to select loot based on monster level
         for _, loot in ipairs(lootTable) do
@@ -147,11 +149,16 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
                 break
             end
         end
+		
+		
     elseif item:getId() == green_orb then
 	print("experience")
-        local expAmount = monsterLevel * 100  -- Example formula
+        local expAmount = monsterLevel * 100  -- experience formula
         creature:addExperience(expAmount)
         creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. expAmount .. " experience.")
+		
+		
+		
     elseif item:getId() == purple_orb then
 	print("death")
 			local monsterName = item:getCustomAttribute("MonsterName") 
