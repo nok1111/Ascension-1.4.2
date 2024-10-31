@@ -698,6 +698,10 @@ bool Spell::playerRuneSpellCheck(Player* player, const Position& toPos)
 		return false;
 	}
 
+	if (player->hasCondition(CONDITION_FEAR)) {
+		return false;
+	}
+
 	if (toPos.x == 0xFFFF) {
 		return true;
 	}

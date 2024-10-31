@@ -218,7 +218,8 @@ Condition* Condition::createCondition(ConditionId_t id, ConditionType_t type, in
 			return new ConditionGeneric(id, type, ticks, buff, subId, aggressive);
 		case CONDITION_STUN:
 			return new ConditionGeneric(id, type, ticks, buff, subId);
-		case CONDITION_FEAR: 
+		case CONDITION_FEAR:
+			return new ConditionGeneric(id, type, ticks, buff, subId);
 
 		default:
 			return nullptr;
