@@ -1,17 +1,17 @@
 local combat = Combat()
 local time_between_hits = 0.2 --seconds
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEATTACK)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ICE)
+combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 106)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 local combat2 = Combat()
 local time_between_hits2 = 0.2 --seconds
 
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEATTACK)
-combat2:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ICE)
+combat2:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 106)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
