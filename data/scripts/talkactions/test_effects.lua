@@ -3,7 +3,7 @@ local talk = TalkAction("/af", "!af")
 function talk.onSay(player, words, param)
 	if player:getGroup():getAccess() and param ~= "" then
 		local split = param:split(",")
-		player:attachEffectById(split[1], split[2])
+		player:attachEffectById(split[1], true)
 	else
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "wrong id")
 	end
