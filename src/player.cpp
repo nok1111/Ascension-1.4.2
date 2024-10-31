@@ -3305,6 +3305,11 @@ void Player::doAttacking(uint32_t)
 		return;
 	}
 
+	if (hasCondition(CONDITION_FEAR)) {
+		sendCancelTarget(); // might need to add a 0 inbetween the brackets if you use older TFS build
+		return;
+	}
+
 	if ((OTSYS_TIME() - lastAttack) >= getAttackSpeed()) {
 		bool result = false;
 
