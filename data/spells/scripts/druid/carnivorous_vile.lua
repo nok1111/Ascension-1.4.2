@@ -77,9 +77,11 @@ local sword = target:getPosition()
   sword:sendMagicEffect(446)
   
   if target:getCondition(CONDITION_POISON, 0, 25960) then
+  print("has poison")
   addEvent(castSpell, 1750, creature:getId(), variant)
   else
   addEvent(castSpell2, 1750, creature:getId(), variant)
+  print("no poison")
   end
   
   return true
