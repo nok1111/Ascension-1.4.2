@@ -1,5 +1,4 @@
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, 270)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
 local speed = Condition(CONDITION_PARALYZE)
@@ -8,16 +7,12 @@ speed:setFormula(-0.7, 52, -0.7, 52)
 
 function onTargetCreature(creature, target)
 
-local targetPos = target:getPosition()
-local creaturePos = creature:getPosition()
-
 if target:getSpeed() > 0 then
 target:addCondition(speed)
 end
-
-
-	targetPos:sendMagicEffect(CONST_ME_MAD)
-	
+	if target:isMonster() then
+	target:attachEffectById(20, true)
+	end
 	return doChallengeCreature(creature, target)
 end
 
@@ -25,10 +20,8 @@ combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 
 function onCastSpell(creature, variant)
 
-local positionnube = creature:getPosition()
-		positionnube.x = creature:getPosition().x + 1
-		positionnube.y = creature:getPosition().y + 1
-        positionnube:sendMagicEffect(609)
+creature:attachEffectById(21, true)
+creature:attachEffectById(22, true)
 		
 	return combat:execute(creature, variant)
 end

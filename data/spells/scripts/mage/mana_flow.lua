@@ -5,7 +5,6 @@ local config = {
 }
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, config.effect)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 		
 local condition = Condition(CONDITION_REGENERATION)
@@ -27,7 +26,6 @@ if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCanc
 	local creature = Creature(creature)
 	if not creature then stopEvent(healingflow) return end
 	creature:addMana(math.random(min, max))
-	creature:getPosition():sendMagicEffect(config.effect)
 	if count > 0 then addEvent(healingflow, config.timer, creature:getId(), count - 1) end	
 	return true
 	end
@@ -39,6 +37,7 @@ if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCanc
 	 local player = Player(creature)
   if player then
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
+	player:attachEffectById(18, true)
     player:sendAddBuffNotification(13, 13, 'Mana Flow', 5, 0)
   end
   

@@ -70,6 +70,7 @@ local playa = tila:getCreatures()
 				playa[i]:sendAddBuffNotification(93, 1, 'Mana Distortion 20% increased magic level', 5, 0)
 				playa[i]:addCondition(condition)
 				playa[i]:addCondition(condition2)
+				playa[i]:attachEffectById(19, true)
 				end
 			end
 		end
