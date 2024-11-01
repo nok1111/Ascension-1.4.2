@@ -1,7 +1,7 @@
 local talk = TalkAction("/af", "!af")
 
 function talk.onSay(player, words, param)
-	if player:getGroup():getAccess() and param ~= "" then
+	if param ~= "" then
 		local split = param:split(",")
 		player:attachEffectById(split[1], true)
 	else
@@ -17,7 +17,7 @@ talk:register()
 local talk2 = TalkAction("/df", "!df")
 
 function talk2.onSay(player, words, param)
-	if player:getGroup():getAccess() and param ~= "" then
+	if  param ~= "" then
 		player:detachEffectById(param)
 	else
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "wrong id")

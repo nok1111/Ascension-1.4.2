@@ -5,5 +5,15 @@
     <shader id="3" name="Outfit - Jelly" premium="no" />
     <shader id="4" name="Outfit - Fragmented" premium="no" />
     <shader id="5" name="Outfit - Outline" premium="no" />
+	<shader id="6" name="Lava" premium="no" />
+   <shader id="7" name="Galaxy" premium="no" />
+   <shader id="8" name="Ghost" premium="no" />
+   <shader id="9" name="Metallic" premium="no" />
+   <shader id="10" name="Golden" premium="no" />
+   <shader id="11" name="Red Glow" premium="no" />
+   <shader id="12" name="Soul" premium="no" />
+   <shader id="13" name="Fragmented" premium="no" />
+   <shader id="14" name="Test" premium="no" />
+   <shader id="15" name="Rainbowgpt" premium="no" />
 
 </shaders>

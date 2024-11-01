@@ -12,15 +12,6 @@ combat:addCondition(haste)
 
 ----------------------------------
 
-local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_EFFECT, 270)
-combat2:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
-
-local outfit = createConditionObject(CONDITION_OUTFIT)
-outfit:setParameter(CONDITION_PARAM_TICKS, 15000)
-outfit:setParameter(CONDITION_PARAM_SUBID, 9)
-addOutfitCondition(outfit, {lookType = 1559, lookHead = 0, lookBody = 0, lookLegs = 0, lookFeet = 0, lookTypeEx = 0, lookAddons = 0})
-combat2:addCondition(outfit)
 ---------------------------
 
 local combat3 = Combat()
@@ -71,7 +62,7 @@ combat7:addCondition(stunSpellSpecial)
 function onCastSpell(creature, variant)
  local player = Player(creature)
 	combat:execute(creature, variant)
-	combat2:execute(creature, variant)
+	player:attachEffectById(13, true)
 	combat3:execute(creature, variant)
 	combat4:execute(creature, variant)
 	combat5:execute(creature, variant)

@@ -35,7 +35,6 @@ if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCanc
 	local creature = Creature(creature)
 	if not creature then stopEvent(Overcharge_event) return end
 	creature:addHealth(math.random(-min, -max))
-	creature:getPosition():sendMagicEffect(config.effect)
 	if count > 0 then addEvent(Overcharge_event, config.timer, creature:getId(), count - 1) end	
 	return true
 	end
@@ -44,11 +43,12 @@ if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCanc
 	creature:addCondition(condition)
 	creature:addCondition(conditionstats)
 	addEvent(Overcharge_event, config.timer, creature:getId(), config.rounds)
-	creature:sendProgressbar(9000, false)
+	creature:sendProgressbar(8000, false)
 	 local player = Player(creature)
   if player then
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(51, 9, 'overcharged, all offensive stats increased by 40%. you will loose health due to its effects.', 5, 0)
+	player:attachEffectById(17, true)
+    player:sendAddBuffNotification(51, 8, 'overcharged, all offensive stats increased by 40%. you will loose health due to its effects.', 5, 0)
   end
   
 return combat:execute(creature, variant)		
