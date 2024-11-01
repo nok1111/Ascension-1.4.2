@@ -13,14 +13,6 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
 
-----------------------------------
-
-
-local condition = createConditionObject(CONDITION_OUTFIT)
-setConditionParam(condition, CONDITION_PARAM_TICKS, 4000)
-setConditionParam(condition, CONDITION_PARAM_SUBID, 8)
-addOutfitCondition(condition, {lookType = 1565, lookHead = 114, lookBody = 95, lookLegs = 114, lookFeet = 114, lookTypeEx = 0, lookAddons = 3})
-
 ---------------------------
 function onTargetCreature(creature, target)
 	if target:isPlayer() then
@@ -66,6 +58,8 @@ local aura = creature:getPosition()
 		
   aura:sendMagicEffect(281)
   creature:getPosition():sendMagicEffect(336)
+  player:attachEffectById(15, true)
+  player:sendAddBuffNotification(48, 4, 'Shadow Form', 5, 0)
 
 	local cid = creature:getId()
 
@@ -80,9 +74,7 @@ local aura = creature:getPosition()
 		addEvent(doHealing_shadowform2, 12600, cid, variant, combat)
 		addEvent(doHealing_shadowform2, 14400, cid, variant, combat)
 		creature:sendProgressbar(configHeal.timeBetweenHeals*i, false)
-		creature:addCondition(condition)
-
-    player:sendAddBuffNotification(48, 4, 'Shadow Form', 5, 0)
+		
   
 	end
 
