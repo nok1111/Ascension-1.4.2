@@ -166,12 +166,23 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
 			local variation = nameVariations[math.random(#nameVariations)]
 			local bossName = monsterName .. " " .. variation
 			local boss = Game.createMonster(monsterName, position)
+			
+			
+			--shders locals
+			local RedShader = "Monster Might"
+			--end
+			
 			boss:setMaxHealth(boss:getMaxHealth() * 2) -- Double the HP
 			boss:addHealth(boss:getMaxHealth() * 2)
 			boss:rename(bossName)  -- Rename the boss with the new name
 			boss:registerEvent("hpdamageorbs")
 			boss:registerEvent("manadamageorbs")
-        creature:sendTextMessage(MESSAGE_INFO_DESCR, "A death orb has summoned a stronger boss!")
+			boss:setShader(RedShader)
+			boss:attachEffectById(9, true)
+			boss:attachEffectById(25, true)
+			boss:attachEffectById(26, true)
+			
+			creature:sendTextMessage(MESSAGE_INFO_DESCR, "A death orb has summoned a stronger boss!")
 	else
 	print("no reward type found")
 	return true
