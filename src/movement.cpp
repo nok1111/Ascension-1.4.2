@@ -1031,7 +1031,7 @@ bool MoveEvent::executeStep(Creature* creature, Item* item, const Position& pos,
 		lua_pushnumber(L, zoneid);
 
 
-	return scriptInterface->callFunction(5);
+	return scriptInterface->callFunction(6);
 }
 
 ReturnValue MoveEvent::fireEquip(Player* player, Item* item, slots_t slot, bool isCheck)
