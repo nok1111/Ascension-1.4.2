@@ -66,6 +66,7 @@ local function applyExplosionDamage(creature, position, radius)
     for _, target in ipairs(spectators) do
         if target and target:isCreature() and target:getId() ~= creature:getId() and not isExcludedTarget(creature, target) then
             combat:execute(creature, positionToVariant(target:getPosition()))
+			--target:attachEffectById(12, true)
 
         end
     end

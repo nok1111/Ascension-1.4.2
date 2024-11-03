@@ -5,6 +5,7 @@ function doAreaCombatDamage(cid, attacker, combatType, position, min, max, effec
    if not creature then
        return
    end
+   creature:attachEffectById(10, true)
    doAreaCombatHealth(attacker, combatType, position, 0, min, max, effect)
 end
 local running = {}
@@ -66,8 +67,8 @@ local config = {
    rounds = 1, -- number of times the spell loops (effects & damage)
    delay = 200, -- ms
    radius = {x = 3, y = 3}, -- sqm radius
-   damageType = COMBAT_ENERGYDAMAGE,
-   areaEffect = CONST_ME_STEPSHORIZONTAL,
+   damageType = COMBAT_HOLYDAMAGE,
+   areaEffect = 593,
    distanceEffect = 165,
 }
 function onCastSpell(cid, creature, variant)

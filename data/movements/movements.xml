@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <movements>
-
+	
+	<!-- orbs 
+	<movevent event="StepIn" itemid="38572" script="orbs.lua" />
+	<movevent event="StepIn" itemid="38693" script="orbs.lua" />
+	<movevent event="StepIn" itemid="38694" script="orbs.lua" />
+	<movevent event="StepIn" itemid="39941" script="orbs.lua" />
+	<movevent event="StepIn" itemid="39940" script="orbs.lua" />  
+	
+	-->
+	
+	
 	<!-- waypoint -->
 	<movevent event="StepIn" actionid="61199" script="waypoints.lua" />
 	<movevent event="StepIn" actionid="61200" script="waypoints.lua" />

@@ -165,8 +165,12 @@ class MoveEvent final : public Event
 		const std::vector<uint32_t>& getActionIdRange() const {
 			return actionIdRange;
 		}
+
+		void addActionId(uint32_t id) {
+			actionIdRange.emplace_back(id);
+		}
 	
-	const std::vector<uint32_t>& getZoneIdRange() const {
+		const std::vector<uint32_t>& getZoneIdRange() const {
 			return zoneIdRange;
 		}
 		void addZoneId(uint32_t id) {

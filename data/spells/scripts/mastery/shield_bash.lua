@@ -10,7 +10,7 @@ local combat = Combat()
 
 function stunAnimation(stunnedcreature, stunnedpos, counter)
     if counter ~= 0 and Creature(stunnedcreature) then
-        stunnedpos:sendMagicEffect(CONST_ME_STUN)
+        Creature(stunnedcreature):attachEffectById(23, true)
         counter = counter - 1
         addEvent(stunAnimation, 500, stunnedcreature, stunnedpos, counter)
     end
@@ -65,6 +65,7 @@ function onCastSpell(creature, var, tar)
 	
 	targetmonster:sendProgressbar(stunDuration, false)
 	targetmonster:getPosition():sendMagicEffect(581)
+	targetmonster:attachEffectById(23, true)
 	
     -- Damage formula
     local skill = creature:getDefence()

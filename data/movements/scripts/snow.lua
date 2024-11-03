@@ -1,4 +1,4 @@
-function onStepOut(creature, item, position, fromPosition)
+function onStepOut(creature, item, position, fromPosition, zoneid)
 	if not creature:isPlayer() or creature:isInGhostMode() then
 		return true
 	end

@@ -80,7 +80,7 @@ combat5:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat5:setArea(createCombatArea(arr5))
 
 local conditionburn_within = Condition(CONDITION_FIRE)
-conditionburn_within:setTicks(7500)
+conditionburn_within:setParameter(CONDITION_PARAM_TICKS, 7500)
 conditionburn_within:setParameter(CONDITION_PARAM_DELAYED, 1)
 conditionburn_within:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
 

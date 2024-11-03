@@ -36,7 +36,7 @@ gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
 motd = "Welcome to The Forgotten Server!"
-onePlayerOnlinePerAccount = true
+onePlayerOnlinePerAccount = false
 allowClones = false
 allowWalkthrough = true
 serverName = "Forgotten"
@@ -66,8 +66,10 @@ timeBetweenExActions = 1000
 
 -- Map
 -- NOTE: set mapName WITHOUT .otbm at the end
-mapName = "test"
-mapAuthor = "Komic"
+
+mapName = "cross_map"
+mapAuthor = "nokturno"
+
 
 -- Market
 marketOfferDuration = 30 * 24 * 60 * 60
