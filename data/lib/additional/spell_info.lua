@@ -65,6 +65,8 @@ SpellBooks = {
        [39785] = {spellName = "Lightning Orb", spellType = "common", storageId = 20113},
        [00000] = {spellName = "Star Fall", spellType = "common", storageId = 20076},--missing
        [00000] = {spellName = "Energy Blast", spellType = "common", storageId = 20036},--missing
+       [00000] = {spellName = "Chain of Lightning", spellType = "common", storageId = 20115},--missing
+       [00000] = {spellName = "Lightning Spear", spellType = "common", storageId = 20116},--missing
 
       --Shadow -- death damage spells
       [39814] = {spellName = "Death Shrine", spellType = "common", storageId = 20022},--
@@ -172,8 +174,8 @@ SpellBooks = {
     [20112] = {spellName = "Light Dash", spellType = "common", storageId = 20112},
     
    
-    [20115] = {spellName = "Chain of Lightning", spellType = "common", storageId = 20115},
-    [20116] = {spellName = "Lightning Spear", spellType = "common", storageId = 20116},    
+    
+        
     
     [20130] = {spellName = "Aspect Mastery", spellType = "common", storageId = 20130},
     
