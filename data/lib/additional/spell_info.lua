@@ -32,6 +32,8 @@ SpellBooks = {
       [39796] = {spellName = "Exorcism", spellType = "common", storageId = 20029},--
       [39873] = {spellName = "Summon Guardian of Light", spellType = "common", storageId = 20033},--
       [39874] = {spellName = "Kings Blessing", spellType = "common", storageId = 20034},--
+      [00000] = {spellName = "Divine Storm", spellType = "common", storageId = 20028}, --missing   
+      [00000] = {spellName = "Smite", spellType = "common", storageId = 20031},--missing
 
       -- Volcanic -- fire damage spells
       [39823] = {spellName = "Fire Within", spellType = "common", storageId = 20015},--
@@ -59,8 +61,10 @@ SpellBooks = {
        [39869] = {spellName = "Full Moon", spellType = "common", storageId = 20083},--ultimate
        [39806] = {spellName = "Overcharge", spellType = "common", storageId = 20117},--
        [39790] = {spellName = "Magnetic Field", spellType = "common", storageId = 20118},--
-       [39785] = {spellName = "Magnetic Orb", spellType = "common", storageId = 20119},--
-
+       [00000] = {spellName = "Magnetic Orb", spellType = "common", storageId = 20119},--missing
+       [39785] = {spellName = "Lightning Orb", spellType = "common", storageId = 20113},
+       [00000] = {spellName = "Star Fall", spellType = "common", storageId = 20076},--missing
+       [00000] = {spellName = "Energy Blast", spellType = "common", storageId = 20036},--missing
 
       --Shadow -- death damage spells
       [39814] = {spellName = "Death Shrine", spellType = "common", storageId = 20022},--
@@ -140,12 +144,12 @@ SpellBooks = {
     
     
     
-    [1990] = {spellName = "Divine Storm", spellType = "common", storageId = 20028},    
+    
     [1992] = {spellName = "Divine Force", spellType = "common", storageId = 20030},
-    [1993] = {spellName = "Smite", spellType = "common", storageId = 20031},
+    
     [1994] = {spellName = "Light Beam", spellType = "common", storageId = 20032},
  
-    [1998] = {spellName = "Energy Blast", spellType = "common", storageId = 20036},
+    
        
     
     [20075] = {spellName = "Aery Wrath", spellType = "common", storageId = 20075},
@@ -164,9 +168,9 @@ SpellBooks = {
 
     [20109] = {spellName = "Earth Dance", spellType = "common", storageId = 20109},
     [20110] = {spellName = "Charged Strike", spellType = "common", storageId = 20110},
-    [20111] = {spellName = "Static Charge", spellType = "common", storageId = 20111},
+    [20111] = {spellName = "Earthquake", spellType = "common", storageId = 20111},
     [20112] = {spellName = "Light Dash", spellType = "common", storageId = 20112},
-    [20113] = {spellName = "Lightning Orb", spellType = "common", storageId = 20113},
+    
    
     [20115] = {spellName = "Chain of Lightning", spellType = "common", storageId = 20115},
     [20116] = {spellName = "Lightning Spear", spellType = "common", storageId = 20116},    
