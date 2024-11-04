@@ -146,7 +146,7 @@ combat5:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues5")
 
 local function burning_within(creatureId, variant)
     local creature = Creature(creatureId)
-	if not creature and creature:getTarget() then
+	if not creature then
 		return
 	end
     local level = creature:getLevel()
@@ -161,6 +161,7 @@ local function burning_within(creatureId, variant)
 	combat3:addCondition(conditionburn_within)
 	combat4:addCondition(conditionburn_within)
 	combat5:addCondition(conditionburn_within)
+	creature:getTarget():sendProgressbar(7.5 * 1.5, false)
 end
 
 function onCastSpell(creature, variant)
