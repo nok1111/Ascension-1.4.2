@@ -457,6 +457,10 @@
 	<instant group="attack" spellid="193" name="Earthquake" words="earthquake" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/earthquake.lua">
 	 <vocation name="None" />
 	</instant>
+
+	<instant group="attack" spellid="194" name="Water Wave" words="water wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/water_wave.lua">
+    <vocation name="None" />
+	</instant>
 	
 		
 	<!-- mastery spells -->
