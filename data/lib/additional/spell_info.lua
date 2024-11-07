@@ -22,6 +22,7 @@ SpellBooks = {
       [39838] = {spellName = "Arrow Rain", spellType = "common", storageId = 20127},--
       [39804] = {spellName = "Frost Barrel", spellType = "common", storageId = 20128},--
       [39880] = {spellName = "Destructive Shot", spellType = "common", storageId = 20129},-- ultimate
+      [00000] = {spellName = "Aspect Mastery", spellType = "common", storageId = 20130},--ultimate
 
 
       --Sacred -- holy damage / healing spells
@@ -34,6 +35,10 @@ SpellBooks = {
       [39874] = {spellName = "Kings Blessing", spellType = "common", storageId = 20034},--
       [00000] = {spellName = "Divine Storm", spellType = "common", storageId = 20028}, --missing   
       [00000] = {spellName = "Smite", spellType = "common", storageId = 20031},--missing
+      [00000] = {spellName = "Judgement", spellType = "common", storageId = 20076},--missing
+      [00000] = {spellName = "Light Beam", spellType = "common", storageId = 20032},
+      [00000] = {spellName = "Holy Form", spellType = "common", storageId = 20108},--MISSING ULTIMATE
+      [00000] = {spellName = "Sacred Rose", spellType = "common", storageId = 20079},--MISSING
 
       -- Volcanic -- fire damage spells
       [39823] = {spellName = "Fire Within", spellType = "common", storageId = 20015},--
@@ -47,6 +52,7 @@ SpellBooks = {
       [39779] = {spellName = "Hells Core", spellType = "common", storageId = 20047},--ultimate
       [39881] = {spellName = "Flaming Shot", spellType = "common", storageId = 20120},--
       [39849] = {spellName = "Explosive Shots", spellType = "common", storageId = 20122},--
+      [00000] = {spellName = "Burning Dash", spellType = "common", storageId = 20112},
 
       -- Lunar -- Energy damage spells
        [39768] = {spellName = "Magic Shield", spellType = "common", storageId = 20002},--
@@ -108,9 +114,11 @@ SpellBooks = {
        [39776] = {spellName = "Ice Nova", spellType = "common", storageId = 20039},--
        [39778] = {spellName = "Frost Wave", spellType = "common", storageId = 20043},--
        [39789] = {spellName = "Blizzard", spellType = "common", storageId = 20046},--
-       [1968] = {spellName = "Burning Ice", spellType = "common", storageId = 20006},--making
+       [00000] = {spellName = "Burning Ice", spellType = "common", storageId = 20006},--making
        [00000] = {spellName = "Frost Shots", spellType = "common", storageId = 20004},-- making
        [00000] = {spellName = "Glacial Step", spellType = "common", storageId = 20018},--making  
+       [00000] = {spellName = "Ice Clones", spellType = "common", storageId = 20094},--making (ultimate)
+       [00000] = {spellName = "Ice Wall", spellType = "common", storageId = 20075}, --making
 
 
       --Terra -- earth damage / Healing spells
@@ -131,6 +139,8 @@ SpellBooks = {
       [39864] = {spellName = "Bless of the Forest", spellType = "common", storageId = 20106},--
       [39805] = {spellName = "Healing Barrel", spellType = "common", storageId = 20126},--
       [39870] = {spellName = "Wrath of Nature", spellType = "common", storageId = 20107},--ULTIMATE
+      [00000] = {spellName = "Earth Dance", spellType = "common", storageId = 20109},--missing
+      [00000] = {spellName = "Earthquake", spellType = "common", storageId = 20111},--missing
 
     
     ---------------------------------------------------------------------
@@ -149,35 +159,35 @@ SpellBooks = {
     
     [1992] = {spellName = "Divine Force", spellType = "common", storageId = 20030},
     
-    [1994] = {spellName = "Light Beam", spellType = "common", storageId = 20032},
+    
  
     
        
     
-    [20075] = {spellName = "Aery Wrath", spellType = "common", storageId = 20075},
-    [20076] = {spellName = "Star Fall", spellType = "common", storageId = 20076},
+   
     
-    [20079] = {spellName = "Heal Party", spellType = "common", storageId = 20079},--missing will change
+    
+    
         
     [20082] = {spellName = "Aery Strikes", spellType = "common", storageId = 20082},
     
     
     
     
-    [20094] = {spellName = "Void Slumber", spellType = "common", storageId = 20094},--change later
+    
    
-    [20108] = {spellName = "Soul Form", spellType = "common", storageId = 20108},
+    
 
-    [20109] = {spellName = "Earth Dance", spellType = "common", storageId = 20109},
+   
     [20110] = {spellName = "Charged Strike", spellType = "common", storageId = 20110},
-    [20111] = {spellName = "Earthquake", spellType = "common", storageId = 20111},
-    [20112] = {spellName = "Light Dash", spellType = "common", storageId = 20112},
+    
+    
     
    
     
         
     
-    [20130] = {spellName = "Aspect Mastery", spellType = "common", storageId = 20130},
+    
     
 	
 	--only ultimate spells here
