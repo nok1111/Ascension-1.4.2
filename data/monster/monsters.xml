@@ -523,6 +523,7 @@
 	<monster name="Hunting Wolf" file="summons/hunting_wolf.xml" />
 	<monster name="Elite Wolf" file="summons/elite_wolf.xml" />
 	<monster name="Energy Orb" file="energy_orb.xml" />
+	<monster name="Ice Clone" file="summons/ice_clone.xml" />
 	
 	
 	<!-- blacksmith -->
