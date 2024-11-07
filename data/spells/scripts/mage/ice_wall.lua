@@ -5,21 +5,28 @@ setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_ICEAREA)
 local area = createCombatArea(AREA_CROSS1X1)
 setCombatArea(combat, area)
 
-local ICE_WALL_ITEM_ID = 1492  -- Replace with the actual item ID for the ice wall
-local ICE_WALL_DURATION = 3000 -- Duration in milliseconds (e.g., 3 seconds)
+local ICE_WALL_ITEM_ID = 6707  
+local ICE_WALL_DURATION = 10000 
 
 
 
 
 function onCastSpell(player, var)
     if not player then return false end
+
+    local playerposition = player:getPosition()
+    -- Check if the spell is being cast in a protection or non-PvP zone
+    if Tile(playerposition):hasFlag(TILESTATE_PROTECTIONZONE) or Tile(playerposition):hasFlag(TILESTATE_NOPVP) then
+        player:sendCancelMessage("You cannot cast Glacial Step in a protected area.")
+        return false
+    end
     
 	local positions = {
     [0] = {
         Position(player:getPosition().x - 3, player:getPosition().y - 2, player:getPosition().z),
         Position(player:getPosition().x - 2, player:getPosition().y - 2, player:getPosition().z),
         Position(player:getPosition().x - 1, player:getPosition().y - 2, player:getPosition().z),
-        Position(player:getPosition().x, player:getPosition().y - 2, player:getPosition().z),
+        Position(player:getPosition().x,     player:getPosition().y - 2, player:getPosition().z),
         Position(player:getPosition().x + 1, player:getPosition().y - 2, player:getPosition().z),
         Position(player:getPosition().x + 2, player:getPosition().y - 2, player:getPosition().z),
         Position(player:getPosition().x + 3, player:getPosition().y - 2, player:getPosition().z),
@@ -28,7 +35,7 @@ function onCastSpell(player, var)
         Position(player:getPosition().x + 2, player:getPosition().y - 3, player:getPosition().z),
         Position(player:getPosition().x + 2, player:getPosition().y - 2, player:getPosition().z),
         Position(player:getPosition().x + 2, player:getPosition().y - 1, player:getPosition().z),
-        Position(player:getPosition().x + 2, player:getPosition().y, player:getPosition().z),
+        Position(player:getPosition().x + 2, player:getPosition().y,     player:getPosition().z),
         Position(player:getPosition().x + 2, player:getPosition().y + 1, player:getPosition().z),
         Position(player:getPosition().x + 2, player:getPosition().y + 2, player:getPosition().z),
         Position(player:getPosition().x + 2, player:getPosition().y + 3, player:getPosition().z),
@@ -37,7 +44,7 @@ function onCastSpell(player, var)
         Position(player:getPosition().x - 3, player:getPosition().y + 2, player:getPosition().z),
         Position(player:getPosition().x - 2, player:getPosition().y + 2, player:getPosition().z),
         Position(player:getPosition().x - 1, player:getPosition().y + 2, player:getPosition().z),
-        Position(player:getPosition().x, player:getPosition().y + 2, player:getPosition().z),
+        Position(player:getPosition().x,     player:getPosition().y + 2, player:getPosition().z),
         Position(player:getPosition().x + 1, player:getPosition().y + 2, player:getPosition().z),
         Position(player:getPosition().x + 2, player:getPosition().y + 2, player:getPosition().z),
         Position(player:getPosition().x + 3, player:getPosition().y + 2, player:getPosition().z),
@@ -46,7 +53,7 @@ function onCastSpell(player, var)
         Position(player:getPosition().x - 2, player:getPosition().y - 3, player:getPosition().z),
         Position(player:getPosition().x - 2, player:getPosition().y - 2, player:getPosition().z),
         Position(player:getPosition().x - 2, player:getPosition().y - 1, player:getPosition().z),
-        Position(player:getPosition().x - 2, player:getPosition().y, player:getPosition().z),
+        Position(player:getPosition().x - 2, player:getPosition().y,     player:getPosition().z),
         Position(player:getPosition().x - 2, player:getPosition().y + 1, player:getPosition().z),
         Position(player:getPosition().x - 2, player:getPosition().y + 2, player:getPosition().z),
         Position(player:getPosition().x - 2, player:getPosition().y + 3, player:getPosition().z),

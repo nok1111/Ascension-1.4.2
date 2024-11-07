@@ -262,7 +262,7 @@
 	<instant group="attack" spellid="102" name="Aery Wrath" words="aery wrath" lvl="18" mana="45" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/chain_spell.lua">
     <vocation name="None" />
     </instant>
-	<instant group="attack" spellid="103" name="Star Fall" words="star fall" lvl="50" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="0" needweapon="0" needlearn="0" script="stellar/star_fall.lua">
+	<instant group="attack" spellid="103" name="Judgement" words="judgement" lvl="50" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="0" needweapon="0" needlearn="0" script="stellar/star_fall.lua">
     <vocation name="None" />
     </instant>
 	<instant group="attack" spellid="104" name="Falling Star" words="falling star" lvl="30" mana="95" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/falling_sword.lua">
@@ -271,7 +271,7 @@
 	<instant group="healing" spellid="105" name="Rain fall" words="rain fall" lvl="25" mana="100" cooldown="20000" groupcooldown="1900" needlearn="0" script="stellar/rain_fall.lua">
 	<vocation name="None" />
 	</instant>
-	<instant group="healing" spellid="106" name="Heal Party" words="heal party" lvl="28" mana="150" prem="0" aggressive="0" selftarget="1" cooldown="4000" groupcooldown="1900" script="stellar/heal_party.lua">
+	<instant group="healing" spellid="106" name="Sacred Rose" words="sacred rose" lvl="28" mana="150" prem="0" aggressive="0" selftarget="1" cooldown="4000" groupcooldown="1900" script="stellar/heal_party.lua">
    <vocation name="None" />
    </instant>
 	<instant group="support" spellid="107" name="Grow" words="Grow" lvl="60" mana="100" params="1" needweapon="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="stellar/grow.lua">
@@ -366,7 +366,7 @@
 	<instant group="attack" spellid="152" name="Wrath of Nature" words="wrath of nature" lvl="100" mana="420" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="30000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/wrath_of_nature.lua">
 	<vocation name="None" />
 	</instant>
-	<instant group="support" spellid="153" name="Soul Form" words="soul form" lvl="999" mana="250" prem="0" aggressive="0" selftarget="1" cooldown="120000" groupcooldown="0" needlearn="0" script="druid/soul_form.lua">
+	<instant group="support" spellid="153" name="Holy Form" words="holy form" lvl="999" mana="250" prem="0" aggressive="0" selftarget="1" cooldown="120000" groupcooldown="0" needlearn="0" script="druid/soul_form.lua">
 	<vocation name="None" />
 	</instant>
 	<instant group="attack" spellid="110" name="Earth Dance" words="earth dance" lvl="60" mana="225" direction="1" cooldown="16000" groupcooldown="1900" needlearn="0" script="druid/earth_wave.lua">
@@ -384,7 +384,7 @@
 	<instant group="attack" spellid="161" name="Static Charge" words="static charge" lvl="15" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="2200" groupcooldown="0" needweapon="0" needlearn="0" script="light dancer/static_charge.lua">
     <vocation name="None" />
     </instant>
-	<instant group="attack" spellid="162" name="Light Dash" words="light dash" lvl="18" mana="65"  blockwalls="1" needtarget="1" range="6" cooldown="6000" groupcooldown="0"  script="light dancer/light_dash.lua">
+	<instant group="attack" spellid="162" name="Burning Dash" words="burning dash" lvl="18" mana="65"  blockwalls="1" needtarget="1" range="6" cooldown="6000" groupcooldown="0"  script="light dancer/light_dash.lua">
     <vocation name="None" />
     </instant>
 	<instant group="attack" spellid="163" name="Lightning Orb" words="lightning orb" lvl="80" mana="75" prem="0" needweapon="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="light dancer/lightning_orb.lua">
@@ -459,6 +459,14 @@
 	</instant>
 
 	<instant group="attack" spellid="194" name="Water Wave" words="water wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/water_wave.lua">
+    <vocation name="None" />
+	</instant>
+
+	<instant group="attack" spellid="195" name="Ice Wall" words="ice wall" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_wall.lua">
+    <vocation name="None" />
+	</instant>
+
+	<instant group="attack" spellid="195" name="Ice Clones" words="ice clones" lvl="42" mana="115" selftarget="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_clones.lua">
     <vocation name="None" />
 	</instant>
 	
@@ -882,6 +890,7 @@
 	<instant name="summonarcher" words="###909" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonarcher.lua"/>
 	<instant name="summonhealer" words="###910" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonheal.lua"/>
 	<instant name="summonhealer-seraphin" words="###911" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonheal-seraphin.lua"/>
+	<instant name="summonicerange" words="###912" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonicerange.lua"/>
 	
 	
 	
