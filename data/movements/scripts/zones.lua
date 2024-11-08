@@ -188,27 +188,20 @@ end
 addEvent(checkPlayerStatus, 5000)
 
 
-function onStepIn(creature, item, position, fromPosition)
+function onStepIn(creature, item, position, fromPosition, zoneid)
     print("DEBUG: onStepIn called")
-    local player = creature:getPlayer()
-    if not player then
-        return true
-    end
+    if creature:isPlayer() then
 
-    local tile = Tile(position)
-    if not tile then
-        return true
-    end
+    local currentZoneId = Tile(position):getZoneId()
 
-    local zoneId = tile:getZoneId()
-    if zoneId == 0 then
-        return true
-    end
+		if currentZoneId == 0 then
+			return true
+		end
 
-    if activePlayers[player:getId()] ~= zoneId then
-        onEnterZone(player, zoneId)
-    end
-
+		if activePlayers[player:getId()] ~= currentZoneId then
+			onEnterZone(player, currentZoneId)
+		end
+	end
     return true
 end
 
