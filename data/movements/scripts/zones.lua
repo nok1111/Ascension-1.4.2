@@ -113,6 +113,7 @@ end
 
 
 local function onEnterZone(player, zoneId)
+    print("DEBUG: onEnterZone called")
     print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
     player:setStorageValue(10001, 1)
     player:sendTextMessage(MESSAGE_INFO_DESCR, "You have entered the zone.")
@@ -188,6 +189,7 @@ addEvent(checkPlayerStatus, 5000)
 
 
 function onStepIn(creature, item, position, fromPosition)
+    print("DEBUG: onStepIn called")
     local player = creature:getPlayer()
     if not player then
         return true
