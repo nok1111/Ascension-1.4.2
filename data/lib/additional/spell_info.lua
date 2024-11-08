@@ -115,10 +115,12 @@ SpellBooks = {
        [39778] = {spellName = "Frost Wave", spellType = "common", storageId = 20043},--
        [39789] = {spellName = "Blizzard", spellType = "common", storageId = 20046},--
        [00000] = {spellName = "Burning Ice", spellType = "common", storageId = 20006},--making
-       [00000] = {spellName = "Frost Shots", spellType = "common", storageId = 20004},-- making
+       [00000] = {spellName = "Ice Barrage", spellType = "common", storageId = 20004},-- making
        [00000] = {spellName = "Glacial Step", spellType = "common", storageId = 20018},--making  
        [00000] = {spellName = "Ice Clones", spellType = "common", storageId = 20094},--making (ultimate)
        [00000] = {spellName = "Ice Wall", spellType = "common", storageId = 20075}, --making
+       [00000] = {spellName = "Ice Tomb", spellType = "common", storageId = 20011},
+       [00000] = {spellName = "Cryo Eruption", spellType = "common", storageId = 20011},
 
 
       --Terra -- earth damage / Healing spells
@@ -152,7 +154,7 @@ SpellBooks = {
     [1970] = {spellName = "mass ani", spellType = "common", storageId = 20008},--missing
     [1971] = {spellName = "mass ani mon", spellType = "common", storageId = 20009},--missing
     [1972] = {spellName = "push", spellType = "common", storageId = 20010},
-    [1973] = {spellName = "flat", spellType = "common", storageId = 20011},
+    
     
     
     
@@ -169,7 +171,7 @@ SpellBooks = {
     
     
         
-    [20082] = {spellName = "Aery Strikes", spellType = "common", storageId = 20082},
+    
     
     
     
