@@ -115,7 +115,7 @@ end
 local function onEnterZone(player, zoneId)
     print("DEBUG: onEnterZone called")
     print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
-    player:setStorageValue(10001, 1)
+   
     player:sendTextMessage(MESSAGE_INFO_DESCR, "You have entered the zone.")
     activePlayers[player:getId()] = zoneId
     local zone = zones[zoneId]
@@ -191,6 +191,7 @@ addEvent(checkPlayerStatus, 5000)
 function onStepIn(creature, item, position, fromPosition, zoneid)
     print("DEBUG: onStepIn called")
     if creature:isPlayer() then
+	local player = creature:getPlayer()
 
     local currentZoneId = Tile(position):getZoneId()
 
@@ -206,7 +207,7 @@ function onStepIn(creature, item, position, fromPosition, zoneid)
 end
 
 
-function onStepOut(creature, item, position, fromPosition)
+function onStepOut(creature, item, position, fromPosition, zoneid)
     local player = creature:getPlayer()
     if not player then
         return true
