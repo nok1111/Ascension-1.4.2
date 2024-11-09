@@ -365,7 +365,16 @@ creatureeventlogout:register()
 local creatureeventDeath = CreatureEvent("death_zones")
 
 function creatureeventDeath.onDeath(creature, corpse, killer, mostDamage, unjustified, mostDamage_unjustified)
-    if not creature:isMonster() then return true end
+   if not creature:isMonster() then
+        return true
+    end
+
+    -- Check if the monster is a summon by verifying if it has a master
+    if creature:getMaster() then
+        return true  -- Skip further processing if the monster was a summon
+    end
+
+    -- Call the onMonsterDeath function if it's not a summon
     onMonsterDeath(creature, killer)
 end 
 
