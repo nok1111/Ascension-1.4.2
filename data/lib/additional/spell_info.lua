@@ -5,7 +5,7 @@ SpellBooks = {
 	  -- all common spells
 
       --Mighty -- physical damage spells
-      [36835] = {spellName = "Rend", spellType = "common", storageId = 20001},--
+      [36835] = {spellName = "Rend [common]", spellType = "common", storageId = 20001},--
       [39816] = {spellName = "pull", spellType = "common", storageId = 20012},--
       [39821] = {spellName = "Brutal Swing", spellType = "common", storageId = 20013},--
       [39836] = {spellName = "Challenging Spear", spellType = "common", storageId = 20014},--
@@ -22,7 +22,7 @@ SpellBooks = {
       [39838] = {spellName = "Arrow Rain", spellType = "common", storageId = 20127},--
       [39804] = {spellName = "Frost Barrel", spellType = "common", storageId = 20128},--
       [39880] = {spellName = "Destructive Shot", spellType = "common", storageId = 20129},-- ultimate
-      [00000] = {spellName = "Aspect Mastery", spellType = "common", storageId = 20130},--ultimate
+      [39904] = {spellName = "Aspect Mastery", spellType = "common", storageId = 20130},--ultimate
 
 
       --Sacred -- holy damage / healing spells
@@ -33,26 +33,26 @@ SpellBooks = {
       [39796] = {spellName = "Exorcism", spellType = "common", storageId = 20029},--
       [39873] = {spellName = "Summon Guardian of Light", spellType = "common", storageId = 20033},--
       [39874] = {spellName = "Kings Blessing", spellType = "common", storageId = 20034},--
-      [00000] = {spellName = "Divine Storm", spellType = "common", storageId = 20028}, --missing   
-      [00000] = {spellName = "Smite", spellType = "common", storageId = 20031},--missing
-      [00000] = {spellName = "Judgement", spellType = "common", storageId = 20076},--missing
-      [00000] = {spellName = "Light Beam", spellType = "common", storageId = 20032},
-      [00000] = {spellName = "Holy Form", spellType = "common", storageId = 20108},--MISSING ULTIMATE
-      [00000] = {spellName = "Sacred Rose", spellType = "common", storageId = 20079},--MISSING
+      [39893] = {spellName = "Divine Storm", spellType = "common", storageId = 20028}, --   
+      [39894] = {spellName = "Smite", spellType = "common", storageId = 20031},--
+      [39906] = {spellName = "Judgement", spellType = "common", storageId = 20076},--
+      [39907] = {spellName = "Light Beam", spellType = "common", storageId = 20032},
+      [39908] = {spellName = "Holy Form", spellType = "common", storageId = 20108},--
+      [39909] = {spellName = "Sacred Rose", spellType = "common", storageId = 20079},--MISSING
 
       -- Volcanic -- fire damage spells
       [39823] = {spellName = "Fire Within", spellType = "common", storageId = 20015},--
       [39818] = {spellName = "whirlwind", spellType = "common", storageId = 20017},--
       [39819] = {spellName = "Phoenix Wrath", spellType = "common", storageId = 20019},--
       [39820] = {spellName = "Dragon Aura", spellType = "common", storageId = 20020},--
-      [00000] = {spellName = "Dragons Call", spellType = "common", storageId = 20021},
+      [00000] = {spellName = "Dragons Call", spellType = "common", storageId = 20021}, --ultimate
       [39799] = {spellName = "Living Bomb", spellType = "common", storageId = 20035},--
       [39784] = {spellName = "Fire Blast", spellType = "common", storageId = 20037},--
       [39788] = {spellName = "Hand of God", spellType = "common", storageId = 20042},--
       [39779] = {spellName = "Hells Core", spellType = "common", storageId = 20047},--ultimate
       [39881] = {spellName = "Flaming Shot", spellType = "common", storageId = 20120},--
       [39849] = {spellName = "Explosive Shots", spellType = "common", storageId = 20122},--
-      [00000] = {spellName = "Burning Dash", spellType = "common", storageId = 20112},
+      [39905] = {spellName = "Burning Dash", spellType = "common", storageId = 20112},
 
       -- Lunar -- Energy damage spells
        [39768] = {spellName = "Magic Shield", spellType = "common", storageId = 20002},--
@@ -67,12 +67,12 @@ SpellBooks = {
        [39869] = {spellName = "Full Moon", spellType = "common", storageId = 20083},--ultimate
        [39806] = {spellName = "Overcharge", spellType = "common", storageId = 20117},--
        [39790] = {spellName = "Magnetic Field", spellType = "common", storageId = 20118},--
-       [00000] = {spellName = "Magnetic Orb", spellType = "common", storageId = 20119},--missing
+       [39892] = {spellName = "Magnetic Orb", spellType = "common", storageId = 20119}, --ultimate
        [39785] = {spellName = "Lightning Orb", spellType = "common", storageId = 20113},
-       [00000] = {spellName = "Star Fall", spellType = "common", storageId = 20076},--missing
-       [00000] = {spellName = "Energy Blast", spellType = "common", storageId = 20036},--missing
-       [00000] = {spellName = "Chain of Lightning", spellType = "common", storageId = 20115},--missing
-       [00000] = {spellName = "Lightning Spear", spellType = "common", storageId = 20116},--missing
+       [39895] = {spellName = "Star Fall", spellType = "common", storageId = 20076},--need to do again since it was used on holy
+       [39896] = {spellName = "Energy Blast", spellType = "common", storageId = 20036},--
+       [39897] = {spellName = "Chain of Lightning", spellType = "common", storageId = 20115},--
+       [39898] = {spellName = "Lightning Spear", spellType = "common", storageId = 20116},--
 
       --Shadow -- death damage spells
       [39814] = {spellName = "Death Shrine", spellType = "common", storageId = 20022},--
@@ -81,16 +81,16 @@ SpellBooks = {
       [39854] = {spellName = "Curse", spellType = "common", storageId = 20050},--
       [39855] = {spellName = "Fear", spellType = "common", storageId = 20051},--
       [39834] = {spellName = "Shadow Strike", spellType = "common", storageId = 20052},--
-      [00000] = {spellName = "Summon Void Healer", spellType = "common", storageId = 20053},
+      [39885] = {spellName = "Summon Void Healer", spellType = "common", storageId = 20053},
       [39883] = {spellName = "Blood Pact", spellType = "common", storageId = 20054},--
       [39882] = {spellName = "Party Vitality", spellType = "common", storageId = 20055},--
-      [00000] = {spellName = "Summon Void Guard", spellType = "common", storageId = 20056},
-      [00000] = {spellName = "Summon Void Archer", spellType = "common", storageId = 20057},
+      [39886] = {spellName = "Summon Void Guard", spellType = "common", storageId = 20056},
+      [39884] = {spellName = "Summon Void Archer", spellType = "common", storageId = 20057},
       [00000] = {spellName = "Blood Wall", spellType = "common", storageId = 20058},
-      [00000] = {spellName = "Dark Plague", spellType = "common", storageId = 20059},
+      [00000] = {spellName = "Dark Plague", spellType = "common", storageId = 20059}, --ultimate
       [39853] = {spellName = "Void Creep", spellType = "common", storageId = 20060},--
       [39850] = {spellName = "Soul Rain", spellType = "common", storageId = 20061},
-      [39847] = {spellName = "Stealth", spellType = "common", storageId = 20062},
+      [39847] = {spellName = "Stealth", spellType = "common", storageId = 20062}, --ultimate
       [39857] = {spellName = "Shadow Hunt", spellType = "common", storageId = 20064},--
       [39848] = {spellName = "Shadowstep", spellType = "common", storageId = 20065},--
       [39844] = {spellName = "Backstab", spellType = "common", storageId = 20066},--
@@ -114,13 +114,13 @@ SpellBooks = {
        [39776] = {spellName = "Ice Nova", spellType = "common", storageId = 20039},--
        [39778] = {spellName = "Frost Wave", spellType = "common", storageId = 20043},--
        [39789] = {spellName = "Blizzard", spellType = "common", storageId = 20046},--
-       [00000] = {spellName = "Burning Ice", spellType = "common", storageId = 20006},--making
-       [00000] = {spellName = "Ice Barrage", spellType = "common", storageId = 20004},-- making
-       [00000] = {spellName = "Glacial Step", spellType = "common", storageId = 20018},--making  
-       [00000] = {spellName = "Ice Clones", spellType = "common", storageId = 20094},--making (ultimate)
-       [00000] = {spellName = "Ice Wall", spellType = "common", storageId = 20075}, --making
-       [00000] = {spellName = "Ice Tomb", spellType = "common", storageId = 20011},
-       [00000] = {spellName = "Cryo Eruption", spellType = "common", storageId = 20011},
+       [39888] = {spellName = "Burning Ice", spellType = "common", storageId = 20006},--
+       [39889] = {spellName = "Ice Barrage", spellType = "common", storageId = 20004},-- 
+       [39899] = {spellName = "Glacial Step", spellType = "common", storageId = 20018},-- 
+       [39900] = {spellName = "Ice Clones", spellType = "common", storageId = 20094},-- (ultimate)
+       [39901] = {spellName = "Ice Wall", spellType = "common", storageId = 20075}, 
+       [39911] = {spellName = "Ice Tomb", spellType = "common", storageId = 20011},
+       [39912] = {spellName = "Cryo Eruption", spellType = "common", storageId = 20011},
 
 
       --Terra -- earth damage / Healing spells
@@ -130,7 +130,7 @@ SpellBooks = {
       [39863] = {spellName = "Grow", spellType = "common", storageId = 20080},--
       [39792] = {spellName = "Terra Strike", spellType = "common", storageId = 20095},--
       [39801] = {spellName = "Living Seeds", spellType = "common", storageId = 20096},--
-      [39800] = {spellName = "Life Bloom", spellType = "common", storageId = 20097},--
+      [39800] = {spellName = "Life Bloom", spellType = "common", storageId = 20097},--ultimate
       [39868] = {spellName = "Rejuvenation", spellType = "common", storageId = 20098},--
       [00000] = {spellName = "Seed Germination", spellType = "common", storageId = 20099},
       [00000] = {spellName = "Travel Form", spellType = "common", storageId = 20100},
@@ -141,11 +141,12 @@ SpellBooks = {
       [39864] = {spellName = "Bless of the Forest", spellType = "common", storageId = 20106},--
       [39805] = {spellName = "Healing Barrel", spellType = "common", storageId = 20126},--
       [39870] = {spellName = "Wrath of Nature", spellType = "common", storageId = 20107},--ULTIMATE
-      [00000] = {spellName = "Earth Dance", spellType = "common", storageId = 20109},--missing
-      [00000] = {spellName = "Earthquake", spellType = "common", storageId = 20111},--missing
+      [39902] = {spellName = "Earth Dance", spellType = "common", storageId = 20109},--
+      [39903] = {spellName = "Earthquake", spellType = "common", storageId = 20111},--
 
     
     ---------------------------------------------------------------------
+    ----- STILL MISSING  vvvvvvvvv the ones below --------
     
     
     [1967] = {spellName = "explo", spellType = "common", storageId = 20005},--missing
@@ -153,33 +154,9 @@ SpellBooks = {
     [1969] = {spellName = "anihilation", spellType = "common", storageId = 20007},--missing
     [1970] = {spellName = "mass ani", spellType = "common", storageId = 20008},--missing
     [1971] = {spellName = "mass ani mon", spellType = "common", storageId = 20009},--missing
-    [1972] = {spellName = "push", spellType = "common", storageId = 20010},
+    [1972] = {spellName = "push", spellType = "common", storageId = 20010},  
     
-    
-    
-    
-    
-    [1992] = {spellName = "Divine Force", spellType = "common", storageId = 20030},
-    
-    
- 
-    
-       
-    
-   
-    
-    
-    
-        
-    
-    
-    
-    
-    
-    
-   
-    
-
+    [1992] = {spellName = "Divine Force", spellType = "common", storageId = 20030},   
    
     [20110] = {spellName = "Charged Strike", spellType = "common", storageId = 20110},
     
