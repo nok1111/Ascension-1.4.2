@@ -1,24 +1,24 @@
 local ec = EventCallback
 
 ec.onTargetCombat = function(creature, target)
-	if not self then
+	if not creature then
         return RETURNVALUE_NOERROR
     end
 	
 -- Get attacker and target information
-local selfIsPlayer = self:isPlayer()
+local selfIsPlayer = creature:isPlayer()
 local targetIsPlayer = target:isPlayer()
-local MyMaster = self:getMaster()
+local MyMaster = creature:getMaster()
 local TargetMaster = target:getMaster()
 
 -- Check for player vs. player interactions
 if selfIsPlayer and targetIsPlayer then
-    local selfParty = self:getParty()
+    local selfParty = creature:getParty()
     local targetParty = target:getParty()
-    local selfGuild = self:getGuild()
+    local selfGuild = creature:getGuild()
     local targetGuild = target:getGuild()
 
-	if selfIsPlayer and self:hasSecureMode() then
+	if selfIsPlayer and creature:hasSecureMode() then
 	return RETURNVALUE_YOUMAYNOTATTACKTHISCREATURE
     end
 	
@@ -38,7 +38,7 @@ if selfIsPlayer and TargetMaster then
     local targetMasterIsPlayer = TargetMaster:isPlayer()
 
     -- Check if the attacker's player cannot attack other party members' summons
-    if targetMasterIsPlayer and (TargetMaster ~= MyMaster or self:hasSecureMode()) then
+    if targetMasterIsPlayer and (TargetMaster ~= MyMaster or creature:hasSecureMode()) then
         local targetParty = TargetMaster:getParty()
         if MyMaster and targetParty and targetParty == MyMaster:getParty() then
             -- Attacker's player cannot damage other party members' summons
@@ -71,7 +71,7 @@ if MyMaster and targetIsPlayer then
     end
 end
 
-if self and target and self:isPlayer() and target:isMonster() then -- and target:isMonster()
+if creature and target and creature:isPlayer() and target:isMonster() then -- and target:isMonster()
 		
 		target:registerEvent("ScarabDeath") 
 end
