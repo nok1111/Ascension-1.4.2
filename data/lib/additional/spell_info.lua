@@ -160,16 +160,10 @@ SpellBooks = {
    
     [20110] = {spellName = "Charged Strike", spellType = "common", storageId = 20110},
     
-    
-    
-   
-    
-        
-    
-    
+   -------------------------------------------------------------------------------------------- 
     
 	
-	--only ultimate spells here
+	--only ultimate spells here VVVVV
 	[1955] = {spellName = "spell_name_here_3", spellType = "ultimate", storageId = 30001}
 }
 
