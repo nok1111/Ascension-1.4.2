@@ -29,7 +29,8 @@ function onLogin(player)
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")
 	player:registerEvent("spellremove")
-	
+	player:registerEvent("loginzones")
+	player:registerEvent("logoutzones")
 	
 	-- Check login in profession system
 	player:registerEvent("ProfessionPackets")
