@@ -2,11 +2,6 @@
 <movements>
 	<!-- Zones-->
 
-    <movevent event="StepIn" ignoremultiplyevents="1" zoneid="1" script="zones.lua"/>
-    <movevent event="StepIn" ignoremultiplyevents="1" zoneid="2" script="zones.lua"/>
-    <movevent event="StepIn" ignoremultiplyevents="1" zoneid="3" script="zones.lua"/>
-    <movevent event="StepIn" ignoremultiplyevents="1" zoneid="4" script="zones.lua"/>
-    <movevent event="StepIn" ignoremultiplyevents="1" zoneid="5" script="zones.lua"/>
 
 
 	<!-- orbs 
