@@ -75,7 +75,7 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
     -- Check if an item with the same ID already exists in the store inbox
     for i = 0, storeInbox:getSize() - 1 do
         local spellitem = storeInbox:getItem(i)
-        if spellitem and spellitem:getId() == item:getId() then
+        if spellitem and spellitem:getId() == item:getId() and not spellitem:isStoreItem()  then
            player:sendCancelMessage("You already have this spell in your spell bag.")
         return true
         end
@@ -106,7 +106,10 @@ function onUse(player, item, fromPosition, target, toPosition, isHotkey)
             if player:learnSpell(spellName) then
                 player:setStorageValue(storageId, 1)  -- Mark the ultimate spell as learned
                 player:sendTextMessage(MESSAGE_INFO_DESCR, "You have learned the ultimate spell: " .. spellName .. "!")
-                 player:moveToStoreInbox(CONST_SLOT_STORE_INBOX, item)
+                addUniqueItemToStoreInbox(player, item:getId())
+                if not item:isStoreItem() then
+                item:remove(1)
+                end
             else
                 player:sendCancelMessage("Failed to learn the ultimate spell.")
             end
