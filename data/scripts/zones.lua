@@ -214,18 +214,12 @@ local function onLeaveZone(player, zoneId)
     player:setStorageValue(10001, 0)
    -- player:sendTextMessage(MESSAGE_INFO_DESCR, "You have left the zone.")
     activePlayers[player:getId()] = nil
-
-    local stillActive = false
-    for _, activeZoneId in pairs(activePlayers) do
-        if activeZoneId == zoneId then
-            stillActive = true
-            break
-        end
-    end
-
-    if not stillActive then
-        zones[zoneId].active = false
+	
+	 if Game.getZonePlayerCount(zoneId) < 1 then
         despawnMonsters(zones[zoneId])
+		 zones[zoneId].active = false
+		else
+		 zones[zoneId].active = true
     end
 end
 
