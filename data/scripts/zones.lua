@@ -65,7 +65,7 @@ local function getRandomPositionInZone(zone)
         local pos = tileUserdata:getPosition()  -- Retrieve the position
 
         -- Check if the tile is walkable and not blocked
-        if Tile(pos):isWalkable() and Tile(pos):isSightClear then
+        if Tile(pos):isWalkable() and Tile(pos):isSightClear() then
             return pos  -- Return the position if valid
         end
     end
