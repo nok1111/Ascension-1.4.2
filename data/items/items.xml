@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <items>
 <!-- TIER SETS-->
+
+<!-- TIER 0 -->
 	<item id="33443" article="a" name="Tier 0 Armor">
 		<attribute key="weight" value="70" />
 		<attribute key="armor" value="16" />
@@ -57,6 +59,394 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 
+	<!-- TIER 1 -->
+		<item id="33448" article="a" name="WildThorn's Helmet">
+		<attribute key="weight" value="100" />
+		<attribute key="armor" value="16" />
+		<attribute key="slotType" value="head" />
+	</item>
+	<item id="33452" article="a" name="WildThorn's Armor">
+		<attribute key="weight" value="200" />
+		<attribute key="armor" value="20" />
+		<attribute key="slotType" value="body" />
+	</item>
+	<item id="33450" name="WildThorn's legs">
+		<attribute key="weight" value="150" />
+		<attribute key="armor" value="16" />
+		<attribute key="slotType" value="legs" />
+	</item>
+	<item id="33451" article="a" name="WildThorn's Boots">
+		<attribute key="weight" value="50" />
+		<attribute key="armor" value="6" />
+		<attribute key="slotType" value="feet" />
+	</item>
+			<item id="33453" article="a" name="WildThorn's Mace">
+		<attribute key="weight" value="200" />
+		<attribute key="defense" value="30" />
+		<attribute key="attack" value="60" />
+		<attribute key="weaponType" value="sword" />
+	</item>
+		</item>
+		<item id="36265" article="a" name="Emerald Sword">
+		<attribute key="weight" value="300" />
+		<attribute key="defense" value="45" />
+		<attribute key="attack" value="75" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+	</item>
+	<item id="33449" article="a" name="WildThorn's shield">
+		<attribute key="weight" value="100" />
+		<attribute key="defense" value="75" />
+		<attribute key="weaponType" value="shield" />
+	</item>
+
+<!-- TIER 2 -->
+
+	<item id="33304" article="a" name="Sandstorm Helmet">
+		<attribute key="armor" value="20" />
+		<attribute key="slotType" value="head" />
+		<attribute key="weight" value="500" />
+	</item>	
+	<item id="33305" article="a" name="Sandstorm Armor">
+		<attribute key="weight" value="800" />
+		<attribute key="armor" value="26" />
+		<attribute key="slotType" value="body" />
+	</item>
+		<item id="33306" name="Sandstorm Legs">
+		<attribute key="weight" value="500" />
+		<attribute key="armor" value="20" />
+		<attribute key="slotType" value="legs" />
+	</item>
+	<item id="33307" name="Sandstorm Boots">
+		<attribute key="armor" value="9" />
+		<attribute key="speed" value="30" />
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+	</item>
+	<item id="33308" article="a" name="Sandstorm Coliseum Shield">
+		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
+		<attribute key="weight" value="300" />
+		<attribute key="defense" value="85" />
+		<attribute key="weaponType" value="shield" />
+	</item>
+	<item id="33309" article="a" name="Sandstorm Coliseum Mace">
+		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
+		<attribute key="weight" value="1800" />
+		<attribute key="attack" value="85" />
+		<attribute key="defense" value="55" />		
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+	</item>
+	<item id="33310" article="a" name="Sandstorm Coliseum Wand">
+		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
+		<attribute key="attack" value="85" />
+		<attribute key="defense" value="55" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="190" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="5" />
+	</item>
+		<item id="33311" article="a" name="Sandstorm Coliseum Axe">
+		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
+		<attribute key="weight" value="100" />
+		<attribute key="attack" value="68" />
+		<attribute key="defense" value="35" />
+		<attribute key="weaponType" value="sword" />
+	</item>
+	<item id="33312" article="a" name="Sandstorm Coliseum Bow">
+		<attribute key="weight" value="200" />
+		<attribute key="attack" value="85" />
+		<attribute key="defense" value="55" />
+		<attribute key="hitChance" value="92" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="shootType" value="greenstar" />
+		<attribute key="range" value="5" />
+		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
+	</item>
+		<item id="33313" article="a" name="Sandstorm Coliseum Sword">
+		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
+		<attribute key="weight" value="100" />
+		<attribute key="attack" value="64" />
+		<attribute key="defense" value="40" />
+		<attribute key="weaponType" value="sword" />
+	</item>
+
+<!-- TIER 3 -->
+
+
+	<item id="33342" article="a" name="Frostbite Shield">
+		<attribute key="weight" value="300" />
+		<attribute key="defense" value="100" />
+		<attribute key="weaponType" value="shield" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="33344" article="a" name="Frostbite Axe">		
+		<attribute key="weight" value="500" />
+		<attribute key="attack" value="130" />
+		<attribute key="defense" value="60" />
+		<attribute key="absorbPercentEnergy" value="3" />
+		<attribute key="elementDeath" value="5" />		
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="33341" article="a" name="Frostbite Sword">
+		<attribute key="weight" value="300" />
+		<attribute key="attack" value="75" />
+		<attribute key="defense" value="40" />
+		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="elementDeath" value="2" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="33339" article="a" name="Frostbite Crusher">
+		<attribute key="weight" value="300" />
+		<attribute key="attack" value="71" />
+		<attribute key="defense" value="40" />
+		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="elementDeath" value="3" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="33335" article="a" name="Frostbite Helmet">
+		<attribute key="weight" value="200" />
+		<attribute key="armor" value="14" />
+		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="33336" article="a" name="Frostbite Armor">
+		<attribute key="weight" value="400" />
+		<attribute key="armor" value="21" />
+		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="slotType" value="body" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="33337" name="Frostbite Legs">
+		<attribute key="weight" value="500" />
+		<attribute key="armor" value="14" />
+		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="slotType" value="legs" />
+		<attribute key="description" value="forged in a distorted field." />
+	</item>
+	
+	
+	<item id="33338" name="Frostbite Boots">
+		<attribute key="weight" value="250" />
+		<attribute key="armor" value="5" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="absorbPercentEnergy" value="1" />
+		<attribute key="description" value="forged in a distorted field." />
+	</item>
+	
+	<item id="33340" article="a" name="Frostbite Bow">
+		<attribute key="weight" value="200" />
+		<attribute key="attack" value="130" />
+		<attribute key="defense" value="60" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="shootType" value="greenstar" />
+		<attribute key="range" value="5" />
+		<attribute key="description" value="adds the [frostbite] effect. (deals ice damage overtime.)" />	
+	</item>
+	
+	<item id="33343" article="a" name="Frostbite Wand">
+		<attribute key="attack" value="130" />
+		<attribute key="defense" value="60" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="290" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="5" />
+		<attribute key="description" value="Shoots multiple attacks at once." />	
+	</item>
+	
+
+<!-- TIER 4 -->
+
+<item id="34107" article="a" name="Inner-force Helmet">
+		<attribute key="weight" value="200" />
+		<attribute key="armor" value="12" />
+			
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+		<item id="34108" article="a" name="Inner-force Armor">
+		<attribute key="weight" value="400" />
+		<attribute key="armor" value="18" />
+				
+		<attribute key="slotType" value="body" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	<item id="34109" name="Inner-force Legs">
+		<attribute key="weight" value="500" />
+		<attribute key="armor" value="11" />
+		<item id="34110" name="Inner-force Boots">
+		<attribute key="weight" value="250" />
+		<attribute key="armor" value="12" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="absorbPercentEnergy" value="1" />
+	</item>
+
+			<item id="36395" article="a" name="Bloodfist Ensign">
+		<attribute key="weight" value="300" />
+		<attribute key="defense" value="102" />
+		<attribute key="weaponType" value="shield" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+
+		
+	<item id="13760" article="a" name="Wand of Dimmensions">
+		<attribute key="attack" value="91" />
+		<attribute key="defense" value="40" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="290" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="5" />
+		<attribute key="description" value="deals death damage to the target." />	
+	</item>
+		<item id="36375" article="a" name="Burning Colosus">		
+		<attribute key="weight" value="500" />
+		<attribute key="attack" value="101" />
+		<attribute key="defense" value="60" />	
+		<attribute key="absorbPercentEnergy" value="1" />
+		<attribute key="elementFire" value="5" />		
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+	</item>
+
+		<item id="36374" article="a" name="King's Chain">
+		<attribute key="weight" value="300" />
+		<attribute key="attack" value="70" />
+		<attribute key="defense" value="45" />
+		<attribute key="absorbPercentEnergy" value="2" />
+		<attribute key="elementHoly" value="4" />
+		<attribute key="weaponType" value="sword" />
+	</item>
+	
+			<item id="36220" article="a" name="Assassin Piercer">
+		<attribute key="weight" value="300" />
+		<attribute key="attack" value="72" />
+		<attribute key="defense" value="37" />
+		<attribute key="weaponType" value="sword" />	
+	</item>
+
+		
+	
+	<item id="34020" article="a" name="Ghost Bow">
+		<attribute key="weight" value="200" />
+		<attribute key="attack" value="100" />
+		<attribute key="defense" value="41" />
+		<attribute key="hitChance" value="95" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="shootType" value="greenstar" />
+		<attribute key="range" value="6" />
+		<attribute key="description" value="long range and high hit chance bow." />	
+	</item>
+	
+<!-- TIER 5 -->
+
+
+	
+	
+		<item id="34072" article="a" name="Darkiron Helmet">
+		<attribute key="weight" value="200" />
+		<attribute key="armor" value="14" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+			<item id="34071" article="a" name="Darkiron Armor">
+		<attribute key="weight" value="400" />
+		<attribute key="armor" value="20" />
+		<attribute key="slotType" value="body" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="34070" name="Darkiron Legs">
+		<attribute key="weight" value="500" />
+		<attribute key="armor" value="15" />
+		<attribute key="slotType" value="legs" />
+		<attribute key="description" value="forged in a distorted field." />
+	</item>
+		<item id="34069" name="Darkiron Boots">
+		<attribute key="weight" value="250" />
+		<attribute key="armor" value="5" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="description" value="forged in a distorted field." />
+	</item>
+	
+	<item id="34065" article="a" name="Darkiron Sword">
+		<attribute key="weight" value="300" />
+		<attribute key="attack" value="43" />
+		<attribute key="defense" value="24" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="34064" article="a" name="Darkiron Edge">
+		<attribute key="weight" value="300" />
+		<attribute key="attack" value="46" />
+		<attribute key="defense" value="22" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	<item id="34063" article="a" name="Darkiron Hammer">		
+		<attribute key="weight" value="500" />
+		<attribute key="attack" value="60" />
+		<attribute key="defense" value="30" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
+	
+	
+	<item id="34062" article="a" name="Darkiron Wand">
+		<attribute key="attack" value="35" />
+		<attribute key="defense" value="28" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="290" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="5" />
+		<attribute key="description" value="-----." />	
+	</item>
+	
+		<item id="34032" article="a" name="Darkiron Bow">
+		<attribute key="weight" value="200" />
+		<attribute key="attack" value="45" />
+		<attribute key="defense" value="23" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="weaponType" value="distance" />	
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="shootType" value="greenstar" />
+		<attribute key="range" value="5" />
+		<attribute key="description" value="----" />	
+	</item>
+	
+		<item id="37582" article="a" name="Darkiron Shield">
+		<attribute key="weight" value="300" />
+		<attribute key="defense" value="41" />
+		<attribute key="weaponType" value="shield" />
+		<attribute key="description" value="forged in a distorted field." />	
+	</item>
 
 
 	<item id="100" name="void" />
@@ -36283,102 +36673,7 @@
 		<attribute key="weaponType" value="shield" />
 		<attribute key="description" value="The story tells a fire essence got petrified by a strong winter." />	
 	</item>
-	
-	<item id="33342" article="a" name="Frostbite Shield">
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="100" />
-		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="33344" article="a" name="Frostbite Axe">		
-		<attribute key="weight" value="500" />
-		<attribute key="attack" value="130" />
-		<attribute key="defense" value="60" />
-		<attribute key="absorbPercentEnergy" value="3" />
-		<attribute key="elementDeath" value="5" />		
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="33341" article="a" name="Frostbite Sword">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="75" />
-		<attribute key="defense" value="40" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="elementDeath" value="2" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="33339" article="a" name="Frostbite Crusher">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="71" />
-		<attribute key="defense" value="40" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="elementDeath" value="3" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="33335" article="a" name="Frostbite Helmet">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="14" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="slotType" value="head" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="33336" article="a" name="Frostbite Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="21" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="slotType" value="body" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="33337" name="Frostbite Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="14" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="slotType" value="legs" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-	
-	
-	<item id="33338" name="Frostbite Boots">
-		<attribute key="weight" value="250" />
-		<attribute key="armor" value="5" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="absorbPercentEnergy" value="1" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-	
-	<item id="33340" article="a" name="Frostbite Bow">
-		<attribute key="weight" value="200" />
-		<attribute key="attack" value="130" />
-		<attribute key="defense" value="60" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="adds the [frostbite] effect. (deals ice damage overtime.)" />	
-	</item>
-	
-	<item id="33343" article="a" name="Frostbite Wand">
-		<attribute key="attack" value="130" />
-		<attribute key="defense" value="60" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="Shoots multiple attacks at once." />	
-	</item>
-	
+
 	
 	
 	<item id="31803" article="a" name="Blade of the Lost Sanctum">
@@ -37005,13 +37300,7 @@
 		<attribute key="defense" value="12" />
 		<attribute key="attack" value="42" />
 		<attribute key="weaponType" value="sword" />
-	</item>
-		<item id="36265" article="a" name="Emerald Sword">
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="45" />
-		<attribute key="attack" value="75" />
-		<attribute key="weaponType" value="sword" />
-	</item>
+
 		<item id="36266" article="a" name="Rotten Evil">
 		<attribute key="weight" value="300" />
 		<attribute key="defense" value="15" />
@@ -37144,37 +37433,7 @@
 		<attribute key="elementEnergy" value="5" />
 	</item>
 	
-	<item id="33448" article="a" name="WildThorn's Helmet">
-		<attribute key="weight" value="100" />
-		<attribute key="armor" value="16" />
-		<attribute key="slotType" value="head" />
-	</item>
-	<item id="33452" article="a" name="WildThorn's Armor">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="20" />
-		<attribute key="slotType" value="body" />
-	</item>
-	<item id="33450" name="WildThorn's legs">
-		<attribute key="weight" value="150" />
-		<attribute key="armor" value="16" />
-		<attribute key="slotType" value="legs" />
-	</item>
-	<item id="33451" article="a" name="WildThorn's Boots">
-		<attribute key="weight" value="50" />
-		<attribute key="armor" value="6" />
-		<attribute key="slotType" value="feet" />
-	</item>
-			<item id="33453" article="a" name="WildThorn's Mace">
-		<attribute key="weight" value="200" />
-		<attribute key="defense" value="30" />
-		<attribute key="attack" value="60" />
-		<attribute key="weaponType" value="sword" />
-	</item>
-	<item id="33449" article="a" name="WildThorn's shield">
-		<attribute key="weight" value="100" />
-		<attribute key="defense" value="75" />
-		<attribute key="weaponType" value="shield" />
-	</item>
+
 	
 	<item id="36279" article="a" name="Tail Slacker bow">
 		<attribute key="weight" value="200" />
@@ -38621,85 +38880,7 @@
 		<attribute key="slotType" value="two-handed" />
 	</item>
 	
-	<item id="33304" article="a" name="Sandstorm Helmet">
-		<attribute key="armor" value="20" />
-		<attribute key="slotType" value="head" />
-		<attribute key="weight" value="500" />
-	</item>	
-	<item id="33305" article="a" name="Sandstorm Armor">
-		<attribute key="weight" value="800" />
-		<attribute key="armor" value="26" />
-		<attribute key="slotType" value="body" />
-	</item>
-		<item id="33306" name="Sandstorm Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="20" />
-		<attribute key="slotType" value="legs" />
-	</item>
-	<item id="33307" name="Sandstorm Boots">
-		<attribute key="armor" value="9" />
-		<attribute key="speed" value="30" />
-		<attribute key="weight" value="250" />
-		<attribute key="slotType" value="feet" />
-	</item>
-	<item id="33308" article="a" name="Sandstorm Coliseum Shield">
-		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="85" />
-		<attribute key="weaponType" value="shield" />
-	</item>
-	<item id="33309" article="a" name="Sandstorm Coliseum Mace">
-		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
-		<attribute key="weight" value="1800" />
-		<attribute key="attack" value="85" />
-		<attribute key="defense" value="55" />		
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
-	</item>
-	<item id="33310" article="a" name="Sandstorm Coliseum Wand">
-		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
-		<attribute key="attack" value="85" />
-		<attribute key="defense" value="55" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="weight" value="190" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="5" />
-	</item>
-		<item id="33311" article="a" name="Sandstorm Coliseum Axe">
-		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
-		<attribute key="weight" value="100" />
-		<attribute key="attack" value="68" />
-		<attribute key="defense" value="35" />
-		<attribute key="weaponType" value="sword" />
-	</item>
-	<item id="33312" article="a" name="Sandstorm Coliseum Bow">
-		<attribute key="weight" value="200" />
-		<attribute key="attack" value="85" />
-		<attribute key="defense" value="55" />
-		<attribute key="hitChance" value="92" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
-	</item>
-		<item id="33313" article="a" name="Sandstorm Coliseum Sword">
-		<attribute key="description" value="This is a reward for completing the sandstorm coliseum." />
-		<attribute key="weight" value="100" />
-		<attribute key="attack" value="64" />
-		<attribute key="defense" value="40" />
-		<attribute key="weaponType" value="sword" />
-	</item>
-	
-	
-	
-	
-	
-	
+
 	
 	
 	<item id="36397" article="a" name="cosmetic fragment">
@@ -39142,23 +39323,6 @@
 		<attribute key="slotType" value="body" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-		<item id="34107" article="a" name="Inner-force Helmet">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="12" />
-			
-		<attribute key="slotType" value="head" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-		<item id="34108" article="a" name="Inner-force Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="18" />
-				
-		<attribute key="slotType" value="body" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	<item id="34109" name="Inner-force Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="11" />
 		
 		<attribute key="slotType" value="legs" />	
 		<attribute key="description" value="forged in a distorted field." />
@@ -39216,101 +39380,6 @@
 	</item>
 	
 	
-	
-	
-		<item id="34072" article="a" name="Darkiron Helmet">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="14" />
-		<attribute key="slotType" value="head" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-			<item id="34071" article="a" name="Darkiron Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="20" />
-		<attribute key="slotType" value="body" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34070" name="Darkiron Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="15" />
-		<attribute key="slotType" value="legs" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-		<item id="34069" name="Darkiron Boots">
-		<attribute key="weight" value="250" />
-		<attribute key="armor" value="5" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-	
-	<item id="34065" article="a" name="Darkiron Sword">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="43" />
-		<attribute key="defense" value="24" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34064" article="a" name="Darkiron Edge">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="46" />
-		<attribute key="defense" value="22" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34063" article="a" name="Darkiron Hammer">		
-		<attribute key="weight" value="500" />
-		<attribute key="attack" value="60" />
-		<attribute key="defense" value="30" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	
-	<item id="34062" article="a" name="Darkiron Wand">
-		<attribute key="attack" value="35" />
-		<attribute key="defense" value="28" />
-		<attribute key="slotType" value="two-handed" />
-		
-		
-		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="-----." />	
-	</item>
-	
-		<item id="34032" article="a" name="Darkiron Bow">
-		<attribute key="weight" value="200" />
-		<attribute key="attack" value="45" />
-		<attribute key="defense" value="23" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="weaponType" value="distance" />	
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="----" />	
-	</item>
-	
-		<item id="34066" article="a" name="Darkiron Ring">
-		<attribute key="weight" value="100" />
-		<attribute key="slotType" value="ring" />
-		<attribute key="absorbPercentPhysical" value="2" />
-		<attribute key="absorbPercentMagic" value="20" />		
-		<attribute key="showattributes" value="1" />
-	</item>
-	
-		<item id="37582" article="a" name="Darkiron Shield">
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="41" />
-		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
 	
 	
 	
@@ -40398,12 +40467,7 @@
 		<attribute key="absorbPercentEnergy" value="1" />
 
 	</item>
-	<item id="34110" name="Inner-force Boots">
-		<attribute key="weight" value="250" />
-		<attribute key="armor" value="12" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="absorbPercentEnergy" value="1" />
-	</item>
+
 		<item id="24742" name="Dragonscale Boots">
 		<attribute key="weight" value="250" />
 		<attribute key="armor" value="12" />
@@ -40462,12 +40526,7 @@
 		<attribute key="weaponType" value="sword" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-		<item id="36220" article="a" name="Assassin Piercer">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="72" />
-		<attribute key="defense" value="37" />
-		<attribute key="weaponType" value="sword" />	
-	</item>
+
 	
 	<item id="31923" article="a" name="Blazeking">
 		<attribute key="weight" value="300" />
@@ -40491,15 +40550,7 @@
 		<attribute key="absorbPercentEnergy" value="3" />
 		<attribute key="elementHoly" value="4" />
 	</item>
-	<item id="36374" article="a" name="King's Chain">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="70" />
-		<attribute key="defense" value="45" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="elementHoly" value="4" />
-		<attribute key="weaponType" value="sword" />
-	</item>
-	
+
 	
 	
 	
@@ -40523,12 +40574,7 @@
 		<attribute key="weaponType" value="shield" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-		<item id="36395" article="a" name="Bloodfist Ensign">
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="102" />
-		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
+
 		<item id="33475" article="a" name="Dragonsoul Shield">
 		<attribute key="weight" value="300" />
 		<attribute key="defense" value="105" />
@@ -40568,16 +40614,7 @@
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 	</item>	
-		<item id="36375" article="a" name="Burning Colosus">		
-		<attribute key="weight" value="500" />
-		<attribute key="attack" value="101" />
-		<attribute key="defense" value="60" />	
-		<attribute key="absorbPercentEnergy" value="1" />
-		<attribute key="elementFire" value="5" />		
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
-	</item>
-	
+
 	<item id="36256" article="a" name="Kings Chains">		
 		<attribute key="weight" value="500" />
 		<attribute key="attack" value="102" />
@@ -40590,20 +40627,7 @@
 	
 	
 	
-	
-	
-	<item id="34020" article="a" name="Ghost Bow">
-		<attribute key="weight" value="200" />
-		<attribute key="attack" value="100" />
-		<attribute key="defense" value="41" />
-		<attribute key="hitChance" value="95" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
-		<attribute key="range" value="6" />
-		<attribute key="description" value="long range and high hit chance bow." />	
-	</item>
-	
+
 	<item id="30496" article="a" name="Founders Bow">
 		<attribute key="weight" value="200" />
 		<attribute key="attack" value="86" />
@@ -40650,17 +40674,7 @@
 		<attribute key="description" value="shoots several arrows to all nearby enemies to the main target." />	
 	</item>
 	
-	
-	<item id="13760" article="a" name="Wand of Dimmensions">
-		<attribute key="attack" value="91" />
-		<attribute key="defense" value="40" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="deals death damage to the target." />	
-	</item>
+
 		<item id="33465" article="a" name="Rod of the Necrolords">
 		<attribute key="attack" value="92" />
 		<attribute key="defense" value="39" />
