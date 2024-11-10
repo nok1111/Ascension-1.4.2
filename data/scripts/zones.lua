@@ -13,6 +13,7 @@ local zones = {
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name	
+		despawnmonsters = false, -- Whether to show the zone name
     },
     [2] = {
         id = 2,
@@ -26,6 +27,7 @@ local zones = {
         spawnedMonsters = {}, 
         spawnEvent = nil,
 		showZoneName = false, -- Whether to show the zone name
+		despawnmonsters = false, -- Whether to show the zone name
     },
 
 
@@ -42,21 +44,6 @@ local function tablelength(T)
         count = count + 1
     end
     return count
-end
-
-
-local function calculateZoneTiles(zoneId)
-    local tiles = {}
-    for x = 0, 1000 do  
-        for y = 0, 1000 do
-            local pos = Position(x, y, 7)  
-            local tile = Tile(pos)
-            if tile and tile:getZoneId() == zoneId then
-                table.insert(tiles, pos)
-            end
-        end
-    end
-    return tiles
 end
 
 
@@ -194,17 +181,23 @@ end
 
 
 local function despawnMonsters(zone)
-    print("Despawning monsters in zone ID: " .. zone.id)
-    for monsterId, _ in pairs(zone.spawnedMonsters) do
-        local monster = Monster(monsterId)
-        if monster then
-            monster:remove()
+    if zone.despawnmonsters then  -- Check if despawnmonsters is true
+        if tablelength(zone.spawnedMonsters) == 0 then
+            return
         end
-    end
-    zone.spawnedMonsters = {}
-    if zone.spawnEvent then
-        stopEvent(zone.spawnEvent)
-        zone.spawnEvent = nil
+
+        print("Despawning monsters in zone ID: " .. zone.id)
+        for monsterId, _ in pairs(zone.spawnedMonsters) do
+            local monster = Monster(monsterId)
+            if monster then
+                monster:remove()
+            end
+        end
+        zone.spawnedMonsters = {}
+        if zone.spawnEvent then
+            stopEvent(zone.spawnEvent)
+            zone.spawnEvent = nil
+        end
     end
 end
 
@@ -224,66 +217,42 @@ local function onLeaveZone(player, zoneId)
 end
 
 
-local function checkPlayerStatus()
-    for playerId, zoneId in pairs(activePlayers) do
-        local player = Player(playerId)
-        if player then
-            local tile = Tile(player:getPosition())
-            if not tile or tile:getZoneId() ~= zoneId then
-                print("Player " .. player:getName() .. " is no longer in zone " .. zoneId)
-                onLeaveZone(player, zoneId)
-            end
-        else
-            activePlayers[playerId] = nil
+function isZoneIdInZones(zoneId)
+    for _, zone in pairs(zones) do
+        if zone.id == zoneId then
+            return true
         end
     end
-    addEvent(checkPlayerStatus, 5000)
+    return false
 end
 
+-- Function to check if two tables are equal
+local function areZonesEqual(zoneTable1, zoneTable2)
+    if #zoneTable1 ~= #zoneTable2 then
+        return false
+    end
 
-addEvent(checkPlayerStatus, 5000)
+    for i, v in ipairs(zoneTable1) do
+        if v ~= zoneTable2[i] then
+            return false
+        end
+    end
+    return true
+end
 
 local zoneIn = MoveEvent()
 
 function zoneIn.onStepIn(creature, item, position, fromPosition, zoneid)
+  if creature:isPlayer() then
+        local player = creature:getPlayer()
+        local previousZones = Tile(fromPosition):getZoneId()  -- Get the previous zone
+        local newZones = Tile(player:getPosition()):getZoneId()  -- Get the new zone
 
-    if creature:isPlayer() then
-	local player = creature:getPlayer()
-	print("starting in zone: " .. zoneid)
-
-
---[[	
-local zoneTiles = Game.getZoneTilesVector(1)
-
-
-if type(zoneTiles) == "table" then
-    for index, tileUserdata in ipairs(zoneTiles) do
-        if tileUserdata and type(tileUserdata) == "userdata" then
-            local pos = tileUserdata:getPosition()  -- Directly attempt to get position from userdata
-            if pos then
-                print(string.format("Tile %d at position: x=%d, y=%d, z=%d", index, pos.x, pos.y, pos.z))
-                pos:sendMagicEffect(CONST_ME_MAGIC_BLUE)
-            else
-                print(string.format("Tile %d: Unable to retrieve position", index))
-            end
-        else
-            print(string.format("Tile %d: Invalid userdata", index))
+        -- Use areZonesEqual() to check if the zones are different
+        if not areZonesEqual(previousZones, newZones) then
+            onEnterZone(player, zoneid)  -- Call onEnterZone
         end
     end
-else
-    print("zoneTiles is not a table, type:", type(zoneTiles))
-end
-
-]]--
-
-
-
-
-
-		if activePlayers[player:getId()] ~= zoneid then
-			onEnterZone(player, zoneid)
-		end
-	end
     return true
 end
 
@@ -293,33 +262,37 @@ zoneIn:register()
 
 local zoneOut = MoveEvent()
 
+
 function zoneOut.onStepOut(creature, item, position, fromPosition, zoneid)
-   local player = creature:getPlayer()
+    local player = creature:getPlayer()
     if not player then
         return true
     end
 
-    local playerId = player:getId()
-    local previousZones = Tile(fromPosition):getZoneId()  -- Assuming this returns a table now
+    local previousZones = Tile(fromPosition):getZoneId()
+    local newZones = Tile(player:getPosition()):getZoneId()
+	
+    -- Check if the zones are different
+    if not areZonesEqual(previousZones, newZones) then
+        if #previousZones > 0 then
+            local uniqueZones = {}
+            for _, loopzoneId in ipairs(previousZones) do
+                if loopzoneId ~= 0 and loopzoneId ~= zoneid then
+                    uniqueZones[loopzoneId] = true
+                    print("zoneid: " .. zoneid)
+                    print("loopzoneId: " .. loopzoneId)
+                end
+            end
 
-    print("Player " .. player:getName() .. " is stepping out of zones: " .. table.concat(previousZones, ", "))
-
-    addEvent(function(cid)
-        local player = Player(cid)
-        if not player then
-            return
+            for loopzoneId in pairs(uniqueZones) do
+                onLeaveZone(player, loopzoneId)
+            end
         end
-
-        print("Player " .. player:getName() .. " has left the zones: " .. table.concat(previousZones, ", "))
-        for _, zoneId in ipairs(previousZones) do
-            onLeaveZone(player, zoneId)
-        end
-
-    end, 5000, playerId)
-
+    end
 
     return true
 end
+
 
 zoneOut:zoneid(1)
 zoneOut:register()
