@@ -1,5 +1,64 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
 <items>
+<!-- TIER SETS-->
+	<item id="33443" article="a" name="Tier 0 Armor">
+		<attribute key="weight" value="70" />
+		<attribute key="armor" value="16" />
+		<attribute key="slotType" value="body" />
+	</item>
+	<item id="33442" article="a" name="Tier 0 Helmet">
+		<attribute key="weight" value="50" />
+		<attribute key="armor" value="12" />
+		<attribute key="slotType" value="head" />
+	</item>
+    	<item id="33444" article="a" name="Tier 0 Legs">
+		<attribute key="weight" value="75" />
+		<attribute key="armor" value="12" />
+		<attribute key="slotType" value="legs" />
+	</item>
+ <item id="33446" article="a" name="Tier 0 Shield">
+		<attribute key="weight" value="75" />
+		<attribute key="defense" value="60" />
+		<attribute key="weaponType" value="shield" />
+	</item>
+<item id="33457" article="a" name="Tier 0 Sword">
+		<attribute key="weight" value="75" />
+		<attribute key="defense" value="25" />
+		<attribute key="attack" value="46" />
+		<attribute key="weaponType" value="sword" />
+	</item>
+    <item id="33441" article="a" name="Tier 0 Wand">
+		<attribute key="defense" value="30" />
+		<attribute key="attack" value="60" />	
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="100" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="4" />
+	</item>
+	<item id="36236" article="a" name="Tier 0 Bow">
+		<attribute key="weight" value="100" />
+		<attribute key="defense" value="30" />
+		<attribute key="attack" value="60" />
+		<attribute key="hitChance" value="80" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="shootType" value="greenstar" />
+		<attribute key="range" value="5" />
+		<attribute key="description" value="brings death upon enemies." />
+	</item>
+
+	<item id="33447" article="a" name="Tier 0 2Hander">
+		<attribute key="weight" value="100" />
+		<attribute key="defense" value="30" />
+		<attribute key="attack" value="60" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
+	</item>
+
+
+
 	<item id="100" name="void" />
 	<item id="101" name="earth" />
 	<item id="103" name="dirt" />
@@ -19196,7 +19255,7 @@
 		<attribute key="description" value="This one would be quite healthy if it wasn't for all the melted cheese on top." />
 		<attribute key="weight" value="1100" />
 	</item>
-	<item id="9998" article="a" name="filled jalapeño peppers">
+	<item id="9998" article="a" name="filled jalapeï¿½o peppers">
 		<attribute key="description" value="The creamy cheese makes a great combination with the spicy peppers." />
 		<attribute key="weight" value="650" />
 	</item>
@@ -38267,54 +38326,6 @@
 		<attribute key="description" value="hit multiple targets." />
 	</item>
 
-	<item id="33441" article="a" name="Garona madness">
-		<attribute key="defense" value="30" />
-		<attribute key="attack" value="60" />	
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="weight" value="100" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="4" />
-	</item>
-	<item id="33442" article="a" name="Garona helmet">
-		<attribute key="weight" value="50" />
-		<attribute key="armor" value="12" />
-		<attribute key="slotType" value="head" />
-	</item>
-	<item id="33443" article="a" name="Garona chestplate">
-		<attribute key="weight" value="70" />
-		<attribute key="armor" value="16" />
-		<attribute key="slotType" value="body" />
-	</item>
-	<item id="33444" article="a" name="Garona legs">
-		<attribute key="weight" value="75" />
-		<attribute key="armor" value="12" />
-		<attribute key="slotType" value="legs" />
-	</item>
-	<item id="33445" article="a" name="Garona boots">
-		<attribute key="weight" value="30" />
-		<attribute key="armor" value="3" />
-		<attribute key="slotType" value="feet" />
-	</item>
-	<item id="33446" article="a" name="Garona Shield">
-		<attribute key="weight" value="75" />
-		<attribute key="defense" value="60" />
-		<attribute key="weaponType" value="shield" />
-	</item>
-		<item id="33447" article="a" name="Garona Worldbreaker">
-		<attribute key="weight" value="100" />
-		<attribute key="defense" value="30" />
-		<attribute key="attack" value="60" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
-	</item>
-	<item id="33457" article="a" name="Garona HeadRipper">
-		<attribute key="weight" value="75" />
-		<attribute key="defense" value="25" />
-		<attribute key="attack" value="46" />
-		<attribute key="weaponType" value="sword" />
-	</item>
 	<item id="33729" article="a" name="Legacy Heirloom Loot Box">
 		<attribute key="description" value="it contains random heirloom set pieces." />
 		<attribute key="weight" value="1" />

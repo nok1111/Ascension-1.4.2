@@ -111,9 +111,9 @@ US_CONFIG = {
   REQUIRE_LEVEL = false, -- block equipping items with higher Item Level than Player Level
   UNIQUE_DROP_CHANCE = 300,
   RARITY = {
-    -- Tier 1-4 into common, 5-8 into rare and so on to make up for this RARITY SYSTEM
+    -- Tier 0-3 into common, 4-7 into rare and 8-10 epic, 11-15 legendary
     [COMMON] = {
-      name = "[COMMON]",
+      name = "[Tier 0]",
       maxBonus = 0, -- max amount of bonus attributes
       chance = 1 -- 1:X chance that item will be common (1 = 100%)
     },
