@@ -12,22 +12,22 @@ local zones = {
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = true, -- Whether to show the zone name	
-		despawnmonsters = false, -- Whether to show the zone name
+        showZoneName = true, -- Whether to show the zone name   
+        despawnmonsters = false, -- Whether to show the zone name
     },
     [2] = {
         id = 2,
         name = "Troll Place",
         monsters = {"troll"},
-        spawnIntervalMin = 100,
-        spawnIntervalMax = 100,
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
         active = false,
         tiles = {},
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-		showZoneName = false, -- Whether to show the zone name
-		despawnmonsters = false, -- Whether to show the zone name
+        showZoneName = false, -- Whether to show the zone name
+        despawnmonsters = false, -- Whether to show the zone name
     },
 
 
@@ -118,7 +118,7 @@ local function spawnMonster(zone)
     end
 
     local spawnPosition = getRandomPositionInZone(zone)
-	print(spawnPosition)
+    print(spawnPosition)
     if not spawnPosition then
         print("No valid spawn position found in zone " .. zone.id)
         return
@@ -173,42 +173,39 @@ end
 
 
 local function onEnterZone(player, zoneId)
-    print("DEBUG: onEnterZone called")
-    print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
-   player:setStorageValue(10001, 1)
-    
-
+      
     local zone = zones[zoneId]
-	if not zone then
-		print("ERROR: Zone not found for ID: " .. zoneId)
-		return
-	end
+    if not zone then
+        return
+    end
 
     if not zone.active then
         zone.active = true
         scheduleNextSpawn(zone)
     end
-    
-	-- Initialize tiles if they are empty
-	if not zone.tiles or #zone.tiles == 0 then
-		local tileCount = getNumerPositionInZone(zoneId)
-		zone.tiles = {}  -- Ensure it's initialized as an empty table
-		print("number of tiles: " .. tileCount)
-		zone.maxMonsters = (tileCount / 15) + 1
-		print("Zone " .. zoneId .. " has " .. tileCount .. " tiles. Max monsters: " .. zone.maxMonsters)
-	end
+    player:setStorageValue(10001, zoneId)
+
+    -- Initialize tiles if they are empty
+    if not zone.tiles or #zone.tiles == 0 then
+        local tileCount = getNumerPositionInZone(zoneId)
+        zone.tiles = {}  -- Ensure it's initialized as an empty table
+        print("number of tiles: " .. tileCount)
+        zone.maxMonsters = (tileCount / 15) + 1
+        print("Zone " .. zoneId .. " has " .. tileCount .. " tiles. Max monsters: " .. zone.maxMonsters)
+    end
     zone.active = true
-	
-	if zone then
+    
+    if zone then
     local storageValue = player:getStorageValue(10001)
     if storageValue ~= zone.id then
+        print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
         player:setStorageValue(10001, zone.id)
         if zone.showZoneName then
             player:sendTextMessage(MESSAGE_INFO_DESCR, "You have entered the zone " .. zone.name)
         end
     end
 end
-	
+    
     if not zone.spawnEvent then
         scheduleNextSpawn(zone)
     end
@@ -242,14 +239,14 @@ local function onLeaveZone(player, zoneId)
     player:setStorageValue(10001, 0)
    -- player:sendTextMessage(MESSAGE_INFO_DESCR, "You have left the zone.")
     activePlayers[player:getId()] = nil
-	
-	 if Game.getZonePlayerCount(zoneId) < 1 then
+    
+     if Game.getZonePlayerCount(zoneId) < 1 then
         zones[zoneId].active = false
         despawnMonsters(zones[zoneId])
 
-		 
-		else
-		 zones[zoneId].active = true
+         
+        else
+         zones[zoneId].active = true
     end
 end
 
@@ -277,6 +274,7 @@ local function areZonesEqual(zoneTable1, zoneTable2)
     return true
 end
 
+
 local zoneIn = MoveEvent()
 
 function zoneIn.onStepIn(creature, item, position, fromPosition, zoneid)
@@ -286,7 +284,7 @@ function zoneIn.onStepIn(creature, item, position, fromPosition, zoneid)
         local newZones = Tile(player:getPosition()):getZoneId()  -- Get the new zone
 
         -- Use areZonesEqual() to check if the zones are different
-        if not areZonesEqual(previousZones, newZones) then
+        if not areZonesEqual(previousZones, newZones) and zoneid > 0 then
             onEnterZone(player, zoneid)  -- Call onEnterZone
         end
     end
@@ -308,7 +306,7 @@ function zoneOut.onStepOut(creature, item, position, fromPosition, zoneid)
 
     local previousZones = Tile(fromPosition):getZoneId()
     local newZones = Tile(player:getPosition()):getZoneId()
-	
+    
     -- Check if the zones are different
     if not areZonesEqual(previousZones, newZones) then
         if #previousZones > 0 then
