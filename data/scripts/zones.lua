@@ -53,29 +53,54 @@ end
 
 
 local function getRandomPositionInZone(zone)
-    local zoneTiles = Game.getZoneTilesVector(zone.id)  -- Retrieve all tiles in the zone
-    if #zoneTiles == 0 then
-        return nil  -- Return nil if there are no tiles
-    end
+    local zoneTiles = Game.getZoneTilesVector(zone.id)
+    local validPositions = {}
 
-    local randomIndex = math.random(1, #zoneTiles)  -- Pick a random index
-    local tileUserdata = zoneTiles[randomIndex]  -- Get the tile at that index
-
-    if tileUserdata and type(tileUserdata) == "userdata" then
-        local pos = tileUserdata:getPosition()  -- Retrieve the position
-
-        -- Check if the tile is walkable and not blocked
-        if Tile(pos):isWalkable() and Tile(pos):isSightClear() then
-            return pos  -- Return the position if valid
+    for _, tileUserdata in ipairs(zoneTiles) do
+        if tileUserdata and type(tileUserdata) == "userdata" then
+            local pos = tileUserdata:getPosition()
+            if Tile(pos):isWalkable() then
+                table.insert(validPositions, pos)
+            end
         end
     end
 
-    return nil  -- Return nil if position is blocked or not walkable
+    if #validPositions == 0 then
+        return nil
+    end
+
+    return validPositions[math.random(1, #validPositions)]  -- Pick a random valid position
 end
-                            
+     
+local function getNumerPositionInZone(zone)
+    local zoneTiles = Game.getZoneTilesVector(zone)
+    local validPositions = {}
+
+    for _, tileUserdata in ipairs(zoneTiles) do
+        if tileUserdata and type(tileUserdata) == "userdata" then
+            local pos = tileUserdata:getPosition()
+            if Tile(pos):isWalkable() then
+                table.insert(validPositions, pos)
+            end
+        end
+    end
+
+    if #validPositions == 0 then
+        return 0
+    end
+
+    return #validPositions  -- Pick a random valid position
+end                       
 
 
 local function scheduleNextSpawn(zone)
+
+     -- Check if players are still in the zone
+    if Game.getZonePlayerCount(zone.id) < 1 then
+        zone.active = false
+        return
+    end
+
     local nextSpawnInterval = math.random(zone.spawnIntervalMin, zone.spawnIntervalMax)
     zone.spawnEvent = addEvent(function()
         spawnMonsters(zone)
@@ -159,9 +184,14 @@ local function onEnterZone(player, zoneId)
 		return
 	end
 
+    if not zone.active then
+        zone.active = true
+        scheduleNextSpawn(zone)
+    end
+    
 	-- Initialize tiles if they are empty
 	if not zone.tiles or #zone.tiles == 0 then
-		local tileCount = Game.getZoneTileCount(zoneId)
+		local tileCount = getNumerPositionInZone(zoneId)
 		zone.tiles = {}  -- Ensure it's initialized as an empty table
 		print("number of tiles: " .. tileCount)
 		zone.maxMonsters = (tileCount / 15) + 1
@@ -214,8 +244,10 @@ local function onLeaveZone(player, zoneId)
     activePlayers[player:getId()] = nil
 	
 	 if Game.getZonePlayerCount(zoneId) < 1 then
+        zones[zoneId].active = false
         despawnMonsters(zones[zoneId])
-		 zones[zoneId].active = false
+
+		 
 		else
 		 zones[zoneId].active = true
     end
@@ -306,15 +338,21 @@ zoneOut:register()
 local creatureeventlogin = CreatureEvent("loginzones")
 
 function creatureeventlogin.onLogin(player)
-    --player:registerEvent("zone_death")
     local tile = Tile(player:getPosition())
     if tile then
-      --  if tile:getZoneId() >= 1 then
-   --       onEnterZone(player, tile:getZoneId())
-      --  end
+        local zoneIds = tile:getZoneId() -- Assuming this returns a table of IDs
+        local uniqueZones = {}
+
+        for _, zoneId in ipairs(zoneIds) do
+            if zoneId > 1 and not uniqueZones[zoneId] then
+                uniqueZones[zoneId] = true -- Mark this zone ID as processed
+                onEnterZone(player, zoneId)
+            end
+        end
     end
     return true
 end
+
 
 creatureeventlogin:register()
 
@@ -324,11 +362,20 @@ local creatureeventlogout = CreatureEvent("logoutzones")
 
 function creatureeventlogout.onLogout(player)
     player:unregisterEvent("zone_death")
-    local playerId = player:getId()
-    local zoneId = activePlayers[playerId]
-    if zoneId then
-        onLeaveZone(player, zoneId)
+     local tile = Tile(player:getPosition())
+    if tile then
+        local zoneIds = tile:getZoneId() -- Assuming this returns a table of IDs
+        local uniqueZones = {}
+
+        for _, zoneId in ipairs(zoneIds) do
+            if zoneId > 1 and not uniqueZones[zoneId] then
+                uniqueZones[zoneId] = true -- Mark this zone ID as processed
+                onLeaveZone(player, zoneId)
+            end
+        end
     end
+        
+
     return true
 end
 
