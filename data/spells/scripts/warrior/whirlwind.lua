@@ -161,7 +161,7 @@ local function burning_within(creatureId, variant)
 	combat3:addCondition(conditionburn_within)
 	combat4:addCondition(conditionburn_within)
 	combat5:addCondition(conditionburn_within)
-	creature:getTarget():sendProgressbar(7.5 * 1.5, false)
+	--creature:getTarget():sendProgressbar(7.5 * 1.5, false)
 end
 
 function onCastSpell(creature, variant)
