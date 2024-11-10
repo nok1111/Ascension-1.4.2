@@ -57,17 +57,22 @@ local function getRandomPositionInZone(zone)
     if #zoneTiles == 0 then
         return nil  -- Return nil if there are no tiles
     end
-    
+
     local randomIndex = math.random(1, #zoneTiles)  -- Pick a random index
     local tileUserdata = zoneTiles[randomIndex]  -- Get the tile at that index
 
     if tileUserdata and type(tileUserdata) == "userdata" then
         local pos = tileUserdata:getPosition()  -- Retrieve the position
-        return pos  -- Return the position
+
+        -- Check if the tile is walkable and not blocked
+        if Tile(pos):isWalkable() and not Game.getObjectFromPosition(pos) then
+            return pos  -- Return the position if valid
+        end
     end
-    
-    return nil  -- Return nil if something goes wrong
+
+    return nil  -- Return nil if position is blocked or not walkable
 end
+                            
 
 
 local function scheduleNextSpawn(zone)
