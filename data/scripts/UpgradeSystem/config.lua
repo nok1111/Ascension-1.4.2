@@ -113,7 +113,7 @@ US_CONFIG = {
   RARITY = {
     -- Tier 0-3 into common, 4-7 into rare and 8-10 epic, 11-15 legendary
     [COMMON] = {
-      name = "[Tier 0]",
+      name = "[COMMON]",
       maxBonus = 0, -- max amount of bonus attributes
       chance = 1 -- 1:X chance that item will be common (1 = 100%)
     },
