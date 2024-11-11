@@ -12,8 +12,8 @@ local zones = {
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = true, -- Whether to show the zone name   
-        despawnmonsters = false, -- Whether to show the zone name
+        showZoneName = true, -- Whether to show the zone name on entering  
+        despawnmonsters = false, -- Whether to despawn monster when no players are in area
     },
     [2] = {
         id = 2,
@@ -26,8 +26,8 @@ local zones = {
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name
-        despawnmonsters = false, -- Whether to show the zone name
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
     },
 
 
