@@ -86,7 +86,6 @@
 		<attribute key="attack" value="60" />
 		<attribute key="weaponType" value="sword" />
 	</item>
-		</item>
 		<item id="36265" article="a" name="Emerald Sword">
 		<attribute key="weight" value="300" />
 		<attribute key="defense" value="45" />
@@ -291,17 +290,9 @@
 		<attribute key="slotType" value="body" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-	<item id="34109" name="Inner-force Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="11" />
-		<item id="34110" name="Inner-force Boots">
-		<attribute key="weight" value="250" />
-		<attribute key="armor" value="12" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="absorbPercentEnergy" value="1" />
-	</item>
 
-			<item id="36395" article="a" name="Bloodfist Ensign">
+
+	<item id="36395" article="a" name="Bloodfist Ensign">
 		<attribute key="weight" value="300" />
 		<attribute key="defense" value="102" />
 		<attribute key="weaponType" value="shield" />
@@ -37300,7 +37291,7 @@
 		<attribute key="defense" value="12" />
 		<attribute key="attack" value="42" />
 		<attribute key="weaponType" value="sword" />
-
+	</item>
 		<item id="36266" article="a" name="Rotten Evil">
 		<attribute key="weight" value="300" />
 		<attribute key="defense" value="15" />
@@ -39324,37 +39315,29 @@
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
 		
-		<attribute key="slotType" value="legs" />	
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-		<item id="34131" article="a" name="Robe of the Crow">
+		
+	<item id="34131" article="a" name="Robe of the Crow">
 		<attribute key="weight" value="400" />
 		<attribute key="armor" value="16" />
-		
 		<attribute key="slotType" value="body" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-			<item id="33430" article="a" name="Howl of the Cunjury">
+		<item id="33430" article="a" name="Howl of the Cunjury">
 		<attribute key="weight" value="200" />
 		<attribute key="armor" value="7" />
-		
-		
 		<attribute key="slotType" value="head" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-			<item id="33431" article="a" name="Robe of the Cunjury">
+
+		<item id="33431" article="a" name="Robe of the Cunjury">
 		<attribute key="weight" value="400" />
 		<attribute key="armor" value="12" />
-		
-		
 		<attribute key="slotType" value="body" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
 		<item id="33432" name="Legs of the Cunjury">
 		<attribute key="weight" value="500" />
-		<attribute key="armor" value="7" />
-		
-		
+		<attribute key="armor" value="7" />	
 		<attribute key="slotType" value="legs" />
 		<attribute key="description" value="forged in a distorted field." />
 	</item>
