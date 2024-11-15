@@ -30,7 +30,7 @@ using MoveEvent_ptr = std::unique_ptr<MoveEvent>;
 
 struct MoveEventList {
 	std::list<MoveEvent> moveEvent[MOVE_EVENT_LAST];
-		uint32_t zoneId;
+	uint16_t zoneId;
 
 };
 
@@ -72,7 +72,7 @@ class MoveEvents final : public BaseEvents
 
 		void addEvent(MoveEvent moveEvent, const Position& pos, MovePosListMap& map);
 		MoveEvent* getEvent(const Tile* tile, MoveEvent_t eventType);
-		std::vector<MoveEventList*> getEvents(const Tile* tile, Item* item, MoveEvent_t eventType);
+		std::vector<MoveEventList*> getEvents(const Tile* tile, MoveEvent_t eventType);
 
 
 		MoveEvent* getEvent(Item* item, MoveEvent_t eventType, slots_t slot);

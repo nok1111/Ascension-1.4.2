@@ -4954,6 +4954,7 @@ int LuaScriptInterface::luaGameZoneAddNewZone(lua_State* L)
 			Tile* tile = g_game.map.getTile(x + dx, y + dy, z);
 			if (tile) {
 				g_game.addGameZone(tile, zoneIds);
+				tile->setTrueZoneId(zoneId);
 			}
 		}
 	}

@@ -420,18 +420,7 @@ MoveEvent* MoveEvents::getEvent(const Tile* tile, Item* item, MoveEvent_t eventT
 			return &(*moveEventList.begin());
 		}
 	}
-	const auto& zoneIds = tile->getZoneIds();
-	if (!zoneIds.empty()) {
-		for (auto& zoneId : zoneIds) {
-			it = zoneIdMap.find(zoneId);
-			if (it != zoneIdMap.end()) {
-				std::list<MoveEvent>& moveEventList = it->second.moveEvent[eventType];
-				if (!moveEventList.empty()) {
-					return &(*moveEventList.begin());
-				}
-			}
-		}
-	}
+	
 
 	return nullptr;
 }
@@ -465,7 +454,7 @@ MoveEvent* MoveEvents::getEvent(const Tile* tile, MoveEvent_t eventType)
 	return nullptr;
 }
 
-std::vector<MoveEventList*> MoveEvents::getEvents(const Tile* tile, Item* item, MoveEvent_t eventType)
+std::vector<MoveEventList*> MoveEvents::getEvents(const Tile* tile, MoveEvent_t eventType)
 {
 	std::vector<MoveEventList*> eventLists;
 	const auto& zoneIds = tile->getZoneIds();
@@ -490,7 +479,20 @@ uint32_t MoveEvents::onCreatureMove(Creature* creature, const Tile* tile, MoveEv
 		ret &= moveEvent->fireStepEvent(creature, nullptr, pos, 0);
 	}
 
-	std::vector<MoveEventList*> moveEventsLists = getEvents(tile, nullptr, eventType);
+	const auto& zoneIds = tile->getZoneIds();
+	if (!zoneIds.empty()) {
+		std::vector<MoveEventList*> moveEventsLists = getEvents(tile, eventType);
+		for (auto moveEventList : moveEventsLists) {
+			if (moveEventList) {
+				uint32_t zoneId = moveEventList->zoneId;
+				for (MoveEvent& moveEvent : moveEventList->moveEvent[eventType]) {
+					ret &= moveEvent.fireStepEvent(creature, nullptr, pos, zoneId);
+				}
+			}
+		}
+	}
+
+	
 	for (size_t i = tile->getFirstIndex(), j = tile->getLastIndex(); i < j; ++i) {
 		Thing* thing = tile->getThing(i);
 		if (!thing) {
@@ -506,18 +508,7 @@ uint32_t MoveEvents::onCreatureMove(Creature* creature, const Tile* tile, MoveEv
 		if (moveEvent) {
 			ret &= moveEvent->fireStepEvent(creature, tileItem, pos, 0);
 		}
-		const auto& zoneIds = tile->getZoneIds();
-		if (!zoneIds.empty()) {
-			std::vector<MoveEventList*> moveEventsLists = getEvents(tile, tileItem, eventType);
-			for (auto moveEventList : moveEventsLists) {
-				if (moveEventList) {
-					uint32_t zoneId = moveEventList->zoneId;
-					for (MoveEvent& moveEvent : moveEventList->moveEvent[eventType]) {
-						ret &= moveEvent.fireStepEvent(creature, tileItem, pos, zoneId);
-					}
-				}
-			}
-		}
+		
 	}
 	return ret;
 }
