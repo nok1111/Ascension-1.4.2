@@ -220,7 +220,7 @@ local function onEnterZone(player, zoneId)
     if not zone then
         return
     end
-
+    print("onEnterZone")
     if not zone.active then
         zone.active = true
         scheduleNextSpawn(zone)
