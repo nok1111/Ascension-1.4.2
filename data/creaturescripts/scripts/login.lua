@@ -31,6 +31,8 @@ function onLogin(player)
 	player:registerEvent("spellremove")
 	player:registerEvent("loginzones")
 	player:registerEvent("logoutzones")
+	player:registerEvent("PassiveTree")
+
 	
 	-- Check login in profession system
 	player:registerEvent("ProfessionPackets")

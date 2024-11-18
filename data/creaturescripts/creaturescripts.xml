@@ -15,6 +15,8 @@
 	<event type="ModalWindow" name="spellremove" script="spellremove_modal.lua" />
 	<!-- waypoints -->
 	<event type="ModalWindow" name="revWaypoints" script="modal_windows.lua"/>
-	
+	<!-- Passive Tree -->
+	<event type="extendedopcode" name="PassiveTree" script="passive_tree.lua"/>
+
 	
 </creaturescripts>
