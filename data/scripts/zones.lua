@@ -310,6 +310,34 @@ local zones = {
         showZoneName = false, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
     },
+    [23] = {
+        id = 23,
+        name = "xxxxx",
+        monsters = {"earth elemental", "poison skeleton", "bonelord"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [24] = {
+        id = 24,
+        name = "xxxxxx",
+        monsters = {"earth elemental", "poison skeleton", "earth overlord", "medusa", "bonelord"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
 
 
 
