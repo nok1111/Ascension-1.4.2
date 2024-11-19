@@ -71,6 +71,176 @@ local zones = {
         showZoneName = false, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
     },
+    [6] = {
+        id = 6,
+        name = "Mines of xxxxx",
+        monsters = {"troll", "dark troll", "wolf cub", "wolf"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [7] = {
+        id = 7,
+        name = "Mines of xxxxx",
+        monsters = {"thief", "rogue"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [8] = {
+        id = 8,
+        name = "Mines of xxxxx",
+        monsters = {"troll", "dark troll"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [9] = {
+        id = 9,
+        name = "Mines of xxxxx",
+        monsters = {"troll", "dark troll", "apprentice witch", "witch"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+
+    [10] = { --unfinished wrong monsters
+        id = 10,
+        name = "Mines of xxxxx",
+        monsters = {"troll", "dark troll", "apprentice witch", "witch"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [11] = { --unfinished wrong monsters
+        id = 11,
+        name = "Mines of xxxxx",
+        monsters = {"troll", "dark troll", "apprentice witch", "witch"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [12] = { 
+        id = 12,
+        name = "Mines of xxxxx",
+        monsters = {"bear", "bear cub"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [13] = { 
+        id = 13,
+        name = "Mines of xxxxx",
+        monsters = {"skeleton"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [14] = { 
+        id = 14,
+        name = "Mines of xxxxx",
+        monsters = {"spider", "tarantula", "giant spider"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [15] = { 
+        id = 15,
+        name = "Mines of xxxxx",
+        monsters = {"spider", "tarantula", "giant spider"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [16] = { 
+        id = 16,
+        name = "Mines of xxxxx",
+        monsters = {"skeleton", "witch", "apprentice witch", "poison skeleton", "rogue"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [17] = { 
+        id = 17,
+        name = "Bull's plain",
+        monsters = {"minotaur", "minotaur mage", "minotaur archer", "minotaur guard"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+
 
 
 
