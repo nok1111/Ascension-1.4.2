@@ -240,6 +240,79 @@ local zones = {
         showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
     },
+    [18] = { 
+        id = 18,
+        name = "Bull's plain",
+        monsters = {"minotaur", "minotaur mage", "skeleton", "minotaur guard"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [19] = {
+        id = 19,
+        name = "Twigkin Forest",
+        monsters = {"twigkin", "flaming twigkin", "leafy twigkin"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [20] = {
+        id = 20,
+        name = "Elves Forest",
+        monsters = {"elf", "elf scout", "elf arcanist"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [21] = {
+        id = 21,
+        name = "Cursed Cementery",
+        monsters = {"zombie", "mutated zombie", "abomination specimen", "skeleton", "poison skeleton"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [22] = {
+        id = 22,
+        name = "Dark Cathedral",
+        monsters = {"zombie", "mutated zombie", "abomination specimen", "skeleton", "poison skeleton", "witch"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = {},
+        maxMonsters = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+
+
+
 
 
 
