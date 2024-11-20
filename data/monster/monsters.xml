@@ -1423,6 +1423,10 @@
 	<monster name="Elf" file="elves/elf.xml" />
 	<monster name="Elf Arcanist" file="elves/elf arcanist.xml" />
 	<monster name="Elf Scout" file="elves/elf scout.xml" />
+	<monster name="Elf Warlord" file="elves/elf warlord.xml" />
+	<monster name="High Elf" file="elves/high elf.xml" />
+	<monster name="Elf Warrior" file="elves/swordmaster elf.xml" />
+
 	<monster name="Firestarter" file="elves/firestarter.xml" />
 
 	<!-- Electro-Elementals -->
