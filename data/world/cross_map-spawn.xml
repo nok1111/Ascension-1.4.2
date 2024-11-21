@@ -393,6 +393,40 @@
 	<spawn centerx="1118" centery="860" centerz="5" radius="1">
 		<monster name="Amazon Tiger" x="0" y="0" z="5" spawntime="60" />
 	</spawn>
+	<spawn centerx="1344" centery="860" centerz="5" radius="1">
+		<monster name="Trival Hunter" x="1" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1348" centery="863" centerz="5" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1355" centery="864" centerz="5" radius="1">
+		<monster name="Trival Hunter" x="0" y="-1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1362" centery="864" centerz="5" radius="1">
+		<monster name="Trival Hunter" x="0" y="-1" z="5" spawntime="60" />
+		<monster name="Trival Druid" x="-1" y="1" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1349" centery="865" centerz="5" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1370" centery="873" centerz="5" radius="1" />
+	<spawn centerx="1372" centery="873" centerz="5" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1373" centery="876" centerz="5" radius="1" />
+	<spawn centerx="1369" centery="877" centerz="5" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1376" centery="882" centerz="5" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1364" centery="883" centerz="5" radius="1" />
+	<spawn centerx="1362" centery="884" centerz="5" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
+	<spawn centerx="1378" centery="886" centerz="5" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="5" spawntime="60" />
+	</spawn>
 	<spawn centerx="1192" centery="552" centerz="6" radius="1">
 		<monster name="Lizard Brute" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
@@ -889,6 +923,18 @@
 	<spawn centerx="1119" centery="851" centerz="6" radius="1">
 		<monster name="Bear" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="1317" centery="857" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1320" centery="858" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1326" centery="859" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1332" centery="860" centerz="6" radius="1">
+		<monster name="Trival Druid" x="-1" y="-1" z="6" spawntime="60" />
+	</spawn>
 	<spawn centerx="1112" centery="864" centerz="6" radius="1">
 		<monster name="Black Bear" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
@@ -898,11 +944,301 @@
 	<spawn centerx="1129" centery="866" centerz="6" radius="1">
 		<monster name="Bear" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="1323" centery="866" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
 	<spawn centerx="1116" centery="867" centerz="6" radius="1">
 		<monster name="Bear" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1120" centery="868" centerz="6" radius="1">
 		<monster name="Bear" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1290" centery="869" centerz="6" radius="1">
+		<npc name="Hermez Thal" x="0" y="1" z="6" spawntime="60" direction="1" />
+	</spawn>
+	<spawn centerx="1322" centery="870" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1288" centery="872" centerz="6" radius="1">
+		<npc name="Dr Romero" x="-1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1326" centery="875" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1379" centery="897" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1373" centery="898" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1341" centery="906" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1361" centery="907" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1363" centery="908" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1359" centery="909" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1361" centery="910" centerz="6" radius="1" />
+	<spawn centerx="1338" centery="911" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="-1" z="6" spawntime="60" />
+		<monster name="Trival Druid" x="-1" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1386" centery="912" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1357" centery="913" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1363" centery="914" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1384" centery="915" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1358" centery="916" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1363" centery="917" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1380" centery="917" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1377" centery="918" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1342" centery="920" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+		<monster name="Trival Druid" x="1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1379" centery="920" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1376" centery="921" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1379" centery="925" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1345" centery="927" centerz="6" radius="1" />
+	<spawn centerx="1345" centery="933" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="-1" z="6" spawntime="60" />
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1342" centery="936" centerz="6" radius="1" />
+	<spawn centerx="1377" centery="937" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="-1" z="6" spawntime="60" />
+		<monster name="Trival Hunter" x="1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1375" centery="941" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1369" centery="942" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1366" centery="944" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1319" centery="947" centerz="6" radius="1" />
+	<spawn centerx="1267" centery="948" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1357" centery="948" centerz="6" radius="1">
+		<monster name="Trival Druid" x="-1" y="0" z="6" spawntime="60" />
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1269" centery="949" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1273" centery="949" centerz="6" radius="1" />
+	<spawn centerx="1313" centery="950" centerz="6" radius="1" />
+	<spawn centerx="1352" centery="950" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1268" centery="951" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1355" centery="951" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1251" centery="952" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1283" centery="952" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="-1" z="6" spawntime="60" />
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+		<monster name="Trival Hunter" x="-1" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1252" centery="954" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1284" centery="955" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1251" centery="958" centerz="6" radius="1" />
+	<spawn centerx="1317" centery="958" centerz="6" radius="1" />
+	<spawn centerx="1244" centery="959" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1249" centery="959" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1287" centery="959" centerz="6" radius="1" />
+	<spawn centerx="1254" centery="960" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1317" centery="960" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1290" centery="962" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1292" centery="962" centerz="6" radius="1" />
+	<spawn centerx="1336" centery="962" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1319" centery="964" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1297" centery="967" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1338" centery="967" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1299" centery="968" centerz="6" radius="1" />
+	<spawn centerx="1341" centery="968" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1343" centery="968" centerz="6" radius="1" />
+	<spawn centerx="1338" centery="970" centerz="6" radius="1" />
+	<spawn centerx="1321" centery="971" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1341" centery="971" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1345" centery="971" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1233" centery="972" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1268" centery="972" centerz="6" radius="1" />
+	<spawn centerx="1271" centery="972" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1275" centery="972" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1286" centery="973" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1268" centery="974" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1270" centery="974" centerz="6" radius="1" />
+	<spawn centerx="1274" centery="975" centerz="6" radius="1">
+		<monster name="Trival Druid" x="-1" y="1" z="6" spawntime="60" />
+		<monster name="Trival Druid" x="0" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1314" centery="975" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1319" centery="975" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1322" centery="976" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1338" centery="976" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1315" centery="977" centerz="6" radius="1" />
+	<spawn centerx="1318" centery="978" centerz="6" radius="1" />
+	<spawn centerx="1250" centery="980" centerz="6" radius="1" />
+	<spawn centerx="1291" centery="980" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="-1" z="6" spawntime="60" />
+		<monster name="Trival Hunter" x="0" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1293" centery="980" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1320" centery="980" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1322" centery="980" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1317" centery="981" centerz="6" radius="1" />
+	<spawn centerx="1240" centery="985" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1248" centery="985" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="-1" z="6" spawntime="60" />
+		<monster name="Trival Druid" x="1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1250" centery="985" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1250" centery="987" centerz="6" radius="1" />
+	<spawn centerx="1234" centery="988" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1299" centery="988" centerz="6" radius="1" />
+	<spawn centerx="1296" centery="990" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1341" centery="990" centerz="6" radius="1" />
+	<spawn centerx="1299" centery="991" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1301" centery="992" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1233" centery="993" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1297" centery="993" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1325" centery="993" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="-1" y="0" z="6" spawntime="60" />
+		<monster name="Trival Druid" x="1" y="1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1229" centery="994" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1342" centery="995" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1231" centery="996" centerz="6" radius="1">
+		<npc name="Tribe Chief Uzlani" x="-1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1307" centery="999" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1345" centery="1001" centerz="6" radius="1" />
+	<spawn centerx="1316" centery="1003" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1342" centery="1010" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="-1" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1346" centery="1010" centerz="6" radius="1">
+		<monster name="Trival Druid" x="0" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1339" centery="1011" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="1" y="0" z="6" spawntime="60" />
+	</spawn>
+	<spawn centerx="1342" centery="1012" centerz="6" radius="1">
+		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
 	<spawn centerx="1223" centery="471" centerz="7" radius="1">
 		<monster name="Dodo(f)" x="0" y="0" z="7" spawntime="60" />
@@ -2370,6 +2706,171 @@
 	</spawn>
 	<spawn centerx="1173" centery="811" centerz="7" radius="1">
 		<monster name="Dodo(f)" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1309" centery="865" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1335" centery="866" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1312" centery="869" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1334" centery="869" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1300" centery="874" centerz="7" radius="1">
+		<monster name="hollow willow" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1314" centery="877" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1336" centery="879" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1344" centery="880" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1343" centery="882" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1311" centery="883" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1317" centery="886" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1362" centery="892" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1368" centery="893" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1365" centery="894" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1339" centery="898" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1336" centery="899" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1334" centery="901" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1345" centery="915" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1359" centery="934" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1364" centery="935" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1353" centery="936" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1319" centery="939" centerz="7" radius="1">
+		<monster name="The Hollow Queen" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1337" centery="944" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1336" centery="952" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1305" centery="953" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1301" centery="954" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1258" centery="955" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1278" centery="961" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1298" centery="961" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1263" centery="963" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1277" centery="963" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1304" centery="963" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1327" centery="963" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1264" centery="965" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1253" centery="967" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1248" centery="969" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1289" centery="970" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1330" centery="972" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1242" centery="973" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1328" centery="974" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1238" centery="975" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1301" centery="975" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1225" centery="977" centerz="7" radius="1">
+		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1302" centery="978" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1299" centery="979" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1219" centery="981" centerz="7" radius="1">
+		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1331" centery="986" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1226" centery="988" centerz="7" radius="1">
+		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1215" centery="992" centerz="7" radius="1">
+		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1311" centery="993" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1322" centery="993" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1211" centery="998" centerz="7" radius="1">
+		<monster name="Rat" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1336" centery="998" centerz="7" radius="1">
+		<monster name="hollow willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1335" centery="1000" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="1333" centery="1001" centerz="7" radius="1">
+		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1158" centery="571" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
