@@ -8,8 +8,9 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 7000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
+        playercount = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering  
@@ -22,8 +23,9 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
+        playercount = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -36,7 +38,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -50,7 +52,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -64,7 +66,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -78,7 +80,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -92,7 +94,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -106,7 +108,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -120,7 +122,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -135,7 +137,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -177,7 +179,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -191,7 +193,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -205,7 +207,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -219,7 +221,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -233,7 +235,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -247,7 +249,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -261,7 +263,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -275,7 +277,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -289,7 +291,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -303,7 +305,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -317,7 +319,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -331,7 +333,7 @@ local zones = {
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
-        tiles = {},
+        tiles = 0,
         maxMonsters = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -349,6 +351,7 @@ local zones = {
 }
 
 local activePlayers = {}
+
 
 
 local function tablelength(T)
@@ -407,17 +410,16 @@ end
 
 
 local function scheduleNextSpawn(zone)
-
-     -- Check if players are still in the zone
-    if Game.getZonePlayerCount(zone.id) < 1 then
+  -- If the zone is already active, skip the player count check and proceed
+    if zone.active and zone.playercount > 0 then
+        local nextSpawnInterval = math.random(zone.spawnIntervalMin, zone.spawnIntervalMax)
+        zone.spawnEvent = addEvent(function()
+            spawnMonsters(zone)
+            scheduleNextSpawn(zone) -- Reschedule after spawning
+        end, nextSpawnInterval)
+      else
         zone.active = false
-        return
     end
-
-    local nextSpawnInterval = math.random(zone.spawnIntervalMin, zone.spawnIntervalMax)
-    zone.spawnEvent = addEvent(function()
-        spawnMonsters(zone)
-    end, nextSpawnInterval)
 end
 
 
@@ -450,7 +452,7 @@ end
 
 
 function spawnMonsters(zone)
-    if not zone.active then
+    if not zone.active or zone.playercount < 1 then
         print("Zone " .. zone.id .. " is not active. Skipping spawn.")
         return
     end
@@ -499,12 +501,23 @@ local function onEnterZone(player, zoneId)
     player:setStorageValue(10001, zoneId)
 
     -- Initialize tiles if they are empty
-    if not zone.tiles or #zone.tiles == 0 then
+    if not zone.tiles or zone.tiles == 0 then
         local tileCount = getNumerPositionInZone(zoneId)
-        zone.tiles = {}  -- Ensure it's initialized as an empty table
         print("number of tiles: " .. tileCount)
+        zone.tiles = tileCount
         zone.maxMonsters = (tileCount / 15) + 1
-        print("Zone " .. zoneId .. " has " .. tileCount .. " tiles. Max monsters: " .. zone.maxMonsters)
+    else
+        print("Zone " .. zoneId .. " already has tiles: it has " .. zone.tiles .. " tiles. Max monsters: " .. zone.maxMonsters)
+    end
+
+    -- Initialize players count
+    if not zone.playercount or zone.playercount == 0 then
+        local newplayerscount = Game.getZonePlayerCount(zoneId)
+        print("number of players: " .. newplayerscount)
+        zone.playercount = newplayerscount
+    else
+        zone.playercount = zone.playercount + 1 -- Increment player count
+        print("Zone " .. zoneId .. " already has players: it now has " .. zone.playercount)
     end
     zone.active = true
     
@@ -553,13 +566,13 @@ local function onLeaveZone(player, zoneId)
    -- player:sendTextMessage(MESSAGE_INFO_DESCR, "You have left the zone.")
     activePlayers[player:getId()] = nil
     
-     if Game.getZonePlayerCount(zoneId) < 1 then
+     if zones[zoneId].playercount < 1 then
         zones[zoneId].active = false
         despawnMonsters(zones[zoneId])
-
-         
+       
         else
-         zones[zoneId].active = true
+         zones[zoneId].playercount = zones[zoneId].playercount - 1
+          print("new zone count: " .. zones[zoneId].playercount)
     end
 end
 
@@ -619,23 +632,13 @@ function zoneOut.onStepOut(creature, item, position, fromPosition, zoneid)
 
     local previousZones = Tile(fromPosition):getZoneId()
     local newZones = Tile(player:getPosition()):getZoneId()
+
+    
     
     -- Check if the zones are different
-    if not areZonesEqual(previousZones, newZones) then
-        if #previousZones > 0 then
-            local uniqueZones = {}
-            for _, loopzoneId in ipairs(previousZones) do
-                if loopzoneId ~= 0 and loopzoneId ~= zoneid then
-                    uniqueZones[loopzoneId] = true
-                    print("zoneid: " .. zoneid)
-                    print("loopzoneId: " .. loopzoneId)
-                end
-            end
-
-            for loopzoneId in pairs(uniqueZones) do
-                onLeaveZone(player, loopzoneId)
-            end
-        end
+    if not areZonesEqual(previousZones, newZones) and zoneid > 0 then
+        print("zoneid: " .. zoneid)
+        onLeaveZone(player, zoneid)
     end
 
     return true
