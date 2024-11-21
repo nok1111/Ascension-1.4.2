@@ -450,53 +450,60 @@ end
 
 
 
-local function spawnMonster(zone)
-    local currentMonsterCount = Game.getZoneMonsterCount(zone.id)
-   -- print("Current monster count in zone " .. zone.id .. ": " .. currentMonsterCount .. " (Max: " .. zone.maxMonsters .. ")")
-
+local function spawnMonster(zone, currentMonsterCount)
     if currentMonsterCount >= zone.maxMonsters then
-       -- print("Max monsters reached or zone inactive. Skipping spawn.")
-        return
+        print("Max monsters reached in zone " .. zone.id .. ". Skipping spawn.")
+        return false -- Return false to indicate no monster was spawned
     end
 
     local spawnPosition = getRandomPositionInZone(zone)
-    print(spawnPosition)
     if not spawnPosition then
-        print("No valid spawn position found in zone " .. zone.id)
-        return
+        print("No valid spawn position found in zone " .. zone.id .. ". Skipping spawn.")
+        return false
     end
 
     local monsterName = zone.monsters[math.random(#zone.monsters)]
     local monster = Game.createMonster(monsterName, spawnPosition, false)
     if monster then
-        zone.spawnedMonsters[monster:getId()] = true
-        print("Spawned " .. monster:getName() .. " at position (" .. spawnPosition.x .. ", " .. spawnPosition.y .. ", " .. spawnPosition.z .. ").")
-        monster:registerEvent("zone_death")
+        zone.spawnedMonsters[monster:getId()] = true -- Track the spawned monster
+        print("Spawned " .. monster:getName() .. " in zone " .. zone.id .. " at position (" .. spawnPosition.x .. ", " .. spawnPosition.y .. ", " .. spawnPosition.z .. ").")
+        monster:registerEvent("zone_death") -- Register the monster death event
+        return true -- Return true to indicate a monster was successfully spawned
     else
-        print("Failed to spawn monster " .. monsterName)
+        print("Failed to spawn monster " .. monsterName .. " in zone " .. zone.id)
+        return false
     end
 end
+
 
 
 function spawnMonsters(zone)
     if not zone.active or zone.playercount < 1 then
-        print("Zone " .. zone.id .. " is not active. Skipping spawn.")
+        print("Zone " .. zone.id .. " is inactive or has no players. Skipping spawn.")
         return
     end
 
+    -- Call Game.getZoneMonsterCount once
     local currentMonsterCount = Game.getZoneMonsterCount(zone.id)
+    print("Current monsters in zone " .. zone.id .. ": " .. currentMonsterCount .. "/" .. zone.maxMonsters)
 
-    if currentMonsterCount < zone.maxMonsters then
-        print("current monsters: " .. currentMonsterCount )
-        print("zone.maxMonsters monsters: " .. zone.maxMonsters )
-        spawnMonster(zone)
-        print("spawnMonsters")
-        scheduleNextSpawn(zone)
-    else
-       -- print("Max monsters reached. Not scheduling new spawn event.")
-        zone.spawnEvent = nil
+    if currentMonsterCount >= zone.maxMonsters then
+        print("Zone " .. zone.id .. " has reached max monster capacity. Skipping spawn.")
+        return
+    end
+
+    -- Attempt to spawn a monster
+    if spawnMonster(zone, currentMonsterCount) then
+        -- Schedule the next spawn only if a monster was successfully spawned
+        if currentMonsterCount + 1 < zone.maxMonsters then
+            print("Monster spawned. Scheduling next spawn for zone " .. zone.id)
+            scheduleNextSpawn(zone)
+        else
+            print("Max monster capacity reached after spawn. No further spawns scheduled for zone " .. zone.id)
+        end
     end
 end
+
 
 
 function onMonsterDeath(monster, killer)
@@ -506,11 +513,8 @@ for _, zoneId in ipairs(zoneIds) do
     if zones[zoneId] then
         local zone = zones[zoneId]
         zone.spawnedMonsters[monster:getId()] = nil
-        print("Monster " .. monster:getName() .. " died. Current monsters: " .. tablelength(zone.spawnedMonsters))
-
-        if not zone.spawnEvent then
-            scheduleNextSpawn(zone)
-        end
+        print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
+        scheduleNextSpawn(zone)
     end
 end
 return true
