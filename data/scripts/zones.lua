@@ -410,17 +410,44 @@ end
 
 
 local function scheduleNextSpawn(zone)
-  -- If the zone is already active, skip the player count check and proceed
-    if zone.active and zone.playercount > 0 then
-        local nextSpawnInterval = math.random(zone.spawnIntervalMin, zone.spawnIntervalMax)
-        zone.spawnEvent = addEvent(function()
-            spawnMonsters(zone)
-            scheduleNextSpawn(zone) -- Reschedule after spawning
-        end, nextSpawnInterval)
-      else
-        zone.active = false
+    print("scheduleNextSpawn called for zone " .. zone.id)
+
+    -- Stop spawning if the zone is inactive or has no players
+    if not zone.active or zone.playercount < 1 then
+        print("Zone " .. zone.id .. " is inactive or has no players. Stopping spawn.")
+        if zone.spawnEvent then
+            stopEvent(zone.spawnEvent)
+            zone.spawnEvent = nil
+        end
+        return
     end
+
+    -- Check current monster count
+    local currentMonsterCount = tablelength(zone.spawnedMonsters)
+    if currentMonsterCount >= zone.maxMonsters then
+        print("Zone " .. zone.id .. " is at max monster capacity (" .. currentMonsterCount .. "/" .. zone.maxMonsters .. "). Skipping spawn.")
+        if zone.spawnEvent then
+            stopEvent(zone.spawnEvent)
+            zone.spawnEvent = nil
+        end
+        return
+    end
+
+    -- Schedule the next spawn
+    local nextSpawnInterval = math.random(zone.spawnIntervalMin, zone.spawnIntervalMax)
+    print("Scheduling next spawn for zone " .. zone.id .. " in " .. nextSpawnInterval .. " ms.")
+    zone.spawnEvent = addEvent(function()
+        -- Ensure conditions are still valid before spawning
+        if tablelength(zone.spawnedMonsters) < zone.maxMonsters and zone.active and zone.playercount > 0 then
+            spawnMonsters(zone)
+            --scheduleNextSpawn(zone) -- Reschedule only if conditions are met
+        else
+            print("Spawn loop stopped for zone " .. zone.id .. " (conditions no longer met).")
+            zone.spawnEvent = nil
+        end
+    end, nextSpawnInterval)
 end
+
 
 
 local function spawnMonster(zone)
@@ -457,10 +484,13 @@ function spawnMonsters(zone)
         return
     end
 
-    local currentMonsterCount = tablelength(zone.spawnedMonsters)
+    local currentMonsterCount = Game.getZoneMonsterCount(zone.id)
 
     if currentMonsterCount < zone.maxMonsters then
+        print("current monsters: " .. currentMonsterCount )
+        print("zone.maxMonsters monsters: " .. zone.maxMonsters )
         spawnMonster(zone)
+        print("spawnMonsters")
         scheduleNextSpawn(zone)
     else
        -- print("Max monsters reached. Not scheduling new spawn event.")
@@ -533,7 +563,7 @@ local function onEnterZone(player, zoneId)
 end
     
     if not zone.spawnEvent then
-        scheduleNextSpawn(zone)
+    scheduleNextSpawn(zone)
     end
 end
 
@@ -714,7 +744,7 @@ function creatureeventDeath.onDeath(creature, corpse, killer, mostDamage, unjust
     end
 
     -- Call the onMonsterDeath function if it's not a summon
-    onMonsterDeath(creature, killer)
+   onMonsterDeath(creature, killer)
 end 
 
 creatureeventDeath:register()  
