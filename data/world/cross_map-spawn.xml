@@ -2371,746 +2371,746 @@
 	<spawn centerx="1173" centery="811" centerz="7" radius="1">
 		<monster name="Dodo(f)" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="571" centerz="8" radius="1">
+	<spawn centerx="1158" centery="571" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1162" centery="571" centerz="8" radius="1">
+	<spawn centerx="1161" centery="571" centerz="8" radius="1">
 		<monster name="Lizard Spearman" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1158" centery="575" centerz="8" radius="1">
+	<spawn centerx="1157" centery="575" centerz="8" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1174" centery="577" centerz="8" radius="1">
+	<spawn centerx="1173" centery="577" centerz="8" radius="1">
 		<monster name="Lizard Spearman" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1170" centery="579" centerz="8" radius="1">
+	<spawn centerx="1169" centery="579" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1174" centery="580" centerz="8" radius="1">
+	<spawn centerx="1173" centery="580" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1160" centery="581" centerz="8" radius="1">
+	<spawn centerx="1159" centery="581" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1173" centery="582" centerz="8" radius="1">
+	<spawn centerx="1172" centery="582" centerz="8" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1120" centery="583" centerz="8" radius="1">
+	<spawn centerx="1119" centery="583" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="585" centerz="8" radius="1">
+	<spawn centerx="1158" centery="585" centerz="8" radius="1">
 		<monster name="Elder Lizard" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1122" centery="586" centerz="8" radius="1">
+	<spawn centerx="1121" centery="586" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1096" centery="588" centerz="8" radius="1">
+	<spawn centerx="1095" centery="588" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1123" centery="589" centerz="8" radius="1">
+	<spawn centerx="1122" centery="589" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1112" centery="591" centerz="8" radius="1">
+	<spawn centerx="1111" centery="591" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1096" centery="594" centerz="8" radius="1">
+	<spawn centerx="1095" centery="594" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1189" centery="594" centerz="8" radius="1">
+	<spawn centerx="1188" centery="594" centerz="8" radius="1">
 		<monster name="Elder Lizard" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1098" centery="595" centerz="8" radius="1">
+	<spawn centerx="1097" centery="595" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 		<monster name="Tarantula" x="0" y="1" z="8" spawntime="2816" />
 	</spawn>
-	<spawn centerx="1171" centery="596" centerz="8" radius="1">
+	<spawn centerx="1170" centery="596" centerz="8" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1187" centery="596" centerz="8" radius="1">
+	<spawn centerx="1186" centery="596" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1160" centery="597" centerz="8" radius="1">
+	<spawn centerx="1159" centery="597" centerz="8" radius="1">
 		<monster name="Lizard Spearman" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1167" centery="597" centerz="8" radius="1">
+	<spawn centerx="1166" centery="597" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1189" centery="597" centerz="8" radius="1">
+	<spawn centerx="1188" centery="597" centerz="8" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1171" centery="598" centerz="8" radius="1">
+	<spawn centerx="1170" centery="598" centerz="8" radius="1">
 		<monster name="Elder Lizard" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1185" centery="598" centerz="8" radius="1">
+	<spawn centerx="1184" centery="598" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1112" centery="602" centerz="8" radius="1">
+	<spawn centerx="1111" centery="602" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1117" centery="606" centerz="8" radius="1">
+	<spawn centerx="1116" centery="606" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1134" centery="606" centerz="8" radius="1">
+	<spawn centerx="1133" centery="606" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1119" centery="608" centerz="8" radius="1">
+	<spawn centerx="1118" centery="608" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1134" centery="609" centerz="8" radius="1">
+	<spawn centerx="1133" centery="609" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1162" centery="610" centerz="8" radius="1">
+	<spawn centerx="1161" centery="610" centerz="8" radius="1">
 		<monster name="Elder Lizard" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="611" centerz="8" radius="1">
+	<spawn centerx="1158" centery="611" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1158" centery="613" centerz="8" radius="1">
+	<spawn centerx="1157" centery="613" centerz="8" radius="1">
 		<monster name="Elder Lizard" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1162" centery="613" centerz="8" radius="1">
+	<spawn centerx="1161" centery="613" centerz="8" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1127" centery="615" centerz="8" radius="1">
+	<spawn centerx="1126" centery="615" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1090" centery="617" centerz="8" radius="1">
+	<spawn centerx="1089" centery="617" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1093" centery="617" centerz="8" radius="1">
+	<spawn centerx="1092" centery="617" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1109" centery="617" centerz="8" radius="1">
+	<spawn centerx="1108" centery="617" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1107" centery="618" centerz="8" radius="1">
+	<spawn centerx="1106" centery="618" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1126" centery="621" centerz="8" radius="1">
+	<spawn centerx="1125" centery="621" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1107" centery="632" centerz="8" radius="1">
+	<spawn centerx="1106" centery="632" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1125" centery="632" centerz="8" radius="1">
+	<spawn centerx="1124" centery="632" centerz="8" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1129" centery="632" centerz="8" radius="1">
+	<spawn centerx="1128" centery="632" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1133" centery="632" centerz="8" radius="1">
+	<spawn centerx="1132" centery="632" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1108" centery="634" centerz="8" radius="1">
+	<spawn centerx="1107" centery="634" centerz="8" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1134" centery="686" centerz="8" radius="1">
+	<spawn centerx="1133" centery="686" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1138" centery="689" centerz="8" radius="1">
+	<spawn centerx="1137" centery="689" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="690" centerz="8" radius="1">
+	<spawn centerx="1147" centery="690" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1152" centery="693" centerz="8" radius="1" />
-	<spawn centerx="1155" centery="694" centerz="8" radius="1">
+	<spawn centerx="1151" centery="693" centerz="8" radius="1" />
+	<spawn centerx="1154" centery="694" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1124" centery="695" centerz="8" radius="1">
+	<spawn centerx="1123" centery="695" centerz="8" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1230" centery="724" centerz="8" radius="1">
+	<spawn centerx="1229" centery="724" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1249" centery="731" centerz="8" radius="1">
+	<spawn centerx="1248" centery="731" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1198" centery="736" centerz="8" radius="1" />
-	<spawn centerx="1238" centery="741" centerz="8" radius="1">
+	<spawn centerx="1197" centery="736" centerz="8" radius="1" />
+	<spawn centerx="1237" centery="741" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1208" centery="743" centerz="8" radius="1">
+	<spawn centerx="1207" centery="743" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1218" centery="749" centerz="8" radius="1">
+	<spawn centerx="1217" centery="749" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1256" centery="749" centerz="8" radius="1">
+	<spawn centerx="1255" centery="749" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1201" centery="753" centerz="8" radius="1">
+	<spawn centerx="1200" centery="753" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1230" centery="760" centerz="8" radius="1">
+	<spawn centerx="1229" centery="760" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1248" centery="760" centerz="8" radius="1">
+	<spawn centerx="1247" centery="760" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1226" centery="762" centerz="8" radius="1">
+	<spawn centerx="1225" centery="762" centerz="8" radius="1">
 		<monster name="Hydra" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="784" centerz="8" radius="1">
+	<spawn centerx="1147" centery="784" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="788" centerz="8" radius="1">
+	<spawn centerx="1147" centery="788" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="797" centerz="8" radius="1">
+	<spawn centerx="1134" centery="797" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="-1" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1154" centery="799" centerz="8" radius="1" />
-	<spawn centerx="1137" centery="807" centerz="8" radius="1">
+	<spawn centerx="1153" centery="799" centerz="8" radius="1" />
+	<spawn centerx="1136" centery="807" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1167" centery="807" centerz="8" radius="1">
+	<spawn centerx="1166" centery="807" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1161" centery="808" centerz="8" radius="1">
+	<spawn centerx="1160" centery="808" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1144" centery="810" centerz="8" radius="1">
+	<spawn centerx="1143" centery="810" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="814" centerz="8" radius="1">
+	<spawn centerx="1134" centery="814" centerz="8" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="8" spawntime="60" />
 	</spawn>
-	<spawn centerx="1097" centery="586" centerz="9" radius="1">
+	<spawn centerx="1096" centery="586" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1100" centery="589" centerz="9" radius="1">
+	<spawn centerx="1099" centery="589" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 		<monster name="Tarantula" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1130" centery="592" centerz="9" radius="1">
+	<spawn centerx="1129" centery="592" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1124" centery="593" centerz="9" radius="1">
+	<spawn centerx="1123" centery="593" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1127" centery="594" centerz="9" radius="1">
+	<spawn centerx="1126" centery="594" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 		<monster name="Bahumash" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1107" centery="595" centerz="9" radius="1">
+	<spawn centerx="1106" centery="595" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1093" centery="596" centerz="9" radius="1">
+	<spawn centerx="1092" centery="596" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1125" centery="598" centerz="9" radius="1">
+	<spawn centerx="1124" centery="598" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1130" centery="598" centerz="9" radius="1">
+	<spawn centerx="1129" centery="598" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1167" centery="598" centerz="9" radius="1">
+	<spawn centerx="1166" centery="598" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1165" centery="601" centerz="9" radius="1">
+	<spawn centerx="1164" centery="601" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1091" centery="603" centerz="9" radius="1">
+	<spawn centerx="1090" centery="603" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1169" centery="603" centerz="9" radius="1">
+	<spawn centerx="1168" centery="603" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1110" centery="604" centerz="9" radius="1">
+	<spawn centerx="1109" centery="604" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1113" centery="604" centerz="9" radius="1">
+	<spawn centerx="1112" centery="604" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1114" centery="606" centerz="9" radius="1">
+	<spawn centerx="1113" centery="606" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1187" centery="606" centerz="9" radius="1">
+	<spawn centerx="1186" centery="606" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1110" centery="607" centerz="9" radius="1">
+	<spawn centerx="1109" centery="607" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1162" centery="607" centerz="9" radius="1">
+	<spawn centerx="1161" centery="607" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1184" centery="607" centerz="9" radius="1">
+	<spawn centerx="1183" centery="607" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1091" centery="608" centerz="9" radius="1">
+	<spawn centerx="1090" centery="608" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="611" centerz="9" radius="1">
+	<spawn centerx="1134" centery="611" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1114" centery="615" centerz="9" radius="1">
+	<spawn centerx="1113" centery="615" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1117" centery="615" centerz="9" radius="1">
+	<spawn centerx="1116" centery="615" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1130" centery="616" centerz="9" radius="1">
+	<spawn centerx="1129" centery="616" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1091" centery="617" centerz="9" radius="1">
+	<spawn centerx="1090" centery="617" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1095" centery="618" centerz="9" radius="1">
+	<spawn centerx="1094" centery="618" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1173" centery="618" centerz="9" radius="1">
+	<spawn centerx="1172" centery="618" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1196" centery="618" centerz="9" radius="1">
+	<spawn centerx="1195" centery="618" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1086" centery="619" centerz="9" radius="1">
+	<spawn centerx="1085" centery="619" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1147" centery="620" centerz="9" radius="1">
+	<spawn centerx="1146" centery="620" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1150" centery="620" centerz="9" radius="1">
+	<spawn centerx="1149" centery="620" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1158" centery="620" centerz="9" radius="1">
+	<spawn centerx="1157" centery="620" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1176" centery="620" centerz="9" radius="1">
+	<spawn centerx="1175" centery="620" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1195" centery="620" centerz="9" radius="1">
+	<spawn centerx="1194" centery="620" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 		<monster name="Medusa" x="-1" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="622" centerz="9" radius="1">
+	<spawn centerx="1147" centery="622" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1158" centery="622" centerz="9" radius="1">
+	<spawn centerx="1157" centery="622" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1121" centery="625" centerz="9" radius="1">
+	<spawn centerx="1120" centery="625" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1168" centery="626" centerz="9" radius="1">
+	<spawn centerx="1167" centery="626" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1090" centery="627" centerz="9" radius="1">
+	<spawn centerx="1089" centery="627" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1106" centery="627" centerz="9" radius="1">
+	<spawn centerx="1105" centery="627" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1120" centery="628" centerz="9" radius="1">
+	<spawn centerx="1119" centery="628" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1112" centery="630" centerz="9" radius="1">
+	<spawn centerx="1111" centery="630" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1185" centery="630" centerz="9" radius="1">
+	<spawn centerx="1184" centery="630" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="631" centerz="9" radius="1">
+	<spawn centerx="1134" centery="631" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1090" centery="632" centerz="9" radius="1">
+	<spawn centerx="1089" centery="632" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1186" centery="632" centerz="9" radius="1">
+	<spawn centerx="1185" centery="632" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1130" centery="633" centerz="9" radius="1">
+	<spawn centerx="1129" centery="633" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1133" centery="634" centerz="9" radius="1">
+	<spawn centerx="1132" centery="634" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1171" centery="635" centerz="9" radius="1">
+	<spawn centerx="1170" centery="635" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1158" centery="637" centerz="9" radius="1">
+	<spawn centerx="1157" centery="637" centerz="9" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1106" centery="638" centerz="9" radius="1">
+	<spawn centerx="1105" centery="638" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1102" centery="639" centerz="9" radius="1">
+	<spawn centerx="1101" centery="639" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="639" centerz="9" radius="1">
+	<spawn centerx="1158" centery="639" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1092" centery="640" centerz="9" radius="1">
+	<spawn centerx="1091" centery="640" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1107" centery="640" centerz="9" radius="1">
+	<spawn centerx="1106" centery="640" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1156" centery="641" centerz="9" radius="1">
+	<spawn centerx="1155" centery="641" centerz="9" radius="1">
 		<monster name="Medusa" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1134" centery="642" centerz="9" radius="1">
+	<spawn centerx="1133" centery="642" centerz="9" radius="1">
 		<monster name="Tarantula" x="-1" y="-1" z="9" spawntime="60" />
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1140" centery="643" centerz="9" radius="1">
+	<spawn centerx="1139" centery="643" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1102" centery="645" centerz="9" radius="1">
+	<spawn centerx="1101" centery="645" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1120" centery="645" centerz="9" radius="1">
+	<spawn centerx="1119" centery="645" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1122" centery="648" centerz="9" radius="1">
+	<spawn centerx="1121" centery="648" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1124" centery="652" centerz="9" radius="1">
+	<spawn centerx="1123" centery="652" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1138" centery="655" centerz="9" radius="1">
+	<spawn centerx="1137" centery="655" centerz="9" radius="1">
 		<monster name="Tarantula" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="656" centerz="9" radius="1">
+	<spawn centerx="1134" centery="656" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1133" centery="660" centerz="9" radius="1">
+	<spawn centerx="1132" centery="660" centerz="9" radius="1">
 		<monster name="Amazon Spider" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1165" centery="667" centerz="9" radius="1">
+	<spawn centerx="1164" centery="667" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1146" centery="670" centerz="9" radius="1">
+	<spawn centerx="1145" centery="670" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1150" centery="671" centerz="9" radius="1">
+	<spawn centerx="1149" centery="671" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1141" centery="673" centerz="9" radius="1">
+	<spawn centerx="1140" centery="673" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1164" centery="673" centerz="9" radius="1">
+	<spawn centerx="1163" centery="673" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1158" centery="679" centerz="9" radius="1">
+	<spawn centerx="1157" centery="679" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1173" centery="679" centerz="9" radius="1">
+	<spawn centerx="1172" centery="679" centerz="9" radius="1">
 		<monster name="Greed Worm" x="-1" y="0" z="9" spawntime="60" />
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="681" centerz="9" radius="1">
+	<spawn centerx="1134" centery="681" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1134" centery="683" centerz="9" radius="1">
+	<spawn centerx="1133" centery="683" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1147" centery="686" centerz="9" radius="1">
+	<spawn centerx="1146" centery="686" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1227" centery="686" centerz="9" radius="1">
+	<spawn centerx="1226" centery="686" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1158" centery="688" centerz="9" radius="1">
+	<spawn centerx="1157" centery="688" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 		<monster name="Greed Worm" x="1" y="1" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1147" centery="694" centerz="9" radius="1">
+	<spawn centerx="1146" centery="694" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1209" centery="694" centerz="9" radius="1">
+	<spawn centerx="1208" centery="694" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1138" centery="696" centerz="9" radius="1">
+	<spawn centerx="1137" centery="696" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1142" centery="696" centerz="9" radius="1">
+	<spawn centerx="1141" centery="696" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1225" centery="696" centerz="9" radius="1">
+	<spawn centerx="1224" centery="696" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1169" centery="698" centerz="9" radius="1">
+	<spawn centerx="1168" centery="698" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1173" centery="698" centerz="9" radius="1">
+	<spawn centerx="1172" centery="698" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1161" centery="701" centerz="9" radius="1">
+	<spawn centerx="1160" centery="701" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1220" centery="702" centerz="9" radius="1">
+	<spawn centerx="1219" centery="702" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1236" centery="702" centerz="9" radius="1">
+	<spawn centerx="1235" centery="702" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1171" centery="704" centerz="9" radius="1">
+	<spawn centerx="1170" centery="704" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1171" centery="707" centerz="9" radius="1">
+	<spawn centerx="1170" centery="707" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1152" centery="708" centerz="9" radius="1">
+	<spawn centerx="1151" centery="708" centerz="9" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1235" centery="711" centerz="9" radius="1">
+	<spawn centerx="1234" centery="711" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1235" centery="716" centerz="9" radius="1">
+	<spawn centerx="1234" centery="716" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1250" centery="725" centerz="9" radius="1">
+	<spawn centerx="1249" centery="725" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1241" centery="726" centerz="9" radius="1">
+	<spawn centerx="1240" centery="726" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1192" centery="744" centerz="9" radius="1">
+	<spawn centerx="1191" centery="744" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1190" centery="746" centerz="9" radius="1">
+	<spawn centerx="1189" centery="746" centerz="9" radius="1">
 		<monster name="Hydra" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1135" centery="783" centerz="9" radius="1">
+	<spawn centerx="1134" centery="783" centerz="9" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1131" centery="789" centerz="9" radius="1">
+	<spawn centerx="1130" centery="789" centerz="9" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1145" centery="791" centerz="9" radius="1">
+	<spawn centerx="1144" centery="791" centerz="9" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1143" centery="799" centerz="9" radius="1">
+	<spawn centerx="1142" centery="799" centerz="9" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1127" centery="802" centerz="9" radius="1">
+	<spawn centerx="1126" centery="802" centerz="9" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1155" centery="807" centerz="9" radius="1">
+	<spawn centerx="1154" centery="807" centerz="9" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1128" centery="811" centerz="9" radius="1">
+	<spawn centerx="1127" centery="811" centerz="9" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="9" spawntime="60" />
 	</spawn>
-	<spawn centerx="1229" centery="594" centerz="10" radius="1">
+	<spawn centerx="1228" centery="594" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1225" centery="598" centerz="10" radius="1">
+	<spawn centerx="1224" centery="598" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1232" centery="598" centerz="10" radius="1">
+	<spawn centerx="1231" centery="598" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1228" centery="602" centerz="10" radius="1">
+	<spawn centerx="1227" centery="602" centerz="10" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1228" centery="615" centerz="10" radius="1">
+	<spawn centerx="1227" centery="615" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1231" centery="615" centerz="10" radius="1">
+	<spawn centerx="1230" centery="615" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1230" centery="620" centerz="10" radius="1">
+	<spawn centerx="1229" centery="620" centerz="10" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1184" centery="633" centerz="10" radius="1">
+	<spawn centerx="1183" centery="633" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1269" centery="633" centerz="10" radius="1">
+	<spawn centerx="1268" centery="633" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1205" centery="634" centerz="10" radius="1">
+	<spawn centerx="1204" centery="634" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1143" centery="635" centerz="10" radius="1">
+	<spawn centerx="1142" centery="635" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1227" centery="635" centerz="10" radius="1">
+	<spawn centerx="1226" centery="635" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1248" centery="635" centerz="10" radius="1">
+	<spawn centerx="1247" centery="635" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1269" centery="636" centerz="10" radius="1">
+	<spawn centerx="1268" centery="636" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1147" centery="637" centerz="10" radius="1">
+	<spawn centerx="1146" centery="637" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1168" centery="637" centerz="10" radius="1">
+	<spawn centerx="1167" centery="637" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1185" centery="637" centerz="10" radius="1">
+	<spawn centerx="1184" centery="637" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1208" centery="637" centerz="10" radius="1" />
-	<spawn centerx="1140" centery="638" centerz="10" radius="1">
+	<spawn centerx="1207" centery="637" centerz="10" radius="1" />
+	<spawn centerx="1139" centery="638" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1153" centery="638" centerz="10" radius="1">
+	<spawn centerx="1152" centery="638" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1173" centery="638" centerz="10" radius="1">
+	<spawn centerx="1172" centery="638" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1214" centery="638" centerz="10" radius="1">
+	<spawn centerx="1213" centery="638" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1222" centery="638" centerz="10" radius="1">
+	<spawn centerx="1221" centery="638" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1244" centery="638" centerz="10" radius="1">
+	<spawn centerx="1243" centery="638" centerz="10" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="639" centerz="10" radius="1">
+	<spawn centerx="1147" centery="639" centerz="10" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1200" centery="639" centerz="10" radius="1">
+	<spawn centerx="1199" centery="639" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1142" centery="640" centerz="10" radius="1">
+	<spawn centerx="1141" centery="640" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1171" centery="640" centerz="10" radius="1">
+	<spawn centerx="1170" centery="640" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1226" centery="640" centerz="10" radius="1">
+	<spawn centerx="1225" centery="640" centerz="10" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1201" centery="641" centerz="10" radius="1">
+	<spawn centerx="1200" centery="641" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1267" centery="643" centerz="10" radius="1">
+	<spawn centerx="1266" centery="643" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1267" centery="653" centerz="10" radius="1">
+	<spawn centerx="1266" centery="653" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1231" centery="657" centerz="10" radius="1">
+	<spawn centerx="1230" centery="657" centerz="10" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1234" centery="658" centerz="10" radius="1">
+	<spawn centerx="1233" centery="658" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1228" centery="660" centerz="10" radius="1">
+	<spawn centerx="1227" centery="660" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1267" centery="660" centerz="10" radius="1">
+	<spawn centerx="1266" centery="660" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1124" centery="662" centerz="10" radius="1">
+	<spawn centerx="1123" centery="662" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1130" centery="663" centerz="10" radius="1">
+	<spawn centerx="1129" centery="663" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1234" centery="663" centerz="10" radius="1">
+	<spawn centerx="1233" centery="663" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1148" centery="664" centerz="10" radius="1">
+	<spawn centerx="1147" centery="664" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1137" centery="665" centerz="10" radius="1">
+	<spawn centerx="1136" centery="665" centerz="10" radius="1">
 		<monster name="Greed Worm" x="-1" y="0" z="10" spawntime="60" />
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1267" centery="665" centerz="10" radius="1">
+	<spawn centerx="1266" centery="665" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1233" centery="666" centerz="10" radius="1">
+	<spawn centerx="1232" centery="666" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1128" centery="668" centerz="10" radius="1">
+	<spawn centerx="1127" centery="668" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1229" centery="668" centerz="10" radius="1">
+	<spawn centerx="1228" centery="668" centerz="10" radius="1">
 		<monster name="Serpent Spawn" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1156" centery="671" centerz="10" radius="1">
+	<spawn centerx="1155" centery="671" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1269" centery="671" centerz="10" radius="1">
+	<spawn centerx="1268" centery="671" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1165" centery="672" centerz="10" radius="1">
+	<spawn centerx="1164" centery="672" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1266" centery="673" centerz="10" radius="1">
+	<spawn centerx="1265" centery="673" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1159" centery="675" centerz="10" radius="1">
+	<spawn centerx="1158" centery="675" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1141" centery="677" centerz="10" radius="1">
+	<spawn centerx="1140" centery="677" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1144" centery="678" centerz="10" radius="1">
+	<spawn centerx="1143" centery="678" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1136" centery="679" centerz="10" radius="1">
+	<spawn centerx="1135" centery="679" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1126" centery="680" centerz="10" radius="1">
+	<spawn centerx="1125" centery="680" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1167" centery="681" centerz="10" radius="1">
+	<spawn centerx="1166" centery="681" centerz="10" radius="1">
 		<monster name="Greed Worm" x="1" y="-1" z="10" spawntime="60" />
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1138" centery="684" centerz="10" radius="1">
+	<spawn centerx="1137" centery="684" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1265" centery="686" centerz="10" radius="1">
+	<spawn centerx="1264" centery="686" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1154" centery="687" centerz="10" radius="1">
+	<spawn centerx="1153" centery="687" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1269" centery="687" centerz="10" radius="1">
+	<spawn centerx="1268" centery="687" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1126" centery="689" centerz="10" radius="1">
+	<spawn centerx="1125" centery="689" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1152" centery="691" centerz="10" radius="1">
+	<spawn centerx="1151" centery="691" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1127" centery="692" centerz="10" radius="1">
+	<spawn centerx="1126" centery="692" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1266" centery="694" centerz="10" radius="1">
+	<spawn centerx="1265" centery="694" centerz="10" radius="1">
 		<monster name="Medusa" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1130" centery="697" centerz="10" radius="1">
+	<spawn centerx="1129" centery="697" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1136" centery="697" centerz="10" radius="1">
+	<spawn centerx="1135" centery="697" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1139" centery="701" centerz="10" radius="1">
+	<spawn centerx="1138" centery="701" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1136" centery="702" centerz="10" radius="1">
+	<spawn centerx="1135" centery="702" centerz="10" radius="1">
 		<monster name="Greed Worm" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1268" centery="741" centerz="10" radius="1">
+	<spawn centerx="1267" centery="741" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1276" centery="745" centerz="10" radius="1">
+	<spawn centerx="1275" centery="745" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1275" centery="747" centerz="10" radius="1">
+	<spawn centerx="1274" centery="747" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1261" centery="753" centerz="10" radius="1">
+	<spawn centerx="1260" centery="753" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1257" centery="759" centerz="10" radius="1">
+	<spawn centerx="1256" centery="759" centerz="10" radius="1">
 		<monster name="Hydra" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
-	<spawn centerx="1127" centery="817" centerz="10" radius="1">
+	<spawn centerx="1126" centery="817" centerz="10" radius="1">
 		<monster name="Dreamer Oak" x="0" y="0" z="10" spawntime="60" />
 	</spawn>
 </spawns>
