@@ -773,19 +773,19 @@ std::string getSkillName(uint8_t skillid)
 			return "fist fighting";
 
 		case SKILL_CLUB:
-			return "club fighting";
+			return "focus";
 
 		case SKILL_SWORD:
-			return "sword fighting";
+			return "strenght";
 
 		case SKILL_AXE:
-			return "axe fighting";
+			return "arcana";
 
 		case SKILL_DISTANCE:
-			return "distance fighting";
+			return "distance";
 
 		case SKILL_SHIELD:
-			return "shielding";
+			return "defence";
 
 		case SKILL_FISHING:
 			return "fishing";
