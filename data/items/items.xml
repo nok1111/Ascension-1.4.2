@@ -29,16 +29,25 @@
 		<attribute key="attack" value="46" />
 		<attribute key="weaponType" value="sword" />
 	</item>
-    <item id="33441" article="a" name="Tier 0 Wand">
-		<attribute key="defense" value="30" />
-		<attribute key="attack" value="60" />	
-		<attribute key="slotType" value="two-handed" />
+	    <item id="33441" article="a" name="Tier 0 Wand of Chaos">
+		<attribute key="defense" value="25" />
+		<attribute key="attack" value="46" />	
 		<attribute key="weight" value="100" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="4" />
 	</item>
+    <item id="33440" article="a" name="Tier 0 Wand of Healing">
+		<attribute key="defense" value="30" />
+		<attribute key="attack" value="38" />	
+		<attribute key="weight" value="100" />
+		<attribute key="weaponType" value="club" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="4" />
+	</item>
+
 	<item id="36236" article="a" name="Tier 0 Bow">
 		<attribute key="weight" value="100" />
 		<attribute key="defense" value="30" />
