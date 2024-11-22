@@ -235,3 +235,27 @@ function getPlayerDatabaseInfo(name_or_guid)
 	result.free(query)
 	return info
 end
+
+
+-- global_healing.lua
+function getHealingBoost(player)
+    local healingBoostItems = {
+        [33441] = 50,  -- Example: Item ID 1234 increases healing by 10%
+        [5678] = 20,  -- Example: Item ID 5678 increases healing by 20%
+    }
+
+    if not player or not player:isPlayer() then
+        return 0
+    end
+
+    local healingBoost = 0
+    local equippedItems = {player:getSlotItem(CONST_SLOT_LEFT), player:getSlotItem(CONST_SLOT_RIGHT)}
+
+    for _, item in pairs(equippedItems) do
+        if item and healingBoostItems[item:getId()] then
+            healingBoost = healingBoost + healingBoostItems[item:getId()]
+        end
+    end
+
+    return healingBoost
+end
