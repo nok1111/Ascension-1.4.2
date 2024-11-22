@@ -105,7 +105,9 @@ function onCastSpell(creature, variant)
     local max = (player:getLevel() / 5) +  (player:getMagicLevel() * 2.5) + 45
     local FinalHealth = math.random(min, max)
 
-    target:addHealth(FinalHealth)
+
+    local healingBoost = getHealingBoost(target)
+    target:addHealth(FinalHealth + math.floor(FinalHealth * healingBoost / 100)) 
     target:getPosition():sendMagicEffect(config.healing_effect)
 
     return true
