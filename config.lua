@@ -81,7 +81,7 @@ maxMarketOffersAtATimePerPlayer = 100
 mysqlHost = "127.0.0.1"
 mysqlUser = "root"
 mysqlPass = ""
-mysqlDatabase = "ascension"
+mysqlDatabase = "test"
 mysqlPort = 3306
 mysqlSock = ""
 
@@ -95,7 +95,7 @@ allowChangeOutfit = true
 freePremium = false
 kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
-emoteSpells = false
+emoteSpells = true
 classicEquipmentSlots = true
 classicAttackSpeed = false
 showScriptsLogInConsole = false
