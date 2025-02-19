@@ -33,6 +33,7 @@ class Party;
 class SchedulerTask;
 class Bed;
 class Guild;
+class Dungeon;
 
 enum skillsid_t {
 	SKILLVALUE_LEVEL = 0,
@@ -767,6 +768,22 @@ class Player final : public Creature, public Cylinder
 		size_t getMaxVIPEntries() const;
 		size_t getMaxDepotItems() const;
 
+		void setDungeon(Dungeon* dungeon) {
+			this->dungeon = dungeon;
+		}
+
+		Dungeon* getDungeon() {
+			return dungeon;
+		}
+
+		void setDungeonDifficulty(uint8_t difficulty) {
+			this->dungeonDifficulty = difficulty;
+		}
+
+		uint8_t getDungeonDifficulty() const {
+			return dungeonDifficulty;
+		}
+
 		//tile
 		//send methods
 		void sendAddTileItem(const Tile* tile, const Position& pos, const Item* item) {
@@ -1396,6 +1413,7 @@ class Player final : public Creature, public Cylinder
 		Town* town = nullptr;
 		Vocation* vocation = nullptr;
 		StoreInbox* storeInbox = nullptr;
+		Dungeon* dungeon = nullptr;
 
 		uint32_t inventoryWeight = 0;
 		uint32_t capacity = 40000;
@@ -1436,6 +1454,7 @@ class Player final : public Creature, public Cylinder
 		std::bitset<6> blessings;
 		uint8_t levelPercent = 0;
 		uint8_t magLevelPercent = 0;
+		uint8_t dungeonDifficulty = 0;
 
 		PlayerSex_t sex = PLAYERSEX_FEMALE;
 		OperatingSystem_t operatingSystem = CLIENTOS_NONE;

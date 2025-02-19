@@ -135,8 +135,12 @@ bool IOMapSerialize::loadItem(PropStream& propStream, Cylinder* parent)
 			if (item->unserializeAttr(propStream)) {
 				Container* container = item->getContainer();
 				if (container && !loadContainer(propStream, container)) {
-					delete item;
-					return false;
+
+					if (id != 29563 && id != 29564 && id != 29565 && id != 29566) { 
+					    delete item;
+					    return false;
+					}
+
 				}
 
 				parent->internalAddThing(item);

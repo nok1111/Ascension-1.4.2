@@ -185,6 +185,25 @@ class Monster final : public Creature
 		BlockType_t blockHit(Creature* attacker, CombatType_t combatType, int32_t& damage,
 		                     bool checkDefense = false, bool checkArmor = false, bool field = false, bool ignoreResistances = false) override;
 
+
+		void setDifficulty(uint8_t value) {
+			difficulty = value;
+
+			if (DifficultyLife[difficulty] > 1.0) {
+				int32_t hp = static_cast<int32_t>(std::round(getMaxHealth() * DifficultyLife[difficulty]));
+				this->healthMax = hp;
+				this->health = hp;
+			}
+		}
+
+		int8_t getDifficulty() const {
+			return difficulty;
+		}
+
+		double getDifficultyDamage() const {
+			return DifficultyDamage[difficulty];
+		}
+
 		static uint32_t monsterAutoID;
 
 	private:
@@ -209,6 +228,8 @@ class Monster final : public Creature
 		int32_t targetChangeCooldown = 0;
 		int32_t challengeFocusDuration = 0;
 		int32_t stepDuration = 0;
+
+		uint8_t difficulty = 0;
 
 		Position masterPos;
 

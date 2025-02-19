@@ -13,6 +13,8 @@
 #include "town.h"
 #include "house.h"
 #include "spawn.h"
+#include "chunk_spawn.h"
+#include "dungeon.h"
 
 class Creature;
 class Player;
@@ -169,6 +171,9 @@ class Map
 		  * \returns true if the map was loaded successfully
 		  */
 		bool loadMap(const std::string& identifier, bool loadHouses);
+		bool loadDungeon(const std::string& identifier, const Position& pos);
+		void respawnDungeon(const std::string & identifier, DungeonInstance * instance, const Position & pos, uint8_t difficulty);
+		void clearDungeon(DungeonInstance * instance);
 
 		/**
 		  * Save a map.
