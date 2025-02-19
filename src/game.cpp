@@ -216,21 +216,6 @@ void Game::loadMap(const std::string& path)
 	map.loadMap(path, false);
 }
 
-void Game::loadDungeon(const std::string& path, const Position& pos)
-{
-	map.loadDungeon(path, pos);
-}
-
-void Game::respawnDungeon(const std::string& path, DungeonInstance* instance, const Position& pos, uint8_t difficulty)
-{
-	map.respawnDungeon(path, instance, pos, difficulty);
-}
-
-void Game::clearDungeon(DungeonInstance* instance)
-{
-	map.clearDungeon(instance);
-}
-
 Cylinder* Game::internalGetCylinder(Player* player, const Position& pos) const
 {
 	if (pos.x != 0xFFFF) {
