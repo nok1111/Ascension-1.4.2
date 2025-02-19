@@ -722,7 +722,7 @@ class Player final : public Creature, public Cylinder
 
 		uint64_t getGainedExperience(Creature* attacker) const override;
 
-		bool hasCondition(ConditionType_t type, uint32_t subId = 0) const;
+		
 
 		//combat event functions
 		void onAddCondition(ConditionType_t type) override;

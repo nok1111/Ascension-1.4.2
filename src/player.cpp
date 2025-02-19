@@ -3451,10 +3451,7 @@ void Player::onAddCondition(ConditionType_t type)
 	sendIcons();
 }
 
-bool Player::hasCondition(ConditionType_t type, uint32_t subId/* = 0*/) const
-{
-	return Creature::getCreatureCondition(type,subId);
-}
+
 
 void Player::onAddCombatCondition(ConditionType_t type)
 {
