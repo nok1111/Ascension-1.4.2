@@ -127,6 +127,10 @@ do
 			self:type("death")
 			self:onDeath(value)
 			return
+		elseif key == "onMove" then
+			self:type("move")
+			self:onMove(value)
+			return
 		elseif key == "onKill" then
 			self:type("kill")
 			self:onKill(value)

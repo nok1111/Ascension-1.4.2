@@ -5,6 +5,7 @@ function onStepIn(player, item, position, fromPosition, zoneid)
         return false
     end
 	
+    MapTravel.launchMapTravel(player, "Thais")
     local waypoint
     for i = 1, #waypointList do
         if waypointList[i].actionId == item.actionid then

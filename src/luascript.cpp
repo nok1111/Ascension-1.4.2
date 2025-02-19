@@ -1481,6 +1481,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CREATURE_EVENT_PREPAREDEATH)
 	registerEnum(CREATURE_EVENT_DEATH)
 	registerEnum(CREATURE_EVENT_KILL)
+	registerEnum(CREATURE_EVENT_MOVE)
 	registerEnum(CREATURE_EVENT_ADVANCE)
 	registerEnum(CREATURE_EVENT_MODALWINDOW)
 	registerEnum(CREATURE_EVENT_TEXTEDIT)
@@ -17354,6 +17355,8 @@ int LuaScriptInterface::luaCreatureEventType(lua_State* L)
 			creature->setEventType(CREATURE_EVENT_DEATH);
 		} else if (tmpStr == "kill") {
 			creature->setEventType(CREATURE_EVENT_KILL);
+		} else if (tmpStr == "move") {
+			creature->setEventType(CREATURE_EVENT_MOVE);
 		} else if (tmpStr == "advance") {
 			creature->setEventType(CREATURE_EVENT_ADVANCE);
 		} else if (tmpStr == "modalwindow") {

@@ -130,6 +130,30 @@ function Player.sendExtendedOpcode(self, opcode, buffer)
 	return true
 end
 
+local maxPacketSize = 60000
+function Player.sendExtendedJSONOpcode(self, opcode, data)
+  if not self:isUsingOtClient() then
+    return false
+  end
+	if type(data) ~= "table" then
+		error('Invalid data type, should be table in opcode ' .. opcode)
+	end
+	local buffer = json.encode(data)  
+	local s = {}
+	for i=1, #buffer, maxPacketSize do
+		s[#s+1] = buffer:sub(i,i+maxPacketSize - 1)
+	end
+	if #s == 1 then
+		self:sendExtendedOpcode(opcode, s[1])
+	  return
+	end
+	self:sendExtendedOpcode(opcode, "S" .. s[1])
+	for i=2,#s - 1 do
+		self:sendExtendedOpcode(opcode, "P" .. s[i])
+	end
+	self:sendExtendedOpcode(opcode, "E" .. s[#s])
+end
+
 APPLY_SKILL_MULTIPLIER = true
 local addSkillTriesFunc = Player.addSkillTries
 function Player.addSkillTries(...)

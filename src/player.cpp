@@ -1321,6 +1321,16 @@ void Player::onCreatureMove(Creature* creature, const Tile* newTile, const Posit
 		return;
 	}
 
+	const Position& currentPos = this->getPosition();
+	Position destPos = getNextPosition(direction, currentPos);
+	const CreatureEventList& moveEvents = this->getCreatureEvents(CREATURE_EVENT_MOVE);
+	for (CreatureEvent* moveEvent : moveEvents) {
+		if (!moveEvent->executeOnMove(this, currentPos, destPos)) {
+			this->sendCancelWalk();
+			return;
+		}
+	}
+
 	if (tradeState != TRADE_TRANSFER) {
 		//check if we should close trade
 		if (tradeItem && !Position::areInRange<1, 1, 0>(tradeItem->getPosition(), getPosition())) {
