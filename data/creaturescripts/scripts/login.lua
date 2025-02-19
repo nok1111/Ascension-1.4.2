@@ -32,7 +32,7 @@ function onLogin(player)
 	player:registerEvent("loginzones")
 	player:registerEvent("logoutzones")
 	player:registerEvent("PassiveTree")
-
+	player:registerEvent("ancestralTask")
 	
 	-- Check login in profession system
 	player:registerEvent("ProfessionPackets")

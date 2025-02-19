@@ -6,12 +6,28 @@ function Player:onBrowseField(position)
 end
 
 function Player:onLook(thing, position, distance)
-	local description = ""
-	if hasEventCallback(EVENT_CALLBACK_ONLOOK) then
-		description = EventCallback(EVENT_CALLBACK_ONLOOK, self, thing, position, distance, description)
-	end
-	self:sendTextMessage(MESSAGE_INFO_DESCR, description)
+	    local description = ""
+    
+    if hasEventCallback(EVENT_CALLBACK_ONLOOK) then
+        local callbackResult = EventCallback(EVENT_CALLBACK_ONLOOK, self, thing, position, distance, description)
+        
+        if callbackResult then
+            description = callbackResult
+        end
+    end
+    
+    if thing:isCreature() then
+        if thing:isPlayer() then
+            local rankTask = getRankTask(thing)
+            if rankTask then
+                description = string.format("%s\n Artifacts Mastery: %s", description, rankTask)
+            end
+        end
+    end
+    
+    self:sendTextMessage(MESSAGE_INFO_DESCR, description)
 end
+
 
 function Player:onLookInBattleList(creature, distance)
 	local description = ""

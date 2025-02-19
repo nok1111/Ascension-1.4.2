@@ -7,6 +7,13 @@ local OPCODE_CLIENT_DELETE_TASK = 56
 local OPCODE_CLIENT_STRART_DUNGEON = 60 -- (cambiar 60)
 
 function onExtendedOpcode(player, opcode, buffer)
+        local points = 0
+    local resultId = db.storeQuery("SELECT `ancestral_points` FROM `players` WHERE `id` = " .. player:getGuid())
+    if resultId ~= false then
+      points = result.getDataInt(resultId, "ancestral_points")
+      result.free(resultId)
+    end
+    player:sendExtendedOpcode(89, points)
 	if opcode == OPCODE_LANGUAGE then
 		-- otclient language
 		if buffer == 'en' or buffer == 'pt' then
