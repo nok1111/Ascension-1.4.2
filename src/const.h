@@ -576,5 +576,8 @@ static constexpr int32_t PSTRG_MOUNTS_RANGE_SIZE = 10;
 static constexpr int32_t PSTRG_MOUNTS_CURRENTMOUNT = (PSTRG_MOUNTS_RANGE_START + 10);
 
 #define IS_IN_KEYRANGE(key, range) (key >= PSTRG_##range##_START && ((key - PSTRG_##range##_START) <= PSTRG_##range##_SIZE))
+static const std::vector<double> DifficultyLife = {1.0, 1.0, 2.0, 3.2, 5.0, 8.0, 13.0};
+static const std::vector<double> DifficultyDamage = {1.0, 1.0, 1.3, 1.9, 2.8, 4.0, 6.0};
+static const std::vector<double> DifficultyXP = {1.0, 1.0, 1.75, 2.0, 3.0, 4.0, 5.0};
 
 #endif

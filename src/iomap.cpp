@@ -6,7 +6,7 @@
 #include "iomap.h"
 
 #include "bed.h"
-
+#include "game.h"
 #include <fmt/format.h>
 
 /*
@@ -52,7 +52,7 @@ Tile* IOMap::createTile(Item*& ground, Item* item, uint16_t x, uint16_t y, uint8
 	return tile;
 }
 
-bool IOMap::loadMap(Map* map, const std::string& fileName)
+bool IOMap::loadMap(Map* map, const std::string& fileName, const Position& pos, bool unload)
 {
 	int64_t start = OTSYS_TIME();
 	try {
@@ -120,7 +120,7 @@ bool IOMap::loadMap(Map* map, const std::string& fileName)
 
 		for (auto& mapDataNode : mapNode.children) {
 			if (mapDataNode.type == OTBM_TILE_AREA) {
-				if (!parseTileArea(loader, mapDataNode, *map)) {
+				if (!parseTileArea(loader, mapDataNode, *map, pos, unload)) {
 					return false;
 				}
 			} else if (mapDataNode.type == OTBM_TOWNS) {
@@ -194,7 +194,7 @@ bool IOMap::parseMapDataAttributes(OTB::Loader& loader, const OTB::Node& mapNode
 	return true;
 }
 
-bool IOMap::parseTileArea(OTB::Loader& loader, const OTB::Node& tileAreaNode, Map& map)
+bool IOMap::parseTileArea(OTB::Loader& loader, const OTB::Node& tileAreaNode, Map& map, const Position& pos, bool unload)
 {
 	PropStream propStream;
 	if (!loader.getProps(tileAreaNode, propStream)) {
@@ -210,7 +210,7 @@ bool IOMap::parseTileArea(OTB::Loader& loader, const OTB::Node& tileAreaNode, Ma
 
 	uint16_t base_x = area_coord.x;
 	uint16_t base_y = area_coord.y;
-	uint16_t z = area_coord.z;
+	uint16_t base_z = area_coord.z;
 
 	for (auto& tileNode : tileAreaNode.children) {
 		if (tileNode.type != OTBM_TILE && tileNode.type != OTBM_HOUSETILE) {
@@ -229,8 +229,30 @@ bool IOMap::parseTileArea(OTB::Loader& loader, const OTB::Node& tileAreaNode, Ma
 			return false;
 		}
 
-		uint16_t x = base_x + tile_coord.x;
-		uint16_t y = base_y + tile_coord.y;
+		uint16_t x = base_x + tile_coord.x + pos.x;
+		uint16_t y = base_y + tile_coord.y + pos.y;
+		uint16_t z = base_z + pos.z;
+
+		if (unload) {
+			Tile* tile = map.getTile(Position(x, y, z));
+			TileItemVector* items = tile->getItemList();
+			if (items) {
+				TileItemVector item_list = *items;
+				if (!item_list.size() == 0) {
+					for (Item* item : item_list) {
+						if (item) {
+							g_game.internalRemoveItem(item);
+						}
+					}
+				}
+			}
+
+			Item* ground = tile->getGround();
+			if (ground) {
+				g_game.internalRemoveItem(ground);
+			}
+			continue;
+		}
 
 		bool isHouseTile = false;
 		House* house = nullptr;

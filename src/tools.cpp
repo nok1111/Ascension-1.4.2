@@ -1251,3 +1251,27 @@ SpellGroup_t stringToSpellGroup(const std::string& value)
 
 	return SPELLGROUP_NONE;
 }
+
+std::string timeFromSeconds(uint64_t time)
+{
+	uint64_t days, hours, minutes, seconds;
+	seconds = time % 60;
+	minutes = time % 3600 / 60;
+	hours = time % 86400 / 3600;
+	days = time / 86400;
+
+	std::ostringstream ss;
+	if (days > 0) {
+		ss << days << " days ";
+	}
+	if (hours > 0) {
+		ss << hours << " hours ";
+	}
+	if (minutes > 0) {
+		ss << minutes << " minutes ";
+	}
+	if (seconds > 0) {
+		ss << seconds << " seconds ";
+	}
+	return ss.str();
+}

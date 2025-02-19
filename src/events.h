@@ -6,6 +6,8 @@
 
 #include "luascript.h"
 #include "const.h"
+#include "creature.h"
+#include "dungeon.h"
 
 class Party;
 class ItemType;
@@ -29,6 +31,7 @@ class Events
 		int32_t partyOnLeave = -1;
 		int32_t partyOnDisband = -1;
 		int32_t partyOnShareExperience = -1;
+		int32_t partyOnLeaderPass = -1;
 
 		// Player
 		int32_t playerOnBrowseField = -1;
@@ -49,6 +52,16 @@ class Events
 		int32_t playerOnLoseExperience = -1;
 		int32_t playerOnGainSkillTries = -1;
 		int32_t playerOnWrapItem = -1;
+		int32_t playerOnQueueLeave = -1;
+
+		// Dungeon
+		int32_t dungeonOnQueue = -1;
+		int32_t dungeonOnPrepare = -1;
+		int32_t dungeonOnStart = -1;
+		int32_t dungeonOnSuccess = -1;
+		int32_t dungeonOnFail = -1;
+		int32_t dungeonOnPlayerLeave = -1;
+		int32_t dungeonOnMonstersCount = -1;
 
 		// Monster
 		int32_t monsterOnDropLoot = -1;
@@ -71,6 +84,7 @@ class Events
 		bool eventPartyOnLeave(Party* party, Player* player);
 		bool eventPartyOnDisband(Party* party);
 		void eventPartyOnShareExperience(Party* party, uint64_t& exp);
+		bool eventPartyOnLeaderPass(Party* party, Player* oldLeader, Player* newLeader);
 
 		// Player
 		bool eventPlayerOnBrowseField(Player* player, const Position& position);
@@ -91,10 +105,20 @@ class Events
 		void eventPlayerOnLoseExperience(Player* player, uint64_t& exp);
 		void eventPlayerOnGainSkillTries(Player* player, skills_t skill, uint64_t& tries);
 		void eventPlayerOnWrapItem(Player* player, Item* item);
+		void eventPlayerOnQueueLeave(Player* player, DungeonQueue* queue);
 
 		// Monster
 		void eventMonsterOnDropLoot(Monster* monster, Container* corpse);
 		bool eventMonsterOnSpawn(Monster* monster, const Position& position, bool startup, bool artificial);
+
+		// Dungeon
+		void eventDungeonOnQueue(Dungeon* dungeon);
+		void eventDungeonOnPrepare(Dungeon* dungeon, DungeonInstance* instance, Player* player);
+		void eventDungeonOnStart(Dungeon* dungeon, DungeonInstance* instance, Player* player);
+		void eventDungeonOnSuccess(Dungeon* dungeon, DungeonInstance* instance);
+		void eventDungeonOnFail(Dungeon* dungeon, DungeonInstance* instance);
+		void eventDungeonOnPlayerLeave(Dungeon* dungeon, DungeonInstance* instance, Player* player);
+		void eventDungeonOnMonstersCount(DungeonInstance* instance, uint16_t monsters);
 
 		int32_t getScriptId(EventInfoId eventInfoId) {
 			switch (eventInfoId)

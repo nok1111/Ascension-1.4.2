@@ -92,8 +92,7 @@ class IOMap
 	static Tile* createTile(Item*& ground, Item* item, uint16_t x, uint16_t y, uint8_t z);
 
 	public:
-		bool loadMap(Map* map, const std::string& fileName);
-
+		bool loadMap(Map* map, const std::string& fileName, const Position& pos = Position(), bool unload = false);
 		/* Load the spawns
 		 * \param map pointer to the Map class
 		 * \returns Returns true if the spawns were loaded successfully
@@ -107,6 +106,13 @@ class IOMap
 			}
 
 			return map->spawns.loadFromXml(map->spawnfile);
+		}
+
+		static bool loadChunkSpawns(Map* map, const std::string& mapName, const Position& pos, uint8_t instance) {
+			std::string spawnFile = mapName;
+			spawnFile.replace(spawnFile.end() - 5, spawnFile.end(), "-spawn.xml");
+
+			return map->chunkSpawns[instance].loadFromXml(spawnFile, pos);
 		}
 
 		/* Load the houses (not house tile-data)
@@ -136,7 +142,7 @@ class IOMap
 		bool parseMapDataAttributes(OTB::Loader& loader, const OTB::Node& mapNode, Map& map, const std::string& fileName);
 		bool parseWaypoints(OTB::Loader& loader, const OTB::Node& waypointsNode, Map& map);
 		bool parseTowns(OTB::Loader& loader, const OTB::Node& townsNode, Map& map);
-		bool parseTileArea(OTB::Loader& loader, const OTB::Node& tileAreaNode, Map& map);
+		bool parseTileArea(OTB::Loader& loader, const OTB::Node& tileAreaNode, Map& map, const Position& pos, bool unload);
 		std::string errorString;
 };
 

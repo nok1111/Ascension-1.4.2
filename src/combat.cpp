@@ -9,6 +9,7 @@
 #include "weapons.h"
 #include "configmanager.h"
 #include "events.h"
+#include "monster.h"
 
 extern Game g_game;
 extern Weapons* g_weapons;
@@ -831,6 +832,14 @@ void Combat::doTargetCombat(Creature* caster, Creature* target, CombatDamage& da
 
 	bool success = false;
 	if (damage.primary.type != COMBAT_MANADRAIN) {
+
+		if (caster) {
+			if (Monster* casterMonster = caster->getMonster()) {
+				damage.primary.value *= casterMonster->getDifficultyDamage();
+				damage.secondary.value *= casterMonster->getDifficultyDamage();
+			}
+		}
+
 		if (g_game.combatBlockHit(damage, caster, target, params.blockedByShield, params.blockedByArmor, params.itemId != 0, params.ignoreResistances)) {
 			return;
 		}
@@ -1000,6 +1009,14 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 
 	for (Creature* creature : toDamageCreatures) {
 		CombatDamage damageCopy = damage; // we cannot avoid copying here, because we don't know if it's player combat or not, so we can't modify the initial damage.
+
+		if (caster) {
+			if (Monster* casterMonster = caster->getMonster()) {
+				damageCopy.primary.value *= casterMonster->getDifficultyDamage();
+				damageCopy.secondary.value *= casterMonster->getDifficultyDamage();
+			}
+		}
+		
 		bool playerCombatReduced = false;
 		if ((damageCopy.primary.value < 0 || damageCopy.secondary.value < 0) && caster) {
 			Player* targetPlayer = creature->getPlayer();

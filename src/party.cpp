@@ -160,6 +160,7 @@ bool Party::passPartyLeadership(Player* player)
 	leader->sendCreatureShield(leader);
 
 	player->sendTextMessage(MESSAGE_INFO_DESCR, "You are now the leader of the party.");
+	g_events->eventPartyOnLeaderPass(this, oldLeader, leader);
 	return true;
 }
 

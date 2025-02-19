@@ -33,6 +33,7 @@ class Party;
 class SchedulerTask;
 class Bed;
 class Guild;
+class Dungeon;
 
 enum skillsid_t {
 	SKILLVALUE_LEVEL = 0,
@@ -567,6 +568,11 @@ class Player final : public Creature, public Cylinder
 
 		uint64_t getMoney() const;
 
+		bool removeTotalMoney(uint64_t amount);
+		uint64_t getTotalMoney() const {
+			return getMoney() + getBankBalance();
+		}
+
 		//safe-trade functions
 		void setTradeState(tradestate_t state) {
 			tradeState = state;
@@ -716,6 +722,8 @@ class Player final : public Creature, public Cylinder
 
 		uint64_t getGainedExperience(Creature* attacker) const override;
 
+		bool hasCondition(ConditionType_t type, uint32_t subId = 0) const;
+
 		//combat event functions
 		void onAddCondition(ConditionType_t type) override;
 		void onAddCombatCondition(ConditionType_t type) override;
@@ -766,6 +774,24 @@ class Player final : public Creature, public Cylinder
 
 		size_t getMaxVIPEntries() const;
 		size_t getMaxDepotItems() const;
+
+		void setDungeon(Dungeon* dungeon) {
+			this->dungeon = dungeon;
+		}
+
+		Dungeon* getDungeon() {
+			return dungeon;
+		}
+
+		void setDungeonDifficulty(uint8_t difficulty) {
+			this->dungeonDifficulty = difficulty;
+		}
+
+		uint8_t getDungeonDifficulty() const {
+			return dungeonDifficulty;
+		}
+
+		uint64_t getItemLevel() const;
 
 		//tile
 		//send methods
@@ -1271,6 +1297,7 @@ class Player final : public Creature, public Cylinder
 		bool hasLearnedInstantSpell(const std::string& spellName) const;
 
 		void updateRegeneration();
+		uint32_t getItemTypeCount(uint16_t itemId, int32_t subType = -1) const override;
 		//TOOLTIPS
 		Item* getItemByUID(uint32_t uid) const;
 		//TOOLTIPS end
@@ -1318,7 +1345,7 @@ class Player final : public Creature, public Cylinder
 		int32_t getThingIndex(const Thing* thing) const override;
 		size_t getFirstIndex() const override;
 		size_t getLastIndex() const override;
-		uint32_t getItemTypeCount(uint16_t itemId, int32_t subType = -1) const override;
+		
 		std::map<uint32_t, uint32_t>& getAllItemTypeCount(std::map<uint32_t, uint32_t>& countMap) const override;
 		Thing* getThing(size_t index) const override;
 
@@ -1396,6 +1423,7 @@ class Player final : public Creature, public Cylinder
 		Town* town = nullptr;
 		Vocation* vocation = nullptr;
 		StoreInbox* storeInbox = nullptr;
+		Dungeon* dungeon = nullptr;
 
 		uint32_t inventoryWeight = 0;
 		uint32_t capacity = 40000;
@@ -1436,6 +1464,7 @@ class Player final : public Creature, public Cylinder
 		std::bitset<6> blessings;
 		uint8_t levelPercent = 0;
 		uint8_t magLevelPercent = 0;
+		uint8_t dungeonDifficulty = 0;
 
 		PlayerSex_t sex = PLAYERSEX_FEMALE;
 		OperatingSystem_t operatingSystem = CLIENTOS_NONE;

@@ -603,6 +603,7 @@ class LuaScriptInterface
 		static int luaGameSaveAccountStorageValues(lua_State* L);
 		static int luaGameZoneRemoveByZoneId(lua_State* L);
 		static int luaGameZoneAddNewZone(lua_State* L);
+		static int luaGameGetDungeons(lua_State* L);
 
 		static int luaGameGetWings(lua_State* L);
 		static int luaGameGetEffects(lua_State* L);
@@ -1114,6 +1115,11 @@ class LuaScriptInterface
 		static int luaPlayerGetPet(lua_State* L);
 
 
+		static int luaPlayerSetDungeon(lua_State* L);
+		static int luaPlayerGetDungeon(lua_State* L);
+		static int luaPlayerSetDungeonDifficulty(lua_State* L);
+		static int luaPlayerGetDungeonDifficulty(lua_State* L);
+
 		// Monster
 		static int luaMonsterCreate(lua_State* L);
 
@@ -1150,6 +1156,7 @@ class LuaScriptInterface
 
 		static int luaMonsterIsWalkingToSpawn(lua_State* L);
 		static int luaMonsterWalkToSpawn(lua_State* L);
+		static int luaMonsterGetDifficulty(lua_State* L);
 
 		// Npc
 		static int luaNpcCreate(lua_State* L);
@@ -1656,6 +1663,131 @@ class LuaScriptInterface
 
 		// exclusively for wands & distance weapons
 		static int luaWeaponShootType(lua_State* L);
+
+		// Dungeon
+		static int luaRegisterDungeon(lua_State* L);
+
+		static int luaCreateDungeon(lua_State* L);
+
+		static int luaDungeonSetTitle(lua_State* L);
+		static int luaDungeonGetTitle(lua_State* L);
+
+		static int luaDungeonSetDuration(lua_State* L);
+		static int luaDungeonGetDuration(lua_State* L);
+
+		static int luaDungeonSetBoss(lua_State* L);
+		static int luaDungeonGetBoss(lua_State* L);
+		static int luaDungeonGetBossPosition(lua_State* L);
+
+		static int luaDungeonSetMapFile(lua_State* L);
+		static int luaDungeonGetMapFile(lua_State* L);
+
+		static int luaDungeonSetStartPosition(lua_State* L);
+		static int luaDungeonGetStartPosition(lua_State* L);
+
+		static int luaDungeonSetKillPercent(lua_State* L);
+		static int luaDungeonGetKillPercent(lua_State* L);
+
+		static int luaDungeonSetId(lua_State* L);
+		static int luaDungeonGetId(lua_State* L);
+
+		static int luaDungeonSetRequiredLevel(lua_State* L);
+		static int luaDungeonGetRequiredLevel(lua_State* L);
+
+		static int luaDungeonSetRequiredItemLevel(lua_State* L);
+		static int luaDungeonGetRequiredItemLevel(lua_State* L);
+
+		static int luaDungeonSetRequiredGold(lua_State* L);
+		static int luaDungeonGetRequiredGold(lua_State* L);
+
+		static int luaDungeonSetRequiredParty(lua_State* L);
+		static int luaDungeonGetRequiredParty(lua_State* L);
+
+		static int luaDungeonSetRequiredTime(lua_State* L);
+		static int luaDungeonGetRequiredTime(lua_State* L);
+
+		static int luaDungeonAddRequiredItem(lua_State* L);
+		static int luaDungeonGetRequiredItems(lua_State* L);
+
+		static int luaDungeonAddRequiredStorage(lua_State* L);
+		static int luaDungeonGetRequiredStorages(lua_State* L);
+
+		static int luaDungeonAddChallenge(lua_State* L);
+		static int luaDungeonGetChallenges(lua_State* L);
+
+		static int luaDungeonAddBonusObjective(lua_State* L);
+		static int luaDungeonGetBonusObjectives(lua_State* L);
+
+		static int luaDungeonAddInstance(lua_State* L);
+		static int luaDungeonGetInstance(lua_State* L);
+		static int luaDungeonGetFreeInstance(lua_State* L);
+		static int luaDungeonGetPlayerInstance(lua_State* L);
+
+		static int luaDungeonJoinQueue(lua_State* L);
+		static int luaDungeonCanJoin(lua_State* L);
+
+		static int luaDungeonOnPlayerLeave(lua_State* L);
+
+		static int luaDungeonOnBossKill(lua_State* L);
+
+		static int luaDungeonGetQueue(lua_State* L);
+
+		static int luaDungeonAddReward(lua_State* L);
+		static int luaDungeonGetRewards(lua_State* L);
+
+		static int luaDungeonGetEstimatedQueueTime(lua_State* L);
+
+		// DungeonInstance
+		static int luaCreateDungeonInstance(lua_State* L);
+
+		static int luaDungeonInstanceIsFree(lua_State* L);
+
+		static int luaDungeonInstanceSetPosition(lua_State* L);
+		static int luaDungeonInstanceGetPosition(lua_State* L);
+
+		static int luaDungeonInstanceSetId(lua_State* L);
+		static int luaDungeonInstanceGetId(lua_State* L);
+
+		static int luaDungeonInstanceAddRunner(lua_State* L);
+		static int luaDungeonInstanceHasRunner(lua_State* L);
+		static int luaDungeonInstanceGetRunners(lua_State* L);
+		static int luaDungeonInstanceRemoveRunner(lua_State* L);
+
+		static int luaDungeonInstanceSetRunTime(lua_State* L);
+		static int luaDungeonInstanceGetRunTime(lua_State* L);
+
+		static int luaDungeonInstanceGetDifficulty(lua_State* L);
+
+		static int luaDungeonInstanceSetDungeon(lua_State* L);
+		static int luaDungeonInstanceGetDungeon(lua_State* L);
+
+		static int luaDungeonInstanceSetMonstersTotalCount(lua_State* L);
+		static int luaDungeonInstanceGetMonstersTotalCount(lua_State* L);
+
+		static int luaDungeonInstanceSetMonstersCount(lua_State* L);
+		static int luaDungeonInstanceGetMonstersCount(lua_State* L);
+
+		static int luaDungeonInstanceSpawnBoss(lua_State* L);
+		static int luaDungeonInstanceGetBoss(lua_State* L);
+		static int luaDungeonInstanceIsBossSpawned(lua_State* L);
+
+		// DungeonQueue
+		static int luaCreateDungeonQueue(lua_State* L);
+
+		static int luaDungeonQueueSendUpdate(lua_State* L);
+
+		static int luaDungeonQueueOnPlayerLeave(lua_State* L);
+
+		static int luaDungeonQueueAddPlayer(lua_State* L);
+		static int luaDungeonQueuePopPlayer(lua_State* L);
+		static int luaDungeonQueueRemovePlayer(lua_State* L);
+		static int luaDungeonQueueSwitchPlayers(lua_State* L);
+
+		static int luaDungeonQueueGetPlayers(lua_State* L);
+		static int luaDungeonQueueGetPlayersNumber(lua_State* L);
+
+		static int luaDungeonQueueGetPlayerPosition(lua_State* L);
+		static int luaDungeonQueueGetDungeon(lua_State* L);
 
 	//Zone Multi functions:
 		static int luaGameZoneGetCreatureCount(lua_State* L);

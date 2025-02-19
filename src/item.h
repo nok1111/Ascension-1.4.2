@@ -250,6 +250,14 @@ class ItemAttributes
 			template<typename T>
 			const T& get();
 
+			const int64_t& getInt() const {
+				if (value.type() == typeid(int64_t)) {
+					return boost::get<int64_t>(value);
+				}
+
+				return emptyInt;
+			}
+
 			struct PushLuaVisitor : public boost::static_visitor<> {
 				lua_State* L;
 
