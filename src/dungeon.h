@@ -399,6 +399,14 @@ public:
 		return startPosition;
 	}
 
+	void setEntrancePosition(Position entrancePosition) {
+		this->entrancePosition = std::move(entrancePosition);
+	}
+
+	const Position& getEntrancePosition() const {
+		return entrancePosition;
+	}
+
 private:
 	std::string title;
 	std::string mapFile;
@@ -406,6 +414,7 @@ private:
 
 	Position bossPosition;
 	Position startPosition;
+	Position entrancePosition;
 
 	uint8_t id = 0;
 	uint8_t killPercent = 100;
