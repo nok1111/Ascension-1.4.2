@@ -1240,6 +1240,9 @@
 	<spawn centerx="1342" centery="1012" centerz="6" radius="1">
 		<monster name="Trival Hunter" x="0" y="0" z="6" spawntime="60" />
 	</spawn>
+	<spawn centerx="806" centery="1018" centerz="6" radius="1">
+		<npc name="dr rosecold" x="1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1164" centery="481" centerz="7" radius="1">
 		<monster name="Lizard Warrior" x="0" y="0" z="7" spawntime="60" />
 	</spawn>
@@ -2823,6 +2826,163 @@
 	</spawn>
 	<spawn centerx="1333" centery="1001" centerz="7" radius="1">
 		<monster name="void willow" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="757" centery="1006" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="765" centery="1007" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="791" centery="1007" centerz="7" radius="1" />
+	<spawn centerx="803" centery="1008" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="760" centery="1010" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="775" centery="1010" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="778" centery="1010" centerz="7" radius="1">
+		<monster name="Chicken" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Chicken" x="-1" y="0" z="7" spawntime="60" />
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="795" centery="1011" centerz="7" radius="1" />
+	<spawn centerx="756" centery="1014" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="778" centery="1014" centerz="7" radius="1">
+		<npc name="Ms Faerlina" x="0" y="-1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="784" centery="1014" centerz="7" radius="1" />
+	<spawn centerx="798" centery="1014" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="771" centery="1016" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="784" centery="1017" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="790" centery="1017" centerz="7" radius="1">
+		<monster name="Wasp" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="787" centery="1018" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="804" centery="1019" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="769" centery="1020" centerz="7" radius="1">
+		<npc name="Lucy" x="0" y="-1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="766" centery="1021" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="797" centery="1021" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="773" centery="1022" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="770" centery="1023" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="784" centery="1023" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="767" centery="1024" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+		<npc name="Xodet" x="-1" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="789" centery="1025" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="794" centery="1025" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="756" centery="1026" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="779" centery="1027" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="797" centery="1027" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="761" centery="1028" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="772" centery="1028" centerz="7" radius="1">
+		<npc name="alchemist hanna" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="792" centery="1029" centerz="7" radius="1" />
+	<spawn centerx="770" centery="1030" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="785" centery="1030" centerz="7" radius="1">
+		<npc name="Lothar" x="0" y="-1" z="7" spawntime="60" direction="2" />
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="768" centery="1031" centerz="7" radius="1">
+		<npc name="Lubo" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="775" centery="1031" centerz="7" radius="1">
+		<monster name="Chicken" x="1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="784" centery="1032" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="773" centery="1033" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="773" centery="1035" centerz="7" radius="1">
+		<npc name="blacksmith Sam" x="1" y="1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="781" centery="1035" centerz="7" radius="1">
+		<npc name="Gamon" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="766" centery="1036" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="786" centery="1036" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="760" centery="1038" centerz="7" radius="1">
+		<npc name="Mr Simone" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="766" centery="1039" centerz="7" radius="1">
+		<monster name="Chicken" x="-1" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="776" centery="1039" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="795" centery="1039" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="773" centery="1041" centerz="7" radius="1">
+		<monster name="Chicken" x="-1" y="-1" z="7" spawntime="60" />
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="790" centery="1041" centerz="7" radius="1">
+		<monster name="Squirrel" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="778" centery="1042" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="791" centery="1043" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="797" centery="1043" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="781" centery="1044" centerz="7" radius="1">
+		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="786" centery="1044" centerz="7" radius="1">
+		<monster name="Training Dummy" x="0" y="0" z="7" spawntime="60" />
+		<monster name="Training Dummy" x="1" y="0" z="7" spawntime="60" />
 	</spawn>
 	<spawn centerx="1158" centery="571" centerz="8" radius="1">
 		<monster name="Medusa" x="0" y="0" z="8" spawntime="60" />
