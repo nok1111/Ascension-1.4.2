@@ -17,6 +17,7 @@ enum CreatureEventType_t {
 	CREATURE_EVENT_NONE,
 	CREATURE_EVENT_LOGIN,
 	CREATURE_EVENT_LOGOUT,
+	CREATURE_EVENT_RECONNECT,
 	CREATURE_EVENT_THINK,
 	CREATURE_EVENT_PREPAREDEATH,
 	CREATURE_EVENT_DEATH,
@@ -70,6 +71,7 @@ class CreatureEvent final : public Event
 		//scripting
 		bool executeOnLogin(Player* player) const;
 		bool executeOnLogout(Player* player) const;
+		void executeOnReconnect(Player* player) const;
 		bool executeOnThink(Creature* creature, uint32_t interval);
 		bool executeOnPrepareDeath(Creature* creature, Creature* killer);
 		bool executeOnDeath(Creature* creature, Item* corpse, Creature* killer, Creature* mostDamageKiller, bool lastHitUnjustified, bool mostDamageUnjustified);
@@ -105,6 +107,7 @@ class CreatureEvents final : public BaseEvents
 		// global events
 		bool playerLogin(Player* player) const;
 		bool playerLogout(Player* player) const;
+		void playerReconnect(Player* player) const;
 		bool playerAdvance(Player* player, skills_t, uint32_t, uint32_t);
 
 		CreatureEvent* getEventByName(const std::string& name, bool forceLoaded = true);
