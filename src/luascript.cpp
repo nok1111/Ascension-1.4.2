@@ -18783,6 +18783,703 @@ int LuaScriptInterface::luaWeaponExtraElement(lua_State* L)
 	return 1;
 }
 
+int LuaScriptInterface::luaCreateDungeon(lua_State* L)
+{
+	// Dungeon()
+	Dungeon* dungeon = new Dungeon();
+	if (dungeon) {
+		pushUserdata<Dungeon>(L, dungeon);
+		setMetatable(L, -1, "Dungeon");
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetTitle(lua_State* L)
+{
+	// dungeon:setTitle(title)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setTitle(getString(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetTitle(lua_State* L)
+{
+	// dungeon:getTitle()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		pushString(L, dungeon->getTitle());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetDuration(lua_State* L)
+{
+	// dungeon:setDuration(duration)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setDuration(getNumber<uint32_t>(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetDuration(lua_State* L)
+{
+	// dungeon:getDuration()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		lua_pushnumber(L, dungeon->getDuration());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetBoss(lua_State* L)
+{
+	// dungeon:setBoss(bossName, spawnPosition)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setBoss(getString(L, 2), getPosition(L, 3));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetBoss(lua_State* L)
+{
+	// dungeon:getBoss()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		pushString(L, dungeon->getBoss());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetBossPosition(lua_State* L)
+{
+	// dungeon:getBossPosition()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		pushPosition(L, dungeon->getBossPosition());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetMapFile(lua_State* L)
+{
+	// dungeon:setMapFile(mapFile)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setMapFile(getString(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetMapFile(lua_State* L)
+{
+	// dungeon:getMapFile()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		pushString(L, dungeon->getMapFile());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetStartPosition(lua_State* L)
+{
+	// dungeon:setStartPosition()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setStartPosition(getPosition(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetStartPosition(lua_State* L)
+{
+	// dungeon:getStartPosition()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		pushPosition(L, dungeon->getStartPosition());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetEntrancePosition(lua_State* L)
+{
+	// dungeon:setEntrancePosition(position)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setEntrancePosition(getPosition(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetEntrancePosition(lua_State* L)
+{
+	// dungeon:getEntrancePosition()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		pushPosition(L, dungeon->getEntrancePosition());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetKillPercent(lua_State* L)
+{
+	// dungeon:setKillPercent(percent)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setKillPercent(getNumber<uint8_t>(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetKillPercent(lua_State* L)
+{
+	// dungeon:getKillPercent()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		lua_pushnumber(L, dungeon->getKillPercent());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetId(lua_State* L)
+{
+	// dungeon:setId(id)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setId(getNumber<uint8_t>(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetId(lua_State* L)
+{
+	// dungeon:getId()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		lua_pushnumber(L, dungeon->getId());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetRequiredLevel(lua_State* L)
+{
+	// dungeon:setRequiredLevel(level)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setRequiredLevel(getNumber<uint16_t>(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetRequiredLevel(lua_State* L)
+{
+	// dungeon:getRequiredLevel()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		lua_pushnumber(L, dungeon->getRequiredLevel());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetRequiredItemLevel(lua_State* L)
+{
+	// dungeon:setRequiredItemLevel(level)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setRequiredItemLevel(getNumber<uint64_t>(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetRequiredItemLevel(lua_State* L)
+{
+	// dungeon:getRequiredItemLevel()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		lua_pushnumber(L, dungeon->getRequiredItemLevel());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetRequiredGold(lua_State* L)
+{
+	// dungeon:setRequiredGold(level)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setRequiredGold(getNumber<uint64_t>(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetRequiredGold(lua_State* L)
+{
+	// dungeon:getRequiredGold()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		lua_pushnumber(L, dungeon->getRequiredGold());
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetRequiredParty(lua_State* L)
+{
+	// dungeon:setRequiredParty(min, max)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setRequiredParty(getNumber<uint8_t>(L, 2), getNumber<uint8_t>(L, 3));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetRequiredParty(lua_State* L)
+{
+	// dungeon:getRequiredParty()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		PartyRequire partyRequire = dungeon->getRequiredParty();
+		lua_createtable(L, 0, 2);
+
+		setField(L, "min", partyRequire.min);
+		setField(L, "max", partyRequire.max);
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonSetRequiredTime(lua_State* L)
+{
+	// dungeon:setRequiredTime(storage, time)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->setRequiredTime(getNumber<uint32_t>(L, 2), getNumber<uint32_t>(L, 3));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetRequiredTime(lua_State* L)
+{
+	// dungeon:getRequiredTime()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		TimeRequire timeRequire = dungeon->getRequiredTime();
+		if (timeRequire.storage > 0) {
+			lua_createtable(L, 0, 2);
+
+			setField(L, "storage", timeRequire.storage);
+			setField(L, "time", timeRequire.time);
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonAddRequiredItem(lua_State* L)
+{
+	// dungeon:addRequiredItem(itemId, count)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->addRequiredItem(getNumber<uint16_t>(L, 2), getNumber<uint8_t>(L, 3));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetRequiredItems(lua_State* L)
+{
+	// dungeon:getRequiredItems()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		const std::map<uint16_t, uint8_t>& requiredItems = dungeon->getRequiredItems();
+		if (requiredItems.size() > 0) {
+			int index = 0;
+			lua_createtable(L, requiredItems.size(), 0);
+			for (const auto& item : requiredItems) {
+				lua_createtable(L, 0, 2);
+
+				setField(L, "id", item.first);
+				setField(L, "count", item.second);
+
+				lua_rawseti(L, -2, ++index);
+			}
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonAddRequiredStorage(lua_State* L)
+{
+	// dungeon:addRequiredStorage(key, value, detailsText, errorText)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->addRequiredStorage(getNumber<uint32_t>(L, 2), getNumber<int32_t>(L, 3), getString(L, 4), getString(L, 5));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetRequiredStorages(lua_State* L)
+{
+	// dungeon:getRequiredStorages()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		const std::vector<StorageRequire>& requiredStorages = dungeon->getRequiredStorages();
+		if (requiredStorages.size() > 0) {
+			int index = 0;
+			lua_createtable(L, requiredStorages.size(), 0);
+			for (const auto& item : requiredStorages) {
+				lua_createtable(L, 0, 4);
+
+				setField(L, "key", item.key);
+				setField(L, "value", item.value);
+				setField(L, "details", item.details);
+				setField(L, "error", item.error);
+
+				lua_rawseti(L, -2, ++index);
+			}
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonAddChallenge(lua_State* L)
+{
+	// dungeon:addChallenge(id)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->addChallenge(getNumber<uint16_t>(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetChallenges(lua_State* L)
+{
+	// dungeon:getChallenges()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		const std::vector<uint16_t>& challenges = dungeon->getChallenges();
+		if (challenges.size() > 0) {
+			int index = 0;
+			lua_createtable(L, challenges.size(), 0);
+			for (const auto& challenge : challenges) {
+				lua_pushnumber(L, challenge);
+				lua_rawseti(L, -2, ++index);
+			}
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonAddBonusObjective(lua_State* L)
+{
+	// dungeon:addBonusObjective(text)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->addBonusObjective(getString(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetBonusObjectives(lua_State* L)
+{
+	// dungeon:getBonusObjectives()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		const std::vector<std::string>& objectives = dungeon->getBonusObjectives();
+		if (objectives.size() > 0) {
+			int index = 0;
+			lua_createtable(L, objectives.size(), 0);
+			for (const auto& objective : objectives) {
+				pushString(L, objective);
+				lua_rawseti(L, -2, ++index);
+			}
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonAddInstance(lua_State* L)
+{
+	// dungeon:addInstance(position)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		dungeon->addInstance(getPosition(L, 2));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetInstance(lua_State* L)
+{
+	// dungeon:getInstance()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		DungeonInstance* instance = dungeon->getInstance(getNumber<size_t>(L, 2));
+		if (instance) {
+			pushUserdata<DungeonInstance>(L, instance);
+			setMetatable(L, -1, "DungeonInstance");
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetFreeInstance(lua_State* L)
+{
+	// dungeon:getFreeInstance()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		DungeonInstance* instance = dungeon->getFreeInstance();
+		if (instance) {
+			pushUserdata<DungeonInstance>(L, instance);
+			setMetatable(L, -1, "DungeonInstance");
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetPlayerInstance(lua_State* L)
+{
+	// dungeon:getPlayerInstance(player)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		Player* player = getUserdata<Player>(L, 2);
+		if (player) {
+			DungeonInstance* instance = dungeon->getPlayerInstance(player);
+			if (instance) {
+				pushUserdata<DungeonInstance>(L, instance);
+				setMetatable(L, -1, "DungeonInstance");
+			}
+			else {
+				lua_pushnil(L);
+			}
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonJoinQueue(lua_State* L)
+{
+	// dungeon:joinQueue(player, difficulty)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		Player* player = getUserdata<Player>(L, 2);
+		uint8_t difficulty = getNumber<uint8_t>(L, 3);
+		if (player) {
+			pushBoolean(L, dungeon->joinQueue(player, difficulty));
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonCanJoin(lua_State* L)
+{
+	// dungeon:canJoin(player)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		Player* player = getUserdata<Player>(L, 2);
+		if (player) {
+			pushBoolean(L, dungeon->canJoin(player, getBoolean(L, 3, false), getBoolean(L, 4, false)));
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonOnPlayerLeave(lua_State* L)
+{
+	// dungeon:onPlayerLeave(player)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		Player* player = getUserdata<Player>(L, 2);
+		if (player) {
+			dungeon->onPlayerLeave(player);
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonOnBossKill(lua_State* L)
+{
+	// dungeon:onBossKill(instance)
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
+		DungeonInstance* instance = getUserdata<DungeonInstance>(L, 2);
+		if (instance) {
+			dungeon->onBossKill(instance);
+		}
+		else {
+			lua_pushnil(L);
+		}
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDungeonGetQueue(lua_State* L)
+{
+	// dungeon:getQueue()
+	Dungeon* dungeon = getUserdata<Dungeon>(L, 1);
+	if (dungeon) {
 		DungeonQueue* queue = dungeon->getQueue();
 		if (queue) {
 			pushUserdata<DungeonQueue>(L, queue);

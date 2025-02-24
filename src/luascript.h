@@ -1685,6 +1685,9 @@ class LuaScriptInterface
 		static int luaDungeonSetStartPosition(lua_State* L);
 		static int luaDungeonGetStartPosition(lua_State* L);
 
+		static int luaDungeonSetEntrancePosition(lua_State* L);
+		static int luaDungeonGetEntrancePosition(lua_State* L);
+
 		static int luaDungeonSetKillPercent(lua_State* L);
 		static int luaDungeonGetKillPercent(lua_State* L);
 
