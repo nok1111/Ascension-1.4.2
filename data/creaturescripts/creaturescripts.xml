@@ -18,5 +18,7 @@
 	<!-- Passive Tree -->
 	<event type="extendedopcode" name="PassiveTree" script="passive_tree.lua"/>
 
+	<event type="reconnect" name="playerReconnect" script="reconnect.lua" />
+
 	
 </creaturescripts>
