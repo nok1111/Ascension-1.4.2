@@ -239,3 +239,12 @@ function Player:onWrapItem(item)
 		end
 	end
 end
+
+
+function Player:onSpellCheck(spell)
+	local onSpellCheck = EventCallback.onSpellCheck
+	if onSpellCheck then
+		return onSpellCheck(self, spell)
+	end
+	return true
+end

@@ -10,6 +10,7 @@
 #include "dungeon.h"
 
 class Party;
+class Spell;
 class ItemType;
 class Tile;
 
@@ -52,6 +53,7 @@ class Events
 		int32_t playerOnLoseExperience = -1;
 		int32_t playerOnGainSkillTries = -1;
 		int32_t playerOnWrapItem = -1;
+		int32_t playerOnSpellCheck = -1;
 		int32_t playerOnQueueLeave = -1;
 
 		// Dungeon
@@ -105,6 +107,7 @@ class Events
 		void eventPlayerOnLoseExperience(Player* player, uint64_t& exp);
 		void eventPlayerOnGainSkillTries(Player* player, skills_t skill, uint64_t& tries);
 		void eventPlayerOnWrapItem(Player* player, Item* item);
+		bool eventPlayerOnSpellCheck(Player* player, const Spell* spell);
 		void eventPlayerOnQueueLeave(Player* player, DungeonQueue* queue);
 
 		// Monster
