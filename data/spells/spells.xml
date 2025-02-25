@@ -51,7 +51,7 @@
 	
 	
 		<!-- warrior -->
-	<instant group="attack" spellid="1" name="Rend [common]" words="rend" lvl="8" mana="20" range="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needweapon="1"  needtarget="1" needlearn="1" script="warrior/rend.lua">
+	<instant group="attack" spellid="1" name="Rend" words="rend" lvl="8" mana="20" range="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needweapon="1"  needtarget="1" needlearn="1" script="warrior/rend.lua">
 	<vocation name="Might" />
 	<vocation name="None" />
 	</instant>
@@ -138,7 +138,7 @@
 	<instant group="attack" spellid="41" name="Energy Blast" words="energy blast" lvl="10" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/energy_blast.lua">
     <vocation name="None" />
     </instant>
-	<instant group="attack" spellid="42" name="Fire Blast" words="fire blast" lvl="8" mana="25" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/fire_blast.lua">
+	<instant group="attack" spellid="42" name="Fire Blast" words="fire blast" lvl="8" mana="25" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="1" script="mage/fire_blast.lua">
     <vocation name="None" />
     </instant>
 	<instant group="attack" spellid="43" name="Elemental Blast" words="elemental blast" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/elemental_blast.lua">
