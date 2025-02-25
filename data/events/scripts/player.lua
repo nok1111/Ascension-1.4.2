@@ -242,9 +242,9 @@ end
 
 
 function Player:onSpellCheck(spell)
-	local onSpellCheck = EventCallback.onSpellCheck
-	if onSpellCheck then
-		return onSpellCheck(self, spell)
+	if hasEventCallback(EVENT_CALLBACK_ONSPELLCHECK) then
+		return EventCallback(EVENT_CALLBACK_ONSPELLCHECK, self, spell)
 	end
+
 	return true
 end
