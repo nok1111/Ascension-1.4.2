@@ -1,4 +1,4 @@
-local event = Event()
+local event = EventCallback
 
 local difficultyGold = { 1.0, 1.75, 2.0, 3.0, 4.0, 5.0 }
 local difficultyLoot = { 0.0, 0.0, 0.15, 0.3, 0.45, 0.6 }
