@@ -1,8 +1,14 @@
 -- Frames (1 = Area, 2 = Player, 3 = Player + Self Damaging)
 local combat = Combat()
+local combat2 = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
+
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_EFFECT, 648)
+combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
+combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 local arr = {
         {0, 1, 1, 1, 0},
@@ -14,6 +20,7 @@ local arr = {
 
 local area = createCombatArea(arr)
     combat:setArea(area)
+    combat2:setArea(area)
 
 function onGetFormulaValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
@@ -26,6 +33,21 @@ function onGetFormulaValues(player, skill, attack, factor)
 end
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
+
+function onGetFormulaValues2(player, skill, attack, factor)
+    local magic = player:getMagicLevel()
+    local power = magic * attack 
+    local level = player:getLevel()
+
+    local min = (level / 5) + (power * 0.10) + (attack * 4.0) + 300
+    local max = (level / 5) + (power * 0.11) + (attack * 4.1) + 350
+
+    local doublemin = min * 2
+    local doublemax  = max * 2
+    return -doublemin, -doublemax
+end
+
+combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
 
 local function animation(pos, playerpos)
 
@@ -43,8 +65,14 @@ local function castSpell(creatureId, variant)
 	if not creature then
 		return
 	end
-	
-    combat:execute(creature, variant)
+	if checkChainBoosters(creature, "terra", "energy") then
+        combat2:execute(creature, variant)
+        ClearBooster(creature)
+        creature:say("boosted")
+    else
+        combat:execute(creature, variant)
+    end
+    
 end
 
 function onCastSpell(creature, variant)
