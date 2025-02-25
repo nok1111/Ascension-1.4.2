@@ -559,16 +559,14 @@ bool Spell::playerSpellCheck(Player* player) const
 	}
 
 	if (player->hasFlag(PlayerFlag_IgnoreSpellCheck)) {
-		return true;
+		g_events->eventPlayerOnSpellCheck(player, this); // Trigger the event
+		return true; // Keep skipping all other checks for GM
 	}
 
 	if (!enabled) {
 		return false;
 	}
 	
-	if (!g_events->eventPlayerOnSpellCheck(player, this)) {
-		return false;
-	}
 
 	if ((aggressive || pzLock) && (range < 1 || (range > 0 && !player->getAttackedCreature())) && player->getSkull() == SKULL_BLACK) {
 		player->sendCancelMessage(RETURNVALUE_NOTPOSSIBLE);
@@ -650,6 +648,10 @@ bool Spell::playerSpellCheck(Player* player) const
 	if (isPremium() && !player->isPremium()) {
 		player->sendCancelMessage(RETURNVALUE_YOUNEEDPREMIUMACCOUNT);
 		g_game.addMagicEffect(player->getPosition(), CONST_ME_POFF);
+		return false;
+	}
+
+	if (!g_events->eventPlayerOnSpellCheck(player, this)) {
 		return false;
 	}
 
