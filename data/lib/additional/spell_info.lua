@@ -5,7 +5,7 @@ SpellBooks = {
 	  -- all common spells
 
       --Mighty -- physical damage spells
-      [36835] = {spellName = "Rend [common]", spellType = "common", storageId = 20001},--
+      [36835] = {spellName = "Rend", spellType = "common", storageId = 20001},--
       [39816] = {spellName = "pull", spellType = "common", storageId = 20012},--
       [39821] = {spellName = "Brutal Swing", spellType = "common", storageId = 20013},--
       [39836] = {spellName = "Challenging Spear", spellType = "common", storageId = 20014},--
