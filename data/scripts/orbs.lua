@@ -50,7 +50,7 @@ local Monster_orb = CreatureEvent("monsterorb")
 
 function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
 print("death start")
-    if math.random(100) <= rewardTypes[#rewardTypes].chance then
+    if math.random(100) <= rewardTypes[#rewardTypes].chance and killer and killer:isPlayer() then
         local rewardType = rewardTypes[math.random(#rewardTypes)]
        local orbPosition = getAdjacentPosition(creature:getPosition())
 		local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
