@@ -373,7 +373,7 @@ local zones = {
 }
 
 local activePlayers = {}
-
+local zonemax_monsters_divider = 25
 
 
 local function tablelength(T)
@@ -386,7 +386,7 @@ end
 
 
 local function getMaxMonstersForZone(zone)
-    return math.floor(zone.tiles / 15) + 1 --avoid going negative
+    return math.floor(zone.tiles / zonemax_monsters_divider) + 1 --avoid going negative
 end
 
 
@@ -561,7 +561,7 @@ local function onEnterZone(player, zoneId)
         local tileCount = getNumerPositionInZone(zoneId)
         print("number of tiles: " .. tileCount)
         zone.tiles = tileCount
-        zone.maxMonsters = (tileCount / 15) + 1
+        zone.maxMonsters = (tileCount / zonemax_monsters_divider) + 1
     else
         print("Zone " .. zoneId .. " already has tiles: it has " .. zone.tiles .. " tiles. Max monsters: " .. zone.maxMonsters)
     end
