@@ -1,6 +1,31 @@
 <?xml version="1.0"?>
 <houses>
 	<house name="" houseid="106" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="0" />
+	<house name="" houseid="200" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36" />
+	<house name="" houseid="201" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
+	<house name="" houseid="202" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
+	<house name="" houseid="203" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
+	<house name="" houseid="204" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
+	<house name="" houseid="205" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18" />
+	<house name="" houseid="206" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="18" />
+	<house name="" houseid="207" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
+	<house name="" houseid="208" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
+	<house name="" houseid="209" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
+	<house name="" houseid="210" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36" />
+	<house name="" houseid="211" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="52" />
+	<house name="" houseid="212" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="42" />
+	<house name="" houseid="213" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="48" />
+	<house name="" houseid="214" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="32" />
+	<house name="" houseid="215" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24" />
+	<house name="" houseid="216" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24" />
+	<house name="" houseid="217" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24" />
+	<house name="" houseid="218" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24" />
+	<house name="" houseid="219" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36" />
+	<house name="" houseid="220" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24" />
+	<house name="" houseid="221" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="24" />
+	<house name="" houseid="222" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="20" />
+	<house name="" houseid="223" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16" />
+	<house name="" houseid="224" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="28" />
 	<house name="" houseid="237" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="16" />
 	<house name="" houseid="238" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="19" />
 	<house name="" houseid="239" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="9" />
