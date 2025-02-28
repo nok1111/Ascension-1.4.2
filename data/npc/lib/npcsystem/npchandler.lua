@@ -125,6 +125,10 @@ if NpcHandler == nil then
 		return obj
 	end
 
+	function NpcHandler:getNpcName()
+    	return Npc():getName()
+	end
+
 	-- Re-defines the maximum idle time allowed for a player when talking to this npc.
 	function NpcHandler:setMaxIdleTime(newTime)
 		self.idleTime = newTime

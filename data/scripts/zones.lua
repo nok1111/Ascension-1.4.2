@@ -15,6 +15,7 @@ local zones = {
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering  
         despawnmonsters = false, -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
     },
     [2] = {
         id = 2,
@@ -28,8 +29,9 @@ local zones = {
         playercount = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name on entering
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
     },
     [3] = {
         id = 3,
@@ -43,8 +45,9 @@ local zones = {
         playercount = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name on entering
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
     },
     [4] = {
         id = 4,
@@ -58,8 +61,9 @@ local zones = {
         playercount = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name on entering
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
     },
     [5] = {
         id = 5,
@@ -782,5 +786,52 @@ TargetCombatEvent.onTargetCombat = function(creature, target)
     return RETURNVALUE_NOERROR
 end
 TargetCombatEvent:register()
+
+
+
+local function populateZonesOnStartup()
+    print("Populating all zones with monsters on startup...")
+
+    for _, zone in pairs(zones) do
+        if zone.onStartup then
+            print("Filling zone: " .. zone.name)
+
+            -- Ensure tiles are counted for monster limits
+            if zone.tiles == 0 then
+                zone.tiles = getNumerPositionInZone(zone.id)
+                zone.maxMonsters = math.floor(zone.tiles / zonemax_monsters_divider) + 1
+            end
+
+            -- Spawn monsters up to the zone's max limit instantly
+            local spawnedCount = 0
+            while spawnedCount < zone.maxMonsters do
+                local spawnPosition = getRandomPositionInZone(zone)
+                if spawnPosition then
+                    local monsterName = zone.monsters[math.random(#zone.monsters)]
+                    local monster = Game.createMonster(monsterName, spawnPosition, false)
+                    if monster then
+                        zone.spawnedMonsters[monster:getId()] = true
+                        spawnedCount = spawnedCount + 1
+                        print("Spawned " .. monster:getName() .. " in " .. zone.name)
+                    end
+                end
+            end
+        end
+    end
+
+    print("All startup zones populated with monsters.")
+end
+
+
+
+
+local startupZones = GlobalEvent("ZonesStartUp")
+function startupZones.onStartup()
+    -- Call this function on server startup
+    populateZonesOnStartup()
+    return true
+end
+startupZones:register()
   
   print(">> Loading Zones")
+

@@ -26,3 +26,8 @@ PlayerStorageKeys = {
 
 GlobalStorageKeys = {
 }
+
+Mainquest = {
+survivor = 50001,
+sailtogarona = 50002,
+}

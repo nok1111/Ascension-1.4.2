@@ -15,7 +15,7 @@ function currentTaskCount(player)
     return taskCnt
 end
 
-function checkMaxTaskCount(player)
+function canTakeMoreTasks(player)
     local taskCnt = player:getStorageValue(MAX_TASK_COUNT_STORAGE_ID)
     if taskCnt == -1 then --players task count, if -1 then check task count
         taskCnt = 0
@@ -37,7 +37,21 @@ function updateStateTaskListByNpcName(npcName, player)
                 if taskState == -1 then
                   taskState = 0
                 end
-                if taskState > 0 and taskState < 3 then
+
+                
+         -- ✅ preRequiredStorages conditions
+                        local canAcceptTask = true
+                        if playersTasks[npcTaskList[npcName][i]].preRequiredStorages and #playersTasks[npcTaskList[npcName][i]].preRequiredStorages > 0 then
+                            for _, requiredStorage in ipairs(playersTasks[npcTaskList[npcName][i]].preRequiredStorages) do
+                                if player:getStorageValue(requiredStorage) ~= 3 then
+                                    --print("id: " .. playersTasks[npcTaskList[npcName][i]].taskStorageId)
+                                    canAcceptTask = false
+                                    break
+                                end
+                            end
+                        end
+
+                if taskState > 0 and taskState < 3 and canAcceptTask then
                     local taskCompleteCnt = player:getStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageCnt)
                     --print("Send:"..tostring(playersTasks[npcTaskList[npcName][i]].taskDescription).."|"..tostring(taskCompleteCnt))
                     local taskCurrentCnt = 0
@@ -56,6 +70,8 @@ function updateStateTaskListByNpcName(npcName, player)
                             if taskCurrentCnt >= playersTasks[npcTaskList[npcName][i]].taskGoalCnt then
                                 player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageId, TASK_COMPLETED)
                                 player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageCnt, playersTasks[npcTaskList[npcName][i]].taskGoalCnt)
+
+                                player:sendExtendedOpcode(76, "Main Quest: " .. playersTasks[npcTaskList[npcName][i]].taskName .." completed. ")
                             else
                                 player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageCnt, taskCurrentCnt)
                             end
@@ -71,6 +87,7 @@ function updateStateTaskListByNpcName(npcName, player)
                             if taskCurrentCnt >= playersTasks[npcTaskList[npcName][i]].taskGoalCnt then
                                 player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageId, TASK_COMPLETED)
                                 player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageCnt, playersTasks[npcTaskList[npcName][i]].taskGoalCnt)
+                                player:sendExtendedOpcode(76, "Main Quest: " .. playersTasks[npcTaskList[npcName][i]].taskName .." completed. ")
                             else
                                 player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageCnt, taskCurrentCnt)
                             end
@@ -78,6 +95,7 @@ function updateStateTaskListByNpcName(npcName, player)
                     else
                         player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageId, TASK_COMPLETED)
                         player:setStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageCnt, playersTasks[npcTaskList[npcName][i]].taskGoalCnt)
+                        player:sendExtendedOpcode(76, "Main Quest: " .. playersTasks[npcTaskList[npcName][i]].taskName .." completed. ")
                     end
                 end
             end
@@ -86,22 +104,42 @@ function updateStateTaskListByNpcName(npcName, player)
 end
 
 function getTaskListByNpcName(npcName, player)
-    --print("getTaskListByNpcName:"..tostring(npcName).."|"..tostring(#npcTaskList).."|"..tostring(npcTaskList).."|"..tostring(npcTaskList[npcName]).."|"..tostring(#npcTaskList[npcName]))
     local retTaskList = {}
     if npcTaskList[npcName] then
         for i = 1, #npcTaskList[npcName], 1 do
-            local taskState = player:getStorageValue(playersTasks[npcTaskList[npcName][i]].taskStorageId)
+            local task = playersTasks[npcTaskList[npcName][i]]
+            local taskState = player:getStorageValue(task.taskStorageId)
             if taskState == -1 then
-              taskState = 0
+                taskState = 0
             end
-            if taskState == 0 then
-              table.insert(retTaskList, playersTasks[npcTaskList[npcName][i]])
+
+            -- ✅  preRequiredStorages conditions
+            local canAcceptTask = true
+            if task.preRequiredStorages and #task.preRequiredStorages > 0 then
+                for _, requiredStorage in ipairs(task.preRequiredStorages) do
+                    if player:getStorageValue(requiredStorage) ~= 3 then
+                        canAcceptTask = false
+                        break
+                    end
+                end
+            end
+
+            if taskState == 0 and canAcceptTask then
+                table.insert(retTaskList, task)
             end
         end
-        return retTaskList;
+        
+        if #retTaskList == 0 then
+            player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "There are no tasks available for you at the moment.")
+        end
+        
+        return retTaskList
     end
+    
+    player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "There are no tasks available for you at the moment.")
     return retTaskList
 end
+
 
 function getCompleteForPrizeTaskList(npcName, player)
     local retTaskList = {}
@@ -185,7 +223,7 @@ function getTaskById(taskId)
 end
 
 function sendTaskUpdate(player, taskToUpdate)
-    --print("sendTaskUpdate:"..tostring(player))
+   -- print("sendTaskUpdate:"..tostring(player))
     if player then
         local msgBuffer = ""
         msgBuffer = msgBuffer .. tostring(taskToUpdate.taskNumber) .. "|"
@@ -218,11 +256,13 @@ function deleteTask(player, taskId)
 end
 
 function sendTaskList(player, tmpPlayerTask, fromNpc, reward)
+   --print("sendTaskList")
     if player then
         if fromNpc then
             if reward == false and canTakeMoreTasks(player) == false then
                 return
             end
+            player:sendExtendedOpcode(EX_OPCODE_TASK_CLOSE_WND, "")
         end
         local activeTaskList = {}
         if fromNpc then
@@ -233,7 +273,19 @@ function sendTaskList(player, tmpPlayerTask, fromNpc, reward)
                 if taskState == -1 then
                   taskState = 0
                 end
-                if taskState > 0 and taskState < 3 then
+
+                -- ✅ Check if the player meets preRequiredStorages conditions
+                local canAcceptTask = true
+                if tmpPlayerTask[i].preRequiredStorages and #tmpPlayerTask[i].preRequiredStorages > 0 then
+                    for _, requiredStorage in ipairs(tmpPlayerTask[i].preRequiredStorages) do
+                        if player:getStorageValue(requiredStorage) ~= 3 then
+                            canAcceptTask = false
+                            break
+                        end
+                    end
+                end
+
+                if taskState > 0 and taskState < 3 and canAcceptTask then
                     local taskCompleteCnt = player:getStorageValue(tmpPlayerTask[i].taskStorageCnt)
                     --print("Send:"..tostring(tmpPlayerTask[i].taskDescription).."|"..tostring(taskCompleteCnt))
                     local taskCurrentCnt = 0
@@ -279,7 +331,8 @@ function sendTaskList(player, tmpPlayerTask, fromNpc, reward)
                 end
             end
             if #activeTaskList == 0 then
-                player:setStorageValue(MAX_TASK_COUNT_STORAGE_ID, 0) --reset active task counter
+                player:setStorageValue(MAX_TASK_COUNT_STORAGE_ID, 0)
+                player:sendTextMessage(MESSAGE_INFO_DESCR, "There are no more available quests to show.")
             end
         end
 
@@ -319,9 +372,6 @@ function sendTaskList(player, tmpPlayerTask, fromNpc, reward)
             if taskCompleteCnt == -1 then
               taskCompleteCnt = 0
             end
-            --print("-----------------------")
-            --print("taskState:"..tostring(taskState))
-            --print("taskCompleteCnt:"..tostring(taskCompleteCnt))
             msgBuffer = msgBuffer .. tostring(activeTaskList[i].taskRepeat) .. ";" .. tostring(taskState) .. ";" .. tostring(taskCompleteCnt) .. ";"
             if activeTaskList[i].taskRewards then
                 msgBuffer = msgBuffer .. tostring(activeTaskList[i].taskRewards.experience) .. ":" .. tostring(#activeTaskList[i].taskRewards.items) .. ":" .. tostring(#activeTaskList[i].taskRewards.outfits) .. ":!"
@@ -345,9 +395,11 @@ function sendTaskList(player, tmpPlayerTask, fromNpc, reward)
 			msgBuffer = msgBuffer .. ";|"
         end
         if fromNpc then
-            if reward then
+            if reward and #activeTaskList == 0 then
+                player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You do not have any completed tasks pending at the moment.")
+            elseif reward and #activeTaskList > 0 then
                 player:sendExtendedOpcode(EX_OPCODE_TASK_NPC_REWARD, msgBuffer)
-            else
+            else          
                 player:sendExtendedOpcode(EX_OPCODE_TASK_NPC_LIST, msgBuffer)
             end
         else
@@ -358,51 +410,51 @@ end
 
 function printOutTasks()
     for i = 1, #playersTasks, 1 do
-        print("Task name: "..tostring(playersTasks[i].taskName))
-        print("Task description: "..tostring(playersTasks[i].taskDescription))
+        --print("Task name: "..tostring(playersTasks[i].taskName))
+        --print("Task description: "..tostring(playersTasks[i].taskDescription))
         if playersTasks[i].taskGoals then
             print("\tTask goals:")
             if playersTasks[i].taskGoals.monsters then
                 for j = 1, #playersTasks[i].taskGoals.monsters, 1 do
-                    print("\tMonster name: "..tostring(playersTasks[i].taskGoals.monsters[j].name))
-                    print("\tMonster id: "..tostring(playersTasks[i].taskGoals.monsters[j].spriteId))
+                    --print("\tMonster name: "..tostring(playersTasks[i].taskGoals.monsters[j].name))
+                    --print("\tMonster id: "..tostring(playersTasks[i].taskGoals.monsters[j].spriteId))
                 end
             end
             if playersTasks[i].taskGoals.items then
                 for j = 1, #playersTasks[i].taskGoals.items, 1 do
-                    print("\tItem name: "..tostring(playersTasks[i].taskGoals.items[j].name))
-                    print("\tItem id: "..tostring(playersTasks[i].taskGoals.items[j].itemId))
+                    --print("\tItem name: "..tostring(playersTasks[i].taskGoals.items[j].name))
+                    --print("\tItem id: "..tostring(playersTasks[i].taskGoals.items[j].itemId))
                 end
             end
             if playersTasks[i].taskGoals.storages then
                 for j = 1, #playersTasks[i].taskGoals.storages, 1 do
-                    print("\tStorage name: "..tostring(playersTasks[i].taskGoals.storages[j].name))
-                    print("\tStorage id: "..tostring(playersTasks[i].taskGoals.storages[j].itemId))
+                    --print("\tStorage name: "..tostring(playersTasks[i].taskGoals.storages[j].name))
+                    --print("\tStorage id: "..tostring(playersTasks[i].taskGoals.storages[j].itemId))
                 end
             end
         end
-        print("Task goal cnt: "..tostring(playersTasks[i].taskGoalCnt))
-        print("Task min level: "..tostring(playersTasks[i].taskMinLvl))
-        print("Task max level: "..tostring(playersTasks[i].taskMaxLvl))
-        print("Task can be repeat: "..tostring(playersTasks[i].taskRepeat))
-        print("Task storage id: "..tostring(playersTasks[i].taskStorageId))
-        print("Task counter storage id: "..tostring(playersTasks[i].taskStorageCnt))
+        --print("Task goal cnt: "..tostring(playersTasks[i].taskGoalCnt))
+        --print("Task min level: "..tostring(playersTasks[i].taskMinLvl))
+        --print("Task max level: "..tostring(playersTasks[i].taskMaxLvl))
+        --print("Task can be repeat: "..tostring(playersTasks[i].taskRepeat))
+        --print("Task storage id: "..tostring(playersTasks[i].taskStorageId))
+        --print("Task counter storage id: "..tostring(playersTasks[i].taskStorageCnt))
         if playersTasks[i].taskRewards then
-            print("\tTask rewards:")
+            --print("\tTask rewards:")
             if playersTasks[i].taskRewards.experience then
-                print("\tTask exp reward: "..tostring(playersTasks[i].taskRewards.experience))
+                --print("\tTask exp reward: "..tostring(playersTasks[i].taskRewards.experience))
             end
             if playersTasks[i].taskRewards.items then
                 for j = 1, #playersTasks[i].taskRewards.items, 1 do
-                    print("\tReward name: "..tostring(playersTasks[i].taskRewards.items[j].name))
-                    print("\tReward id: "..tostring(playersTasks[i].taskRewards.items[j].itemCid))
-                    print("\tReward cnt: "..tostring(playersTasks[i].taskRewards.items[j].itemCnt))
+                    --print("\tReward name: "..tostring(playersTasks[i].taskRewards.items[j].name))
+                    --print("\tReward id: "..tostring(playersTasks[i].taskRewards.items[j].itemCid))
+                    --print("\tReward cnt: "..tostring(playersTasks[i].taskRewards.items[j].itemCnt))
                 end
             end
             if playersTasks[i].taskRewards.outfits then
                 for j = 1, #playersTasks[i].taskRewards.outfits, 1 do
-                    print("\tOutfit name: "..tostring(playersTasks[i].taskRewards.outfits[j].name))
-                    print("\tOutfit lookType: "..tostring(playersTasks[i].taskRewards.outfits[j].lookType))
+                    --print("\tOutfit name: "..tostring(playersTasks[i].taskRewards.outfits[j].name))
+                    --print("\tOutfit lookType: "..tostring(playersTasks[i].taskRewards.outfits[j].lookType))
                 end
             end
         end
