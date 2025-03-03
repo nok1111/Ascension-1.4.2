@@ -1,6 +1,6 @@
 npcTaskList = {
-		["Captain Max"] = {1},
-        ["Magnus Blackwater"] = {2,3,4,5},
+		["Sheriff Gordon"] = {2,3},
+        ["Magnus Blackwater"] = {},
 
 
     -- Garona
@@ -74,8 +74,8 @@ playersTasks = {
     },
     [2] = {
         taskNumber = 2,
-        taskName = "The Path to Garona",
-        taskDescription = "Find the missing pieces of an ancient map leading to Garona",
+        taskName = "Introduction to Crafting",
+        taskDescription = "well lets start with the basics, in order to survive in this world i may suggest learning a crafting job. In order to learn a job go and talk to any carfting related instructor like [Blacksmith Sam], [Alchemist Hana], [The Great Xodet] or [Chef Sam]. You can learn more about this once you talk with them.",
         taskGoals = {
             monsters = {			                 
                 --[[[1] = {
@@ -88,22 +88,19 @@ playersTasks = {
                 }--]]
             },
             items = {
-			[1] = {
-                    name = "pirate's fortune map",
-                    itemId = 27898
-                    }
+		
 
             },
             storages = {
-                --[[[1] = {
-                    starageName = "Light candel",
-                    starageTaskId = 12000
-                }]]
+               [1] = {
+                    starageName = "Learn a Crafting Job.",
+                    starageTaskId = Mainquest.learncrafting
+                }
             }
         },
         preRequiredStorages = {}, -- The player must have storage 40000 before accepting this task
         taskGoalCnt = 1,
-        taskMinLvl = 45,
+        taskMinLvl = 1,
         taskRepeat = false,
         taskStorageId = 40003,
         taskStorageCnt = 40004,
@@ -111,10 +108,17 @@ playersTasks = {
             experience = 12000, --or nil
             items = {
 				[1] = {
-                    name = "gold coin",
+                   name = "gold coin",
+                    itemCid = 3031,
                     itemSid = 2148,
-                    itemCnt = 85
-                    },
+                    itemCnt = 2
+                },
+                [2] = {
+                    name = "dream feather",
+                    itemCid = 33682,
+                    itemSid = 37763,
+                    itemCnt = 2
+                },
                 },
             outfits = {
                 --[1] = {
@@ -122,14 +126,14 @@ playersTasks = {
                    -- lookType = 146
                 },
             },
-      taskZoneName = "Any pirate hideout",
-	  taskSource = "Magnus Blackwater",
-	  taskHint = "You need to explore the ocean."
+      taskZoneName = "Garona",
+	  taskSource = "Sheriff Gordon",
+	  taskHint = "Talk to NPC."
     },
     [3] = {
         taskNumber = 3,
-        taskName = "The Vanishing Fleet",
-        taskDescription = "The map shows a safe route, but every ship that took it vanished without a trace. We must check at Thornback Island north of venore for any survivors and hope for the best.",
+        taskName = "Starting Tools",
+        taskDescription = "Go find a Lubo [NPC] and buy an expedition bag, ill give you afterwards all the tools you will need in your journey.",
         taskGoals = {
             monsters = {                             
                 --[[[1] = {
@@ -142,33 +146,55 @@ playersTasks = {
                 }--]]
             },
             items = {
-             --[[ [1] = {
-                    name = "pirate's fortune map",
-                    itemId = 27898
-                    }]]
+            [1] = {
+                    name = "Expedition Bag",
+                    itemId = 11242
+                }
 
             },
             storages = {
-              [1] = {
-                    starageName = "Survivors Found",
-                    starageTaskId = Mainquest.survivor
-                }
+             
             }
         },
         preRequiredStorages = {40003}, -- The player must have storage 40000 before accepting this task
         taskGoalCnt = 1,
-        taskMinLvl = 45,
+        taskMinLvl = 1,
         taskRepeat = false,
         taskStorageId = 40005,
         taskStorageCnt = 40006,
         taskRewards = {
             experience = 12000, --or nil
             items = {
-                [1] = {
-                    name = "gold coin",
+               [1] = {
+                   name = "gold coin",
                     itemSid = 2148,
-                    itemCnt = 85
-                    },
+                    itemCnt = 4
+                },              
+                [2] = {
+                    name = "Scythe",
+                    itemSid = 2550,
+                    itemCnt = 1
+                },
+                [3] = {
+                    name = "Rope",
+                    itemSid = 2120,
+                    itemCnt = 1
+                },
+                [4] = {
+                    name = "Shovel",
+                    itemSid = 2554,
+                    itemCnt = 1
+                },
+                [5] = {
+                    name = "Pick",
+                    itemSid = 2553,
+                    itemCnt = 1
+                },
+                [6] = {
+                    name = "Fishing Rod",
+                    itemSid = 2580,
+                    itemCnt = 1
+                }
                 },
             outfits = {
                 --[1] = {
@@ -176,9 +202,9 @@ playersTasks = {
                    -- lookType = 146
                 },
             },
-      taskZoneName = "Thornback Island",
-      taskSource = "Magnus Blackwater",
-      taskHint = "Sailing"
+      taskZoneName = "Garona",
+      taskSource = "Sheriff Gordon",
+      taskHint = "N/A"
     },
     [4] = {
         taskNumber = 4,
