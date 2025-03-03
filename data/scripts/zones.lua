@@ -812,7 +812,7 @@ local function populateZonesOnStartup()
                     if monster then
                         zone.spawnedMonsters[monster:getId()] = true
                         spawnedCount = spawnedCount + 1
-                        print("Spawned " .. monster:getName() .. " in " .. zone.name)
+                      --  print("Spawned " .. monster:getName() .. " in " .. zone.name)
                     end
                 end
             end
