@@ -9,33 +9,33 @@ MapTravel.usageRange = 7
 
 MapTravel.mapNodesConfig = {
 	[1] = {
-		displayName = "AbDendriel",
-		nameId = "AbDendriel",
+		displayName = "Islanda",
+		nameId = "Islanda",
 		discoverable = false,
-		modulePos = {marginTop = 695, marginLeft = 815},
-		serverPos = {32734, 31670, 6},
+		modulePos = {marginTop = 150, marginLeft = 202.5},
+		serverPos = {432, 335, 7},
 		premium = true,
 		cost = {
 			gold = 300,
 		},
 	},
 	[2] = {
-		displayName = "Ankrahmun",
-		nameId = "Ankrahmun",
+		displayName = "Swantears",
+		nameId = "swantears",
 		discoverable = false,
-		modulePos = {marginTop = 1925, marginLeft = 1360},
-		serverPos = {33091, 32884, 6},
-		premium = true,
+		modulePos = {marginTop = 92, marginLeft = 760},
+		serverPos = {908, 456, 5},
+		premium = false,
 		cost = {
 			gold = 300,
 		},
 	},
 	[3] = {
-		displayName = "Azrakar",
-		nameId = "Azrakar",
+		displayName = "Heleda",
+		nameId = "heleda",
 		discoverable = true,
-		modulePos = {marginTop = 1650, marginLeft = 1582.5},
-		serverPos = {33448, 32548, 6},
+		modulePos = {marginTop = 110, marginLeft = 900},
+		serverPos = {1106, 419, 7},
 		premium = true,
 		cost = {
 			gold = 300,
