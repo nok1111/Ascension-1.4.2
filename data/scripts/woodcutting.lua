@@ -37,43 +37,43 @@ local cfg = {
         },
          {effect = 381, amount = {1, 2}, skillReq = 0, veins = {
                 {id = 2725}, -- palm
-                {id = 8792} -- broken tree
+                {id = 8786} -- broken tree
                 
             }
         },
          {effect = 381, amount = {1, 2}, skillReq = 0, veins = {
                 {id = 2726}, -- coconut
-                {id = 8792} -- broken tree
+                {id = 8786} -- broken tree
                 
             }
         },
          {effect = 381, amount = {1, 2}, skillReq = 0, veins = {
                 {id = 39943}, -- banana tree
-                {id = 8792} -- broken tree
+                {id = 8786} -- broken tree
                 
             }
         },
         {effect = 381,  amount = {1, 2}, skillReq = 0, veins = {
             {id = 39944}, -- banana tree
-            {id = 8792} -- broken tree
+            {id = 8786} -- broken tree
             
             }
         },
         {effect = 381, amount = {1, 2}, skillReq = 0, veins = {
             {id = 39945}, -- banana tree
-            {id = 8792} -- broken tree
+            {id = 8786} -- broken tree
             
             }
         },
         {effect = 381, amount = {1, 2}, skillReq = 0, veins = {
             {id = 39946}, -- banana tree
-            {id = 8792} -- broken tree
+            {id = 8786} -- broken tree
             
             }
         },
         {effect = 381, amount = {1, 2}, skillReq = 0, veins = {
             {id = 39947}, -- banana tree
-            {id = 8792} -- broken tree
+            {id = 8786} -- broken tree
             
             }
         },
