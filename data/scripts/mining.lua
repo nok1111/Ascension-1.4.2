@@ -38,6 +38,11 @@ end
 local miningSystem = Action()
 
 function miningSystem.onUse(player, item, fromPosition, target, toPosition, isHotkey)
+
+
+
+
+    
  local row, vein = isInTable(target.itemid)
     if (row and vein) then
         local playerPos = player:getPosition()
@@ -149,8 +154,7 @@ function miningSystem.onUse(player, item, fromPosition, target, toPosition, isHo
 			
            
 			--FameSystem:addPoints(player, currOre.fame)
-			--player:getPosition():sendMagicEffect(176)
-            toPosition:sendMagicEffect(670)
+			--player:getPosition():sendMagicEffect(176.onUse            toPosition:sendMagicEffect(670)
 			
             refillVein(nextId)
             target:transform(nextId)
