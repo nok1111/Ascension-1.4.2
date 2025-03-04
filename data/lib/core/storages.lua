@@ -28,6 +28,8 @@ GlobalStorageKeys = {
 }
 
 Mainquest = {
-survivor = 50001,
-sailtogarona = 50002,
+learncrafting = 50001,
+childrenfound = 50002,
+linahelped = 50003,
+emmethelped = 50004,
 }

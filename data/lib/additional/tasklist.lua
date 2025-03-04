@@ -1,6 +1,6 @@
 npcTaskList = {
-		["Sheriff Gordon"] = {2,3},
-        ["Magnus Blackwater"] = {},
+		["Sheriff Gordon"] = {2,3,4,5,6},
+        ["Gaelia"] = {7},
 
 
     -- Garona
@@ -208,20 +208,17 @@ playersTasks = {
     },
     [4] = {
         taskNumber = 4,
-        taskName = "The Pirate King's Bounty",
-        taskDescription = "Defeat Captain Bloodbane, the leader of the Black Tide Pirates, who guards the sea route to Garona, find him to the north of Thornback Island.",
+        taskName = "First Strike",
+        taskDescription = "Grab a pickaxe and mine your first ores. Prove you have what it takes to be a miner.",
         taskGoals = {
             monsters = {                             
-                [1] = {
-                    name = "Captain Bloodbane",
-                    spriteId = 1525
-                },
+                
             },
             items = {
-             --[[ [1] = {
-                    name = "pirate's fortune map",
-                    itemId = 27898
-                    }]]
+             [1] = {
+                    name = "Copper Ore",
+                    itemId = 40034
+                }
 
             },
             storages = {
@@ -232,7 +229,7 @@ playersTasks = {
             }
         },
         preRequiredStorages = {40005}, -- The player must have storage 40000 before accepting this task
-        taskGoalCnt = 1,
+        taskGoalCnt = 6,
         taskMinLvl = 45,
         taskRepeat = false,
         taskStorageId = 40007,
@@ -258,8 +255,8 @@ playersTasks = {
     },
     [5] = {
         taskNumber = 5,
-        taskName = "A New Beginning in Garona",
-        taskDescription = "Board Captain Bluebears ship to set sail for Garona, a new continent filled with adventure and danger.",
+        taskName = "First Chop",
+        taskDescription = "Take an axe and cut down trees for logs. A woodcutters journey begins here.",
         taskGoals = {
             monsters = {                             
               --[[  [1] = {
@@ -268,21 +265,17 @@ playersTasks = {
                 },]]
             },
             items = {
-             --[[ [1] = {
-                    name = "pirate's fortune map",
-                    itemId = 27898
-                    }]]
-
+             [1] = {
+                    name = "Pine Trunk",
+                    itemId = 39961
+                }
             },
             storages = {
-             [1] = {
-                    starageName = "Sail to Garona",
-                    starageTaskId = Mainquest.sailtogarona
-                }
+             
             }
         },
-        preRequiredStorages = {40007}, -- The player must have storage 40000 before accepting this task
-        taskGoalCnt = 1,
+        preRequiredStorages = {40005}, -- The player must have storage 40000 before accepting this task
+        taskGoalCnt = 10,
         taskMinLvl = 45,
         taskRepeat = false,
         taskStorageId = 40009,
@@ -305,6 +298,98 @@ playersTasks = {
       taskZoneName = "Garona",
       taskSource = "Magnus Blackwater",
       taskHint = "N/a"
+    },
+    [6] = {
+        taskNumber = 6,
+        taskName = "First Harvest",
+        taskDescription = "Search the wilds for herbs and gather them. Every great herbalist starts with a single leaf.",
+        taskGoals = {
+            monsters = {                             
+              --[[  [1] = {
+                    name = "Captain Bloodbane",
+                    spriteId = 1525
+                },]]
+            },
+            items = {
+             [1] = {
+                    name = "Crimson Rose",
+                    itemId = 35440
+                }
+            },
+            storages = {
+             
+            }
+        },
+        preRequiredStorages = {40005}, -- The player must have storage 40000 before accepting this task
+        taskGoalCnt = 6,
+        taskMinLvl = 45,
+        taskRepeat = false,
+        taskStorageId = 40011,
+        taskStorageCnt = 40012,
+        taskRewards = {
+            experience = 12000, --or nil
+            items = {
+                [1] = {
+                    name = "gold coin",
+                    itemSid = 2148,
+                    itemCnt = 85
+                    },
+                },
+            outfits = {
+                --[1] = {
+                  --  name = "Oriental",
+                   -- lookType = 146
+                },
+            },
+      taskZoneName = "Garona",
+      taskSource = "Magnus Blackwater",
+      taskHint = "N/a"
+    },
+      [7] = {
+        taskNumber = 7,
+        taskName = "Desperate Mother",
+        taskDescription = "A desperate mother has asked for your help. Her two children, Lina and Emmet, are trapped in a farmhouse to the east, surrounded by invading forest creatures. Find and rescue them before it's too late.",
+        taskGoals = {
+            monsters = {                             
+              --[[  [1] = {
+                    name = "Captain Bloodbane",
+                    spriteId = 1525
+                },]]
+            },
+            items = {
+             
+            },
+            storages = {
+             [1] = {
+                    starageName = "Lina and Emmet found",
+                    starageTaskId = Mainquest.childrenfound
+                }
+            }
+        },
+        preRequiredStorages = {}, -- The player must have storage 40000 before accepting this task
+        taskGoalCnt = 2,
+        taskMinLvl = 45,
+        taskRepeat = false,
+        taskStorageId = 40013,
+        taskStorageCnt = 40014,
+        taskRewards = {
+            experience = 12000, --or nil
+            items = {
+                [1] = {
+                    name = "gold coin",
+                    itemSid = 2148,
+                    itemCnt = 85
+                    },
+                },
+            outfits = {
+                --[1] = {
+                  --  name = "Oriental",
+                   -- lookType = 146
+                },
+            },
+      taskZoneName = "Garona",
+      taskSource = "Gaelia",
+      taskHint = "east from gaelia"
     },
 }
 

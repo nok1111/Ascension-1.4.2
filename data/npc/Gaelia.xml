@@ -1,0 +1,8 @@
+<npc name="Gaelia"  script="quest_gaelia.lua" walkinterval="2000" speechbubble="3">
+	<look type="2653" />
+	<parameters>
+		<parameter key="message_greet" value="Hi |PLAYERNAME|, are u interested in some of my {quests} or maybe {rewards}"  />
+		<parameter key="message_walkaway" value="Dont Die!" />
+		<parameter key="message_farewell" value="Dont Die!" />
+	</parameters>
+</npc>
