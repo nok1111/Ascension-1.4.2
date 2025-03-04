@@ -519,13 +519,15 @@ class Player final : public Creature, public Cylinder
 		}
 
 		int32_t getMaxHealth() const override {
-			return std::max<int32_t>(1, healthMax + varStats[STAT_MAXHITPOINTS]);
+			uint32_t vitHealth = static_cast<uint32_t>(healthMax * (charStats[CHARSTAT_VITALITY] / 100.f));
+			return std::max<int32_t>(1, healthMax + varStats[STAT_MAXHITPOINTS] + vitHealth);
 		}
 		uint32_t getMana() const {
 			return mana;
 		}
 		uint32_t getMaxMana() const {
-			return std::max<int32_t>(0, manaMax + varStats[STAT_MAXMANAPOINTS]);
+			uint32_t sprMana = static_cast<uint32_t>(manaMax * (charStats[CHARSTAT_SPIRIT] / 100.f));
+			return std::max<int32_t>(0, manaMax + varStats[STAT_MAXMANAPOINTS] + sprMana);
 		}
 
 		Item* getInventoryItem(slots_t slot) const;
@@ -774,6 +776,12 @@ class Player final : public Creature, public Cylinder
 
 		size_t getMaxVIPEntries() const;
 		size_t getMaxDepotItems() const;
+
+		void setCharacterStat(CharacterStats_t stat, uint16_t value);
+		void addCharacterStat(CharacterStats_t stat, uint16_t value);
+		uint16_t getCharacterStat(CharacterStats_t stat) const {
+			return charStats[stat];
+		}
 
 		void setDungeon(Dungeon* dungeon) {
 			this->dungeon = dungeon;
@@ -1472,6 +1480,8 @@ class Player final : public Creature, public Cylinder
 		tradestate_t tradeState = TRADE_NONE;
 		fightMode_t fightMode = FIGHTMODE_ATTACK;
 		AccountType_t accountType = ACCOUNT_TYPE_NORMAL;
+
+		uint16_t charStats[CHARSTAT_LAST + 1] = {};
 
 		//NEW! DUAL WIELD SYSTEM
 		attackHand_t lastAttackHand;

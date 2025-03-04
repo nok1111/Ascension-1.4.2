@@ -778,7 +778,8 @@ void Spell::postCastSpell(Player* player, bool finishedCast /*= true*/, bool pay
 	if (finishedCast) {
 		if (!player->hasFlag(PlayerFlag_HasNoExhaustion)) {
 			if (cooldown > 0) {
-				Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_SPELLCOOLDOWN, cooldown, 0, false, spellId);
+				uint32_t finalCooldown = cooldown - (cooldown * player->getCharacterStat(CHARSTAT_WISDOM) / 100.0);
+				Condition* condition = Condition::createCondition(CONDITIONID_DEFAULT, CONDITION_SPELLCOOLDOWN, finalCooldown, 0, false, spellId);
 				player->addCondition(condition);
 			}
 

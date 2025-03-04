@@ -600,6 +600,19 @@ struct CombatDamage
 	bool leeched = false;
 };
 
+enum CharacterStats_t
+{
+	CHARSTAT_STRENGTH,
+	CHARSTAT_INTELLIGENCE,
+	CHARSTAT_DEXTERITY,
+	CHARSTAT_VITALITY,
+	CHARSTAT_SPIRIT,
+	CHARSTAT_WISDOM,
+
+	CHARSTAT_FIRST = CHARSTAT_STRENGTH,
+	CHARSTAT_LAST = CHARSTAT_WISDOM
+};
+
 using MarketOfferList = std::list<MarketOffer>;
 using HistoryMarketOfferList = std::list<HistoryMarketOffer>;
 using ShopInfoList = std::list<ShopInfo>;

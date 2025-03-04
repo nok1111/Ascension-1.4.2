@@ -383,6 +383,11 @@ bool IOLoginData::loadPlayer(Player* player, DBResult_ptr result)
 		player->skills[i].percent = Player::getPercentLevel(skillTries, nextSkillTries);
 	}
 
+	static const std::string charStatNames[] = {"stat_str", "stat_int", "stat_dex", "stat_vit", "stat_spr", "stat_wis"};
+	for (auto i = 0; i < CHARSTAT_LAST + 1; ++i) {
+		player->charStats[i] = result->getNumber<uint16_t>(charStatNames[i]);
+	}
+
 	if ((result = db.storeQuery(fmt::format("SELECT `guild_id`, `rank_id`, `nick` FROM `guild_membership` WHERE `player_id` = {:d}", player->getGUID())))) {
 		uint32_t guildId = result->getNumber<uint32_t>("guild_id");
 		uint32_t playerRankId = result->getNumber<uint32_t>("rank_id");
@@ -807,6 +812,12 @@ bool IOLoginData::savePlayer(Player* player)
 	query << "`skill_fishing` = " << player->skills[SKILL_FISHING].level << ',';
 	query << "`skill_fishing_tries` = " << player->skills[SKILL_FISHING].tries << ',';
 	query << "`direction` = " << static_cast<uint16_t> (player->getDirection()) << ',';
+	query << "`stat_str` = " << static_cast<uint16_t>(player->charStats[CHARSTAT_STRENGTH]) << ',';
+	query << "`stat_int` = " << static_cast<uint16_t>(player->charStats[CHARSTAT_INTELLIGENCE]) << ',';
+	query << "`stat_dex` = " << static_cast<uint16_t>(player->charStats[CHARSTAT_DEXTERITY]) << ',';
+	query << "`stat_vit` = " << static_cast<uint16_t>(player->charStats[CHARSTAT_VITALITY]) << ',';
+	query << "`stat_spr` = " << static_cast<uint16_t>(player->charStats[CHARSTAT_SPIRIT]) << ',';
+	query << "`stat_wis` = " << static_cast<uint16_t>(player->charStats[CHARSTAT_WISDOM]) << ',';
 
 	if (!player->isOffline()) {
 		query << "`onlinetime` = `onlinetime` + " << (time(nullptr) - player->lastLoginSaved) << ',';

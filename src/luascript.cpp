@@ -1983,6 +1983,16 @@ void LuaScriptInterface::registerFunctions()
 
 	registerEnum(MAX_LOOTCHANCE)
 
+	// Character Stats
+	registerEnum(CHARSTAT_STRENGTH)
+	registerEnum(CHARSTAT_INTELLIGENCE)
+	registerEnum(CHARSTAT_DEXTERITY)
+	registerEnum(CHARSTAT_VITALITY)
+	registerEnum(CHARSTAT_SPIRIT)
+	registerEnum(CHARSTAT_WISDOM)
+	registerEnum(CHARSTAT_FIRST)
+	registerEnum(CHARSTAT_LAST)
+
 	registerEnum(SPELL_INSTANT)
 	registerEnum(SPELL_RUNE)
 

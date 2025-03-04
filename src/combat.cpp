@@ -839,7 +839,34 @@ void Combat::doTargetCombat(Creature* caster, Creature* target, CombatDamage& da
 				damage.secondary.value *= casterMonster->getDifficultyDamage();
 			}
 		}
+		
+		if (casterPlayer) {
+			if (damage.primary.type == COMBAT_PHYSICALDAMAGE) {
+				auto strength = casterPlayer->getCharacterStat(CHARSTAT_STRENGTH);
+				if (strength != 0) {
+					damage.primary.value += static_cast<int32_t>(round(damage.primary.value * (strength / 230.)));
+				}
+			}
+			else {
+				auto intelligence = casterPlayer->getCharacterStat(CHARSTAT_INTELLIGENCE);
+				if (intelligence != 0) {
+					damage.primary.value += static_cast<int32_t>(round(damage.primary.value * (intelligence / 230.)));
+				}
+			}
 
+			if (damage.secondary.type == COMBAT_PHYSICALDAMAGE) {
+				auto strength = casterPlayer->getCharacterStat(CHARSTAT_STRENGTH);
+				if (strength != 0) {
+					damage.secondary.value += static_cast<int32_t>(round(damage.secondary.value * (strength / 230.)));
+				}
+			}
+			else {
+				auto intelligence = casterPlayer->getCharacterStat(CHARSTAT_INTELLIGENCE);
+				if (intelligence != 0) {
+					damage.secondary.value += static_cast<int32_t>(round(damage.secondary.value * (intelligence / 230.)));
+				}
+			}
+		}
 		if (g_game.combatBlockHit(damage, caster, target, params.blockedByShield, params.blockedByArmor, params.itemId != 0, params.ignoreResistances)) {
 			return;
 		}
@@ -1014,6 +1041,34 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 			if (Monster* casterMonster = caster->getMonster()) {
 				damageCopy.primary.value *= casterMonster->getDifficultyDamage();
 				damageCopy.secondary.value *= casterMonster->getDifficultyDamage();
+			}
+		}
+
+		if (casterPlayer) {
+			if (damageCopy.primary.type == COMBAT_PHYSICALDAMAGE) {
+				auto strength = casterPlayer->getCharacterStat(CHARSTAT_STRENGTH);
+				if (strength != 0) {
+					damageCopy.primary.value += static_cast<int32_t>(round(damageCopy.primary.value * (strength / 230.)));
+				}
+			}
+			else {
+				auto intelligence = casterPlayer->getCharacterStat(CHARSTAT_INTELLIGENCE);
+				if (intelligence != 0) {
+					damageCopy.primary.value += static_cast<int32_t>(round(damageCopy.primary.value * (intelligence / 230.)));
+				}
+			}
+
+			if (damageCopy.secondary.type == COMBAT_PHYSICALDAMAGE) {
+				auto strength = casterPlayer->getCharacterStat(CHARSTAT_STRENGTH);
+				if (strength != 0) {
+					damageCopy.secondary.value += static_cast<int32_t>(round(damageCopy.secondary.value * (strength / 230.)));
+				}
+			}
+			else {
+				auto intelligence = casterPlayer->getCharacterStat(CHARSTAT_INTELLIGENCE);
+				if (intelligence != 0) {
+					damageCopy.secondary.value += static_cast<int32_t>(round(damageCopy.secondary.value * (intelligence / 230.)));
+				}
 			}
 		}
 		

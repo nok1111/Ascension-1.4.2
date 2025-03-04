@@ -391,7 +391,7 @@ uint32_t Player::getAttackSpeed() const
 	if (isDualWielding()) {
 		ret = vocation->getAttackSpeed() / 1.2;
 	}
-	//ret = ret - (ret * getCharacterStat(CHARSTAT_DEXTERITY) / 100.0);
+	ret = ret - (ret * getCharacterStat(CHARSTAT_DEXTERITY) / 100.0);
 
 	return ret;
 }
@@ -5413,3 +5413,23 @@ Item* Player::getItemByUID(uint32_t uid) const {
 	return nullptr;
 }
 //TOOLTIPSEND
+
+void Player::setCharacterStat(CharacterStats_t stat, uint16_t value)
+{
+	charStats[stat] = value;
+	if (stat == CHARSTAT_VITALITY || stat == CHARSTAT_SPIRIT) {
+		if (stat == CHARSTAT_VITALITY)
+			g_game.addCreatureHealth(this);
+		sendStats();
+	}
+}
+
+void Player::addCharacterStat(CharacterStats_t stat, uint16_t value)
+{
+	charStats[stat] += value;
+	if (stat == CHARSTAT_VITALITY || stat == CHARSTAT_SPIRIT) {
+		if (stat == CHARSTAT_VITALITY)
+			g_game.addCreatureHealth(this);
+		sendStats();
+	}
+}
