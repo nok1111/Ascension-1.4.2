@@ -233,7 +233,7 @@ local zones = {
     },
     [16] = { 
         id = 16,
-        name = "Mines of xxxxx",
+        name = "Shadow Hollow",
         monsters = {"skeleton", "witch", "apprentice witch", "poison skeleton", "rogue"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
