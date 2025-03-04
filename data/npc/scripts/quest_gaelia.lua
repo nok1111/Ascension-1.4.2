@@ -18,11 +18,13 @@ function creatureSayCallback(cid, type, msg)
     return false
   end
  
+ -- start code required for Quest Givers start
   local npcName = npcHandler:getNpcName()
   local player = Player(cid)
 	updateStateTaskListByNpcName(npcName, player)
 	local taskList = getTaskListByNpcName(npcName, player)
 	local completeTask = getCompleteForPrizeTaskList(npcName, player)
+	--end
  	
   if msgcontains(msg:lower(), "quests") then
     local message = ""

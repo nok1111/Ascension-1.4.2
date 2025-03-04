@@ -1,6 +1,7 @@
 npcTaskList = {
 		["Sheriff Gordon"] = {2,3,4,5,6},
         ["Gaelia"] = {7},
+        ["Elder Hjalmar"] = {8,9}, 
 
 
     -- Garona
@@ -10,8 +11,8 @@ npcTaskList = {
 playersTasks = {
     [1] = {
         taskNumber = 1,
-        taskName = "Lost Trophy",
-        taskDescription = "some rumors say that mr ludrich golden trophy is still here, do you now the value of such thing? dude, it is made of pure gold!",
+        taskName = "Sample Quest",
+        taskDescription = "sample quest description!",
         taskGoals = {
             monsters = {			                 
                 --[[[1] = {
@@ -38,11 +39,11 @@ playersTasks = {
             }
         },
        -- preRequiredStorages = {40000}, -- The player must have storage 40000 before accepting this task
-        taskGoalCnt = 1,
-        taskMinLvl = 1,
-        taskRepeat = false,
-        taskStorageId = 40001,
-        taskStorageCnt = 40002,
+        taskGoalCnt = 1, --amount ofmonsters, storage value, or items required for this quest
+        taskMinLvl = 1, --recommended level
+        taskRepeat = false, --not working atm
+        taskStorageId = 40001, --storage for quest
+        taskStorageCnt = 40002, --second storage
         taskRewards = {
             experience = 600, --or nil
             items = {
@@ -68,9 +69,9 @@ playersTasks = {
                    -- lookType = 146
                 },
             },
-      taskZoneName = "garona north cave",
-	  taskSource = "Grave Robber Lucas",
-	  taskHint = "N/A"
+      taskZoneName = "garona north cave", --info about where the quest is at
+	  taskSource = "Grave Robber Lucas", --info about NPC name
+	  taskHint = "N/A" --hints for players if necessary
     },
     [2] = {
         taskNumber = 2,
@@ -391,6 +392,159 @@ playersTasks = {
       taskSource = "Gaelia",
       taskHint = "east from gaelia"
     },
+[8] = {
+    taskNumber = 8,
+    taskName = "The Stolen Dwarven Relic",
+    taskDescription = "The dwarves have lost a precious artifact—the Runestone of Ankor. Elder Hjalmar has tasked you with recovering it from the goblins who stole it deep in the mines.",
+    taskGoals = {
+        storages = {
+             [1] = {
+                    starageName = "Stolen Dwarven Relic",
+                    starageTaskId = Mainquest.dwarvenrelic
+                }
+            }
+    },
+    preRequiredStorages = {}, -- No pre-requirement to start
+    taskGoalCnt = 1, -- Must collect 1 relic
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40015, -- Storage tracking the quest
+    taskStorageCnt = 40016, -- Storage tracking completion
+    taskRewards = {
+        experience = 15000, -- Reward XP
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 100
+            },
+            [2] = {
+                name = "Dwarven Pickaxe",
+                itemSid = 2552,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Dwarven Mines",
+    taskSource = "Elder Hjalmar",
+    taskHint = "The relic is in the hands of goblins deep in the mines."
+},
+[9] = {
+    taskNumber = 9,
+    taskName = "The Goblin Warlord",
+    taskDescription = "Elder Hjalmar has discovered that a powerful goblin chieftain, Garnak the Warlord, is preparing an assault on the Dwarven stronghold. You must find and defeat him before it's too late.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Garnak the Warlord",
+                spriteId = 1050
+            }
+        }
+    },
+    preRequiredStorages = {40015}, -- Must have completed "The Stolen Dwarven Relic"
+    taskGoalCnt = 1, -- Kill Garnak the Warlord
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40017, -- Storage tracking the quest
+    taskStorageCnt = 40018, -- Storage tracking completion
+    taskRewards = {
+        experience = 25000, -- Reward XP
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 150
+            },
+            [2] = {
+                name = "Dwarven Battleaxe",
+                itemSid = 2435,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Goblin Lair",
+    taskSource = "Elder Hjalmar",
+    taskHint = "Garnak the Warlord is hiding deep within the Goblin Lair."
+},
+[10] = {
+    taskNumber = 10,
+    taskName = "Echoes of the Past",
+    taskDescription = "Seer Valeria has sent you to explore Shadow Hollow and uncover its lost secrets. You must activate the three Ancient Seals hidden within the ruins.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Ancient Seals Activated",
+                starageTaskId = 40200
+            }
+        }
+    },
+    preRequiredStorages = {}, -- No pre-requirement to start
+    taskGoalCnt = 3, -- Activate 3 Ancient Seals
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40019,
+    taskStorageCnt = 40020,
+    taskRewards = {
+        experience = 10000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 50
+            },
+            [2] = {
+                name = "Shadow Cloak",
+                itemSid = 2656,
+                itemCnt = 1
+            }
+        },
+    },
+    taskZoneName = "Shadow Hollow",
+    taskSource = "Seer Valeria",
+    taskHint = "Seek out the three Ancient Seals deep in Shadow Hollow and activate them."
+},
+[11] = {
+    taskNumber = 11,
+    taskName = "The Rogue's Gambit",
+    taskDescription = "Paladin Aric has learned that a dangerous outlaw, Vael the Betrayer, is hiding deep in Shadow Hollow. Find and defeat him before he strikes again.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Vael the Betrayer",
+                spriteId = 1635
+            }
+        }
+    },
+    preRequiredStorages = {40019}, -- Must complete "Echoes of the Past" first
+    taskGoalCnt = 1, -- Kill Vael the Betrayer
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40021,
+    taskStorageCnt = 40022,
+    taskRewards = {
+        experience = 22000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 120
+            },
+            [2] = {
+                name = "Rogue’s Hood",
+                itemSid = 2660,
+                itemCnt = 1
+            }
+        },
+    },
+    taskZoneName = "Shadow Hollow",
+    taskSource = "Paladin Aric",
+    taskHint = "Vael the Betrayer lurks in the deepest part of Shadow Hollow."
+},
+
+
+
 }
 
 
