@@ -20,5 +20,8 @@
 
 	<event type="reconnect" name="playerReconnect" script="reconnect.lua" />
 
+	<!-- Character Stats -->
+	<event type="extendedopcode" name="CharacterStatsExtended" script="character_stats.lua" />
+	<event type="advance" name="CharacterStatsAdvance" script="character_stats.lua" />
 	
 </creaturescripts>

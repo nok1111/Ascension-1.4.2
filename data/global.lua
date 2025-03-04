@@ -5,7 +5,7 @@ dofile('data/spells/lib/spellSystem.lua')
 ExtendedOPCodes = {
     CODE_GAMESTORE = 103,
     --CODE_TOOLTIP = 105,
-    --CODE_CHARSTATS = 106,
+    CODE_CHARSTATS = 106,
 	CODE_TASKS = 110,
 }
 
