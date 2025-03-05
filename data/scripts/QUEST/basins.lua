@@ -1,11 +1,11 @@
 local transformationConfig = {
-    [30091] = {nextId = 30092, effect = 13}, 
-    [30092] = {nextId = 30093, effect = 14},   
-    [30093] = {nextId = 30094, effect = 14},   
-    [30094] = {nextId = 30091, effect = 15},    
+    [40092] = {nextId = 40093, effect = 13}, 
+    [40093] = {nextId = 40094, effect = 14},   
+    [40094] = {nextId = 40095, effect = 14},   
+    [40095] = {nextId = 40092, effect = 15},    
 }
 
-local randomItemIds = {30091, 30092, 30093, 30094} 
+local randomItemIds = {40092, 40093, 40094, 40095} 
 local revertEffect = CONST_ME_POFF 
 
 local transformAction = Action()
@@ -47,9 +47,9 @@ function transformAction.onUse(player, item, fromPosition, target, toPosition, i
 
                     itemToRevert:transform(item.itemid)
                 end
-            end, 15 * 1000) 
+            end, 60 * 1000) 
         end
-    end, 15 * 1000) 
+    end, 60 * 1000) 
 
     return true
 end
