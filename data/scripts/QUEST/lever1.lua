@@ -2,8 +2,9 @@ local leverConfigs = {
     [1001] = {
        skipItemsCheck = false, -- Require items validation
         itemsToCheck = {
-            { position = Position(560, 774, 8), itemId = 2160 }, -- Example item 1 (e.g., Crystal Coin)
-            { position = Position(561, 775, 8), itemId = 2152 }  -- Example item 2 (e.g., Platinum Coin)
+            { position = Position(548, 765, 8), itemId = 40092 }, 
+            { position = Position(548, 771, 8), itemId = 40093 }, 
+            { position = Position(559, 782, 8), itemId = 40094 }  
         },
         wallPositions = {
             Position(562, 774, 8),
@@ -12,7 +13,8 @@ local leverConfigs = {
         },
         wallItemId = 3361,
         resetTime = 30 * 60 * 1000,
-        message = "The seals are in the correct order and 3 walls collapse revealing a hidden path."
+        message = "The seals are in the correct order and 3 walls collapse revealing a hidden path.",
+        storage_reward = { id = Mainquest.threeseals, value = 3 } -- Storage to be given as a reward
     },
     [1002] = {
         skipItemsCheck = true, -- Bypass itemsToCheck validation
@@ -86,6 +88,12 @@ function leverAction.onUse(player, item, fromPosition, target, toPosition, isHot
                 wallItem:remove()
             end
         end
+    end
+
+    if leverConfig.storage_reward then
+        if player:getStorageValue(leverConfig.storage_reward.id) ~= leverConfig.storage_reward.value then
+           player:setStorageValue(leverConfig.storage_reward.id, leverConfig.storage_reward.value)
+        end       
     end
 
     if leverConfig.message then
