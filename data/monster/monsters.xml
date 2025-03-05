@@ -318,6 +318,7 @@
 	<monster name="Sand Warrior" file="t1 island/sand_warrior.xml" />
 	<monster name="Melghar" file="minotaurs/melghar.xml" />
 	<monster name="The Hollow Queen" file="expedition80/the_hollow_queen.xml" />
+	<monster name="Garnak the Warlord" file="t1 island/garnak_the_warlord.xml" />
 	
 	<!-- 150+ -->
 	<monster name="Orshabaal" file="demonlord/orshabaal.xml" />
