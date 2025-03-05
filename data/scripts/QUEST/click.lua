@@ -25,7 +25,10 @@ local function restoreItem(position, itemId)
     end
 end
 
-function onUse(player, item, fromPosition, target, toPosition)
+local eventAction = Action()
+
+function eventAction.onUse(player, item, fromPosition, target, toPosition)
+    
     local eventConfig = eventConfigs[item.actionid]
     if not eventConfig then
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Nothing happens.")
@@ -71,7 +74,7 @@ function onUse(player, item, fromPosition, target, toPosition)
     return true
 end
 
-local eventAction = Action()
+
 for actionId, _ in pairs(eventConfigs) do
     eventAction:aid(actionId)
 end
