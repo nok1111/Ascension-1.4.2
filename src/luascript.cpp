@@ -2664,6 +2664,12 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Player", "changePetName", LuaScriptInterface::luaPlayerChangePetName);
 	registerMethod("Player", "getPet", LuaScriptInterface::luaPlayerGetPet);
 
+
+	registerMethod("Player", "setCharacterStat", LuaScriptInterface::luaPlayerSetCharacterStat);
+	registerMethod("Player", "addCharacterStat", LuaScriptInterface::luaPlayerAddCharacterStat);
+	registerMethod("Player", "getCharacterStat", LuaScriptInterface::luaPlayerGetCharacterStat);
+
+
 	// @ wings
 	registerMethod("Player", "addWing", LuaScriptInterface::luaPlayerAddWing);
 	registerMethod("Player", "removeWing", LuaScriptInterface::luaPlayerRemoveWing);
@@ -11613,6 +11619,53 @@ int LuaScriptInterface::luaPlayerSetMapShader(lua_State* L)
 	pushBoolean(L, true);
 	return 1;
 }
+
+int LuaScriptInterface::luaPlayerSetCharacterStat(lua_State* L)
+{
+	// player:setCharacterStat(stat, value)
+	Player* player = getUserdata<Player>(L, 1);
+	if (player) {
+		CharacterStats_t stat = getNumber<CharacterStats_t>(L, 2);
+		uint16_t value = getNumber<uint16_t>(L, 3);
+		player->setCharacterStat(stat, value);
+		pushBoolean(L, true);
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerAddCharacterStat(lua_State* L)
+{
+	// player:addCharacterStat(stat, value)
+	Player* player = getUserdata<Player>(L, 1);
+	if (player) {
+		CharacterStats_t stat = getNumber<CharacterStats_t>(L, 2);
+		uint16_t value = getNumber<uint16_t>(L, 3);
+		player->addCharacterStat(stat, value);
+		pushBoolean(L, true);
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaPlayerGetCharacterStat(lua_State* L)
+{
+	// player:getCharacterStat(stat)
+	Player* player = getUserdata<Player>(L, 1);
+	if (player) {
+		CharacterStats_t stat = getNumber<CharacterStats_t>(L, 2);
+		lua_pushnumber(L, player->getCharacterStat(stat));
+	}
+	else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
 // Monster
 int LuaScriptInterface::luaMonsterCreate(lua_State* L)
 {

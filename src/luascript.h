@@ -1108,6 +1108,11 @@ class LuaScriptInterface
 		static int luaPlayerGetItem(lua_State* L);
 		//TOOLTIPSEND
 
+		static int luaPlayerSetCharacterStat(lua_State* L);
+		static int luaPlayerAddCharacterStat(lua_State* L);
+		static int luaPlayerGetCharacterStat(lua_State* L);
+		static int luaPlayerGetAbilitiesString(lua_State* L);
+
 
 		static int luaPlayerSummonPet(lua_State* L);
 		static int luaPlayerRespawnPet(lua_State* L);
