@@ -24,4 +24,6 @@
 	<event type="extendedopcode" name="CharacterStatsExtended" script="character_stats.lua" />
 	<event type="advance" name="CharacterStatsAdvance" script="character_stats.lua" />
 	
+	<event type="kill" name="PlayerKill_quests" script="kill_quests.lua" />
+	
 </creaturescripts>

@@ -33,6 +33,7 @@ function onLogin(player)
 	player:registerEvent("logoutzones")
 	player:registerEvent("PassiveTree")
 	player:registerEvent("ancestralTask")
+	player:registerEvent("PlayerKill_quests")
 
 	--character stats
 	player:registerEvent("CharacterStatsExtended")
