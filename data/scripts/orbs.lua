@@ -49,8 +49,12 @@ local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty
 local Monster_orb = CreatureEvent("monsterorb")
 
 function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
-print("death start")
-    if math.random(100) <= rewardTypes[#rewardTypes].chance and killer and killer:isPlayer() then
+
+   if not killer or not killer:isPlayer() or creature:isBoss() or creature:getMaster() then
+        return
+    end
+
+    if math.random(100) <= rewardTypes[#rewardTypes].chance  then
         local rewardType = rewardTypes[math.random(#rewardTypes)]
        local orbPosition = getAdjacentPosition(creature:getPosition())
 		local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
@@ -165,13 +169,13 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
 			-- Choose a random variation
 			local variation = nameVariations[math.random(#nameVariations)]
 			local bossName = monsterName .. " " .. variation
-			local boss = Game.createMonster(monsterName, position)
+			local boss = Game.createMonster(monsterName, position, true)
 			
 			
 			--shders locals
 			local RedShader = "Monster Might"
 			--end
-			
+			if boss then
 			boss:setMaxHealth(boss:getMaxHealth() * 2) -- Double the HP
 			boss:addHealth(boss:getMaxHealth() * 2)
 			boss:rename(bossName)  -- Rename the boss with the new name
@@ -181,6 +185,7 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
 			boss:attachEffectById(9, true)
 			boss:attachEffectById(25, true)
 			boss:attachEffectById(26, true)
+            end
 			
 			creature:sendTextMessage(MESSAGE_INFO_DESCR, "A death orb has summoned a stronger boss!")
 	else
