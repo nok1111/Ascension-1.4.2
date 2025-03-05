@@ -2,9 +2,10 @@ npcTaskList = {
 		["Sheriff Gordon"] = {2,3,4,5,6},
         ["Gaelia"] = {7},
         ["Elder Hjalmar"] = {8,9}, 
+        ["Seer Valeria"] = {10}, 
 
 
-    -- Garona
+    -- Garona 
 
 }
 
@@ -476,7 +477,7 @@ playersTasks = {
         storages = {
             [1] = {
                 starageName = "Ancient Seals Activated",
-                starageTaskId = 40200
+                starageTaskId = Mainquest.threeseals
             }
         }
     },
@@ -500,6 +501,7 @@ playersTasks = {
                 itemCnt = 1
             }
         },
+         outfits = {},
     },
     taskZoneName = "Shadow Hollow",
     taskSource = "Seer Valeria",
@@ -537,6 +539,7 @@ playersTasks = {
                 itemCnt = 1
             }
         },
+         outfits = {},
     },
     taskZoneName = "Shadow Hollow",
     taskSource = "Paladin Aric",
