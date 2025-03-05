@@ -234,7 +234,7 @@ local zones = {
     [16] = { 
         id = 16,
         name = "Shadow Hollow",
-        monsters = {"skeleton", "witch", "apprentice witch", "poison skeleton", "rogue"},
+        monsters = {"skeleton", "witch", "witch apprentice", "poison skeleton", "rogue"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
         active = false,
@@ -243,8 +243,9 @@ local zones = {
         playercount = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name on entering
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
     },
     [17] = { 
         id = 17,
@@ -558,7 +559,19 @@ local function onEnterZone(player, zoneId)
         zone.active = true
         scheduleNextSpawn(zone)
     end
-    player:setStorageValue(10001, zoneId)
+
+
+    local storageValue = player:getStorageValue(10001)
+    if storageValue ~= zone.id then
+        print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
+        
+       if zone.showZoneName then
+             print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
+            --player:sendTextMessage(MESSAGE_INFO_DESCR, "You have entered the zone " .. zone.name)
+             player:sendExtendedOpcode(76, "You have entered the zone " .. zone.name)
+        end
+        player:setStorageValue(10001, zone.id)
+    end
 
     -- Initialize tiles if they are empty
     if not zone.tiles or zone.tiles == 0 then
@@ -581,16 +594,8 @@ local function onEnterZone(player, zoneId)
     end
     zone.active = true
     
-    if zone then
-    local storageValue = player:getStorageValue(10001)
-    if storageValue ~= zone.id then
-        print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
-        player:setStorageValue(10001, zone.id)
-        if zone.showZoneName then
-            player:sendTextMessage(MESSAGE_INFO_DESCR, "You have entered the zone " .. zone.name)
-        end
-    end
-end
+
+
     
     if not zone.spawnEvent then
     scheduleNextSpawn(zone)
@@ -677,7 +682,10 @@ function zoneIn.onStepIn(creature, item, position, fromPosition, zoneid)
     return true
 end
 
-zoneIn:zoneid(1,2)
+
+for RegZonesId, _ in pairs(zones) do
+    zoneIn:zoneid(RegZonesId)
+end
 zoneIn:register()
 
 
@@ -705,8 +713,11 @@ function zoneOut.onStepOut(creature, item, position, fromPosition, zoneid)
 end
 
 
-zoneOut:zoneid(1,2)
+for RegZonesIdout, _ in pairs(zones) do
+    zoneOut:zoneid(RegZonesIdout)
+end
 zoneOut:register()
+
 
 
 local creatureeventlogin = CreatureEvent("loginzones")
