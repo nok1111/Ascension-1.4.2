@@ -33,4 +33,5 @@ childrenfound = 50002,
 linahelped = 50003,
 emmethelped = 50004,
 dwarvenrelic = 50005,
+threeseals = 50006,
 }
