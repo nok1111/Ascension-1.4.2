@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <spawns>
+	<spawn centerx="493" centery="790" centerz="6" radius="1">
+		<npc name="Elder Hjalmar" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="446" centery="763" centerz="7" radius="1">
 		<npc name="Lina" x="0" y="-1" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -8,5 +11,14 @@
 	</spawn>
 	<spawn centerx="361" centery="810" centerz="7" radius="1">
 		<npc name="Gaelia" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="537" centery="749" centerz="8" radius="1">
+		<npc name="Seer Valeria" x="0" y="1" z="8" spawntime="60" direction="3" />
+	</spawn>
+	<spawn centerx="564" centery="773" centerz="8" radius="1">
+		<npc name="Seer Valeria" x="1" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="564" centery="772" centerz="12" radius="1">
+		<monster name="Garnak the Warlord" x="0" y="0" z="12" spawntime="60" direction="2" />
 	</spawn>
 </spawns>
