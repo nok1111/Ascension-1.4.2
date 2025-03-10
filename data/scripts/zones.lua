@@ -16,6 +16,13 @@ local zones = {
         showZoneName = true, -- Whether to show the zone name on entering  
         despawnmonsters = false, -- Whether to despawn monster when no players are in area
         onStartup = true, -- This will trigger monster spawn at startup
+
+        boss = "Rat King",   -- Boss monster
+        bossKillThreshold = 30, -- Number of kills required to spawn boss
+        killCount = 0,
+    
+         -- Set a predefined boss spawn position or remove for random
+         bossSpawnPosition = Position(100, 200, 7)  -- Example X, Y, Z coordinates
     },
     [2] = {
         id = 2,
@@ -246,6 +253,13 @@ local zones = {
         showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
         onStartup = true, -- This will trigger monster spawn at startup
+
+        boss = "Vael the Betrayer",   -- Boss monster
+        bossKillThreshold = 10, -- Number of kills required to spawn boss
+        killCount = 0,
+    
+         -- Set a predefined boss spawn position or remove for random
+         bossSpawnPosition = Position(554, 757, 10)  -- Example X, Y, Z coordinates
     },
     [17] = { 
         id = 17,
@@ -531,20 +545,78 @@ function spawnMonsters(zone)
     end
 end
 
+local function spawnZoneBoss(zone)
+    if not zone.boss then
+        print("No boss defined for zone: " .. zone.name)
+        return
+    end
+
+    -- Check if the boss is already alive
+    if zone.spawnedBoss and Monster(zone.spawnedBoss) then
+        print("Boss " .. zone.boss .. " is already alive in " .. zone.name .. ", skipping spawn.")
+        return
+    end
+
+    -- Use predefined position if it exists, otherwise get a random one
+    local spawnPosition = zone.bossSpawnPosition or getRandomPositionInZone(zone)
+    
+    if not spawnPosition then
+        print("No valid spawn position for boss in zone: " .. zone.name)
+        return
+    end
+
+    local boss = Game.createMonster(zone.boss, spawnPosition, true)
+    if boss then
+        boss:setShader(RedShader)
+        boss:attachEffectById(9, false)
+        boss:attachEffectById(32, false)
+
+        zone.spawnedBoss = boss:getId()  -- Store the boss ID
+        print("Boss " .. zone.boss .. " spawned in " .. zone.name .. "!")
+
+        -- Notify all players in the zone
+        for _, player in ipairs(Game.getZonePlayersVector(zone.id)) do
+            if player then
+                player:sendExtendedOpcode(76, "The mighty " .. zone.boss .. " has appeared in " .. zone.name .. "!")
+            end
+        end
+    else
+        print("Failed to spawn boss " .. zone.boss .. " in zone " .. zone.name)
+    end
+end
+
 
 
 function onMonsterDeath(monster, killer)
-local zoneIds = Tile(monster:getPosition()):getZoneId()
-print("Monster " .. monster:getName() .. " died in zone IDs: " .. table.concat(zoneIds, ", "))
-for _, zoneId in ipairs(zoneIds) do
-    if zones[zoneId] then
-        local zone = zones[zoneId]
-        zone.spawnedMonsters[monster:getId()] = nil
-        print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
-        scheduleNextSpawn(zone)
+    local zoneIds = Tile(monster:getPosition()):getZoneId()
+    print("Monster " .. monster:getName() .. " died in zone IDs: " .. table.concat(zoneIds, ", "))
+
+    for _, zoneId in ipairs(zoneIds) do
+        if zones[zoneId] then
+            local zone = zones[zoneId]
+            zone.spawnedMonsters[monster:getId()] = nil
+
+            -- If the dead monster is the boss, remove the reference
+            if zone.spawnedBoss == monster:getId() then
+                print("Boss " .. zone.boss .. " has been defeated in " .. zone.name)
+                zone.spawnedBoss = nil
+            end
+
+            -- Increase kill counter
+            zone.killCount = (zone.killCount or 0) + 1
+            print("Kill count for zone " .. zone.name .. ": " .. zone.killCount .. "/" .. zone.bossKillThreshold)
+
+            -- Check if boss should spawn
+            if zone.boss and not zone.spawnedBoss and zone.killCount >= zone.bossKillThreshold then
+                spawnZoneBoss(zone)
+                zone.killCount = 0 -- Reset kill count after boss spawns
+            end
+
+            print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
+            scheduleNextSpawn(zone)
+        end
     end
-end
-return true
+    return true
 end
 
 
@@ -623,6 +695,10 @@ local function despawnMonsters(zone)
         end
     end
 end
+
+
+
+
 
 
 local function onLeaveZone(player, zoneId)
@@ -797,6 +873,8 @@ TargetCombatEvent.onTargetCombat = function(creature, target)
     return RETURNVALUE_NOERROR
 end
 TargetCombatEvent:register()
+
+
 
 
 
