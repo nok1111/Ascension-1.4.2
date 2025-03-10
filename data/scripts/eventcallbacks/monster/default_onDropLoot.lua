@@ -27,7 +27,7 @@ event.onDropLoot = function(self, corpse)
 
         if player then
             goldMultiplier = goldMultiplier
-                + (player:getItemAttributeValue(TOOLTIP_ATTRIBUTE_INCREMENT_COINS) / 100)
+               -- + (player:getItemAttributeValue(TOOLTIP_ATTRIBUTE_INCREMENT_COINS) / 100)
         end
 
         for i = 1, #monsterLoot do
