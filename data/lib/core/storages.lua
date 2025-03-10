@@ -35,7 +35,6 @@ emmethelped = 50004,
 dwarvenrelic = 50005,
 threeseals = 50006,
 brokenpact = 50007,
-corruptedheart = 50008,
-purgingtaint = 50009,
+purgingtaint = 50008,
 
 }

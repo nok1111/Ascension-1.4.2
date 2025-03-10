@@ -627,15 +627,12 @@ playersTasks = {
     taskDescription = "Ranger Captain Dain believes the elves’ corruption is linked to an ancient artifact. An Elven High Priest is rumored to possess it. Retrieve the artifact and uncover the truth.",
     taskGoals = {
         storages = {
-            [1] = {
-                starageName = "Retrieved the Corrupted Heart",
-                starageTaskId = Mainquest.corruptedheart
-            }
+
         },
         items = {
             [1] = {
-                name = "Corrupted Elven Relic",
-                itemSid = 6522, -- Example item ID
+                name = "Corrupted Heart",
+                itemSid = 15431, -- Example item ID
                 count = 1
             }
         }
@@ -655,8 +652,8 @@ playersTasks = {
                 itemCnt = 10
             },
             [2] = {
-                name = "Tainted Elven Cloak",
-                itemSid = 11235,
+                name = "Corrupted Heart",
+                itemSid = 15431,
                 itemCnt = 1
             }
         },
@@ -667,6 +664,44 @@ playersTasks = {
     taskHint = "The Elven High Priest performs dark rituals in the heart of the forest."
 },
 
+[15] = {
+    taskNumber = 15,
+    taskName = "Purging the Taint",
+    taskDescription = "Ranger Captain Dain has instructed you to take the corrupted relic to Vendel Pass, where a sacred basin lies. Seek out Elder Sylwen for guidance.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Cleansed the Corrupted Heart",
+                starageTaskId = Mainquest.purgingtaint
+            }
+        }
+    },
+    preRequiredStorages = {40027}, -- Must complete "The Corrupted Heart" first
+    taskGoalCnt = 1, -- Cleanse the relic
+    taskMinLvl = 18,
+    taskRepeat = false,
+    taskStorageId = 40029,
+    taskStorageCnt = 40030,
+    taskRewards = {
+        experience = 12000,
+        items = {
+            [1] = {
+                name = "crystal coin",
+                itemSid = 2160,
+                itemCnt = 2
+            },
+            [2] = {
+                name = "Blessed Elven Amulet",
+                itemSid = 11236,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Vendel Pass",
+    taskSource = "Ranger Captain Dain",
+    taskHint = "The sacred basin lies on the second floor of the shrine in Vendel Pass."
+},
 
 
 }
