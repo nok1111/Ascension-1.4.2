@@ -546,6 +546,127 @@ playersTasks = {
     taskHint = "Vael the Betrayer lurks in the deepest part of Shadow Hollow."
 },
 
+[12] = {
+    taskNumber = 12,
+    taskName = "The Broken Pact",
+    taskDescription = "Ranger Captain Dain has warned of elven hostility. He believes an outcast elf might know more. Find and speak to the outcast in the woods.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Spoke to the Outcast Elf",
+                starageTaskId = Mainquest.brokenpact
+            }
+        }
+    },
+    preRequiredStorages = {40021}, -- Must complete the previous quest before starting this one
+    taskGoalCnt = 1, -- Speak to the Outcast Elf
+    taskMinLvl = 10,
+    taskRepeat = false,
+    taskStorageId = 40023,
+    taskStorageCnt = 40024,
+    taskRewards = {
+        experience = 5000,
+        items = {
+            [1] = {
+                name = "platinum coin",
+                itemSid = 2152,
+                itemCnt = 5
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Verdant Grove",
+    taskSource = "Ranger Captain Dain",
+    taskHint = "The Outcast Elf hides deep in the woods, away from his kin."
+},
+
+[13] = {
+    taskNumber = 13,
+    taskName = "Stolen Rites",
+    taskDescription = "Ranger Captain Dain has discovered that the elves have begun performing dark rituals using stolen relics. Recover the artifacts before they complete their rites.",
+    taskGoals = {
+       
+        items = {
+            [1] = {
+                name = "Ancient Elven Relic",
+                itemSid = 6521, -- Example item ID
+                count = 3
+            }
+        }
+    },
+    preRequiredStorages = {40023}, -- Must complete "The Broken Pact" first
+    taskGoalCnt = 3, -- Recover 3 stolen relics
+    taskMinLvl = 12,
+    taskRepeat = false,
+    taskStorageId = 40025,
+    taskStorageCnt = 40026,
+    taskRewards = {
+        experience = 7000,
+        items = {
+            [1] = {
+                name = "platinum coin",
+                itemSid = 2152,
+                itemCnt = 8
+            },
+            [2] = {
+                name = "Enchanted Elven Charm",
+                itemSid = 11234,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Verdant Grove",
+    taskSource = "Ranger Captain Dain",
+    taskHint = "The relics are held by Elven Ritualists deep within the Verdant Grove."
+},
+
+[14] = {
+    taskNumber = 14,
+    taskName = "The Corrupted Heart",
+    taskDescription = "Ranger Captain Dain believes the elves’ corruption is linked to an ancient artifact. An Elven High Priest is rumored to possess it. Retrieve the artifact and uncover the truth.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Retrieved the Corrupted Heart",
+                starageTaskId = Mainquest.corruptedheart
+            }
+        },
+        items = {
+            [1] = {
+                name = "Corrupted Elven Relic",
+                itemSid = 6522, -- Example item ID
+                count = 1
+            }
+        }
+    },
+    preRequiredStorages = {40025}, -- Must complete "Stolen Rites" first
+    taskGoalCnt = 1, -- Recover 1 Corrupted Elven Relic
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40027,
+    taskStorageCnt = 40028,
+    taskRewards = {
+        experience = 10000,
+        items = {
+            [1] = {
+                name = "platinum coin",
+                itemSid = 2152,
+                itemCnt = 10
+            },
+            [2] = {
+                name = "Tainted Elven Cloak",
+                itemSid = 11235,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Verdant Grove",
+    taskSource = "Ranger Captain Dain",
+    taskHint = "The Elven High Priest performs dark rituals in the heart of the forest."
+},
+
 
 
 }
