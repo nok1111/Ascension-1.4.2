@@ -49,30 +49,36 @@ local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty
 local Monster_orb = CreatureEvent("monsterorb")
 
 function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
-
-   if not killer or not killer:isPlayer() or creature:isBoss() or creature:getMaster() then
+    if not killer or not killer:isPlayer() or creature:getMaster() then
         return
     end
 
-    if math.random(100) <= rewardTypes[#rewardTypes].chance  then
+    local monsterType = MonsterType(creature:getName())
+    if monsterType and monsterType:isBoss() then
+        return
+    end
+
+    if math.random(100) <= rewardTypes[#rewardTypes].chance then
         local rewardType = rewardTypes[math.random(#rewardTypes)]
-       local orbPosition = getAdjacentPosition(creature:getPosition())
-		local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
+        local orbPosition = getAdjacentPosition(creature:getPosition())
+        local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
+        
         rewardOrb:setCustomAttribute("ownerId", killer:getId())
         rewardOrb:setCustomAttribute("monsterLevel", creature:getMonsterLevel())
         rewardOrb:setCustomAttribute("rewardType", rewardType.type)
-print("death of monster")
+        
+        print("death of monster")
+        
         if rewardType.type == "Death" then
-           
-		  rewardOrb:setCustomAttribute("MonsterName", creature:getName()) 
-		   
+            rewardOrb:setCustomAttribute("MonsterName", creature:getName()) 
         end
-		orbeffectLoop(orbPosition, rewardType.type, rewardType.textcolor)
-        --Game.createAnimatedText(rewardOrb:getPosition(), rewardType.type .. " Orb", TEXTCOLOR_YELLOW)
-		
+        
+        orbeffectLoop(orbPosition, rewardType.type, rewardType.textcolor)
     end
+
     return true
 end
+
 
 Monster_orb:register()
 
