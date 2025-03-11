@@ -100,6 +100,7 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
 
     if eventConfig.give_stat_points then
         player:addStatsPoints(eventConfig.give_stat_points)
+        player:attachEffectById(9, false)
     end
 
     -- Mark event as claimed
