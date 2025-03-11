@@ -36,9 +36,9 @@ function creatureSayCallback(cid, type, msg)
 		ProfessionSystem:sendJobs(player)
 		player:addItem(2553, 1)	
 		
-		if player:getStorageValue(11310) < 1  then
+		if player:getStorageValue(Mainquest.learncrafting) ~= 1  then
 		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, 'Introduction to Crafting completed.')
-		player:setStorageValue(11310, 1)
+		player:setStorageValue(Mainquest.learncrafting, 1)
 		player:sendExtendedOpcode(75, "-Crafting- Are you interested in crafting items to help you on your adventure? Look no further than our crafting system! With four different crafting jobs to choose from Blacksmith, Enchanting, Alchemy, and Cooking you can create a wide variety of useful items. As a Blacksmith, you'll be able to craft weapons and armor using metal ores and other materials. Enchanting allows you to imbue your weapons and armor with magical properties to give you an edge in combat. With Alchemy, you can create potions and other consumable items that provide various benefits. And with Cooking, you can whip up delicious meals that provide temporary buffs to your character's stats. So choose your crafting job wisely and start creating!!-/images/sendmessage/2")
 	
 		end

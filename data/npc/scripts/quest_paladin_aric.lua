@@ -7,19 +7,19 @@ function onThink()
 end
 
 function onCreatureAppear(cid)         
-    npcHandler:onCreatureAppear(cid)	        
+    npcHandler:onCreatureAppear(cid)            
 end
 
 function onCreatureDisappear(cid)      
-    npcHandler:onCreatureDisappear(cid)	    
+    npcHandler:onCreatureDisappear(cid)     
 end
 
 function onCreatureSay(cid, type, msg) 
-    npcHandler:onCreatureSay(cid, type, msg)	
+    npcHandler:onCreatureSay(cid, type, msg)    
 end
 
 function greetCallback(cid)
-    doSendDialogNpc(cid, getNpcCid(), "The elves are not what they once were. Something has changed... something unnatural. \nA lone elf outcast has been spotted east in the woods. If anyone knows the truth, it\'s him. Will you seek him out?", "quests&rewards&close")
+    doSendDialogNpc(cid, getNpcCid(), "The land is restless, and evil festers in the shadows. I have a task for one willing to stand against the darkness. Will you accept the call?", "quests&rewards&close")
     return true             
 end
 

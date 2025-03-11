@@ -2,12 +2,18 @@ npcTaskList = {
 		["Sheriff Gordon"] = {2,3,4,5,6},
         ["Gaelia"] = {7},
         ["Elder Hjalmar"] = {8,9}, 
-        ["Seer Valeria"] = {10}, 
-
+        ["Seer Valeria"] = {10},
+        ["Paladin Aric"] = {11},  
+        ["Ranger Captain Dain"] = {12,13,14,15}, 
 
     -- Garona 
 
 }
+
+--TASK_FREE = 0
+--TASK_START = 1
+--TASK_COMPLETED = 2
+--TASK_REWARD_RECEIVED = 3
 
 playersTasks = {
     [1] = {
@@ -549,7 +555,7 @@ playersTasks = {
 [12] = {
     taskNumber = 12,
     taskName = "The Broken Pact",
-    taskDescription = "Ranger Captain Dain has warned of elven hostility. He believes an outcast elf might know more. Find and speak to the outcast in the woods.",
+    taskDescription = "Ranger Captain Dain has warned of elven hostility. He believes an outcast elf might know more. Find and speak to the outcast east in the woods.",
     taskGoals = {
         storages = {
             [1] = {
@@ -577,7 +583,7 @@ playersTasks = {
     },
     taskZoneName = "Verdant Grove",
     taskSource = "Ranger Captain Dain",
-    taskHint = "The Outcast Elf hides deep in the woods, away from his kin."
+    taskHint = "The Outcast Elf hides east deep in the woods, away from his kin."
 },
 
 [13] = {
@@ -588,9 +594,8 @@ playersTasks = {
        
         items = {
             [1] = {
-                name = "Ancient Elven Relic",
-                itemSid = 6521, -- Example item ID
-                count = 3
+                name = "Ancient Corrupted Relic",
+                itemId = 27632, -- Example item ID
             }
         }
     },
@@ -632,8 +637,7 @@ playersTasks = {
         items = {
             [1] = {
                 name = "Corrupted Heart",
-                itemSid = 15431, -- Example item ID
-                count = 1
+                itemId = 15431, -- Example item ID
             }
         }
     },

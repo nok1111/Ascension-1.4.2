@@ -320,6 +320,7 @@
 	<monster name="The Hollow Queen" file="expedition80/the_hollow_queen.xml" />
 	<monster name="Garnak the Warlord" file="t1 island/garnak_the_warlord.xml" />
 	<monster name="Vael the Betrayer" file="t1 island/vael_the_betrayer.xml" />
+	<monster name="Elven High Priest" file="t1 island/Elven High Priest.xml" />
 	
 	<!-- 150+ -->
 	<monster name="Orshabaal" file="demonlord/orshabaal.xml" />
