@@ -27,6 +27,42 @@ local eventConfigs = {
         give_stat_points = 1, 
         magiceffect = CONST_ME_MAGIC_BLUE
     },
+    [2004] = { -- Another event example
+        --required_storage = 40027,
+        teleportTo = Position(923, 762, 9), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA
+    },
+    [2005] = { -- Another event example
+       -- required_storage = 40027,
+        teleportTo = Position(927, 758, 8), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA
+    },
+    [2006] = { -- Another event example
+       -- required_storage = 40027,
+        teleportTo = Position(955, 784, 8), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA
+    },
+    [2007] = { -- Another event example
+       -- required_storage = 40027,
+        teleportTo = Position(978, 789, 9), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA
+    },
+    [2008] = { -- Another event example
+       -- required_storage = 40027,
+        teleportTo = Position(953, 811, 9), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA
+    },
+    [2009] = { -- Another event example
+       -- required_storage = 40027,
+        teleportTo = Position(955, 784, 8), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA
+    },
 }
 
 local function restoreItem(position, itemId)

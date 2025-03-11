@@ -5,6 +5,8 @@ npcTaskList = {
         ["Seer Valeria"] = {10},
         ["Paladin Aric"] = {11},  
         ["Ranger Captain Dain"] = {12,13,14,15}, 
+        ["Edrin the Hermit"] = {16},  
+        ["Darian"] = {17,18,19}, 
 
     -- Garona 
 
@@ -705,6 +707,300 @@ playersTasks = {
     taskZoneName = "Vendel Pass",
     taskSource = "Ranger Captain Dain",
     taskHint = "The sacred basin lies on the second floor of the shrine in Vendel Pass."
+},
+
+[16] = {
+    taskNumber = 16,
+    taskName = "The Old Man\'s Request",
+    taskDescription = "Edrin, an elderly hermit, needs strong elderwood logs to repair his home. He can no longer gather them himself and seeks your help.",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Elderwood Log",
+                itemId = 8125, -- Example item ID
+            }
+        }
+    },
+    preRequiredStorages = {}, -- Open-world, no pre-requisites
+    taskGoalCnt = 20, -- Collect 20 Elderwood Logs
+    taskMinLvl = 8,
+    taskRepeat = false,
+    taskStorageId = 40031,
+    taskStorageCnt = 40032,
+    taskRewards = {
+        experience = 5000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 100
+            },
+            [2] = {
+                name = "Companion: Forest Spriggan",
+                itemSid = 9200, -- Example pet companion ID
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Deepwoods",
+    taskSource = "Edrin the Hermit",
+    taskHint = "Elderwood trees grow near the cliffs at the edge of the Deepwoods."
+},
+
+[17] = {
+    taskNumber = 17,
+    taskName = "Eternal Love",
+    taskDescription = "Darian grieves for his lost wife, Elyria, who rests in a tomb near the Cursed Cathedral. He speaks in sorrow but does not ask for help directly. She loved red roses in life—perhaps placing one at her grave will bring him peace.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Paid Respects to Elyria",
+                starageTaskId = Mainquest.eternallove
+            }
+        }
+    },
+    preRequiredStorages = {}, -- No pre-requisites
+    taskGoalCnt = 1, -- Visit Elyria’s grave to complete
+    taskMinLvl = 12,
+    taskRepeat = false,
+    taskStorageId = 40035,
+    taskStorageCnt = 40036,
+    taskRewards = {
+        experience = 7500,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 150
+            },
+            [2] = {
+                name = "Faded Locket",
+                itemSid = 9210, -- A memento of Elyria
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Cursed Cathedral Grounds",
+    taskSource = "Darian",
+    taskHint = "A lone grave stands near the cathedral ruins. A red rose placed there may bring peace."
+},
+[18] = {
+    taskNumber = 18,
+    taskName = "The Cursed Signet",
+    taskDescription = "Darian has entrusted you with the Cursed Signet—a gift from Lucella that sealed Elyria’s fate. The only way to break its hold is to cast it into an enchanted witch’s cauldron, hidden somewhere in the ruins. The ritual must be done correctly, or the curse may persist.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Destroyed the Cursed Signet",
+                starageTaskId = Mainquest.cursedsignet
+            }
+        }
+    },
+    preRequiredStorages = {40035}, -- Requires completion of "Eternal Love"
+    taskGoalCnt = 1, -- Destroy the ring at the cauldron
+    taskMinLvl = 14,
+    taskRepeat = false,
+    taskStorageId = 40037,
+    taskStorageCnt = 40038,
+    taskRewards = {
+        experience = 10000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 250
+            },
+            [2] = {
+                name = "Elyria's Blessing",
+                itemSid = 9212, -- A charm that carries Elyria's lingering warmth
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Witch’s Ritual Grounds",
+    taskSource = "Darian",
+    taskHint = "An old cauldron hidden within the ruins may hold the key to breaking the curse."
+},
+
+[19] = {
+    taskNumber = 19,
+    taskName = "Lucella, the Weaving Dread",
+    taskDescription = "Darian has gathered his strength. The time has come to end Lucella’s influence once and for all. Her lair lies deep within the ruined cathedral, where she waits, weaving the last threads of her dark web. Reach her lair, defeat her, and cleanse this land of her corruption.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Lucella, the Weaving Dread",
+                spriteId = 9275 -- Example sprite ID
+            }
+        }
+    },
+    preRequiredStorages = {40037}, -- Requires completion of "The Cursed Signet"
+    taskGoalCnt = 1, -- Kill Lucella
+    taskMinLvl = 16,
+    taskRepeat = false,
+    taskStorageId = 40039,
+    taskStorageCnt = 40040,
+    taskRewards = {
+        experience = 20000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 500
+            },
+            [2] = {
+                name = "Lucella’s Severed Veil",
+                itemSid = 9213, -- A relic from Lucella’s shroud of power
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Lucella’s Web",
+    taskSource = "Darian",
+    taskHint = "Lucella waits within the ruined cathedral, her lair hidden behind veils of shadow. Seek her out and end her dark reign."
+},
+
+[20] = {
+    taskNumber = 20,
+    taskName = "The Whispering Librarian",
+    taskDescription = "A strange old man, who claims to clean the forgotten library, has asked for your help. A girl named Lily is trapped within, sealed by a Blood Flower Seal. He insists she must be freed. But something about him feels... off.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Located Lily's Seal",
+                starageTaskId = Mainquest.findlily
+            }
+        }
+    },
+    preRequiredStorages = {}, -- No prerequisites
+    taskGoalCnt = 1, -- Find the Blood Flower Seal
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40041,
+    taskStorageCnt = 40042,
+    taskRewards = {
+        experience = 12000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 200
+            },
+            [2] = {
+                name = "Old Library Key",
+                itemSid = 9214, -- A rusted key to deeper areas of the library
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Forgotten Library",
+    taskSource = "Old Librarian",
+    taskHint = "The Blood Flower Seal binds Lily somewhere deep inside the Forgotten Library.",
+},
+
+[21] = {
+    taskNumber = 21,
+    taskName = "The Ribbon Beneath the Roots",
+    taskDescription = "The Whispering Librarian insists that Lily’s old ribbon must be recovered to weaken the seal binding her. It was buried long ago beneath the roots of an ancient tree in the swamp. But why was it hidden?",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Lily’s Ribbon",
+                itemId = 9215, -- Unique quest item
+            }
+        }
+    },
+    preRequiredStorages = {40041}, -- Requires "The Whispering Librarian" completion
+    taskGoalCnt = 1, -- Obtain the ribbon
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40043,
+    taskStorageCnt = 40044,
+    taskRewards = {
+        experience = 8500,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 100
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Swamp of Forgotten Voices",
+    taskSource = "The Whispering Librarian",
+    taskHint = "An ancient tree in the swamp hides the ribbon, entangled in its roots.",
+},
+[22] = {
+    taskNumber = 22,
+    taskName = "A Faded Letter",
+    taskDescription = "Deep within the ruins of Lily’s childhood home lies a forgotten letter. The Librarian believes it holds power over her fate. But the house has been abandoned for years… hasn’t it?",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Faded Letter",
+                itemId = 9216, -- Unique quest item
+            }
+        }
+    },
+    preRequiredStorages = {40041}, -- Requires "The Whispering Librarian" completion
+    taskGoalCnt = 1, -- Obtain the letter
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40045,
+    taskStorageCnt = 40046,
+    taskRewards = {
+        experience = 9000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 120
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Ruins of the Forsaken Home",
+    taskSource = "The Whispering Librarian",
+    taskHint = "The letter is locked within the ruined house, waiting to be found.",
+},
+[23] = {
+    taskNumber = 23,
+    taskName = "Shattered Reflections",
+    taskDescription = "Somewhere in the Forgotten Library, a broken mirror remains. The Librarian claims it must be recovered, but something about his urgency feels… wrong.",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Shattered Mirror",
+                itemId = 9217, -- Unique quest item
+            }
+        }
+    },
+    preRequiredStorages = {40041}, -- Requires "The Whispering Librarian" completion
+    taskGoalCnt = 1, -- Obtain the mirror
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40047,
+    taskStorageCnt = 40048,
+    taskRewards = {
+        experience = 9500,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 150
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Forgotten Library",
+    taskSource = "The Whispering Librarian",
+    taskHint = "The mirror lies shattered in the Forgotten Library, yet its reflection lingers.",
 },
 
 

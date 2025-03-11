@@ -36,7 +36,7 @@ function creatureSayCallback(cid, type, msg)
          npcHandler:unGreet(cid) 
 
     elseif msgcontains(msg:lower(), "relic") then
-        doSendDialogNpc(cid, getNpcCid(), "You carry a heavy burden, traveler. That relic should never have been defiled. \nThe sacred basin is above us, on the second floor. Place the artifact in the fire, and let the purification begin.", "proceed&close")
+        doSendDialogNpc(cid, getNpcCid(), "You carry a heavy burden, traveler. That relic should never have been defiled. \nThe sacred basin is above us, on the second floor. Place the artifact in the fire89, and let the purification begin.", "proceed&close")
 
     elseif msgcontains(msg:lower(), "proceed") then
         doSendDialogNpc(cid, getNpcCid(), "Go now. Let the waters cleanse what was tainted.", "close")

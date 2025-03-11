@@ -36,5 +36,8 @@ dwarvenrelic = 50005,
 threeseals = 50006,
 brokenpact = 50007,
 purgingtaint = 50008,
-
+eternallove = 50009,
+cursedsignet = 50010,
+findlily = 50011,
+summonlily = 50012,
 }
