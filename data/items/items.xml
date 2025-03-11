@@ -35878,7 +35878,9 @@
 	
 	
 	
-	
+	<item id="27632" article="a" name="Ancient Corrupted Relic">
+		<attribute key="description" value="Enchanters may want this." />
+	</item>
 	
 	<item id="28995" article="a" name="hammelin's flute">
 		<attribute key="weight" value="10" />
