@@ -308,7 +308,7 @@ local zones = {
     },
     [20] = {
         id = 20,
-        name = "Elves Forest",
+        name = "Verdant Grove",
         monsters = {"elf", "elf scout", "elf arcanist"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
@@ -318,8 +318,9 @@ local zones = {
         playercount = 0,
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name on entering
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
     },
     [21] = {
         id = 21,
@@ -379,6 +380,21 @@ local zones = {
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+    },
+    [25] = {
+        id = 25,
+        name = "Veil of Corruption",
+        monsters = {"earth elemental", "poison skeleton", "earth overlord", "medusa", "bonelord"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
     },
 
@@ -604,10 +620,10 @@ function onMonsterDeath(monster, killer)
 
             -- Increase kill counter
             zone.killCount = (zone.killCount or 0) + 1
-            print("Kill count for zone " .. zone.name .. ": " .. zone.killCount .. "/" .. zone.bossKillThreshold)
-
+           
             -- Check if boss should spawn
             if zone.boss and not zone.spawnedBoss and zone.killCount >= zone.bossKillThreshold then
+
                 spawnZoneBoss(zone)
                 zone.killCount = 0 -- Reset kill count after boss spawns
             end
