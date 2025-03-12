@@ -24,11 +24,20 @@
 	<spawn centerx="361" centery="810" centerz="7" radius="1">
 		<npc name="Gaelia" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="692" centery="819" centerz="7" radius="1">
+		<npc name="Darian" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="467" centery="836" centerz="7" radius="1">
+		<npc name="Edrin the Hermit" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1333" centery="394" centerz="8" radius="1">
 		<monster name="Elven High Priest" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="537" centery="749" centerz="8" radius="1">
 		<npc name="Seer Valeria" x="0" y="1" z="8" spawntime="60" direction="3" />
+	</spawn>
+	<spawn centerx="854" centery="751" centerz="8" radius="1">
+		<npc name="Old Man" x="0" y="-1" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="564" centery="773" centerz="8" radius="1">
 		<npc name="Seer Valeria" x="1" y="0" z="8" spawntime="60" direction="2" />
