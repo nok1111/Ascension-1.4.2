@@ -7,6 +7,7 @@ ExtendedOPCodes = {
     --CODE_TOOLTIP = 105,
     CODE_CHARSTATS = 106,
 	CODE_TASKS = 110,
+	CODE_DUNGEONS = 109,
 }
 
 ropeSpots = {

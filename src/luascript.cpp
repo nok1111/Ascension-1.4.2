@@ -3299,6 +3299,9 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Dungeon", "setStartPosition", LuaScriptInterface::luaDungeonSetStartPosition);
 	registerMethod("Dungeon", "getStartPosition", LuaScriptInterface::luaDungeonGetStartPosition);
 
+	registerMethod("Dungeon", "setEntrancePosition", LuaScriptInterface::luaDungeonSetEntrancePosition);
+	registerMethod("Dungeon", "getEntrancePosition", LuaScriptInterface::luaDungeonGetEntrancePosition);
+
 	registerMethod("Dungeon", "setKillPercent", LuaScriptInterface::luaDungeonSetKillPercent);
 	registerMethod("Dungeon", "getKillPercent", LuaScriptInterface::luaDungeonGetKillPercent);
 

@@ -240,6 +240,18 @@ function Player:onWrapItem(item)
 	end
 end
 
+function Player:onQueueLeave(queue)
+	self:sendExtendedJSONOpcode(DUNGEON_OPCODE, ({topic = "queue", data = {joined = false}}))
+	local dungeon = queue:getDungeon()
+	local players = Game.getPlayers()
+	local inQueue = queue:getPlayersNumber()
+	for _, player in ipairs(players) do
+		player:sendExtendedJSONOpcode(
+			DUNGEON_OPCODE,
+			({topic = "queueUpdate", data = {id = dungeon:getId(), queue = inQueue}})
+		)
+	end
+end
 
 function Player:onSpellCheck(spell)
 	if hasEventCallback(EVENT_CALLBACK_ONSPELLCHECK) then

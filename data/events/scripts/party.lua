@@ -1,4 +1,5 @@
 function Party:onJoin(player)
+	Dungeons.onDungeonPartyJoin(self, player)
 	if hasEventCallback(EVENT_CALLBACK_ONJOIN) then
 		return EventCallback(EVENT_CALLBACK_ONJOIN, self, player)
 	else
@@ -7,6 +8,7 @@ function Party:onJoin(player)
 end
 
 function Party:onLeave(player)
+	Dungeons.onDungeonPartyLeave(self, player)
 	if hasEventCallback(EVENT_CALLBACK_ONLEAVE) then
 		return EventCallback(EVENT_CALLBACK_ONLEAVE, self, player)
 	else
@@ -15,11 +17,16 @@ function Party:onLeave(player)
 end
 
 function Party:onDisband()
+	Dungeons.onDungeonPartyDisband(self)
 	if hasEventCallback(EVENT_CALLBACK_ONDISBAND) then
 		return EventCallback(EVENT_CALLBACK_ONDISBAND, self)
 	else
 		return true
 	end
+end
+
+function Party:onLeaderPass(oldLeader, newLeader)
+	Dungeons.onDungeonPartyLeaderPass(self, oldLeader, newLeader)
 end
 
 function Party:onShareExperience(exp)

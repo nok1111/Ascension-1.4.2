@@ -36,4 +36,14 @@
 	<!-- Monster methods -->
 	<event class="Monster" method="onDropLoot" enabled="1" />
 	<event class="Monster" method="onSpawn" enabled="0" />
+
+
+		<!-- Dungeon Methods -->
+	<event class="Dungeon" method="onQueue" enabled="1" />
+	<event class="Dungeon" method="onPrepare" enabled="1" />
+	<event class="Dungeon" method="onStart" enabled="1" />
+	<event class="Dungeon" method="onSuccess" enabled="1" />
+	<event class="Dungeon" method="onFail" enabled="1" />
+	<event class="Dungeon" method="onPlayerLeft" enabled="1" />
+	<event class="Dungeon" method="onMonstersCount" enabled="1" />
 </events>
