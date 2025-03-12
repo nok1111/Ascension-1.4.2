@@ -51,7 +51,7 @@ local skillIdToName = {
 	[SKILL_MINING] = "mining",
 	[SKILL_HERBALISM] = "herbalism",
 	[SKILL_FISHING] = "fishing",
-	[SKILL_RUNE_SEEKER] = "runeseeking",
+	[SKILL_RUNE_SEEKER] = "woodcutting",
 	[SKILL_TEMPORAL_CRAFTING] = "temporal",
 }
 
