@@ -7,8 +7,7 @@ npcTaskList = {
         ["Ranger Captain Dain"] = {12,13,14,15}, 
         ["Edrin the Hermit"] = {16},  
         ["Darian"] = {17,18,19}, 
-
-    -- Garona 
+        ["Old Librarian"] = {20, 21,22,23}, -- Forgotten Library questline
 
 }
 
@@ -717,7 +716,7 @@ playersTasks = {
         items = {
             [1] = {
                 name = "Elderwood Log",
-                itemId = 8125, -- Example item ID
+                itemId = 39967, -- Example item ID
             }
         }
     },
@@ -775,8 +774,8 @@ playersTasks = {
                 itemCnt = 150
             },
             [2] = {
-                name = "Faded Locket",
-                itemSid = 9210, -- A memento of Elyria
+                name = "Cursed Signet",
+                itemSid = 7708, -- A memento of Elyria
                 itemCnt = 1
             }
         },
@@ -789,7 +788,7 @@ playersTasks = {
 [18] = {
     taskNumber = 18,
     taskName = "The Cursed Signet",
-    taskDescription = "Darian has entrusted you with the Cursed Signet—a gift from Lucella that sealed Elyria’s fate. The only way to break its hold is to cast it into an enchanted witch’s cauldron, hidden somewhere in the ruins. The ritual must be done correctly, or the curse may persist.",
+    taskDescription = "Darian has entrusted you with the Cursed Signet a gift from Lucella that sealed Elyria\'s fate. The only way to break its hold is to cast it into an enchanted witch\'s cauldron, hidden somewhere in the ruins. The ritual must be done correctly, or the curse may persist.",
     taskGoals = {
         storages = {
             [1] = {
@@ -828,7 +827,7 @@ playersTasks = {
 [19] = {
     taskNumber = 19,
     taskName = "Lucella, the Weaving Dread",
-    taskDescription = "Darian has gathered his strength. The time has come to end Lucella’s influence once and for all. Her lair lies deep within the ruined cathedral, where she waits, weaving the last threads of her dark web. Reach her lair, defeat her, and cleanse this land of her corruption.",
+    taskDescription = "Darian has gathered his strength. The time has come to end Lucella\'s influence once and for all. Her lair lies deep within the ruined cathedral, where she waits, weaving the last threads of her dark web. Reach her lair, defeat her, and cleanse this land of her corruption.",
     taskGoals = {
         monsters = {
             [1] = {
@@ -906,12 +905,12 @@ playersTasks = {
 [21] = {
     taskNumber = 21,
     taskName = "The Ribbon Beneath the Roots",
-    taskDescription = "The Whispering Librarian insists that Lily’s old ribbon must be recovered to weaken the seal binding her. It was buried long ago beneath the roots of an ancient tree in the swamp. But why was it hidden?",
+    taskDescription = "The Whispering Librarian insists that Lily\'s old ribbon must be recovered to weaken the seal binding her. It was buried long ago beneath the roots of an ancient tree in the swamp. But why was it hidden?",
     taskGoals = {
         items = {
             [1] = {
-                name = "Lily’s Ribbon",
-                itemId = 9215, -- Unique quest item
+                name = "Lily\'s Ribbon",
+                itemId = 18449, -- Unique quest item
             }
         }
     },
@@ -939,12 +938,12 @@ playersTasks = {
 [22] = {
     taskNumber = 22,
     taskName = "A Faded Letter",
-    taskDescription = "Deep within the ruins of Lily’s childhood home lies a forgotten letter. The Librarian believes it holds power over her fate. But the house has been abandoned for years… hasn’t it?",
+    taskDescription = "Deep within the ruins of Lily\'s childhood home lies a forgotten letter. The Librarian believes it holds power over her fate. But the house has been abandoned for years... hasn’t it?",
     taskGoals = {
         items = {
             [1] = {
                 name = "Faded Letter",
-                itemId = 9216, -- Unique quest item
+                itemId = 14326, -- Unique quest item
             }
         }
     },
@@ -972,12 +971,12 @@ playersTasks = {
 [23] = {
     taskNumber = 23,
     taskName = "Shattered Reflections",
-    taskDescription = "Somewhere in the Forgotten Library, a broken mirror remains. The Librarian claims it must be recovered, but something about his urgency feels… wrong.",
+    taskDescription = "Somewhere in the Forgotten Library, a broken mirror remains. The Librarian claims it must be recovered, but something about his urgency feels... wrong.",
     taskGoals = {
         items = {
             [1] = {
                 name = "Shattered Mirror",
-                itemId = 9217, -- Unique quest item
+                itemId = 40096, -- Unique quest item
             }
         }
     },

@@ -63,6 +63,24 @@ local eventConfigs = {
         message = "A hidden passage has been discovered.",
         magiceffect = CONST_ME_MORTAREA
     },
+    [2010] = { -- Sample with all functions
+        required_storage = 40043, -- Storage required to activate
+        message = "you have found Lily\'s ribbon",      
+        magiceffect = CONST_ME_MORTAREA, -- Effect on the item position      
+        give_items = { {id = 18449, count = 1} }, -- ribbon
+    },
+    [2011] = { -- Sample with all functions
+        required_storage = 40045, -- Storage required to activate
+        message = "you have found Lily\'s Secret Faded Letter",      
+        magiceffect = CONST_ME_MORTAREA, -- Effect on the item position      
+        give_items = { {id = 14326, count = 1} }, -- ribbon
+    },
+    [2012] = { -- Sample with all functions
+        required_storage = 40047, -- Storage required to activate
+        message = "you have found Lily\'s Shattered Mirror",      
+        magiceffect = CONST_ME_MORTAREA, -- Effect on the item position      
+        give_items = { {id = 40096, count = 1} }, -- ribbon
+    },
 }
 
 local function restoreItem(position, itemId)

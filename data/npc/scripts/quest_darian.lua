@@ -28,11 +28,11 @@ function greetCallback(cid)
 
     if lucellaQuest == TASK_REWARD_RECEIVED then
         -- After defeating Lucella
-        doSendDialogNpc(cid, getNpcCid(), "It is done. The sky feels lighter… the land breathes once more. I will carry Elyria’s memory, but for the first time in years... I see a future ahead. Thank you, warrior.", "quests&rewards&close")
+        doSendDialogNpc(cid, getNpcCid(), "It is done. The sky feels lighter... the land breathes once more. I will carry Elyria\'s memory, but for the first time in years... I see a future ahead. Thank you, warrior.", "quests&rewards&close")
 
     elseif cursedSignet == TASK_REWARD_RECEIVED then
         -- After destroying the Cursed Signet (Before starting "Lucella, the Weaving Dread")
-        doSendDialogNpc(cid, getNpcCid(), "No more fear. No more waiting in the dark. I have spent too many years mourning while she thrived. Lucella’s grasp on this world ends now. If you will go... then go knowing that you do not fight alone.", "quests&rewards&close")
+        doSendDialogNpc(cid, getNpcCid(), "No more fear. No more waiting in the dark. I have spent too many years mourning while she thrived. Lucella\'s grasp on this world ends now. If you will go... then go knowing that you do not fight alone.", "quests&rewards&close")
 
     elseif eternalLove == TASK_REWARD_RECEIVED then
         -- After paying respects to Elyria (Before starting "The Cursed Signet")
