@@ -22,6 +22,10 @@ PlayerStorageKeys = {
 	mutatedPumpkin = 30035,
 	achievementsBase = 300000,
 	achievementsCounter = 20000,
+	dungeonsDifficulty = 86597,
+	challengeComplete = 86641, -- 86641 - 87000 reserved (359 challenges limit)
+	challengeProgress = 87001, -- 87001 - 87360 reserved (359)
+	challengePoints = 87360,
 }
 
 GlobalStorageKeys = {
