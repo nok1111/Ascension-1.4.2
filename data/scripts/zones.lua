@@ -465,6 +465,22 @@ local function getNumerPositionInZone(zone)
     return #validPositions  -- Pick a random valid position
 end                       
 
+local function calculateSpawnInterval(zone)
+    local baseMin = zone.spawnIntervalMin
+    local baseMax = zone.spawnIntervalMax
+    local maxReduction = 0.6  -- 60% max reduction
+    local maxPlayers = 10  -- 10+ players give full reduction
+
+    -- Determine reduction factor based on player count
+    local playerFactor = math.min(zone.playercount / maxPlayers, 1)  -- Clamped to max 1 (100%)
+
+    -- Calculate reduced spawn interval
+    local reducedMin = math.floor(baseMin * (1 - (maxReduction * playerFactor)))
+    local reducedMax = math.floor(baseMax * (1 - (maxReduction * playerFactor)))
+
+    return math.random(reducedMin, reducedMax)
+end
+
 
 local function scheduleNextSpawn(zone)
     print("scheduleNextSpawn called for zone " .. zone.id)
@@ -490,20 +506,21 @@ local function scheduleNextSpawn(zone)
         return
     end
 
-    -- Schedule the next spawn
-    local nextSpawnInterval = math.random(zone.spawnIntervalMin, zone.spawnIntervalMax)
+    -- **Use the new dynamic spawn interval based on player count**
+    local nextSpawnInterval = calculateSpawnInterval(zone)
     print("Scheduling next spawn for zone " .. zone.id .. " in " .. nextSpawnInterval .. " ms.")
+
     zone.spawnEvent = addEvent(function()
         -- Ensure conditions are still valid before spawning
         if tablelength(zone.spawnedMonsters) < zone.maxMonsters and zone.active and zone.playercount > 0 then
             spawnMonsters(zone)
-            --scheduleNextSpawn(zone) -- Reschedule only if conditions are met
         else
             print("Spawn loop stopped for zone " .. zone.id .. " (conditions no longer met).")
             zone.spawnEvent = nil
         end
     end, nextSpawnInterval)
 end
+
 
 
 
