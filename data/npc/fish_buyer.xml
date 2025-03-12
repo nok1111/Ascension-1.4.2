@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Fisherman Bacaloa" script="Lubo.lua" walkinterval="2000" floorchange="0" speechbubble="2">
+	<health now="100" max="100" />
+	<look type="1527"/>
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			backpack,1988,2;
+			fishing rod,2580,5;" />
+		<parameter key="shop_sellable" value="
+		burnt scroll,2239,1;
+		
+		crustacean seashell,33790,1;
+		coral seashell,33787,1;
+		
+		scarlet seashell,33789,1;
+		glowy seashell,33788,1;
+		
+		
+		golden seashell,33784,2;
+		
+		
+		petrified seashell,33785,2;
+		
+		
+		seashell,33786,2;
+		
+		
+		
+		
+		
+		cerulean seashell,33783,2;
+		scarlet seashell,33789,2;
+		small gray shark,35424,10;
+		small coral shark,35434,10;
+		small deep shark,35437,10;
+		
+		
+		
+		
+		
+		Young Sea Bass,35427,1;
+		
+		Largemouth Yellowfish,35421,2;
+		Tundra Sea Bass,35422,2;
+		
+		Dark Cerulean Snapper,35423,4;
+		Dark Sea Snapper,35428,4;
+		
+		Red Fin Sea Bass,35420,6;
+		Golden Sea Bass,35426,6;
+		
+		Spring Jewfish,35425,10;
+		Sky Jewfish,35429,10;" />
+	</parameters>
+</npc>

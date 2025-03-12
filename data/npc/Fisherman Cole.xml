@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Fisherman Cole" script="gruma.lua" speechbubble="2">
+	<health now="100" max="100" />
+	<look type="1367" head="115" body="57" legs="120" feet="116" addons="3"/>
+	<parameters>
+		<parameter key="message_greet" value="Welcome! Are you here for a trade?" />
+		<parameter key="message_farewell" value="See you later!" />
+		<parameter key="message_needmoremoney" value="You need more money." />
+		<parameter key="message_decline" value="Fine!" />
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			backpack,1988,50;
+			fishing rod,2580,100;
+			worm,3976,1" />
+			
+			
+		<parameter key="shop_sellable" value="
+			
+			Yellow Sea Bass,35421,10;
+			Tundra Sea Bass,35422,10;
+			Young Sea Bass,35427,8;
+			leech,20138,30000;
+			Coral sea Bass,35430,10;
+			Red Fin Sea Bass,35420,12" />
+	</parameters>
+</npc>

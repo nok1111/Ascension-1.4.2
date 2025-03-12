@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Lubo" script="Lubo.lua" walkinterval="2000" floorchange="0" speechbubble="2">
+	<health now="100" max="100" />
+	<look type="128" head="115" body="39" legs="96" feet="118" addons="3" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			expedition bag,11242,1;
+			backpack,1988,2;
+			basket,1989,1,0;			
+			candelabrum,2057,2;
+			candlestick,2047,2;		
+			crowbar,2416,260;
+			fishing rod,2580,5;
+			machete,2420,1;
+			pick,2553,1;
+			present,1990,1;
+			rope,2120,1;
+			scythe,2550,1;
+			shovel,2554,1;
+			watch,2036,1;
+			worm,3976,1;" />
+		<parameter key="shop_sellable" value="
+			crowbar,2416,1;
+			fishing rod,2580,1;
+			machete,2420,1;
+			pick,2553,1;
+			rope,2120,1;
+			scythe,2550,1;
+			shovel,2554,1;
+			watch,2036,1;
+			wooden hammer,2556,1;" />
+	</parameters>
+</npc>

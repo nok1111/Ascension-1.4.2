@@ -25060,8 +25060,9 @@
 	<item id="14325" name="intelligence reports">
 		<attribute key="weight" value="120" />
 	</item>
-	<item id="14326" article="a" name="secret letter">
+	<item id="14326" article="a" name="Lily's Faded Letter">
 		<attribute key="weight" value="50" />
+		<attribute key="description" value="this item is part of a quest." />
 	</item>
 	<item id="14327" article="a" name="shapeshifter ring">
 		<attribute key="description" value="It will only work for a few days after the challenge of Kurik has been won." />
@@ -27567,9 +27568,9 @@
 		<attribute key="weight" value="200" />
 		<attribute key="description" value="Lothar might be able to tell you more about it (main city)." />
 	</item>
-	<item id="18449" article="a" name="decorative ribbon">
+	<item id="18449" article="a" name="Lily's ribbon">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="Lothar might be able to tell you more about it (main city)." />
+		<attribute key="description" value="this item is part of a quest." />
 	</item>
 	<item id="18450" article="a" name="crystalline sword">
 		<attribute key="weight" value="4800" />
@@ -41786,10 +41787,14 @@
         <attribute key="weight" value="1" />
     </item>
 	
-	
 	<item id="39942" article="a" name="ice spike">
 		<attribute key="decayTo" value="0" />
 		<attribute key="duration" value="7" />
 	</item>
+
+	<item id="40096" article="a" name="Lily's Shattered Mirror">
+        <attribute key="description" value="this item is part of a quest." />
+        <attribute key="weight" value="55" />
+    </item>
 	
 </items>

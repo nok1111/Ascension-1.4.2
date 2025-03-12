@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Alchemist Hanna" script="alchemist_hanna.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="1670" head="96" body="65" legs="0" feet="96" addons="2" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			small health Potion,35768,2;
+			Medium health Potion,35769,3;
+			Big health Potion,35782,4;				
+			small mana Potion,35765,2;
+			Medium mana Potion,35766,3;
+			Big mana Potion,35767,4;				
+			small spirit Potion,35764,2;
+			Medium spirit Potion,35763,3;
+			Big spirit Potion,35762,4" />
+		<parameter key="shop_sellable" value="
+			small health Potion,35768,1;
+			Medium health Potion,35769,2;
+			Big health Potion,35782,3;				
+			small mana Potion,35765,1;
+			Medium mana Potion,35766,2;
+			Big mana Potion,35767,3;				
+			small spirit Potion,35764,1;
+			Medium spirit Potion,35763,2;
+			Big spirit Potion,35762,3;" />
+	</parameters>
+</npc>
