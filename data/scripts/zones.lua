@@ -22,7 +22,11 @@ local zones = {
         killCount = 0,
     
          -- Set a predefined boss spawn position or remove for random
-         bossSpawnPosition = Position(100, 200, 7)  -- Example X, Y, Z coordinates
+         bossSpawnPosition = Position(100, 200, 7),  -- Example X, Y, Z coordinates
+          -- WEATHER SETTINGS
+         weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
     },
     [2] = {
         id = 2,
@@ -39,6 +43,12 @@ local zones = {
         showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
         onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
     },
     [3] = {
         id = 3,
@@ -55,6 +65,10 @@ local zones = {
         showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
         onStartup = true, -- This will trigger monster spawn at startup
+
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
     },
     [4] = {
         id = 4,
@@ -71,6 +85,10 @@ local zones = {
         showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
         onStartup = true, -- This will trigger monster spawn at startup
+
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
     },
     [5] = {
         id = 5,
@@ -654,56 +672,56 @@ end
 
 
 local function onEnterZone(player, zoneId)
-      
     local zone = zones[zoneId]
     if not zone then
         return
     end
+
     print("onEnterZone")
     if not zone.active then
         zone.active = true
         scheduleNextSpawn(zone)
     end
 
-
     local storageValue = player:getStorageValue(10001)
     if storageValue ~= zone.id then
         print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
-        
-       if zone.showZoneName then
-             print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
-            --player:sendTextMessage(MESSAGE_INFO_DESCR, "You have entered the zone " .. zone.name)
-             player:sendExtendedOpcode(76, "You have entered the zone " .. zone.name)
+
+        if zone.showZoneName then
+            player:sendExtendedOpcode(76, "You have entered the zone " .. zone.name)
         end
         player:setStorageValue(10001, zone.id)
+    end
+
+    -- Apply the currently active weather of the zone
+    if zone.activeWeather then
+        player:setMapShader(zone.activeWeather, true)
+        print("Player " .. player:getName() .. " received weather " .. zone.activeWeather)
     end
 
     -- Initialize tiles if they are empty
     if not zone.tiles or zone.tiles == 0 then
         local tileCount = getNumerPositionInZone(zoneId)
-        print("number of tiles: " .. tileCount)
+        print("Number of tiles: " .. tileCount)
         zone.tiles = tileCount
         zone.maxMonsters = (tileCount / zonemax_monsters_divider) + 1
     else
-        print("Zone " .. zoneId .. " already has tiles: it has " .. zone.tiles .. " tiles. Max monsters: " .. zone.maxMonsters)
+        print("Zone " .. zoneId .. " already has tiles: " .. zone.tiles .. " tiles. Max monsters: " .. zone.maxMonsters)
     end
 
-    -- Initialize players count
+    -- Initialize player count
     if not zone.playercount or zone.playercount == 0 then
         local newplayerscount = Game.getZonePlayerCount(zoneId)
-        print("number of players: " .. newplayerscount)
+        print("Number of players: " .. newplayerscount)
         zone.playercount = newplayerscount
     else
         zone.playercount = zone.playercount + 1 -- Increment player count
-        print("Zone " .. zoneId .. " already has players: it now has " .. zone.playercount)
+        print("Zone " .. zoneId .. " already has players: " .. zone.playercount)
     end
     zone.active = true
-    
 
-
-    
     if not zone.spawnEvent then
-    scheduleNextSpawn(zone)
+        scheduleNextSpawn(zone)
     end
 end
 
@@ -737,16 +755,17 @@ end
 local function onLeaveZone(player, zoneId)
     print("Player " .. player:getName() .. " leaving zone ID: " .. zoneId)
     player:setStorageValue(10001, 0)
-   -- player:sendTextMessage(MESSAGE_INFO_DESCR, "You have left the zone.")
     activePlayers[player:getId()] = nil
     
-     if zones[zoneId].playercount < 1 then
+    -- Reset weather to default when leaving
+    player:setMapShader("Map - Default", true)
+
+    if zones[zoneId].playercount < 1 then
         zones[zoneId].active = false
         despawnMonsters(zones[zoneId])
-       
-        else
-         zones[zoneId].playercount = zones[zoneId].playercount - 1
-          print("new zone count: " .. zones[zoneId].playercount)
+    else
+        zones[zoneId].playercount = zones[zoneId].playercount - 1
+        print("New zone count: " .. zones[zoneId].playercount)
     end
 end
 
@@ -834,19 +853,25 @@ local creatureeventlogin = CreatureEvent("loginzones")
 function creatureeventlogin.onLogin(player)
     local tile = Tile(player:getPosition())
     if tile then
-        local zoneIds = tile:getZoneId() -- Assuming this returns a table of IDs
+        local zoneIds = tile:getZoneId() -- Get all zones the tile belongs to
         local uniqueZones = {}
 
         for _, zoneId in ipairs(zoneIds) do
             if zoneId > 1 and not uniqueZones[zoneId] then
                 uniqueZones[zoneId] = true -- Mark this zone ID as processed
                 onEnterZone(player, zoneId)
+
+                -- Check if this zone has active weather
+                local zone = zones[zoneId]
+                if zone and zone.activeWeather then
+                    player:setMapShader(zone.activeWeather, true)
+                    print("Applied weather " .. zone.activeWeather .. " for " .. player:getName() .. " on login")
+                end
             end
         end
     end
     return true
 end
-
 
 creatureeventlogin:register()
 
@@ -856,9 +881,10 @@ local creatureeventlogout = CreatureEvent("logoutzones")
 
 function creatureeventlogout.onLogout(player)
     player:unregisterEvent("zone_death")
-     local tile = Tile(player:getPosition())
+    local tile = Tile(player:getPosition())
+
     if tile then
-        local zoneIds = tile:getZoneId() -- Assuming this returns a table of IDs
+        local zoneIds = tile:getZoneId() -- Get all zones the tile belongs to
         local uniqueZones = {}
 
         for _, zoneId in ipairs(zoneIds) do
@@ -868,7 +894,10 @@ function creatureeventlogout.onLogout(player)
             end
         end
     end
-        
+
+    -- Reset the player's weather to default on logout
+    player:setMapShader("Map - Default", true)
+    print("Reset weather for " .. player:getName() .. " on logout.")
 
     return true
 end
@@ -943,6 +972,41 @@ local function populateZonesOnStartup()
 
     print("All startup zones populated with monsters.")
 end
+
+local globalevent = GlobalEvent("WeatherUpdate")
+
+function globalevent.onThink()
+    for _, zone in pairs(zones) do
+        if zone.weather and #zone.weather > 0 then
+            -- If weather is forced, keep it the same
+            if zone.forceWeather then
+                zone.activeWeather = zone.weather[1]
+            else
+                -- Randomize weather if not already set or after a while
+                if not zone.activeWeather or math.random(1, 10) > 5 then -- 30% chance to change
+                    if math.random(1, 100) <= 50 then  -- 70% chance for default weather
+                        zone.activeWeather = "Map - Default"
+                    else
+                        zone.activeWeather = zone.weather[math.random(#zone.weather)] -- Pick from defined weather
+                    end
+                end
+            end
+
+            -- Apply the weather to players currently in the zone
+            for _, player in ipairs(Game.getZonePlayersVector(zone.id)) do
+                if player then
+                    player:setMapShader(zone.activeWeather, true)
+                    print("Updated weather for player " .. player:getName() .. " in zone " .. zone.name .. " to " .. zone.activeWeather)
+                end
+            end
+        end
+    end
+    return true
+end
+
+globalevent:interval(10000) -- Runs every 60 seconds
+globalevent:register()
+
 
 
 
