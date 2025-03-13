@@ -44,4 +44,5 @@ eternallove = 50009,
 cursedsignet = 50010,
 findlily = 50011,
 summonlily = 50012,
+
 }
