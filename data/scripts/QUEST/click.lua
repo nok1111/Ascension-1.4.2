@@ -1,3 +1,5 @@
+local MONSTER_DESPAWN_TIME = 5 * 60 * 1000 -- 5 minutes in milliseconds
+
 local eventConfigs = {
     [0000] = { -- Sample with all functions
         required_storage = 5000, -- Storage required to activate
@@ -8,6 +10,9 @@ local eventConfigs = {
         transform_item = { from = 2160, to = 2152, time = 5000 }, -- Transform an item (Crystal Coin to Platinum Coin for 5 sec)
         give_items = { {id = 2160, count = 10} }, -- Grants 10 Crystal Coins
         give_stat_points = 5, -- Grants 5 stat points
+         summon_monsters = {
+            {name = "Angry Grave Guardian", position = Position(1052, 1342, 7), count = 1} -- Adjust position accordingly
+        }
     },
     [2001] = { -- Another event example
         required_storage = 40015,
@@ -81,14 +86,67 @@ local eventConfigs = {
         magiceffect = CONST_ME_MORTAREA, -- Effect on the item position      
         give_items = { {id = 40096, count = 1} }, -- ribbon
     },
+     [2013] = { -- Grave-Robbing Event
+        required_storage = 40053, -- Must have started the quest
+        storage_reward = { id = Mainquest.graverobber, value = 1 }, -- Mark quest as completed
+        message = "As you dig, the ground trembles... something awakens!",
+        magiceffect = CONST_ME_MORTAREA, -- Dark magic effect
+         summon_monsters = {
+            {name = "Mr. Ludrich", position = Position(460, 633, 8), count = 1} -- Adjust position accordingly
+        }
+    },
+     [2014] = { -- Grave-Robbing Event
+        required_storage = 40055, -- Must have started the quest
+        storage_reward = { id = Mainquest.wronggrave, value = 1 }, -- Mark quest as completed
+        message = "As you dig, the ground trembles... something awakens!",
+        magiceffect = CONST_ME_MORTAREA, -- Dark magic effect
+         summon_monsters = {
+            {name = "skeleton", position = Position(442, 667, 9), count = 1}, -- Adjust position accordingly
+            {name = "skeleton", position = Position(443, 664, 9), count = 1}, -- Adjust position accordingly
+            {name = "skeleton", position = Position(446, 664, 9), count = 1}, -- Adjust position accordingly
+            {name = "skeleton", position = Position(447, 665, 9), count = 1}, -- Adjust position accordingly
+            {name = "skeleton", position = Position(448, 665, 9), count = 1}, -- Adjust position accordingly
+        }
+    },
+     [2015] = { -- Cleansing the Spirit at The Ember Shrine
+        required_storage = 40057, -- Must have started the quest
+        storage_reward = { id = Mainquest.hauntingspirit, value = 1 }, -- Mark quest as completed
+        message = "The Ember Shrine flares up, consuming the dark energy around you!",
+        magiceffect = 170, -- Fire effect
+        transform_item = { from = 9948, to = 9949, time = 45000 }, -- Transform an item (Crystal Coin to Platinum Coin for 5 sec)
+    },
+    
 }
 
-local function restoreItem(position, itemId)
+local function restoreItem(position, itemId, actionId)
     local tile = Tile(position)
     if tile then
         local item = tile:getItemById(itemId)
         if not item then
-            Game.createItem(itemId, 1, position)
+            local restoredItem = Game.createItem(itemId, 1, position)
+            if restoredItem and actionId then
+                restoredItem:setActionId(actionId)
+            end
+        end
+    end
+end
+
+local function removeMonster(monsterId)
+    local monster = Monster(monsterId)
+    if monster then
+        monster:say("The spirit fades back into the abyss...", TALKTYPE_MONSTER_YELL)
+        monster:getPosition():sendMagicEffect(CONST_ME_POFF)
+        monster:remove()
+    end
+end
+
+local function summonMonsters(config)
+    for _, monsterData in ipairs(config.summon_monsters) do
+        for i = 1, monsterData.count do
+            local monster = Game.createMonster(monsterData.name, monsterData.position)
+            if monster then
+                addEvent(removeMonster, MONSTER_DESPAWN_TIME, monster:getId())
+            end
         end
     end
 end
@@ -140,8 +198,10 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
         if tile then
             local item = tile:getItemById(eventConfig.transform_item.from)
             if item then
+                local oldActionId = item:getActionId()
                 item:transform(eventConfig.transform_item.to)
-                addEvent(restoreItem, eventConfig.transform_item.time, fromPosition, eventConfig.transform_item.from)
+                item:setActionId(0)
+                addEvent(restoreItem, eventConfig.transform_item.time, fromPosition, eventConfig.transform_item.from, oldActionId)
             end
         end
     end
@@ -157,6 +217,9 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
         player:attachEffectById(9, false)
     end
 
+    if eventConfig.summon_monsters then
+        summonMonsters(eventConfig)
+    end
     -- Mark event as claimed
     player:setStorageValue(eventConfigStorage, 1)
 
