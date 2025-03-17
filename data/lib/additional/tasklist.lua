@@ -8,6 +8,9 @@ npcTaskList = {
         ["Edrin the Hermit"] = {16},  
         ["Darian"] = {17,18,19}, 
         ["Old Librarian"] = {20, 21,22,23}, -- Forgotten Library questline
+        ["Old Man Garrek"] = {24},
+        ["Gerald the Grave Robber"] = {25,26,27},
+
 
 }
 
@@ -1001,6 +1004,155 @@ playersTasks = {
     taskSource = "The Whispering Librarian",
     taskHint = "The mirror lies shattered in the Forgotten Library, yet its reflection lingers.",
 },
+[24] = {
+    taskNumber = 24,
+    taskName = "The Debt Collector",
+    taskDescription = "Old Man Garrek is furious after being tricked into funding an \'Invisible Armor\' scam. He wants his 10 platinum coins back from Merchant Tobias. Retrieve the debt and return to Garrek.",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Platinum Coins",
+                itemId = 2152, -- Platinum Coin ID
+            }
+        }
+    },
+    preRequiredStorages = {}, -- No pre-requirement
+    taskGoalCnt = 10, -- Collect 10 platinum coins from Tobias
+    taskMinLvl = 5, -- Open-world, low-level quest
+    taskRepeat = false,
+    taskStorageId = 40051,
+    taskStorageCnt = 40052,
+    taskRewards = {
+        experience = 3000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 100
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Garona",
+    taskSource = "Old Man Garrek",
+    taskHint = "Merchant Tobias owes Garrek 10 platinum coins. Retrieve the debt."
+},
+[25] = {
+    taskNumber = 25,
+    taskName = "Grave Consequences",
+    taskDescription = "Gerald the Grave Robber insists there\'s a priceless heirloom buried in an old grave. Dig it up and retrieve the item... but beware, not all the dead rest peacefully.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Summoned the Guardian",
+                starageTaskId = Mainquest.graverobber
+            }
+        }
+    },
+    preRequiredStorages = {}, -- Open-world quest, no pre-requisites
+    taskGoalCnt = 1, -- Trigger the event once
+    taskMinLvl = 10, -- Low-level, open-world quest
+    taskRepeat = false,
+    taskStorageId = 40053,
+    taskStorageCnt = 40054,
+    taskRewards = {
+        experience = 7500,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 100
+            },
+            [2] = {
+                name = "Rusty Spoon",
+                itemSid = 2159, -- Junk item as a hilarious "heirloom"
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Old Graveyard",
+    taskSource = "Gerald the Grave Robber",
+    taskHint = "Find the marked grave in the Old Graveyard and dig up the 'heirloom'."
+},
+
+[26] = {
+    taskNumber = 26,
+    taskName = "Wrong Body, Wrong Grave",
+    taskDescription = "The grave robber insists he buried the wrong body in the wrong grave. Find the correct grave and retrieve the corpse... or whatever\'s left of it.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Found the Wrong Grave",
+                starageTaskId = Mainquest.wronggrave
+            }
+        }
+    },
+    preRequiredStorages = {40053},
+    taskGoalCnt = 1,
+    taskMinLvl = 10,
+    taskRepeat = false,
+    taskStorageId = 40055,
+    taskStorageCnt = 40056,
+    taskRewards = {
+        experience = 7500,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 100
+            },
+            [2] = {
+                name = "Bone Charm",
+                itemSid = 9201,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Graveyard of the Lost",
+    taskSource = "Gerald the Grave Robber",
+    taskHint = "Dig carefully. You might wake something up."
+},
+
+[27] = {
+    taskNumber = 27,
+    taskName = "I See Dead People... Now",
+    taskDescription = "After retrieving the corpse, Gerald has been seeing unsettling visions. He believes the dead person is haunting him. Find a way to cleanse the spirit... or convince it to move on. Rumors speak of a cursed place in the west, once a thriving forest, now reduced to the Ashen Grove, a land of scorched trees and lingering embers. Perhaps you\'ll find answers there.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Banished the Haunting Spirit",
+                starageTaskId = Mainquest.hauntingspirit
+            }
+        }
+    },
+    preRequiredStorages = {40055},
+    taskGoalCnt = 1,
+    taskMinLvl = 12,
+    taskRepeat = false,
+    taskStorageId = 40057,
+    taskStorageCnt = 40058,
+    taskRewards = {
+        experience = 9000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 150
+            },
+            [2] = {
+                name = "Spirit Ward Amulet",
+                itemSid = 9202,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Graveyard of the Lost",
+    taskSource = "Gerald the Grave Robber",
+    taskHint = "Find a way to put the spirit to rest before Gerald loses his mind."
+}
 
 
 }

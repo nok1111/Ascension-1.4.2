@@ -44,5 +44,7 @@ eternallove = 50009,
 cursedsignet = 50010,
 findlily = 50011,
 summonlily = 50012,
-
+graverobber = 50013,
+wronggrave = 50014,
+hauntingspirit = 50015,
 }
