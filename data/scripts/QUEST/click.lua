@@ -25,7 +25,8 @@ local eventConfigs = {
         required_storage = 40027,
         teleportTo = Position(1386, 384, 8), -- Optional teleport destination
         message = "A hidden passage has been discovered.",
-        magiceffect = CONST_ME_MAGIC_BLUE
+        magiceffect = CONST_ME_MAGIC_BLUE,
+        is_teleport = true -- Mark this as a teleport event
     },
     [2003] = { -- Another event example
         message = "A surge of energy flows through you, granting you new power!",
@@ -36,37 +37,43 @@ local eventConfigs = {
         --required_storage = 40027,
         teleportTo = Position(923, 762, 9), -- Optional teleport destination
         message = "A hidden passage has been discovered.",
-        magiceffect = CONST_ME_MORTAREA
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
     },
     [2005] = { -- Another event example
        -- required_storage = 40027,
         teleportTo = Position(927, 758, 8), -- Optional teleport destination
         message = "A hidden passage has been discovered.",
-        magiceffect = CONST_ME_MORTAREA
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
     },
     [2006] = { -- Another event example
        -- required_storage = 40027,
         teleportTo = Position(955, 784, 8), -- Optional teleport destination
         message = "A hidden passage has been discovered.",
-        magiceffect = CONST_ME_MORTAREA
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
     },
     [2007] = { -- Another event example
        -- required_storage = 40027,
         teleportTo = Position(978, 789, 9), -- Optional teleport destination
         message = "A hidden passage has been discovered.",
-        magiceffect = CONST_ME_MORTAREA
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
     },
     [2008] = { -- Another event example
        -- required_storage = 40027,
         teleportTo = Position(953, 811, 9), -- Optional teleport destination
         message = "A hidden passage has been discovered.",
-        magiceffect = CONST_ME_MORTAREA
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
     },
     [2009] = { -- Another event example
        -- required_storage = 40027,
         teleportTo = Position(955, 784, 8), -- Optional teleport destination
         message = "A hidden passage has been discovered.",
-        magiceffect = CONST_ME_MORTAREA
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
     },
     [2010] = { -- Sample with all functions
         required_storage = 40043, -- Storage required to activate
@@ -115,7 +122,7 @@ local eventConfigs = {
         magiceffect = 170, -- Fire effect
         transform_item = { from = 9948, to = 9949, time = 45000 }, -- Transform an item (Crystal Coin to Platinum Coin for 5 sec)
     },
-    
+
 }
 
 local function restoreItem(position, itemId, actionId)
@@ -162,8 +169,8 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
 
     local eventConfigStorage = item.actionid -- Use actionId as unique storage key
 
-    -- Prevent re-claiming the event
-    if player:getStorageValue(eventConfigStorage) == 1 then
+     -- Prevent re-claiming the event (except for teleports)
+    if not eventConfig.is_teleport and player:getStorageValue(item.actionid) == 1 then
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already claimed this.")
         return true
     end
@@ -220,8 +227,11 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
     if eventConfig.summon_monsters then
         summonMonsters(eventConfig)
     end
-    -- Mark event as claimed
-    player:setStorageValue(eventConfigStorage, 1)
+    
+    -- Mark event as claimed (except for teleport events)
+    if not eventConfig.is_teleport then
+        player:setStorageValue(item.actionid, 1)
+    end
 
     return true
 end

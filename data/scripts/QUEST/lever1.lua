@@ -48,6 +48,17 @@ local leverConfigs = {
         resetTime = 10 * 60 * 1000,
         message = "xxxxx"
     },
+    [1005] = { -- New lever type that skips items check
+        skipItemsCheck = true, -- Bypass itemsToCheck validation
+        wallPositions = {
+            Position(929, 791, 9),
+            Position(929, 792, 9),
+            Position(929, 793, 9)
+        },
+        wallItemId = 1546,
+        resetTime = 10 * 60 * 1000,
+        message = "xxxxx"
+    },
 }
 
 local leverAction = Action()
