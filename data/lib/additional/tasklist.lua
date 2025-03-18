@@ -7,9 +7,10 @@ npcTaskList = {
         ["Ranger Captain Dain"] = {12,13,14,15}, 
         ["Edrin the Hermit"] = {16},  
         ["Darian"] = {17,18,19}, 
-        ["Old Librarian"] = {20, 21,22,23}, -- Forgotten Library questline
+        ["Old Man"] = {20, 21,22,23,28}, -- Forgotten Library questline
         ["Old Man Garrek"] = {24},
         ["Gerald the Grave Robber"] = {25,26,27},
+        ["Lily"] = {28,29}, 
 
 
 }
@@ -1152,7 +1153,85 @@ playersTasks = {
     taskZoneName = "Graveyard of the Lost",
     taskSource = "Gerald the Grave Robber",
     taskHint = "Find a way to put the spirit to rest before Gerald loses his mind."
-}
+},
+
+[28] = {
+    taskNumber = 28,
+    taskName = "The Summoning of Lily",
+    taskDescription = "You have gathered Lily\'s Ribbon, the Faded Letter, and the Shattered Mirror. Now, use them to summon Lily at the Forgotten Library’s ritual site. But be careful... something else might answer the call.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Summoned Lily",
+                starageTaskId = Mainquest.summonlily
+            }
+        }
+    },
+    preRequiredStorages = {40043, 40045, 40047}, -- Requires having collected the three items
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40059,
+    taskStorageCnt = 40060,
+    taskRewards = {
+        experience = 15000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 200
+            },
+            [2] = {
+                name = "Lily's Tear",
+                itemSid = 9203,
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Forgotten Library",
+    taskSource = "Old Librarian",
+    taskHint = "Find the Lily\'s coffin in the last flor of the Forgotten Library and free lily."
+},
+[29] = {
+    taskNumber = 29,
+    taskName = "Malrith, the Hungering Shade",
+    taskDescription = "The time has come. Malrith, the Hungering Shade, has awakened, drawn by Lily\'s release. His form lurks in the depths of the Forgotten Library, feeding on the souls of the damned. Slay him before he consumes everything.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Malrith, the Hungering Shade",
+                spriteId = 9876 -- Adjust to match sprite ID
+            }
+        }
+    },
+    preRequiredStorages = {40059}, -- Requires summoning Lily
+    taskGoalCnt = 1, -- Kill Malrith
+    taskMinLvl = 20, -- Recommended level
+    taskRepeat = false,
+    taskStorageId = 40061, -- Next sequential storage ID
+    taskStorageCnt = 40062, -- Next sequential counter
+    taskRewards = {
+        experience = 35000,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 500
+            },
+            [2] = {
+                name = "Malrith\'s Cursed Veil",
+                itemSid = 9215, -- Custom quest item
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Forgotten Library - Shadow Vault",
+    taskSource = "Lily",
+    taskHint = "Malrith lurks in the depths of the Forgotten Library, waiting to devour all who dare to face him."
+},
+
 
 
 }

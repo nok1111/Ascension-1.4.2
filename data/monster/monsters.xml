@@ -321,6 +321,7 @@
 	<monster name="Garnak the Warlord" file="t1 island/garnak_the_warlord.xml" />
 	<monster name="Vael the Betrayer" file="t1 island/vael_the_betrayer.xml" />
 	<monster name="Elven High Priest" file="t1 island/Elven High Priest.xml" />
+	<monster name="Malrith, the Hungering Shade" file="t1 island/Malrith the Hungering Shade.xml" />
 	
 	<!-- 150+ -->
 	<monster name="Orshabaal" file="demonlord/orshabaal.xml" />
@@ -607,8 +608,9 @@
 	<monster name="Desert Witch" file="garona/desert_witch.xml" />
 	<monster name="Dark Essence" file="garona/dark_essence.xml" />
 	<monster name="Desert Bandit" file="garona/desert_bandit.xml" />
-		<monster name="Death Bender" file="garona/death_bender2.xml" />
+	<monster name="Death Bender" file="garona/death_bender2.xml" />
 	<monster name="Mr. Ludrich" file="garona/mr_ludrich.xml" />
+	
 	
 		<!-- dungeon 1 ash depths -->
 		<monster name="Flesh Eater" file="dungeon1/flesh_eater.xml" />
