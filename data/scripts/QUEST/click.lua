@@ -123,6 +123,14 @@ local eventConfigs = {
         transform_item = { from = 9948, to = 9949, time = 45000 }, -- Transform an item (Crystal Coin to Platinum Coin for 5 sec)
     },
 
+    --2016 used
+    --2017 used
+    --2018 used
+
+    --2019 used
+    --2020 used
+    --2021 used
+
 }
 
 local function restoreItem(position, itemId, actionId)

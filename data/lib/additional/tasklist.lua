@@ -1231,7 +1231,145 @@ playersTasks = {
     taskSource = "Lily",
     taskHint = "Malrith lurks in the depths of the Forgotten Library, waiting to devour all who dare to face him."
 },
-
+[30] = {
+    taskNumber = 30,
+    taskName = "Echoes in the Fog",
+    taskDescription = "Old Sailor Grevis spoke of an abandoned town to the north, Eldenmere. He claims those who enter never return the same. Travel there and uncover the truth.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Entered Eldenmere's Fog",
+                starageTaskId = Mainquest.eldenshadow
+            }
+        }
+    },
+    preRequiredStorages = {}, -- No pre-requisites
+    taskGoalCnt = 1, -- Entering the fog completes the quest
+    taskMinLvl = 10,
+    taskRepeat = false,
+    taskStorageId = 40063, -- Storage tracking quest state
+    taskStorageCnt = 40064, -- Completion tracker
+    taskRewards = {
+        experience = 7500,
+        items = {
+            [1] = {
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 100
+            },
+            [2] = {
+                name = "Old Sailor's Compass",
+                itemSid = 9205, -- Unique quest item
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    taskZoneName = "Eldenmere Ruins",
+    taskSource = "Old Sailor Grevis",
+    taskHint = "Step into the fog north of the village and listen carefully."
+},
+[31] = {
+    taskNumber = 31,
+    taskName = "Echoes of the Forgotten: Edwin",
+    taskDescription = "The first whisper calls out to you. Seek out the gravestone of Edwin the Watchful in Elden Cemetery.",
+    taskGoals = {
+        storages = {
+            [1] = { starageName = "Found Edwin's Name", starageTaskId = Mainquest.nameedwin }
+        }
+    },
+    preRequiredStorages = {40063}, -- Must have triggered the fog event first
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40069,
+    taskStorageCnt = 40070,
+    taskRewards = {
+        experience = 3500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 }
+        },
+    },
+    taskZoneName = "Elden Cemetery",
+    taskSource = "The Whispering Fog",
+    taskHint = "Seek out Edwin’s gravestone in the northern part of Elden Cemetery."
+},
+[32] = {
+    taskNumber = 32,
+    taskName = "Echoes of the Forgotten: Seraphine",
+    taskDescription = "The second whisper calls to you. Seek out the gravestone of Seraphine the Silent in Elden Cemetery.",
+    taskGoals = {
+        storages = {
+            [1] = { starageName = "Found Seraphine's Name", starageTaskId = Mainquest.nameseraphine }
+        }
+    },
+    preRequiredStorages = {40063}, -- Must have completed Edwin’s step
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40071,
+    taskStorageCnt = 40072,
+    taskRewards = {
+        experience = 3500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 }
+        },
+    },
+    taskZoneName = "Elden Cemetery",
+    taskSource = "The Whispering Fog",
+    taskHint = "Seek out Seraphine’s gravestone in the western part of Elden Cemetery."
+},
+[33] = {
+    taskNumber = 33,
+    taskName = "Echoes of the Forgotten: Marek",
+    taskDescription = "The final whisper calls to you. Seek out the gravestone of Marek the Cursed in Elden Cemetery.",
+    taskGoals = {
+        storages = {
+            [1] = { starageName = "Found Marek's Name", starageTaskId = Mainquest.namemarek }
+        }
+    },
+    preRequiredStorages = {40063}, -- Must have completed Seraphine’s step
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40073,
+    taskStorageCnt = 40074,
+    taskRewards = {
+        experience = 4000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 60 }
+        },
+    },
+    taskZoneName = "Elden Cemetery",
+    taskSource = "The Whispering Fog",
+    taskHint = "Seek out Marek’s gravestone in the eastern part of Elden Cemetery."
+},
+[34] = {
+    taskNumber = 34,
+    taskName = "Binding the Forgotten",
+    taskDescription = "Marek refuses to be sealed. You must channel energy into the three spectral braziers around the Forgotten Altar while fighting off his wrath.",
+    taskGoals = {
+        storages = {
+            [1] = { starageName = "Completed the Binding Ritual", starageTaskId = Mainquest.bindingritual }
+        }
+    },
+    preRequiredStorages = {40073}, -- Must have completed Marek’s step
+    taskGoalCnt = 3, -- The three braziers must be activated
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40075,
+    taskStorageCnt = 40076,
+    taskRewards = {
+        experience = 7000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
+            [2] = { name = "Ancient Spirit Ward", itemSid = 9205, itemCnt = 1 } -- Special Item
+        },
+    },
+    taskZoneName = "Elden Cemetery",
+    taskSource = "The Whispering Fog",
+    taskHint = "Channel energy into the spectral braziers while surviving Marek’s fury."
+}
 
 
 }

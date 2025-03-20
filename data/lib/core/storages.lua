@@ -47,4 +47,17 @@ summonlily = 50012,
 graverobber = 50013,
 wronggrave = 50014,
 hauntingspirit = 50015,
+eldenshadow = 50016,
+
+nameedwin = 50016,
+nameseraphine = 50016,
+namemarek = 50016,
+
+brazierone = 50017,
+braziertwo = 50018,
+brazierthree = 50019,
+
 }
+
+-- actions
+--stepin 3000
