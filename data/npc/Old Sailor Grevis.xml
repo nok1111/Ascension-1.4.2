@@ -1,0 +1,6 @@
+<npc name="Old Sailor Grevis"  script="quest_old_sailor_grevis.lua" walkinterval="0" speechbubble="3">
+	<look type="2660" />
+	<parameters>
+		<parameter key="message_farewell" value="Dont Die!" />
+	</parameters>
+</npc>
