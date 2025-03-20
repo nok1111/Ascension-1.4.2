@@ -7,11 +7,8 @@ npcTaskList = {
         ["Ranger Captain Dain"] = {12,13,14,15}, 
         ["Edrin the Hermit"] = {16},  
         ["Darian"] = {17,18,19}, 
-        ["Old Man"] = {20, 21,22,23,28}, -- Forgotten Library questline
-        ["Old Man Garrek"] = {24},
-        ["Gerald the Grave Robber"] = {25,26,27},
-        ["Lily"] = {28,29}, 
 
+    -- Garona 
 
 }
 
@@ -720,7 +717,7 @@ playersTasks = {
         items = {
             [1] = {
                 name = "Elderwood Log",
-                itemId = 39967, -- Example item ID
+                itemId = 8125, -- Example item ID
             }
         }
     },
@@ -778,8 +775,8 @@ playersTasks = {
                 itemCnt = 150
             },
             [2] = {
-                name = "Cursed Signet",
-                itemSid = 7708, -- A memento of Elyria
+                name = "Faded Locket",
+                itemSid = 9210, -- A memento of Elyria
                 itemCnt = 1
             }
         },
@@ -792,7 +789,7 @@ playersTasks = {
 [18] = {
     taskNumber = 18,
     taskName = "The Cursed Signet",
-    taskDescription = "Darian has entrusted you with the Cursed Signet a gift from Lucella that sealed Elyria\'s fate. The only way to break its hold is to cast it into an enchanted witch\'s cauldron, hidden somewhere in the ruins. The ritual must be done correctly, or the curse may persist.",
+    taskDescription = "Darian has entrusted you with the Cursed Signet—a gift from Lucella that sealed Elyria’s fate. The only way to break its hold is to cast it into an enchanted witch’s cauldron, hidden somewhere in the ruins. The ritual must be done correctly, or the curse may persist.",
     taskGoals = {
         storages = {
             [1] = {
@@ -831,7 +828,7 @@ playersTasks = {
 [19] = {
     taskNumber = 19,
     taskName = "Lucella, the Weaving Dread",
-    taskDescription = "Darian has gathered his strength. The time has come to end Lucella\'s influence once and for all. Her lair lies deep within the ruined cathedral, where she waits, weaving the last threads of her dark web. Reach her lair, defeat her, and cleanse this land of her corruption.",
+    taskDescription = "Darian has gathered his strength. The time has come to end Lucella’s influence once and for all. Her lair lies deep within the ruined cathedral, where she waits, weaving the last threads of her dark web. Reach her lair, defeat her, and cleanse this land of her corruption.",
     taskGoals = {
         monsters = {
             [1] = {
@@ -909,12 +906,12 @@ playersTasks = {
 [21] = {
     taskNumber = 21,
     taskName = "The Ribbon Beneath the Roots",
-    taskDescription = "The Whispering Librarian insists that Lily\'s old ribbon must be recovered to weaken the seal binding her. It was buried long ago beneath the roots of an ancient tree in the swamp. But why was it hidden?",
+    taskDescription = "The Whispering Librarian insists that Lily’s old ribbon must be recovered to weaken the seal binding her. It was buried long ago beneath the roots of an ancient tree in the swamp. But why was it hidden?",
     taskGoals = {
         items = {
             [1] = {
-                name = "Lily\'s Ribbon",
-                itemId = 18449, -- Unique quest item
+                name = "Lily’s Ribbon",
+                itemId = 9215, -- Unique quest item
             }
         }
     },
@@ -942,12 +939,12 @@ playersTasks = {
 [22] = {
     taskNumber = 22,
     taskName = "A Faded Letter",
-    taskDescription = "Deep within the ruins of Lily\'s childhood home lies a forgotten letter. The Librarian believes it holds power over her fate. But the house has been abandoned for years... hasn’t it?",
+    taskDescription = "Deep within the ruins of Lily’s childhood home lies a forgotten letter. The Librarian believes it holds power over her fate. But the house has been abandoned for years… hasn’t it?",
     taskGoals = {
         items = {
             [1] = {
                 name = "Faded Letter",
-                itemId = 14326, -- Unique quest item
+                itemId = 9216, -- Unique quest item
             }
         }
     },
@@ -975,12 +972,12 @@ playersTasks = {
 [23] = {
     taskNumber = 23,
     taskName = "Shattered Reflections",
-    taskDescription = "Somewhere in the Forgotten Library, a broken mirror remains. The Librarian claims it must be recovered, but something about his urgency feels... wrong.",
+    taskDescription = "Somewhere in the Forgotten Library, a broken mirror remains. The Librarian claims it must be recovered, but something about his urgency feels… wrong.",
     taskGoals = {
         items = {
             [1] = {
                 name = "Shattered Mirror",
-                itemId = 40096, -- Unique quest item
+                itemId = 9217, -- Unique quest item
             }
         }
     },
@@ -1007,370 +1004,63 @@ playersTasks = {
 },
 [24] = {
     taskNumber = 24,
-    taskName = "The Debt Collector",
-    taskDescription = "Old Man Garrek is furious after being tricked into funding an \'Invisible Armor\' scam. He wants his 10 platinum coins back from Merchant Tobias. Retrieve the debt and return to Garrek.",
-    taskGoals = {
-        items = {
-            [1] = {
-                name = "Platinum Coins",
-                itemId = 2152, -- Platinum Coin ID
-            }
-        }
-    },
-    preRequiredStorages = {}, -- No pre-requirement
-    taskGoalCnt = 10, -- Collect 10 platinum coins from Tobias
-    taskMinLvl = 5, -- Open-world, low-level quest
-    taskRepeat = false,
-    taskStorageId = 40051,
-    taskStorageCnt = 40052,
-    taskRewards = {
-        experience = 3000,
-        items = {
-            [1] = {
-                name = "gold coin",
-                itemSid = 2148,
-                itemCnt = 100
-            }
-        },
-        outfits = {},
-    },
-    taskZoneName = "Garona",
-    taskSource = "Old Man Garrek",
-    taskHint = "Merchant Tobias owes Garrek 10 platinum coins. Retrieve the debt."
-},
-[25] = {
-    taskNumber = 25,
-    taskName = "Grave Consequences",
-    taskDescription = "Gerald the Grave Robber insists there\'s a priceless heirloom buried in an old grave. Dig it up and retrieve the item... but beware, not all the dead rest peacefully.",
+    taskName = "Summoning the Forsaken",
+    taskDescription = "You have gathered all three remnants of Lily’s past, but instead of breaking the Blood Flower Seal outright, you will use them to summon Lily herself. Perhaps she can reveal the truth before it is too late.",
     taskGoals = {
         storages = {
             [1] = {
-                starageName = "Summoned the Guardian",
-                starageTaskId = Mainquest.graverobber
-            }
-        }
-    },
-    preRequiredStorages = {}, -- Open-world quest, no pre-requisites
-    taskGoalCnt = 1, -- Trigger the event once
-    taskMinLvl = 10, -- Low-level, open-world quest
-    taskRepeat = false,
-    taskStorageId = 40053,
-    taskStorageCnt = 40054,
-    taskRewards = {
-        experience = 7500,
-        items = {
-            [1] = {
-                name = "gold coin",
-                itemSid = 2148,
-                itemCnt = 100
-            },
-            [2] = {
-                name = "Rusty Spoon",
-                itemSid = 2159, -- Junk item as a hilarious "heirloom"
-                itemCnt = 1
-            }
-        },
-        outfits = {},
-    },
-    taskZoneName = "Old Graveyard",
-    taskSource = "Gerald the Grave Robber",
-    taskHint = "Find the marked grave in the Old Graveyard and dig up the 'heirloom'."
-},
-
-[26] = {
-    taskNumber = 26,
-    taskName = "Wrong Body, Wrong Grave",
-    taskDescription = "The grave robber insists he buried the wrong body in the wrong grave. Find the correct grave and retrieve the corpse... or whatever\'s left of it.",
-    taskGoals = {
-        storages = {
-            [1] = {
-                starageName = "Found the Wrong Grave",
-                starageTaskId = Mainquest.wronggrave
-            }
-        }
-    },
-    preRequiredStorages = {40053},
-    taskGoalCnt = 1,
-    taskMinLvl = 10,
-    taskRepeat = false,
-    taskStorageId = 40055,
-    taskStorageCnt = 40056,
-    taskRewards = {
-        experience = 7500,
-        items = {
-            [1] = {
-                name = "gold coin",
-                itemSid = 2148,
-                itemCnt = 100
-            },
-            [2] = {
-                name = "Bone Charm",
-                itemSid = 9201,
-                itemCnt = 1
-            }
-        },
-        outfits = {},
-    },
-    taskZoneName = "Graveyard of the Lost",
-    taskSource = "Gerald the Grave Robber",
-    taskHint = "Dig carefully. You might wake something up."
-},
-
-[27] = {
-    taskNumber = 27,
-    taskName = "I See Dead People... Now",
-    taskDescription = "After retrieving the corpse, Gerald has been seeing unsettling visions. He believes the dead person is haunting him. Find a way to cleanse the spirit... or convince it to move on. Rumors speak of a cursed place in the west, once a thriving forest, now reduced to the Ashen Grove, a land of scorched trees and lingering embers. Perhaps you\'ll find answers there.",
-    taskGoals = {
-        storages = {
-            [1] = {
-                starageName = "Banished the Haunting Spirit",
-                starageTaskId = Mainquest.hauntingspirit
-            }
-        }
-    },
-    preRequiredStorages = {40055},
-    taskGoalCnt = 1,
-    taskMinLvl = 12,
-    taskRepeat = false,
-    taskStorageId = 40057,
-    taskStorageCnt = 40058,
-    taskRewards = {
-        experience = 9000,
-        items = {
-            [1] = {
-                name = "gold coin",
-                itemSid = 2148,
-                itemCnt = 150
-            },
-            [2] = {
-                name = "Spirit Ward Amulet",
-                itemSid = 9202,
-                itemCnt = 1
-            }
-        },
-        outfits = {},
-    },
-    taskZoneName = "Graveyard of the Lost",
-    taskSource = "Gerald the Grave Robber",
-    taskHint = "Find a way to put the spirit to rest before Gerald loses his mind."
-},
-
-[28] = {
-    taskNumber = 28,
-    taskName = "The Summoning of Lily",
-    taskDescription = "You have gathered Lily\'s Ribbon, the Faded Letter, and the Shattered Mirror. Now, use them to summon Lily at the Forgotten Library’s ritual site. But be careful... something else might answer the call.",
-    taskGoals = {
-        storages = {
-            [1] = {
-                starageName = "Summoned Lily",
+                starageName = "Summoned Lily's Spirit",
                 starageTaskId = Mainquest.summonlily
             }
         }
     },
-    preRequiredStorages = {40043, 40045, 40047}, -- Requires having collected the three items
-    taskGoalCnt = 1,
+    preRequiredStorages = {40043, 40045, 40047}, -- Requires collecting the Ribbon, Letter, and Mirror
+    taskGoalCnt = 1, -- Summon Lily
     taskMinLvl = 15,
     taskRepeat = false,
-    taskStorageId = 40059,
-    taskStorageCnt = 40060,
+    taskStorageId = 40049,
+    taskStorageCnt = 40050,
     taskRewards = {
-        experience = 15000,
+        experience = 12000,
         items = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
                 itemCnt = 200
-            },
-            [2] = {
-                name = "Lily's Tear",
-                itemSid = 9203,
-                itemCnt = 1
             }
         },
         outfits = {},
     },
     taskZoneName = "Forgotten Library",
-    taskSource = "Old Librarian",
-    taskHint = "Find the Lily\'s coffin in the last flor of the Forgotten Library and free lily."
+    taskSource = "The Whispering Librarian",
+    taskHint = "Use the relics before the Blood Flower Seal to summon Lily's spirit.",
 },
-[29] = {
-    taskNumber = 29,
-    taskName = "Malrith, the Hungering Shade",
-    taskDescription = "The time has come. Malrith, the Hungering Shade, has awakened, drawn by Lily\'s release. His form lurks in the depths of the Forgotten Library, feeding on the souls of the damned. Slay him before he consumes everything.",
-    taskGoals = {
-        monsters = {
-            [1] = {
-                name = "Malrith, the Hungering Shade",
-                spriteId = 9876 -- Adjust to match sprite ID
-            }
-        }
-    },
-    preRequiredStorages = {40059}, -- Requires summoning Lily
-    taskGoalCnt = 1, -- Kill Malrith
-    taskMinLvl = 20, -- Recommended level
-    taskRepeat = false,
-    taskStorageId = 40061, -- Next sequential storage ID
-    taskStorageCnt = 40062, -- Next sequential counter
-    taskRewards = {
-        experience = 35000,
-        items = {
-            [1] = {
-                name = "gold coin",
-                itemSid = 2148,
-                itemCnt = 500
-            },
-            [2] = {
-                name = "Malrith\'s Cursed Veil",
-                itemSid = 9215, -- Custom quest item
-                itemCnt = 1
-            }
-        },
-        outfits = {},
-    },
-    taskZoneName = "Forgotten Library - Shadow Vault",
-    taskSource = "Lily",
-    taskHint = "Malrith lurks in the depths of the Forgotten Library, waiting to devour all who dare to face him."
-},
-[30] = {
-    taskNumber = 30,
-    taskName = "Echoes in the Fog",
-    taskDescription = "Old Sailor Grevis spoke of an abandoned town to the north, Eldenmere. He claims those who enter never return the same. Travel there and uncover the truth.",
+[25] = {
+    taskNumber = 25,
+    taskName = "The Nameless and the Watcher",
+    taskDescription = "The Guardian of the Forgotten speaks of an entity that devours names, erasing souls from history. Speak the names of the lost at the ritual site to grant them peace.",
     taskGoals = {
         storages = {
-            [1] = {
-                starageName = "Entered Eldenmere's Fog",
-                starageTaskId = Mainquest.eldenshadow
-            }
+            [1] = { starageName = "Spoke the Names", starageTaskId = Mainquest.spokenames }
         }
     },
-    preRequiredStorages = {}, -- No pre-requisites
-    taskGoalCnt = 1, -- Entering the fog completes the quest
-    taskMinLvl = 10,
+    preRequiredStorages = {40075}, -- Must have completed the brazier ritual
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
     taskRepeat = false,
-    taskStorageId = 40063, -- Storage tracking quest state
-    taskStorageCnt = 40064, -- Completion tracker
+    taskStorageId = 40051,
+    taskStorageCnt = 40052,
     taskRewards = {
         experience = 7500,
         items = {
-            [1] = {
-                name = "gold coin",
-                itemSid = 2148,
-                itemCnt = 100
-            },
-            [2] = {
-                name = "Old Sailor's Compass",
-                itemSid = 9205, -- Unique quest item
-                itemCnt = 1
-            }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
+            [2] = { name = "The Remembered Sigil", itemSid = 9215, itemCnt = 1 } -- Future use
         },
-        outfits = {},
     },
-    taskZoneName = "Eldenmere Ruins",
-    taskSource = "Old Sailor Grevis",
-    taskHint = "Step into the fog north of the village and listen carefully."
+    taskZoneName = "Elden Cemetery - The Sealed Crypt",
+    taskSource = "The Guardian of the Forgotten",
+    taskHint = "Speak the names of the lost to complete the ritual."
 },
-[31] = {
-    taskNumber = 31,
-    taskName = "Echoes of the Forgotten: Edwin",
-    taskDescription = "The first whisper calls out to you. Seek out the gravestone of Edwin the Watchful in Elden Cemetery.",
-    taskGoals = {
-        storages = {
-            [1] = { starageName = "Found Edwin's Name", starageTaskId = Mainquest.nameedwin }
-        }
-    },
-    preRequiredStorages = {40063}, -- Must have triggered the fog event first
-    taskGoalCnt = 1,
-    taskMinLvl = 15,
-    taskRepeat = false,
-    taskStorageId = 40069,
-    taskStorageCnt = 40070,
-    taskRewards = {
-        experience = 3500,
-        items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 }
-        },
-    },
-    taskZoneName = "Elden Cemetery",
-    taskSource = "The Whispering Fog",
-    taskHint = "Seek out Edwin’s gravestone in the northern part of Elden Cemetery."
-},
-[32] = {
-    taskNumber = 32,
-    taskName = "Echoes of the Forgotten: Seraphine",
-    taskDescription = "The second whisper calls to you. Seek out the gravestone of Seraphine the Silent in Elden Cemetery.",
-    taskGoals = {
-        storages = {
-            [1] = { starageName = "Found Seraphine's Name", starageTaskId = Mainquest.nameseraphine }
-        }
-    },
-    preRequiredStorages = {40063}, -- Must have completed Edwin’s step
-    taskGoalCnt = 1,
-    taskMinLvl = 15,
-    taskRepeat = false,
-    taskStorageId = 40071,
-    taskStorageCnt = 40072,
-    taskRewards = {
-        experience = 3500,
-        items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 }
-        },
-    },
-    taskZoneName = "Elden Cemetery",
-    taskSource = "The Whispering Fog",
-    taskHint = "Seek out Seraphine’s gravestone in the western part of Elden Cemetery."
-},
-[33] = {
-    taskNumber = 33,
-    taskName = "Echoes of the Forgotten: Marek",
-    taskDescription = "The final whisper calls to you. Seek out the gravestone of Marek the Cursed in Elden Cemetery.",
-    taskGoals = {
-        storages = {
-            [1] = { starageName = "Found Marek's Name", starageTaskId = Mainquest.namemarek }
-        }
-    },
-    preRequiredStorages = {40063}, -- Must have completed Seraphine’s step
-    taskGoalCnt = 1,
-    taskMinLvl = 15,
-    taskRepeat = false,
-    taskStorageId = 40073,
-    taskStorageCnt = 40074,
-    taskRewards = {
-        experience = 4000,
-        items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 60 }
-        },
-    },
-    taskZoneName = "Elden Cemetery",
-    taskSource = "The Whispering Fog",
-    taskHint = "Seek out Marek’s gravestone in the eastern part of Elden Cemetery."
-},
-[34] = {
-    taskNumber = 34,
-    taskName = "Binding the Forgotten",
-    taskDescription = "Marek refuses to be sealed. You must channel energy into the three spectral braziers around the Forgotten Altar while fighting off his wrath.",
-    taskGoals = {
-        storages = {
-            [1] = { starageName = "Completed the Binding Ritual", starageTaskId = Mainquest.bindingritual }
-        }
-    },
-    preRequiredStorages = {40073}, -- Must have completed Marek’s step
-    taskGoalCnt = 3, -- The three braziers must be activated
-    taskMinLvl = 15,
-    taskRepeat = false,
-    taskStorageId = 40075,
-    taskStorageCnt = 40076,
-    taskRewards = {
-        experience = 7000,
-        items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
-            [2] = { name = "Ancient Spirit Ward", itemSid = 9205, itemCnt = 1 } -- Special Item
-        },
-    },
-    taskZoneName = "Elden Cemetery",
-    taskSource = "The Whispering Fog",
-    taskHint = "Channel energy into the spectral braziers while surviving Marek’s fury."
-}
-
 
 }
 

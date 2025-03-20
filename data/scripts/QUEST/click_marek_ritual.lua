@@ -3,9 +3,9 @@ local CLEANSING_TIME = 15 * 1000 -- 15 seconds
 local EVENT_RADIUS = 5 -- Players within this range will receive credit
 
 local BRAZIER_DATA = {
-    [2019] = {storage = Mainquest.brazierone, position = Position(788, 861, 8)}, -- Brazier 1
-    [2020] = {storage = Mainquest.braziertwo, position = Position(789, 860, 8)}, -- Brazier 2
-    [2021] = {storage = Mainquest.brazierthree, position = Position(790, 861, 8)}  -- Brazier 3
+    [2019] = {storage = Mainquest.brazierone, position = Position(788, 861, 8), monster = "Tormented Soul"}, -- Brazier 1
+    [2020] = {storage = Mainquest.braziertwo, position = Position(789, 860, 8), monster = "Shadow Wraith"}, -- Brazier 2
+    [2021] = {storage = Mainquest.brazierthree, position = Position(790, 861, 8), monster = "Dread Phantom"}  -- Brazier 3
 }
 
 -- Global wall data (same for all braziers)
@@ -58,18 +58,18 @@ local function removeMonster(monsterId)
     end
 end
 
-local function spawnWraiths(position)
+local function spawnBrazierMonsters(brazier)
     for i = 1, 10 do
         addEvent(function()
             local spawnPos = Position(
-                position.x + math.random(-2, 2),
-                position.y + math.random(-2, 2),
-                position.z
+                brazier.position.x + math.random(-2, 2),
+                brazier.position.y + math.random(-2, 2),
+                brazier.position.z
             )
-            local wraith = Game.createMonster("Wraith", spawnPos)
+            local monster = Game.createMonster(brazier.monster, spawnPos)
 
-            if wraith then
-                addEvent(removeMonster, MONSTER_DESPAWN_TIME, wraith:getId()) -- Despawn after 10 minutes
+            if monster then
+                addEvent(removeMonster, MONSTER_DESPAWN_TIME, monster:getId()) -- Despawn after 10 minutes
             end
         end, i * 500) -- 500ms delay between each spawn
     end
@@ -128,8 +128,8 @@ local function activateBrazier(playerId, actionId)
         addEvent(randomEffectAround, i * 2000, brazier.position)
     end
 
-    -- Spawn Wraiths around the brazier
-    spawnWraiths(brazier.position)
+    -- Spawn unique monsters for the brazier
+    spawnBrazierMonsters(brazier)
 
     -- Delayed event for completing the cleansing
     addEvent(function()

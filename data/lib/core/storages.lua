@@ -56,6 +56,7 @@ namemarek = 50016,
 brazierone = 50017,
 braziertwo = 50018,
 brazierthree = 50019,
+spokenames = 50020,
 
 }
 

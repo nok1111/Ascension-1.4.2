@@ -36,6 +36,9 @@
 	<spawn centerx="459" centery="769" centerz="7" radius="1">
 		<npc name="Emmet" x="-1" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="809" centery="800" centerz="7" radius="1">
+		<npc name="Old Sailor Grevis" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="361" centery="810" centerz="7" radius="1">
 		<npc name="Gaelia" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
