@@ -59,6 +59,16 @@ local leverConfigs = {
         resetTime = 10 * 60 * 1000,
         message = "xxxxx"
     },
+    [1006] = { -- eldenmere walls
+        skipItemsCheck = true, -- Bypass itemsToCheck validation
+        wallPositions = {
+            Position(766, 858, 7),
+            Position(767, 858, 7)
+        },
+        wallItemId = 1544,
+        resetTime = 2 * 60 * 1000,
+        message = "xxxxx"
+    },
 }
 
 local leverAction = Action()
