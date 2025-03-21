@@ -476,7 +476,7 @@ local zones = {
 
           -- WEATHER SETTINGS
         weather = {"Map - Fog"}, -- Possible weather types
-        forceWeather = false, -- If true, weather will always stay the same
+        forceWeather = true, -- If true, weather will always stay the same
         activeWeather = nil, -- Stores the currently active weather
     },
 
