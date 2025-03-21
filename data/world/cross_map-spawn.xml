@@ -9,6 +9,9 @@
 	<spawn centerx="493" centery="790" centerz="6" radius="1">
 		<npc name="Elder Hjalmar" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="776" centery="847" centerz="6" radius="1">
+		<npc name="The Whispering Fog" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="455" centery="683" centerz="7" radius="1">
 		<npc name="Gerald the Grave Robber" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -47,6 +50,9 @@
 	</spawn>
 	<spawn centerx="467" centery="836" centerz="7" radius="1">
 		<npc name="Edrin the Hermit" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="807" centery="851" centerz="7" radius="1">
+		<npc name="The Whispering Fog" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1333" centery="394" centerz="8" radius="1">
 		<monster name="Elven High Priest" x="0" y="0" z="8" spawntime="60" direction="2" />
