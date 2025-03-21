@@ -1,4 +1,4 @@
-local MONSTER_DESPAWN_TIME = 10 * 60 * 1000 -- 10 minutes
+local MONSTER_DESPAWN_TIME = 15 * 1000 -- 10 minutes
 local CLEANSING_TIME = 15 * 1000 -- 15 seconds
 local EVENT_RADIUS = 5 -- Players within this range will receive credit
 
@@ -15,25 +15,56 @@ local WALL_POSITIONS = {
     Position(794, 856, 8),
     Position(794, 857, 8)
 }
-local WALL_ITEM_ID = 1497
+local WALL_ORIGINAL_ID = 9166
+local WALL_TRANSFORMED_ID = 9165
 
 -- Track active braziers to prevent spam activation
 local activeBraziers = {}
 
-local function randomEffectAround(position)
-    for _ = 1, 5 do
+local customEffects = {
+    503,
+    594,
+    434,
+    435,
+    495,
+    496,
+
+    311,
+    170,
+    503,
+    503,
+    503,
+    503
+}
+
+function randomEffectAround(position)
+    for _ = 1, 7 do
         local effectPos = Position(
-            position.x + math.random(-1, 1),
-            position.y + math.random(-1, 1),
+            position.x + math.random(-5, 5),
+            position.y + math.random(-5, 5),
             position.z
         )
-        effectPos:sendMagicEffect(math.random(CONST_ME_FIREAREA, CONST_ME_PURPLEENERGY))
+        effectPos:sendMagicEffect(customEffects[math.random(#customEffects)])
+    end
+end
+
+local function loopEffect(position, duration)
+    local interval = 300
+    local totalLoops = math.floor(duration / interval)
+    for i = 1, totalLoops do
+        addEvent(randomEffectAround, i * interval, position)
     end
 end
 
 local function createWalls()
     for _, pos in ipairs(WALL_POSITIONS) do
-        Game.createItem(WALL_ITEM_ID, 1, pos)
+        local tile = Tile(pos)
+        if tile then
+            local item = tile:getItemById(WALL_ORIGINAL_ID)
+            if item then
+                item:transform(WALL_TRANSFORMED_ID)
+            end
+        end
     end
 end
 
@@ -41,13 +72,15 @@ local function removeWalls()
     for _, pos in ipairs(WALL_POSITIONS) do
         local tile = Tile(pos)
         if tile then
-            local item = tile:getItemById(WALL_ITEM_ID)
+            local item = tile:getItemById(WALL_TRANSFORMED_ID)
             if item then
-                item:remove()
+                item:transform(WALL_ORIGINAL_ID)
+
             end
         end
     end
 end
+
 
 local function removeMonster(monsterId)
     local monster = Monster(monsterId)
@@ -124,10 +157,7 @@ local function activateBrazier(playerId, actionId)
     end
 
     -- Random effect around brazier while cleansing
-    for i = 1, 3 do
-        addEvent(randomEffectAround, i * 2000, brazier.position)
-    end
-
+    loopEffect(brazier.position, CLEANSING_TIME)
     -- Spawn unique monsters for the brazier
     spawnBrazierMonsters(brazier)
 
@@ -155,7 +185,7 @@ local function activateBrazier(playerId, actionId)
         -- If all braziers are cleansed, grant ritual completion
         if allBraziersCleansed then
             for _, p in ipairs(nearbyPlayers) do
-                p:setStorageValue(Mainquest.bindingritual, TASK_COMPLETED)
+                p:setStorageValue(Mainquest.bindingritual, 1)
                 p:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The ritual is complete. The spirits are bound.")
             end
         end

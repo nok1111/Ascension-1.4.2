@@ -1,9 +1,9 @@
 local gravestoneAction = Action()
 
 local gravestoneData = {
-    [2016] = { storageId = Mainquest.nameedwin, name = "Edwin the Watchful", requiredQuest = 40063, nextQuest = 40069 },
-    [2017] = { storageId = Mainquest.nameseraphine, name = "Seraphine the Silent", requiredQuest = 40063, nextQuest = 40071 },
-    [2018] = { storageId = Mainquest.namemarek, name = "Marek the Cursed", requiredQuest = 40063, nextQuest = 40073 }
+    [2016] = { storageId = Mainquest.nameedwin, name = "Edwin the Watchful", requiredQuest = 40069 },
+    [2017] = { storageId = Mainquest.nameseraphine, name = "Seraphine the Silent", requiredQuest = 40071 },
+    [2018] = { storageId = Mainquest.namemarek, name = "Marek the Cursed", requiredQuest = 40073 }
 }
 
 local fakeMessages = {
@@ -20,15 +20,14 @@ function discoverName(playerId, gravestone)
     end
 
     -- Ensure player has started the fog quest
-    if player:getStorageValue(gravestone.requiredQuest) < TASK_COMPLETED then
+    if player:getStorageValue(gravestone.requiredQuest) ~= 1 then
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are not ready to understand this name yet.")
         return true
     end
 
     -- Check if the player has already found this name
-    if player:getStorageValue(gravestone.storageId) ~= TASK_COMPLETED then
-        player:setStorageValue(gravestone.storageId, TASK_COMPLETED)
-        player:setStorageValue(gravestone.nextQuest, TASK_START) -- Start the next quest step
+    if player:getStorageValue(gravestone.storageId) ~= 1 then
+        player:setStorageValue(gravestone.storageId, 1)
         player:say(gravestone.name .. "... the name lingers in your mind.", TALKTYPE_MONSTER_SAY)
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have uncovered a lost name: " .. gravestone.name)
         player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
@@ -55,7 +54,7 @@ function gravestoneAction.onUse(player, item, fromPosition, target, toPosition)
     return true
 end
 
-gravestoneAction:aid(2016)
-gravestoneAction:aid(2017)
-gravestoneAction:aid(2018)
+for actionId, _ in pairs(gravestoneData) do
+    gravestoneAction:aid(actionId)
+end
 gravestoneAction:register()

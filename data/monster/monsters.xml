@@ -322,6 +322,10 @@
 	<monster name="Vael the Betrayer" file="t1 island/vael_the_betrayer.xml" />
 	<monster name="Elven High Priest" file="t1 island/Elven High Priest.xml" />
 	<monster name="Malrith, the Hungering Shade" file="t1 island/Malrith the Hungering Shade.xml" />
+
+	<monster name="Tormented Soul" file="t1 island/Tormented Soul.xml" />
+	<monster name="Shadow Wraith" file="t1 island/Shadow Wraith.xml" />
+	<monster name="Dread Phantom" file="t1 island/Dread Phantom.xml" />
 	
 	<!-- 150+ -->
 	<monster name="Orshabaal" file="demonlord/orshabaal.xml" />

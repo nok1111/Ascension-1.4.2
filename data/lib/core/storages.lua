@@ -49,14 +49,15 @@ wronggrave = 50014,
 hauntingspirit = 50015,
 eldenshadow = 50016,
 
-nameedwin = 50016,
-nameseraphine = 50016,
-namemarek = 50016,
+nameedwin = 50017,
+nameseraphine = 50018,
+namemarek = 50019,
 
-brazierone = 50017,
-braziertwo = 50018,
-brazierthree = 50019,
-spokenames = 50020,
+brazierone = 50020,
+braziertwo = 50021,
+brazierthree = 50022,
+bindingritual = 50023,
+spokenames = 50024,
 
 }
 
