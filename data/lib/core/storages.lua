@@ -59,6 +59,12 @@ brazierthree = 50022,
 bindingritual = 50023,
 spokenames = 50024,
 
+spokenedwin = 50025,
+spokenseraphine = 50026,
+spokenmarek = 50027,
+investigateroot = 50028,
+investigatemachine = 50029,
+
 }
 
 -- actions

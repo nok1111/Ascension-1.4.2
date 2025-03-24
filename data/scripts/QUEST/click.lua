@@ -122,6 +122,12 @@ local eventConfigs = {
         magiceffect = 170, -- Fire effect
         transform_item = { from = 9948, to = 9949, time = 45000 }, -- Transform an item (Crystal Coin to Platinum Coin for 5 sec)
     },
+    [2016] = { -- Cleansing the Spirit at The Ember Shrine
+        required_storage = 40083, -- Must have started the quest
+        storage_reward = { id = Mainquest.investigatemachine, value = 1 }, -- Mark quest as completed
+        message = "The Ember Shrine flares up, consuming the dark energy around you!",
+        magiceffect = 170, -- Fire effect
+    },
 
     --2016 used
     --2017 used
@@ -177,13 +183,19 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
 
     local eventConfigStorage = item.actionid -- Use actionId as unique storage key
 
+
+    local storagefix = player:getStorageValue(item.actionid)
+        if storagefix == -1 or storagefix == nil then
+            storagefix = 0
+        end
+
      -- Prevent re-claiming the event (except for teleports)
-    if not eventConfig.is_teleport and player:getStorageValue(item.actionid) == 1 then
+    if not eventConfig.is_teleport and player:getStorageValue(item.actionid) >= 1 then
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have already claimed this.")
         return true
     end
 
-    if eventConfig.required_storage and player:getStorageValue(eventConfig.required_storage) ~= 1 then
+    if eventConfig.required_storage and player:getStorageValue(eventConfig.required_storage) < 1 then
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are not ready for this yet.")
         return true
     end

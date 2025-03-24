@@ -326,6 +326,9 @@
 	<monster name="Tormented Soul" file="t1 island/Tormented Soul.xml" />
 	<monster name="Shadow Wraith" file="t1 island/Shadow Wraith.xml" />
 	<monster name="Dread Phantom" file="t1 island/Dread Phantom.xml" />
+	<monster name="Sporecrawler" file="t1 island/sporecrawler.xml" />
+	<monster name="Fungal Shambler" file="t1 island/Fungal Shambler.xml" />
+	<monster name="Fungus" file="t1 island/fungus.xml" />
 	
 	<!-- 150+ -->
 	<monster name="Orshabaal" file="demonlord/orshabaal.xml" />

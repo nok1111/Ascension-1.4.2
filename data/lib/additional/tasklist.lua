@@ -13,7 +13,8 @@ npcTaskList = {
         ["Gerald the Grave Robber"] = {25,26,27},
         ["Lily"] = {28,29}, 
         ["Old Sailor Grevis"] = {30},
-        ["The Whispering Fog"] = {30,31,32,33,34},
+        ["The Whispering Fog"] = {30,31,32,33,34,35},
+        ["The Guardian of the Forgotten"] = {35},
         
 
 
@@ -1388,7 +1389,7 @@ playersTasks = {
         }
     },
     preRequiredStorages = {40075}, -- Must have completed the brazier ritual
-    taskGoalCnt = 1,
+    taskGoalCnt = 3,
     taskMinLvl = 15,
     taskRepeat = false,
     taskStorageId = 40077,
@@ -1405,6 +1406,160 @@ playersTasks = {
     taskSource = "The Guardian of the Forgotten",
     taskHint = "Speak the names of the lost to complete the ritual."
 },
+
+[36] = {
+    taskNumber = 36,
+    taskName = "Dream Spores",
+    taskDescription = "Dream-Seeker Alran spoke of strange spores drifting through the city, whispering of a forgotten land. Gather a few and see where they lead.",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Dream Spore",
+                itemId = 7251, -- Example item ID for Dream Spore
+                itemCnt = 5
+            }
+        }
+    },
+    preRequiredStorages = {},
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40079, -- Quest start
+    taskStorageCnt = 40080, -- Quest complete
+    taskRewards = {
+        experience = 8500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
+            [2] = { name = "Spore-Linked Talisman", itemSid = 9206, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Sporeveil Outskirts",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "Collect spores scattered near the edges of the city and swamplands."
+},
+[37] = {
+    taskNumber = 37,
+    taskName = "Echoes Beneath the Swamp",
+    taskDescription = "Strange vibrations pulse from the roots below the swamp. Dream-Seeker Alran believes they are echoes of something older. Find and investigate one of the deep-rooted fungal masses underground.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Investigated Fungal Root Cluster",
+                starageTaskId = Mainquest.investigateroot
+            }
+        }
+    },
+    preRequiredStorages = {40080}, -- Must have completed "Dream Spores"
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40081, -- Quest start
+    taskStorageCnt = 40082, -- Quest complete
+    taskRewards = {
+        experience = 9500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 120 }
+        }
+         outfits = {}
+    },
+    taskZoneName = "Fungal Tunnels",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "Seek out a glowing root cluster deep beneath the marshlands."
+},
+[38] = {
+    taskNumber = 38,
+    taskName = "Whispers of the Machine",
+    taskDescription = "Deep beneath the swamp, you've uncovered a strange, humming machine entwined in ancient roots. Dream-Seeker Alran believes it may be a remnant of an older civilization. Investigate the device further and report any discoveries.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Investigated the Machine",
+                starageTaskId = Mainquest.investigatemachine
+            }
+        }
+    },
+    preRequiredStorages = {40083}, -- Must have completed "Echoes Beneath the Swamp"
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40083, -- Quest start
+    taskStorageCnt = 40084, -- Quest complete
+    taskRewards = {
+        experience = 10000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
+            [2] = { name = "Ancient Circuit Fragment", itemSid = 29742, itemCnt = 1 } -- Example item reward
+        }
+        outfits = {}
+    },
+    taskZoneName = "Fungal Tunnels - Lower Depths",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "Search the lower tunnels beneath the swamp to uncover the secrets of the ancient machine."
+},
+[39] = {
+    taskNumber = 39,
+    taskName = "Fungal Sentinel",
+    taskDescription = "While examining the strange machine, Dream-Seeker Alran sensed an unnatural guardian stirring. Defeat the Fungal Sentinel, a monstrous being protecting the roots entwined around the device.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Fungal Sentinel",
+                spriteId = 1101
+            }
+        }
+    },
+    preRequiredStorages = {40086},
+    taskGoalCnt = 1,
+    taskMinLvl = 16,
+    taskRepeat = false,
+    taskStorageId = 40087,
+    taskStorageCnt = 40088,
+    taskRewards = {
+        experience = 12000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
+            [2] = { name = "Sporeshard Medallion", itemSid = 29743, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Rooted Caverns",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "The Fungal Sentinel is said to guard the lower roots beneath the swamp machinery."
+},
+
+[40] = {
+    taskNumber = 40,
+    taskName = "Heart of the Bloom",
+    taskDescription = "A second anomaly was found growing near the old tunnels — a creature known as the Bloomheart, drawing energy from the machine's core. Destroy it before it spreads spores across the island.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Bloomheart",
+                spriteId = 1102
+            }
+        }
+    },
+    preRequiredStorages = {40088},
+    taskGoalCnt = 1,
+    taskMinLvl = 16,
+    taskRepeat = false,
+    taskStorageId = 40089,
+    taskStorageCnt = 40090,
+    taskRewards = {
+        experience = 13000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 200 },
+            [2] = { name = "Verdant Core Fragment", itemSid = 29744, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Blooming Depths",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "Bloomheart resides in the fungal bloom chamber near the heart of the machine's energy well."
+}
+
+
 
 
 }

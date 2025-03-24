@@ -54,6 +54,9 @@
 	<spawn centerx="807" centery="851" centerz="7" radius="1">
 		<npc name="The Whispering Fog" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="703" centery="927" centerz="7" radius="1">
+		<npc name="Dream-Seeker Alran" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1333" centery="394" centerz="8" radius="1">
 		<monster name="Elven High Priest" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>
@@ -68,6 +71,9 @@
 	</spawn>
 	<spawn centerx="586" centery="773" centerz="8" radius="1">
 		<npc name="Paladin Aric" x="1" y="0" z="8" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="854" centery="859" centerz="9" radius="1">
+		<npc name="The Guardian of the Forgotten" x="0" y="-1" z="9" spawntime="60" direction="3" />
 	</spawn>
 	<spawn centerx="564" centery="772" centerz="12" radius="1">
 		<monster name="Garnak the Warlord" x="0" y="0" z="12" spawntime="60" direction="2" />

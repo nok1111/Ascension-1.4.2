@@ -1,10 +1,18 @@
 local spokenNames = {
-    ["edwin"] = Mainquest.spokenedwin,
-    ["seraphine"] = Mainquest.spokenseraphine,
-    ["marek"] = Mainquest.spokenmarek
+    ["edwin"] = {storage = Mainquest.spokenedwin, message = "The air trembles as you honor the name: Edwin."},
+    ["seraphine"] = {storage = Mainquest.spokenseraphine, message = "A soft whisper answers as you speak: Seraphine."},
+    ["marek"] = {storage = Mainquest.spokenmarek, message = "A heavy silence falls after you utter: Marek."}
 }
 
-local talkaction = TalkAction("")
+local talkaction = TalkAction("edwin", "seraphine", "marek")
+
+local function finalNameEvent(cid)
+    local player = Player(cid)
+    if not player then return end
+
+    player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The final name echoes into the void... and peace returns.")
+    player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+end
 
 function talkaction.onSay(player, words, param, type)
     if player:getStorageValue(40077) ~= TASK_START then
@@ -12,23 +20,30 @@ function talkaction.onSay(player, words, param, type)
     end
 
     local name = words:lower():gsub("!", ""):gsub(" ", "")
-    local storage = spokenNames[name]
+    local entry = spokenNames[name]
+    if not entry then
+        return false
+    end
 
-    if storage and player:getStorageValue(storage) ~= TASK_COMPLETED then
-        player:setStorageValue(storage, TASK_COMPLETED)
-        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The air trembles as you honor the name: " .. name:sub(1,1):upper() .. name:sub(2))
+    if player:getStorageValue(entry.storage) ~= 1 then
+        player:setStorageValue(entry.storage, 1)
+        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, entry.message)
         player:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
+
+        local spokenCount = player:getStorageValue(Mainquest.spokenames)
+        if spokenCount < 0 then
+            spokenCount = 0
+        end
+        spokenCount = spokenCount + 1
+        player:setStorageValue(Mainquest.spokenames, spokenCount)
+
+        if spokenCount == 3 then
+            addEvent(finalNameEvent, 2000, player:getId())
+        end
+    else
+        player:sendTextMessage(MESSAGE_EVENT_DEFAULT, "You have already spoken that name.")
     end
 
-    if player:getStorageValue(Mainquest.spokenedwin) == TASK_COMPLETED and
-       player:getStorageValue(Mainquest.spokenseraphine) == TASK_COMPLETED and
-       player:getStorageValue(Mainquest.spokenmarek) == TASK_COMPLETED and
-       player:getStorageValue(Mainquest.spokenames) ~= TASK_COMPLETED then
-
-        player:setStorageValue(Mainquest.spokenames, TASK_COMPLETED)
-        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "The final name echoes into the void... and peace returns.")
-        player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-    end
     return false
 end
 

@@ -24,7 +24,32 @@ local monsterTaskMap = {
         drops = {
             {itemId = 27632, amount = 1, chance = 10}, -- Ancient Corrupted Relic, 40% chance
         }
-    }
+    },
+
+    ["Fungus"] = {
+        tasks = {36},
+        drops = {
+            {itemId = 7251, amount = 1, chance = 7}, -- Ancient Corrupted Relic, 40% chance
+        }
+    },
+    ["Sporecrawler"] = {
+        tasks = {36},
+        drops = {
+            {itemId = 7251, amount = 1, chance = 7}, -- Ancient Corrupted Relic, 40% chance
+        }
+    },
+    ["Fungal Shambler"] = {
+        tasks = {26},
+        drops = {
+            {itemId = 7251, amount = 1, chance = 7}, -- Ancient Corrupted Relic, 40% chance
+        }
+    },
+
+
+
+
+
+
 }
 
 -- Function to get killers of a target (players who dealt damage within fight time)

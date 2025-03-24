@@ -479,7 +479,28 @@ local zones = {
         forceWeather = true, -- If true, weather will always stay the same
         activeWeather = nil, -- Stores the currently active weather
     },
+    [29] = {
+        id = 29,
+        name = "Sporeveil Outskirts",
+        monsters = {"sporecrawler", "fungal shambler", "fungus"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
 
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
 
 
 
