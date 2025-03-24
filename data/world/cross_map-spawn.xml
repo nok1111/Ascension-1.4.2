@@ -75,6 +75,12 @@
 	<spawn centerx="854" centery="859" centerz="9" radius="1">
 		<npc name="The Guardian of the Forgotten" x="0" y="-1" z="9" spawntime="60" direction="3" />
 	</spawn>
+	<spawn centerx="680" centery="960" centerz="9" radius="1">
+		<npc name="Dream-Seeker Alran" x="0" y="0" z="9" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="680" centery="1008" centerz="11" radius="1">
+		<npc name="Dream-Seeker Alran" x="0" y="0" z="11" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="564" centery="772" centerz="12" radius="1">
 		<monster name="Garnak the Warlord" x="0" y="0" z="12" spawntime="60" direction="2" />
 	</spawn>

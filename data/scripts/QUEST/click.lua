@@ -136,6 +136,17 @@ local eventConfigs = {
     --2019 used
     --2020 used
     --2021 used
+    --2022 used
+    --2023 used
+    --2024 used
+    --2025 used
+
+    [2100] = { -- Cleansing the Spirit at The Ember Shrine
+        required_storage = 40093, -- Must have started the quest
+        storage_reward = { id = Mainquest.sporegateactivated, value = 1 }, -- Mark quest as completed
+        message = "You align the final conduit. The ancient machine hums to life, pulsing with bioluminescent energy—the Sporegate is now active.",
+        magiceffect = 170, -- Fire effect
+    },
 
 }
 

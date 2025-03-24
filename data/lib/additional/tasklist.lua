@@ -1450,7 +1450,7 @@ playersTasks = {
             }
         }
     },
-    preRequiredStorages = {40080}, -- Must have completed "Dream Spores"
+    preRequiredStorages = {40079}, -- Must have completed "Dream Spores"
     taskGoalCnt = 1,
     taskMinLvl = 15,
     taskRepeat = false,
@@ -1479,7 +1479,7 @@ playersTasks = {
             }
         }
     },
-    preRequiredStorages = {40083}, -- Must have completed "Echoes Beneath the Swamp"
+    preRequiredStorages = {40081}, -- Must have completed "Echoes Beneath the Swamp"
     taskGoalCnt = 1,
     taskMinLvl = 15,
     taskRepeat = false,
@@ -1509,7 +1509,7 @@ playersTasks = {
             }
         }
     },
-    preRequiredStorages = {40086},
+    preRequiredStorages = {40083},
     taskGoalCnt = 1,
     taskMinLvl = 16,
     taskRepeat = false,
@@ -1540,7 +1540,7 @@ playersTasks = {
             }
         }
     },
-    preRequiredStorages = {40088},
+    preRequiredStorages = {40087},
     taskGoalCnt = 1,
     taskMinLvl = 16,
     taskRepeat = false,
@@ -1557,7 +1557,97 @@ playersTasks = {
     taskZoneName = "Blooming Depths",
     taskSource = "Dream-Seeker Alran",
     taskHint = "Bloomheart resides in the fungal bloom chamber near the heart of the machine's energy well."
+},
+[41] = {
+    taskNumber = 41,
+    taskName = "Stones of Resonance",
+    taskDescription = "A strange pulse emanates from underground tunnels near the western beer shop. Investigate the tunnel system and stabilize the energy from four ancient stones that seem to power a mysterious machine.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Energy Stabilized",
+                starageTaskId = Mainquest.stonestabilized
+            }
+        }
+    },
+    preRequiredStorages = {40089}, -- Must have completed previous task
+    taskGoalCnt = 4, -- Click 4 different stones
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40091, -- Task start
+    taskStorageCnt = 40092, -- Task completion
+    taskRewards = {
+        experience = 9500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 120 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Sporeveil Underground",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "Seek out the 4 power stones and stabilize their energy underground."
+},
+[42] = {
+    taskNumber = 42,
+    taskName = "Awakening the Sporegate",
+    taskDescription = "With the energy of the stones stabilized, Dream-Seeker Alran believes the ancient machine hidden underground is a Sporegate—a teleportation construct. Align its core and bring the gate back to life.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Sporegate Core Activated",
+                starageTaskId = Mainquest.sporegateactivated
+            }
+        }
+    },
+    preRequiredStorages = {40091}, -- Must have completed the previous task
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40093,
+    taskStorageCnt = 40094,
+    taskRewards = {
+        experience = 10000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Sporeveil Underground",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "Find and activate the Sporegate control mechanism."
+},
+
+[43] = {
+    taskNumber = 43,
+    taskName = "Through the Mycelium Veil",
+    taskDescription = "With the Sporegate reactivated, the path to the ancient island of the mycelid beings is open. Step into the portal and begin your journey into the unknown.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Traveled Through the Sporegate",
+                starageTaskId = Mainquest.traveledthroughthegate
+            }
+        }
+    },
+    preRequiredStorages = {40093}, -- Must have activated the Sporegate
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40095,
+    taskStorageCnt = 40096,
+    taskRewards = {
+        experience = 11000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 180 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Mycelid Outlands",
+    taskSource = "Dream-Seeker Alran",
+    taskHint = "Step into the Sporegate and explore what lies beyond."
 }
+
+
 
 
 

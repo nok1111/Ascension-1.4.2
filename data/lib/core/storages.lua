@@ -64,7 +64,9 @@ spokenseraphine = 50026,
 spokenmarek = 50027,
 investigateroot = 50028,
 investigatemachine = 50029,
-
+stonestabilized = 50030,
+sporegateactivated = 50031,
+traveledthroughthegate = 50032,
 }
 
 -- actions

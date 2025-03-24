@@ -40,6 +40,14 @@ local stepInConfigs = {
         },
         is_teleport = true -- Mark this as a teleport event
     },
+    [3005 = {
+        required_storage = 40095,
+        storage_reward = { id = Mainquest.traveledthroughthegate, value = 1 },
+        message = "A surge of energy flows through you, granting you new power!",
+        teleportTo = Position(871, 625, 9),
+        magiceffect = CONST_ME_ENERGYHIT,
+        teleport = true -- Mark this as a teleport event
+    },
 }
 
 local function restoreItem(position, itemId, actionId)
