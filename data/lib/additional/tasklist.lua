@@ -1647,7 +1647,88 @@ playersTasks = {
     taskZoneName = "Mycelid Outlands",
     taskSource = "Dream-Seeker Alran",
     taskHint = "Step into the Sporegate and explore what lies beyond."
+},
+[44] = { -- Next available quest ID
+    taskNumber = 44,
+    taskName = "Udder Chaos",
+    taskDescription = "Milk 10 cows... but 3 are actually demons in disguise!",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Demon Milk",
+                itemId = 5920 -- Regular egg ID
+            }
+        }
+    },
+    
+    preRequiredStorages = {}, -- No prerequisites
+    taskGoalCnt = 10, -- Milk 10 cows
+    taskMinLvl = 1,
+    taskRepeat = false,
+    taskStorageId = 40097, -- After 40095/40096
+    taskStorageCnt = 40098, 
+    
+    taskRewards = {
+        experience = 5000,
+        items = {
+            [1] = {
+                name = "Bucket of Demon Milk",
+                itemSid = 2853, -- Bucket ID
+                itemCnt = 1
+            }
+        },
+        outfits = {},
+    },
+    
+    taskZoneName = "Funny Farm",
+    taskSource = "Farmer Mabel",
+    taskHint = "Watch out for cows that growl or have red eyes!"
 }
+
+
+[45] = { -- Next available quest ID
+    taskNumber = 45,
+    taskName = "Chicken Revolution",
+    taskDescription = "Collect eggs from rebellious chickens who demand better working conditions!",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Union-Approved Egg",
+                itemId = 5920 -- Regular egg ID
+            }
+        }
+    },
+    
+    preRequiredStorages = {}, -- No prerequisites
+    taskGoalCnt = 8, -- Collect 8 eggs
+    taskMinLvl = 1,
+    taskRepeat = false,
+    
+    -- STORAGE IDs (NEXT AVAILABLE)
+    taskStorageId = 40099, -- After 40097/40098
+    taskStorageCnt = 40100, 
+    
+    taskRewards = {
+        experience = 8000,
+        items = {
+            [1] = {
+                name = "Chicken Union Membership Card",
+                itemSid = 13993, -- Parchment ID
+                itemCnt = 1
+            },
+            [2] = {
+                name = "Bag of Organic Feed",
+                itemSid = 6541, -- Seed bag ID
+                itemCnt = 5
+            }
+        },
+        outfits = {},
+    },
+    
+    taskZoneName = "Free-Range Chicken Coop",
+    taskSource = "Farmer Cluckington",
+    taskHint = "Chickens will only lay eggs if you give them treats first!"
+},
 
 
 

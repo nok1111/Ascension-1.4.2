@@ -153,7 +153,10 @@ local config = {
             animatedText = {text = "FEATHERS!", color = TEXTCOLOR_WHITE_EXP}
         },
         successMessage = "You plucked feathers from the chicken!"
-    }
+    },
+
+
+
 }
 
 -- Helper Functions --
