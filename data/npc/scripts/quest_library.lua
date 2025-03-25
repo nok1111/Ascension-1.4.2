@@ -30,11 +30,11 @@ function greetCallback(cid)
     
     elseif taskState == 1 then
         -- After accepting the quest but before completing it
-        doSendDialogNpc(cid, getNpcCid(), "Do you hear it? The whispers in the pages, the murmurs in the dark? Lily’s seal is not far now. Go. Find her.", "quests&rewards&close")
+        doSendDialogNpc(cid, getNpcCid(), "Do you hear it? The whispers in the pages, the murmurs in the dark? Lily\'s seal is not far now. Go. Find her.", "quests&rewards&close")
     
     else
         -- After finding Lily's Seal (Before starting next quest)
-        doSendDialogNpc(cid, getNpcCid(), "You have seen it, haven’t you? The flower of blood. The bindings of the past. She lingers… waiting. You will free her, won’t you?", "quests&rewards&close")
+        doSendDialogNpc(cid, getNpcCid(), "You have seen it, haven\'t you? The flower of blood. The bindings of the past. She lingers... waiting. You will free her, won\'t you?", "quests&rewards&close")
     end
 
     return true             

@@ -10,7 +10,7 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg)	
 
 
 function greetCallback(cid)
-    doSendDialogNpc(cid, getNpcCid(), "Please, traveler! My children, Lina and Emmet, are trapped in the farmhouse east of here. \nThe forest creatures invaded—I barely escaped! I can't fight them… but you can. Please, bring them back!.", "quests&rewards&close")
+    doSendDialogNpc(cid, getNpcCid(), "Please, traveler! My children, Lina and Emmet, are trapped in the farmhouse east of here. \nThe forest creatures invaded-I barely escaped! I can\'t fight them... but you can. Please, bring them back!.", "quests&rewards&close")
   return true             
 end
 

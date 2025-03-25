@@ -8,7 +8,7 @@ function onCreatureDisappear(cid) npcHandler:onCreatureDisappear(cid) end
 function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg) end
 
 function greetCallback(cid)
-    doSendDialogNpc(cid, getNpcCid(), "Bah! You look like someone who doesn’t fall for scams. Unlike me! That con artist, Tobias, stole my money with his so-called 'Invisible Armor' business! Get my 10 platinum back before I lose my last nerve!", "quests&rewards&close")
+    doSendDialogNpc(cid, getNpcCid(), "Bah! You look like someone who doesn\'t fall for scams. Unlike me! That con artist, Tobias, stole my money with his so-called \'Invisible Armor\' business! Get my 10 platinum back before I lose my last nerve!", "quests&rewards&close")
     return true             
 end
 

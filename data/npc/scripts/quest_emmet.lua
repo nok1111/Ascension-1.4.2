@@ -15,7 +15,7 @@ function greetCallback(cid)
         return false
     end
 
-    doSendDialogNpc(cid, getNpcCid(), "W-Who’s there?! Oh… you’re not one of them. Lina sent you? I was too scared to move… Those creatures are everywhere!\nPlease, get me out of here! Lina is waiting, right? Let’s go before they find us!", "help")
+    doSendDialogNpc(cid, getNpcCid(), "W-Who’s there?! Oh... you\'re not one of them. Lina sent you? I was too scared to move... Those creatures are everywhere!\nPlease, get me out of here! Lina is waiting, right? Let\'s go before they find us!", "help")
     return true               
 end
 
@@ -35,9 +35,9 @@ function creatureSayCallback(cid, type, msg)
         if player:getStorageValue(Mainquest.emmethelped) < 1 then
             player:setStorageValue(Mainquest.childrenfound, player:getStorageValue(Mainquest.childrenfound) + 1)
             player:setStorageValue(Mainquest.emmethelped, 1)
-             doSendDialogNpc(cid, getNpcCid(), "You found me… Thank you! Let’s get out of here before they return!", "close")
+             doSendDialogNpc(cid, getNpcCid(), "You found me... Thank you! Let\'s get out of here before they return!", "close")
         else
-            doSendDialogNpc(cid, getNpcCid(), "You already helped me. Let’s get back to mother!", "close")
+            doSendDialogNpc(cid, getNpcCid(), "You already helped me. Let\'s get back to mother!", "close")
         end
     
     elseif msgcontains(msg:lower(), "close") then

@@ -11,9 +11,9 @@ function greetCallback(cid)
     local player = Player(cid)
 
     if player:getStorageValue(Mainquest.eldenshadow) == TASK_COMPLETED then
-        doSendDialogNpc(cid, getNpcCid(), "So... the fog whispered back, did it? You heard them too, didn’t you?", "quests&rewards&close")
+        doSendDialogNpc(cid, getNpcCid(), "So... the fog whispered back, did it? You heard them too, didn\'t you?", "quests&rewards&close")
     else
-        doSendDialogNpc(cid, getNpcCid(), "Aye, traveler. You ever heard of Eldenmere? A town to the north, swallowed by the fog. Those who enter don’t return the same... if they return at all. Will you go and see?", "quests&rewards&close")
+        doSendDialogNpc(cid, getNpcCid(), "Aye, traveler. You ever heard of Eldenmere? A town to the north, swallowed by the fog. Those who enter don\'t return the same... if they return at all. Will you go and see?", "quests&rewards&close")
     end
     return true
 end

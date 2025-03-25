@@ -19,7 +19,7 @@ function onCreatureSay(cid, type, msg)
 end
 
 function greetCallback(cid)
-    doSendDialogNpc(cid, getNpcCid(), "Bah! The body betrays the mind, and now I need help from strangers... Listen, if you're here to chat, you\'re wasting my time. If you want to be useful, I need elderwood logs.", "quests&rewards&close")
+    doSendDialogNpc(cid, getNpcCid(), "Bah! The body betrays the mind, and now I need help from strangers... Listen, if you\'re here to chat, you\'re wasting my time. If you want to be useful, I need elderwood logs.", "quests&rewards&close")
     return true             
 end
 

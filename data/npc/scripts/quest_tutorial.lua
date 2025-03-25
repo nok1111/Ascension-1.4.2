@@ -9,7 +9,7 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg)	
 
 
 function greetCallback(cid)
-    doSendDialogNpc(cid, getNpcCid(), "Hi adventurer!, Welcome to Garona, I havent seen you here before, lets start with the basics!.", "quests&rewards&close")
+    doSendDialogNpc(cid, getNpcCid(), "Hi adventurer!, Welcome to Garona, I haven\'t seen you here before, let\'s start with the basics!.", "quests&rewards&close")
   return true             
 end
 

@@ -22,7 +22,7 @@ local greetTextOptions = {
     "Ah! A visitor! I can almost hear your bones rattling with excitement!",
     "The bones whisper to me... but they need more company. Will you help?",
     "You there! Ever wonder what happens to old bones? No? Good! Now give me some!",
-    "Ah, another collector of fine skeletal remains! You *are* a collector, yes?",
+    "Ah, another collector of fine skeletal remains! You are a collector, yes?",
     "Bones, bones, BONES! I can never have enough. Would you be so kind as to contribute?"
 }
 
@@ -37,7 +37,7 @@ local rewards = {
     {itemID = 11336, amount = 1, chance = 5} -- skeleton baby - clientid 2639
 }
 
-local interestedMessage = "Ah, you have an interest in my *collection*, yes? Excellent!\nI need certain... materials. Bring me these, and I shall grant you something in return.\n"
+local interestedMessage = "Ah, you have an interest in my collection, yes? Excellent!\nI need certain... materials. Bring me these, and I shall grant you something in return.\n"
 local successMessage = "Ooooh, wonderful! I shall add these to my collection... and for you, a special gift!"
 local failureMessage = "No bones, no reward! I must insist on proper payment!"
 

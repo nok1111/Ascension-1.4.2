@@ -1245,7 +1245,7 @@ playersTasks = {
     taskGoals = {
         storages = {
             [1] = {
-                starageName = "Entered Eldenmere's Fog",
+                starageName = "Entered Eldenmere\'s Fog",
                 starageTaskId = Mainquest.eldenshadow
             }
         }
@@ -1300,7 +1300,7 @@ playersTasks = {
     },
     taskZoneName = "Elden Cemetery",
     taskSource = "The Whispering Fog",
-    taskHint = "Seek out Edwin’s gravestone in the northern part of Elden Cemetery."
+    taskHint = "Seek out Edwin\'s gravestone in the northern part of Elden Cemetery."
 },
 [32] = {
     taskNumber = 32,
@@ -1308,7 +1308,7 @@ playersTasks = {
     taskDescription = "The second whisper calls to you. Seek out the gravestone of Seraphine the Silent in Elden Cemetery.",
     taskGoals = {
         storages = {
-            [1] = { starageName = "Found Seraphine's Name", starageTaskId = Mainquest.nameseraphine }
+            [1] = { starageName = "Found Seraphine\'s Name", starageTaskId = Mainquest.nameseraphine }
         }
     },
     preRequiredStorages = {40063}, -- Must have completed Edwin’s step
@@ -1334,7 +1334,7 @@ playersTasks = {
     taskDescription = "The final whisper calls to you. Seek out the gravestone of Marek the Cursed in Elden Cemetery.",
     taskGoals = {
         storages = {
-            [1] = { starageName = "Found Marek's Name", starageTaskId = Mainquest.namemarek }
+            [1] = { starageName = "Found Marek\'s Name", starageTaskId = Mainquest.namemarek }
         }
     },
     preRequiredStorages = {40063}, -- Must have completed Seraphine’s step
@@ -1352,7 +1352,7 @@ playersTasks = {
     },
     taskZoneName = "Elden Cemetery",
     taskSource = "The Whispering Fog",
-    taskHint = "Seek out Marek’s gravestone in the eastern part of Elden Cemetery."
+    taskHint = "Seek out Marek\'s gravestone in the eastern part of Elden Cemetery."
 },
 [34] = {
     taskNumber = 34,
@@ -1379,7 +1379,7 @@ playersTasks = {
     },
     taskZoneName = "Elden Cemetery",
     taskSource = "The Whispering Fog",
-    taskHint = "Channel energy into the spectral braziers while surviving Marek’s fury."
+    taskHint = "Channel energy into the spectral braziers while surviving Marek\'s fury."
 },
 [35] = {
     taskNumber = 35,
@@ -1472,7 +1472,7 @@ playersTasks = {
 [38] = {
     taskNumber = 38,
     taskName = "Whispers of the Machine",
-    taskDescription = "Deep beneath the swamp, you've uncovered a strange, humming machine entwined in ancient roots. Dream-Seeker Alran believes it may be a remnant of an older civilization. Investigate the device further and report any discoveries.",
+    taskDescription = "Deep beneath the swamp, you\'ve uncovered a strange, humming machine entwined in ancient roots. Dream-Seeker Alran believes it may be a remnant of an older civilization. Investigate the device further and report any discoveries.",
     taskGoals = {
         storages = {
             [1] = {
@@ -1533,7 +1533,7 @@ playersTasks = {
 [40] = {
     taskNumber = 40,
     taskName = "Heart of the Bloom",
-    taskDescription = "A second anomaly was found growing near the old tunnels — a creature known as the Bloomheart, drawing energy from the machine's core. Destroy it before it spreads spores across the island.",
+    taskDescription = "A second anomaly was found growing near the old tunnels - a creature known as the Bloomheart, drawing energy from the machine\'s core. Destroy it before it spreads spores across the island.",
     taskGoals = {
         monsters = {
             [1] = {
@@ -1558,7 +1558,7 @@ playersTasks = {
     },
     taskZoneName = "Blooming Depths",
     taskSource = "Dream-Seeker Alran",
-    taskHint = "Bloomheart resides in the fungal bloom chamber near the heart of the machine's energy well."
+    taskHint = "Bloomheart resides in the fungal bloom chamber near the heart of the machine\'s energy well."
 },
 [41] = {
     taskNumber = 41,
@@ -1592,7 +1592,7 @@ playersTasks = {
 [42] = {
     taskNumber = 42,
     taskName = "Awakening the Sporegate",
-    taskDescription = "With the energy of the stones stabilized, Dream-Seeker Alran believes the ancient machine hidden underground is a Sporegate—a teleportation construct. Align its core and bring the gate back to life.",
+    taskDescription = "With the energy of the stones stabilized, Dream-Seeker Alran believes the ancient machine hidden underground is a Sporegate a teleportation construct. Align its core and bring the gate back to life.",
     taskGoals = {
         storages = {
             [1] = {
