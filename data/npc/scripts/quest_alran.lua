@@ -14,12 +14,8 @@ function greetCallback(cid)
     local player = Player(cid)
     if not player then return false end
 
-    local storage = player:getStorageValue(40077) -- Quest [35] must be completed
-    if storage == 1 then
         doSendDialogNpc(cid, getNpcCid(), "The veil grows thin... Have you come to walk the path of dreams, seeker?", "quests&rewards&close")
-    else
-        doSendDialogNpc(cid, getNpcCid(), "The winds speak of your trials, but this journey is not yet yours to take.", "close")
-    end
+
     return true
 end
 

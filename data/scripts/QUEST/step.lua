@@ -27,20 +27,12 @@ local stepInConfigs = {
         is_teleport = true -- Mark this as a teleport event
     },
     [3004] = {
-        required_storage = 5000,
-        storage_reward = { id = 5001, value = 1 },
+        required_storage = 40081,
+        storage_reward = { id = Mainquest.investigateroot, value = 1 },
         message = "A surge of energy flows through you, granting you new power!",
-        teleportTo = Position(100, 100, 7),
-        magiceffect = CONST_ME_ENERGYHIT,
-        transform_item = { from = 2160, to = 2152, time = 5000 },
-        give_items = { {id = 2160, count = 10} },
-        give_stat_points = 5,
-        summon_monsters = {
-            {name = "Angry Grave Guardian", position = Position(1052, 1342, 7), count = 1}
-        },
-        is_teleport = true -- Mark this as a teleport event
+        magiceffect = 205,
     },
-    [3005 = {
+    [3005] = {
         required_storage = 40095,
         storage_reward = { id = Mainquest.traveledthroughthegate, value = 1 },
         message = "A surge of energy flows through you, granting you new power!",

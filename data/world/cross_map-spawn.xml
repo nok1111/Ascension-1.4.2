@@ -78,6 +78,12 @@
 	<spawn centerx="680" centery="960" centerz="9" radius="1">
 		<npc name="Dream-Seeker Alran" x="0" y="0" z="9" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="669" centery="910" centerz="10" radius="1">
+		<monster name="Bloomheart" x="-1" y="-1" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="703" centery="929" centerz="10" radius="1">
+		<monster name="Fungal Sentinel" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="680" centery="1008" centerz="11" radius="1">
 		<npc name="Dream-Seeker Alran" x="0" y="0" z="11" spawntime="60" direction="2" />
 	</spawn>

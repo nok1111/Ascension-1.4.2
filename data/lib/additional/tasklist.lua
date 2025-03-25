@@ -15,6 +15,8 @@ npcTaskList = {
         ["Old Sailor Grevis"] = {30},
         ["The Whispering Fog"] = {30,31,32,33,34,35},
         ["The Guardian of the Forgotten"] = {35},
+        ["Dream-Seeker Alran"] = {36,37,38,39,40,41,42,43}, 
+
         
 
 
@@ -1421,8 +1423,8 @@ playersTasks = {
         }
     },
     preRequiredStorages = {},
-    taskGoalCnt = 1,
-    taskMinLvl = 15,
+    taskGoalCnt = 10,
+    taskMinLvl = 10,
     taskRepeat = false,
     taskStorageId = 40079, -- Quest start
     taskStorageCnt = 40080, -- Quest complete
@@ -1460,7 +1462,7 @@ playersTasks = {
         experience = 9500,
         items = {
             [1] = { name = "gold coin", itemSid = 2148, itemCnt = 120 }
-        }
+        },
          outfits = {}
     },
     taskZoneName = "Fungal Tunnels",
@@ -1490,7 +1492,7 @@ playersTasks = {
         items = {
             [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
             [2] = { name = "Ancient Circuit Fragment", itemSid = 29742, itemCnt = 1 } -- Example item reward
-        }
+        },
         outfits = {}
     },
     taskZoneName = "Fungal Tunnels - Lower Depths",

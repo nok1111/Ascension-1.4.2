@@ -126,7 +126,7 @@ local eventConfigs = {
         required_storage = 40083, -- Must have started the quest
         storage_reward = { id = Mainquest.investigatemachine, value = 1 }, -- Mark quest as completed
         message = "The Ember Shrine flares up, consuming the dark energy around you!",
-        magiceffect = 170, -- Fire effect
+        magiceffect = 205, -- Fire effect
     },
 
     --2016 used
@@ -145,7 +145,21 @@ local eventConfigs = {
         required_storage = 40093, -- Must have started the quest
         storage_reward = { id = Mainquest.sporegateactivated, value = 1 }, -- Mark quest as completed
         message = "You align the final conduit. The ancient machine hums to life, pulsing with bioluminescent energy—the Sporegate is now active.",
-        magiceffect = 170, -- Fire effect
+        magiceffect = 501, -- Fire effect
+    },
+    [2101] = { -- Another event example
+       -- required_storage = 40027,
+        teleportTo = Position(699, 925, 10), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
+    },
+    [2102] = { -- Another event example
+       -- required_storage = 40027,
+        teleportTo = Position(663, 912, 10), -- Optional teleport destination
+        message = "A hidden passage has been discovered.",
+        magiceffect = CONST_ME_MORTAREA,
+        is_teleport = true -- Mark this as a teleport event
     },
 
 }
