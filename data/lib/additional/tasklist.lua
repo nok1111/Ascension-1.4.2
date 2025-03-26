@@ -1683,7 +1683,7 @@ playersTasks = {
     taskZoneName = "Funny Farm",
     taskSource = "Farmer Mabel",
     taskHint = "Watch out for cows that growl or have red eyes!"
-}
+},
 
 
 [45] = { -- Next available quest ID
