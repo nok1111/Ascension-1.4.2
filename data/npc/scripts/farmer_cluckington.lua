@@ -3,13 +3,9 @@ local npcHandler = NpcHandler:new(keywordHandler)
 NpcSystem.parseParameters(npcHandler)
 
 -- Constants
-local STORAGE_PROGRESS = 40099
+local STORAGE_PROGRESS = Mainquest.chickenscaught
 local STORAGE_COMPLETION = 40100
-local BROOM_ID = 2582
-local QUEST_REWARD = {
-    {id = 13993, count = 1}, -- Union Membership Card
-    {id = 6541, count = 5}   -- Organic Feed
-}
+local BROOM_ID = 2324
 
 -- Dialog states
 local DIALOG_STATE = {
@@ -39,7 +35,7 @@ function greetCallback(cid)
         message = "Cluck you for completing the quest! *ahem* I mean... thank you!"
         options = "close"
     elseif player:getStorageValue(STORAGE_PROGRESS) >= 1 then
-        message = string.format("Still clucking around? You've caught %d/10 chickens!", 
+        message = string.format("Still clucking around? You\'ve caught %d/10 chickens!", 
                               math.min(player:getStorageValue(STORAGE_PROGRESS), 10))
         options = "treats&quests&rewards&close"
     else
@@ -54,8 +50,13 @@ end
 function creatureSayCallback(cid, type, msg)
     if not npcHandler:isFocused(cid) then return false end
     
-    local player = Player(cid)
+     local player = Player(cid)
     if not player then return false end
+    
+    local npcName = npcHandler:getNpcName()
+    updateStateTaskListByNpcName(npcName, player)
+    local taskList = getTaskListByNpcName(npcName, player)
+    local completeTask = getCompleteForPrizeTaskList(npcName, player)
     
     -- Handle back button
     if msgcontains(msg, "back") then
@@ -64,14 +65,14 @@ function creatureSayCallback(cid, type, msg)
         elseif dialogState[cid] == DIALOG_STATE.BROOM then
             dialogState[cid] = DIALOG_STATE.TREATS
             doSendDialogNpc(cid, getNpcCid(),
-                "They want organic corn feed! I'll give you some if you help...\n"..
+                "They want organic corn feed! I\'ll give you some if you help...\n"..
                 "Use the broom to gently herd them. But careful - they'll spit if angry!",
                 "broom&back&close")
         elseif dialogState[cid] == DIALOG_STATE.UNION then
             dialogState[cid] = DIALOG_STATE.BROOM
             if player:getItemCount(BROOM_ID) == 0 then
                 doSendDialogNpc(cid, getNpcCid(),
-                    "Here's my spare broom. Don't whack them - just gentle sweeps!\n"..
+                    "Here\'s my spare broom. Don\'t whack them - just gentle sweeps!\n"..
                     "Remember: 1. Approach slowly 2. Use broom 3. Offer treats",
                     "union&back&close")
             else

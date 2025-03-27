@@ -139,7 +139,7 @@ local config = {
     },
     
     -- ACTUAL CONFIGURATIONS
-    [2324] = {
+    [0001] = {
         type = "monster_interaction",
         target = {
             name = "chicken",

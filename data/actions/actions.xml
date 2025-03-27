@@ -128,7 +128,7 @@
 
 	<!-- Fluids -->
 	<action itemid="1775" script="other/fluids.lua" />
-	<action fromid="2005" toid="2009" script="other/fluids.lua" />
+	<action fromid="2006" toid="2009" script="other/fluids.lua" />
 	<action fromid="2011" toid="2015" script="other/fluids.lua" />
 	<action itemid="2023" script="other/fluids.lua" />
 	<action fromid="2031" toid="2034" script="other/fluids.lua" />

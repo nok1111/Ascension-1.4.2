@@ -122,12 +122,7 @@ local eventConfigs = {
         magiceffect = 170, -- Fire effect
         transform_item = { from = 9948, to = 9949, time = 45000 }, -- Transform an item (Crystal Coin to Platinum Coin for 5 sec)
     },
-    [2016] = { -- Cleansing the Spirit at The Ember Shrine
-        required_storage = 40083, -- Must have started the quest
-        storage_reward = { id = Mainquest.investigatemachine, value = 1 }, -- Mark quest as completed
-        message = "The Ember Shrine flares up, consuming the dark energy around you!",
-        magiceffect = 205, -- Fire effect
-    },
+
 
     --2016 used
     --2017 used
@@ -140,6 +135,18 @@ local eventConfigs = {
     --2023 used
     --2024 used
     --2025 used
+
+    [2026] = { -- Cleansing the Spirit at The Ember Shrine
+        required_storage = 40083, -- Must have started the quest
+        storage_reward = { id = Mainquest.investigatemachine, value = 1 }, -- Mark quest as completed
+        message = "The Ember Shrine flares up, consuming the dark energy around you!",
+        magiceffect = 205, -- Fire effect
+    },
+
+
+
+
+    
 
     [2100] = { -- Cleansing the Spirit at The Ember Shrine
         required_storage = 40093, -- Must have started the quest
