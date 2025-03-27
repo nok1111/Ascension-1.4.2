@@ -67,6 +67,8 @@ investigatemachine = 50029,
 stonestabilized = 50030,
 sporegateactivated = 50031,
 traveledthroughthegate = 50032,
+chickenscaught = 50033,
+SheepHerding = 50034,
 }
 
 -- actions

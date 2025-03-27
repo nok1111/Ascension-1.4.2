@@ -723,7 +723,7 @@ local function spawnZoneBoss(zone)
         print("No valid spawn position for boss in zone: " .. zone.name)
         return
     end
-
+    local RedShader = "Monster Might"
     local boss = Game.createMonster(zone.boss, spawnPosition, true)
     if boss then
         boss:setShader(RedShader)

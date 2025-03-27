@@ -15,7 +15,7 @@ function greetCallback(cid)
         doSendDialogNpc(cid, getNpcCid(), "That demon milk made GREAT cheese!", "close")
     else
         doSendDialogNpc(cid, getNpcCid(), 
-            "Help! Some cows ain't cows! Milk 10 real ones, but avoid the demons! "..
+            "Help! Some cows ain\'t cows! Milk 10 real ones, but avoid the demons! "..
             "They moo backwards...", 
             "quests&rewards&close")
     end

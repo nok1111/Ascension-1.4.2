@@ -2,11 +2,11 @@ local chickenCapture = Action()
 
 -- CONFIGURATION --
 local CAPTURE_REQUIREMENT = 10  -- Chickens needed for quest
-local BROOM_ID = 2582            -- Broom item ID
-local EGG_ID = 5920              -- Union-Approved Egg
-local FEATHER_ID = 2666          -- Feather item
-local STORAGE_PROGRESS = 40099   -- Progress storage
-local UNION_CHICKEN_NAMES = {"union chicken", "union boss chicken"}
+local BROOM_ID = 2324            -- Broom item ID
+local EGG_ID = 2695              -- Union-Approved Egg
+local FEATHER_ID = 5890          -- Feather item
+local STORAGE_PROGRESS = Mainquest.chickenscaught   -- Progress storage
+local UNION_CHICKEN_NAMES = {"chicken", "union boss chicken"}
 
 -- SOUNDS (define in sounds.xml) --
 local SOUNDS = {
@@ -112,8 +112,8 @@ function chickenCapture.onUse(player, item, fromPos, target, toPos, isHotkey)
     end
 
     -- Calculate success (65% base + 5% per capture)
-    local currentProgress = math.max(0, player:getStorageValue(STORAGE_PROGRESS))
-    local successChance = 65 + (currentProgress * 5)
+    local currentProgress = math.max(0, player:getStorageValue(STORAGE_PROGRESS) * 3)
+    local successChance = 10 + (currentProgress * 5)
     successChance = math.min(successChance, 95) -- Cap at 95%
 
     -- SUCCESS CASE --

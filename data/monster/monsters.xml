@@ -929,7 +929,8 @@
 	<!-- Canines -->
 	<monster name="Crystal Wolf" file="canines/crystal wolf.xml" />
 	<monster name="Dog" file="canines/dog.xml" />
-	<monster name="cow" file="canines/cow.xml" />
+	<monster name="Cow" file="canines/cow.xml" />
+	<monster name="Demon Cow" file="canines/demon cow.xml" />
 	<monster name="Hellhound" file="canines/hellhound.xml" />
 	<monster name="Hot Dog" file="canines/hot dog.xml" />
 	<monster name="Husky" file="canines/husky.xml" />
