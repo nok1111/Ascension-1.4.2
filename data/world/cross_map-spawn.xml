@@ -60,6 +60,15 @@
 	<spawn centerx="816" centery="1004" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="772" centery="1005" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="781" centery="1005" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="752" centery="1006" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="765" centery="1007" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -69,8 +78,18 @@
 	<spawn centerx="796" centery="1007" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="817" centery="1007" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+		<monster name="Sheep" x="-1" y="1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="755" centery="1008" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="771" centery="1008" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="815" centery="1008" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="774" centery="1009" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -81,17 +100,29 @@
 	<spawn centerx="782" centery="1010" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="763" centery="1011" centerz="7" radius="1">
+		<monster name="Black Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="796" centery="1011" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="793" centery="1012" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+		<monster name="Sheep" x="-1" y="1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="739" centery="1014" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="784" centery="1014" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="822" centery="1014" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="-1" z="7" spawntime="60" direction="2" />
+		<monster name="Sheep" x="-1" y="0" z="7" spawntime="60" direction="2" />
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="800" centery="1015" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="764" centery="1016" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -105,11 +136,18 @@
 	<spawn centerx="785" centery="1016" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="820" centery="1016" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="789" centery="1017" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="764" centery="1019" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="847" centery="1019" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+		<monster name="Sheep" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="791" centery="1020" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -117,22 +155,52 @@
 	<spawn centerx="825" centery="1020" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="849" centery="1020" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="731" centery="1021" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="759" centery="1022" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="-1" z="7" spawntime="60" direction="2" />
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="819" centery="1023" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="826" centery="1024" centerz="7" radius="1">
+		<monster name="Sheep" x="-1" y="-1" z="7" spawntime="60" direction="2" />
+		<monster name="Sheep" x="0" y="-1" z="7" spawntime="60" direction="2" />
+		<monster name="Sheep" x="-1" y="0" z="7" spawntime="60" direction="2" />
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="745" centery="1025" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="756" centery="1025" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="730" centery="1026" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="794" centery="1026" centerz="7" radius="1">
+		<npc name="Phil" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="822" centery="1026" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="756" centery="1027" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="792" centery="1027" centerz="7" radius="1">
-		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="841" centery="1027" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="787" centery="1028" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 		<monster name="Chicken" x="-1" y="1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="805" centery="1028" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="772" centery="1029" centerz="7" radius="1">
 		<npc name="Farmer Cluckington" x="1" y="0" z="7" spawntime="60" direction="2" />
@@ -149,6 +217,15 @@
 	<spawn centerx="782" centery="1031" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="801" centery="1031" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="723" centery="1032" centerz="7" radius="1">
+		<monster name="Black Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="786" centery="1032" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="754" centery="1033" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -157,6 +234,12 @@
 	</spawn>
 	<spawn centerx="831" centery="1033" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="747" centery="1035" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="782" centery="1035" centerz="7" radius="1">
+		<npc name="Chriss" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="784" centery="1037" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -191,6 +274,7 @@
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="830" centery="1040" centerz="7" radius="1">
+		<npc name="Lucy Steelgard" x="-1" y="0" z="7" spawntime="60" direction="2" />
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="773" centery="1042" centerz="7" radius="1">
@@ -198,6 +282,9 @@
 	</spawn>
 	<spawn centerx="799" centery="1042" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="802" centery="1043" centerz="7" radius="1">
+		<monster name="Black Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="789" centery="1044" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -262,6 +349,9 @@
 	</spawn>
 	<spawn centerx="771" centery="1052" centerz="7" radius="1">
 		<monster name="Cow" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="781" centery="1052" centerz="7" radius="1">
+		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="787" centery="1052" centerz="7" radius="1">
 		<monster name="Cow" x="0" y="0" z="7" spawntime="60" direction="2" />

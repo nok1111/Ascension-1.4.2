@@ -69,6 +69,8 @@ sporegateactivated = 50031,
 traveledthroughthegate = 50032,
 chickenscaught = 50033,
 SheepHerding = 50034,
+philstandup = 50035,
+chrissbread = 50036,
 }
 
 -- actions

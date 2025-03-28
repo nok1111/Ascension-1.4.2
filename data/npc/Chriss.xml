@@ -1,0 +1,6 @@
+<npc name="Chriss"  script="quest_chriss.lua" walkinterval="0" speechbubble="3">
+	<look type="2664" />
+	<parameters>
+		<parameter key="message_farewell" value="Dont Die!" />
+	</parameters>
+</npc>

@@ -18,6 +18,8 @@ npcTaskList = {
         ["Dream-Seeker Alran"] = {36,37,38,39,40,41,42,43}, 
         ["Farmer Mabel"] = {44},
         ["Farmer Cluckington"] = {45},
+        ["Lucy Steelgard"] = {46},
+        ["Chriss"] = {47},
         
         
 
@@ -1736,12 +1738,12 @@ playersTasks = {
 [46] = { -- Next available quest ID
     taskNumber = 46,
     taskName = "Sheepnapped!",
-    taskDescription = "Farmer Baaartholomew’s prize sheep have ‘mysteriously vanished’ (read: staged a jailbreak). Your mission: ‘Recruit’ them back—by any means necessary. No questions asked. *Wink*.",
+    taskDescription = "Farmer Baaartholomew\'s prize sheep have ‘mysteriously vanished’ (read: staged a jailbreak). Your mission: \'Recruit\' them back—by any means necessary. No questions asked. *Wink*.",
      taskGoals = {
         storages = {
             [1] = {
-                starageName = "Sheep ‘Persuaded’",
-                starageTaskId = Mainquest.sheepherded
+                starageName = "Sheep \'Persuaded\'",
+                starageTaskId = Mainquest.SheepHerding
             }
         }
     },
@@ -1772,11 +1774,53 @@ playersTasks = {
         outfits = {},
     },
     
-    taskZoneName = "Free-Range Chicken Coop",
-    taskSource = "Farmer Cluckington",
-    taskHint = "ask Farmer Cluckington for a broom to hit chickens and catch them safely!"
+    taskZoneName = "Mercenary Camp",
+    taskSource = "Lucy Steelgard",
+    taskHint = "lure and Move Lost sheep inside Mercenary Camp."
 },
-
+[47] = { -- Next available quest ID
+    taskNumber = 47,
+    taskName = "Stand-Up Straw-gger",
+    taskDescription = "Phil the scarecrow has decided to abandon his life of agricultural intimidation to pursue his true passion: painfully unfunny comedy. Your mission: Be the world\'s worst laugh track artist. Fake-laugh through at least 5 of his horrific jokes without walking out (or dying of secondhand embarrassment). Warning: Corny puns may cause permanent eye-rolling.",
+     taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Standing Ovations (Mostly Out Of Pity)",
+                starageTaskId = Mainquest.philstandup
+            }
+        }
+    },
+    
+    preRequiredStorages = {}, -- No prerequisites
+    taskGoalCnt = 5, -- Collect 8 eggs
+    taskMinLvl = 1,
+    taskRepeat = false,
+    
+    -- STORAGE IDs (NEXT AVAILABLE)
+    taskStorageId = 40103, -- After 40097/40098
+    taskStorageCnt = 40104, 
+    
+    taskRewards = {
+        experience = 8000,
+        items = {
+            [1] = {
+                name = "Chicken Union Membership Card",
+                itemSid = 13993, -- Parchment ID
+                itemCnt = 1
+            },
+            [2] = {
+                name = "Bag of Organic Feed",
+                itemSid = 6541, -- Seed bag ID
+                itemCnt = 5
+            }
+        },
+        outfits = {},
+    },
+    
+    taskZoneName = "Free-Range Chicken Coop",
+    taskSource = "Chriss - Phil\'s Friend",
+    taskHint = "Type \'haha\', \'lol\', or \'laugh\' after each joke - even if it hurts. Phil\'s ego is more fragile than his straw stuffing."
+},
 
 
 

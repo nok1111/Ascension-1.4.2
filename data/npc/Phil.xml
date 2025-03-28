@@ -1,0 +1,4 @@
+<npc name="Phil"  script="quest_phil.lua" walkinterval="0" speechbubble="3">
+	<look type="2664" />
+
+</npc>

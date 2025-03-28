@@ -1,0 +1,6 @@
+<npc name="Lucy Steelgard"  script="quest_lucy_steelgard.lua" walkinterval="0" speechbubble="3">
+	<look type="2661"/>
+	<parameters>
+		<parameter key="message_farewell" value="Dont Die!" />
+	</parameters>
+</npc>

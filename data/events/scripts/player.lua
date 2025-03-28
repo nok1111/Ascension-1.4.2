@@ -66,11 +66,71 @@ function Player:onItemMoved(item, count, fromPosition, toPosition, fromCylinder,
 	end
 end
 
+
+
+
+local sheepHerding = {
+    -- Configurable settings
+    monsterNames = {"Sheep", "Wooly Sheep", "Black Sheep"}, -- Names of sheep monsters (case-sensitive!)
+    penCenter = Position(824, 1042, 7), -- Center of the pen
+    penRadius = 5, -- Sheep must be within this distance to count
+    storageKey = Mainquest.SheepHerding, -- Define in `constants.lua` (or use a number, e.g., 12345)
+    sheepNeeded = 4, -- Sheep required to complete
+    reward = {
+        achievement = "Sheep Whisperer",
+        itemId = 12345, -- Rainbow wool dye
+        itemCount = 1,
+        message = "You mastered the art of sheep herding!"
+    }
+}
+
+
 function Player:onMoveCreature(creature, fromPosition, toPosition)
-	if hasEventCallback(EVENT_CALLBACK_ONMOVECREATURE) then
-		return EventCallback(EVENT_CALLBACK_ONMOVECREATURE, self, creature, fromPosition, toPosition)
-	end
-	return true
+    -- Check if the moved creature is a valid sheep monster
+    if not creature:isMonster() or not table.contains(sheepHerding.monsterNames, creature:getName()) then
+        if hasEventCallback(EVENT_CALLBACK_ONMOVECREATURE) then
+            return EventCallback(EVENT_CALLBACK_ONMOVECREATURE, self, creature, fromPosition, toPosition)
+        end
+        return true
+    end
+
+    print("SHEEP MOVED")
+    print(getDistanceBetween(toPosition, sheepHerding.penCenter))
+    
+    -- Check if sheep is inside the pen area
+    if getDistanceBetween(toPosition, sheepHerding.penCenter) <= sheepHerding.penRadius then
+        -- Use self as the player object
+        local player = self
+        
+        -- Initialize or increment storage
+        local herdedSheep = math.max(0, player:getStorageValue(sheepHerding.storageKey))
+        player:setStorageValue(sheepHerding.storageKey, herdedSheep + 1)
+        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, string.format("Sheep herded! (%d/%d)", herdedSheep + 1, sheepHerding.sheepNeeded))
+        creature:getPosition():sendMagicEffect(204)
+        creature:remove()
+
+        -- Check for quest completion
+        if herdedSheep + 1 >= sheepHerding.sheepNeeded then
+            player:sendTextMessage(MESSAGE_EVENT_ADVANCE, sheepHerding.reward.message)
+            
+            -- Give rewards
+            if sheepHerding.reward.achievement then
+                player:addAchievement(sheepHerding.reward.achievement)
+            end
+            if sheepHerding.reward.itemId then
+                player:addItem(sheepHerding.reward.itemId, sheepHerding.reward.itemCount or 1)
+            end
+            
+            -- Optional: Reset storage if needed
+            -- player:setStorageValue(sheepHerding.storageKey, 0)
+        end
+    end
+
+    if hasEventCallback(EVENT_CALLBACK_ONMOVECREATURE) then
+        return EventCallback(EVENT_CALLBACK_ONMOVECREATURE, self, creature, fromPosition, toPosition)
+    end
+
+    return true
 end
 
 function Player:onReportRuleViolation(targetName, reportType, reportReason, comment, translation)
