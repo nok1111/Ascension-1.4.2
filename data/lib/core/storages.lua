@@ -72,6 +72,7 @@ SheepHerding = 50034,
 philstandup = 50035,
 chrissbread = 50036,
 foundpartner = 50037,
+goblinsgold = 50038,
 }
 
 -- actions

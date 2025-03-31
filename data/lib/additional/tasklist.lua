@@ -1850,6 +1850,71 @@ playersTasks = {
     taskZoneName = "Northern Mountain Ridge",
     taskSource = "Lucy Steelgard",
     taskHint = "Search for traces of the goblin stash and signs of Vornik's fate."
+},
+
+[49] = {
+    taskNumber = 49,
+    taskName = "Steelgard's Vengeance",
+    taskDescription = "After confirming that goblins ambushed and killed her partner, Lucy Steelgard has asked you to cull their numbers. Hunt down the goblins infesting the northern ridge.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Mountain Goblin",
+                spriteId = 1321
+            },
+            [2] = {
+                name = "Goblin Bruiser",
+                spriteId = 1322
+            }
+        }
+    },
+    preRequiredStorages = {40094}, -- Must have completed the investigation
+    taskGoalCnt = 30, -- Kill 30 goblins
+    taskMinLvl = 18,
+    taskRepeat = false,
+    taskStorageId = 40107, -- Track progress
+    taskStorageCnt = 40108, -- Completion
+    taskRewards = {
+        experience = 16000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 250 },
+            [2] = { name = "Steelgard Axe", itemSid = 2429, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Northern Mountain Ridge",
+    taskSource = "Lucy Steelgard",
+    taskHint = "Slay any goblins you find in the mountain pass. Lucy wants no survivors."
+},
+[50] = {
+    taskNumber = 50,
+    taskName = "Gold for the Bold",
+    taskDescription = "Lucy Steelgard believes there's a stash of stolen gold deep in the goblin camp. While you're already hunting goblins, she wants you to find and loot their hoarded treasure.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Investigated Goblin Hideout",
+                starageTaskId = Mainquest.goblinsgold
+            }
+        }
+    },
+    preRequiredStorages = {40096}, -- Must have completed goblin slaying quest
+    taskGoalCnt = 2, -- Collect both unique items
+    taskMinLvl = 18,
+    taskRepeat = false,
+    taskStorageId = 40109, -- Progress
+    taskStorageCnt = 40110, -- Completion
+    taskRewards = {
+        experience = 18000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 300 },
+            [2] = { name = "Steelgard Emblem", itemSid = 9219, itemCnt = 1 } -- A keepsake
+        },
+        outfits = {}
+    },
+    taskZoneName = "Goblin Camp - Northern Ridge",
+    taskSource = "Lucy Steelgard",
+    taskHint = "Search crates, barrels, or goblin bosses for their treasure stash."
 }
 
 
