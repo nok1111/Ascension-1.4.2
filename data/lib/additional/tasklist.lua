@@ -1821,6 +1821,37 @@ playersTasks = {
     taskSource = "Chriss - Phil\'s Friend",
     taskHint = "Type \'haha\', \'lol\', or \'laugh\' after each joke - even if it hurts. Phil\'s ego is more fragile than his straw stuffing."
 },
+[48] = {
+    taskNumber = 48,
+    taskName = "Steel and Greed",
+    taskDescription = "Lucy Steelgard’s dwarven partner, Vornik, went missing while scouting a goblin stronghold in the northern mountains. She wants you to find out what happened to him.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Investigated Goblin Hideout",
+                starageTaskId = Mainquest.investigatedgoblinhideout
+            }
+        }
+    },
+    preRequiredStorages = {}, -- No prerequisites
+    taskGoalCnt = 1,
+    taskMinLvl = 18,
+    taskRepeat = false,
+    taskStorageId = 40105, -- Quest start storage
+    taskStorageCnt = 40106, -- Completion storage
+    taskRewards = {
+        experience = 13000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 200 },
+            [2] = { name = "Steelgard Token", itemSid = 5806, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Northern Mountain Ridge",
+    taskSource = "Lucy Steelgard",
+    taskHint = "Search for traces of the goblin stash and signs of Vornik's fate."
+}
+
 
 
 

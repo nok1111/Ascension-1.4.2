@@ -142,11 +142,16 @@ local eventConfigs = {
         message = "The Ember Shrine flares up, consuming the dark energy around you!",
         magiceffect = 205, -- Fire effect
     },
+    [2027] = { -- Another event example
+        required_storage = 40105,
+        storage_reward = { id = Mainquest.foundpartner, value = 1 },
+        message = "You have found what it seems Lucy\'s dwarf Partner.!",
+        magiceffect = 205
+    },
 
 
 
 
-    
 
     [2100] = { -- Cleansing the Spirit at The Ember Shrine
         required_storage = 40093, -- Must have started the quest
@@ -168,6 +173,7 @@ local eventConfigs = {
         magiceffect = CONST_ME_MORTAREA,
         is_teleport = true -- Mark this as a teleport event
     },
+
 
 }
 
