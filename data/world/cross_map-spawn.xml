@@ -180,11 +180,11 @@
 	<spawn centerx="756" centery="1025" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="794" centery="1025" centerz="7" radius="1">
+		<npc name="Phil" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="730" centery="1026" centerz="7" radius="1">
 		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="794" centery="1026" centerz="7" radius="1">
-		<npc name="Phil" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="822" centery="1026" centerz="7" radius="1">
 		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -235,11 +235,11 @@
 	<spawn centerx="831" centery="1033" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="782" centery="1034" centerz="7" radius="1">
+		<npc name="Chriss" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="747" centery="1035" centerz="7" radius="1">
 		<monster name="Sheep" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="782" centery="1035" centerz="7" radius="1">
-		<npc name="Chriss" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="784" centery="1037" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -274,7 +274,6 @@
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="830" centery="1040" centerz="7" radius="1">
-		<npc name="Lucy Steelgard" x="-1" y="0" z="7" spawntime="60" direction="2" />
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="773" centery="1042" centerz="7" radius="1">
