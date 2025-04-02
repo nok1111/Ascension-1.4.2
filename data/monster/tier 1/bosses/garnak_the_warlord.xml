@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Garnak the Warlord" nameDescription="a Garnak the Warlord" race="blood" experience="40" speed="170" manacost="290">
+	<health now="80" max="80" />
+	<level min="80" max="80" />
+	<look type="2447" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-220" />		
+<attack name="physical" interval="2000" chance="15" range="7" min="-50" max="-260">
+			<attribute key="shootEffect" value="smallstone" />
+		</attack>
+		<attack name="physical" interval="3000" chance="30" range="1" radius="2" target="1" min="-3" max="-240">
+			<attribute key="areaEffect" value="newearthquake" />
+		</attack>
+	</attacks>
+<defenses armor="3" defense="1" />
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	<voices interval="5000" chance="10">
+		<voice sentence="ya ramm wrooo!" />
+		<voice sentence="raaaww gaw lotr!" />
+		<voice sentence="ghrew gimo" />
+		<voice sentence="Bauutraw! bauu!" />
+		<voice sentence="Me, eaw!" />
+	</voices>
+	<loot>
+		
+	</loot>
+</monster>

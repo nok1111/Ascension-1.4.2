@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Dread Phantom" nameDescription="a Dread Phantom" race="undead" experience="20" speed="230" manacost="0">
+	<health now="6" max="6" />
+	<level min="365" max="370" />
+	<look type="2592" corpse="37129" />
+	<targetchange interval="4000" chance="15" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+<attack name="betrayed wraith skill reducer" chance="10" />
+		<attack name="speed" interval="2000" chance="20" range="7" target="1" speedchange="-300" duration="3000">
+			<attribute key="shootEffect" value="suddendeath" />
+			<attribute key="areaEffect" value="mortarea" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="30" min="350" max="600">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		<defense name="invisible" interval="2000" chance="10" duration="5000">
+			<attribute key="areaEffect" value="redspark" />
+		</defense>
+		<defense name="speed" interval="2000" chance="15" speedchange="260" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="2000" chance="7">
+		<voice sentence="Rrrah!" />
+		<voice sentence="Gnarr!" />
+		<voice sentence="Tcharrr!" />
+	</voices>
+	<loot>
+		<item id="34367" chance="1000" /><!-- sellable -->
+	<item id="6500" chance="12460" /><!-- demonic essence -->
+		<item id="2145" countmax="4" chance="11800" />		<!-- small diamond -->
+		<item id="7386" chance="1790" />					<!-- mercenary sword -->
+		<item id="6300" chance="420" />						<!-- death ring -->
+		<item id="5741" chance="420" />						<!-- skull helmet -->
+		<item id="7416" chance="70" />						<!-- bloody edge -->
+		<item id="38264" chance="3500" /><!--knecklace magic maxmana -->
+		<item id="38318" chance="3500" /><!--ring magic mana manaregen -->
+		
+		<item id="36249" chance="2000" /><!-- t4 item -->
+		<item id="32506" chance="2000" /><!-- t4 item -->
+		<item id="32806" chance="2000" /><!-- t4 item -->
+		<item id="33160" chance="2000" /><!-- t4 item -->
+		<item id="36234" chance="2000" /><!-- t4 item -->
+
+	</loot>
+</monster>

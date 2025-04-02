@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Bear" nameDescription="a bear" race="blood" experience="20" speed="150" manacost="465">
+	<health now="6" max="6" />
+	<!--- Level --><level min="10" max="17" />
+	<look type="1505" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="30" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-50" />	</attacks>
+<defenses armor="2" defense="1" />
+	<voices interval="5000" chance="10">
+		<voice sentence="Grunt Grunt" />
+		<voice sentence="Grunt" />
+	</voices>
+	<loot>
+		<item id="35339" countmax="2" chance="30000" />
+		<item id="2501" chance="8000" />
+		<item id="23544" chance="8000" />
+		<item id="2484" chance="8000" />
+		<item id="35339" countmax="5" chance="35000" />
+
+		<item id="36251" chance="530" />
+		<item id="32866" chance="530" />
+		<item id="31879" chance="530" />
+		
+		<item id="39128" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39108" countmax="2" chance="27500" /><!-- sell -->
+	</loot>
+</monster>
