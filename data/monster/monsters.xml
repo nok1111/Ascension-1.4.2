@@ -24,6 +24,7 @@
 	
 	<!--TIER 1-->
 	<monster name="Rat" file="tier 1/rat.xml" />
+	<monster name="Spider" file="tier 1/spider.xml" />
 	<monster name="Tarantula" file="tier 1/tarantula.xml" />
 
 	<monster name="Leafy Twigkin" file="tier 1/leafy_twigkin.xml" />

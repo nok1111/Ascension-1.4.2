@@ -3,7 +3,7 @@ local zones = {
 --AREA 1
     [1] = {
         id = 1,
-        name = "Rat Place",
+        name = "Garona Forest",
         monsters = {"spider", "tarantula"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 7000,
@@ -30,7 +30,7 @@ local zones = {
     },
     [2] = {
         id = 2,
-        name = "Twigkin Forest",
+        name = "Garona Forest",
         monsters = {"twigkin", "flaming twigkin", "leafy twigkin"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
