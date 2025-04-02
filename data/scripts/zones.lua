@@ -523,9 +523,46 @@ local zones = {
         forceWeather = false, -- If true, weather will always stay the same
         activeWeather = nil, -- Stores the currently active weather
     },
+    [31] = {
+        id = 31,
+        name = "Chlorophyll Tunnels",
+        monsters = {"ivy", "rotbloom", "overgrowth ivy"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+    },
+
+    [32] = {
+        id = 32,
+        name = "xxxx",
+        monsters = {"sporecrawler", "fungal shambler", "fungus"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = false, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
 
 
-
+         -- WEATHER SETTINGS
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
 
 
 

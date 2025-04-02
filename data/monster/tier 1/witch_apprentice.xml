@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Witch Apprentice" nameDescription="a witch apprentice" race="blood" experience="20" speed="195">
+	<health now="6" max="6" />
+	<!--- Level --><level min="25" max="35" />
+	<look type="1747" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="4" />
+		<flag staticattack="90" />
+		<flag runonhealth="30" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+		
+		<attack name="fire" interval="2000" chance="100" range="7" min="0" max="-70">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="fire" />
+		</attack>
+
+		<attack name="outfit" interval="2000" chance="1" target="1" range="5" monster="green frog" duration="2000" />
+	</attacks>
+<defenses armor="1" defense="1"/>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Horax pokti!" />
+		<voice sentence="Herba budinia ex!" />
+		<voice sentence="Hihihihi!" />
+	</voices>
+	<loot>
+		<item id="38574" chance="400" />	
+		<item id="2185" chance="600" /> <!--name="necrotic rod"-->
+		<item name="bag of apple slices" chance="920" />
+		<item id="2167" chance="400" />
+		<item id="2182" chance="800" />
+		<item id="2662" chance="800" />
+		<item id="36193" chance="500" />
+		<item id="32873" chance="530" />
+		<item id="36358" chance="530" />		
+		<item id="38294" chance="4500" /> <!-- mana master -->
+		<item id="38296" chance="4500" /> <!-- magic heaven -->
+		<item id="38325" chance="4500" /> <!-- ring of the witch -->
+		
+		<item id="32723" chance="3500" />
+		<item id="39153" countmax="1" chance="5500" /><!-- sell -->
+		<item id="39182" countmax="1" chance="5500" /><!-- sell -->
+		<item id="39145" countmax="1" chance="5500" /><!-- sell -->
+		<item id="39146" countmax="1" chance="5500" /><!-- sell -->
+	</loot>
+</monster>
