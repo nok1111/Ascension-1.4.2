@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<monster name="Dark Troll" nameDescription="a dark troll" race="blood" experience="20" speed="190" manacost="340">
+<monster name="Dark Troll" nameDescription="a dark troll" race="blood" experience="22" speed="190" manacost="340">
 	<health now="6" max="6" />
-	<!--- Level --><level min="17" max="20" />
+	<level min="17" max="20" />
 	<look type="1991" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
 	<flags>
@@ -21,7 +21,7 @@
 	</flags>
 	<attacks>
 <attack name="melee" interval="2000" min="0" max="-40" />	</attacks>
-<defenses armor="1" defense="1" />
+<defenses armor="2" defense="1" />
 	
 	<voices interval="5000" chance="10">
 		<voice sentence="Meee maity!" />

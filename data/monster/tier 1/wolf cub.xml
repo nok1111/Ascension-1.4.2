@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Wolf Cub" nameDescription="a wolf" race="blood" experience="20" speed="160" manacost="255">
 	<health now="6" max="6" />
-	<!--- Level --><level min="20" max="20" />
+	<level min="9" max="11" />
 	<look type="1709" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
 	<flags>
@@ -21,7 +21,7 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-32" />	</attacks>
+<attack name="melee" interval="2000" min="0" max="-22" />	</attacks>
 <defenses armor="1" defense="1" />
 	
 	<voices interval="5000" chance="10">

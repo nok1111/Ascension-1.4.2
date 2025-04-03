@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Dwarf Soldier" nameDescription="a dwarf soldier" race="blood" experience="20" speed="170" manacost="360">
 	<health now="6" max="6" />
+	<level min="20" max="25" />
 	<look type="2601" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
