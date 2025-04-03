@@ -31,6 +31,24 @@ PlayerStorageKeys = {
 GlobalStorageKeys = {
 }
 
+MonsterStorage = {
+    Vampiric    = 100,
+    Sacred      = 101,
+    Arcane      = 102,
+    Corrosive   = 103,
+    Frostbound  = 104,
+    Plagued     = 105,
+    Burning     = 106,
+    Shocking    = 107,
+    Leeching    = 108,
+    Reaper      = 109,
+    Bulwark     = 110,
+    Juggernaut  = 111,
+    Unholy      = 112,
+    Explosive   = 113
+}
+
+
 Mainquest = {
 learncrafting = 50001,
 childrenfound = 50002,
