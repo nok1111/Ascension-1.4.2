@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Minotaur" nameDescription="a minotaur" race="blood" experience="20" speed="170" manacost="330">
 	<health now="6" max="6" />
-	<level min="37" max="42" />
+	<level min="34" max="40" />
 	<look type="1802" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
 	<flags>

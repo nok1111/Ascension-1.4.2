@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Witch Apprentice" nameDescription="a witch apprentice" race="blood" experience="20" speed="195">
 	<health now="6" max="6" />
-	<!--- Level --><level min="25" max="35" />
+	<level min="18" max="24" />
 	<look type="1747" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -21,10 +21,16 @@
 	</flags>
 	<attacks>
 		
-		<attack name="fire" interval="2000" chance="100" range="7" min="0" max="-70">
+		<attack name="fire" interval="2000" chance="100" range="7" min="0" max="-48">
 			<attribute key="shootEffect" value="fire" />
 			<attribute key="areaEffect" value="fire" />
 		</attack>
+
+
+		<!-- Weak Poison Cloud -->
+    <attack name="poison" interval="6000" chance="10" length="3" spread="0" min="-5" max="-60">
+        <attribute key="areaEffect" value="poison"/>
+    </attack>
 
 		<attack name="outfit" interval="2000" chance="1" target="1" range="5" monster="green frog" duration="2000" />
 	</attacks>

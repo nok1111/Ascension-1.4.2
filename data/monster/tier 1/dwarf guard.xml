@@ -18,7 +18,14 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />	</attacks>
+<attack name="melee" interval="2000" min="-2" max="-50" />	
+
+ <attack name="physical" interval="5000" chance="10" range="5" min="-30" max="-60">
+        <attribute key="shootEffect" value="spear"/> 
+    </attack>
+
+
+</attacks>
 <defenses armor="1" defense="1" />
 	
 	<immunities>
@@ -29,18 +36,6 @@
 	</voices>
 	<loot>
 		
-		<item id="7618" chance="380" /><!-- health potion -->
-		<item id="5880" chance="510" /><!-- iron ore -->
-		<item id="2643" chance="40000" /><!-- leather boots -->
-		<item id="2150" chance="140" /><!-- small amethyst -->
-		<item id="2457" chance="1600" /><!-- amazonic helmet -->
-		<item id="2513" chance="6000" /><!-- battle shield -->
-		<item id="2417" chance="4000" /><!-- battle hammer -->
-		<item id="2787" countmax="2" chance="55000" /><!-- white mushroom -->
-		<item id="2483" chance="9200" /><!-- scale armor -->
-		<item id="2387" chance="600" /><!-- headripper axe -->
-		<item id="2459" chance="250" /><!-- iron helmet -->
-		<item id="2208" chance="190" /><!-- axe ring -->
-		<item id="13757" chance="280" /><!-- coal -->
+	
 	</loot>
 </monster>

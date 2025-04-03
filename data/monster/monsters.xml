@@ -75,6 +75,11 @@
 	<monster name="Dwarf Soldier" file="tier 1/dwarf soldier.xml" />
 	<monster name="Dwarf" file="tier 1/dwarf.xml" />
 
+	<monster name="Toad" file="tier 1/toad.xml" />
+
+	<monster name="Thornback Turtle" file="tier 1/thornback turtle.xml" />
+	<monster name="Mature Thornback Turtle" file="tier 1/mature thornback turtle.xml" />
+
 	<monster name="Elf" file="tier 1/elf.xml" />
 	<monster name="Elf Arcanist" file="tier 1/elf arcanist.xml" />
 	<monster name="Elf Scout" file="tier 1/elf scout.xml" />

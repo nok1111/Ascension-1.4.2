@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Elf" nameDescription="an elf" race="blood" experience="20" speed="170" manacost="320">
 	<health now="6" max="6" />
+	<level min="48" max="53" />
 	<look type="2473" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
 	<flags>
@@ -20,7 +21,8 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="physical" interval="2000" chance="10" range="7" min="0" max="-25">
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+<attack name="physical" interval="2000" chance="10" range="7" min="0" max="-25">
 			<attribute key="shootEffect" value="arrow" />
 		</attack>
 	</attacks>

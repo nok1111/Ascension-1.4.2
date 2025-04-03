@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Skeleton" nameDescription="a skeleton" race="undead" experience="20" speed="154" manacost="300">
 	<health now="6" max="6" />
-	<!--- Level --><level min="30" max="38" />
+	<level min="24" max="30" />
 	<look type="1719" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
 	<flags>
@@ -21,8 +21,12 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-80" />		
-<attack name="lifedrain" interval="2000" chance="15" range="1" min="-3" max="-35" />
+<attack name="melee" interval="2000" min="0" max="-52" />		
+<attack name="lifedrain" interval="7000" chance="10" range="1" target="1" min="-15" max="-90">
+        <attribute key="areaEffect" value="mortarea"/>
+    </attack>
+
+
 	</attacks>
 <defenses armor="1" defense="1" />
 	

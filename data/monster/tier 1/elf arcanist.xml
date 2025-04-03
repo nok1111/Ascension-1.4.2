@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Elf Arcanist" nameDescription="an elf arcanist" race="blood" experience="20" speed="170" manacost="0">
 	<health now="6" max="6" />
+	<level min="52" max="56" />
 	<look type="2475" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -16,19 +17,24 @@
 		<flag staticattack="90" />
 		<flag runonhealth="0" />
 	</flags>
-	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="physical" interval="2000" chance="10" range="7" min="0" max="-70">
+<attacks>
+	<attack name="melee" interval="2000" min="-2" max="-10" />		
+
+	<attack name="physical" interval="2000" chance="10" range="7" min="0" max="-70">
 			<attribute key="shootEffect" value="arrow" />
-		</attack>
-		<attack name="energy" interval="2000" chance="10" range="7" min="-30" max="-50">
+	</attack>
+
+	<attack name="energy" interval="2000" chance="10" range="7" min="-30" max="-50">
 			<attribute key="shootEffect" value="energy" />
 			<attribute key="areaEffect" value="energy" />
-		</attack>
-		<attack name="death" interval="2000" chance="10" range="7" min="-70" max="-85">
+	</attack>
+
+	<attack name="death" interval="2000" chance="10" range="7" min="-70" max="-85">
 			<attribute key="shootEffect" value="suddendeath" />
 			<attribute key="areaEffect" value="smallclouds" />
-		</attack>
-	</attacks>
+	</attack>
+
+</attacks>
 <defenses armor="1" defense="1" >
 
 		<defense name="healing" interval="2000" chance="15" min="40" max="60">

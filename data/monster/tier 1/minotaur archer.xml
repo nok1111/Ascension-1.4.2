@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Minotaur Archer" nameDescription="a minotaur archer" race="blood" experience="20" speed="170" manacost="390">
 	<health now="6" max="6" />
-	<level min="37" max="42" />
+	<level min="34" max="40" />
 	<look type="1801" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -21,6 +21,14 @@
 		<attack name="physical" interval="2000" chance="100" range="7" min="0" max="-84">
 			<attribute key="shootEffect" value="bolt" />
 		</attack>
+
+		 <!-- Poison Arrow -->
+    <attack name="speed" interval="2000" chance="25" range="7" radius="4" target="1" speedchange="-700" duration="15000">
+    <attribute key="shootEffect" value="poisonarrow"/>
+    <attribute key="areaEffect" value="greenspark"/>
+</attack>
+
+    
 	</attacks>
 <defenses armor="1" defense="1"/>
 	

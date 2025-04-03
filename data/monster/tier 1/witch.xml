@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Witch" nameDescription="a witch" race="blood" experience="20" speed="195">
 	<health now="6" max="6" />
-	<!--- Level --><level min="35" max="40" />
+	<level min="35" max="40" />
 	<look type="1738" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>

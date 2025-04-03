@@ -26,9 +26,13 @@
 			<attribute key="shootEffect" value="fire" />
 			<attribute key="areaEffect" value="firearea" />
 		</attack>
-		<attack name="energyfield" interval="2000" chance="10" range="7" target="1">
-			<attribute key="shootEffect" value="energyball" />
-		</attack>
+		 <!-- Energy Beam -->
+    <attack name="energy" interval="3000" chance="20" range="5" target="1" min="-35" max="-55">
+        <attribute key="shootEffect" value="energy"/>
+        <attribute key="areaEffect" value="energyarea"/>
+    </attack>
+
+    
 	</attacks>
 <defenses armor="1" defense="1"/>
 

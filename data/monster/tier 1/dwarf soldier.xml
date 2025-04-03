@@ -18,9 +18,13 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="physical" interval="2000" chance="10" range="7" min="0" max="-60">
-			<attribute key="shootEffect" value="bolt" />
-		</attack>
+<attack name="melee" interval="2000" min="-2" max="-50" />	
+
+<!-- Strong slash (higher damage, lower chance) -->
+    <attack name="melee" interval="3000" chance="25" min="-2" max="-75">
+        <attribute key="areaEffect" value="redshimmer"/>
+    </attack>
+
 	</attacks>
 <defenses armor="1" defense="1" />
 	
@@ -29,19 +33,6 @@
 	</voices>
 	<loot>
 		
-		<item id="7618" chance="380" /><!-- health potion -->
-		<item id="5880" chance="510" /><!-- iron ore -->
-		<item id="2643" chance="40000" /><!-- leather boots -->
-		<item id="2150" chance="140" /><!-- small amethyst -->
-		<item id="2457" chance="1600" /><!-- amazonic helmet -->
-		<item id="2513" chance="6000" /><!-- battle shield -->
-		<item id="2417" chance="4000" /><!-- battle hammer -->
-		<item id="2787" countmax="2" chance="55000" /><!-- white mushroom -->
-		<item id="2483" chance="9200" /><!-- scale armor -->
-		<item id="2387" chance="600" /><!-- headripper axe -->
-		<item id="2459" chance="250" /><!-- iron helmet -->
-		<item id="2208" chance="190" /><!-- axe ring -->
-		<item id="13757" chance="280" /><!-- coal -->
-		<item id="2557" chance="12000" /><!-- hammer -->
+
 	</loot>
 </monster>
