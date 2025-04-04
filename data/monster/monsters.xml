@@ -90,6 +90,10 @@
 	<monster name="Banshee" file="tier 1/banshee.xml" />
 	<monster name="Ghostly Appearance" file="tier 1/ghostly appearance.xml" />
 	<monster name="Vengeful Spirit" file="tier 1/vengeful spirit.xml" />
+
+	<monster name="Nameless Skeleton" file="tier 1/nameless skeleton.xml" />
+	<monster name="Nameless Zombie" file="tier 1/nameless zombie.xml" />
+	<monster name="Nameless Putrid Zombie" file="tier 1/nameless putrid skeleton.xml" />
 	
 	<monster name="Ivy" file="tier 1/ivy.xml" />
 	<monster name="Rotbloom" file="tier 1/rotbloom.xml" />

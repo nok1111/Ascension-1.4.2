@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Mutated Zombie" nameDescription="a zombie" race="undead" experience="20" speed="180" manacost="0">
 	<health now="6" max="6" />
-	<!--- Level --><level min="45" max="46" />
+	<level min="50" max="55" />
 	<look type="1700" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -18,12 +18,12 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-140" />		
+<attack name="melee" interval="2000" min="0" max="-110" />		
 <attack name="manadrain" interval="2000" chance="10" range="1" min="-3" max="-60" />
 		<attack name="lifedrain" interval="2000" chance="15" range="7" min="-3" max="-60">
 			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
-		<attack name="death" interval="2000" chance="15" range="1" min="-3" max="-210">
+		<attack name="death" interval="2000" chance="15" range="1" min="-3" max="-160">
 			<attribute key="shootEffect" value="death" />
 			<attribute key="areaEffect" value="smallclouds" />
 		</attack>

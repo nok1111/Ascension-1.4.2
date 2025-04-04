@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Abomination Specimen" nameDescription="a zombie" race="undead" experience="20" speed="180" manacost="0">
-	<health now="6" max="6" />
-	<level min="46" max="48" />
+<monster name="Abomination Specimen" nameDescription="a zombie" race="undead" experience="35" speed="180" manacost="0">
+	<health now="12" max="12" />
+	<level min="55" max="60" />
 	<look type="1701" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -18,17 +18,17 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-150" />		
+<attack name="melee" interval="2000" min="0" max="-130" />		
 <attack name="manadrain" interval="2000" chance="10" range="1" min="-3" max="-85" />
 		<attack name="lifedrain" interval="2000" chance="15" range="7" min="-3" max="-85">
 			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
-		<attack name="death" interval="2000" chance="15" range="1" min="-3" max="-260">
+		<attack name="death" interval="2000" chance="15" range="1" min="-3" max="-180">
 			<attribute key="shootEffect" value="death" />
 			<attribute key="areaEffect" value="smallclouds" />
 		</attack>
 	</attacks>
-<defenses armor="2" defense="1" />
+<defenses armor="3" defense="1" />
 
 	<voices interval="2000" chance="7">
 		<voice sentence="Mst.... klll...." />

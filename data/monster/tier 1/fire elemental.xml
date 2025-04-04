@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <monster name="Fire Elemental" nameDescription="a fire elemental" race="fire" experience="20" speed="200" manacost="690">
 	<health now="6" max="6" />
+	<level min="43" max="47" />
 	<look type="49" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -17,7 +18,8 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="fire" interval="2000" chance="20" range="7" radius="2" target="1" min="-45" max="-160">
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+<attack name="fire" interval="2000" chance="20" range="7" radius="2" target="1" min="-45" max="-160">
 			<attribute key="shootEffect" value="fire" />
 			<attribute key="areaEffect" value="firearea" />
 		</attack>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<monster name="Zombie" nameDescription="a zombie" race="undead" experience="20" speed="180" manacost="0">
+<monster name="Nameless Putrid Zombie" nameDescription="a Nameless Putrid Zombie" race="undead" experience="20" speed="180" manacost="0">
 	<health now="6" max="6" />
-	<level min="42" max="45" />
-	<look type="1702" corpse="37129" />
+	<level min="58" max="64" />
+	<look type="2689" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="0" />
@@ -18,12 +18,12 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-90" />		
-<attack name="manadrain" interval="2000" chance="10" range="1" min="-3" max="-60" />
-		<attack name="lifedrain" interval="2000" chance="15" range="7" min="-3" max="-60">
+<attack name="melee" interval="2000" min="0" max="-125" />		
+<attack name="manadrain" interval="2000" chance="10" range="1" min="-3" max="-80" />
+		<attack name="lifedrain" interval="2000" chance="15" range="7" min="-3" max="-80">
 			<attribute key="areaEffect" value="redshimmer" />
 		</attack>
-		<attack name="death" interval="2000" chance="15" range="1" min="-3" max="-150">
+		<attack name="death" interval="2000" chance="15" range="1" min="-3" max="-170">
 			<attribute key="shootEffect" value="death" />
 			<attribute key="areaEffect" value="smallclouds" />
 		</attack>

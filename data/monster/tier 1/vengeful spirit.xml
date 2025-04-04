@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Vengeful Spirit" nameDescription="a Vengeful Spirit" race="undead" experience="20" speed="200">
 	<health now="6" max="6" />
-	<level min="120" max="125" />
+	<level min="53" max="60" />
 	<look type="2593" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -19,20 +19,15 @@
 		<flag canwalkonenergy="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-250" />		
-<attack name="lifedrain" interval="2000" chance="15" radius="4" target="0" min="-3" max="-350">
-			<attribute key="areaEffect" value="rednote" />
-		</attack>
-		<attack name="death" interval="2000" chance="5" range="1" target="1" radius="1" min="-3" max="-390">
+<attack name="melee" interval="2000" min="0" max="-120" />		
+
+		<attack name="death" interval="2000" chance="5" range="1" target="1" radius="1" min="-3" max="-180">
 			<attribute key="areaEffect" value="smallclouds" />
 		</attack>
-		<attack name="speed" interval="2000" chance="10" range="7" speedchange="-300" duration="15000">
-			<attribute key="areaEffect" value="redshimmer" />
-		</attack>
-	</attacks>
+</attacks>
 <defenses armor="1" defense="1" >
 
-		<defense name="healing" interval="2000" chance="15" min="120" max="190">
+		<defense name="healing" interval="2000" chance="15" min="0" max="120">
 			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>
 	</defenses>

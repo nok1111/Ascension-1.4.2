@@ -36,7 +36,7 @@
 	</attacks>
 <defenses armor="1" defense="1" >
 
-		<defense name="TotemSummon" interval="2000" chance="20" />
+		<defense name="TotemSummon" interval="2000" chance="10" />
 
 	</defenses>
 
