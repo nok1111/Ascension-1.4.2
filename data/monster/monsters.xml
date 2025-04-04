@@ -116,6 +116,11 @@
 	<!-- seeds -->
 	<monster name="Living Vile" file="summons/living_vile.xml"/>
 	<monster name="Living Tree" file="summons/living_tree.xml"/>
+
+	<!-- totems -->
+	<monster name="Offensive Totem" file="summons/offensive totem.xml"/>
+	<monster name="Defensive Totem" file="summons/defensive totem.xml"/>
+	<monster name="Healing Totem" file="summons/healing totem.xml"/>
 	
 	<!-- artifacts -->
 	<monster name="Holy Artifact" file="summons/holy_artifact.xml"/>

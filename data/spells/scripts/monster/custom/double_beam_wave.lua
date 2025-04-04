@@ -10,47 +10,47 @@ combat1:setParameter(COMBAT_PARAM_EFFECT, 18)
 -- Second wave combat setup
 local combat2 = Combat()
 combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat2:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat2:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Third wave combat setup
 local combat3 = Combat()
 combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat3:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat3:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Fourth wave combat setup
 local combat4 = Combat()
 combat4:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat4:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat4:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Fifth wave combat setup
 local combat5 = Combat()
 combat5:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat5:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat5:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Sixth wave combat setup
 local combat6 = Combat()
 combat6:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat6:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat6:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Seventh wave combat setup
 local combat7 = Combat()
 combat7:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat7:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat7:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Eighth wave combat setup
 local combat8 = Combat()
 combat8:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat8:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat8:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Ninth wave combat setup
 local combat9 = Combat()
 combat9:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat9:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat9:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 -- Tenth wave combat setup
 local combat10 = Combat()
 combat10:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat10:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat10:setParameter(COMBAT_PARAM_EFFECT, 678)
 
 
 -- Define area for the first wave

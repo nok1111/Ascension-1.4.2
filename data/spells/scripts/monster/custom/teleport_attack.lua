@@ -1,6 +1,6 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, 305)
+combat:setParameter(COMBAT_PARAM_EFFECT, 517)
 
 function getCombatFormulaValues()
     local minDamage = 150
@@ -40,7 +40,7 @@ local function performTeleportAttack(creatureId, targetId, newPosition)
     creature:teleportTo(newPosition)
 
     local effect_offset = Position(newPosition.x + 1, newPosition.y + 1, newPosition.z)
-    effect_offset:sendMagicEffect(457)
+    effect_offset:sendMagicEffect(368)
     
 
     -- Execute the attack on the target
@@ -73,8 +73,8 @@ function onCastSpell(creature, variant)
 
     -- Show a pre-attack magic effect (1 second before the teleport)
      creature:say("Don't Move!", TALKTYPE_MONSTER_YELL)
-    creature:getPosition():sendMagicEffect(333)
-    target:getPosition():sendMagicEffect(479)
+    creature:getPosition():sendMagicEffect(443)
+    target:getPosition():sendMagicEffect(393)
 
     -- Schedule the teleport and attack after 1 second (1000ms)
     addEvent(performTeleportAttack, 1000, creature:getId(), target:getId(), newPosition)

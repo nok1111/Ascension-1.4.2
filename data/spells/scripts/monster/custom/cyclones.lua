@@ -23,7 +23,7 @@ local function attackWithBlade(creatureId, blades, targets, remainingTime)
 
     local casterPos = creature:getPosition()
     if #targets == 0 then
-        casterPos:sendMagicEffect(math.random(556,559)) 
+        casterPos:sendMagicEffect(math.random(629,629)) 
         return
     end
 
@@ -34,7 +34,7 @@ local function attackWithBlade(creatureId, blades, targets, remainingTime)
 
         -- Blade strike effect and damage
         combat:execute(creature, Variant(targetPos))
-        targetPos:sendMagicEffect(math.random(556,559))
+        targetPos:sendMagicEffect(math.random(629,629))
 
     end
 

@@ -1,10 +1,10 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE) -- Initial rupture damage
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HITBYEARTH)
+combat:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 local fireCombat = Combat()
 fireCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE) -- Secondary explosion damage
-fireCombat:setParameter(COMBAT_PARAM_EFFECT, 464)
+fireCombat:setParameter(COMBAT_PARAM_EFFECT, 7)
 
 -- Function to generate a natural, spaced-out crack pattern
 local function getCrackPositions(center, maxLength, branches)
@@ -62,7 +62,8 @@ function onCastSpell(creature, variant)
         
     for _, pos in ipairs(crackPositions) do
         combat:execute(creature, Variant(pos))
-        pos:sendMagicEffect(568) -- offset para effecto
+       -- pos:sendMagicEffect(575)
+
     end
 
 

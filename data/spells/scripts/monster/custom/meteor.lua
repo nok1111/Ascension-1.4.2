@@ -1,13 +1,13 @@
 local minTargets = 1
 local duration = 6500 -- Lasts 13 seconds
 local ticks = 3000 -- Hits every 2 seconds
-local meteor_effect = 323
-local meteor_explosion = 322
-local warning_effect = 262
+local meteor_effect = 632
+local meteor_explosion = 631
+local warning_effect = 668
 
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, 257)
+combat:setParameter(COMBAT_PARAM_EFFECT, 7)
 
 
 
@@ -100,13 +100,15 @@ local function meteorDuration(playeruid, count)
                     local target = validTargets[i]
                     local targetUid = target.uid
 					local monsterPos = validTargets[i]:getPosition()
-                    --warning_offset:sendMagicEffect(warning_effect)
-					doAreaCombatHealth(0, COMBAT_ENERGYDAMAGE, monsterPos, area, 0, 0, warning_effect)
+
+                    local warning_offset = Position(monsterPos.x + 2, monsterPos.y + 2, monsterPos.z)
+                    warning_offset:sendMagicEffect(warning_effect)
+					--doAreaCombatHealth(0, COMBAT_ENERGYDAMAGE, monsterPos, area, 0, 0, warning_effect)
                     
                     -- Schedule the strike with addEvent (increase 1000 to add a bigger delay on meteors)
-                    addEvent(strikeTarget, 1500, playeruid, targetUid, meteor_effect, meteor_explosion, combat, validTargets[i]:getPosition()) -- 1000ms delay
+                    addEvent(strikeTarget, 1000, playeruid, targetUid, meteor_effect, meteor_explosion, combat, validTargets[i]:getPosition()) -- 1000ms delay
 					  -- Schedule the strike with addEvent
-                    addEvent(strikeTarget_damage, 2000, playeruid, targetUid, validTargets[i]:getPosition(), combat) -- 1000ms delay
+                    addEvent(strikeTarget_damage, 1500, playeruid, targetUid, validTargets[i]:getPosition(), combat) -- 1000ms delay
                 end
             end
         end

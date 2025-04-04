@@ -917,7 +917,7 @@
 	<instant name="scythe teleport" words="###74" direction="1" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/custom/teleport_attack.lua" />
 	<instant name="double beam" words="###75" direction="1" aggressive="1" blockwalls="1" needlearn="1" script="monster/custom/double_beam_wave.lua" />
 	<instant name="meteor" words="###76" selftarget="1" aggressive="1" blockwalls="1" needlearn="1" script="monster/custom/meteor.lua" />
-	<instant name="custom spell 6" words="###77" selftarget="1"  aggressive="1" blockwalls="1" needlearn="1" script="monster/custom/shout_and_strike.lua" />
+	<instant name="dont look" words="###77" selftarget="1"  aggressive="1" blockwalls="1" needlearn="1" script="monster/custom/shout_and_strike.lua" />
 	<instant name="thunder delay" words="###78" selftarget="1" aggressive="1" blockwalls="1" needlearn="1" script="monster/custom/thunder.lua" />
 	<instant name="custom spell 8" words="###79" selftarget="1" aggressive="1" blockwalls="1" needlearn="1" script="monster/custom/pull_in.lua" />
 	<instant name="steam mine" words="###80" aggressive="1" range="1" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/steam_bomb.lua"/>
@@ -946,7 +946,7 @@
 	<instant name="laser beam fire" words="###101" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_fire.lua" />
 	<instant name="laser beam earth" words="###102" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_earth.lua" />
 	
-	
+	<instant name="TotemSummon" words="###103" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/totems.lua" />
 	
 	
 	

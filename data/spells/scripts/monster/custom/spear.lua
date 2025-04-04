@@ -1,6 +1,6 @@
-local EFFECT_WARNING = 572 -- Effect shown 1 second before
-local EFFECT_CAST = 257 -- Effect when the spell lands
-local PROJECTILE = 57 -- Projectile animation
+local EFFECT_WARNING = 391 -- Effect shown 1 second before
+local EFFECT_CAST = 7 -- Effect when the spell lands
+local PROJECTILE = 7 -- Projectile animation
 local SPELL_DELAY = 1000 -- Delay before casting (in ms)
 local SEARCH_RADIUS = 8 -- 8x8 search radius for players
 

@@ -1,6 +1,6 @@
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, 396)
+combat:setParameter(COMBAT_PARAM_TYPE, EARTHDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, 47)
 
 local paralyze = Condition(CONDITION_PARALYZE)
 paralyze:setParameter(CONDITION_PARAM_TICKS, 8000)
@@ -30,7 +30,7 @@ local function castWave(creatureId, center, radius, maxRadius)
 
     -- Send magic effect first
     for _, pos in ipairs(positions) do
-        pos:sendMagicEffect(572)
+        pos:sendMagicEffect(248)
     end
 
     -- Apply damage after a slight delay to ensure effects are seen first

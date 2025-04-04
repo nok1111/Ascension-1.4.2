@@ -1,7 +1,7 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 98)
-combat:setParameter(COMBAT_PARAM_EFFECT, 477)
+combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 32)
+combat:setParameter(COMBAT_PARAM_EFFECT, 18)
 
 -- Custom damage formula
 function getDamageValues()
