@@ -24,10 +24,9 @@
 <attack name="melee" interval="2000" min="0" max="-120" />	
 
 <!-- Poisoned blade (DoT effect) -->
-    <attack name="condition" interval="6000" chance="20" min="-15" max="-30">
-        <attribute key="conditionType" value="poison"/>
-        <attribute key="conditionTicks" value="10000"/> <!-- 10-second poison -->
-        <attribute key="conditionEffect" value="greenflash"/>
+    <attack name="earth" interval="2000" chance="22" range="3" target="1" min="-10" max="-50">
+    		<attribute key="areaEffect" value="poison" />
+    		<attribute key="shootEffect" value="greenstar" />
     </attack>
 
 </attacks>

@@ -24,7 +24,7 @@ dualWieldingAttackSpeed = 1500
 --monster levels modifiers
 monsterBonusHealth = 0.5
 monsterBonusSpeed = 0.02
-monsterBonusDamage = 0.02
+monsterBonusDamage = 0.00
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit

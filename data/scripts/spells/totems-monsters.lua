@@ -31,7 +31,7 @@ function applyAuraCondition(cid, condition, subId)
             cond:setParameter(CONDITION_PARAM_SUBID, subId)
             cond:setParameter(CONDITION_PARAM_TICKS, 1000)
             target:addCondition(cond)
-            print("condition applied to" .. target:getName())
+           -- print("condition applied to" .. target:getName())
         end
     end
 
@@ -55,7 +55,7 @@ function startTotemAuraLoop(cid)
             for _, target in ipairs(targets) do
                 if target:isMonster() and target ~= totem then
                     local healAmount = math.floor(target:getMaxHealth() * MAX_HP_HEAL_BOOST)
-                    print("[TotemAura] Healing ", target:getName(), "for", healAmount, "HP")
+                  --  print("[TotemAura] Healing ", target:getName(), "for", healAmount, "HP")
                     target:addHealth(healAmount)
                     target:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
                 end
@@ -81,15 +81,15 @@ end
 -- ========== Damage Modifier System ==========
 local function modifyTotemDamage(creature, attacker, primary, primaryType, secondary, secondaryType)
     if creature and creature:hasCondition(CONDITION_ATTRIBUTES, ConditionSubIDs.OffensiveTotem) then
-        print("[TotemAura] Damage increased by Offensive Totem")
+      --  print("[TotemAura] Damage increased by Offensive Totem")
         primary = math.floor(primary * DAMAGE_BOOST)
         secondary = math.floor(secondary * DAMAGE_BOOST)
     elseif creature and creature:hasCondition(CONDITION_ATTRIBUTES, ConditionSubIDs.DefensiveTotem) then
-        print("[TotemAura] Damage reduced by Defensive Totem")
+      --  print("[TotemAura] Damage reduced by Defensive Totem")
         primary = math.floor(primary * DAMAGE_REDUCTION)
         secondary = math.floor(secondary * DAMAGE_REDUCTION)
     else
-        print("[TotemAura] No totem condition applied")
+      --  print("[TotemAura] No totem condition applied")
     end
     return primary, primaryType, secondary, secondaryType
 end

@@ -30,7 +30,7 @@
 		</attack>
 <!-- Venomous Burst (flavor + pressure) -->
     <attack name="earth" interval="7000" chance="10" radius="2" target="0" min="-10" max="-135">
-        <attribute key="areaEffect" value="greenbubble"/>
+        <attribute key="areaEffect" value="effect283"/>
     </attack>
 
 	</attacks>

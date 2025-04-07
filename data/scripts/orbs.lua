@@ -88,30 +88,119 @@ local explosiveArea = createCombatArea({
 
 local eliteBehaviors = {
     ["[Vampiric]"] = function(attacker, creature, primaryDamage)
-        if primaryDamage < 0 and math.random(100) <= 70 then
-            attacker:addHealth(math.floor(-primaryDamage * 0.25))
-            creature:getPosition():sendMagicEffect(CONST_ME_DRAWBLOOD)
-        end
-    end,
+    if primaryDamage < 0 and math.random(100) <= 70 then
+        local healed = math.floor(-primaryDamage * 0.25)
+        doSendDistanceShoot(attacker:getPosition(), creature:getPosition(), 83)
+        attacker:getPosition():sendMagicEffect(438)
+        attacker:addHealth(healed)
+        creature:getPosition():sendMagicEffect(305)
+        print("[Vampiric] Healed", attacker:getName(), "for", healed)
+    end
+end,
 
-    ["[Sacred]"] = function(attacker, creature, primaryDamage, secondaryDamage)
-        if math.random(100) <= 50 then
-            creature:getPosition():sendMagicEffect(CONST_ME_HOLYDAMAGE)
-            creature:addHealth(-math.floor(creature:getMaxHealth() * 0.03))
-            return primaryDamage, secondaryDamage + 30
+   ["[Sacred]"] = function(attacker, creature, primaryDamage, secondaryDamage)
+    if math.random(100) <= 50 then
+        local nearby = Game.getSpectators(creature:getPosition(), false, true, 5, 5, 5, 5)
+        local candidates = {}
+
+        for _, target in ipairs(nearby) do
+            if target:isPlayer() and target ~= creature then
+                table.insert(candidates, target)
+            end
         end
-        return primaryDamage, secondaryDamage
-    end,
+
+        if #candidates == 0 then return primaryDamage, secondaryDamage end
+
+        local selected = candidates[math.random(#candidates)]
+        local pos = selected:getPosition()
+        pos:sendMagicEffect(CONST_ME_HOLYDAMAGE) -- warning effect
+
+        local creatureId = creature:getId()
+
+        addEvent(function()
+            local caster = Creature(creatureId)
+            if not caster or not caster:isMonster() then return end
+
+            -- Always show the holy effect in the area
+            doAreaCombatHealth(caster, COMBAT_HOLYDAMAGE, pos, explosiveArea, 0, 0, CONST_ME_HOLYAREA)
+
+            local affected = Game.getSpectators(pos, false, true, 1, 1, 1, 1)
+            local landed = false
+            for _, target in ipairs(affected) do
+                if target:isPlayer() then
+                    local dmg = math.floor(target:getMaxHealth() * 0.05)
+                    target:addHealth(-dmg)
+                    print("[Sacred] Holy blast hit", target:getName(), "for", dmg)
+                    landed = true
+                end
+            end
+
+            if landed then
+                local heal = math.floor(caster:getMaxHealth() * 0.25)
+                caster:addHealth(heal)
+                caster:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+                print("[Sacred] Healed", caster:getName(), "for", heal)
+            end
+        end, 1500)
+    end  
+
+    return primaryDamage, secondaryDamage
+end,
+
+
+
 
     ["[Arcane]"] = function(attacker, creature, primaryDamage, secondaryDamage)
-    print("arcane")
-        if math.random(100) <= 60 and primaryDamage < 0 then
-            print("arcane trigered")
-            creature:getPosition():sendMagicEffect(619)
-            attacker:addMana(math.floor(-primaryDamage * 0.2))
+    if primaryDamage < 0 and math.random(100) <= 35 then
+        local nearby = Game.getSpectators(creature:getPosition(), false, true, 5, 5, 5, 5)
+        local targets = {}
+
+        for _, target in ipairs(nearby) do
+            if target ~= creature and (target:isPlayer()) then
+                table.insert(targets, target)
+            end
         end
-        return primaryDamage, secondaryDamage
-    end,
+
+        if #targets == 0 then return primaryDamage, secondaryDamage end
+
+        local chosen = targets[math.random(#targets)]
+        local targetPos = chosen:getPosition()
+
+        -- Try to teleport to adjacent walkable tile
+        local directions = {
+            {x = 1, y = 0}, {x = -1, y = 0},
+            {x = 0, y = 1}, {x = 0, y = -1},
+            {x = 1, y = 1}, {x = -1, y = -1},
+            {x = 1, y = -1}, {x = -1, y = 1}
+        }
+
+        local dest = nil
+        for _, offset in ipairs(directions) do
+            local pos = Position(targetPos.x + offset.x, targetPos.y + offset.y, targetPos.z)
+            local tile = Tile(pos)
+            if tile and not tile:hasFlag(TILESTATE_BLOCKSOLID) then
+                dest = pos
+                break
+            end
+        end
+
+        if dest then
+            creature:teleportTo(dest)
+            dest:sendMagicEffect(CONST_ME_TELEPORT)
+
+            local cid = creature:getId()
+            addEvent(function()
+                local caster = Creature(cid)
+                if not caster or not caster:isMonster() then return end
+
+                doAreaCombatHealth(caster, COMBAT_ENERGYDAMAGE, caster:getPosition(), explosiveArea, -50, -100, 677)
+            end, 1000)
+        end
+    end
+
+    return primaryDamage, secondaryDamage
+end,
+
 
     ["[Corrosive]"] = function(attacker, creature, primaryDamage, secondaryDamage)
         if math.random(100) <= 40 and primaryDamage < 0 then
@@ -138,26 +227,63 @@ local eliteBehaviors = {
         end
     end,
 
-    ["[Burning]"] = function(attacker, creature, primaryDamage, secondaryDamage)
-        if math.random(100) <= 50 then
-            creature:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
-            addEvent(function()
-                if creature then
-                    creature:addHealth(-math.floor(creature:getMaxHealth() * 0.03))
-                    creature:getPosition():sendMagicEffect(CONST_ME_FIREATTACK)
-                end
-            end, 1000)
-            return primaryDamage, secondaryDamage + 15
+   ["[Burning]"] = function(attacker, creature, primaryDamage)
+    if math.random(100) <= 40 and creature then
+        local originPos = creature:getPosition()
+        local targets = Game.getSpectators(originPos, false, true, 3, 3, 3, 3)
+        local burned = {}
+
+        -- Main fire missile to the attacker
+        doSendDistanceShoot(originPos, attacker:getPosition(), CONST_ANI_FIRE)
+        attacker:getPosition():sendMagicEffect(CONST_ME_HITBYFIRE)
+        table.insert(burned, attacker)
+
+        -- Fire missiles from attacker to nearby targets
+        local nearby = Game.getSpectators(attacker:getPosition(), false, true, 3, 3, 3, 3)
+        for _, target in ipairs(nearby) do
+            if target ~= creature and target ~= attacker and (target:isMonster() or target:isPlayer()) then
+                doSendDistanceShoot(attacker:getPosition(), target:getPosition(), CONST_ANI_FIRE)
+                target:getPosition():sendMagicEffect(CONST_ME_HITBYFIRE)
+                table.insert(burned, target)
+            end
         end
-        return primaryDamage, secondaryDamage
+
+            -- Apply burning condition to all affected targets
+            for _, target in ipairs(burned) do
+                local burn = Condition(CONDITION_FIRE)
+                burn:setTicks(3000) -- 3 seconds
+                burn:setParameter(CONDITION_PARAM_PERIODICDAMAGE, -math.floor(target:getMaxHealth() * 0.03)) -- 3% max hp
+                burn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+                burn:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
+                target:addCondition(burn)
+                print("[Burning] Applied burn to " .. target:getName())
+            end
+        end
     end,
 
+
     ["[Shocking]"] = function(attacker, creature)
-        if math.random(100) <= 35 then
-            creature:getPosition():sendMagicEffect(259)
-            creature:addCondition(Condition(CONDITION_DAZZLED, 4))
+    if math.random(100) <= 35 then
+        local center = creature:getPosition()
+        --center:sendMagicEffect(259)
+
+        local targets = Game.getSpectators(center, false, true, 3, 3, 3, 3)
+        for _, target in ipairs(targets) do
+            if target ~= creature and (target:isPlayer() or (target:isMonster() and target:getMaster() and target:getMaster():isPlayer())) then
+                doSendDistanceShoot(center, target:getPosition(), 143)
+                target:getPosition():sendMagicEffect(419)
+                local dmg = math.floor(target:getMaxHealth() * 0.06)
+                print("[Shocking] Hit", target:getName(), "for", dmg, "damage.")
+                target:addHealth(-dmg)
+            end
         end
-    end,
+
+        local condition = Condition(CONDITION_DAZZLED)
+        condition:setTicks(4000)
+        creature:addCondition(condition)
+    end
+end,
+
 
     ["[Leeching]"] = function(attacker, creature, primaryDamage)
         if primaryDamage < 0 and math.random(100) <= 65 then

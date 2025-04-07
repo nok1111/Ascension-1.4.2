@@ -19,8 +19,10 @@
 	<monster name="Wasp" file="wilds/wasp.xml" />
 	<monster name="Bug" file="wilds/bug.xml" />
 	<monster name="Larva" file="wilds/larva.xml" />
+	<monster name="Baby" file="wilds/baby.xml" />
 
-
+	<!--TIER 1 bosses-->
+	<monster name="Vael the Betrayer" file="tier 1/bosses/vael_the_betrayer.xml" />
 	
 	<!--TIER 1-->
 	<monster name="Rat" file="tier 1/rat.xml" />

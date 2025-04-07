@@ -74,7 +74,7 @@ local function chainAttack(creatureId, targetId, chainCount, hitTargets)
     local nextVictims = {}
 
     for _, spec in ipairs(specs) do
-        if not isExcludedTarget(creature, spec) and not hitTargets[spec:getId()] then
+        if spec:isPlayer()and not hitTargets[spec:getId()] then
             table.insert(nextVictims, spec)
         end
     end

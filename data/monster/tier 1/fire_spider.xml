@@ -15,25 +15,27 @@
 		<flag canpushcreatures="1" />
 		<flag targetdistance="1" />
 		<flag staticattack="90" />
-		<flag runonhealth="220" />
+		<flag runonhealth="0" />
 	</flags>
-	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-94" />		
-<attack name="fire" interval="2000" chance="15" radius="2" target="1" min="-50" max="-95">
-			<attribute key="areaEffect" value="firearea" />
-		</attack>
-		<attack name="speed" interval="2000" chance="10" target="0" length="5" spread="3" speedchange="-300" duration="10000">
-			<attribute key="areaEffect" value="yellowspark" />
-		</attack>
-		<attack name="fire" interval="2000" chance="30" target="0" radius="3" min="-50" max="-150">
-			<attribute key="areaEffect" value="fire" />
-		</attack>
-	</attacks>
+
+
+<attacks>
+    <!-- Basic Melee -->
+    <attack name="melee" interval="2000" min="-2" max="-94">
+        <attribute key="areaEffect" value="effect525"/>
+    </attack>
+
+    <!-- Thorn Wave (1 tile wide, 6 tiles long) -->
+    <attack name="fire" interval="2000" chance="10" target="0" length="5" spread="0" min="-45" max="-150">
+			<attribute key="areaEffect" value="effect587" />
+	</attack>
+
+</attacks>
+
 <defenses armor="1" defense="1" />
 
-	<elements>
-		
-	</elements>
+
+
 	<voices interval="2000" chance="7">
 		<voice sentence="Fuchah! Fuchah!" />
 		<voice sentence="Fuchah!" />

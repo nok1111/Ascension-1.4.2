@@ -947,7 +947,8 @@
 	<instant name="laser beam earth" words="###102" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_earth.lua" />
 	
 	<instant name="TotemSummon" words="###103" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/totems.lua" />
-	
+	<instant name="blade fan" words="###104" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/blade fan.lua" />
+	<instant name="rain damage" words="###105" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/custom/rain_damage.lua" />
 	
 	
 	
