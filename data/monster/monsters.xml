@@ -28,11 +28,9 @@
 	<monster name="Rat" file="tier 1/rat.xml" />
 	<monster name="Spider" file="tier 1/spider.xml" />
 	<monster name="Tarantula" file="tier 1/tarantula.xml" />
-
 	<monster name="Leafy Twigkin" file="tier 1/leafy_twigkin.xml" />
 	<monster name="Flaming Twigkin" file="tier 1/flaming_twigkin.xml" />
 	<monster name="Twigkin" file="tier 1/twigkin.xml" />
-
 	<monster name="Troll" file="tier 1/troll.xml" />
 	<monster name="Dark Troll" file="tier 1/dark troll.xml" />
 	<monster name="Wolf" file="tier 1/wolf.xml" />
@@ -41,34 +39,25 @@
 	<monster name="Black Bear" file="tier 1/bear.xml" />
 	<monster name="Ravenous Bear" file="tier 1/ravenous bear.xml" />
 	<monster name="Bear Cub" file="tier 1/bear cub.xml" />
-
 	<monster name="Thief" file="tier 1/thief.xml" />
 	<monster name="Rogue" file="tier 1/rogue.xml" />
 	<monster name="Witch" file="tier 1/witch.xml" />
 	<monster name="Witch Apprentice" file="tier 1/witch_apprentice.xml" />
 	<monster name="Skeleton" file="tier 1/skeleton.xml" />
 	<monster name="Poison Skeleton" file="tier 1/poison skeleton.xml" />
-
-
 	<monster name="Minotaur" file="tier 1/minotaur.xml" />
 	<monster name="Minotaur Mage" file="tier 1/minotaur mage.xml" />
 	<monster name="Minotaur Archer" file="tier 1/minotaur archer.xml" />
 	<monster name="Minotaur Guard" file="tier 1/minotaur guard.xml" />
-
 	<monster name="Zombie" file="tier 1/zombie.xml" />
 	<monster name="Mutated Zombie" file="tier 1/mutated zombie.xml" />
 	<monster name="Abomination Specimen" file="tier 1/abomination specimen.xml" />
-
 	<monster name="Fire Skeleton" file="tier 1/fire_skeleton.xml" /><!-- celes -->
 	<monster name="Fire Spider" file="tier 1/fire_spider.xml" /><!-- celes -->
 	<monster name="Fire Elemental" file="tier 1/fire elemental.xml" />
-
-
 	<monster name="Fungus" file="tier 1/fungus.xml" />
 	<monster name="Fungal shambler" file="tier 1/fungal shambler.xml" />
 	<monster name="Sporecrawler" file="tier 1/sporecrawler.xml" />
-
-
 	<monster name="Dwarf Geomancer" file="tier 1/dwarf geomancer.xml" />
 	<monster name="Dwarf Guard" file="tier 1/dwarf guard.xml" />
 	<monster name="Ghost Guard" file="tier 1/ghost dwarf.xml" />
@@ -81,25 +70,32 @@
 
 	<monster name="Thornback Turtle" file="tier 1/thornback turtle.xml" />
 	<monster name="Mature Thornback Turtle" file="tier 1/mature thornback turtle.xml" />
-
 	<monster name="Elf" file="tier 1/elf.xml" />
 	<monster name="Elf Arcanist" file="tier 1/elf arcanist.xml" />
 	<monster name="Elf Scout" file="tier 1/elf scout.xml" />
 	<monster name="Elf Warlord" file="tier 1/elf warlord.xml" />
 	<monster name="High Elf" file="tier 1/high elf.xml" />
 	<monster name="Elf Warrior" file="tier 1/swordmaster elf.xml" />
-
 	<monster name="Banshee" file="tier 1/banshee.xml" />
 	<monster name="Ghostly Appearance" file="tier 1/ghostly appearance.xml" />
 	<monster name="Vengeful Spirit" file="tier 1/vengeful spirit.xml" />
-
 	<monster name="Nameless Skeleton" file="tier 1/nameless skeleton.xml" />
 	<monster name="Nameless Zombie" file="tier 1/nameless zombie.xml" />
 	<monster name="Nameless Putrid Zombie" file="tier 1/nameless putrid skeleton.xml" />
-	
 	<monster name="Ivy" file="tier 1/ivy.xml" />
 	<monster name="Rotbloom" file="tier 1/rotbloom.xml" />
 	<monster name="Overgrowth Ivy" file="tier 1/overgrowth ivy.xml" />
+
+
+	<!--TIER 2-->
+	<monster name="Wyrm" file="tier 2/wyrm.xml" />
+	<monster name="Shaman Troll" file="tier 2/shaman_troll.xml" />
+	<monster name="Spearman Troll" file="tier 2/spearman_troll.xml" />
+	<monster name="Blademaster Troll" file="tier 2/blademaster_troll.xml" />
+	<monster name="War Troll" file="tier 2/war_troll.xml" />
+	<monster name="Champion Troll" file="tier 2/champion_troll.xml" />
+	<monster name="Hydra" file="tier 2/hydra.xml" />
+	<monster name="Elder Hydra" file="tier 2/elder hydra.xml" />
 	
 	<!-- SUMMONS AND COMPANIONS -->
 	<monster name="Fire Spirit" file="summons/fire_spirit.xml" />

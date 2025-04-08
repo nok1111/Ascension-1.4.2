@@ -12,6 +12,12 @@
 	<spawn centerx="776" centery="847" centerz="6" radius="1">
 		<npc name="The Whispering Fog" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="904" centery="1043" centerz="6" radius="1">
+		<npc name="Shaman Guzumhk" x="1" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="907" centery="1067" centerz="6" radius="1">
+		<npc name="rut'krall" x="0" y="-1" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="455" centery="683" centerz="7" radius="1">
 		<npc name="Gerald the Grave Robber" x="-1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>

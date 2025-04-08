@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Elder hydra" nameDescription="an elder hydra" race="blood" experience="20" speed="250" skull="green">
+	<health now="6" max="6" />
+	<!--- Level --><level min="73" max="78" />
+	<look type="1038" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="300" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-10" />		
+<attack name="speed" interval="2000" chance="25" range="7" radius="4" target="1" speedchange="-700" duration="15000">
+			<attribute key="shootEffect" value="poison" />
+			<attribute key="areaEffect" value="greenbubble" />
+		</attack>
+		<attack name="ice" interval="2000" chance="25" length="8" spread="3" min="-3" max="-10">
+			<attribute key="areaEffect" value="bluebubble" />
+		</attack>
+		<attack name="ice" interval="2000" chance="25" target="1" min="-3" max="-10">
+			<attribute key="shootEffect" value="smallice" />
+		</attack>
+		<attack name="earth" interval="2000" chance="20" length="8" spread="3" min="-3" max="-10">
+			<attribute key="areaEffect" value="carniphila" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="25" min="260" max="407">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="FCHHHHH" />
+		<voice sentence="HISSSS" />
+	</voices>
+	<loot>
+		
+		<item name="ham" countmax="4" chance="60000" />
+		<item name="hydra head" chance="10120" />
+		<item name="small sapphire" chance="5000" />
+		<item id="30536"  chance="300" /><!--helmet -->
+		<item id="2214" chance="1190" />
+		<item name="explorer armor" chance="1000" />
+		<item name="hydra egg" chance="930" />
+		<item name="stone skin amulet" chance="900" />
+		<item name="legionare helmet" chance="890" />
+		<item name="life crystal" chance="520" />
+		<item name="strong mana potion" chance="470" />
+		<item name="royal helmet" chance="220" />
+		<item name="medusa shield" chance="220" />
+		<item name="boots of haste" chance="110" />
+		<item id="11429" countmax="2" chance="15000" /><!-- hydra ham -->
+		<item id="11199" countmax="3" chance="25850" />
+		<item id="2672" countmax="3" chance="50850" />
+		<item id="18421" chance="7850" />
+		<item id="11197" chance="15000" /><!-- lizard eye -->
+
+		<item id="32761"  chance="300" /><!--weapon -->
+		<item id="37383"  chance="3500" /><!-- novel -->
+		<item id="37384"  chance="3500" /><!-- novel -->
+		<item id="37385"  chance="3500" /><!-- novel -->
+		<item id="37386"  chance="3500" /><!-- novel -->
+		<item id="37387"  chance="3500" /><!-- novel -->
+		<item id="36232"  chance="900" />
+		<item id="31966"  chance="900" />
+		<item id="31839"  chance="300" />
+		<item id="32539"  chance="300" />
+		<item id="36198"  chance="300" />
+		<item id="31832"  chance="300" />
+		<item id="36267"  chance="300" />
+		<item id="36265" chance="100" />
+		<item id="36161"  chance="300" />
+		<item id="36268"  chance="300" />
+		<item id="31968"  chance="300" />
+		
+		
+		<item id="38326"  chance="3000" /><!--doom ring (ml) -->
+
+		<item id="38332"  chance="3000" /><!--arcane resonance (max hp)-->
+		
+		<item id="38281"  chance="3000" /><!--natures embrace (def, ml) -->
+
+		<item id="38283"  chance="3000" /><!--poisonous predrator (crit + distance) -->
+		
+	</loot>
+</monster>
