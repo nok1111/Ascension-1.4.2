@@ -107,6 +107,34 @@
 	<monster name="Sand Lobster" file="tier 2/sand lobster.xml" />
 	<monster name="Sand Giant Widow" file="tier 2/sand giant widow.xml" />
 
+	<monster name="Ogre" file="tier 2/ogre.xml" />
+	<monster name="Ogre Warrior" file="tier 2/ogre warrior.xml" />
+	<monster name="Ogre Brawler" file="tier 2/ogre brawler.xml" />
+	<monster name="Ogre Smasher" file="tier 2/ogre smasher.xml" />
+	<monster name="Ogre Shaman" file="tier 2/ogre shaman.xml" />
+
+	<monster name="Bonesand Brawler" file="tier 2/bonesand brawler.xml" />
+	<monster name="Bonesand Hexbone" file="tier 2/bonesand hexbone.xml" />
+	<monster name="Bonesand Lancer" file="tier 2/bonesand lancer.xml" />
+	<monster name="Bonesand Sentinel" file="tier 2/bonesand sentinel.xml" />
+	
+	<monster name="Unwritten Follower" file="tier 2/unwritten follower.xml" />
+	<monster name="Unwritten Shroud" file="tier 2/unwritten shroud.xml" />
+	<monster name="Unwritten Herald" file="tier 2/unwritten Herald.xml" />
+	<monster name="Unwritten Maw" file="tier 2/unwritten maw.xml" />
+	<monster name="Unwritten Apostle" file="tier 2/unwritten apostle.xml" />
+
+	<monster name="Vendant Trent" file="tier 2/verdant trent.xml" />
+	<monster name="Fenrot Trent" file="tier 2/fenrot trent.xml" />
+	<monster name="Duskwillow Trent" file="tier 2/duskwillow trent.xml" />
+	<monster name="Thornsong Trent" file="tier 2/thornsong trent.xml" />
+
+
+
+
+
+
+
 	<!--TIER 3-->
 	<monster name="Hydra" file="tier 3/hydra.xml" />
 	<monster name="Elder Hydra" file="tier 3/elder hydra.xml" />
