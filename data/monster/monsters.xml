@@ -20,6 +20,7 @@
 	<monster name="Bug" file="wilds/bug.xml" />
 	<monster name="Larva" file="wilds/larva.xml" />
 	<monster name="Baby" file="wilds/baby.xml" />
+	<monster name="Sand Crab" file="wilds/sand crab.xml" />
 
 	<!--TIER 1 bosses-->
 	<monster name="Vael the Betrayer" file="tier 1/bosses/vael_the_betrayer.xml" />
@@ -89,13 +90,26 @@
 
 	<!--TIER 2-->
 	<monster name="Wyrm" file="tier 2/wyrm.xml" />
+
 	<monster name="Shaman Troll" file="tier 2/shaman_troll.xml" />
 	<monster name="Spearman Troll" file="tier 2/spearman_troll.xml" />
 	<monster name="Blademaster Troll" file="tier 2/blademaster_troll.xml" />
 	<monster name="War Troll" file="tier 2/war_troll.xml" />
 	<monster name="Champion Troll" file="tier 2/champion_troll.xml" />
-	<monster name="Hydra" file="tier 2/hydra.xml" />
-	<monster name="Elder Hydra" file="tier 2/elder hydra.xml" />
+
+	<monster name="Luppy Watcher" file="tier 2/luppy watcher.xml" />
+	<monster name="Murlok" file="tier 2/murlok.xml" />
+	<monster name="Murlok Axeman" file="tier 2/murlok axeman.xml" />
+	<monster name="Murlok Piercer" file="tier 2/murlok piercer.xml" />
+	<monster name="Murlok Champion" file="tier 2/murlok champion.xml" />
+	<monster name="Murlok Shellthorn" file="tier 2/murlok shellthorn.xml" />
+	<monster name="Murlok Shaman" file="tier 2/Murlok Shaman.xml" />
+	<monster name="Sand Lobster" file="tier 2/sand lobster.xml" />
+	<monster name="Sand Giant Widow" file="tier 2/sand giant widow.xml" />
+
+	<!--TIER 3-->
+	<monster name="Hydra" file="tier 3/hydra.xml" />
+	<monster name="Elder Hydra" file="tier 3/elder hydra.xml" />
 	
 	<!-- SUMMONS AND COMPANIONS -->
 	<monster name="Fire Spirit" file="summons/fire_spirit.xml" />

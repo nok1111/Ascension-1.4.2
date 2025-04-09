@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Murlok Axeman" nameDescription="a Murlok Axeman" race="blood" experience="20" speed="170" manacost="0">
+	<health now="6" max="6" />
+	<level min="85" max="90" />
+	<look type="2672" corpse="37129" />
+	<targetchange interval="4000" chance="10" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+		<attack name="energy" interval="2000" chance="100" range="7" min="0" max="-80">
+			<attribute key="shootEffect" value="energy" />
+			<attribute key="areaEffect" value="energy" />
+		</attack>
+		<attack name="fire" interval="2000" chance="15" range="7" min="-3" max="-120">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="firearea" />
+		</attack>
+		 <!-- Energy Beam -->
+    <attack name="energy" interval="3000" chance="20" range="5" target="1" min="-35" max="-55">
+        <attribute key="shootEffect" value="energy"/>
+        <attribute key="areaEffect" value="energyarea"/>
+    </attack>
+
+    
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="TotemSummon" interval="2000" chance="10" />
+
+	</defenses>
+
+	<immunities>
+		<immunity invisible="1" />
+	</immunities>
+	<voices interval="2000" chance="7">
+		<voice sentence="Learrn tha secrret uf deathhh!" />
+		<voice sentence="Kaplar!" />
+	</voices>
+	<loot>
+		
+
+		<item id="2649" chance="5190" />					<!-- leather legs -->
+		<item id="2050" chance="4850" />					<!-- torch -->
+		<item id="2461" chance="3000" />					<!-- leather helmet -->
+		<item id="36193" chance="1000" />					<!-- taurus mace -->
+		<item id="2191" chance="620" />					<!-- wand of cosmic energy -->
+		<item name="mana potion" countmax="2" chance="490" />	<!-- mana potion -->
+		
+		<item id="36324" chance="530" />
+		<item id="32864" chance="530" />
+		<item id="2477" chance="530" />	
+		<item id="36357" chance="530" />
+		<item id="31879" chance="530" />
+		
+		<item id="38294" chance="4500" /> <!-- mana master -->
+		<item id="38296" chance="4500" /> <!-- magic heaven -->
+		<item id="32723" chance="5500" /><!-- new spellbooks -->
+		<item id="32721" chance="5500" /><!-- new spellbooks -->
+		<item id="38325" chance="4500" /> <!-- ring of the witch -->
+		
+		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39101" countmax="1" chance="6000" /><!-- sell -->
+		<item id="39066" countmax="1" chance="6000" /><!-- sell -->
+		
+	</loot>
+</monster>
