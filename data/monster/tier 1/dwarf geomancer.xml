@@ -26,6 +26,8 @@
 	</attacks>
 <defenses armor="1" defense="1" >
 
+		<defense name="TotemSummon" interval="2000" chance="10" />
+
 		<defense name="healing" interval="2000" chance="40" min="75" max="125">
 			<attribute key="areaEffect" value="blueshimmer" />
 		</defense>

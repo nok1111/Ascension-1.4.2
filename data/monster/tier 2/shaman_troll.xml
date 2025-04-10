@@ -22,12 +22,19 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-		<attack name="fire" interval="2000" chance="100" range="7" min="0" max="-180">
-			<attribute key="shootEffect" value="newfireballtwo" />
-			<attribute key="areaEffect" value="yellowcloudexplode" />
+		<attack name="physical" interval="2000" chance="100" range="7" min="0" max="-140">
+			<attribute key="shootEffect" value="distance127" />
+			<attribute key="areaEffect" value="effect629" />
 			</attack>
 	</attacks>
-<defenses armor="1" defense="1"/>
+
+	<attack name="thunder delay" interval="2000" range="5" chance="20"  min="-280" max="-350"/>
+
+<defenses armor="1" defense="1" >
+
+		<defense name="TotemSummon" interval="2000" chance="10" />
+
+	</defenses>
 
 	<summons maxSummons="2">
 		<summon name="wolf" interval="2000" chance="25" />

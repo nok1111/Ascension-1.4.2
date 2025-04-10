@@ -21,7 +21,14 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-140" />	</attacks>
+<attack name="melee" interval="2000" min="0" max="-180" />	
+
+<attack name="physical" interval="6000" chance="20" radius="3" target="0" min="-40" max="-270">
+    <attribute key="areaEffect" value="groundshaker"/>
+</attack>
+
+<attack name="2 aoe delay" interval="2000" chance="20"  min="-100" max="-150"/>
+</attacks>
 <defenses armor="2" defense="1" />
 
 	<voices interval="5000" chance="10">

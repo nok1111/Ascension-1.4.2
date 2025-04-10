@@ -24,6 +24,13 @@
 		<attack name="physical" interval="2000" chance="80" range="7" min="0" max="-200">
 			<attribute key="shootEffect" value="spear" />
 			</attack>
+
+		    <!-- Piercing Barrage (multi-hit line) -->
+    <attack name="physical" interval="5000" chance="100" target="1" range="5" radius="3" min="-25" max="-285">
+        <attribute key="areaEffect" value="effect573"/>
+        <attribute key="shootEffect" value="royalspear"/>
+    </attack>
+
 	</attacks>
 <defenses armor="1" defense="1"/>
 	

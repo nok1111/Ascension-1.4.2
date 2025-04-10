@@ -949,7 +949,9 @@
 	<instant name="TotemSummon" words="###103" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/totems.lua" />
 	<instant name="blade fan" words="###104" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/blade fan.lua" />
 	<instant name="rain damage" words="###105" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/custom/rain_damage.lua" />
-	
+	<instant name="2 aoe delay" words="###106" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/2 aoe delay.lua" />
+	<instant name="thunder delay" words="###107" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/thunder delay.lua" />
+	<instant name="poison condition" words="###108" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/custom/poison condition.lua" />
 	
 	
 	
