@@ -1915,7 +1915,358 @@ playersTasks = {
     taskZoneName = "Goblin Camp - Northern Ridge",
     taskSource = "Lucy Steelgard",
     taskHint = "Search crates, barrels, or goblin bosses for their treasure stash."
+},
+[51] = {
+    taskNumber = 51,
+    taskName = "No Throne for Thieves",
+    taskDescription = "Lucy Steelgard has learned the name of the goblin boss who commands the gold-hungry camp—Grizzltooth the Coin-Eater. Track him down in his throne room and end his reign.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Grizzltooth the Coin-Eater",
+                spriteId = 1087 -- Adjust sprite ID as needed
+            }
+        }
+    },
+    preRequiredStorages = {40098}, -- Must have completed the treasure theft
+    taskGoalCnt = 1, -- Kill Grizzltooth
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40111, -- Progress
+    taskStorageCnt = 40112, -- Completion
+    taskRewards = {
+        experience = 25000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 400 },
+            [2] = { name = "Coin-Eater’s Crown", itemSid = 9240, itemCnt = 1 }
+        },
+        outfits = {
+        }
+    },
+    taskZoneName = "Goblin Throne Cavern",
+    taskSource = "Lucy Steelgard",
+    taskHint = "Grizzltooth commands the goblins from deep within their northern throne room."
+},
+[52] = {
+    taskNumber = 52,
+    taskName = "Whispers in the Sand",
+    taskDescription = "After crossing into the vast desert, whispers ride with the sandstorms. Locals claim strange figures have been seen watching from the dunes. Investigate the area east of the broken caravan.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Desert Whispers Investigated",
+                starageTaskId = Mainquest.desertwhispers
+            }
+        }
+    },
+    preRequiredStorages = {},
+    taskGoalCnt = 1,
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40113, -- Progress
+    taskStorageCnt = 40114, -- Completion
+    taskRewards = {
+        experience = 12000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 200 },
+            [2] = { name = "Windswept Sandals", itemSid = 9208, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Scorched Dunes",
+    taskSource = "Desert Scout Nahim",
+    taskHint = "Look for signs of movement east of the ruined caravan—something stirs in the sand."
+},
+[53] = {
+    taskNumber = 53,
+    taskName = "Marks in the Dust",
+    taskDescription = "After investigating the dunes, you found symbols etched into the sand—ones that shift when you look away. Desert Scout Nahim wants you to document the patterns found near the ancient pillars.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Recorded Shifting Symbols",
+                starageTaskId = Mainquest.shiftingrunes
+            }
+        }
+    },
+    preRequiredStorages = {40113}, -- Must have completed "Whispers in the Sand"
+    taskGoalCnt = 1,
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40115, -- Progress
+    taskStorageCnt = 40116, -- Completion
+    taskRewards = {
+        experience = 14000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 250 },
+            [2] = { name = "Sandruned Scarf", itemSid = 9210, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Ancient Pillars - Scorched Dunes",
+    taskSource = "Desert Scout Nahim",
+    taskHint = "The pillars east of the dunes seem marked with strange shifting symbols—study them closely."
+},
+[54] = {
+    taskNumber = 54,
+    taskName = "The Hermit's Warning",
+    taskDescription = "A reclusive hermit is said to dwell in a mountain riddled with wyrms. Locals whisper he’s mad—but his visions of a nameless hunger match the shifting signs. Reach the hermit and hear his warning.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Spoken with the Hermit",
+                starageTaskId = Mainquest.hermitwarning
+            }
+        }
+    },
+    preRequiredStorages = {40115}, -- Must have completed "Marks in the Dust"
+    taskGoalCnt = 1,
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40117, -- Progress
+    taskStorageCnt = 40118, -- Completion
+    taskRewards = {
+        experience = 16000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 250 },
+            [2] = { name = "Desert Cloak", itemSid = 9211, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Wyrmfang Mountain",
+    taskSource = "Desert Scout Nahim",
+    taskHint = "Climb Wyrmfang Mountain and find the hermit’s cave. Be wary—the wyrms do not sleep."
+},
+[55] = {
+    taskNumber = 55,
+    taskName = "Burrowed Threats",
+    taskDescription = "The Hermit of Wyrmfang claims the wyrms have grown restless, disturbed by something beneath the sands. Investigate the tunnels northeast of the Hermit's cave and defeat any Wyrms you find.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Desert Wyrm",
+                spriteId = 1101
+            }
+        }
+    },
+    preRequiredStorages = {40117}, -- Must have completed Hermit's Warning
+    taskGoalCnt = 5, -- Kill 5 Desert Wyrms
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40119, -- Progress
+    taskStorageCnt = 40120, -- Completion
+    taskRewards = {
+        experience = 15000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 250 },
+            [2] = { name = "Wyrmfang Cloak", itemSid = 9211, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Wyrmfang Depths",
+    taskSource = "Hermit of Wyrmfang",
+    taskHint = "Search the eastern tunnels of the Wyrmfang caves and cull the wyrms that dwell within."
+},
+[56] = {
+    taskNumber = 56,
+    taskName = "Echoes of the War Drums",
+    taskDescription = "The Hermit of Wyrmfang has heard distant war drums echoing from the eastern cliffs. War trolls may be preparing for something. Find them and disrupt their movements.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "War Troll",
+                spriteId = 1123
+            }
+        }
+    },
+    preRequiredStorages = {40119}, -- Must have completed Burrowed Threats
+    taskGoalCnt = 6, -- Kill 6 War Trolls
+    taskMinLvl = 21,
+    taskRepeat = false,
+    taskStorageId = 40121, -- Progress
+    taskStorageCnt = 40122, -- Completion
+    taskRewards = {
+        experience = 18000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 300 },
+            [2] = { name = "Drumbeater's Charm", itemSid = 9212, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Cracked Cliffs",
+    taskSource = "Hermit of Wyrmfang",
+    taskHint = "Follow the echoes east of the Wyrmfang cave. The trolls grow bold—stop them."
+},
+[57] = {
+    taskNumber = 57,
+    taskName = "End the Old Reign",
+    taskDescription = "Troll rebels whisper of change. Their long-standing leader, Gor'mhaz the Old, refuses to step down. Track him down and end his reign.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Gor'mhaz the Old",
+                spriteId = 1125 -- Adjust sprite ID as needed
+            }
+        }
+    },
+    preRequiredStorages = {}, -- Must have completed "Echoes of the War Drums"
+    taskGoalCnt = 1, -- Kill Gor'mhaz
+    taskMinLvl = 21,
+    taskRepeat = false,
+    taskStorageId = 40123, -- Progress
+    taskStorageCnt = 40124, -- Completion
+    taskRewards = {
+        experience = 28000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 350 },
+            [2] = { name = "Trollbone Chestplate", itemSid = 9214, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Cracked Cliffs - Throne Cave",
+    taskSource = "Hermit of Wyrmfang",
+    taskHint = "Gor'mhaz hides in a fortified cavern within the cliffs. Put an end to his rule."
+},
+[58] = {
+    taskNumber = 58,
+    taskName = "Voices of Rebellion",
+    taskDescription = "A troll named Rukk claims Gor'mhaz the Old has ruled too long. He believes the time for change is now and asks you to speak with members of the tribe about their thoughts.",
+    taskGoals = {
+        storages = {
+            [1] = { starageName = "Tribe Opinions Collected", starageTaskId = Mainquest.trollrebellion }
+        }
+    },
+    preRequiredStorages = {40123},
+    taskGoalCnt = 1,
+    taskMinLvl = 21,
+    taskRepeat = false,
+    taskStorageId = 40125,
+    taskStorageCnt = 40126,
+    taskRewards = {
+        experience = 10000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Troll Highlands",
+    taskSource = "Rukk Stonegaze",
+    taskHint = "Talk to tribe members across the troll encampment. Not everyone trusts Rukk."
+},
+
+[59] = {
+    taskNumber = 59,
+    taskName = "Ashes of Tradition",
+    taskDescription = "Rukk wants you to destroy the old symbols that bind the trolls to Gor'mhaz's leadership. Find and use the three ancestral relics scattered around the highlands.",
+    taskGoals = {
+        storages = {
+            [1] = { starageName = "Relics Destroyed", starageTaskId = Mainquest.relicsbroken }
+        }
+    },
+    preRequiredStorages = {40125},
+    taskGoalCnt = 3,
+    taskMinLvl = 21,
+    taskRepeat = false,
+    taskStorageId = 40127,
+    taskStorageCnt = 40128,
+    taskRewards = {
+        experience = 14000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 180 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Troll Highlands",
+    taskSource = "Rukk Stonegaze",
+    taskHint = "Relics glow faintly near sacred troll grounds."
+},
+
+[60] = {
+    taskNumber = 60,
+    taskName = "End the Old",
+    taskDescription = "Rukk demands the death of Gor'mhaz the Old. Track down the elder troll and slay him in the name of change.",
+    taskGoals = {
+        monsters = {
+            [1] = { name = "Gor'mhaz the Old", spriteId = 1112 }
+        }
+    },
+    preRequiredStorages = {40127},
+    taskGoalCnt = 1,
+    taskMinLvl = 21,
+    taskRepeat = false,
+    taskStorageId = 40129,
+    taskStorageCnt = 40130,
+    taskRewards = {
+        experience = 18000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 220 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Troll Highlands",
+    taskSource = "Rukk Stonegaze",
+    taskHint = "Gor'mhaz hides deep in the elder's chamber guarded by his most loyal kin."
+},
+
+[61] = {
+    taskNumber = 61,
+    taskName = "The Cracks Beneath",
+    taskDescription = "You found strange markings and residual magic under the troll encampment. Investigate the bodies and the central altar for clues to what Rukk is really up to.",
+    taskGoals = {
+        storages = {
+            [1] = { starageName = "Markings Investigated", starageTaskId = Mainquest.trollclues }
+        }
+    },
+    preRequiredStorages = {40129},
+    taskGoalCnt = 1,
+    taskMinLvl = 22,
+    taskRepeat = false,
+    taskStorageId = 40131,
+    taskStorageCnt = 40132,
+    taskRewards = {
+        experience = 12000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 180 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Troll Highlands",
+    taskSource = "Self-Discovery",
+    taskHint = "Inspect the circle and fallen bodies. Rukk's truth is etched in shadow."
+},
+
+[62] = {
+    taskNumber = 62,
+    taskName = "The Ritual of the Unwritten",
+    taskDescription = "You've uncovered Rukk's true allegiance. He serves The Unwritten and plans to complete a name-erasing ritual. Defeat him before the names of the troll tribe are lost forever.",
+    taskGoals = {
+        monsters = {
+            [1] = { name = "Rukk Stonegaze", spriteId = 1113 }
+        }
+    },
+    preRequiredStorages = {40131},
+    taskGoalCnt = 1,
+    taskMinLvl = 22,
+    taskRepeat = false,
+    taskStorageId = 40133,
+    taskStorageCnt = 40134,
+    taskRewards = {
+        experience = 30000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 400 },
+            [2] = { name = "Rukk's Shattered Sigil", itemSid = 9260, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Unwritten Sanctum",
+    taskSource = "Revealed Truth",
+    taskHint = "Confront Rukk at the altar before the ritual completes."
 }
+
+
+
+
+
 
 
 
