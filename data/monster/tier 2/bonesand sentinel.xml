@@ -13,7 +13,7 @@
 		<flag pushable="0" />
 		<flag canpushitems="1" />
 		<flag canpushcreatures="1" />
-		<flag targetdistance="3" />
+		<flag targetdistance="4" />
 		<flag staticattack="70" />
 		<flag runonhealth="0" />
 		<flag canwalkonenergy="0" />
@@ -21,7 +21,13 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-140" />	</attacks>
+<attack name="physical" interval="1000" chance="100" range="7" min="0" max="-92">
+			<attribute key="shootEffect" value="arrow" />
+		</attack>	
+
+<attack name="arrow spray" interval="5000" chance="25" range="5" chance="20"  min="-120" max="-220"/>
+<attack name="rain damage" interval="2000" chance="10"  min="-60" max="-69"/>
+</attacks>
 <defenses armor="2" defense="1" />
 
 	<voices interval="5000" chance="10">
@@ -32,37 +38,7 @@
 		<voice sentence="Let da mashing begin!" />
 	</voices>
 	<loot>
-		<item name="wolf tooth chain" chance="190" />
 		
-		<item id="6087" chance="5000" />
-		
-		<item name="halberd" chance="1003" />
-		<item name="short sword" chance="8000" />
-		<item name="dark helmet" chance="220" />
-		<item name="plate shield" chance="2500" />
-		<item name="battle shield" chance="1400" />
-		<item name="meat" chance="30070" />
-		<item id="36355" chance="1000" />
-		<item id="36357" chance="1000" />
-		<item id="31879" chance="500" />
-		<item id="36381" chance="800" />
-		<item id="36324" chance="500" />
-
-		<item id="2488" chance="530" />
-		<item id="32865" chance="530" />
-		<item id="31879" chance="530" />
-		<item id="32859" chance="530" />
-		
-		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
-
-		<item id="382941" chance="4500" /> <!-- regen resilence -->
-		<item id="38293" chance="4500" /> <!-- critical coup -->
-		
-		
-		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
-		<item id="39070" countmax="1" chance="6000" /><!-- sell -->
-		<item id="39101" countmax="1" chance="6000" /><!-- sell -->
-
 
 	</loot>
 </monster>

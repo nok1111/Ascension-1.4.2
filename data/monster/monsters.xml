@@ -129,6 +129,9 @@
 	<monster name="Duskwillow Trent" file="tier 2/duskwillow trent.xml" />
 	<monster name="Thornsong Trent" file="tier 2/thornsong trent.xml" />
 
+	<monster name="Dragon" file="tier 2/dragon.xml" />
+	<monster name="Elder Dragon" file="tier 2/elder dragon.xml" />
+
 
 
 

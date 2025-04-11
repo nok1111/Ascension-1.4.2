@@ -945,6 +945,7 @@
 	<instant name="wave adn warning" words="###100" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/wave_and_warning.lua" />
 	<instant name="laser beam fire" words="###101" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_fire.lua" />
 	<instant name="laser beam earth" words="###102" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_earth.lua" />
+
 	
 	<instant name="TotemSummon" words="###103" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/totems.lua" />
 	<instant name="blade fan" words="###104" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/blade fan.lua" />
@@ -952,8 +953,10 @@
 	<instant name="2 aoe delay" words="###106" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/2 aoe delay.lua" />
 	<instant name="thunder delay" words="###107" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/thunder delay.lua" />
 	<instant name="poison condition" words="###108" aggressive="1" blockwalls="1" needtarget="1" needlearn="1" script="monster/custom/poison condition.lua" />
-	
-	
+	<instant name="poison wave 1 tile" words="###109" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/custom/poison wave 1 tile.lua" />
+	<instant name="arrow spray" words="###110" aggressive="1" blockwalls="1" needtarget="0" direction="1" needlearn="1" script="monster/custom/arrow spray.lua" />
+	<instant name="laser beam death" words="###111" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_death.lua" />
+	<instant name="fire spray" words="###112" aggressive="1" blockwalls="1" needtarget="0" direction="1" needlearn="1" script="monster/custom/fire spray.lua" />
 	
 	
 	
