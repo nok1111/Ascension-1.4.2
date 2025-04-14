@@ -957,7 +957,9 @@
 	<instant name="arrow spray" words="###110" aggressive="1" blockwalls="1" needtarget="0" direction="1" needlearn="1" script="monster/custom/arrow spray.lua" />
 	<instant name="laser beam death" words="###111" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_death.lua" />
 	<instant name="fire spray" words="###112" aggressive="1" blockwalls="1" needtarget="0" direction="1" needlearn="1" script="monster/custom/fire spray.lua" />
-	
+	<instant name="ring earth nd" words="###113" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/custom/custom_ring_earth_nodistance.lua" />
+	<instant name="laser beam earth zigzag" words="###114" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_earth_zigzag.lua" />
+	<instant name="self destroy" words="###115" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/self_destroy.lua" />
 	
 	
 	

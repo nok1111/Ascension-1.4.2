@@ -563,6 +563,94 @@ local zones = {
         forceWeather = false, -- If true, weather will always stay the same
         activeWeather = nil, -- Stores the currently active weather
     },
+    [33] = {
+        id = 33,
+        name = "Wyrmfang Mountai",
+        monsters = {"wyrm"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Desert", "Desert3", "Desert4", "Map - Heatwave"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
+    [34] = {
+        id = 34,
+        name = "Troll Highlands",
+        monsters = {"war troll", "spearman troll", "shaman troll"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Desert", "Desert3", "Desert4", "Map - Heatwave"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
+    [35] = {
+        id = 35,
+        name = "Troll Fortress",
+        monsters = {"war troll", "spearman troll", "shaman troll", "blademaster troll"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Desert", "Desert3", "Desert4", "Map - Heatwave"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
+    [36] = {
+        id = 36,
+        name = "goblins & hogs",
+        monsters = {"hog", "tuskhog", "hog smasher", "hog bomber", "hog spearman", "hog champion", "hog elite", "hog shaman"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
 
 
 

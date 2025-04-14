@@ -27,7 +27,7 @@
 			<attribute key="areaEffect" value="effect572" />
 		</attack>
 		 <!-- Energy Beam -->
-    <attack name="poison condition" interval="2000" range="5" chance="100"/>
+    <attack name="poison condition" interval="2000" range="5" chance="10"/>
 
     
 	</attacks>

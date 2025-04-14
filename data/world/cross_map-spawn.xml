@@ -1,5 +1,8 @@
 <?xml version="1.0"?>
 <spawns>
+	<spawn centerx="779" centery="1078" centerz="4" radius="1">
+		<npc name="Hermit of Wyrmfang" x="0" y="0" z="4" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="354" centery="839" centerz="5" radius="1">
 		<npc name="Old Man Garrek" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
@@ -11,9 +14,6 @@
 	</spawn>
 	<spawn centerx="776" centery="847" centerz="6" radius="1">
 		<npc name="The Whispering Fog" x="0" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="904" centery="1043" centerz="6" radius="1">
-		<npc name="Shaman Guzumhk" x="1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="907" centery="1067" centerz="6" radius="1">
 		<npc name="rut'krall" x="0" y="-1" z="6" spawntime="60" direction="2" />
@@ -363,6 +363,12 @@
 	</spawn>
 	<spawn centerx="794" centery="1052" centerz="7" radius="1">
 		<monster name="Cow" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="745" centery="1076" centerz="7" radius="1">
+		<npc name="Desert Scout Nahim" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="857" centery="1076" centerz="7" radius="1">
+		<npc name="Rukk Stonegaze" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1333" centery="394" centerz="8" radius="1">
 		<monster name="Elven High Priest" x="0" y="0" z="8" spawntime="60" direction="2" />

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Hog Shaman" nameDescription="a Hog Shaman" race="blood" experience="40" speed="170" manacost="330">
+	<health now="12" max="12" />
+	<level min="65" max="75" />
+	<look type="2511" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="3" />
+		<flag staticattack="70" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+
+<attack name="fire" interval="2000" chance="100" range="7" min="0" max="-140">
+			<attribute key="shootEffect" value="fire" />
+			<attribute key="areaEffect" value="explosionarea" />
+</attack>
+
+<attack name="laser beam earth zigzag" interval="2000" chance="18" range="5" min="0" max="-210"/>
+
+</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="TotemSummon" interval="3000" chance="20" />
+
+
+	</defenses>
+
+	<voices interval="5000" chance="10">
+		<voice sentence="Kaplar!" />
+		<voice sentence="Hurr!" />
+	</voices>
+	<loot>
+		<item id="2480" chance="300" />
+		<item id="2419" chance="1860" /><!-- scimitar -->
+		<item id="2667" chance="29400" /><!-- fish -->
+		<item name="brown mushroom" chance="9650" />	
+		<item name="amazonic helmet" chance="3230" />
+		<item name="steel shield" chance="970" />
+		<item name="plate shield" chance="1900" />
+		
+		<item id="32789" chance="1000" />
+		<item id="2462" chance="1000" />
+		<item id="32825" chance="1000" />
+		<item id="2477" chance="500" />
+
+		<item id="36324" chance="530" />
+		<item id="32864" chance="530" />
+		<item id="2477" chance="530" />	
+		<item id="36357" chance="530" />
+		<item id="31879" chance="530" />
+		
+		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39101" countmax="1" chance="6000" /><!-- sell -->
+		<item id="39152" countmax="1" chance="6000" /><!-- sell -->
+	</loot>
+</monster>

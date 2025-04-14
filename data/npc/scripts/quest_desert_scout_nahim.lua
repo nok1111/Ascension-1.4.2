@@ -11,11 +11,11 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg)	
 
 function greetCallback(cid)
     local player = Player(cid)
-    if player:getStorageValue(40123) == TASK_COMPLETED then
+    if player:getStorageValue(40123) >= TASK_COMPLETED then
         doSendDialogNpc(cid, getNpcCid(), "You're not the first to come through the Scorched Dunes... but most don't return. East of here, by the broken caravan, something watches. Find it.", "quests&rewards&close")
-    elseif player:getStorageValue(40121) == TASK_COMPLETED then
+    elseif player:getStorageValue(40121) >= TASK_COMPLETED then
         doSendDialogNpc(cid, getNpcCid(), "You're not the first to come through the Scorched Dunes... but most don't return. East of here, by the broken caravan, something watches. Find it.", "quests&rewards&close")
-     elseif player:getStorageValue(40119) == TASK_COMPLETED then
+     elseif player:getStorageValue(40119) >= TASK_COMPLETED then
         doSendDialogNpc(cid, getNpcCid(), "You're not the first to come through the Scorched Dunes... but most don't return. East of here, by the broken caravan, something watches. Find it.", "quests&rewards&close")
     else
         doSendDialogNpc(cid, getNpcCid(), "You hear them, don’t you? Beneath the sands. The wyrms have begun to stir... and they do not stir without reason.", "quests&rewards&close")

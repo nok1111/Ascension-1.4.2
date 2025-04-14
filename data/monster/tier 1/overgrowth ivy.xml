@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Overgrowth Ivy" nameDescription="a Overgrowth Ivy" race="venom" experience="20" speed="190">
-	<health now="6" max="6" />
+	<health now="8" max="8" />
+	<level min="60" max="70" />
 	<look type="2435" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
 	<flags>

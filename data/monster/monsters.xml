@@ -87,6 +87,14 @@
 	<monster name="Rotbloom" file="tier 1/rotbloom.xml" />
 	<monster name="Overgrowth Ivy" file="tier 1/overgrowth ivy.xml" />
 
+	<monster name="Hog" file="tier 1/hog.xml" />
+	<monster name="Hog Smasher" file="tier 1/hog smasher.xml" />
+	<monster name="Hog Bomber" file="tier 1/hog bomber.xml" />
+	<monster name="Tuskhog" file="tier 1/tuskhog.xml" />
+	<monster name="Hog Spearman" file="tier 1/hog spearman.xml" />
+	<monster name="Hog Champion" file="tier 1/hog champion.xml" />
+	<monster name="Hog Elite" file="tier 1/hog elite.xml" />
+	<monster name="Hog Shaman" file="tier 1/hog shaman.xml" />
 
 	<!--TIER 2-->
 	<monster name="Wyrm" file="tier 2/wyrm.xml" />

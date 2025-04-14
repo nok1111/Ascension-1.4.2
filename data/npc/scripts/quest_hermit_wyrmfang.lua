@@ -11,9 +11,9 @@ function onCreatureSay(cid, type, msg) npcHandler:onCreatureSay(cid, type, msg)	
 
 function greetCallback(cid)
     local player = Player(cid)
-    if player:getStorageValue(40115) == TASK_COMPLETED then
+    if player:getStorageValue(40115) >= TASK_COMPLETED then
         doSendDialogNpc(cid, getNpcCid(), "You’ve faced them and lived. I thank you. But this is just the beginning, mark my words.", "quests&rewards&close")
-     elseif player:getStorageValue(40113) == TASK_COMPLETED then
+     elseif player:getStorageValue(40113) >= TASK_COMPLETED then
         doSendDialogNpc(cid, getNpcCid(), "The tunnels northeast of here… they reek of fear and blood. If you’re brave enough, go there and drive the wyrms back.", "quests&rewards&close")
     else
         doSendDialogNpc(cid, getNpcCid(), "I’ve lived on Wyrmfang Mountain for decades. These creatures are ancient and proud. If they rise, something has disturbed their slumber.", "quests&rewards&close")

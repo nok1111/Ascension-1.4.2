@@ -2063,7 +2063,7 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Wyrmfang Depths",
+    taskZoneName = "Wyrmfang Mountain",
     taskSource = "Hermit of Wyrmfang",
     taskHint = "Search the eastern tunnels of the Wyrmfang caves and cull the wyrms that dwell within."
 },
