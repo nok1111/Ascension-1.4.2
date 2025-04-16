@@ -149,12 +149,142 @@ local eventConfigs = {
         magiceffect = 205
     },
 
-    [2028] = { -- Another event example
+    [2028] = { -- telescope
         required_storage = 40113,
         storage_reward = { id = Mainquest.strangesymbols, value = 1 },
         message = "You look far to the east it seems like a fortress of some kind.",
         magiceffect = 205
     },
+
+    [2029] = { -- library
+        message = "You found stories related to an alchemist traveling between dunes.",
+        magiceffect = 400
+    },
+    [2030] = { -- library
+        message = "You found stories of a boy chasing omens across the desert in search of treasure.",
+        magiceffect = 400
+    },
+    [2031] = {
+        message = "You found tales about a cursed king who turned everything he touched into gold.",
+        magiceffect = 400
+    },
+    [2032] = {
+        message = "You read of a prince who met a fox and learned the true meaning of love.",
+        magiceffect = 400
+    },
+    [2033] = {
+        message = "You skim a dusty scroll about a giant worm that ruled the sands of a faraway planet.",
+        magiceffect = 400
+    },
+    [2034] = {
+        message = "You uncover a legend of a woman born from sea foam who charmed the gods.",
+        magiceffect = 400
+    },
+    [2035] = {
+        message = "You found myths about a phoenix that rises from ashes once every age.",
+        magiceffect = 400
+    },
+    [2036] = {
+        message = "You read about a knight cursed to wander forever beneath a blood-red moon.",
+        magiceffect = 400
+    },
+    [2037] = {
+        message = "You glimpse fragments of a tale where a city vanished under endless sands.",
+        magiceffect = 400
+    },
+    [2038] = {
+        message = "You found an entry on a clever thief who stole fire from the gods.",
+        magiceffect = 400
+    },
+    [2039] = {
+        message = "You read a poem about a man who searched for immortality and lost himself.",
+        magiceffect = 400
+    },
+    [2040] = {
+        message = "You found a tale of a forgotten queen who ruled with wisdom and wrath.",
+        magiceffect = 400
+    },
+    [2041] = {
+        message = "You read about a lonely tower that holds a mirror showing one’s true soul.",
+        magiceffect = 400
+    },
+    [2042] = {
+        message = "You found fragments of a story about a warrior who slayed a sea serpent.",
+        magiceffect = 400
+    },
+    [2043] = {
+        message = "You discovered myths of a trickster god who caused both chaos and laughter.",
+        magiceffect = 400
+    },
+    [2044] = {
+        message = "You read tales of a ghost ship that only appears during full moons.",
+        magiceffect = 400
+    },
+    [2045] = {
+        message = "You uncover words about an eternal library where every book already exists.",
+        magiceffect = 400
+    },
+    [2046] = {
+        message = "You found a love story carved into stone by a blind sculptor.",
+        magiceffect = 400
+    },
+    [2047] = {
+        message = "You read legends of a hero who leapt into the underworld to save a soul.",
+        magiceffect = 400
+    },
+    [2048] = {
+        message = "You found writings of a storm god who carved mountains with his rage.",
+        magiceffect = 400
+    },
+    [2049] = {
+        message = "You read the tale of a sword that weeps for every life it takes.",
+        magiceffect = 400
+    },
+    [2050] = {
+        message = "You found an ancient riddle left behind by a civilization swallowed by the sea.",
+        magiceffect = 400
+},
+    [2051] = {
+        message = "You read of a mirror that reflects not faces, but memories long forgotten.",
+        magiceffect = 400
+    },
+    [2052] = {
+        message = "You found a legend of a maiden turned to stone for loving a god.",
+        magiceffect = 400
+    },
+    [2053] = {
+        message = "You uncover verses about a bard who sang the stars into the sky.",
+        magiceffect = 400
+    },
+    [2054] = {
+        message = "You read of a beast that guards a maze no one returns from.",
+        magiceffect = 400
+    },
+    [2055] = {
+        message = "You found notes on a monk who counted every grain of sand seeking truth.",
+        magiceffect = 400
+    },
+    [2056] = {
+        message = "You stumbled upon a tale of twins who switched fates under a blood moon.",
+        magiceffect = 400
+    },
+    [2057] = {
+        message = "You read about a forest that sleeps for a hundred years between each breath.",
+        magiceffect = 400
+    },
+    [2058] = {
+        message = "You found scribbles about a candle that burns with memories instead of wax.",
+        magiceffect = 400
+    },
+    [2059] = {
+        message = "You read of a desert flower that only blooms when someone forgives.",
+        magiceffect = 400
+    },
+    [2060] = {
+        message = "You discovered information about trolls language, traditions and politics.",
+        magiceffect = 400
+    },
+
 
 
 
