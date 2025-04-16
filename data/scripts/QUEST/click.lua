@@ -149,6 +149,12 @@ local eventConfigs = {
         magiceffect = 205
     },
 
+    [2028] = { -- Another event example
+        required_storage = 40113,
+        storage_reward = { id = Mainquest.strangesymbols, value = 1 },
+        message = "You look far to the east it seems like a fortress of some kind.",
+        magiceffect = 205
+    },
 
 
 
@@ -173,6 +179,7 @@ local eventConfigs = {
         magiceffect = CONST_ME_MORTAREA,
         is_teleport = true -- Mark this as a teleport event
     },
+
 
 
 }

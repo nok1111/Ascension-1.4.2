@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<npc name="Draya the Waterkeeper" script="quest_draya_waterkeeper.lua" walkinterval="2000" floorchange="0">
+	<health now="100" max="100" />
+	<look type="2604" />
+
+</npc>

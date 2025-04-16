@@ -370,6 +370,9 @@
 	<spawn centerx="857" centery="1076" centerz="7" radius="1">
 		<npc name="Rukk Stonegaze" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="670" centery="1116" centerz="7" radius="1">
+		<npc name="Draya the Waterkeeper" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="1333" centery="394" centerz="8" radius="1">
 		<monster name="Elven High Priest" x="0" y="0" z="8" spawntime="60" direction="2" />
 	</spawn>

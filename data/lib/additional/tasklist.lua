@@ -1824,7 +1824,7 @@ playersTasks = {
 [48] = {
     taskNumber = 48,
     taskName = "Steel and Greed",
-    taskDescription = "Lucy Steelgard’s dwarven partner, Vornik, went missing while scouting a goblin stronghold in the northern mountains. She wants you to find out what happened to him.",
+    taskDescription = "Lucy Steelgard’s dwarven partner, Vornik, went missing while scouting a hog stronghold in the northern mountains. She wants you to find out what happened to him.",
     taskGoals = {
         storages = {
             [1] = {
@@ -1847,7 +1847,7 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Northern Mountain Ridge",
+    taskZoneName = "Tuskin Mountain - Northern Ridge",
     taskSource = "Lucy Steelgard",
     taskHint = "Search for traces of the goblin stash and signs of Vornik's fate."
 },
@@ -1855,7 +1855,7 @@ playersTasks = {
 [49] = {
     taskNumber = 49,
     taskName = "Steelgard's Vengeance",
-    taskDescription = "After confirming that goblins ambushed and killed her partner, Lucy Steelgard has asked you to cull their numbers. Hunt down the goblins infesting the northern ridge.",
+    taskDescription = "After confirming that hogs ambushed and killed her partner, She founds all vornik money was missing staying uncalmed, Lucy Steelgard has asked you to cull their numbers. Hunt down the hogs infesting the northern ridge.",
     taskGoals = {
         monsters = {
             [1] = {
@@ -1882,14 +1882,14 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Northern Mountain Ridge",
+    taskZoneName = "Tuskin Mountain - Northern Ridge",
     taskSource = "Lucy Steelgard",
     taskHint = "Slay any goblins you find in the mountain pass. Lucy wants no survivors."
 },
 [50] = {
     taskNumber = 50,
     taskName = "Gold for the Bold",
-    taskDescription = "Lucy Steelgard believes there's a stash of stolen gold deep in the goblin camp. While you're already hunting goblins, she wants you to find and loot their hoarded treasure.",
+    taskDescription = "Lucy Steelgard believes there's a stash of stolen gold deep in the hog camp, since there are traces goblins are part of this kills. While you're already hunting goblins, she wants you to find and loot their hoarded treasure.",
     taskGoals = {
         storages = {
             [1] = {
@@ -1912,7 +1912,7 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Goblin Camp - Northern Ridge",
+    taskZoneName = "Tuskin Mountain - Northern Ridge",
     taskSource = "Lucy Steelgard",
     taskHint = "Search crates, barrels, or goblin bosses for their treasure stash."
 },
@@ -1943,14 +1943,14 @@ playersTasks = {
         outfits = {
         }
     },
-    taskZoneName = "Goblin Throne Cavern",
+    taskZoneName = "Tuskin Mountain Cavern",
     taskSource = "Lucy Steelgard",
     taskHint = "Grizzltooth commands the goblins from deep within their northern throne room."
 },
 [52] = {
     taskNumber = 52,
     taskName = "Whispers in the Sand",
-    taskDescription = "After crossing into the vast desert, whispers ride with the sandstorms. Locals claim strange figures have been seen watching from the dunes. Investigate the area east of the broken caravan.",
+    taskDescription = "After crossing into the vast desert, whispers ride with the sandstorms. Locals claim strange figures have been seen watching from the dunes. Investigate by using the telescope at the upper floors.",
     taskGoals = {
         storages = {
             [1] = {
@@ -1960,7 +1960,7 @@ playersTasks = {
         }
     },
     preRequiredStorages = {},
-    taskGoalCnt = 1,
+    taskGoalCnt = 3,
     taskMinLvl = 20,
     taskRepeat = false,
     taskStorageId = 40113, -- Progress
@@ -1975,12 +1975,12 @@ playersTasks = {
     },
     taskZoneName = "Scorched Dunes",
     taskSource = "Desert Scout Nahim",
-    taskHint = "Look for signs of movement east of the ruined caravan—something stirs in the sand."
+    taskHint = "look at the distance using the telescope at the upper floors."
 },
 [53] = {
     taskNumber = 53,
     taskName = "Marks in the Dust",
-    taskDescription = "After investigating the dunes, you found symbols etched into the sand—ones that shift when you look away. Desert Scout Nahim wants you to document the patterns found near the ancient pillars.",
+    taskDescription = "After investigating the dunes, you found a distant fortress with some symbols. Desert Scout Nahim wants you to decipher the patterns and symbol found near the fortress.",
     taskGoals = {
         storages = {
             [1] = {
@@ -2005,7 +2005,7 @@ playersTasks = {
     },
     taskZoneName = "Ancient Pillars - Scorched Dunes",
     taskSource = "Desert Scout Nahim",
-    taskHint = "The pillars east of the dunes seem marked with strange shifting symbols—study them closely."
+    taskHint = "Study the symbols using ancient knowledge books from the library room nearby."
 },
 [54] = {
     taskNumber = 54,
@@ -2261,6 +2261,184 @@ playersTasks = {
     taskZoneName = "Unwritten Sanctum",
     taskSource = "Revealed Truth",
     taskHint = "Confront Rukk at the altar before the ritual completes."
+},
+[63] = {
+    taskNumber = 63,
+    taskName = "Through Dust and Thirst",
+    taskDescription = "Najim, a lookout stationed south of the western oasis, has warned you of the dangers in the desert. He insists you reach the oasis and speak with Draya the Waterkeeper.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Reached the Western Oasis",
+                starageTaskId = 40136
+            }
+        }
+    },
+    preRequiredStorages = {},
+    taskGoalCnt = 1,
+    taskMinLvl = 10,
+    taskRepeat = false,
+    taskStorageId = 40135, -- Progress
+    taskStorageCnt = 40136, -- Completion
+    taskRewards = {
+        experience = 1500,
+        items = {
+            [1] = { name = "water flask", itemSid = 7492, itemCnt = 1 },
+            [2] = { name = "desert boots", itemSid = 2640, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Western Oasis",
+    taskSource = "Najim the Lookout",
+    taskHint = "Follow the trail northwest from Najim’s outpost. The oasis is marked by palm trees and a stone archway."
+},
+[64] = {
+    taskNumber = 64,
+    taskName = "Oasis Trouble",
+    taskDescription = "Draya the Waterkeeper is concerned about unusual disturbances in the oasis pools. Investigate what’s tainting the water.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Investigated the Oasis Pools",
+                starageTaskId = 40138
+            }
+        }
+    },
+    preRequiredStorages = {40136},
+    taskGoalCnt = 1,
+    taskMinLvl = 10,
+    taskRepeat = false,
+    taskStorageId = 40137, -- Progress
+    taskStorageCnt = 40138, -- Completion
+    taskRewards = {
+        experience = 2000,
+        items = {
+            [1] = { name = "small emerald", itemSid = 3031, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Western Oasis",
+    taskSource = "Draya the Waterkeeper",
+    taskHint = "The disturbances seem to originate from the northernmost pool."
+},
+[65] = {
+    taskNumber = 65,
+    taskName = "Camels Gone Wild",
+    taskDescription = "Camels have gone wild and are disrupting the oasis. Draya has asked you to calm or corral them before someone gets hurt.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Calmed the Wild Camels",
+                starageTaskId = 40140
+            }
+        }
+    },
+    preRequiredStorages = {40138},
+    taskGoalCnt = 1,
+    taskMinLvl = 10,
+    taskRepeat = false,
+    taskStorageId = 40139, -- Progress
+    taskStorageCnt = 40140, -- Completion
+    taskRewards = {
+        experience = 2500,
+        items = {
+            [1] = { name = "bundle of dates", itemSid = 3582, itemCnt = 5 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Western Oasis",
+    taskSource = "Draya the Waterkeeper",
+    taskHint = "The camels were last seen running near the palm groves to the west."
+},
+[66] = {
+    taskNumber = 66,
+    taskName = "Fishy Smugglers", --place explosives and chain explosion to cargo
+    taskDescription = "Draya suspects that smugglers have been using the oasis as a cover for illicit activity. Investigate the area and drive out the intruders.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Smuggler Operation Disrupted",
+                starageTaskId = 40142
+            }
+        }
+    },
+    preRequiredStorages = {40140},
+    taskGoalCnt = 1,
+    taskMinLvl = 12,
+    taskRepeat = false,
+    taskStorageId = 40141, -- Progress
+    taskStorageCnt = 40142, -- Completion
+    taskRewards = {
+        experience = 3000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 80 },
+            [2] = { name = "pearl", itemSid = 3026, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Western Oasis",
+    taskSource = "Draya the Waterkeeper",
+    taskHint = "Check the eastern banks of the oasis during or after a sandstorm."
+},
+[67] = {
+    taskNumber = 67,
+    taskName = "The Great Oasis Brew-Off",
+    taskDescription = "Draya wants to win the annual oasis brew-off. She needs rare desert ingredients gathered quickly before sundown.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Brew Ingredients Collected",
+                starageTaskId = 40144
+            }
+        }
+    },
+    preRequiredStorages = {40142},
+    taskGoalCnt = 1,
+    taskMinLvl = 12,
+    taskRepeat = false,
+    taskStorageId = 40143, -- Progress
+    taskStorageCnt = 40144, -- Completion
+    taskRewards = {
+        experience = 3500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
+            [2] = { name = "Draya’s Secret Brew", itemSid = 7491, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Western Oasis",
+    taskSource = "Draya the Waterkeeper",
+    taskHint = "Search the dunes and oasis edges for rare herbs and ingredients."
+},
+[68] = {
+    taskNumber = 68,
+    taskName = "Venom and Violets",
+    taskDescription = "Draya has noticed strange poisonings among the oasis dwellers. She suspects the violetspine serpents from the east. Collect venom samples to help her brew an antidote.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Violet Venom Samples Gathered",
+                starageTaskId = 40146
+            }
+        }
+    },
+    preRequiredStorages = {40144},
+    taskGoalCnt = 1,
+    taskMinLvl = 13,
+    taskRepeat = false,
+    taskStorageId = 40145, -- Progress
+    taskStorageCnt = 40146, -- Completion
+    taskRewards = {
+        experience = 4000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 110 },
+            [2] = { name = "antidote vial", itemSid = 7494, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Eastern Oasis Ridge",
+    taskSource = "Draya the Waterkeeper",
+    taskHint = "Hunt violetspine serpents near the rocky ridges east of the oasis and bring back venom samples."
 }
 
 
