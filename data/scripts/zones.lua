@@ -623,6 +623,10 @@ local zones = {
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
         onStartup = true, -- This will trigger monster spawn at startup
 
+        boss = "Gor'mhaz the Old",   -- Boss monster
+        bossKillThreshold = 85, -- Number of kills required to spawn boss
+        killCount = 0,
+        bossSpawnPosition = Position(892, 1029, 7),  -- Example X, Y, Z coordinates
 
          -- WEATHER SETTINGS
         weather = {"Desert", "Desert3", "Desert4", "Map - Heatwave"}, -- Possible weather types

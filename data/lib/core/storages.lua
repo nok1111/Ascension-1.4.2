@@ -92,6 +92,8 @@ chrissbread = 50036,
 foundpartner = 50037,
 goblinsgold = 50038,
 strangesymbols = 50039,
+studytrolls = 50040,
+hermitwarning = 50041,
 }
 
 -- actions

@@ -18,8 +18,12 @@ npcTaskList = {
         ["Dream-Seeker Alran"] = {36,37,38,39,40,41,42,43}, 
         ["Farmer Mabel"] = {44},
         ["Farmer Cluckington"] = {45},
-        ["Lucy Steelgard"] = {46},
+        ["Lucy Steelgard"] = {46,48,49,50,51},
         ["Chriss"] = {47},
+        ["Desert Scout Nahim"] = {52,53,54},
+        ["Hermit of Wyrmfang"] = {55,56,57},
+        
+
         
         
 
@@ -1954,13 +1958,13 @@ playersTasks = {
     taskGoals = {
         storages = {
             [1] = {
-                starageName = "Desert Whispers Investigated",
-                starageTaskId = Mainquest.desertwhispers
+                starageName = "Desert Figures Investigated",
+                starageTaskId = Mainquest.strangesymbols
             }
         }
     },
     preRequiredStorages = {},
-    taskGoalCnt = 3,
+    taskGoalCnt = 1,
     taskMinLvl = 20,
     taskRepeat = false,
     taskStorageId = 40113, -- Progress
@@ -1984,8 +1988,8 @@ playersTasks = {
     taskGoals = {
         storages = {
             [1] = {
-                starageName = "Recorded Shifting Symbols",
-                starageTaskId = Mainquest.shiftingrunes
+                starageName = "Study strange symbols",
+                starageTaskId = Mainquest.studytrolls
             }
         }
     },
@@ -2044,13 +2048,13 @@ playersTasks = {
     taskGoals = {
         monsters = {
             [1] = {
-                name = "Desert Wyrm",
+                name = "wyrm",
                 spriteId = 1101
             }
         }
     },
     preRequiredStorages = {40117}, -- Must have completed Hermit's Warning
-    taskGoalCnt = 5, -- Kill 5 Desert Wyrms
+    taskGoalCnt = 35, -- Kill 5 Desert Wyrms
     taskMinLvl = 20,
     taskRepeat = false,
     taskStorageId = 40119, -- Progress
@@ -2074,9 +2078,21 @@ playersTasks = {
     taskGoals = {
         monsters = {
             [1] = {
-                name = "War Troll",
+                name = "war troll",
                 spriteId = 1123
-            }
+            },
+            [2] = {
+                name = "spearman troll",
+                spriteId = 1123
+            },
+            [3] = {
+                name = "shaman troll",
+                spriteId = 1123
+            },
+            [4] = {
+                name = "blademaster troll",
+                spriteId = 1123
+            },
         }
     },
     preRequiredStorages = {40119}, -- Must have completed Burrowed Threats
@@ -2093,9 +2109,9 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Cracked Cliffs",
+    taskZoneName = "Troll Highlands",
     taskSource = "Hermit of Wyrmfang",
-    taskHint = "Follow the echoes east of the Wyrmfang cave. The trolls grow bold—stop them."
+    taskHint = "Follow the echoes past of the Wyrmfang mountain. The trolls grow bold—stop them."
 },
 [57] = {
     taskNumber = 57,
@@ -2123,9 +2139,9 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Cracked Cliffs - Throne Cave",
+    taskZoneName = "Troll Fortress",
     taskSource = "Hermit of Wyrmfang",
-    taskHint = "Gor'mhaz hides in a fortified cavern within the cliffs. Put an end to his rule."
+    taskHint = "Gor'mhaz hides himself, kill his People to force him out."
 },
 [58] = {
     taskNumber = 58,

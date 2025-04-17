@@ -197,8 +197,9 @@ local eventConfigs = {
         magiceffect = 400
     },
     [2039] = {
-        message = "You read a poem about a man who searched for immortality and lost himself.",
-        magiceffect = 400
+        message = "You discovered information about trolls language, traditions and politics.",
+        storage_reward = { id = Mainquest.studytrolls, value = 1 },
+        magiceffect = 205
     },
     [2040] = {
         message = "You found a tale of a forgotten queen who ruled with wisdom and wrath.",
@@ -281,7 +282,7 @@ local eventConfigs = {
         magiceffect = 400
     },
     [2060] = {
-        message = "You discovered information about trolls language, traditions and politics.",
+        message = "You read a poem about a man who searched for immortality and lost himself.",
         magiceffect = 400
     },
 
