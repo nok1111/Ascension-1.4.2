@@ -96,8 +96,12 @@
 	<monster name="Hog Elite" file="tier 1/hog elite.xml" />
 	<monster name="Hog Shaman" file="tier 1/hog shaman.xml" />
 
+	<!--TIER 2 bosses-->
+	<monster name="Gor'mhaz the Old" file="tier 2/bosses/gormhaz the old.xml" />
+
 	<!--TIER 2-->
 	<monster name="Wyrm" file="tier 2/wyrm.xml" />
+	<monster name="Furious Wyrm" file="tier 2/furious wyrm.xml" />
 
 	<monster name="Shaman Troll" file="tier 2/shaman_troll.xml" />
 	<monster name="Spearman Troll" file="tier 2/spearman_troll.xml" />

@@ -2048,7 +2048,7 @@ playersTasks = {
     taskGoals = {
         monsters = {
             [1] = {
-                name = "wyrm",
+                name = "furious wyrm",
                 spriteId = 1101
             }
         }
@@ -2113,36 +2113,7 @@ playersTasks = {
     taskSource = "Hermit of Wyrmfang",
     taskHint = "Follow the echoes past of the Wyrmfang mountain. The trolls grow bold—stop them."
 },
-[57] = {
-    taskNumber = 57,
-    taskName = "End the Old Reign",
-    taskDescription = "Troll rebels whisper of change. Their long-standing leader, Gor'mhaz the Old, refuses to step down. Track him down and end his reign.",
-    taskGoals = {
-        monsters = {
-            [1] = {
-                name = "Gor'mhaz the Old",
-                spriteId = 1125 -- Adjust sprite ID as needed
-            }
-        }
-    },
-    preRequiredStorages = {}, -- Must have completed "Echoes of the War Drums"
-    taskGoalCnt = 1, -- Kill Gor'mhaz
-    taskMinLvl = 21,
-    taskRepeat = false,
-    taskStorageId = 40123, -- Progress
-    taskStorageCnt = 40124, -- Completion
-    taskRewards = {
-        experience = 28000,
-        items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 350 },
-            [2] = { name = "Trollbone Chestplate", itemSid = 9214, itemCnt = 1 }
-        },
-        outfits = {}
-    },
-    taskZoneName = "Troll Fortress",
-    taskSource = "Hermit of Wyrmfang",
-    taskHint = "Gor'mhaz hides himself, kill his People to force him out."
-},
+
 [58] = {
     taskNumber = 58,
     taskName = "Voices of Rebellion",
@@ -2152,12 +2123,12 @@ playersTasks = {
             [1] = { starageName = "Tribe Opinions Collected", starageTaskId = Mainquest.trollrebellion }
         }
     },
-    preRequiredStorages = {40123},
+    preRequiredStorages = {},
     taskGoalCnt = 1,
     taskMinLvl = 21,
     taskRepeat = false,
-    taskStorageId = 40125,
-    taskStorageCnt = 40126,
+    taskStorageId = 40123,
+    taskStorageCnt = 40124,
     taskRewards = {
         experience = 10000,
         items = {
@@ -2170,13 +2141,44 @@ playersTasks = {
     taskHint = "Talk to tribe members across the troll encampment. Not everyone trusts Rukk."
 },
 
+[58] = {
+    taskNumber = 58,
+    taskName = "End the Right",
+    taskDescription = "The troll clans are stirring with unrest. Before confronting Gor'mhaz the Old, their entrenched leader, you must deal with his most trusted enforcer, Gruma Stormash. As his right hand, she quells dissent and silences rebellion. Removing her will destabilize his control and open a path to the throne.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Gruma Stormash",
+                spriteId = 1125 -- Adjust sprite ID as needed
+            }
+        }
+    },
+    preRequiredStorages = {40123}, -- Must have completed "Echoes of the War Drums"
+    taskGoalCnt = 1, -- Kill Gor'mhaz
+    taskMinLvl = 21,
+    taskRepeat = false,
+    taskStorageId = 40125, -- Progress
+    taskStorageCnt = 40126, -- Completion
+    taskRewards = {
+        experience = 28000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 350 },
+            [2] = { name = "Trollbone Chestplate", itemSid = 9214, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Troll Fortress",
+    taskSource = "Rukk Stonegaze",
+    taskHint = "Gor'mhaz hides himself, kill his People to force him out."
+},
+
 [59] = {
     taskNumber = 59,
     taskName = "Ashes of Tradition",
-    taskDescription = "Rukk wants you to destroy the old symbols that bind the trolls to Gor'mhaz's leadership. Find and use the three ancestral relics scattered around the highlands.",
+    taskDescription = "Rukk wants you to destroy the totems that bind the trolls to Gor'mhaz's leadership. Find and use the three ancestral totem relics scattered around the fortress.",
     taskGoals = {
         storages = {
-            [1] = { starageName = "Relics Destroyed", starageTaskId = Mainquest.relicsbroken }
+            [1] = { starageName = "totems Destroyed", starageTaskId = Mainquest.relicsbroken }
         }
     },
     preRequiredStorages = {40125},
@@ -2192,7 +2194,7 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Troll Highlands",
+    taskZoneName = "Troll Fortress",
     taskSource = "Rukk Stonegaze",
     taskHint = "Relics glow faintly near sacred troll grounds."
 },
@@ -2219,22 +2221,22 @@ playersTasks = {
         },
         outfits = {}
     },
-    taskZoneName = "Troll Highlands",
+    taskZoneName = "Troll Fortress",
     taskSource = "Rukk Stonegaze",
-    taskHint = "Gor'mhaz hides deep in the elder's chamber guarded by his most loyal kin."
+    taskHint = "kill Gor'mhaz people to force him out."
 },
 
 [61] = {
     taskNumber = 61,
     taskName = "The Cracks Beneath",
-    taskDescription = "You found strange markings and residual magic under the troll encampment. Investigate the bodies and the central altar for clues to what Rukk is really up to.",
+    taskDescription = "You found strange markings and residual magic under the troll encampment. Investigate the bodies with residual magic for clues to what Rukk is really up to.",
     taskGoals = {
         storages = {
-            [1] = { starageName = "Markings Investigated", starageTaskId = Mainquest.trollclues }
+            [1] = { starageName = "Residual Magic Investigated", starageTaskId = Mainquest.residualmagic }
         }
     },
     preRequiredStorages = {40129},
-    taskGoalCnt = 1,
+    taskGoalCnt = 4,
     taskMinLvl = 22,
     taskRepeat = false,
     taskStorageId = 40131,
@@ -2254,7 +2256,7 @@ playersTasks = {
 [62] = {
     taskNumber = 62,
     taskName = "The Ritual of the Unwritten",
-    taskDescription = "You've uncovered Rukk's true allegiance. He serves The Unwritten and plans to complete a name-erasing ritual. Defeat him before the names of the troll tribe are lost forever.",
+    taskDescription = "You've uncovered Rukk's true allegiance. He serves The Unwritten and plans to take Gor'mhaz body with him. Defeat him before the name of Gor'mhaz is lost forever.",
     taskGoals = {
         monsters = {
             [1] = { name = "Rukk Stonegaze", spriteId = 1113 }
@@ -2275,7 +2277,7 @@ playersTasks = {
         outfits = {}
     },
     taskZoneName = "Unwritten Sanctum",
-    taskSource = "Revealed Truth",
+    taskSource = "Gor'mhaz Spirit",
     taskHint = "Confront Rukk at the altar before the ritual completes."
 },
 [63] = {

@@ -10,9 +10,10 @@ local eventConfigs = {
         transform_item = { from = 2160, to = 2152, time = 5000 }, -- Transform an item (Crystal Coin to Platinum Coin for 5 sec)
         give_items = { {id = 2160, count = 10} }, -- Grants 10 Crystal Coins
         give_stat_points = 5, -- Grants 5 stat points
-         summon_monsters = {
+        summon_monsters = {
             {name = "Angry Grave Guardian", position = Position(1052, 1342, 7), count = 1} -- Adjust position accordingly
-        }
+        },
+        sumstorage = 6000 -- Will increment storage 6000 by 1
     },
     [2001] = { -- Another event example
         required_storage = 40015,
@@ -286,6 +287,30 @@ local eventConfigs = {
         magiceffect = 400
     },
 
+    [2061] = {
+        required_storage = 40127,
+        message = "You have destroy one of Gor'mhaz's totems.",
+        magiceffect = 400
+        sumstorage = Mainquest.relicsbroken
+    },
+    [2062] = {
+        required_storage = 40127,
+        message = "You have destroy one of Gor'mhaz's totems.",
+        magiceffect = 400
+        sumstorage = Mainquest.relicsbroken
+    },
+    [2063] = {
+        required_storage = 40127,
+        message = "You have destroy one of Gor'mhaz's totems.",
+        magiceffect = 400
+        sumstorage = Mainquest.relicsbroken
+    },
+
+    -- 2070 till 2099 will be used for locked doors
+
+
+
+
 
 
 
@@ -309,6 +334,31 @@ local eventConfigs = {
         message = "A hidden passage has been discovered.",
         magiceffect = CONST_ME_MORTAREA,
         is_teleport = true -- Mark this as a teleport event
+    },
+
+    [2103] = { --residual magic
+        required_storage = 40131,
+        message = "You have investigated traces of Rukk´s residual magic.",
+        magiceffect = 400
+        sumstorage = Mainquest.residualmagic
+    },
+    [2104] = { --residual magic
+        required_storage = 40131,
+        message = "You have investigated traces of Rukk´s residual magic.",
+        magiceffect = 400
+        sumstorage = Mainquest.residualmagic
+    },
+    [2105] = { --residual magic
+        required_storage = 40131,
+        message = "You have investigated traces of Rukk´s residual magic.",
+        magiceffect = 400
+        sumstorage = Mainquest.residualmagic
+    },
+    [2106] = { --residual magic
+        required_storage = 40131,
+        message = "You have investigated traces of Rukk´s residual magic.",
+        magiceffect = 400
+        sumstorage = Mainquest.residualmagic
     },
 
 
@@ -422,6 +472,13 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
 
     if eventConfig.summon_monsters then
         summonMonsters(eventConfig)
+    end
+
+      -- Increment sumstorage if defined
+    if eventConfig.sumstorage then
+        local current = player:getStorageValue(eventConfig.sumstorage)
+        if current == -1 then current = 0 end
+        player:setStorageValue(eventConfig.sumstorage, current + 1)
     end
     
     -- Mark event as claimed (except for teleport events)
