@@ -13,7 +13,8 @@ local stepInConfigs = {
         summon_monsters = {
             {name = "Angry Grave Guardian", position = Position(1052, 1342, 7), count = 1}
         },
-        is_teleport = true -- Mark this as a teleport event
+        is_teleport = true, -- Mark this as a teleport event
+        sumstorage = { id = 5002 } -- NEW: Will increment storage 5002 by 1
     },
     [3002] = {
         required_storage = 40077,
@@ -31,6 +32,7 @@ local stepInConfigs = {
         storage_reward = { id = Mainquest.investigateroot, value = 1 },
         message = "A surge of energy flows through you, granting you new power!",
         magiceffect = 205,
+        sumstorage = { id = 40082 } -- NEW: Will increment storage 40082 by 1
     },
     [3005] = {
         required_storage = 40095,
@@ -38,42 +40,73 @@ local stepInConfigs = {
         message = "A surge of energy flows through you, granting you new power!",
         teleportTo = Position(871, 625, 9),
         magiceffect = CONST_ME_ENERGYHIT,
-        teleport = true -- Mark this as a teleport event
+        is_teleport = true, -- Mark this as a teleport event
+        sumstorage = { id = 40096 } -- NEW: Will increment storage 40096 by 1
+    },
+    [3006] = {
+        magiceffect = CONST_ME_ENERGYHIT,
+        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage_message = { -- NEW: Will send message when storage reaches certain values
+            [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
+            [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
+            [3] = "Ghostly symbols flicker beneath your boots! (3/5)",
+            [4] = "The energy seems to be vanishing from underneath... (4/5)",
+            [5] = "The ancient glyphs ignite! You sense a powerful presence watching... (5/5)",
+        }
+    },
+    [3007] = {
+        magiceffect = CONST_ME_ENERGYHIT,
+        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage_message = { -- NEW: Will send message when storage reaches certain values
+            [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
+            [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
+            [3] = "Ghostly symbols flicker beneath your boots! (3/5)",
+            [4] = "The energy seems to be vanishing from underneath... (4/5)",
+            [5] = "The ancient glyphs ignite! You sense a powerful presence watching... (5/5)",
+        }
+    },
+    [3008] = {
+        magiceffect = CONST_ME_ENERGYHIT,
+        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage_message = { -- NEW: Will send message when storage reaches certain values
+            [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
+            [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
+            [3] = "Ghostly symbols flicker beneath your boots! (3/5)",
+            [4] = "The energy seems to be vanishing from underneath... (4/5)",
+            [5] = "The ancient glyphs ignite! You sense a powerful presence watching... (5/5)",
+        }
+    },
+    [3009] = {
+        magiceffect = CONST_ME_ENERGYHIT,
+        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage_message = { -- NEW: Will send message when storage reaches certain values
+            [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
+            [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
+            [3] = "Ghostly symbols flicker beneath your boots! (3/5)",
+            [4] = "The energy seems to be vanishing from underneath... (4/5)",
+            [5] = "The ancient glyphs ignite! You sense a powerful presence watching... (5/5)",
+        }
+    },
+    [3010] = {
+        magiceffect = CONST_ME_ENERGYHIT,
+        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage_message = { -- NEW: Will send message when storage reaches certain values
+            [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
+            [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
+            [3] = "Ghostly symbols flicker beneath your boots! (3/5)",
+            [4] = "The energy seems to be vanishing from underneath... (4/5)",
+            [5] = "The ancient glyphs ignite! You sense a powerful presence watching... (5/5)",
+        }
+    },
+     [3011] = {
+        magiceffect = CONST_ME_MAGIC_BLUE,
+        is_teleport = true, -- Mark this as a teleport event
+        message = "You feel a strange tingling as you cross this area... ",
+        minimum_storage = { id = Mainquest.unlockdesertboss, value = 5 }, -- Must have storage 40000 >= 1 to step here
     },
 }
 
-local function restoreItem(position, itemId, actionId)
-    local tile = Tile(position)
-    if tile then
-        local item = tile:getItemById(itemId)
-        if not item then
-            local restoredItem = Game.createItem(itemId, 1, position)
-            if restoredItem and actionId then
-                restoredItem:setActionId(actionId)
-            end
-        end
-    end
-end
-
-local function removeMonster(monsterId)
-    local monster = Monster(monsterId)
-    if monster then
-        monster:say("The spirit fades back into the abyss...", TALKTYPE_MONSTER_YELL)
-        monster:getPosition():sendMagicEffect(CONST_ME_POFF)
-        monster:remove()
-    end
-end
-
-local function summonMonsters(config)
-    for _, monsterData in ipairs(config.summon_monsters) do
-        for i = 1, monsterData.count do
-            local monster = Game.createMonster(monsterData.name, monsterData.position)
-            if monster then
-                addEvent(removeMonster, MONSTER_DESPAWN_TIME, monster:getId())
-            end
-        end
-    end
-end
+-- ... (rest of your existing helper functions remain the same) ...
 
 local stepInEvent = MoveEvent()
 
@@ -85,10 +118,17 @@ function stepInEvent.onStepIn(creature, item, position, fromPosition)
     if not config then return true end
 
     local storagefix = player:getStorageValue(item.actionid)
-        if storagefix == -1 or storagefix == nil then
-            storagefix = 0
-        end
+    if storagefix == -1 or storagefix == nil then
+        storagefix = 0
+    end
 
+    if config.minimum_storage and player:getStorageValue(config.minimum_storage.id) < config.minimum_storage.value then
+        player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "A mysterious force prevents you from entering this path.")
+        player:teleportTo(fromPosition, true) -- Push back
+        fromPosition:sendMagicEffect(CONST_ME_ENERGYAREA)
+        return false
+    end
+    
     if not config.is_teleport and player:getStorageValue(item.actionid) >= 1 then
         return true
     end
@@ -97,7 +137,22 @@ function stepInEvent.onStepIn(creature, item, position, fromPosition)
         return true
     end
 
-    if config.storage_reward then
+       -- Handle sumstorage increment and messages
+    if config.sumstorage then
+        local storageId = config.sumstorage.id
+        local currentValue = player:getStorageValue(storageId)
+        if currentValue == -1 then currentValue = 0 end
+        
+        local newValue = currentValue + 1
+        player:setStorageValue(storageId, newValue)
+
+        -- NEW: Check for sumstorage messages
+        if config.sumstorage_message and config.sumstorage_message[newValue] then
+            player:sendExtendedOpcode(76, config.sumstorage_message[newValue])
+        end
+    end
+
+     if config.storage_reward then
         if player:getStorageValue(config.storage_reward.id) ~= config.storage_reward.value then
             player:setStorageValue(config.storage_reward.id, config.storage_reward.value)
         end

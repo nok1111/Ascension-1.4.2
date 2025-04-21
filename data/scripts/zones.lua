@@ -694,6 +694,28 @@ local zones = {
         onStartup = true, -- This will trigger monster spawn at startup
 
     },
+    [39] = {
+        id = 39,
+        name = "desert draptors mountain",
+        monsters = {"desert draptor"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+         -- WEATHER SETTINGS
+        weather = {"Desert", "Desert3", "Desert4", "Map - Heatwave"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+
+    },
 
 
 

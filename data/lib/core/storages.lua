@@ -104,6 +104,7 @@ gharzsupport = 50048,     -- Gharz's individual flag
 morgasupport = 50049,      -- Morga's individual flag
 reachdrayaoasis = 50050,
 luredcamels = 50051,
+unlockdesertboss = 50052,
 }
 
 -- actions

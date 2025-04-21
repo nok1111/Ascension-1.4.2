@@ -2420,15 +2420,15 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
 },
 [68] = {
     taskNumber = 68,
-    taskName = "Venom and Violets",
-    taskDescription = "Draya has noticed strange poisonings among the oasis dwellers. She suspects the violetspine serpents from the east. Collect venom samples to help her brew an antidote.",
+    taskName = "Ashes on the Wind",
+    taskDescription = "Fires have begun spreading near the oasis. Draya believes desert draptors nesting near the burning cliffs are responsible. Thin their numbers before the oasis goes up in smoke.",
     taskGoals = {
-        storages = {
-            [1] = {
-                starageName = "Violet Venom Samples Gathered",
-                starageTaskId = 40146
-            }
-        }
+        monsters = {                             
+                [1] = {
+                    name = "Desert Draptor",
+                    spriteId = 1525
+                },
+            },
     },
     preRequiredStorages = {40141},
     taskGoalCnt = 1,
@@ -2440,14 +2440,14 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
         experience = 4000,
         items = {
             [1] = { name = "gold coin", itemSid = 2148, itemCnt = 110 },
-            [2] = { name = "antidote vial", itemSid = 7494, itemCnt = 1 }
+            [2] = { name = "draptor scale", itemSid = 9025, itemCnt = 1 }
         },
         outfits = {}
     },
-    taskZoneName = "Eastern Oasis Ridge",
+    taskZoneName = "Burning Cliffs",
     taskSource = "Draya the Waterkeeper",
-    taskHint = "Hunt violetspine serpents near the rocky ridges east of the oasis and bring back venom samples."
-}
+    taskHint = "Hunt desert draptors near the scorched cliffs west of the oasis."
+},
 
 
 
