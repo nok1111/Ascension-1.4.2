@@ -62,6 +62,12 @@ function creatureSayCallback(cid, type, msg)
     -- Required for Quest Givers
     local npcName = npcHandler:getNpcName()
     local player = Player(cid)
+    
+   if player:getStorageValue(40135) == TASK_START then
+     player:setStorageValue(Mainquest.reachdrayaoasis, 1)
+     npcName = "Salim the Lookout"
+   end
+    
     updateStateTaskListByNpcName(npcName, player)
     local taskList = getTaskListByNpcName(npcName, player)
     local completeTask = getCompleteForPrizeTaskList(npcName, player)

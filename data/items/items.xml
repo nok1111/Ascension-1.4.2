@@ -14886,7 +14886,7 @@
 		<attribute key="duration" value="600" />
 		<attribute key="corpseType" value="blood" />
 	</item>
-	<item fromid="7632" toid="7633" article="a" name="giant shimmering pearl">
+	<item fromid="7632" toid="7633" article="a" name="luminous pearl">
 		<attribute key="weight" value="80" />
 	</item>
 	<item id="7634" article="an" name="empty potion flask">

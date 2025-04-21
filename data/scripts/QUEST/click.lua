@@ -290,19 +290,19 @@ local eventConfigs = {
     [2061] = {
         required_storage = 40127,
         message = "You have destroy one of Gor'mhaz's totems.",
-        magiceffect = 400
+        magiceffect = 400,
         sumstorage = Mainquest.relicsbroken
     },
     [2062] = {
         required_storage = 40127,
         message = "You have destroy one of Gor'mhaz's totems.",
-        magiceffect = 400
+        magiceffect = 400,
         sumstorage = Mainquest.relicsbroken
     },
     [2063] = {
         required_storage = 40127,
         message = "You have destroy one of Gor'mhaz's totems.",
-        magiceffect = 400
+        magiceffect = 400,
         sumstorage = Mainquest.relicsbroken
     },
 
@@ -339,25 +339,25 @@ local eventConfigs = {
     [2103] = { --residual magic
         required_storage = 40131,
         message = "You have investigated traces of Rukk´s residual magic.",
-        magiceffect = 400
+        magiceffect = 400,
         sumstorage = Mainquest.residualmagic
     },
     [2104] = { --residual magic
         required_storage = 40131,
         message = "You have investigated traces of Rukk´s residual magic.",
-        magiceffect = 400
+        magiceffect = 400,
         sumstorage = Mainquest.residualmagic
     },
     [2105] = { --residual magic
         required_storage = 40131,
         message = "You have investigated traces of Rukk´s residual magic.",
-        magiceffect = 400
+        magiceffect = 400,
         sumstorage = Mainquest.residualmagic
     },
     [2106] = { --residual magic
         required_storage = 40131,
         message = "You have investigated traces of Rukk´s residual magic.",
-        magiceffect = 400
+        magiceffect = 400,
         sumstorage = Mainquest.residualmagic
     },
 

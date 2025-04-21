@@ -21,6 +21,7 @@
 	<monster name="Larva" file="wilds/larva.xml" />
 	<monster name="Baby" file="wilds/baby.xml" />
 	<monster name="Sand Crab" file="wilds/sand crab.xml" />
+	<monster name="Camel" file="wilds/camel.xml" />
 
 	<!--TIER 1 bosses-->
 	<monster name="Vael the Betrayer" file="tier 1/bosses/vael_the_betrayer.xml" />
@@ -98,6 +99,7 @@
 
 	<!--TIER 2 bosses-->
 	<monster name="Gor'mhaz the Old" file="tier 2/bosses/gormhaz the old.xml" />
+	<monster name="Gruma Stormash" file="tier 2/bosses/gruma stormash.xml" />
 
 	<!--TIER 2-->
 	<monster name="Wyrm" file="tier 2/wyrm.xml" />

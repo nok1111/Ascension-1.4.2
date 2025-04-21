@@ -32,6 +32,11 @@ function creatureSayCallback(cid, type, msg)
     local taskList = getTaskListByNpcName(npcName, player)
     local completeTask = getCompleteForPrizeTaskList(npcName, player)
     
+
+    if player:getStorageValue(40121) == TASK_START then
+     player:setStorageValue(Mainquest.speakrukk, 1)
+   end
+
   if msgcontains(msg:lower(), "quests") then
     local message = ""
     

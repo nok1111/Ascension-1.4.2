@@ -2,7 +2,7 @@
 <monster name="Furious Wyrm" nameDescription="a wyrm" race="blood" experience="20" speed="170" manacost="0">
 	<health now="6" max="6" />
 	<level min="85" max="90" />
-	<look type="2720" corpse="37129" shader="Red Glow"/>
+	<look type="2720" corpse="37129" shader="Monster Might"/>
 	<targetchange interval="4000" chance="10" />
 	<flags>
 		<flag summonable="0" />

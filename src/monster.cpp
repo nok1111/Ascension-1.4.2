@@ -138,6 +138,11 @@ void Monster::onAttackedCreatureDisappear(bool)
 	attackTicks = 0;
 }
 
+void Monster::onAttacked()
+{
+	wasAttacked = true;
+}
+
 void Monster::onCreatureAppear(Creature* creature, bool isLogin)
 {
 	Creature::onCreatureAppear(creature, isLogin);
@@ -666,6 +671,10 @@ bool Monster::isTarget(const Creature* creature) const
 bool Monster::selectTarget(Creature* creature)
 {
 	if (!isTarget(creature)) {
+		return false;
+	}
+
+	if (isPassive() && !wasAttacked) {
 		return false;
 	}
 

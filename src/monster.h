@@ -106,6 +106,9 @@ class Monster final : public Creature
 		bool isHostile() const {
 			return mType->info.isHostile;
 		}
+		bool isPassive() const {
+			return mType->info.isPassive;
+		}
 		bool canSee(const Position& pos) const override;
 		bool canSeeInvisibility() const override {
 			return isImmune(CONDITION_INVISIBLE);
@@ -130,6 +133,7 @@ class Monster final : public Creature
 		}
 
 		void onAttackedCreatureDisappear(bool isLogout) override;
+		void onAttacked() override;
 
 		void onCreatureAppear(Creature* creature, bool isLogin) override;
 		void onRemoveCreature(Creature* creature, bool isLogout) override;
@@ -234,6 +238,7 @@ class Monster final : public Creature
 
 		bool ignoreFieldDamage = false;
 		bool isIdle = true;
+		bool wasAttacked = false;
 		bool isMasterInRange = false;
 		bool randomStepping = false;
 		bool walkingToSpawn = false;

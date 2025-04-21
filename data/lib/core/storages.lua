@@ -97,6 +97,13 @@ hermitwarning = 50041,
 relicsbroken = 50042,
 trollclues = 50043,
 residualmagic = 50044,
+speakrukk = 50045,
+trollrebellion = 50046,
+rukksupport = 50047,      -- Rukk's individual flag
+gharzsupport = 50048,     -- Gharz's individual flag
+morgasupport = 50049,      -- Morga's individual flag
+reachdrayaoasis = 50050,
+luredcamels = 50051,
 }
 
 -- actions

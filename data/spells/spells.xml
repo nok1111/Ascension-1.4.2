@@ -16,11 +16,14 @@
 	<instant group="attack" spellid="904" name="Burning Ice" words="burning ic" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" selftarget="1" needlearn="0" script="test/double_wave.lua">
 	<vocation name="None" />
 	</instant>
-	
-		<!-- new tibia spells -->
+
 	<instant group="attack" spellid="905" name="anihilation" words="anihilation" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_judment.lua">
 	<vocation name="None" />
 	</instant>
+	
+	
+		<!-- new tibia spells -->
+	
 
 	<instant group="attack" spellid="907" name="mass ani" words="mass ani" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_annihilation.lua">
 	<vocation name="None" />
@@ -960,8 +963,8 @@
 	<instant name="ring earth nd" words="###113" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/custom/custom_ring_earth_nodistance.lua" />
 	<instant name="laser beam earth zigzag" words="###114" aggressive="1" blockwalls="1" direction="1" needlearn="1" script="monster/custom/laserbeam_earth_zigzag.lua" />
 	<instant name="self destroy" words="###115" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/self_destroy.lua" />
-	
-	
+	<instant name="sword storm" words="###116" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/mass_judment.lua" />
+	<instant name="energy ring wide" words="###117" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/custom/energy_ring_wide.lua" />
 	
 	
 	

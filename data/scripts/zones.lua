@@ -635,7 +635,7 @@ local zones = {
     },
     [36] = {
         id = 36,
-        name = "goblins & hogs",
+        name = "Tuskin Mountain",
         monsters = {"hog", "tuskhog", "hog smasher", "hog bomber", "hog spearman", "hog champion", "hog elite", "hog shaman"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
@@ -655,6 +655,45 @@ local zones = {
         forceWeather = false, -- If true, weather will always stay the same
         activeWeather = nil, -- Stores the currently active weather
     },
+    [37] = {
+        id = 37,
+        name = "Murloks Beach",
+        monsters = {"murlok", "murlok axeman", "murlok piercer", "murlok champion", "murlok shellthorn", "murlok shaman"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
+    [38] = {
+        id = 38,
+        name = "Murloks Beach",
+        monsters = {"bonesand brawler", "bonesand hexbone", "bonesand lancer", "bonesand sentinel"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+        active = false,
+        tiles = 0,
+        maxMonsters = 0,
+        playercount = 0,
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+    },
 
 
 
@@ -663,7 +702,7 @@ local zones = {
 }
 
 local activePlayers = {}
-local zonemax_monsters_divider = 25
+local zonemax_monsters_divider = 85 --higher less monsters
 
 
 local function tablelength(T)
@@ -794,6 +833,10 @@ local function spawnMonster(zone, currentMonsterCount)
     local monsterName = zone.monsters[math.random(#zone.monsters)]
     local monster = Game.createMonster(monsterName, spawnPosition, false)
     if monster then
+
+        if monster:getName() == "Furious Wyrm" then
+            monster:setShader("Monster Might")
+         end
         zone.spawnedMonsters[monster:getId()] = true -- Track the spawned monster
         print("Spawned " .. monster:getName() .. " in zone " .. zone.id .. " at position (" .. spawnPosition.x .. ", " .. spawnPosition.y .. ", " .. spawnPosition.z .. ").")
         monster:registerEvent("zone_death") -- Register the monster death event
@@ -1198,6 +1241,10 @@ local function populateZonesOnStartup()
                     local monsterName = zone.monsters[math.random(#zone.monsters)]
                     local monster = Game.createMonster(monsterName, spawnPosition, false)
                     if monster then
+
+                        if monster:getName() == "Furious Wyrm" then
+                            monster:setShader("Monster Might")
+                        end
                         zone.spawnedMonsters[monster:getId()] = true
                         spawnedCount = spawnedCount + 1
                       --  print("Spawned " .. monster:getName() .. " in " .. zone.name)

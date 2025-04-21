@@ -21,7 +21,12 @@ npcTaskList = {
         ["Lucy Steelgard"] = {46,48,49,50,51},
         ["Chriss"] = {47},
         ["Desert Scout Nahim"] = {52,53,54},
-        ["Hermit of Wyrmfang"] = {55,56,57},
+        ["Hermit of Wyrmfang"] = {55,56},
+        ["Rukk Stonegaze"] = {57,58,59,60},
+        ["Salim the Lookout"] = {63},
+        ["Draya the Waterkeeper"] = {64,65,66,67,68},
+
+
         
 
         
@@ -2048,7 +2053,7 @@ playersTasks = {
     taskGoals = {
         monsters = {
             [1] = {
-                name = "furious wyrm",
+                name = "Furious Wyrm",
                 spriteId = 1101
             }
         }
@@ -2074,29 +2079,14 @@ playersTasks = {
 [56] = {
     taskNumber = 56,
     taskName = "Echoes of the War Drums",
-    taskDescription = "The Hermit of Wyrmfang has heard distant war drums echoing from the eastern cliffs. War trolls may be preparing for something. Find them and disrupt their movements.",
+    taskDescription = "The Hermit of Wyrmfang has heard distant war drums echoing from the eastern cliffs. War trolls may be preparing for something. Find what it's happening.",
     taskGoals = {
-        monsters = {
-            [1] = {
-                name = "war troll",
-                spriteId = 1123
-            },
-            [2] = {
-                name = "spearman troll",
-                spriteId = 1123
-            },
-            [3] = {
-                name = "shaman troll",
-                spriteId = 1123
-            },
-            [4] = {
-                name = "blademaster troll",
-                spriteId = 1123
-            },
+        storages = {
+            [1] = { starageName = "Tribe Opinions Collected", starageTaskId = Mainquest.speakrukk }
         }
     },
     preRequiredStorages = {40119}, -- Must have completed Burrowed Threats
-    taskGoalCnt = 6, -- Kill 6 War Trolls
+    taskGoalCnt = 1, -- Kill 6 War Trolls
     taskMinLvl = 21,
     taskRepeat = false,
     taskStorageId = 40121, -- Progress
@@ -2114,17 +2104,17 @@ playersTasks = {
     taskHint = "Follow the echoes past of the Wyrmfang mountain. The trolls grow bold—stop them."
 },
 
-[58] = {
-    taskNumber = 58,
+[57] = {
+    taskNumber = 57,
     taskName = "Voices of Rebellion",
     taskDescription = "A troll named Rukk claims Gor'mhaz the Old has ruled too long. He believes the time for change is now and asks you to speak with members of the tribe about their thoughts.",
     taskGoals = {
         storages = {
-            [1] = { starageName = "Tribe Opinions Collected", starageTaskId = Mainquest.trollrebellion }
+            [1] = { starageName = "morga and ghraz opinions", starageTaskId = Mainquest.rukksupport }
         }
     },
     preRequiredStorages = {},
-    taskGoalCnt = 1,
+    taskGoalCnt = 2,
     taskMinLvl = 21,
     taskRepeat = false,
     taskStorageId = 40123,
@@ -2249,7 +2239,7 @@ playersTasks = {
         outfits = {}
     },
     taskZoneName = "Troll Highlands",
-    taskSource = "Self-Discovery",
+    taskSource = "Spirit of Vengeance",
     taskHint = "Inspect the circle and fallen bodies. Rukk's truth is etched in shadow."
 },
 
@@ -2288,7 +2278,7 @@ playersTasks = {
         storages = {
             [1] = {
                 starageName = "Reached the Western Oasis",
-                starageTaskId = 40136
+                starageTaskId = Mainquest.reachdrayaoasis
             }
         }
     },
@@ -2307,8 +2297,8 @@ playersTasks = {
         outfits = {}
     },
     taskZoneName = "Western Oasis",
-    taskSource = "Najim the Lookout",
-    taskHint = "Follow the trail northwest from Najim’s outpost. The oasis is marked by palm trees and a stone archway."
+    taskSource = "Salim the Lookout",
+    taskHint = "Follow the trail northwest from Salim’s outpost. The oasis is marked by palm trees and a stone archway."
 },
 [64] = {
     taskNumber = 64,
@@ -2322,7 +2312,7 @@ playersTasks = {
             }
         }
     },
-    preRequiredStorages = {40136},
+    preRequiredStorages = {40135},
     taskGoalCnt = 1,
     taskMinLvl = 10,
     taskRepeat = false,
@@ -2342,17 +2332,17 @@ playersTasks = {
 [65] = {
     taskNumber = 65,
     taskName = "Camels Gone Wild",
-    taskDescription = "Camels have gone wild and are disrupting the oasis. Draya has asked you to calm or corral them before someone gets hurt.",
+    taskDescription = "Camels have gone wild and are disrupting the oasis. Draya has asked you to lure them into the stable before someone gets hurt.",
     taskGoals = {
         storages = {
             [1] = {
-                starageName = "Calmed the Wild Camels",
-                starageTaskId = 40140
+                starageName = "Lured Camels",
+                starageTaskId = Mainquest.luredcamels
             }
         }
     },
-    preRequiredStorages = {40138},
-    taskGoalCnt = 1,
+    preRequiredStorages = {40137},
+    taskGoalCnt = 3,
     taskMinLvl = 10,
     taskRepeat = false,
     taskStorageId = 40139, -- Progress
@@ -2366,22 +2356,22 @@ playersTasks = {
     },
     taskZoneName = "Western Oasis",
     taskSource = "Draya the Waterkeeper",
-    taskHint = "The camels were last seen running near the palm groves to the west."
+    taskHint = "The camels love honeycombs."
 },
 [66] = {
     taskNumber = 66,
-    taskName = "Fishy Smugglers", --place explosives and chain explosion to cargo
-    taskDescription = "Draya suspects that smugglers have been using the oasis as a cover for illicit activity. Investigate the area and drive out the intruders.",
+    taskName = "Purifying the Oasis", --collect luminous pearls to cleanse the waters  
+taskDescription = "The oasis waters have grown murky, and the local murlocs hoard luminous pearls with purifying properties. Slay the creatures and retrieve their pearls to restore the oasis to its former clarity.", 
     taskGoals = {
-        storages = {
-            [1] = {
-                starageName = "Smuggler Operation Disrupted",
-                starageTaskId = 40142
-            }
-        }
+       items = {
+             [1] = {
+                    name = "luminous pearl",
+                    itemId = 7632
+                }
+            },
     },
-    preRequiredStorages = {40140},
-    taskGoalCnt = 1,
+    preRequiredStorages = {40139},
+    taskGoalCnt = 10,
     taskMinLvl = 12,
     taskRepeat = false,
     taskStorageId = 40141, -- Progress
@@ -2410,7 +2400,7 @@ playersTasks = {
             }
         }
     },
-    preRequiredStorages = {40142},
+    preRequiredStorages = {40141},
     taskGoalCnt = 1,
     taskMinLvl = 12,
     taskRepeat = false,
@@ -2440,7 +2430,7 @@ playersTasks = {
             }
         }
     },
-    preRequiredStorages = {40144},
+    preRequiredStorages = {40141},
     taskGoalCnt = 1,
     taskMinLvl = 13,
     taskRepeat = false,
