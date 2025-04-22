@@ -965,7 +965,9 @@
 	<instant name="self destroy" words="###115" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/self_destroy.lua" />
 	<instant name="sword storm" words="###116" aggressive="1" blockwalls="1" needtarget="0" selftarget="1" needlearn="1" script="monster/custom/mass_judment.lua" />
 	<instant name="energy ring wide" words="###117" aggressive="1" blockwalls="1" needtarget="0" needlearn="1" script="monster/custom/energy_ring_wide.lua" />
-	
+	<instant name="short spray" words="###118" aggressive="1" blockwalls="1" needtarget="0" direction="1" needlearn="1" script="monster/custom/short_spray.lua" />
+	<instant name="fire wave" words="###1119" aggressive="0" blockwalls="1" needtarget="0" direction="1" selftarget="1" needlearn="1" script="monster/custom/fire_wave.lua"/>
+
 	
 	
 	

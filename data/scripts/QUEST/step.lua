@@ -45,7 +45,7 @@ local stepInConfigs = {
     },
     [3006] = {
         magiceffect = CONST_ME_ENERGYHIT,
-        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage = { id = Mainquest.unlockdesertboss }, -- NEW: Will increment storage 40096 by 1
         sumstorage_message = { -- NEW: Will send message when storage reaches certain values
             [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
             [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
@@ -56,7 +56,7 @@ local stepInConfigs = {
     },
     [3007] = {
         magiceffect = CONST_ME_ENERGYHIT,
-        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage = { id = Mainquest.unlockdesertboss }, -- NEW: Will increment storage 40096 by 1
         sumstorage_message = { -- NEW: Will send message when storage reaches certain values
             [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
             [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
@@ -67,7 +67,7 @@ local stepInConfigs = {
     },
     [3008] = {
         magiceffect = CONST_ME_ENERGYHIT,
-        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage = { id = Mainquest.unlockdesertboss }, -- NEW: Will increment storage 40096 by 1
         sumstorage_message = { -- NEW: Will send message when storage reaches certain values
             [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
             [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
@@ -78,7 +78,7 @@ local stepInConfigs = {
     },
     [3009] = {
         magiceffect = CONST_ME_ENERGYHIT,
-        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage = { id = Mainquest.unlockdesertboss }, -- NEW: Will increment storage 40096 by 1
         sumstorage_message = { -- NEW: Will send message when storage reaches certain values
             [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
             [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",
@@ -89,7 +89,7 @@ local stepInConfigs = {
     },
     [3010] = {
         magiceffect = CONST_ME_ENERGYHIT,
-        sumstorage = { id = Mainquest.unlockdesertboss } -- NEW: Will increment storage 40096 by 1
+        sumstorage = { id = Mainquest.unlockdesertboss }, -- NEW: Will increment storage 40096 by 1
         sumstorage_message = { -- NEW: Will send message when storage reaches certain values
             [1] = "A faint blue shimmer dances at your feet and vanishes... was that real? (1/5)",
             [2] = "The air crackles with unseen energy. Something is definitely here. (2/5)",

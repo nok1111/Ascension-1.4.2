@@ -100,6 +100,7 @@
 	<!--TIER 2 bosses-->
 	<monster name="Gor'mhaz the Old" file="tier 2/bosses/gormhaz the old.xml" />
 	<monster name="Gruma Stormash" file="tier 2/bosses/gruma stormash.xml" />
+	<monster name="Sarandel, The Old Ash" file="tier 2/bosses/sarandel the old ash.xml" />
 
 	<!--TIER 2-->
 	<monster name="Wyrm" file="tier 2/wyrm.xml" />
@@ -144,6 +145,7 @@
 	<monster name="Thornsong Trent" file="tier 2/thornsong trent.xml" />
 
 	<monster name="Dragon" file="tier 2/dragon.xml" />
+	<monster name="Desert Draptor" file="tier 2/desert draptor.xml" />
 	<monster name="Elder Dragon" file="tier 2/elder dragon.xml" />
 
 
