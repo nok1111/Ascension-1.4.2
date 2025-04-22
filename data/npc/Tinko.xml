@@ -1,0 +1,7 @@
+<npc name="Tinko"  script="recruit_tinko.lua" walkinterval="2000" speechbubble="3">
+	<health now="100" max="100" />
+	<look type="2364" head="105" body="115" legs="110" feet="127"/>
+	<parameters>
+		<parameter key="message_farewell" value="Dont Die!" />
+	</parameters>
+</npc>

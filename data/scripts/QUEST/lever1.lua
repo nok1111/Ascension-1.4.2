@@ -69,6 +69,36 @@ local leverConfigs = {
         resetTime = 2 * 60 * 1000,
         message = "xxxxx"
     },
+    [1007] = {
+       skipItemsCheck = false, -- Require items validation
+        itemsToCheck = {
+            { position = Position(510, 1153, 9), itemId = 40095 }, 
+            { position = Position(511, 1153, 9), itemId = 40092 }, 
+        },
+        wallPositions = {
+            Position(504, 1155, 9),
+        },
+        wallItemId = 6395,
+        resetTime = 10 * 60 * 1000,
+        message = "The seals are in the correct order and 1 wall collapse revealing a hidden path.",
+    },
+    [1008] = {
+       skipItemsCheck = false, -- Require items validation
+        itemsToCheck = {
+            { position = Position(527, 1182, 11), itemId = 40094 }, 
+            { position = Position(527, 1183, 11), itemId = 40093 }, 
+            { position = Position(527, 1184, 11), itemId = 40092 }, 
+        },
+        wallPositions = {
+            Position(511, 1188, 11),
+            Position(512, 1188, 11),
+            Position(513, 1188, 11),
+            Position(514, 1188, 11),
+        },
+        wallItemId = 6396,
+        resetTime = 10 * 60 * 1000,
+        message = "The seals are in the correct order and 4 walls collapse revealing a hidden path.",
+    },
 }
 
 local leverAction = Action()

@@ -306,6 +306,7 @@ local eventConfigs = {
         sumstorage = Mainquest.relicsbroken
     },
 
+
     -- 2070 till 2099 will be used for locked doors
 
 
@@ -360,7 +361,19 @@ local eventConfigs = {
         magiceffect = 400,
         sumstorage = Mainquest.residualmagic
     },
-
+    [2107] = { -- Sample with all functions
+        required_storage = 40147, -- Storage required to activate
+        message = "You have found a sealed bone crate!",
+        magiceffect = CONST_ME_MORTAREA, -- Effect on the item position
+        give_items = { {id = 34370, count = 1} }, -- Grants 10 Crystal Coins
+    },
+    [2108] = {
+        required_storage = 40155,
+        message = "You have safely recovered the rests of a fallen soldier.",
+        magiceffect = 400,
+        sumstorage = Mainquest.soldierremains,
+        transform_item = { from = 37718, to = 37717, time = 45000 }, 
+    },
 
 
 }

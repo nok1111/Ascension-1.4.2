@@ -25,7 +25,7 @@ npcTaskList = {
         ["Rukk Stonegaze"] = {57,58,59,60},
         ["Salim the Lookout"] = {63},
         ["Draya the Waterkeeper"] = {64,65,66,67,68},
-
+        ["Kelro the Pale"] = {69},
 
         
 
@@ -2448,6 +2448,160 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
     taskSource = "Draya the Waterkeeper",
     taskHint = "Hunt desert draptors near the scorched cliffs west of the oasis."
 },
+
+[69] = {
+    taskNumber = 69,
+    taskName = "Whispers Beneath the Sand",
+    taskDescription = "Kelro the Pale sent you into the old catacombs to retrieve a crate left behind by a missing smuggler. Be wary—strange echoes are said to haunt those tunnels.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Show sealed bone crate to kelro",
+                starageTaskId = Mainquest.kelrocrate
+            }
+        }
+    },
+    preRequiredStorages = {},
+    taskGoalCnt = 1,
+    taskMinLvl = 14,
+    taskRepeat = false,
+    taskStorageId = 40147, -- Progress
+    taskStorageCnt = 40148, -- Completion
+    taskRewards = {
+        experience = 4500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 120 },
+            [2] = { name = "cursed silver dagger", itemSid = 7745, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Sunken Catacombs",
+    taskSource = "Kelro the Pale",
+    taskHint = "Search the lowest levels of the western catacombs. The crate may still be near a collapsed hallway."
+},
+[70] = {
+    taskNumber = 70,
+    taskName = "Call to Arms",
+    taskDescription = "With the ogres pressing from the southern slopes, the mountain town must prepare. Help recruit local fighters and brave souls to bolster the town's defenses.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Soldiers Recruited",
+                starageTaskId = Mainquest.soldiersrecruited
+            }
+        }
+    },
+    preRequiredStorages = {},
+    taskGoalCnt = 1,
+    taskMinLvl = 12,
+    taskRepeat = false,
+    taskStorageId = 40149, -- Progress
+    taskStorageCnt = 40150, -- Completion
+    taskRewards = {
+        experience = 5000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
+            [2] = { name = "recruiter's badge", itemSid = 9230, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Southern Watchpost",
+    taskSource = "Captain Thorne",
+    taskHint = "Visit nearby camps and ask for volunteers willing to fight for the mountain."
+},
+[71] = {
+    taskNumber = 71,
+    taskName = "Forging the Line",
+    taskDescription = "The blacksmiths are in dire need of metal to forge weapons and armor for the upcoming siege. Collect enough ogre iron chunks from the nearby ogre camps and deliver them to the smithy in Stonewatch.",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "Ogre Iron Chunk",
+                itemId = 8301,
+                itemCnt = 8
+            }
+        }
+    },
+    preRequiredStorages = {40149}, -- Must have completed "Call to Arms"
+    taskGoalCnt = 1,
+    taskMinLvl = 14,
+    taskRepeat = false,
+    taskStorageId = 40151, -- Progress
+    taskStorageCnt = 40152, -- Completion
+    taskRewards = {
+        experience = 4500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 120 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Stonewatch - Ogre Foothills",
+    taskSource = "Captain Elrik",
+    taskHint = "Ogre iron is heavy, but necessary. Search the ogre camps and return what you can." 
+},
+[72] = {
+    taskNumber = 72,
+    taskName = "Timber for the Wall",
+    taskDescription = "With enemy forces preparing to strike, the mountain town needs strong wooden reinforcements. Help gather logs from the northern forest and bring them to the outpost's quartermaster.",
+    taskGoals = {
+        items = {
+            [1] = {
+                name = "sturdy log",
+                itemId = 9053,
+                itemCnt = 20
+            }
+        }
+    },
+    preRequiredStorages = {40149}, -- Must have completed Forging the Line
+    taskGoalCnt = 1,
+    taskMinLvl = 15,
+    taskRepeat = false,
+    taskStorageId = 40153, -- Progress
+    taskStorageCnt = 40154, -- Completion
+    taskRewards = {
+        experience = 6500,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
+            [2] = { name = "oak shield", itemSid = 2532, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Mountain Outpost",
+    taskSource = "Captain Elric",
+    taskHint = "Find sturdy logs near the tree line west of the mountain base. Avoid patrols—they've started targeting supply gatherers."
+}
+[73] = {
+    taskNumber = 73,
+    taskName = "Honor the Fallen",
+    taskDescription = "Some soldiers were taken during the first wave and executed beyond our walls. Only their bones remain, displayed as trophies in cages by the ogres. Retrieve them and return dignity to the fallen.",
+    taskGoals = {
+      
+
+      storages = {
+            [1] = {
+                starageName = "Remains of a Soldier",
+                starageTaskId = Mainquest.soldierremains
+            }
+        }
+    },
+    preRequiredStorages = {40149}, -- Must have completed "Siege Supply: Fresh Fish"
+    taskGoalCnt = 6, -- Collect both items
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40155, -- Progress
+    taskStorageCnt = 40156, -- Completion
+    taskRewards = {
+        experience = 8000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
+            [2] = { name = "soldier's badge", itemSid = 9820, itemCnt = 1 } -- Symbolic item
+        },
+        outfits = {}
+    },
+    taskZoneName = "Southern Ogre Encampment",
+    taskSource = "Commander Eldric",
+    taskHint = "Search the ogre side of the battlefield for bone piles and discarded gear."
+}
 
 
 

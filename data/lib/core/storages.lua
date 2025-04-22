@@ -105,6 +105,15 @@ morgasupport = 50049,      -- Morga's individual flag
 reachdrayaoasis = 50050,
 luredcamels = 50051,
 unlockdesertboss = 50052,
+kelrocrate = 50053,
+soldiersrecruited = 50054,
+soldierremains = 50055,
+recruit_borgrin = 50056,
+recruit_kaela = 50057,
+recruit_faelin = 50058,
+recruit_rhogar = 50059,
+recruit_imera = 50060,
+recruit_tinko = 50061
 }
 
 -- actions
