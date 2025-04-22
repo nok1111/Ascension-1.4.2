@@ -117,7 +117,7 @@
 	<monster name="Murlok Piercer" file="tier 2/murlok piercer.xml" />
 	<monster name="Murlok Champion" file="tier 2/murlok champion.xml" />
 	<monster name="Murlok Shellthorn" file="tier 2/murlok shellthorn.xml" />
-	<monster name="Murlok Shaman" file="tier 2/Murlok Shaman.xml" />
+	<monster name="Murlok Shaman" file="tier 2/murlok shaman.xml" />
 	<monster name="Sand Lobster" file="tier 2/sand lobster.xml" />
 	<monster name="Sand Giant Widow" file="tier 2/sand giant widow.xml" />
 
