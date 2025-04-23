@@ -27564,9 +27564,8 @@
 		<attribute key="weight" value="200" />
 		<attribute key="description" value="Lothar might be able to tell you more about it (main city)." />
 	</item>
-	<item id="18448" article="a" name="glow wine">
+	<item id="18448" article="a" name="Pickaxe Punch">
 		<attribute key="weight" value="200" />
-		<attribute key="description" value="Lothar might be able to tell you more about it (main city)." />
 	</item>
 	<item id="18449" article="a" name="Lily's ribbon">
 		<attribute key="weight" value="200" />

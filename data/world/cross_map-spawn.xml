@@ -6,6 +6,9 @@
 	<spawn centerx="354" centery="839" centerz="5" radius="1">
 		<npc name="Old Man Garrek" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="770" centery="1134" centerz="5" radius="1">
+		<npc name="Beltran Morvay" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="761" centery="1136" centerz="5" radius="1">
 		<npc name="Kaela" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
@@ -17,6 +20,9 @@
 	</spawn>
 	<spawn centerx="775" centery="1155" centerz="5" radius="1">
 		<npc name="Tinko" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="756" centery="1166" centerz="5" radius="1">
+		<npc name="Guard" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="650" centery="752" centerz="6" radius="1">
 		<npc name="Outcast Elf" x="0" y="-1" z="6" spawntime="60" direction="1" />
@@ -31,11 +37,23 @@
 		<monster name="Gruma Stormash" x="1" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="907" centery="1067" centerz="6" radius="1" />
+	<spawn centerx="770" centery="1136" centerz="6" radius="1">
+		<npc name="Dastan" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="765" centery="1139" centerz="6" radius="1">
 		<npc name="Imera" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="768" centery="1139" centerz="6" radius="1">
+		<npc name="Guard" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="778" centery="1149" centerz="6" radius="1">
 		<npc name="Rhogar" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="765" centery="1159" centerz="6" radius="1">
+		<npc name="Guard" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="774" centery="1159" centerz="6" radius="1">
+		<npc name="Guard" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="455" centery="683" centerz="7" radius="1">
 		<npc name="Gerald the Grave Robber" x="-1" y="0" z="7" spawntime="60" direction="2" />
@@ -383,11 +401,23 @@
 	<spawn centerx="794" centery="1052" centerz="7" radius="1">
 		<monster name="Cow" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="748" centery="1070" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
+	<spawn centerx="753" centery="1070" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="-1" z="7" spawntime="60" />
+	</spawn>
 	<spawn centerx="745" centery="1076" centerz="7" radius="1">
 		<npc name="Desert Scout Nahim" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="857" centery="1076" centerz="7" radius="1">
 		<npc name="Rukk Stonegaze" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="724" centery="1077" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="730" centery="1077" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="702" centery="1080" centerz="7" radius="1">
 		<monster name="Camel" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -400,6 +430,9 @@
 	</spawn>
 	<spawn centerx="853" centery="1083" centerz="7" radius="1">
 		<npc name="Morga - The Traditionalist" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="746" centery="1084" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="-1" z="7" spawntime="60" direction="1" />
 	</spawn>
 	<spawn centerx="705" centery="1090" centerz="7" radius="1">
 		<monster name="Camel" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -481,6 +514,12 @@
 	</spawn>
 	<spawn centerx="684" centery="1162" centerz="7" radius="1">
 		<monster name="Camel" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="768" centery="1176" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="772" centery="1176" centerz="7" radius="1">
+		<npc name="Guard" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="1333" centery="394" centerz="8" radius="1">
 		<monster name="Elven High Priest" x="0" y="0" z="8" spawntime="60" direction="2" />

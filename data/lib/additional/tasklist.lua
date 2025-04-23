@@ -26,6 +26,7 @@ npcTaskList = {
         ["Salim the Lookout"] = {63},
         ["Draya the Waterkeeper"] = {64,65,66,67,68},
         ["Kelro the Pale"] = {69},
+        ["Dastan"] = {70,71,72,73},
 
         
 
@@ -2492,7 +2493,7 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
         }
     },
     preRequiredStorages = {},
-    taskGoalCnt = 1,
+    taskGoalCnt = 6,
     taskMinLvl = 12,
     taskRepeat = false,
     taskStorageId = 40149, -- Progress
@@ -2506,7 +2507,7 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
         outfits = {}
     },
     taskZoneName = "Southern Watchpost",
-    taskSource = "Captain Thorne",
+    taskSource = "Dastan",
     taskHint = "Visit nearby camps and ask for volunteers willing to fight for the mountain."
 },
 [71] = {
@@ -2536,7 +2537,7 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
         outfits = {}
     },
     taskZoneName = "Stonewatch - Ogre Foothills",
-    taskSource = "Captain Elrik",
+    taskSource = "Dastan",
     taskHint = "Ogre iron is heavy, but necessary. Search the ogre camps and return what you can." 
 },
 [72] = {
@@ -2567,9 +2568,9 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
         outfits = {}
     },
     taskZoneName = "Mountain Outpost",
-    taskSource = "Captain Elric",
+    taskSource = "Dastan",
     taskHint = "Find sturdy logs near the tree line west of the mountain base. Avoid patrols—they've started targeting supply gatherers."
-}
+},
 [73] = {
     taskNumber = 73,
     taskName = "Honor the Fallen",
@@ -2599,9 +2600,9 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
         outfits = {}
     },
     taskZoneName = "Southern Ogre Encampment",
-    taskSource = "Commander Eldric",
+    taskSource = "Dastan",
     taskHint = "Search the ogre side of the battlefield for bone piles and discarded gear."
-}
+},
 
 
 

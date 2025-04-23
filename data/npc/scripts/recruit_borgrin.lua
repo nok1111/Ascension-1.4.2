@@ -23,20 +23,21 @@ function creatureSayCallback(cid, type, msg)
     local player = Player(cid)
 
     if msgcontains(msg, "Join Us") then
-        if player:getItemCount(2016) >= 1 then -- Check for ale
-            player:removeItem(2016, 1)
+        if player:getItemCount(18448) >= 1 then -- Check for ale
+            player:removeItem(18448, 1)
             player:setStorageValue(Mainquest.recruit_borgrin, 1)
             addRecruit(cid)
             doSendDialogNpc(cid, getNpcCid(), "FOR ALE AND GLORY! *chugs* I'll fight anything that moves!", "close")
         else
             doSendDialogNpc(cid, getNpcCid(), "No ale? No deal! *hic*", "close")
         end
-        npcHandler:unGreet(cid)
     elseif msgcontains(msg, "Buy Me Ale") then
         doSendDialogNpc(cid, getNpcCid(), "Bring me 1 ale first! *hic* Then we talk!", "close")
-        npcHandler:unGreet(cid)
     elseif msgcontains(msg, "Not Now") then
         doSendDialogNpc(cid, getNpcCid(), "Pfft. Come back when you're serious! *burp*", "close")
+    elseif msgcontains(msg:lower(), "close") then
+        npcHandler:addModule(FocusModule:new())
+        doSendDialogNpcClose(cid)
         npcHandler:unGreet(cid)
     end
     return true
@@ -44,10 +45,12 @@ end
 
 local function addRecruit(cid)
     local player = Player(cid)
-    player:setStorageValue(Mainquest.recruit_borgrin, 1)
+    
     local recruits = player:getStorageValue(Mainquest.soldiersrecruited)
     if recruits < 0 then recruits = 0 end
     player:setStorageValue(Mainquest.soldiersrecruited, recruits + 1)
+
+    player:setStorageValue(Mainquest.recruit_borgrin, 1)
 end
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
