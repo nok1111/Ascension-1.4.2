@@ -2603,6 +2603,67 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
     taskSource = "Dastan",
     taskHint = "Search the ogre side of the battlefield for bone piles and discarded gear."
 },
+[74] = {
+    taskNumber = 74,
+    taskName = "Blades in the Night",
+    taskDescription = "Commander Eldri believes a saboteur walks among your recruited soldiers. Investigate signs of sabotage and uncover the traitor before it's too late.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Sabotage Marks Discovered",
+                starageTaskId = Mainquest.trapsfound
+            }
+        }
+    },
+    preRequiredStorages = {}, -- Must have completed "The Fallen Bones"
+    taskGoalCnt = 4,
+    taskMinLvl = 18,
+    taskRepeat = false,
+    taskStorageId = 40157,
+    taskStorageCnt = 40158,
+    taskRewards = {
+        experience = 18000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 350 },
+            [2] = { name = "steel shield", itemSid = 2509, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Southern Stronghold",
+    taskSource = "Commander Eldri",
+    taskHint = "Search near camp supplies, the buildings, and the upper road wich leads to the ogre camp for marks of sabotage."
+},
+[75] = {
+    taskNumber = 75,
+    taskName = "The Last Roar of Khurzug",
+    taskDescription = "Commander Eldri believes the only way to end the siege is to eliminate the ogres' leader, Khurzug the Warhowler. Venture into their lair and put an end to his tyranny.",
+    taskGoals = {
+        monsters = {
+            [1] = {
+                name = "Khurzug the Warhowler",
+                spriteId = 1094 -- Adjust sprite ID if needed
+            }
+        }
+    },
+    preRequiredStorages = {40157}, -- Must have completed "Blades in the Night"
+    taskGoalCnt = 1, -- Kill the boss
+    taskMinLvl = 24,
+    taskRepeat = false,
+    taskStorageId = 40159, -- Progress
+    taskStorageCnt = 40160, -- Completion
+    taskRewards = {
+        experience = 35000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 500 },
+            [2] = { name = "Khurzug’s Warbanner", itemSid = 9252, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Dungeon",
+    taskSource = "Commander Eldri",
+    taskHint = "Khurzug’s throne lies deep in the heart of the ogre stronghold to the south. Be prepared for a brutal fight."
+}
+
 
 
 

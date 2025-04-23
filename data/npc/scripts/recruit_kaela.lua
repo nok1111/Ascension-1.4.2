@@ -30,17 +30,21 @@ function creatureSayCallback(cid, type, msg)
         doSendDialogNpc(cid, getNpcCid(), "The ogres burn our forests. This is personal.", "Join Us&Not Now")
     elseif msgcontains(msg, "Not Now") then
         doSendDialogNpc(cid, getNpcCid(), "Do not waste my time again.", "close")
+    elseif msgcontains(msg:lower(), "close") then
+        npcHandler:addModule(FocusModule:new())
+        doSendDialogNpcClose(cid)
+        npcHandler:unGreet(cid)
     end
-    npcHandler:unGreet(cid)
     return true
 end
 
 local function addRecruit(cid)
     local player = Player(cid)
-    player:setStorageValue(Mainquest.recruit_borgrin, 1)
+   
     local recruits = player:getStorageValue(Mainquest.soldiersrecruited)
     if recruits < 0 then recruits = 0 end
     player:setStorageValue(Mainquest.soldiersrecruited, recruits + 1)
+    player:setStorageValue(Mainquest.recruit_borgrin, 1)
 end
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)

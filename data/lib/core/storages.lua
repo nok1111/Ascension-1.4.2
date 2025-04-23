@@ -113,7 +113,9 @@ recruit_kaela = 50057,
 recruit_faelin = 50058,
 recruit_rhogar = 50059,
 recruit_imera = 50060,
-recruit_tinko = 50061
+recruit_tinko = 50061,
+KilledOgre = 50062,
+trapsfound = 50063,
 }
 
 -- actions

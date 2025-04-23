@@ -374,6 +374,42 @@ local eventConfigs = {
         sumstorage = Mainquest.soldierremains,
         transform_item = { from = 37718, to = 37717, time = 45000 }, 
     },
+    [2109] = { --bomb marks
+        required_storage = 40157,
+        message = "You uncover sabotage: hidden bomb found!.",
+        magiceffect = 400,
+        sumstorage = Mainquest.trapsfound,
+    },
+    [2110] = { --bomb marks
+        required_storage = 40157,
+        message = "You uncover sabotage: hidden bomb found!.",
+        magiceffect = 400,
+        sumstorage = Mainquest.trapsfound,
+    },
+    [2111] = { --bomb marks
+        required_storage = 40157,
+        message = "You uncover sabotage: hidden bomb found!.",
+        magiceffect = 400,
+        sumstorage = Mainquest.trapsfound,
+    },
+    [2112] = { --bomb marks
+        required_storage = 40157,
+        message = "You uncover sabotage: hidden bomb found!.",
+        magiceffect = 400,
+        sumstorage = Mainquest.trapsfound,
+    },
+    [2113] = { --bomb marks
+        required_storage = 40157,
+        message = "You uncover sabotage: hidden bomb found!.",
+        magiceffect = 400,
+        sumstorage = Mainquest.trapsfound,
+    },
+    [2114] = { --bomb marks
+        required_storage = 40157,
+        message = "You uncover sabotage: hidden bomb found!.",
+        magiceffect = 400,
+        sumstorage = Mainquest.trapsfound,
+    },
 
 
 }

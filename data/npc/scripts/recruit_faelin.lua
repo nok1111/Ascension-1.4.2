@@ -29,18 +29,21 @@ function creatureSayCallback(cid, type, msg)
     elseif msgcontains(msg, "Show Boom") then
         doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
         doSendDialogNpc(cid, getNpcCid(), "SEE?! BIG FIRE! Now you want Faelin fight, yes?", "Join Us&Not Now")
-        return
+    elseif msgcontains(msg:lower(), "close") then
+        npcHandler:addModule(FocusModule:new())
+        doSendDialogNpcClose(cid)
+        npcHandler:unGreet(cid)
     end
-    npcHandler:unGreet(cid)
     return true
 end
 
 local function addRecruit(cid)
     local player = Player(cid)
-    player:setStorageValue(Mainquest.recruit_borgrin, 1)
+   
     local recruits = player:getStorageValue(Mainquest.soldiersrecruited)
     if recruits < 0 then recruits = 0 end
     player:setStorageValue(Mainquest.soldiersrecruited, recruits + 1)
+    player:setStorageValue(Mainquest.recruit_borgrin, 1)
 end
 
 npcHandler:setCallback(CALLBACK_GREET, greetCallback)
