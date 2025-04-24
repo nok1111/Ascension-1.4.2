@@ -14,7 +14,7 @@ function greetCallback(cid)
         doSendDialogNpc(cid, getNpcCid(), "BOOM! Hahaha! New ideas coming!", "close")
         return true
     end
-    doSendDialogNpc(cid, getNpcCid(), "Faelin make BIG bombs! You want see? BOOM! Haha!", "Join Us&Show Boom&Not Now")
+    doSendDialogNpc(cid, getNpcCid(), "Faelin make BIG bombs! You want see? BOOM! Haha!", "Join Us&Show Boom&close")
     return true
 end
 
@@ -28,7 +28,7 @@ function creatureSayCallback(cid, type, msg)
         doSendDialogNpc(cid, getNpcCid(), "YAY! Faelin make ogres go BOOM BOOM! *dances*", "close")
     elseif msgcontains(msg, "Show Boom") then
         doSendMagicEffect(getCreaturePosition(cid), CONST_ME_FIREAREA)
-        doSendDialogNpc(cid, getNpcCid(), "SEE?! BIG FIRE! Now you want Faelin fight, yes?", "Join Us&Not Now")
+        doSendDialogNpc(cid, getNpcCid(), "SEE?! BIG FIRE! Now you want Faelin fight, yes?", "Join Us&close")
     elseif msgcontains(msg:lower(), "close") then
         npcHandler:addModule(FocusModule:new())
         doSendDialogNpcClose(cid)
