@@ -1,32 +1,35 @@
 local SpellElementalMapping = {
     -- Spells that add boosters
-    ["Fire Blast"]    = { type = "fire",   action = "add",     amount = 1 },
+    ["fire fist"]    = { type = "fire",   action = "add",     amount = 1 },
     ["Terra Strike"]  = { type = "terra", action = "add",     amount = 1 },
     ["Rejuvenation"]  = { type = "holy",   action = "add",     amount = 1 },
     ["Energy Blast"] = { type = "energy",  action = "add",     amount = 1 },
     ["Mighty Roar"]   = { type = "might", action = "add",     amount = 1 },
     
     -- Example of a spell that consumes boosters
-    ["Flame Overload"] = { type = "Fire_Booster", action = "consume", amount = 2 },
+    ["fire fist"] = { type = "fire", action = "consume", amount = 2 },
 }
 
 local eventspellcheck = EventCallback
 
 function eventspellcheck.onSpellCheck(player, spell)
-    -- Retrieve the spell name from the spell table (pushed by pushSpell)
-    local spellName = spell.name or "unknown"
+
+    local spellName = spell.name and spell.name:lower() or "unknown"
     print("Spell name: " .. spellName)
-    
+
     -- Look up the booster action for this spell name in our mapping
     local boosterAction = SpellElementalMapping[spellName]
     if boosterAction then
+        print("Found booster action for spell: " .. spellName)
         if boosterAction.action == "add" then
             -- Use the functional library call to add a booster to the player
             addElementalBoost(player, boosterAction.type, boosterAction.amount)
             player:say("add " .. boosterAction.type)
+            print("added" .. boosterAction.type)
         elseif boosterAction.action == "consume" then
-            -- Get the current booster amount for the specified type
+            print("consuming spell: " .. spellName)
             local current = getElementalBoost(player, boosterAction.type)
+            print("boosts: " .. current)
             if current < boosterAction.amount then
                 player:sendCancelMessage("Not enough " .. boosterAction.type .. " boosters to cast " .. spellName)
                 return false

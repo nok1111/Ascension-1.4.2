@@ -327,6 +327,9 @@
 	<instant group="support" spellid="131" name="Void Slumber" words="void slumber" lvl="70" mana="80" aggressive="0" selftarget="1" cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/void_slumber.lua">
 	<vocation name="None" />
 	</instant>
+	<instant group="attack" spellid="132" name="Fire Fist" words="fire fist" lvl="8" mana="35" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/fire_fist.lua">
+    <vocation name="None" />
+    </instant>
 	
 	
 	<!-- DRUID -->
