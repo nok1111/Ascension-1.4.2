@@ -2662,6 +2662,36 @@ taskDescription = "The oasis waters have grown murky, and the local murlocs hoar
     taskZoneName = "Dungeon",
     taskSource = "Commander Eldri",
     taskHint = "Khurzug’s throne lies deep in the heart of the ogre stronghold to the south. Be prepared for a brutal fight."
+},
+[76] = {
+    taskNumber = 76,
+    taskName = "First Impressions at Deadfin",
+    taskDescription = "The pirate haven of Deadfin Port is not kind to strangers. To survive, you'll need to earn the trust—or at least the tolerance—of its rowdy denizens. Build your reputation until you are recognized as a friend, not a fool.",
+    taskGoals = {
+        storages = {
+            [1] = {
+                starageName = "Reached Friendly Status with Deadfin Port",
+                starageTaskId = Mainquest.reachedFriendlyDeadfin
+            }
+        }
+    },
+    preRequiredStorages = {}, -- No prereqs
+    taskGoalCnt = 1,
+    taskMinLvl = 20,
+    taskRepeat = false,
+    taskStorageId = 40161, -- Progress
+    taskStorageCnt = 40162, -- Completion
+    taskRewards = {
+        experience = 20000,
+        items = {
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 300 },
+            [2] = { name = "pirate bandana", itemSid = 6091, itemCnt = 1 }
+        },
+        outfits = {}
+    },
+    taskZoneName = "Deadfin Port",
+    taskSource = "City Reputation Board",
+    taskHint = "Perform tasks, favors, or dirty deeds around Deadfin Port to build enough reputation to be considered a local."
 }
 
 

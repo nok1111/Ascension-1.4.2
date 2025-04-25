@@ -116,6 +116,7 @@ recruit_imera = 50060,
 recruit_tinko = 50061,
 KilledOgre = 50062,
 trapsfound = 50063,
+reachedFriendlyDeadfin = 50064,
 }
 
 -- actions
