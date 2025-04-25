@@ -3,6 +3,7 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 
 
+
 function onGetFormulaValues(player, skill, attack, factor)
     local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
     local power = sword * attack
@@ -21,8 +22,9 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
     if not player or not creature then return true end
 
     local pos = creature:getPosition()
+    local playerpos = player:getPosition()
     pos:sendMagicEffect(6)
-    Position(pos.x + 1, pos.y + 2, pos.z):sendMagicEffect(effectId)
+    Position(playerpos):sendDistanceEffect(pos, effectId)
      Position(pos.x + 1, pos.y + 1, pos.z):sendMagicEffect(341)
     combat:execute(player, variant)
 
@@ -44,10 +46,10 @@ end
 function onCastSpell(player, variant)
     local target = player:getTarget()
     if target then
-        for i = 0, 3 do
+        for i = 0, 1 do
     addEvent(function()
-        arcaneDamage(player:getId(), variant, target:getId(), 739 + i)
-    end, i * 150)
+        arcaneDamage(player:getId(), variant, target:getId(), 185 + i)
+    end, i * 250)
 end
     end
     return true

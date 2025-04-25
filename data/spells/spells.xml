@@ -327,10 +327,15 @@
 	<instant group="support" spellid="131" name="Void Slumber" words="void slumber" lvl="70" mana="80" aggressive="0" selftarget="1" cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/void_slumber.lua">
 	<vocation name="None" />
 	</instant>
-	<instant group="attack" spellid="132" name="Fire Fist" words="fire fist" lvl="8" mana="35" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/fire_fist.lua">
+	<instant group="attack" spellid="132" name="Fire Fist" words="fire fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/fire_fist.lua">
     <vocation name="None" />
     </instant>
-	
+	<instant group="attack" spellid="133" name="Ice Fist" words="ice fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/ice_fist.lua">
+    <vocation name="None" />
+    </instant>
+    <instant group="attack" spellid="134" name="Life Fist" words="life fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/life_fist.lua">
+    <vocation name="None" />
+    </instant>
 	
 	<!-- DRUID -->
 	<instant group="attack" spellid="140" name="Terra Strike" words="terra strike" lvl="8" mana="30" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/terra_strike.lua">
