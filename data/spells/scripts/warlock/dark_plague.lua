@@ -10,7 +10,7 @@ combat:setParameter(COMBAT_PARAM_EFFECT, 303)
 combat:setArea(createCombatArea(AREA_CIRCLE2X2))
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 
-local bleed = Condition(CONDITION_POISON)
+local bleed = Condition(CONDITION_POISON, CONDITIONID_COMBAT)
 	bleed:setParameter(COMBAT_PARAM_EFFECT, 248)
 	bleed:setTicks(config.BleedingTicks) 
 	bleed:setParameter(CONDITION_PARAM_DELAYED, 1)

@@ -8,7 +8,7 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, config.effect)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 		
-local condition = Condition(CONDITION_REGENERATION)
+local condition = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_TICKS, config.timer)
 condition:setParameter(CONDITION_PARAM_HEALTHGAIN, 0)
 condition:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)

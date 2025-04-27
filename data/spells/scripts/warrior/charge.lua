@@ -1,5 +1,5 @@
 local stunDuration = 3000
-local stun = Condition(CONDITION_STUN)
+local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
 stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
 
 
@@ -22,7 +22,7 @@ local arr1 = {
 
 combat:setArea(createCombatArea(arr1))
 
-local condition = Condition(CONDITION_PARALYZE)
+local condition = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_TICKS, 1000) -- 1000 = 1 second
 condition:setFormula(0.7, -56, 0.7, -56) -- Modify this to slow the player more or less
 combat:addCondition(condition)

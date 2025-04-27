@@ -20,7 +20,7 @@ function onCastSpell(creature, variant, isHotkey)
     positioneffect:sendMagicEffect(369)
        -- position:sendMagicEffect(365)
 		
-		local skill = Condition(CONDITION_ATTRIBUTES)
+		local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 local time = 20 * 60 * 1000
 local slvl = 110
 skill:setParameter(CONDITION_PARAM_SUBID, 552)
@@ -43,7 +43,7 @@ player:addCondition(skill)
 
     if membersList == nil or type(membersList) ~= 'table' or #membersList <= 1 then
         creature:sendCancelMessage("No party members in range.")
-        		local skill = Condition(CONDITION_ATTRIBUTES)
+        		local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 				local time = 20 * 60 * 1000
 
 local slvl = 110
@@ -77,7 +77,7 @@ player:addCondition(skill)
     local count = #affectedList
     if count <= 1 then
         creature:sendCancelMessage("No party members in range.")
-        		local skill = Condition(CONDITION_ATTRIBUTES)
+        		local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 
 local slvl = 110
 skill:setParameter(CONDITION_PARAM_SUBID, 552)
@@ -116,7 +116,7 @@ local slvl = 110
 doPlayerSendTextMessage(targetPlayer, MESSAGE_INFO_DESCR, "Offensive Skills  increased 10% for 20 min!")
 
 
-local skill = Condition(CONDITION_ATTRIBUTES)
+local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 skill:setParameter(CONDITION_PARAM_SUBID, 552)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)

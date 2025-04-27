@@ -2,7 +2,7 @@ local combat = Combat()
 --combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_DRAWBLOOD)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
-local condition = Condition(CONDITION_ATTRIBUTES)
+local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_TICKS, 15000)
 condition:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, 150)
 condition:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 150)

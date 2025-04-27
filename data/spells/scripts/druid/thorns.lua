@@ -1,4 +1,3 @@
-
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, 449)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
@@ -29,7 +28,7 @@ function onCastSpell(creature, variant, isHotkey)
     positioneffect:sendMagicEffect(452)
 	--end effect
 		
-local food = Condition(CONDITION_ATTRIBUTES)
+local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 food:setParameter(CONDITION_PARAM_SUBID, 151)
 food:setParameter(CONDITION_PARAM_TICKS, t)
@@ -48,7 +47,7 @@ food:setParameter(CONDITION_PARAM_TICKS, t)
     if membersList == nil or type(membersList) ~= 'table' or #membersList <= 1 then
         creature:sendCancelMessage("No party members in range.")
 		
-local food = Condition(CONDITION_ATTRIBUTES)
+local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 food:setParameter(CONDITION_PARAM_SUBID, 151)
 food:setParameter(CONDITION_PARAM_TICKS, t)
@@ -82,7 +81,7 @@ food:setParameter(CONDITION_PARAM_TICKS, t)
     if count <= 1 then
         creature:sendCancelMessage("No party members in range.")
 		
-local food = Condition(CONDITION_ATTRIBUTES)
+local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 food:setParameter(CONDITION_PARAM_SUBID, 151)
 food:setParameter(CONDITION_PARAM_TICKS, t)
@@ -117,7 +116,7 @@ doPlayerSendTextMessage(targetPlayer, MESSAGE_INFO_DESCR, "Thorns Buff applied f
 	if targetstoragevalue == -1 then
 	targetstoragevalue = 0
 	end
-local food = Condition(CONDITION_ATTRIBUTES)
+local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 food:setParameter(CONDITION_PARAM_SUBID, 151)
 food:setParameter(CONDITION_PARAM_TICKS, t)

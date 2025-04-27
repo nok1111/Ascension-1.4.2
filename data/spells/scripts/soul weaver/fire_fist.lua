@@ -33,7 +33,7 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
     local base = ((level / 10) + (magic * 2)) * 0.01
     local damage = math.floor(base * creature:getMaxHealth())
 
-    local burn = Condition(CONDITION_FIRE)
+    local burn = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
     burn:setParameter(CONDITION_PARAM_DELAYED, true)
     burn:setParameter(CONDITION_PARAM_TICKS, 3000)
     burn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)

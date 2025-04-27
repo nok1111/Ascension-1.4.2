@@ -14,7 +14,7 @@ for i, c in ipairs({combat2, combatnodot2}) do
     c:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 end
 
-local conditionburn = Condition(CONDITION_FIRE)
+local conditionburn = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
 conditionburn:setTicks(7500)
 conditionburn:setParameter(CONDITION_PARAM_DELAYED, 1)
 conditionburn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
@@ -69,24 +69,3 @@ function onCastSpell(creature, var, tar)
 	
     return combat2:execute(creature, var)
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -5,7 +5,7 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combat:setArea(createCombatArea(AREA_SQUARE1X1))
 
-local condition = Condition(CONDITION_POISON)
+local condition = Condition(CONDITION_POISON, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 
 local damageTable = {

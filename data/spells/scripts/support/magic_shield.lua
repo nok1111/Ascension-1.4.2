@@ -2,7 +2,7 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_BLUE)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
-local condition = Condition(CONDITION_MANASHIELD)
+local condition = Condition(CONDITION_MANASHIELD, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_TICKS, 3600000)
 combat:addCondition(condition)
 

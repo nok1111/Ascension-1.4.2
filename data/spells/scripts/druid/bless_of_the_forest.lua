@@ -17,14 +17,14 @@ function onCastSpell(creature, variant, isHotkey)
 	local manapercent = player:getMaxMana() * (config.manaPercent/100) + 5
 	local healthpercent = player:getMaxHealth() * (config.hpPercent/100) + 6
 	
-	local forest_condition_hp = Condition(CONDITION_REGENERATION)
+	local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
 
-local forest_condition_mana = Condition(CONDITION_REGENERATION)
+local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, manapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
@@ -78,14 +78,14 @@ end
     if membersList == nil or type(membersList) ~= 'table' or #membersList <= 1 then
         creature:sendCancelMessage("No party members in range.")
 		
-local forest_condition_hp = Condition(CONDITION_REGENERATION)
+local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
 
-local forest_condition_mana = Condition(CONDITION_REGENERATION)
+local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, manapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
@@ -124,14 +124,14 @@ forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25972)
     if count <= 1 then
         creature:sendCancelMessage("No party members in range.")
 		
-local forest_condition_hp = Condition(CONDITION_REGENERATION)
+local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
 
-local forest_condition_mana = Condition(CONDITION_REGENERATION)
+local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, manapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
@@ -168,14 +168,14 @@ doPlayerSendTextMessage(targetPlayer, MESSAGE_INFO_DESCR, "Thorns Buff applied f
 local targetPlayermanapercent = targetPlayer:getMaxMana() * (config.manaPercent/100)
 local targetPlayerhealthpercent = targetPlayer:getMaxHealth() * (config.hpPercent/100)
 
-local forest_condition_hp = Condition(CONDITION_REGENERATION)
+local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, targetPlayerhealthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
 
-local forest_condition_mana = Condition(CONDITION_REGENERATION)
+local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, targetPlayermanapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)

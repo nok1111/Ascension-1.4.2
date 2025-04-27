@@ -22,6 +22,7 @@ function onTargetCreature(creature, target)
 local targetPos = target:getPosition()
 
 	targetPos:sendMagicEffect(CONST_ME_MAD)
+	local speed = Condition(CONDITION_HASTE, CONDITIONID_COMBAT)
 	target:addCondition(speed)
 	
 	return doChallengeCreature(creature, target)
