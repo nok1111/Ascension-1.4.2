@@ -11,9 +11,19 @@ DeadfinRepLib.FriendlyUnlockStorage = Mainquest.reachedFriendlyDeadfin
 DeadfinRepLib.Tiers = {
     HATED = -1,
     STRANGER = 0,
-    KNOWN_FACE = 10,
-    FRIENDLY = 30,
+    KNOWN_FACE = 25,
+    FRIENDLY = 50,
 }
+
+function DeadfinRepLib.sendFloatingRepText(player, amount)
+    if not player or not player:isPlayer() then return end
+
+    local position = player:getPosition()
+    local text = "+" .. amount .. " REP"
+    local color = TEXTCOLOR_LIGHTBLUE -- You can change this if you want another vibe
+
+    Game.sendAnimatedText(text, position, color)
+end
 
 -- Add or remove reputation
 function DeadfinRepLib.addReputation(player, amount)
@@ -25,13 +35,21 @@ function DeadfinRepLib.addReputation(player, amount)
     local newRep = currentRep + amount
     player:setStorageValue(DeadfinRepLib.ReputationStorage, newRep)
 
+    -- Floating animated text
+    DeadfinRepLib.sendFloatingRepText(player, amount)
+
     -- Check if player becomes Friendly for the first time
     if newRep >= DeadfinRepLib.Tiers.FRIENDLY and player:getStorageValue(DeadfinRepLib.FriendlyUnlockStorage) ~= 1 then
         player:setStorageValue(DeadfinRepLib.FriendlyUnlockStorage, 1)
         player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You are now a friend of Deadfin Port!")
         player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
     end
+
+    -- Always send reputation update info
+    local title = DeadfinRepLib.getTitle(player)
+    player:sendTextMessage(MESSAGE_STATUS_CONSOLE_ORANGE, "Reputation + " .. amount .. " [" .. newRep .. " Total] - Title: " .. title)
 end
+
 
 -- Get current reputation
 function DeadfinRepLib.getReputation(player)
@@ -43,7 +61,10 @@ end
 
 -- Get reputation title
 function DeadfinRepLib.getTitle(player)
-    local rep = DeadfinRepLib.getReputation(player)
+    if not player or not player:isPlayer() then return "Unknown" end
+
+    local rep = player:getStorageValue(DeadfinRepLib.ReputationStorage)
+    if rep < 0 then rep = 0 end
 
     if rep >= DeadfinRepLib.Tiers.FRIENDLY then
         return "Friend of Deadfin"

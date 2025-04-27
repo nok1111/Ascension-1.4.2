@@ -27047,8 +27047,6 @@
 	</item>
 	<item id="18305" article="a" name="fresh mushroom beer">
 		<attribute key="weight" value="200" />
-		<attribute key="decayTo" value="18306" />
-		<attribute key="duration" value="20" />
 	</item>
 	<item id="18306" article="a" name="stale mushroom beer">
 		<attribute key="weight" value="200" />

@@ -21,6 +21,7 @@ dofile('data/lib/additional/spell_info.lua')
 dofile('data/lib/additional/waypoints_lib.lua')
 dofile('data/lib/custom/ancestral_task.lua')
 dofile('data/lib/additional/elemental_boosts.lua')
+dofile('data/lib/additional/deadfin reputation.lua')
 
 dofile('data/lib/additional/randomfishpools.lua')
 dofile('data/lib/additional/randomveins.lua')

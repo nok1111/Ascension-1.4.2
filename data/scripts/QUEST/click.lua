@@ -411,6 +411,8 @@ local eventConfigs = {
         sumstorage = Mainquest.trapsfound,
     },
 
+    --2115 used for trash cleanup deadfin reputation
+
 
 }
 
