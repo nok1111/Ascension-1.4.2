@@ -12853,7 +12853,7 @@ int LuaScriptInterface::luaMonsterSetLevel(lua_State* L) {
     Monster* monster = getUserdata<Monster>(L, 1);
     if (monster) {
         uint32_t level = getNumber<uint32_t>(L, 2);
-        if (level > 0 && level <= 1000) { // Validate against level cap
+        if (level > 0) { // Validate against level cap
             monster->setLevel(level);
             pushBoolean(L, true);
         } else {
