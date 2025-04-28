@@ -14,7 +14,7 @@ local combat2 = Combat()
 combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat2:setArea(createCombatArea(AREA_CIRCLE1X2))
 
-local conditionburn_shots = Condition(CONDITION_FIRE)
+local conditionburn_shots = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
 conditionburn_shots:setTicks(7500)
 conditionburn_shots:setParameter(CONDITION_PARAM_DELAYED, 1)
 conditionburn_shots:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)

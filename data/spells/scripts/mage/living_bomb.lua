@@ -6,7 +6,6 @@ local area = createCombatArea({
 {0, 0, 1, 0, 0},
 })
 
-
 local config = {
 	effect = 196, -- effect of explosion.
 	type = COMBAT_ENERGYDAMAGE, -- damage of explosion.
@@ -20,7 +19,7 @@ combat:setParameter(COMBAT_PARAM_TYPE, config.type)
 combat:setParameter(COMBAT_PARAM_EFFECT, config.effect)
 combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, config.disteffect)
 
-local condition = Condition(config.conditiontype)
+local condition = Condition(config.conditiontype, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_DELAYED, true)
 condition:addDamage(config.timer, 1000, -5)
 condition:setParameter(CONDITION_PARAM_SUBID, 25959)

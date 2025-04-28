@@ -40,14 +40,14 @@ end
     position:sendMagicEffect(454)
 	--end effect
 		
-local forest_condition_hp = Condition(CONDITION_REGENERATION)
+local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25973)
 
-local forest_condition_mana = Condition(CONDITION_REGENERATION)
+local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, manapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
@@ -71,7 +71,7 @@ forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25974)
     if membersList == nil or type(membersList) ~= 'table' or #membersList <= 1 then
         creature:sendCancelMessage("No party members in range.")
 		
-local forest_condition_hp = Condition(CONDITION_REGENERATION)
+local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
@@ -109,7 +109,7 @@ forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25973)
     if count <= 1 then
         creature:sendCancelMessage("No party members in range.")
 		
-local forest_condition_hp = Condition(CONDITION_REGENERATION)
+local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
@@ -155,7 +155,7 @@ end
 
 
 	
-local forest_condition_hp = Condition(CONDITION_REGENERATION)
+local forest_condition_hp = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, targetPlayerhealthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)

@@ -203,12 +203,12 @@ function onCastSpell(creature, var)
                             nextPos:sendMagicEffect(CONST_ME_DRAWBLOOD)
                           
                             -- Stun
-                            local stun = Condition(CONDITION_STUN)
+                            local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
                             stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
                             target:addCondition(stun)
                           
                             -- Mute
-                            local mute = Condition(CONDITION_MUTED)
+                            local mute = Condition(CONDITION_MUTED, CONDITIONID_COMBAT)
                             mute:setParameter(CONDITION_PARAM_TICKS, stunDuration)
                             target:addCondition(mute)
 

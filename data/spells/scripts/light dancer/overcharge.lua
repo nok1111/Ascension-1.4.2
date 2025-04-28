@@ -8,14 +8,14 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, config.effect)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 		
-local condition = Condition(CONDITION_REGENERATION)
+local condition = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_TICKS, config.timer)
 condition:setParameter(CONDITION_PARAM_MANAGAIN, 0)
 condition:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 
 
-local conditionstats = Condition(CONDITION_ATTRIBUTES)
+local conditionstats = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 conditionstats:setParameter(CONDITION_PARAM_TICKS, 8000)
 conditionstats:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, 140)
 conditionstats:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, 140)
@@ -26,7 +26,7 @@ conditionstats:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 
 
 function onCastSpell(creature, variant)
-if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCancelMessage("Spell is already active.") local pos = creature:getPosition(creature) pos:sendMagicEffect(CONST_ME_POFF) return false end -- prevents stacking the spell.
+if creature:getCondition(CONDITION_REGENERATION, CONDITIONID_COMBAT, 25941) then creature:sendCancelMessage("Spell is already active.") local pos = creature:getPosition(creature) pos:sendMagicEffect(CONST_ME_POFF) return false end -- prevents stacking the spell.
 
 	local min = (creature:getMaxHealth() * 0.03) -- Overcharge_event formula minimal
     local max = (creature:getMaxHealth() * 0.03) -- Overcharge_event formula maximum 
@@ -44,7 +44,7 @@ if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCanc
 	creature:addCondition(conditionstats)
 	addEvent(Overcharge_event, config.timer, creature:getId(), config.rounds)
 	creature:sendProgressbar(8000, false)
-	 local player = Player(creature)
+  local player = Player(creature)
   if player then
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
 	player:attachEffectById(17, true)

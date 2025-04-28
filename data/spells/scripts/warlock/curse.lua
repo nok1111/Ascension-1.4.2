@@ -8,7 +8,7 @@ for i, c in ipairs({combat2, combatnodot2}) do
     c:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 end
 
-local condition2 = Condition(CONDITION_CURSED)
+local condition2 = Condition(CONDITION_CURSED, CONDITIONID_COMBAT)
 condition2:setTicks(15000)
 condition2:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition2:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)

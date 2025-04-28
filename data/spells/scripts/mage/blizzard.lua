@@ -14,7 +14,7 @@ slowCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 slowCombat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 slowCombat:setParameter(COMBAT_PARAM_AGGRESSIVE, true)
 
-local slowCondition = Condition(CONDITION_PARALYZE)
+local slowCondition = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
 slowCondition:setParameter(CONDITION_PARAM_TICKS, 1200) -- Duration in milliseconds
 slowCondition:setFormula(-0.7, 0, -0.7, 0) -- Adjust the values to set the speed reduction
 

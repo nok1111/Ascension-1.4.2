@@ -1,4 +1,3 @@
-
 -----------------------------
 
    arr1 = {
@@ -79,7 +78,7 @@ local combat5 = Combat()
 combat5:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat5:setArea(createCombatArea(arr5))
 
-local conditionburn_within = Condition(CONDITION_FIRE)
+local conditionburn_within = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
 conditionburn_within:setParameter(CONDITION_PARAM_TICKS, 7500)
 conditionburn_within:setParameter(CONDITION_PARAM_DELAYED, 1)
 conditionburn_within:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)

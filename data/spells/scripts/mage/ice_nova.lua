@@ -13,7 +13,7 @@ combat:setParameter(COMBAT_PARAM_TYPE, config.damageType)
 combat:setParameter(COMBAT_PARAM_EFFECT, config.damageEffect)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 
-local stunCondition = Condition(CONDITION_PARALYZE)
+local stunCondition = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
 stunCondition:setParameter(CONDITION_PARAM_TICKS, config.stunDuration)
 stunCondition:setFormula(-0.7, 0, -0.7, 0)
 

@@ -30,7 +30,7 @@ local function isExcludedTarget(creature, target)
 end
 
 local stunDuration = 3500
-local stun = Condition(CONDITION_STUN)
+local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
 stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
 
 local config = {

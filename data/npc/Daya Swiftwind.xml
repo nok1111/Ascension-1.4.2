@@ -1,0 +1,3 @@
+<npc name="Daya Swiftwind"  script="daya swiftwind.lua" walkinterval="0" speechbubble="2">
+	<look type="2501" />
+</npc>

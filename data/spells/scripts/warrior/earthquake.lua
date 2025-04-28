@@ -57,7 +57,7 @@ combat2:setArea(createCombatArea(earth2))
 combat3:setArea(createCombatArea(earth3))
 
 
- local stun = Condition(CONDITION_STUN)
+ local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
  stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
 
  
@@ -161,4 +161,3 @@ if not creature then
 return true
 
 end
-

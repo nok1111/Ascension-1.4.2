@@ -11,7 +11,7 @@ local slvl = creature:getLevel() * 0.15
 
 
 
-local condition = Condition(CONDITION_ATTRIBUTES)
+local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_SUBID, 571)
 condition:setParameter(CONDITION_PARAM_TICKS, 8000)
 condition:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, 150)

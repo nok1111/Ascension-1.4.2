@@ -8,7 +8,7 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, config.effect)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 		
-local condition = Condition(CONDITION_REGENERATION)
+local condition = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_TICKS, config.timer)
 condition:setParameter(CONDITION_PARAM_MANAGAIN, 0)
 condition:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
@@ -16,7 +16,7 @@ condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 condition:setParameter(CONDITION_PARAM_SUBID, 25941)
 
 function onCastSpell(creature, variant)
-if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCancelMessage("Spell is already active.") local pos = creature:getPosition(creature) pos:sendMagicEffect(CONST_ME_POFF) return false end -- prevents stacking the spell.
+if creature:getCondition(CONDITION_REGENERATION, CONDITIONID_COMBAT, 25941) then creature:sendCancelMessage("Spell is already active.") local pos = creature:getPosition(creature) pos:sendMagicEffect(CONST_ME_POFF) return false end -- prevents stacking the spell.
 	local per = 5
 	local maxhp = creature:getMaxHealth() * (20 / 100)
 	if creature:getHealth() <=  maxhp then

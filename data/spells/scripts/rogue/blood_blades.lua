@@ -1,11 +1,9 @@
-
-
 function onCastSpell(creature, variant)
 	local player = Player(creature)
   if player then
   
 
-local blood_blades = Condition(CONDITION_ATTRIBUTES)
+local blood_blades = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 blood_blades:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 blood_blades:setParameter(CONDITION_PARAM_SUBID, 29500)
 blood_blades:setParameter(CONDITION_PARAM_TICKS, 8000)

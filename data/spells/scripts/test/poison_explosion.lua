@@ -15,7 +15,7 @@ combat1:setParameter(COMBAT_PARAM_EFFECT, 241)
 combat1:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat1:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
-local condition = Condition(CONDITION_POISON)
+local condition = Condition(CONDITION_POISON, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_DELAYED, true)
 condition:addDamage(config.poisonDuration, 1000, -1)
 combat1:addCondition(condition)

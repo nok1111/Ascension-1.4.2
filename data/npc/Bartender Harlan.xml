@@ -1,0 +1,10 @@
+<npc name="Bartender Harlan"  script="Bartender Harlan.lua" walkinterval="0" speechbubble="2">
+	<look type="2096" />
+	<parameters>
+		<parameter key="module_shop" value="1" />
+		<parameter key="shop_buyable" value="
+			beer,6106,15;
+			fresh mushroom beer,18305,15;
+			pickaxe punch,18448,5;" />
+	</parameters>
+</npc>

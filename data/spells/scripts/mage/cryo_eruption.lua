@@ -4,7 +4,7 @@ local ICICLE_DURATION = 3500  -- Duration in ms before explosion
 local BASE_DAMAGE = 50
 local SLOW_DURATION = 5000
 
-local slowCondition = Condition(CONDITION_PARALYZE)
+local slowCondition = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
 slowCondition:setParameter(CONDITION_PARAM_SPEED, -50)
 slowCondition:setParameter(CONDITION_PARAM_TICKS, SLOW_DURATION)
 
