@@ -3428,6 +3428,9 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Monster", "walkToSpawn", LuaScriptInterface::luaMonsterWalkToSpawn);
 	registerMethod("Monster", "getDifficulty", LuaScriptInterface::luaMonsterGetDifficulty);
 
+	registerMethod("Monster", "setLevel", LuaScriptInterface::luaMonsterSetLevel);
+
+
 	// Npc
 	registerClass("Npc", "Creature", LuaScriptInterface::luaNpcCreate);
 	registerMetaMethod("Npc", "__eq", LuaScriptInterface::luaUserdataCompare);
@@ -12844,6 +12847,22 @@ int LuaScriptInterface::luaMonsterGetDifficulty(lua_State* L)
 		lua_pushnil(L);
 	}
 	return 1;
+}
+
+int LuaScriptInterface::luaMonsterSetLevel(lua_State* L) {
+    Monster* monster = getUserdata<Monster>(L, 1);
+    if (monster) {
+        uint32_t level = getNumber<uint32_t>(L, 2);
+        if (level > 0 && level <= 1000) { // Validate against level cap
+            monster->setLevel(level);
+            pushBoolean(L, true);
+        } else {
+            lua_pushnil(L);
+        }
+    } else {
+        lua_pushnil(L);
+    }
+    return 1;
 }
 
 // Npc

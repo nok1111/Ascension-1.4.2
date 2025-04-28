@@ -132,6 +132,8 @@ class Monster final : public Creature
 			return level;
 		}
 
+		void setLevel(uint32_t newLevel) { level = newLevel; }
+
 		void onAttackedCreatureDisappear(bool isLogout) override;
 		void onAttacked() override;
 
