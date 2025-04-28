@@ -391,7 +391,7 @@ uint32_t Player::getAttackSpeed() const
 	if (isDualWielding()) {
 		ret = vocation->getAttackSpeed() / 1.2;
 	}
-	ret = ret - (ret * getCharacterStat(CHARSTAT_DEXTERITY) / 100.0);
+	ret = ret - (ret * getCharacterStat(CHARSTAT_DEXTERITY) * 0.5 / 100.0);
 
 	return ret;
 }

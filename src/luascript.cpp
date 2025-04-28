@@ -9012,22 +9012,29 @@ int LuaScriptInterface::luaCreatureSetHealth(lua_State* L)
 
 int LuaScriptInterface::luaCreatureAddHealth(lua_State* L)
 {
-	// creature:addHealth(healthChange)
-	Creature* creature = getUserdata<Creature>(L, 1);
-	if (!creature) {
-		lua_pushnil(L);
-		return 1;
-	}
+    // creature:addHealth(healthChange)
+    Creature* creature = getUserdata<Creature>(L, 1);
+    if (!creature) {
+        lua_pushnil(L);
+        return 1;
+    }
 
-	CombatDamage damage;
-	damage.primary.value = getNumber<int32_t>(L, 2);
-	if (damage.primary.value >= 0) {
-		damage.primary.type = COMBAT_HEALING;
-	} else {
-		damage.primary.type = COMBAT_UNDEFINEDDAMAGE;
-	}
-	pushBoolean(L, g_game.combatChangeHealth(nullptr, creature, damage));
-	return 1;
+    CombatDamage damage;
+    damage.primary.value = getNumber<int32_t>(L, 2);
+    if (damage.primary.value >= 0) {
+        damage.primary.type = COMBAT_HEALING;
+        if (Player* player = creature->getPlayer()) {
+            int32_t compassion = player->getCharacterStat(CHARSTAT_COMPASSION);
+            if (compassion > 0) {
+                damage.primary.value += damage.primary.value * compassion * 2 / 1000;
+                player->getPosition().sendMagicEffect(CONST_ME_MAGIC_BLUE);
+            }
+        }
+    } else {
+        damage.primary.type = COMBAT_UNDEFINEDDAMAGE;
+    }
+    pushBoolean(L, g_game.combatChangeHealth(nullptr, creature, damage));
+    return 1;
 }
 
 int LuaScriptInterface::luaCreatureGetMaxHealth(lua_State* L)

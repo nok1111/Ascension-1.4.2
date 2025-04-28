@@ -1,5 +1,6 @@
 local characterStatsPoints = 84590
 local characterStatsLevel = 85590
+local STORAGE_FREE_STAT_RESETS = 86590
 
 local statIndexByName = {
   ["strength"] = CHARSTAT_STRENGTH,
@@ -7,7 +8,11 @@ local statIndexByName = {
   ["dexterity"] = CHARSTAT_DEXTERITY,
   ["vitality"] = CHARSTAT_VITALITY,
   ["spirit"] = CHARSTAT_SPIRIT,
-  ["wisdom"] = CHARSTAT_WISDOM
+  ["wisdom"] = CHARSTAT_WISDOM,
+  ["luck"] = CHARSTAT_LUCK,
+  ["resilience"] = CHARSTAT_RESILIENCE,
+  ["compassion"] = CHARSTAT_COMPASSION,
+  ["voracity"] = CHARSTAT_VORACITY
 }
 
 local statNameByIndex = {
@@ -16,7 +21,11 @@ local statNameByIndex = {
   [CHARSTAT_DEXTERITY] = "dexterity",
   [CHARSTAT_VITALITY] = "vitality",
   [CHARSTAT_SPIRIT] = "spirit",
-  [CHARSTAT_WISDOM] = "wisdom"
+  [CHARSTAT_WISDOM] = "wisdom",
+  [CHARSTAT_LUCK] = "Luck (Dodge+Loot)",
+  [CHARSTAT_RESILIENCE] = "resilience",
+  [CHARSTAT_COMPASSION] = "compassion",
+  [CHARSTAT_VORACITY] = "voracity"
 }
 
 local valuePerStat = {
@@ -25,7 +34,11 @@ local valuePerStat = {
   [CHARSTAT_DEXTERITY] = 1,
   [CHARSTAT_VITALITY] = 1,
   [CHARSTAT_SPIRIT] = 1,
-  [CHARSTAT_WISDOM] = 1
+  [CHARSTAT_WISDOM] = 1,
+  [CHARSTAT_LUCK] = 1,
+  [CHARSTAT_RESILIENCE] = 1,
+  [CHARSTAT_COMPASSION] = 1,
+  [CHARSTAT_VORACITY] = 1
 }
 
 local maxValues = {
@@ -34,7 +47,11 @@ local maxValues = {
   [CHARSTAT_DEXTERITY] = 65,
   [CHARSTAT_VITALITY] = 999,
   [CHARSTAT_SPIRIT] = 999,
-  [CHARSTAT_WISDOM] = 30
+  [CHARSTAT_WISDOM] = 30,
+  [CHARSTAT_LUCK] = 999,
+  [CHARSTAT_RESILIENCE] = 999,
+  [CHARSTAT_COMPASSION] = 999,
+  [CHARSTAT_VORACITY] = 999
 }
 
 local StatsConfig = {
@@ -272,21 +289,37 @@ function removeStat(player, data)
 end
 
 function resetStats(player)
-  for i = CHARSTAT_FIRST, CHARSTAT_LAST do
-    local points = player:getStorageValue(characterStatsPoints + i + 1)
-    if points > 0 then
-      player:setStorageValue(characterStatsPoints + i + 1, -1)
-      player:addStatsPoints(points, true)
+    -- Check for free restarts
+    local freeRestarts = player:getStorageValue(STORAGE_FREE_STAT_RESETS) or 0
+    local availablePoints = player:getStatsPoints()
+    
+    if freeRestarts <= 0 and availablePoints <= 0 then
+        player:sendTextMessage(MESSAGE_STATUS_WARNING, "You don't have any stat reset points left.")
+        return false
     end
-  end
+    
+    -- Deduct free restart if used
+    if freeRestarts > 0 then
+        player:setStorageValue(STORAGE_FREE_STAT_RESETS, freeRestarts - 1)
+    end
+    
+    -- Original reset logic
+    for i = CHARSTAT_FIRST, CHARSTAT_LAST do
+        local points = player:getStorageValue(characterStatsPoints + i + 1)
+        if points > 0 then
+            player:setStorageValue(characterStatsPoints + i + 1, -1)
+            player:addStatsPoints(points, true)
+        end
+    end
 
-  for i = CHARSTAT_FIRST, CHARSTAT_LAST do
-    local points = player:getCharacterStat(i)
-    player:setCharacterStat(i, 0)
-    player:addStatsPoints(points, true)
-  end
+    for i = CHARSTAT_FIRST, CHARSTAT_LAST do
+        local points = player:getCharacterStat(i)
+        player:setCharacterStat(i, 0)
+        player:addStatsPoints(points, true)
+    end
 
-  player:updateCharacterStats()
+    player:updateCharacterStats()
+    return true
 end
 
 function Player:updateCharacterStats()

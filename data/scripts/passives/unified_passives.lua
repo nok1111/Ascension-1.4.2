@@ -235,6 +235,25 @@ local PASSIVES = {
       player:getPosition():sendMagicEffect(379)
       return damage
     end
+  },
+  
+  -- Luck Dodge System
+  luck_dodge = {
+    trigger = function(player, creature, damage, origin)
+      return true
+    end,
+    effect = function(player, creature, damage)
+      local luck = player:getCharacterStat(CHARSTAT_LUCK)
+      if luck <= 0 then return damage end
+      
+      local chance = math.min(luck * 0.001, 0.25) -- 0.1% per point, 25% cap
+      
+      if math.random() < chance then
+        player:getPosition():sendMagicEffect(CONST_ME_DODGE)
+        return 0
+      end
+      return damage
+    end
   }
 }
 
