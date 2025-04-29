@@ -74,6 +74,7 @@ end
 if creature and target and creature:isPlayer() and target:isMonster() then -- and target:isMonster()
 		
 		target:registerEvent("quests_kill_drops") 
+        target:registerEvent("LuckDrops") 
 end
 --ScarabDeath
 

@@ -1,4 +1,3 @@
-
 local characterStatsPoints = 84590
 local characterStatsLevel = 85590
 local STORAGE_FREE_STAT_RESETS = 86590
@@ -359,4 +358,16 @@ function Player:getStatsPoints()
   end
 
   return val
+end
+
+function getStatValue(player, statName)
+    local statIndex = statIndexByName[statName:lower()]
+    if not statIndex then return 0 end
+    
+    -- Get base stat value (1 point = 1% bonus)
+    local statPoints = player:getStorageValue(characterStatsPoints + statIndex) or 0
+    local baseValue = valuePerStat[statIndex] or 0
+    
+    -- Calculate total value (points * base value)
+    return statPoints * baseValue
 end
