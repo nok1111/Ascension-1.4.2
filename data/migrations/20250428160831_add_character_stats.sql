@@ -1,15 +1,14 @@
 -- Migration to add new character stats columns
 ALTER TABLE `players`
-ADD COLUMN `charstat_luck` INT NOT NULL DEFAULT 0 AFTER `skill_fist_tries`,
-ADD COLUMN `charstat_resilience` INT NOT NULL DEFAULT 0 AFTER `charstat_luck`,
-ADD COLUMN `charstat_compassion` INT NOT NULL DEFAULT 0 AFTER `charstat_resilience`,
-ADD COLUMN `charstat_voracity` INT NOT NULL DEFAULT 0 AFTER `charstat_compassion`,
-ADD COLUMN `charstat_dexterity` INT NOT NULL DEFAULT 0 AFTER `charstat_voracity`;
+ADD COLUMN `stat_luck` INT NOT NULL DEFAULT 0 AFTER `stat_wis`,
+ADD COLUMN `stat_res` INT NOT NULL DEFAULT 0 AFTER `stat_luck`,
+ADD COLUMN `stat_com` INT NOT NULL DEFAULT 0 AFTER `stat_res`,
+ADD COLUMN `stat_vor` INT NOT NULL DEFAULT 0 AFTER `stat_com`,
 
 -- Update existing players with default values
 UPDATE `players` SET 
-`charstat_luck` = 0,
-`charstat_resilience` = 0,
-`charstat_compassion` = 0,
-`charstat_voracity` = 0,
-`charstat_dexterity` = 0;
+`stat_luck` = 0,
+`stat_res` = 0,
+`stat_com` = 0,
+`stat_vor` = 0,
+

@@ -867,10 +867,7 @@ void Combat::doTargetCombat(Creature* caster, Creature* target, CombatDamage& da
 				}
 			}
 		}
-		if (uniform_random(1, 10000) <= target->getCharacterStat(CHARSTAT_LUCK) * 10) {
-			g_game.addMagicEffect(target->getPosition(), CONST_ME_DODGE);
-			return; // Attack misses
-		}
+
 		if (g_game.combatBlockHit(damage, caster, target, params.blockedByShield, params.blockedByArmor, params.itemId != 0, params.ignoreResistances)) {
 			return;
 		}
@@ -893,21 +890,12 @@ void Combat::doTargetCombat(Creature* caster, Creature* target, CombatDamage& da
 			}
 		}
 
-		// Damage reduction from Resilience
-		damage.primary.value *= (1 - (target->getCharacterStat(CHARSTAT_RESILIENCE) * 0.001));
 
-		// Life steal from Voracity
-		if (casterPlayer->getCharacterStat(CHARSTAT_VORACITY) > 0) {
-			int32_t steal = damage.primary.value * casterPlayer->getCharacterStat(CHARSTAT_VORACITY) * 12 / 10000;
-			casterPlayer->addHealth(steal);
-			g_game.addMagicEffect(caster->getPosition(), CONST_ME_LIFEDRAIN);
-		}
 
 		if (damage.primary.type == COMBAT_HEALING && caster && caster->getPlayer()) {
 			int32_t compassion = caster->getPlayer()->getCharacterStat(CHARSTAT_COMPASSION);
 			if (compassion > 0) {
 				damage.primary.value += damage.primary.value * compassion * 2 / 1000; // +0.2% per point
-				caster->getPosition().sendMagicEffect(CONST_ME_MAGIC_BLUE);
 			}
 		}
 
@@ -1112,30 +1100,18 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 
 	
 
-		// Damage reduction from Resilience
-		damageCopy.primary.value *= (1 - (creature->getCharacterStat(CHARSTAT_RESILIENCE) * 0.001));
-
-		// Life steal from Voracity
-		if (casterPlayer->getCharacterStat(CHARSTAT_VORACITY) > 0) {
-			int32_t steal = damageCopy.primary.value * casterPlayer->getCharacterStat(CHARSTAT_VORACITY) * 12 / 10000;
-			casterPlayer->addHealth(steal);
-			g_game.addMagicEffect(caster->getPosition(), CONST_ME_LIFEDRAIN);
-		}
+		
 
 		if (damageCopy.primary.type == COMBAT_HEALING && caster && caster->getPlayer()) {
 			int32_t compassion = caster->getPlayer()->getCharacterStat(CHARSTAT_COMPASSION);
 			if (compassion > 0) {
 				damageCopy.primary.value += damageCopy.primary.value * compassion * 2 / 1000; // +0.2% per point
-				caster->getPosition().sendMagicEffect(CONST_ME_MAGIC_BLUE);
 			}
 		}
 
 		bool success = false;
 		if (damageCopy.primary.type != COMBAT_MANADRAIN) {
-			if (uniform_random(1, 10000) <= creature->getCharacterStat(CHARSTAT_LUCK) * 10) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_DODGE);
-				continue; // Attack misses
-			}
+			
 			if (g_game.combatBlockHit(damageCopy, caster, creature, params.blockedByShield, params.blockedByArmor, params.itemId != 0, params.ignoreResistances)) {
 				continue;
 			}
@@ -1159,9 +1135,7 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 				}
 			}
 
-			if (damage.critical) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_CRITICAL_DAMAGE);
-			}
+			
 
 			int32_t totalDamage = std::abs(damageCopy.primary.value + damageCopy.secondary.value);
 

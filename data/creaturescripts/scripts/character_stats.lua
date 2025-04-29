@@ -1,3 +1,4 @@
+
 local characterStatsPoints = 84590
 local characterStatsLevel = 85590
 local STORAGE_FREE_STAT_RESETS = 86590
@@ -22,7 +23,7 @@ local statNameByIndex = {
   [CHARSTAT_VITALITY] = "vitality",
   [CHARSTAT_SPIRIT] = "spirit",
   [CHARSTAT_WISDOM] = "wisdom",
-  [CHARSTAT_LUCK] = "Luck (Dodge+Loot)",
+  [CHARSTAT_LUCK] = "luck",
   [CHARSTAT_RESILIENCE] = "resilience",
   [CHARSTAT_COMPASSION] = "compassion",
   [CHARSTAT_VORACITY] = "voracity"

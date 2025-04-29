@@ -2685,6 +2685,10 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CHARSTAT_VITALITY)
 	registerEnum(CHARSTAT_SPIRIT)
 	registerEnum(CHARSTAT_WISDOM)
+	registerEnum(CHARSTAT_LUCK)
+	registerEnum(CHARSTAT_RESILIENCE)
+	registerEnum(CHARSTAT_COMPASSION)
+	registerEnum(CHARSTAT_VORACITY)
 	registerEnum(CHARSTAT_FIRST)
 	registerEnum(CHARSTAT_LAST)
 
@@ -9027,7 +9031,6 @@ int LuaScriptInterface::luaCreatureAddHealth(lua_State* L)
             int32_t compassion = player->getCharacterStat(CHARSTAT_COMPASSION);
             if (compassion > 0) {
                 damage.primary.value += damage.primary.value * compassion * 2 / 1000;
-                player->getPosition().sendMagicEffect(CONST_ME_MAGIC_BLUE);
             }
         }
     } else {
@@ -12857,7 +12860,7 @@ int LuaScriptInterface::luaMonsterGetDifficulty(lua_State* L)
 }
 
 int LuaScriptInterface::luaMonsterSetLevel(lua_State* L) {
-    Monster* monster = getUserdata<Monster>(L, 1);
+	Monster* monster = getUserdata<Monster>(L, 1);
     if (monster) {
         uint32_t level = getNumber<uint32_t>(L, 2);
         if (level > 0) { // Validate against level cap

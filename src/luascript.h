@@ -1165,6 +1165,8 @@ class LuaScriptInterface
 		static int luaMonsterWalkToSpawn(lua_State* L);
 		static int luaMonsterGetDifficulty(lua_State* L);
 
+		static int luaMonsterSetLevel(lua_State* L);
+
 		// Npc
 		static int luaNpcCreate(lua_State* L);
 

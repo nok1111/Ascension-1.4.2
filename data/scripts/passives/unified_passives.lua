@@ -237,24 +237,77 @@ local PASSIVES = {
     end
   },
   
-  -- Luck Dodge System
+  -- Luck Dodge (CHARSTAT_LUCK)
   luck_dodge = {
-    trigger = function(player, creature, damage, origin)
-      return true
+    trigger = function(player, attacker, damage, origin)
+      return true -- Always check for dodge chance
     end,
-    effect = function(player, creature, damage)
-      local luck = player:getCharacterStat(CHARSTAT_LUCK)
-      if luck <= 0 then return damage end
-      
-      local chance = math.min(luck * 0.001, 0.25) -- 0.1% per point, 25% cap
-      
-      if math.random() < chance then
-        player:getPosition():sendMagicEffect(CONST_ME_DODGE)
-        return 0
+    effect = function(player, attacker, damage)
+      local luckChance = player:getCharacterStat(CHARSTAT_LUCK) * 10 -- 0.1% per point (1000 = 100%)
+      if math.random(1, 10000) <= luckChance then
+        player:getPosition():sendMagicEffect(CONST_ME_685)
+        return 0 -- Full dodge
       end
       return damage
     end
-  }
+  },
+  
+  -- Compassion Shield (CHARSTAT_COMPASSION)
+  compassion_shield = {
+    trigger = function(player, attacker, damage, origin)
+      return true -- Always reduce damage
+    end,
+    effect = function(player, attacker, damage)
+      local reduction = player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003 -- 0.3% per point
+      return damage * (1 - reduction)
+    end
+  },
+  
+  -- Voracity Leech (CHARSTAT_VORACITY)
+  voracity_leech = {
+    trigger = function(player, target, damage, origin)
+      return origin ~= ORIGIN_HEALING -- Don't leech from heals
+    end,
+    effect = function(player, target, damage)
+      local leechPercent = player:getCharacterStat(CHARSTAT_VORACITY) * 0.002 -- 0.2% per point
+      local healAmount = math.floor(damage * leechPercent)
+      player:addHealth(healAmount)
+      player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+      return damage -- Return original damage
+    end
+  },
+  
+  -- Luck Dodge System
+  luck_dodge_stat = {
+    trigger = function(player, attacker, damage, primaryType)
+      local luckChance = player:getCharacterStat(CHARSTAT_LUCK) * 10 -- 0.1% per point (1000 = 100%)
+      if math.random(1, 10000) <= luckChance then
+        player:getPosition():sendMagicEffect(CONST_ME_685)
+        return true
+      end
+      return false
+    end,
+    eventType = "onHealthChange"
+  },
+
+  compassion_shield_stat = {
+    effect = function(player, damage)
+      local reduction = player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003 -- 0.3% reduction per point
+      return damage * (1 - reduction)
+    end,
+    eventType = "onHealthChange"
+  },
+
+  voracity_leech_stat = {
+    effect = function(player, damage, target)
+      local leechPercent = player:getCharacterStat(CHARSTAT_VORACITY) * 0.0020   -- 0.2% leech per point
+      local healAmount = math.floor(damage * leechPercent)
+      player:addHealth(healAmount)
+      player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+      return damage
+    end,
+    eventType = "onTargetCombat"
+  },
 }
 
 -- Health change handler
@@ -360,8 +413,8 @@ function loginEvent.onLogin(player)
 end
 
 -- Target combat handler to register events
-local targetCombatEvent = EventCallback()
-function targetCombatEvent.onTargetCombat(creature, target)
+local TargetCombatEvent = EventCallback
+TargetCombatEvent.onTargetCombat = function(creature, target)
   if target:isPlayer() then
     target:registerEvent("UnifiedPassives")
     target:registerEvent("NecroprophagyDeath")
@@ -379,6 +432,6 @@ deathEvent:register()
 loginEvent:type("login")
 loginEvent:register()
 
-targetCombatEvent:register()
+TargetCombatEvent:register()
 
 print(">> Unified passives system loaded")
