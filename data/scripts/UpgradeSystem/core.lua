@@ -32,11 +32,13 @@ function us_onEquip(cid, iuid, slot)
     if not player:getSlotItem(slot) then
         return
     end
+    
     iuid = iuid + 1
     local slotUid = player:getSlotItem(slot):getUniqueId()
     if iuid ~= slotUid then
         return
     end
+    
     local item = Item(iuid)
     if player and item then
         local maxHP = player:getMaxHealth()
@@ -51,15 +53,18 @@ function us_onEquip(cid, iuid, slot)
             local bonusId = value[1]
             local bonusValue = value[2]
             local attr = US_ENCHANTMENTS[bonusId]
+            
             if attr then
                 if attr.combatType == US_TYPES.CONDITION then
                     if not US_CONDITIONS[bonusId] then
                         US_CONDITIONS[bonusId] = {}
                     end
+                    
                     local itemId = item:getId()
                     if not US_CONDITIONS[bonusId][bonusValue] then
                         US_CONDITIONS[bonusId][bonusValue] = {}
                     end
+                    
                     if not US_CONDITIONS[bonusId][bonusValue][itemId] then
                         US_CONDITIONS[bonusId][bonusValue][itemId] = Condition(attr.condition)
                         if attr.condition ~= CONDITION_MANASHIELD then
@@ -69,13 +74,16 @@ function us_onEquip(cid, iuid, slot)
                         else
                             US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(CONDITION_PARAM_TICKS, 86400000)
                         end
+                        
                         US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
                         player:addCondition(US_CONDITIONS[bonusId][bonusValue][itemId])
+                        
                         if attr == BONUS_TYPE_MAXHP then
                             if player:getHealth() == maxHP then
                                 player:addHealth(player:getMaxHealth())
                             end
                         end
+                        
                         if attr == BONUS_TYPE_MAXMP then
                             if player:getMana() == maxMP then
                                 player:addMana(player:getMaxMana())
@@ -88,6 +96,7 @@ function us_onEquip(cid, iuid, slot)
                                 player:addHealth(player:getMaxHealth())
                             end
                         end
+                        
                         if attr.param == CONDITION_PARAM_STAT_MAXMANAPOINTS then
                             if player:getMana() == maxMP then
                                 player:addMana(player:getMaxMana())
@@ -174,7 +183,7 @@ MoveItemEvent:register()
 
 local ItemMovedEvent = EventCallback
 ItemMovedEvent.onItemMoved = function(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
-    if not item:getType():isUpgradable() then
+    if not item or not item:getType() or not item:getType():isUpgradable() then
         return
     end
     if toPosition.y <= CONST_SLOT_AMMO and toPosition.y ~= CONST_SLOT_BACKPACK then
@@ -853,21 +862,7 @@ function us_CheckCorpse(monsterType, corpsePosition, killerId)
     end
 	local killerlvl = killer:getLevel() / 2
     local iLvl = killerlvl
-    if iLvl >= US_CONFIG.CRYSTAL_FOSSIL_DROP_LEVEL then
-      if math.random(US_CONFIG.CRYSTAL_FOSSIL_DROP_CHANCE) == 1 then
-        corpse:addItem(US_CONFIG.CRYSTAL_FOSSIL, 1)
-        local specs = Game.getSpectators(corpsePosition, false, true, 9, 9, 8, 8)
-        if #specs > 0 then
-          for i = 1, #specs do
-            local player = specs[i]
-           -- player:say("Mystic Pouch!", TALKTYPE_MONSTER_SAY, false, player, corpsePosition)
-			Game.sendAnimatedText("Mystic Pouch!", corpsePosition, TEXTCOLOR_ELECTRICPURPLE)
-			corpsePosition:sendMagicEffect(12)
-			corpsePosition:sendMagicEffect(285)
-          end
-        end
-      end
-    end
+
     for i = 0, corpse:getCapacity() do
       local item = corpse:getItem(i)
       if item then
@@ -1039,7 +1034,7 @@ LookEvent.onLook = function(player, thing, position, distance, description)
         description = description:gsub("(%)%.?)", "%1\nItem Level: " .. itemLevel)
       end
     end
-  elseif thing:isPlayer() then
+    elseif thing:isPlayer() then
     local iLvl = 0
     for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
       local item = thing:getSlotItem(slot)
