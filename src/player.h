@@ -532,6 +532,8 @@ class Player final : public Creature, public Cylinder
 
 		Item* getInventoryItem(slots_t slot) const;
 
+		slots_t getInventorySlotByItem(Item* aItem) const;
+
 		bool isItemAbilityEnabled(slots_t slot) const {
 			return inventoryAbilities[slot];
 		}
