@@ -153,6 +153,7 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_BLOCKING,
 	ITEM_PARSE_ALLOWDISTREAD,
 	ITEM_PARSE_STOREITEM,
+	ITEM_PARSE_ATTACKSPEED,
 };
 
 struct Abilities {
@@ -268,7 +269,7 @@ class ItemType
 			if (showCount == 0) {
 				return name;
 			}
-
+			
 			if (name.empty() || name.back() == 's') {
 				return name;
 			}

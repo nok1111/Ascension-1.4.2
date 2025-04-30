@@ -1454,6 +1454,9 @@ std::string getSpecialSkillName(uint8_t skillid)
 		case SPECIALSKILL_MANALEECHAMOUNT:
 			return "mana points leech amount";
 
+		case SPECIALSKILL_ATTACKSPEED:
+			return "attack speed";
+
 		default:
 			return "unknown";
 	}

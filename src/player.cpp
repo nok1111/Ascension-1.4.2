@@ -400,13 +400,17 @@ int32_t Player::getDefense() const
 
 uint32_t Player::getAttackSpeed() const
 {
-	uint32_t ret = vocation->getAttackSpeed();
-	if (isDualWielding()) {
-		ret = vocation->getAttackSpeed() / 1.2;
-	}
-	ret = ret - (ret * getCharacterStat(CHARSTAT_DEXTERITY) * 0.5 / 100.0);
-
-	return ret;
+    uint32_t ret = vocation->getAttackSpeed();
+    if (isDualWielding()) {
+        ret = vocation->getAttackSpeed() / 1.2;
+    }
+    // Combine dexterity and attack speed skill as percentage modifiers
+    double dexterityPercent = getCharacterStat(CHARSTAT_DEXTERITY) * 0.5;
+    double attackSpeedPercent = getSpecialSkill(SPECIALSKILL_ATTACKSPEED);
+    double totalPercent = dexterityPercent + attackSpeedPercent;
+    ret = ret - (ret * totalPercent / 100.0);
+    ret = std::max<uint32_t>(1, ret);
+    return ret;
 }
 
 float Player::getAttackFactor() const

@@ -736,6 +736,11 @@ bool ConditionAttributes::setParam(ConditionParam_t param, int32_t value)
 			return true;
 		}
 
+		case CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED: {
+			specialSkills[SPECIALSKILL_ATTACKSPEED] = value;
+			return true;
+		}
+
 		case CONDITION_PARAM_AGGRESSIVE: {
 			aggressive = (value != 0);
 			return true;
@@ -829,6 +834,9 @@ int32_t ConditionAttributes::getParam(ConditionParam_t param)
 
 		case CONDITION_PARAM_SPECIALSKILL_MANALEECHAMOUNT:
 			return specialSkills[SPECIALSKILL_MANALEECHAMOUNT];
+
+		case CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED:
+			return specialSkills[SPECIALSKILL_ATTACKSPEED];
 
 		default:
 			return ConditionGeneric::getParam(param);
