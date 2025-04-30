@@ -248,6 +248,7 @@ class ItemAttributes
 			}
 
 			template<typename T>
+
 			const T& get();
 
 			const int64_t& getInt() const {
@@ -1042,6 +1043,15 @@ class Item : virtual public Thing
 		}
 
 		bool hasMarketAttributes() const;
+
+		bool hasAttributes() const {
+			if (!attributes) {
+				return false;
+			}
+			else {
+				return true;
+			}
+		}
 
 		std::unique_ptr<ItemAttributes>& getAttributes() {
 			if (!attributes) {
