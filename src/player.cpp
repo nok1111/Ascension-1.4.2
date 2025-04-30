@@ -176,6 +176,19 @@ Item* Player::getInventoryItem(slots_t slot) const
 	return inventory[slot];
 }
 
+slots_t Player::getInventorySlotByItem(Item* aItem) const
+{
+	for (int i = CONST_SLOT_FIRST; i <= CONST_SLOT_LAST; ++i) {
+		const Item* item = inventory[i];
+		if (item) {
+			if (item == aItem) {
+				return (slots_t)i;
+			}
+		}
+	}
+	return CONST_SLOT_WHEREEVER;
+}
+
 void Player::addConditionSuppressions(uint32_t conditions)
 {
 	conditionSuppressions |= conditions;
@@ -3078,6 +3091,7 @@ void Player::postAddNotification(Thing* thing, const Cylinder* oldParent, int32_
 	if (link == LINK_OWNER) {
 		//calling movement scripts
 		g_moveEvents->onPlayerEquip(this, thing->getItem(), static_cast<slots_t>(index), false);
+		g_events->eventPlayerOnInventoryUpdate(this, thing->getItem(), static_cast<slots_t>(index), true);
 	}
 
 	bool requireListUpdate = false;
@@ -3132,6 +3146,7 @@ void Player::postRemoveNotification(Thing* thing, const Cylinder* newParent, int
 	if (link == LINK_OWNER) {
 		//calling movement scripts
 		g_moveEvents->onPlayerDeEquip(this, thing->getItem(), static_cast<slots_t>(index));
+		g_events->eventPlayerOnInventoryUpdate(this, thing->getItem(), static_cast<slots_t>(index), false);
 	}
 
 	bool requireListUpdate = false;

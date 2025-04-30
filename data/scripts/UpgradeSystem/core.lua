@@ -109,121 +109,6 @@ function us_onEquip(cid, iuid, slot)
     end
 end
 
-local MoveItemEvent = EventCallback
-MoveItemEvent.onMoveItem = function(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
-    if not item:getType():isUpgradable() and not item:getType():canHaveItemLevel() or toPosition.y == CONST_SLOT_AMMO then
-        return true
-    end
-
-    if not item:getType():usesSlot(toPosition.y) then
-        return true
-    end
-
-    if item:isUnidentified() then
-        if toPosition.y <= CONST_SLOT_AMMO and toPosition.y ~= CONST_SLOT_BACKPACK then
-            player:sendTextMessage(MESSAGE_STATUS_SMALL, "You can't wear unidentified items.")
-            return false
-        end
-    end
-
-    if US_CONFIG.REQUIRE_LEVEL == true then
-        if player:getLevel() < item:getItemLevel() and not item:isLimitless() then
-            if toPosition.y <= CONST_SLOT_AMMO and toPosition.y ~= CONST_SLOT_BACKPACK then
-                player:sendTextMessage(MESSAGE_STATUS_SMALL, "You need higher level to equip that item.")
-                return false
-            end
-        end
-    end
-
-    if toPosition.y <= CONST_SLOT_AMMO then
-        if toPosition.y ~= CONST_SLOT_BACKPACK then
-            if fromPosition.y >= 64 or fromPosition.x ~= CONTAINER_POSITION then
-                -- remove old
-                local oldItem = player:getSlotItem(toPosition.y)
-                if oldItem then
-                    if oldItem:getType():isUpgradable() then
-                        local oldBonuses = oldItem:getBonusAttributes()
-                        if oldBonuses then
-                            local itemId = oldItem:getId()
-                            for key, value in pairs(oldBonuses) do
-                                local attr = US_ENCHANTMENTS[value[1]]
-                                if attr then
-                                    if attr.combatType == US_TYPES.CONDITION then
-                                        if US_CONDITIONS[value[1]] and US_CONDITIONS[value[1]][value[2]] and US_CONDITIONS[value[1]][value[2]][itemId] then
-                                            if US_CONDITIONS[value[1]][value[2]][itemId]:getType() ~= CONDITION_MANASHIELD then
-                                                player:removeCondition(
-                                                    US_CONDITIONS[value[1]][value[2]][itemId]:getType(),
-                                                    CONDITIONID_COMBAT,
-                                                    US_CONDITIONS[value[1]][value[2]][itemId]:getSubId()
-                                                )
-                                            else
-                                                player:removeCondition(US_CONDITIONS[value[1]][value[2]][itemId]:getType(), CONDITIONID_COMBAT)
-                                            end
-                                        end
-                                    end
-                                end
-                            end
-                        end
-                    end
-                end
-                -- apply new
-                if item:getType():isUpgradable() then
-                    local newBonuses = item:getBonusAttributes()
-                    if newBonuses then
-                        addEvent(us_onEquip, 10, player:getId(), item:getUniqueId(), toPosition.y)
-                    end
-                end
-            end
-        end
-    end
-
-    return true
-end
-MoveItemEvent:register()
-
-local ItemMovedEvent = EventCallback
-ItemMovedEvent.onItemMoved = function(player, item, count, fromPosition, toPosition, fromCylinder, toCylinder)
-    if not item or not item:getType() or not item:getType():isUpgradable() then
-        return
-    end
-    if toPosition.y <= CONST_SLOT_AMMO and toPosition.y ~= CONST_SLOT_BACKPACK then
-        return
-    end
-    if fromPosition.y >= 64 and toPosition.y >= 64 then
-        return
-    end
-    if fromPosition.y >= 64 and toPosition.y == CONST_SLOT_BACKPACK then
-        return
-    end
-
-    local bonuses = item:getBonusAttributes()
-    if bonuses then
-        local itemId = item:getId()
-        for i = 1, #bonuses do
-            local value = bonuses[i]
-            local bonusId = value[1]
-            local bonusValue = value[2]
-            local attr = US_ENCHANTMENTS[bonusId]
-            if attr then
-                if attr.combatType == US_TYPES.CONDITION then
-                    if US_CONDITIONS[bonusId] and US_CONDITIONS[bonusId][bonusValue] and US_CONDITIONS[bonusId][bonusValue][itemId] then
-                        if US_CONDITIONS[bonusId][bonusValue][itemId]:getType() ~= CONDITION_MANASHIELD then
-                            player:removeCondition(
-                                US_CONDITIONS[bonusId][bonusValue][itemId]:getType(),
-                                CONDITIONID_COMBAT,
-                                US_CONDITIONS[bonusId][bonusValue][itemId]:getSubId()
-                            )
-                        else
-                            player:removeCondition(US_CONDITIONS[bonusId][bonusValue][itemId]:getType(), CONDITIONID_COMBAT)
-                        end
-                    end
-                end
-            end
-        end
-    end
-end
-ItemMovedEvent:register()
-
 function us_onLogin(player)
     player:registerEvent("UpgradeSystemKill")
     player:registerEvent("UpgradeSystemHealth")
@@ -1047,6 +932,48 @@ LookEvent.onLook = function(player, thing, position, distance, description)
   return description
 end
 LookEvent:register(10)
+
+function Player:onInventoryUpdate(item, slot, equip)
+    -- Skip non-equipment slots
+    if slot > CONST_SLOT_AMMO then
+        return true
+    end
+
+    -- Debug logging
+    print(string.format(
+        "[UpgradeSystem] %s - Slot: %d, Item: %s",
+        equip and "EQUIP" or "UNEQUIP",
+        slot,
+        item and item:getName() or "none"
+    ))
+
+    -- Handle equip
+    if equip then
+        -- Validate item
+        if not item or not item:getType() or not item:getType():isUpgradable() then
+            return true
+        end
+
+        -- Check unidentified
+        if item:isUnidentified() then
+            self:sendTextMessage(MESSAGE_STATUS_SMALL, "You can't wear unidentified items.")
+            return false
+        end
+
+        -- Check level requirements
+        if US_CONFIG.REQUIRE_LEVEL and self:getLevel() < item:getItemLevel() and not item:isLimitless() then
+            self:sendTextMessage(MESSAGE_STATUS_SMALL, "You need higher level to equip that item.")
+            return false
+        end
+
+        -- Process equip
+        us_onEquip(self:getId(), item:getUniqueId(), slot)
+    else
+        -- Handle unequip (add logic if needed)
+    end
+
+    return true
+end
 
 function Item.rollAttribute(self, player, itemType, weaponType, unidentify)
  if not itemType:isUpgradable() or self:isUnique() then

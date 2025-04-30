@@ -320,3 +320,9 @@ function Player:onSpellCheck(spell)
 
 	return true
 end
+
+function Player:onInventoryUpdate(item, slot, equip)
+	if hasEventCallback(EVENT_CALLBACK_ONINVENTORYUPDATE) then
+		EventCallback(EVENT_CALLBACK_ONINVENTORYUPDATE, self, item, slot, equip)
+	end
+end

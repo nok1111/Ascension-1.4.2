@@ -4612,6 +4612,7 @@
 	<item id="2472" article="a" name="magic plate armor">
 		<attribute key="weight" value="8500" />
 		<attribute key="armor" value="17" />
+		<attribute key="maxmanapointspercent" value="110" />
 		<attribute key="slotType" value="body" />
 	</item>
 	<item id="2473" article="a" name="viking helmet">

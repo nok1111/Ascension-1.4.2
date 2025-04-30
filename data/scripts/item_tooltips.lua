@@ -111,13 +111,13 @@ function Item:buildTooltip()
     clientId = itemType:getClientId()
   }
 
-  if itemType:getDescription():len() > 0 then
-    item_data.desc = itemType:getDescription()
-  end
-
-  --[[if self:getType():isUpgradable() or self:getType():canHaveItemLevel() then
+  if self:getType():isUpgradable() or self:getType():canHaveItemLevel() then
     item_data.itemLevel = self:getItemLevel()
-  end]]
+  end
+ 
+    if itemType:getDescription():len() > 0 then
+      item_data.desc = itemType:getDescription()
+    end
 
   if itemType:getRequiredLevel() >= 1 then
     --if not self:isLimitless() then
@@ -184,29 +184,22 @@ function Item:buildTooltip()
   end
 
   local healthGain = itemType:getHealthGain()
-  if healthGain and healthGain > 0 then
-    implicit.hpgain = healthGain
-  end
-
   local healthTicks = itemType:getHealthTicks()
-  if healthTicks and healthTicks > 0 then
-    implicit.hpticks = healthTicks
+  if healthGain and healthGain > 0 then
+    implicit.hpregen = string.format("Health Regen: +%d HP every %.1fs", healthGain, (healthTicks or 1000)/1000)
   end
 
   local manaGain = itemType:getManaGain()
-  if manaGain and manaGain > 0 then
-    implicit.mpgain = manaGain
-  end
-
   local manaTicks = itemType:getManaTicks()
-  if manaTicks and manaTicks > 0 then
-    implicit.mpticks = manaTicks
+  if manaGain and manaGain > 0 then
+    implicit.mpregen = string.format("Mana Regen: +%d MP every %.1fs", manaGain, (manaTicks or 1000)/1000)
   end
 
   local speed = itemType:getSpeed()
   if speed and speed > 0 then
     implicit.speed = speed
   end
+
 
   if self:isContainer() then
     implicit.cap = self:getCapacity()
@@ -216,31 +209,31 @@ function Item:buildTooltip()
     item_data.imp = implicit
   end
 
-  -- if self:getType():isUpgradable() then
-    -- if self:isUnidentified() then
-      -- item_data.unidentified = true
-    -- else
-      -- item_data.uLevel = self:getUpgradeLevel()
-      -- if self:isMirrored() then
-        -- item_data.mirrored = true
-      -- end
-      -- if self:isUnique() then
-        -- item_data.uniqueName = self:getUniqueName()
-      -- end
-      -- item_data.rarityId = self:getRarityId()
-      -- item_data.maxAttr = self:getMaxAttributes()
-      -- item_data.attr = {}
-      -- for i = self:getMaxAttributes(), 1, -1 do
-        -- local enchant = self:getBonusAttribute(i)
-        -- if enchant then
-          -- local attr = US_ENCHANTMENTS[enchant[1]]
-          -- item_data.attr[i] = attr.format(enchant[2])
-        -- else
-          -- item_data.attr[i] = "Empty Slot"
-        -- end
-      -- end
-    -- end
-  -- end
+   if self:getType():isUpgradable() then
+     if self:isUnidentified() then
+       item_data.unidentified = true
+     else
+       item_data.uLevel = self:getUpgradeLevel()
+       if self:isMirrored() then
+         item_data.mirrored = true
+       end
+       if self:isUnique() then
+         item_data.uniqueName = self:getUniqueName()
+       end
+       item_data.rarityId = self:getRarityId()
+       item_data.maxAttr = self:getMaxAttributes()
+       item_data.attr = {}
+       for i = self:getMaxAttributes(), 1, -1 do
+         local enchant = self:getBonusAttribute(i)
+         if enchant then
+           local attr = US_ENCHANTMENTS[enchant[1]]
+           item_data.attr[i] = attr.format(enchant[2])
+        else
+           item_data.attr[i] = "Empty Slot"
+        end
+       end
+     end
+   end
 
   item_data.stackable = itemType:isStackable()
   item_data.itemType = formatItemType(itemType)
@@ -373,23 +366,15 @@ function ItemType:buildTooltip(count)
   end
 
   local healthGain = self:getHealthGain()
-  if healthGain and healthGain > 0 then
-    implicit.hpgain = healthGain
-  end
-
   local healthTicks = self:getHealthTicks()
-  if healthTicks and healthTicks > 0 then
-    implicit.hpticks = healthTicks
+  if healthGain and healthGain > 0 then
+    implicit.hpregen = string.format("Health Regen: +%d HP every %.1fs", healthGain, (healthTicks or 1000)/1000)
   end
 
   local manaGain = self:getManaGain()
-  if manaGain and manaGain > 0 then
-    implicit.mpgain = manaGain
-  end
-
   local manaTicks = self:getManaTicks()
-  if manaTicks and manaTicks > 0 then
-    implicit.mpticks = manaTicks
+  if manaGain and manaGain > 0 then
+    implicit.mpregen = string.format("Mana Regen: +%d MP every %.1fs", manaGain, (manaTicks or 1000)/1000)
   end
 
   local speed = self:getSpeed()
