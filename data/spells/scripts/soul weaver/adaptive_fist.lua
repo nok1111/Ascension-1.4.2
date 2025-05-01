@@ -63,6 +63,53 @@ local function isPartyMember(player, target)
     return party:isMember(target)
 end
 
+local stunDuration = 3500
+
+-- Tempest Fist (ice_ice) target effect logic
+local function onTargetCreature(creature, target)
+    if not target then return end
+    if target:hasCondition(CONDITION_PARALYZE) then
+        local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
+        stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
+        target:addCondition(stun)
+    else
+        local paralyze = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
+        paralyze:setParameter(CONDITION_PARAM_TICKS, 2000)
+        target:addCondition(paralyze)
+    end
+end
+
+-- Blazing Punch (fire_fire) AoE spread logic
+local function onBlazingPunchSpreadTarget(creature, target)
+    if not target or target == creature or not target:isMonster() then return end
+    local aoeCombat = Combat()
+    aoeCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+    aoeCombat:setParameter(COMBAT_PARAM_EFFECT, 41)
+    aoeCombat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_BlazingPunch")
+    aoeCombat:execute(creature, Variant(target:getId()))
+end
+
+-- Wind Fist (ice_fire/fire_ice) push logic
+local function onWindFistTarget(player, creature, pushPos, tile)
+    if not creature or creature == player or not creature:isMonster() then return end
+    if tile and tile:getTopCreature() == nil and not tile:hasProperty(CONST_PROP_BLOCKSOLID) then
+        creature:teleportTo(pushPos)
+        pushPos:sendMagicEffect(47)
+    else
+        -- Blocked, stun
+        local stun = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
+        stun:setParameter(CONDITION_PARAM_TICKS, 1500)
+        stun:setParameter(CONDITION_PARAM_SPEED, -600)
+        creature:addCondition(stun)
+    end
+    -- Deal wind damage to each
+    local combat = Combat()
+    combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+    combat:setParameter(COMBAT_PARAM_EFFECT, 47)
+    combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_WindFist")
+    combat:execute(player, Variant(creature:getId()))
+end
+
 function onCastSpell(player, variant)
     local orb1, orb2 = getActiveOrbs(player)
     if not orb1 or not orb2 then
@@ -142,54 +189,52 @@ function onCastSpell(player, variant)
                 for y = -1, 1 do
                     local pos = Position(tpos.x + x, tpos.y + y, tpos.z)
                     local c = Tile(pos):getTopCreature()
-                    if c and c ~= target and c:isMonster() then
-                        local aoeCombat = Combat()
-                        aoeCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-                        aoeCombat:setParameter(COMBAT_PARAM_EFFECT, 41)
-                        aoeCombat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_BlazingPunch")
-                        aoeCombat:execute(player, Variant(c:getId()))
-                    end
+                    onBlazingPunchSpreadTarget(player, c)
                 end
             end
         end
         player:say("Blazing Punch!", TALKTYPE_MONSTER_SAY)
 
     elseif (combination == 'ice_ice') then
-        -- Tempest Fist: AREA_WAVE4, stun
+        -- Tempest Fist: AREA_WAVE4, stun if already paralyzed
         local combat = Combat()
         combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
         combat:setParameter(COMBAT_PARAM_EFFECT, 42)
         combat:setArea(AREA_WAVE4)
         combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_TempestFist")
-        combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "function(cid, target) local stun = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT) stun:setParameter(CONDITION_PARAM_TICKS, 2000) stun:setParameter(CONDITION_PARAM_SPEED, -500) Creature(target):addCondition(stun) end")
+        combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, onTargetCreature)
         combat:execute(player, variant)
         player:say("Tempest Fist!", TALKTYPE_MONSTER_SAY)
 
     elseif (combination == 'ice_fire' or combination == 'fire_ice') then
-        -- Wind Fist: push, stun if wall
-        if target then
-            local pos = target:getPosition()
-            local dir = player:getDirection()
-            local nextPos = Position(pos)
-            nextPos:getNextPosition(dir, 1)
-            if Tile(nextPos):getTopCreature() == nil then
-                target:teleportTo(nextPos)
-                nextPos:sendMagicEffect(47)
-            else
-                -- Hit wall, stun
-                local stun = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
-                stun:setParameter(CONDITION_PARAM_TICKS, 1500)
-                stun:setParameter(CONDITION_PARAM_SPEED, -600)
-                target:addCondition(stun)
+        -- Wind Fist: push all targets in a 3-tile line, stun if blocked
+        local dir = player:getDirection()
+        local startPos = player:getPosition()
+        local length = 3
+        local pushed = false
+        for i = 1, length do
+            local pos = Position(startPos.x, startPos.y, startPos.z)
+            if dir == DIRECTION_NORTH then pos.y = pos.y - i
+            elseif dir == DIRECTION_SOUTH then pos.y = pos.y + i
+            elseif dir == DIRECTION_EAST then pos.x = pos.x + i
+            elseif dir == DIRECTION_WEST then pos.x = pos.x - i end
+            local creature = Tile(pos):getTopCreature()
+            if creature and creature ~= player and creature:isMonster() then
+                local pushPos = Position(pos.x, pos.y, pos.z)
+                if dir == DIRECTION_NORTH then pushPos.y = pushPos.y - 1
+                elseif dir == DIRECTION_SOUTH then pushPos.y = pushPos.y + 1
+                elseif dir == DIRECTION_EAST then pushPos.x = pushPos.x + 1
+                elseif dir == DIRECTION_WEST then pushPos.x = pushPos.x - 1 end
+                local tile = Tile(pushPos)
+                onWindFistTarget(player, creature, pushPos, tile)
+                pushed = true
             end
-            -- Optional: deal wind damage on push
-            local combat = Combat()
-            combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-            combat:setParameter(COMBAT_PARAM_EFFECT, 47)
-            combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_WindFist")
-            combat:execute(player, Variant(target:getId()))
         end
-        player:say("Wind Fist!", TALKTYPE_MONSTER_SAY)
+        if pushed then
+            player:say("Wind Fist!", TALKTYPE_MONSTER_SAY)
+        else
+            player:sendCancelMessage("No targets to push.")
+        end
 
     elseif (combination == 'life_life') then
         -- Restoring Fist: heal self + party
