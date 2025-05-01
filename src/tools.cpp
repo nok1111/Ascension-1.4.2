@@ -1685,8 +1685,6 @@ itemAttrTypes stringToItemAttribute(const std::string& str)
 		return ITEM_ATTRIBUTE_WRAPID;
 	} else if (str == "storeitem") {
 		return ITEM_ATTRIBUTE_STOREITEM;
-	} else if (str == "attackspeed") {
-		return ITEM_ATTRIBUTE_ATTACK_SPEED;
 	}
 	return ITEM_ATTRIBUTE_NONE;
 }

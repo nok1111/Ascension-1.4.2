@@ -298,7 +298,7 @@ class ItemType
 		std::unique_ptr<Abilities> abilities;
 		std::unique_ptr<ConditionDamage> conditionDamage;
 
-		uint32_t attackSpeed = 0;
+
 		uint32_t weight = 0;
 		uint32_t levelDoor = 0;
 		uint32_t decayTime = 0;

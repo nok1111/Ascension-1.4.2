@@ -525,15 +525,6 @@ Attr_ReadValue Item::readAttr(AttrTypes_t attr, PropStream& propStream)
 			break;
 		}
 
-		case ATTR_ATTACK_SPEED: {
-			uint32_t attackSpeed;
-			if (!propStream.read<uint32_t>(attackSpeed)) {
-				return ATTR_READ_ERROR;
-			}
-
-			setIntAttr(ITEM_ATTRIBUTE_ATTACK_SPEED, attackSpeed);
-			break;
-		}
 
 		case ATTR_DEFENSE: {
 			int32_t defense;
@@ -1033,17 +1024,6 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 				}
 			}
 
-			uint32_t attackSpeed = item ? item->getAttackSpeed() : it.attackSpeed;
-			if (attackSpeed) {
-				if (begin) {
-					begin = false;
-					s << " (";
-				} else {
-					s << ", ";
-				}
-
-				s << "Atk Spd:" << (attackSpeed / 1000.) << "s";
-			}
 
 			if (defense != 0 || extraDefense != 0) {
 				if (begin) {
@@ -1077,7 +1057,9 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 			}
 
 			for (uint8_t i = SPECIALSKILL_FIRST; i <= SPECIALSKILL_LAST; i++) {
+				std::cout << "[DEBUG] Checking special skill " << (int)i << " value: " << it.abilities->specialSkills[i] << std::endl;
 				if (!it.abilities->specialSkills[i]) {
+					std::cout << "[DEBUG] Skipping special skill " << (int)i << " (zero value)" << std::endl;
 					continue;
 				}
 
@@ -1158,7 +1140,7 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 				}
 			}
 
-			if (show == 0) {
+			if (!show) {
 				bool tmp = true;
 
 				for (size_t i = 0; i < COMBAT_COUNT; ++i) {

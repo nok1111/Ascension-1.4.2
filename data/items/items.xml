@@ -27,6 +27,7 @@
 		<attribute key="weight" value="75" />
 		<attribute key="defense" value="25" />
 		<attribute key="attack" value="46" />
+		<attribute key="attackspeed" value="10" />
 		<attribute key="weaponType" value="sword" />
 	</item>
 	    <item id="33441" article="a" name="Tier 0 Wand of Chaos">
@@ -64,6 +65,7 @@
 		<attribute key="weight" value="100" />
 		<attribute key="defense" value="30" />
 		<attribute key="attack" value="60" />
+		<attribute key="criticalhitchance" value="50" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 	</item>

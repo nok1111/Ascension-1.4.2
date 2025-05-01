@@ -887,12 +887,7 @@ class Item : virtual public Thing
 			}
 			return items[id].attack;
 		}
-		uint32_t getAttackSpeed() const {
-			if (hasAttribute(ITEM_ATTRIBUTE_ATTACK_SPEED)) {
-				return getIntAttr(ITEM_ATTRIBUTE_ATTACK_SPEED);
-			}
-			return items[id].attackSpeed;
-		}
+
 		int32_t getArmor() const {
 			if (hasAttribute(ITEM_ATTRIBUTE_ARMOR)) {
 				return getIntAttr(ITEM_ATTRIBUTE_ARMOR);

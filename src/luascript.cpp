@@ -2421,7 +2421,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(SPECIALSKILL_LIFELEECHAMOUNT)
 	registerEnum(SPECIALSKILL_MANALEECHCHANCE)
 	registerEnum(SPECIALSKILL_MANALEECHAMOUNT)
-	registerEnum(SPECIALSKILL_ATTACKSPEED);
+	registerEnum(SPECIALSKILL_ATTACKSPEED)
 
 		//TOOLTIPS
 		registerEnum(STAT_MAGICPOINTS)
@@ -3586,7 +3586,6 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("ItemType", "getShootRange", LuaScriptInterface::luaItemTypeGetShootRange);
 
 	registerMethod("ItemType", "getAttack", LuaScriptInterface::luaItemTypeGetAttack);
-	registerMethod("ItemType", "getAttackSpeed", LuaScriptInterface::luaItemTypeGetAttackSpeed);
 	registerMethod("ItemType", "getDefense", LuaScriptInterface::luaItemTypeGetDefense);
 	registerMethod("ItemType", "getExtraDefense", LuaScriptInterface::luaItemTypeGetExtraDefense);
 	registerMethod("ItemType", "getArmor", LuaScriptInterface::luaItemTypeGetArmor);
@@ -14308,17 +14307,7 @@ int LuaScriptInterface::luaItemTypeGetAttack(lua_State* L)
 	return 1;
 }
 
-int LuaScriptInterface::luaItemTypeGetAttackSpeed(lua_State* L)
-{
-	// itemType:getAttackSpeed()
-	const ItemType* itemType = getUserdata<const ItemType>(L, 1);
-	if (itemType) {
-		lua_pushnumber(L, itemType->attackSpeed);
-	} else {
-		lua_pushnil(L);
-	}
-	return 1;
-}
+
 
 int LuaScriptInterface::luaItemTypeGetDefense(lua_State* L)
 {

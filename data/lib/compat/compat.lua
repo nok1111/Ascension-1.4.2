@@ -1482,7 +1482,8 @@ do
 		[SPECIALSKILL_LIFELEECHCHANCE] = 'hitpoints leech chance',
 		[SPECIALSKILL_LIFELEECHAMOUNT] = 'hitpoints leech amount',
 		[SPECIALSKILL_MANALEECHCHANCE] = 'manapoints leech chance',
-		[SPECIALSKILL_MANALEECHAMOUNT] = 'manapoints leech amount'
+		[SPECIALSKILL_MANALEECHAMOUNT] = 'manapoints leech amount',
+		[SPECIALSKILL_ATTACKSPEED] = 'attack speed',
 	}
 
 	function getSpecialSkillName(specialSkill)

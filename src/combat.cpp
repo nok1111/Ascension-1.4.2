@@ -881,11 +881,12 @@ void Combat::doTargetCombat(Creature* caster, Creature* target, CombatDamage& da
 
 			if (!damage.critical && damage.primary.type != COMBAT_HEALING && damage.origin != ORIGIN_CONDITION) {
 				uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE);
-				uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_CRITICALHITAMOUNT);
-				if (chance > 0 && skill > 0 && normal_random(1, 100) <= chance) {
-					damage.primary.value += std::round(damage.primary.value * (skill / 100.));
-					damage.secondary.value += std::round(damage.secondary.value * (skill / 100.));
+std::cout << "Critical hit chance: " << chance << "%" << std::endl;
+				if (chance > 0 && normal_random(1, 100) <= chance) {
+					damage.primary.value = std::round(damage.primary.value * 1.8); // 180% damage
+					damage.secondary.value = std::round(damage.secondary.value * 1.8);
 					damage.critical = true;
+
 				}
 			}
 		}
@@ -919,7 +920,7 @@ void Combat::doTargetCombat(Creature* caster, Creature* target, CombatDamage& da
 			}
 		}
 
-		if (damage.critical) {
+		if (damage.critical && target) {
 			g_game.addMagicEffect(target->getPosition(), CONST_ME_CRITICAL_DAMAGE);
 		}
 
@@ -972,10 +973,9 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 	int32_t criticalSecondary = 0;
 	if (!damage.critical && damage.primary.type != COMBAT_HEALING && casterPlayer && damage.origin != ORIGIN_CONDITION) {
 		uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE);
-		uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_CRITICALHITAMOUNT);
-		if (chance > 0 && skill > 0 && uniform_random(1, 100) <= chance) {
-			criticalPrimary = std::round(damage.primary.value * (skill / 100.));
-			criticalSecondary = std::round(damage.secondary.value * (skill / 100.));
+		if (chance > 0 && normal_random(1, 100) <= chance) {
+			criticalPrimary = std::round(damage.primary.value * 1.8); // 180% damage
+			criticalSecondary = std::round(damage.secondary.value * 1.8);
 			damage.critical = true;
 		}
 	}
