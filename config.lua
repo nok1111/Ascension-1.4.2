@@ -22,9 +22,11 @@ dualWieldingDamageRate = 100
 dualWieldingAttackSpeed = 1500
 
 --monster levels modifiers
-monsterBonusHealth = 0.5
-monsterBonusSpeed = 0.02
-monsterBonusDamage = 0.00
+monsterBonusHealth = 2.80  --0.75 default
+monsterBonusSpeed = 0.001
+monsterBonusDamage = 0.0015
+monsterBonusArmor = 1.0
+monsterBonusDefense = 0.2
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
