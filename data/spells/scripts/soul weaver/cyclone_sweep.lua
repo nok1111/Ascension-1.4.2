@@ -69,18 +69,28 @@ local function applyStun(monster)
     monster:addCondition(stun)
 end
 
+-- Skill-based formula for Cyclone Sweep
+function onGetFormulaValues_CycloneSweep(player, skill, attack, factor)
+    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
+    local power = sword * attack
+    local level = player:getLevel()
+    local min = (level / 4) + (power * 0.055) + attack * 1.1
+    local max = (level / 4) + (power * 0.095) + attack * 1.7
+    return -min, -max
+end
+
 local function applyDamage(player, monster)
     -- Fire damage
     local combatFire = Combat()
     combatFire:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
     combatFire:setParameter(COMBAT_PARAM_EFFECT, 41)
-    combatFire:setFormula(COMBAT_FORMULA_LEVELMAGIC, 0.0, -75, 0.0, -125)
+    combatFire:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_CycloneSweep")
     combatFire:execute(player, Variant(monster:getId()))
     -- Ice damage
     local combatIce = Combat()
     combatIce:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
     combatIce:setParameter(COMBAT_PARAM_EFFECT, 42)
-    combatIce:setFormula(COMBAT_FORMULA_LEVELMAGIC, 0.0, -75, 0.0, -125)
+    combatIce:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_CycloneSweep")
     combatIce:execute(player, Variant(monster:getId()))
 end
 
