@@ -192,3 +192,35 @@ function getElementalBoostMultiplier(player, boostType)
     local boost = getElementalBoost(player, boostType)
     return 1 + (boost * 0.1)
 end
+
+function getActiveOrbs(player)
+    local boosters = initElementalBoosters(player).boosters
+    if #boosters < 2 then return nil, nil end
+    return boosters[1].type, boosters[2].type
+end
+
+-- Adds random boosters to player
+function addRandomBoosters(player, count)
+    local orbTypes = {"fire", "ice", "life"}
+    local data = initElementalBoosters(player)
+    
+    -- Clear existing boosters first to ensure we get new combinations
+    data.boosters = {}
+    
+    for i = 1, math.min(count, maxBoosters) do
+        -- Add random booster
+        table.insert(data.boosters, {
+            type = orbTypes[math.random(#orbTypes)]
+        })
+    end
+    
+    updatePlayerEffects(player)
+    
+    -- Return the orb types that were added
+    if #data.boosters >= 2 then
+        return data.boosters[1].type, data.boosters[2].type
+    elseif #data.boosters == 1 then
+        return data.boosters[1].type, nil
+    end
+    return nil, nil
+end
