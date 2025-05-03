@@ -31,6 +31,7 @@ combat1:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 local combat2 = Combat()
 combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_EFFECT, 311)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)

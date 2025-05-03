@@ -22,7 +22,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, config.disteffect)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
-local condition = Condition(config.conditiontype)
+local condition = Condition(config.conditiontype, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_DELAYED, true)
 condition:addDamage(config.timer, 1000, -1)
 condition:setParameter(CONDITION_PARAM_SUBID, 25960)

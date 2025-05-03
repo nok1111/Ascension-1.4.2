@@ -27,23 +27,39 @@ local function getCombatAreaByLevel(level)
 end
 
 function onCastSpell(cid, variant)
-    if not cid then
+    if not cid or not cid:isMonster() then
+        print("[WARNING] Invalid servant_explode cast - no cid or not monster")
         return false
     end
 
     local owner = cid:getMaster()
-    local level = owner:getLevel()
-    local maglevel = owner:getMagicLevel()
-	
-	min = (maglevel * 2.0) + level
-    max = (maglevel * 2.3) + (level * 1.5)
+    if not owner or not owner:isPlayer() then
+        print("[WARNING] Invalid servant_explode cast - no valid owner")
+        return false
+    end
+
+    local target = cid:getTarget()
+    if not target then
+        print("[WARNING] Servant explode with no target")
+        return false
+    end
+
+    local level = math.max(owner:getLevel(), 1)
+    local maglevel = math.max(owner:getMagicLevel(), 0)
+    
+    min = math.floor((maglevel * 2.0) + level)
+    max = math.floor((maglevel * 2.3) + (level * 1.5))
     
     local combatArea = getCombatAreaByLevel(level)
     
     doAreaCombatHealth(owner:getId(), COMBAT_ENERGYDAMAGE, cid:getTarget():getPosition(), combatArea, -min, -max, 435)
     
     local position = cid:getPosition()
-    cid:remove()
+    if position then
+        cid:remove()
+    else
+        print("[WARNING] Invalid position for servant removal")
+    end
 
     return true
 end

@@ -140,7 +140,7 @@
 	<instant group="attack" spellid="41" name="Energy Blast" words="energy blast" lvl="10" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/energy_blast.lua">
     <vocation name="Magician" />
     </instant>
-	<instant group="attack" spellid="42" name="Fire Blast" words="fire blast" lvl="8" mana="25" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="1" script="mage/fire_blast.lua">
+	<instant group="attack" spellid="42" name="Fire Blast" words="fire blast" lvl="8" mana="25" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/fire_blast.lua">
     <vocation name="Magician" />
     </instant>
 	<instant group="attack" spellid="43" name="Elemental Blast" words="elemental blast" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/elemental_blast.lua">
@@ -291,7 +291,7 @@
 	</instant>
 		
 		
-	<!-- Soul Weaver -->
+	<!-- Monk -->
 	<instant group="attack" spellid="120" name="Soul Fists" words="soul fists" lvl="8" mana="35" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/soul_fist.lua">
     <vocation name="Monk" />
     </instant>
@@ -311,7 +311,7 @@
 	<instant group="attack" spellid="126" name="Hollow Blade" words="hollow Blade" lvl="18" mana="20" range="1" aggressive="1" needtarget="1" blockwalls="1"  cooldown="4000" needweapon="1" groupcooldown="1900"  needlearn="0" script="soul weaver/hollow_fist.lua">
     <vocation name="Monk" />
     </instant>
-	<instant group="support" spellid="127" name="Veil of Anguish" words="veil of anguish" lvl="40" mana="30" aggressive="0" selftarget="1" cooldown="7000" groupcooldown="0" needlearn="0" script="soul weaver/veil_of_anguish.lua">
+	<instant group="support" spellid="127" name="Lotus Kick" words="lotus kick" lvl="40" mana="30" aggressive="0" selftarget="1" cooldown="7000" groupcooldown="0" needlearn="0" script="soul weaver/cyclone_sweep.lua">
 	<vocation name="Monk" />
 	</instant>
 	<instant group="attack" spellid="128" name="Absolute Denial" words="absolute denial" lvl="60" mana="120"  aggressive="1" selftarget="1" exhaustion="20000" groupcooldown="1900" script="soul weaver/absolute_denial.lua">
@@ -323,7 +323,7 @@
 	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" selftarget="1" exhaustion="30000" groupcooldown="1900" script="soul weaver/drain_soul.lua">
 	<vocation name="Monk" />
 	</instant>
-	<instant group="support" spellid="131" name="Void Slumber" words="void slumber" lvl="70" mana="80" aggressive="0" selftarget="1" cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/void_slumber.lua">
+	<instant group="support" spellid="131" name="Adaptive Fist" words="adaptive fist" lvl="70" mana="80" direction="1" aggressive="0"  cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/adaptive_fist.lua">
 	<vocation name="Monk" />
 	</instant>
 	<instant group="attack" spellid="132" name="Fire Fist" words="fire fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/fire_fist.lua">
@@ -527,7 +527,7 @@
 	</instant>
 	<instant group="support" spellid="308" name="Find Person" words="exiva" lvl="8" mana="20" aggressive="0" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="support/find_person.lua">
 	</instant>	
-	<instant group="support" spellid="309" name="Food" words="exevo pan" lvl="10" faith="10" mana="15" soul="1" cooldown="2000" groupcooldown="2000" aggressive="0" needlearn="0" script="support/food.lua">
+	<instant group="support" spellid="309" name="Food" words="exevo pan" lvl="8" faith="10" mana="15" soul="1" cooldown="2000" groupcooldown="2000" aggressive="0" needlearn="0" script="support/food.lua">
 	</instant>	
 
 	<instant group="support" spellid="311" name="Haste" words="utani hur" lvl="14" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/haste.lua">

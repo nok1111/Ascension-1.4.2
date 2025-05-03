@@ -2,7 +2,7 @@ local monsterName, monsterCount = "Creep", 3 -- time is in seconds
 
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_POISONDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_PURPLELIQUID)
+combat:setParameter(COMBAT_PARAM_EFFECT, 302)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combat:setArea(createCombatArea(AREA_SQUARE1X1))
@@ -67,7 +67,7 @@ local target = creature:getTarget()
 			if creature:getTarget() then
 			summon:setTarget(creature:getTarget())
 			end
-			summon:getPosition():sendMagicEffect(CONST_ME_PURPLELIQUID2)
+			summon:getPosition():sendMagicEffect(305)
             addEvent(checkPosition, 2 * 1000, summon.uid, variant)
 			addEvent(removesummon, 5 * 1000, summon.uid, variant)
         end

@@ -2,7 +2,7 @@ local combat = Combat()
 --combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_DRAWBLOOD)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
-local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
+local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_DEFAULT)
 condition:setParameter(CONDITION_PARAM_TICKS, 15000)
 condition:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, 150)
 condition:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 150)
@@ -11,12 +11,8 @@ condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(condition)
 
 function onCastSpell(creature, variant)
-local creature = Creature(creature)
-
-
-  local position = creature:getPosition()  
-  local positioneffect = position
-  positioneffect:sendMagicEffect(266)
+  local player = Player(creature)
+player:attachEffectById(63, true)
 	
 
 local player = Player(creature)

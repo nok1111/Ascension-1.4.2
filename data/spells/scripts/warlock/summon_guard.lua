@@ -1,4 +1,4 @@
-function removePet(creatureId)
+local function removePetGuard(creatureId)
     local c = Creature(creatureId)
     if not c then return false end
 
@@ -65,7 +65,7 @@ function onCastSpell(cid, var)
     mySummonvoid:changeSpeed(deltaSpeed)
 
     player:say("arise!", TALKTYPE_MONSTER_SAY)
-    addEvent(removePet, 5 * 60 * 1000, mySummonvoid:getId())
+    addEvent(removePetGuard, 5 * 60 * 1000, mySummonvoid:getId())
     
     return combat:execute(player, var)
 end

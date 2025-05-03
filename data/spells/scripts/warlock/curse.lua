@@ -3,8 +3,8 @@ local combatnodot2 = Combat()
 
 for i, c in ipairs({combat2, combatnodot2}) do
     c:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-    c:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_BLUESKULL)
-    c:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_BLACKARROW)
+    c:setParameter(COMBAT_PARAM_EFFECT, 230)
+    c:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 110)
     c:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 end
 
