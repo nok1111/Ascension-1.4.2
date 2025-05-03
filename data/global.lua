@@ -280,3 +280,33 @@ function Monster.getStorageValue(self, key)
     end
     return -1
 end
+
+function isPartyMember(player, target)
+    if not player or not target then 
+        return false 
+    end
+    
+    -- Handle summons/pets
+    if target:getMaster() == player then
+        return true
+    end
+    
+    -- Only check party for players
+    if not target:isPlayer() then
+        return false
+    end
+    
+    local party = player:getParty()
+    if not party then
+        return false
+    end
+    
+    -- Manual party check by comparing IDs
+    for _, member in ipairs(party:getMembers()) do
+        if member:getId() == target:getId() then
+            return true
+        end
+    end
+    
+    return false
+end
