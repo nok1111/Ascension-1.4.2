@@ -3961,7 +3961,7 @@ bool Game::combatBlockHit(CombatDamage& damage, Creature* attacker, Creature* ta
 		if (blockType == BLOCK_DEFENSE) {
 			addMagicEffect(targetPos, CONST_ME_POFF);
 		} else if (blockType == BLOCK_ARMOR) {
-			addMagicEffect(targetPos, CONST_ME_BLOCKHIT);
+			addMagicEffect(targetPos, CONST_ME_697);
 		} else if (blockType == BLOCK_IMMUNITY) {
 			uint8_t hitEffect = 0;
 			switch (combatType) {
@@ -3973,7 +3973,7 @@ bool Game::combatBlockHit(CombatDamage& damage, Creature* attacker, Creature* ta
 				case COMBAT_PHYSICALDAMAGE:
 				case COMBAT_ICEDAMAGE:
 				case COMBAT_DEATHDAMAGE: {
-					hitEffect = CONST_ME_BLOCKHIT;
+					hitEffect = CONST_ME_MORTAREA;
 					break;
 				}
 				case COMBAT_EARTHDAMAGE: {
