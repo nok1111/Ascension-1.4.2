@@ -35,6 +35,7 @@ function onLogin(player)
 	player:registerEvent("ancestralTask")
 	player:registerEvent("PlayerKill_quests")
 	player:registerEvent("VocationPassiveRegen")
+	player:registerEvent("RegisterPassives")
 
 	--character stats
 	player:registerEvent("CharacterStatsExtended")

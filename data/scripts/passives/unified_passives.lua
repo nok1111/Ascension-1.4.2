@@ -1,96 +1,104 @@
 local passiveEvent = CreatureEvent("UnifiedPassives")
 
+-- Standardized passive structure implementation
 local PASSIVES = {
-  -- Stellar Alignment (Vocation 7)
   stellar = {
-    vocation = 7,
-    trigger = function(player, creature, damage, origin)
+    config = {
+      vocation = 7,
+      chance = 10,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, origin)
       return origin == ORIGIN_MELEE or origin == ORIGIN_RANGED or origin == ORIGIN_SPELL
     end,
-    effect = function(player, creature, damage)
+    effect = function(player, target, damage)
       local magic = player:getMagicLevel()
       local level = player:getLevel()
       local extraDamage = (level / 5) + (magic * 3.3) + 15
       
       addEvent(function()
-        if creature and creature:isMonster() and not creature:getMaster() then
-          doTargetCombatHealth(player, creature, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
+        if target and target:isMonster() and not target:getMaster() then
+          doTargetCombatHealth(player, target, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
           player:say("stellar alligment!", TALKTYPE_MONSTER_SAY)
-          local explo = creature:getPosition()
+          local explo = target:getPosition()
           explo.x = explo.x + 1
           explo:sendMagicEffect(382)
         end
       end, 200)
-    end,
-    chance = 10 -- 1 in 10 chance
+      return damage
+    end
   },
   
-  -- Blood Blades (Storage 29500)
   blood_blades = {
-    storage = 29500,
-    trigger = function(player, creature, damage, origin)
+    config = {
+      subid = 29500,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, origin)
       return origin == ORIGIN_MELEE
     end,
-    effect = function(player, creature, damage)
+    effect = function(player, target, damage)
       local min = (player:getMaxHealth() * 0.15) + 10
       local max = (player:getMaxHealth() * 0.15) + 15
       player:addHealth(math.random(min, max))
       player:getPosition():sendMagicEffect(353)
-      creature:getPosition():sendMagicEffect(438)
+      target:getPosition():sendMagicEffect(438)
       return damage * 1.5
     end
   },
   
-  -- Druid Elements (Vocation 8)
   druid_elements = {
-    vocation = 8,
-    trigger = function(player, creature, damage, primaryType)
+    config = {
+      vocation = 8,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, primaryType)
       return primaryType == COMBAT_PHYSICALDAMAGE or primaryType == COMBAT_ENERGYDAMAGE
     end,
-    effect = function(player, creature, damage)
-      creature:getPosition():sendMagicEffect(445)
+    effect = function(player, target, damage)
+      target:getPosition():sendMagicEffect(445)
       return damage * 0.80
     end
   },
   
-  -- Damage Reduction (Level-based)
   damage_reduction = {
     config = {
       maxMissChance = 50,
-      levelDifferenceFactor = 0.65
+      levelDifferenceFactor = 0.65,
+      type = "OnDefend"
     },
-    trigger = function(player, creature, damage, origin)
-      local monster_level = creature:getMonsterLevel()
+    trigger = function(player, target, damage, origin)
+      local monster_level = target:getMonsterLevel()
       local player_level = player:getLevel()
       return monster_level > 0 and (monster_level - player_level) > 0
     end,
-    effect = function(player, creature, damage)
-      local monster_level = creature:getMonsterLevel()
+    effect = function(player, target, damage)
+      local monster_level = target:getMonsterLevel()
       local player_level = player:getLevel()
       local level_difference = monster_level - player_level
       local miss_chance = math.min(level_difference * PASSIVES.damage_reduction.config.levelDifferenceFactor, PASSIVES.damage_reduction.config.maxMissChance)
       
       if math.random(100) <= miss_chance then
-        creature:getPosition():sendMagicEffect(270)
-        creature:getPosition():sendMagicEffect(577)
+        target:getPosition():sendMagicEffect(270)
+        target:getPosition():sendMagicEffect(577)
         return 0
       end
       return damage
     end
   },
   
-  -- Demolition
   demolition = {
     config = {
       aspectModeStorage = 50010,
       cooldown = 1.1,
-      manaDeduction = 3
+      manaDeduction = 3,
+      type = "OnAttack"
     },
     lastUse = {},
-    trigger = function(player, creature, damage, origin)
+    trigger = function(player, target, damage, origin)
       return true
     end,
-    effect = function(player, creature, damage)
+    effect = function(player, target, damage)
       local now = os.time()
       if PASSIVES.demolition.lastUse[player:getId()] and now - PASSIVES.demolition.lastUse[player:getId()] < PASSIVES.demolition.config.cooldown then
         return damage
@@ -106,7 +114,7 @@ local PASSIVES = {
       local max = (level/5) + (magic * 9) + 15
       
       addEvent(function()
-        if creature and player then
+        if target and player then
           local area = player:getStorageValue(PASSIVES.demolition.config.aspectModeStorage) == 1 and 
             createCombatArea({
               {0,0,1,0,0},
@@ -121,9 +129,9 @@ local PASSIVES = {
               {1,1,1}
             })
           
-          doAreaCombatHealth(player, COMBAT_ENERGYDAMAGE, creature:getPosition(), area, -min, -max, CONST_ME_NONE)
+          doAreaCombatHealth(player, COMBAT_ENERGYDAMAGE, target:getPosition(), area, -min, -max, CONST_ME_NONE)
           player:say("Demolition!", TALKTYPE_MONSTER_SAY)
-          local explo = creature:getPosition()
+          local explo = target:getPosition()
           explo.x = explo.x + 3
           explo.y = explo.y + 3
           explo:sendMagicEffect(CONST_ME_CAKE)
@@ -133,28 +141,30 @@ local PASSIVES = {
     end
   },
   
-  -- Light Dancer (Vocation 9)
   light_dancer = {
-    vocation = 9,
-    trigger = function(player, creature, damage, origin)
-      return origin == ORIGIN_MELEE and creature:getCondition(CONDITION_ENERGY, 0, 25965)
+    config = {
+      vocation = 9,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, origin)
+      return origin == ORIGIN_MELEE and target:getCondition(CONDITION_ENERGY, 0, 25965)
     end,
-    effect = function(player, creature, damage)
+    effect = function(player, target, damage)
       local magic = player:getMagicLevel()
       local level = player:getLevel()
       local extraDamage = damage + (damage * 0.55) + (magic * 10)
       
       addEvent(function()
-        if creature and player then
-          doTargetCombatHealth(player, creature, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
+        if target and player then
+          doTargetCombatHealth(player, target, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
           player:say("Short Circuit!", TALKTYPE_MONSTER_SAY)
-          local primaryPos = creature:getPosition()
+          local primaryPos = target:getPosition()
           primaryPos:sendMagicEffect(414)
           
           -- Get nearby monsters with same condition
           local creaturesList = Game.getSpectators(primaryPos, false, false, 2, 2, 2, 2)
           for _, nearbyCreature in ipairs(creaturesList) do
-            if nearbyCreature:isMonster() and nearbyCreature:getId() ~= creature:getId() and 
+            if nearbyCreature:isMonster() and nearbyCreature:getId() ~= target:getId() and 
                nearbyCreature:getCondition(CONDITION_ENERGY, 0, 25965) then
               local reducedDamage = math.floor(extraDamage * 0.5)
               doTargetCombatHealth(player, nearbyCreature, COMBAT_ENERGYDAMAGE, -reducedDamage, -reducedDamage, CONST_ME_NONE)
@@ -167,190 +177,312 @@ local PASSIVES = {
     end
   },
   
-  -- Lightbringer (Storage 5000)
   lightbringer = {
-    storage = 5000,
-    trigger = function(player, creature, damage, origin)
+    config = {
+      storage = 5000,
+      chance = 20,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, origin)
       return origin == ORIGIN_MELEE or origin == ORIGIN_RANGED or origin == ORIGIN_SPELL
     end,
-    effect = function(player, creature, damage)
+    effect = function(player, target, damage)
       local extraDamage = damage * 1.8
       
       addEvent(function()
-        if creature and player then
-          doTargetCombatHealth(player, creature, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_PURPLEDEATH)
+        if target and player then
+          doTargetCombatHealth(player, target, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_PURPLEDEATH)
           local min = (player:getMaxMana() * 0.14)
           local max = (player:getMaxMana() * 0.17)
           player:addMana(math.random(min, max))
           player:say("Deathbringer!", TALKTYPE_MONSTER_SAY)
           player:getPosition():sendMagicEffect(379)
           player:getPosition():sendMagicEffect(318)
-          local explo = creature:getPosition()
+          local explo = target:getPosition()
           explo.x = explo.x + 1
           explo.y = explo.y + 1
           explo:sendMagicEffect(CONST_ME_CAKE)
         end
       end, 200)
       return damage
-    end,
-    chance = 20
+    end
   },
   
-  -- Lighting Shield (Condition 25971)
   lighting_shield = {
-    condition = 25971,
-    stunCondition = function()
-      local cond = Condition(CONDITION_STUNED)
-      cond:setParameter(CONDITION_PARAM_TICKS, 1500)
-      return cond
-    end,
-    trigger = function(player, creature, damage, origin)
+    config = {
+      condition = 25971,
+      type = "OnDefend"
+    },
+    trigger = function(player, target, damage, origin)
       return true
     end,
-    effect = function(player, creature, damage)
+    effect = function(player, target, damage)
       if math.random(100) <= 75 then
         player:getPosition():sendMagicEffect(548)
         player:getPosition():sendMagicEffect(577)
-        if creature and (creature:isPlayer() or (creature:isMonster() and creature:getSkull() == SKULL_NONE)) then
-          creature:addCondition(PASSIVES.lighting_shield.stunCondition())
-          creature:getPosition():sendMagicEffect(CONST_ME_STUN)
+        if target and (target:isPlayer() or (target:isMonster() and target:getSkull() == SKULL_NONE)) then
+          target:addCondition(PASSIVES.lighting_shield.stunCondition())
+          target:getPosition():sendMagicEffect(CONST_ME_STUN)
         end
         return 0
       end
       return damage
+    end,
+    stunCondition = function()
+      local cond = Condition(CONDITION_STUNED)
+      cond:setParameter(CONDITION_PARAM_TICKS, 1500)
+      return cond
     end
   },
   
-  -- One With The Elements (Vocation 2)
   one_with_elements = {
-    vocation = 2,
-    trigger = function(player, creature, damage, primaryType)
+    config = {
+      playerOnly = true,
+      vocation = 2,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, primaryType)
       return primaryType == COMBAT_PHYSICALDAMAGE or primaryType == COMBAT_ENERGYDAMAGE or 
              primaryType == COMBAT_FIREDAMAGE or primaryType == COMBAT_EARTHDAMAGE or 
              primaryType == COMBAT_DEATHDAMAGE or primaryType == COMBAT_HOLYDAMAGE or 
              primaryType == COMBAT_ICEDAMAGE
     end,
-    effect = function(player, creature, damage)
+    effect = function(player, target, damage)
       player:addMana(player:getMaxMana() * 0.02)
       player:getPosition():sendMagicEffect(379)
       return damage
     end
   },
   
-  -- Luck Dodge (CHARSTAT_LUCK)
   luck_dodge = {
-    trigger = function(player, attacker, damage, origin)
-      return true -- Always check for dodge chance
-    end,
-    effect = function(player, attacker, damage)
-      local luckChance = player:getCharacterStat(CHARSTAT_LUCK) * 10 -- 0.1% per point (1000 = 100%)
-      if math.random(1, 10000) <= luckChance then
-        player:getPosition():sendMagicEffect(CONST_ME_685)
-        return 0 -- Full dodge
-      end
-      return damage
-    end
-  },
-  
-  -- Compassion Shield (CHARSTAT_COMPASSION)
-  compassion_shield = {
-    trigger = function(player, attacker, damage, origin)
-      return true -- Always reduce damage
-    end,
-    effect = function(player, attacker, damage)
-      local reduction = player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003 -- 0.3% per point
-      return damage * (1 - reduction)
-    end
-  },
-  
-  -- Voracity Leech (CHARSTAT_VORACITY)
-  voracity_leech = {
+    config = {
+      playerOnly = true,
+      type = "OnDefend"
+    },
     trigger = function(player, target, damage, origin)
-      return origin ~= ORIGIN_HEALING -- Don't leech from heals
+      return true
     end,
     effect = function(player, target, damage)
-      local leechPercent = player:getCharacterStat(CHARSTAT_VORACITY) * 0.002 -- 0.2% per point
-      local healAmount = math.floor(damage * leechPercent)
-      player:addHealth(healAmount)
-      player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-      return damage -- Return original damage
+      local luckChance = player:getCharacterStat(CHARSTAT_LUCK) * 10
+      if math.random(1, 10000) <= luckChance then
+        player:getPosition():sendMagicEffect(CONST_ME_685)
+        return 0
+      end
+      return damage
     end
   },
   
-  -- Luck Dodge System
-  luck_dodge_stat = {
-    trigger = function(player, attacker, damage, primaryType)
-      local luckChance = player:getCharacterStat(CHARSTAT_LUCK) * 10 -- 0.1% per point (1000 = 100%)
-      if math.random(1, 10000) <= luckChance then
-        player:getPosition():sendMagicEffect(CONST_ME_685)
-        return true
-      end
-      return false
+  compassion_shield = {
+    config = {
+      playerOnly = true,
+      type = "OnDefend"
+    },
+    trigger = function(player, target, damage, origin)
+      return true
     end,
-    eventType = "onHealthChange"
-  },
-
-  compassion_shield_stat = {
-    effect = function(player, damage)
-      local reduction = player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003 -- 0.3% reduction per point
+    effect = function(player, target, damage)
+      local reduction = player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003
       return damage * (1 - reduction)
-    end,
-    eventType = "onHealthChange"
+    end
   },
-
-  voracity_leech_stat = {
-    effect = function(player, damage, target)
-      local leechPercent = player:getCharacterStat(CHARSTAT_VORACITY) * 0.0020   -- 0.2% leech per point
+  
+  voracity_leech = {
+    config = {
+      playerOnly = true,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, origin)
+      return origin ~= ORIGIN_HEALING
+    end,
+    effect = function(player, target, damage)
+      local leechPercent = player:getCharacterStat(CHARSTAT_VORACITY) * 0.002
       local healAmount = math.floor(damage * leechPercent)
       player:addHealth(healAmount)
       player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
       return damage
+    end
+  },
+  
+  frostbloom_shield = {
+    config = {
+      playerOnly = true,
+      subid = 25961,
+      type = "OnDefend"
+    },
+    trigger = function(player, target, damage, origin)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, 25961)
     end,
-    eventType = "onTargetCombat"
+    effect = function(player, target, damage)
+      player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+      return damage * 0.8
+    end
+  },
+  
+  luck_dodge_stat = {
+    config = {
+      playerOnly = true,
+      type = "OnDefend"
+    },
+    trigger = function(player, target, damage, origin)
+      return math.random(1, 10000) <= player:getCharacterStat(CHARSTAT_LUCK) * 10
+    end,
+    effect = function(player, target, damage)
+      player:getPosition():sendMagicEffect(CONST_ME_685)
+      return 0
+    end
+  },
+  
+  compassion_shield_stat = {
+    config = {
+      playerOnly = true,
+      type = "OnDefend"
+    },
+    trigger = function(player, target, damage, origin)
+      return true
+    end,
+    effect = function(player, target, damage)
+      return damage * (1 - player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003)
+    end
+  },
+  
+  voracity_leech_stat = {
+    config = {
+      playerOnly = true,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, origin)
+      return origin ~= ORIGIN_HEALING
+    end,
+    effect = function(player, target, damage)
+      local heal = math.floor(damage * player:getCharacterStat(CHARSTAT_VORACITY) * 0.002)
+      player:addHealth(heal)
+      player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+      return damage
+    end
+  },
+  
+  necroprophagy = {
+    config = {
+      vocation = 5,
+      type = "OnAttack"
+    },
+    trigger = function(player, target, damage, origin)
+      return origin ~= ORIGIN_HEALING
+    end,
+    effect = function(player, target, damage)
+      local function getMaxServants(playerLevel)
+        return math.min(math.max(math.floor(playerLevel / 25) + 2, 3), 7)
+      end
+      
+      local function trySummonServant(player, chance)
+        local undeadCount = 0
+        local summons = player:getSummons()
+        print("undeadCount: " .. undeadCount)
+        
+        -- Count existing servants
+        for _, summon in ipairs(summons) do
+          if summon:getName():lower() == "servant" then
+            undeadCount = undeadCount + 1
+          end
+        end
+        
+        local maxServants = getMaxServants(player:getLevel())
+        print("Max servants allowed: " .. maxServants)
+        
+        -- Summon new servant if under limit and chance succeeds
+        if undeadCount < maxServants and math.random(100) <= chance then
+          local summon = Game.createMonster("servant", player:getPosition(), false, true)
+          if summon then
+            summon:setMaster(player)
+            local healthAmount = player:getMaxHealth() / 1.3
+            summon:setMaxHealth(healthAmount)
+            summon:setHealth(healthAmount)
+            local deltaSpeed = math.max(player:getBaseSpeed() - summon:getBaseSpeed(), 0)
+            summon:changeSpeed(deltaSpeed)
+            
+            -- Despawn after duration
+            addEvent(function() 
+              if summon and summon:isMonster() then 
+                local pos = summon:getPosition()
+                if pos then
+                  pos:sendMagicEffect(CONST_ME_POFF)
+                  summon:remove() 
+                end
+              end 
+            end, 12000)
+            return true
+          end
+        end
+        return false
+      end
+      trySummonServant(player, 15)  -- 10% chance on damage
+      return damage
+    end
   },
 }
 
 -- Health change handler
 function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
-  -- Handle attacker passives
+  print("[Passive System] Health change event triggered for " .. creature:getName())
+  
+  -- Handle attacker passives (OnAttack)
   if attacker and attacker:isPlayer() then
     local player = attacker:getPlayer()
     local vocationId = player:getVocation():getId()
     
-    for name, passive in pairs(PASSIVES) do
-      -- Check requirements
-      local meetsReq = (passive.vocation and vocationId == passive.vocation) or 
-                      (passive.storage and player:getStorageValue(passive.storage) > 0) or
-                      (passive.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passive.condition))
-      
-      if meetsReq and passive.trigger(player, creature, primaryDamage, origin) then
-        -- Handle chance-based passives
-        if passive.chance then
-          if math.random(passive.chance) == passive.chance then
-            passive.effect(player, creature, primaryDamage)
+    for passiveName, passiveData in pairs(PASSIVES) do
+      if passiveData.config.type == "OnAttack" then
+        print("[Passive System] Checking attack passive: " .. passiveName)
+        
+        -- Check requirements
+        if not (passiveData.config.playerOnly and not creature:isPlayer()) then
+          local meetsReq = (passiveData.config.vocation and vocationId == passiveData.config.vocation) or 
+                          (passiveData.config.storage and player:getStorageValue(passiveData.config.storage) > 0) or
+                          (passiveData.config.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.condition))
+          
+          if meetsReq and passiveData.trigger(player, creature, primaryDamage, origin) then
+            print("[Passive System] Attack passive triggered: " .. passiveName)
+            -- Handle chance-based passives
+            if passiveData.config.chance then
+              if math.random(100) <= passiveData.config.chance then
+                primaryDamage = passiveData.effect(player, creature, primaryDamage) or primaryDamage
+              end
+            else
+              primaryDamage = passiveData.effect(player, creature, primaryDamage) or primaryDamage
+            end
           end
-        else
-          local newDamage = passive.effect(player, creature, primaryDamage)
-          if newDamage then primaryDamage = newDamage end
         end
       end
     end
   end
   
-  -- Handle creature passives (defensive)
-  if creature and creature:isPlayer() then
+  -- Handle defender passives (OnDefend)
+  if creature:isPlayer() then
     local player = creature:getPlayer()
     local vocationId = player:getVocation():getId()
     
-    for name, passive in pairs(PASSIVES) do
-      -- Similar checks as above
-      local meetsReq = (passive.vocation and vocationId == passive.vocation) or 
-                      (passive.storage and player:getStorageValue(passive.storage) > 0) or
-                      (passive.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passive.condition))
-      
-      if meetsReq and passive.trigger(player, attacker, primaryDamage, primaryType) then
-        local newDamage = passive.effect(player, attacker, primaryDamage)
-        if newDamage then primaryDamage = newDamage end
+    for passiveName, passiveData in pairs(PASSIVES) do
+      if passiveData.config.type == "OnDefend" then
+        print("[Passive System] Checking defend passive: " .. passiveName)
+        
+        -- Check requirements
+        if not (passiveData.config.playerOnly and not creature:isPlayer()) then
+          local meetsReq = (passiveData.config.vocation and vocationId == passiveData.config.vocation) or 
+                          (passiveData.config.storage and player:getStorageValue(passiveData.config.storage) > 0) or
+                          (passiveData.config.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.condition))
+          
+          if meetsReq and passiveData.trigger(player, attacker, primaryDamage, origin) then
+            print("[Passive System] Defend passive triggered: " .. passiveName)
+            -- Handle chance-based passives
+            if passiveData.config.chance then
+              if math.random(100) <= passiveData.config.chance then
+                primaryDamage = passiveData.effect(player, attacker, primaryDamage) or primaryDamage
+              end
+            else
+              primaryDamage = passiveData.effect(player, attacker, primaryDamage) or primaryDamage
+            end
+          end
+        end
       end
     end
   end
@@ -358,80 +490,86 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
   return primaryDamage, primaryType, secondaryDamage, secondaryType
 end
 
--- Death handler for Necroprophagy
+-- Death handler
+
 local deathEvent = CreatureEvent("NecroprophagyDeath")
 function deathEvent.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
   if killer and creature and killer:isPlayer() and creature:isMonster() then
     local player = killer:getPlayer()
-    if player:getStorageValue(5000) == 1 then -- Check if player has necroprophagy passive
-      local undeadCount = 0
-      local summons = player:getSummons()
-      
-      -- Count existing summons
-      for _, summon in ipairs(summons) do
-        if summon:getName():lower() == "servant" then
-          undeadCount = undeadCount + 1
-        end
+    if player:getVocation():getId() == 5 then
+      local function getMaxServants(playerLevel)
+        return math.min(math.max(math.floor(playerLevel / 25) + 2, 3), 7)
       end
       
-      -- Summon new servant if under limit
-      if undeadCount < 3 and math.random(100) <= 10 then
-        local summon = Game.createMonster("Servant", creature:getPosition(), false, true)
-        if summon then
-          summon:setMaster(player)
-          local healthAmount = player:getMaxHealth() / 1.3
-          summon:setMaxHealth(healthAmount)
-          summon:setHealth(healthAmount)
-          local deltaSpeed = math.max(player:getBaseSpeed() - summon:getBaseSpeed(), 0)
-          summon:changeSpeed(deltaSpeed)
-          
-          -- Make summon attack player's target
-          if player:getTarget() then
-            summon:setTarget(player:getTarget())
+      local function trySummonServant(player, chance)
+        local undeadCount = 0
+        local summons = player:getSummons()
+        
+        -- Count existing servants
+        for _, summon in ipairs(summons) do
+          if summon:getName():lower() == "servant" then
+            undeadCount = undeadCount + 1
           end
-          
-          -- Despawn after duration
-          addEvent(function() 
-            if summon then 
-              summon:getPosition():sendMagicEffect(CONST_ME_POFF)
-              summon:remove() 
-            end 
-          end, 6000)
         end
+        
+        local maxServants = getMaxServants(player:getLevel())
+        print("Max servants allowed: " .. maxServants)
+        
+        -- Summon new servant if under limit and chance succeeds
+        if undeadCount < maxServants and math.random(100) <= chance then
+          local summon = Game.createMonster("servant", player:getPosition(), false, true)
+          if summon then
+            summon:setMaster(player)
+            local healthAmount = player:getMaxHealth() / 1.3
+            summon:setMaxHealth(healthAmount)
+            summon:setHealth(healthAmount)
+            local deltaSpeed = math.max(player:getBaseSpeed() - summon:getBaseSpeed(), 0)
+            summon:changeSpeed(deltaSpeed)
+            
+            -- Despawn after duration
+            addEvent(function() 
+              if summon and summon:isMonster() then 
+                local pos = summon:getPosition()
+                if pos then
+                  pos:sendMagicEffect(CONST_ME_POFF)
+                  summon:remove() 
+                end
+              end 
+            end, 12000)
+            return true
+          end
+        end
+        return false
       end
+      trySummonServant(player, 100)  -- 100% chance on death
     end
   end
   return true
 end
 
+deathEvent:register()
+
 -- Login handler to register events
 local loginEvent = CreatureEvent("RegisterPassives")
 function loginEvent.onLogin(player)
   player:registerEvent("UnifiedPassives")
-  player:registerEvent("NecroprophagyDeath")
   return true
 end
 
 -- Target combat handler to register events
 local TargetCombatEvent = EventCallback
 TargetCombatEvent.onTargetCombat = function(creature, target)
-  if target:isPlayer() then
     target:registerEvent("UnifiedPassives")
     target:registerEvent("NecroprophagyDeath")
-  end
-  return RETURNVALUE_NOERROR
+  return true
 end
 
+TargetCombatEvent:register()
 -- Register all events
 passiveEvent:type("healthchange")
 passiveEvent:register()
 
-deathEvent:type("death")
-deathEvent:register()
-
 loginEvent:type("login")
 loginEvent:register()
-
-TargetCombatEvent:register()
 
 print(">> Unified passives system loaded")
