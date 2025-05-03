@@ -16,6 +16,10 @@ stairJumpExhaustion = 2000
 experienceByKillingPlayers = false
 expFromPlayersLevelRange = 75
 
+-- Magic Echo
+magicEchoChance = 20
+magicEchoEffect = 65
+
 -- DUAL WIELDING (90 = 90% of single weapon damage, 1000 = 1 sec)
 allowDualWielding = true
 dualWieldingDamageRate = 100
@@ -37,11 +41,11 @@ loginProtocolPort = 7171
 gameProtocolPort = 7172
 statusProtocolPort = 7171
 maxPlayers = 0
-motd = "Welcome to The Forgotten Server!"
+motd = "Welcome to Ascension Project"
 onePlayerOnlinePerAccount = false
 allowClones = false
 allowWalkthrough = true
-serverName = "Forgotten"
+serverName = "Ascension"
 statusTimeout = 5000
 replaceKickOnLogin = true
 maxPacketsPerSecond = 25

@@ -292,6 +292,9 @@ bool ConfigManager::load()
 	integer[DEPOT_FREE_LIMIT] = getGlobalNumber(L, "depotFreeLimit", 2000);
 	integer[DEPOT_PREMIUM_LIMIT] = getGlobalNumber(L, "depotPremiumLimit", 10000);
 
+	integer[MAGIC_ECHO_CHANCE] = getGlobalNumber(L, "magicEchoChance", 1);
+	integer[MAGIC_ECHO_EFFECT] = getGlobalNumber(L, "magicEchoEffect", 0);
+
 	floating[MLVL_BONUSDMG] = getGlobalFloat(L, "monsterBonusDamage", 0);
 	floating[MLVL_BONUSSPEED] = getGlobalFloat(L, "monsterBonusSpeed", 0);
 	floating[MLVL_BONUSHP] = getGlobalFloat(L, "monsterBonusHealth", 0);

@@ -121,6 +121,8 @@ class ConfigManager
 			VIP_PREMIUM_LIMIT,
 			DEPOT_FREE_LIMIT,
 			DEPOT_PREMIUM_LIMIT,
+			MAGIC_ECHO_CHANCE,
+			MAGIC_ECHO_EFFECT,
 
 			LAST_INTEGER_CONFIG /* this must be the last one */
 		};

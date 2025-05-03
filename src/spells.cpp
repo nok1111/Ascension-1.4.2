@@ -1004,6 +1004,19 @@ bool InstantSpell::playerCastInstant(Player* player, std::string& param)
 	bool result = internalCastSpell(player, var);
 	if (result) {
 		postCastSpell(player);
+		
+		/* Vocation-specific effect */
+		if (player->getVocation()->getId() == 1) { // Check for vocation ID 1
+			if (uniform_random(1, 100) <= g_config.getNumber(ConfigManager::MAGIC_ECHO_CHANCE)) {
+				bool echoSuccess = internalCastSpell(player, var);
+				if (echoSuccess) {
+					g_game.internalCreatureSay(player, TALKTYPE_MONSTER_SAY, "Magic Echo!", false);
+					player->detachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+					player->attachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+					
+				}
+			}
+		}
 	}
 
 	return result;
