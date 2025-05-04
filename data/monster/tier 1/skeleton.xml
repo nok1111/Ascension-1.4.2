@@ -53,7 +53,7 @@
 		
 		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
 
-		<item id="382941" chance="4500" /> <!-- regen resilence -->
+		<item id="38291" chance="4500" /> <!-- regen resilence -->
 
 	</loot>
 </monster>

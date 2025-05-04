@@ -54,7 +54,7 @@
 		<item id="2488" chance="530" />
 		<item id="2477" chance="530" />
 		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
-		<item id="382941" chance="4500" /> <!-- regen resilence -->
+		<item id="38291" chance="4500" /> <!-- regen resilence -->
 		<item id="38295" chance="4500" /> <!-- batle mage -->
 		
 				<item id="39167" countmax="1" chance="10500" /><!-- sell -->

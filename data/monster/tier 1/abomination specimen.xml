@@ -60,7 +60,7 @@
 		<item id="2477" chance="530" />		
 		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
 		<item id="38325" chance="4500" /> <!-- ring of the witch -->	
-		<item id="382941" chance="4500" /> <!-- regen resilence -->
+		<item id="38291" chance="4500" /> <!-- regen resilence -->
 		<item id="32723" chance="5500" /><!-- new spellbooks -->
 
 		<item id="39167" countmax="1" chance="10500" /><!-- sell -->
