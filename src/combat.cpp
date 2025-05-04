@@ -898,6 +898,7 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 			if (compassion > 0) {
 				damage.primary.value += damage.primary.value * compassion * 2 / 1000; // +0.2% per point
 			}
+			g_game.addMagicEffect(caster->getPosition(), CONST_ME_698);
 		}
 
 		success = g_game.combatChangeHealth(caster, target, damage);

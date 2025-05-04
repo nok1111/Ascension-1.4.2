@@ -3959,9 +3959,9 @@ bool Game::combatBlockHit(CombatDamage& damage, Creature* attacker, Creature* ta
 
 	static const auto sendBlockEffect = [this](BlockType_t blockType, CombatType_t combatType, const Position& targetPos) {
 		if (blockType == BLOCK_DEFENSE) {
-			addMagicEffect(targetPos, CONST_ME_POFF);
+			addMagicEffect(targetPos, CONST_ME_684);
 		} else if (blockType == BLOCK_ARMOR) {
-			addMagicEffect(targetPos, CONST_ME_697);
+			addMagicEffect(targetPos, CONST_ME_684);
 		} else if (blockType == BLOCK_IMMUNITY) {
 			uint8_t hitEffect = 0;
 			switch (combatType) {
