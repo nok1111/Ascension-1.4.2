@@ -799,11 +799,11 @@ end
 
 
 local function scheduleNextSpawn(zone)
-    print("scheduleNextSpawn called for zone " .. zone.id)
+    --print("scheduleNextSpawn called for zone " .. zone.id)
 
     -- Stop spawning if the zone is inactive or has no players
     if not zone.active or zone.playercount < 1 then
-        print("Zone " .. zone.id .. " is inactive or has no players. Stopping spawn.")
+        --print("Zone " .. zone.id .. " is inactive or has no players. Stopping spawn.")
         if zone.spawnEvent then
             stopEvent(zone.spawnEvent)
             zone.spawnEvent = nil
@@ -814,7 +814,7 @@ local function scheduleNextSpawn(zone)
     -- Check current monster count
     local currentMonsterCount = tablelength(zone.spawnedMonsters)
     if currentMonsterCount >= zone.maxMonsters then
-        print("Zone " .. zone.id .. " is at max monster capacity (" .. currentMonsterCount .. "/" .. zone.maxMonsters .. "). Skipping spawn.")
+        --print("Zone " .. zone.id .. " is at max monster capacity (" .. currentMonsterCount .. "/" .. zone.maxMonsters .. "). Skipping spawn.")
         if zone.spawnEvent then
             stopEvent(zone.spawnEvent)
             zone.spawnEvent = nil
@@ -824,14 +824,14 @@ local function scheduleNextSpawn(zone)
 
     -- **Use the new dynamic spawn interval based on player count**
     local nextSpawnInterval = calculateSpawnInterval(zone)
-    print("Scheduling next spawn for zone " .. zone.id .. " in " .. nextSpawnInterval .. " ms.")
+   -- print("Scheduling next spawn for zone " .. zone.id .. " in " .. nextSpawnInterval .. " ms.")
 
     zone.spawnEvent = addEvent(function()
         -- Ensure conditions are still valid before spawning
         if tablelength(zone.spawnedMonsters) < zone.maxMonsters and zone.active and zone.playercount > 0 then
             spawnMonsters(zone)
         else
-            print("Spawn loop stopped for zone " .. zone.id .. " (conditions no longer met).")
+            --print("Spawn loop stopped for zone " .. zone.id .. " (conditions no longer met).")
             zone.spawnEvent = nil
         end
     end, nextSpawnInterval)
@@ -842,13 +842,13 @@ end
 
 local function spawnMonster(zone, currentMonsterCount)
     if currentMonsterCount >= zone.maxMonsters then
-        print("Max monsters reached in zone " .. zone.id .. ". Skipping spawn.")
+        --print("Max monsters reached in zone " .. zone.id .. ". Skipping spawn.")
         return false -- Return false to indicate no monster was spawned
     end
 
     local spawnPosition = getRandomPositionInZone(zone)
     if not spawnPosition then
-        print("No valid spawn position found in zone " .. zone.id .. ". Skipping spawn.")
+        --print("No valid spawn position found in zone " .. zone.id .. ". Skipping spawn.")
         return false
     end
 
@@ -860,11 +860,11 @@ local function spawnMonster(zone, currentMonsterCount)
             monster:setShader("Monster Might")
          end
         zone.spawnedMonsters[monster:getId()] = true -- Track the spawned monster
-        print("Spawned " .. monster:getName() .. " in zone " .. zone.id .. " at position (" .. spawnPosition.x .. ", " .. spawnPosition.y .. ", " .. spawnPosition.z .. ").")
+        --print("Spawned " .. monster:getName() .. " in zone " .. zone.id .. " at position (" .. spawnPosition.x .. ", " .. spawnPosition.y .. ", " .. spawnPosition.z .. ").")
         monster:registerEvent("zone_death") -- Register the monster death event
         return true -- Return true to indicate a monster was successfully spawned
     else
-        print("Failed to spawn monster " .. monsterName .. " in zone " .. zone.id)
+        --print("Failed to spawn monster " .. monsterName .. " in zone " .. zone.id)
         return false
     end
 end
@@ -873,16 +873,16 @@ end
 
 function spawnMonsters(zone)
     if not zone.active or zone.playercount < 1 then
-        print("Zone " .. zone.id .. " is inactive or has no players. Skipping spawn.")
+        --print("Zone " .. zone.id .. " is inactive or has no players. Skipping spawn.")
         return
     end
 
     -- Call Game.getZoneMonsterCount once
     local currentMonsterCount = Game.getZoneMonsterCount(zone.id)
-    print("Current monsters in zone " .. zone.id .. ": " .. currentMonsterCount .. "/" .. zone.maxMonsters)
+    --print("Current monsters in zone " .. zone.id .. ": " .. currentMonsterCount .. "/" .. zone.maxMonsters)
 
     if currentMonsterCount >= zone.maxMonsters then
-        print("Zone " .. zone.id .. " has reached max monster capacity. Skipping spawn.")
+        --print("Zone " .. zone.id .. " has reached max monster capacity. Skipping spawn.")
         return
     end
 
@@ -890,23 +890,23 @@ function spawnMonsters(zone)
     if spawnMonster(zone, currentMonsterCount) then
         -- Schedule the next spawn only if a monster was successfully spawned
         if currentMonsterCount + 1 < zone.maxMonsters then
-            print("Monster spawned. Scheduling next spawn for zone " .. zone.id)
+            --print("Monster spawned. Scheduling next spawn for zone " .. zone.id)
             scheduleNextSpawn(zone)
         else
-            print("Max monster capacity reached after spawn. No further spawns scheduled for zone " .. zone.id)
+            --print("Max monster capacity reached after spawn. No further spawns scheduled for zone " .. zone.id)
         end
     end
 end
 
 local function spawnZoneBoss(zone)
     if not zone.boss then
-        print("No boss defined for zone: " .. zone.name)
+        --print("No boss defined for zone: " .. zone.name)
         return
     end
 
     -- Check if the boss is already alive
     if zone.spawnedBoss and Monster(zone.spawnedBoss) then
-        print("Boss " .. zone.boss .. " is already alive in " .. zone.name .. ", skipping spawn.")
+        --print("Boss " .. zone.boss .. " is already alive in " .. zone.name .. ", skipping spawn.")
         return
     end
 
@@ -914,7 +914,7 @@ local function spawnZoneBoss(zone)
     local spawnPosition = zone.bossSpawnPosition or getRandomPositionInZone(zone)
     
     if not spawnPosition then
-        print("No valid spawn position for boss in zone: " .. zone.name)
+        --print("No valid spawn position for boss in zone: " .. zone.name)
         return
     end
     local RedShader = "Monster Might"
@@ -942,7 +942,7 @@ end
 
 function onMonsterDeath(monster, killer)
     local zoneIds = Tile(monster:getPosition()):getZoneId()
-    print("Monster " .. monster:getName() .. " died in zone IDs: " .. table.concat(zoneIds, ", "))
+    --print("Monster " .. monster:getName() .. " died in zone IDs: " .. table.concat(zoneIds, ", "))
 
     for _, zoneId in ipairs(zoneIds) do
         if zones[zoneId] then
@@ -965,7 +965,7 @@ function onMonsterDeath(monster, killer)
                 zone.killCount = 0 -- Reset kill count after boss spawns
             end
 
-            print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
+            --print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
             scheduleNextSpawn(zone)
         end
     end
@@ -979,7 +979,7 @@ local function onEnterZone(player, zoneId)
         return
     end
 
-    print("onEnterZone")
+    --print("onEnterZone")
     if not zone.active then
         zone.active = true
         scheduleNextSpawn(zone)
@@ -987,7 +987,7 @@ local function onEnterZone(player, zoneId)
 
     local storageValue = player:getStorageValue(10001)
     if storageValue ~= zone.id then
-        print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
+        --print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
 
         if zone.showZoneName then
             player:sendExtendedOpcode(76, "You have entered the zone " .. zone.name)
@@ -998,27 +998,27 @@ local function onEnterZone(player, zoneId)
     -- Apply the currently active weather of the zone
     if zone.activeWeather then
         player:setMapShader(zone.activeWeather, true)
-        print("Player " .. player:getName() .. " received weather " .. zone.activeWeather)
+        --print("Player " .. player:getName() .. " received weather " .. zone.activeWeather)
     end
 
     -- Initialize tiles if they are empty
     if not zone.tiles or zone.tiles == 0 then
         local tileCount = getNumerPositionInZone(zoneId)
-        print("Number of tiles: " .. tileCount)
+        --print("Number of tiles: " .. tileCount)
         zone.tiles = tileCount
         zone.maxMonsters = (tileCount / zonemax_monsters_divider) + 1
     else
-        print("Zone " .. zoneId .. " already has tiles: " .. zone.tiles .. " tiles. Max monsters: " .. zone.maxMonsters)
+        --print("Zone " .. zoneId .. " already has tiles: " .. zone.tiles .. " tiles. Max monsters: " .. zone.maxMonsters)
     end
 
     -- Initialize player count
     if not zone.playercount or zone.playercount == 0 then
         local newplayerscount = Game.getZonePlayerCount(zoneId)
-        print("Number of players: " .. newplayerscount)
+        --print("Number of players: " .. newplayerscount)
         zone.playercount = newplayerscount
     else
         zone.playercount = zone.playercount + 1 -- Increment player count
-        print("Zone " .. zoneId .. " already has players: " .. zone.playercount)
+        --print("Zone " .. zoneId .. " already has players: " .. zone.playercount)
     end
     zone.active = true
 
@@ -1034,7 +1034,7 @@ local function despawnMonsters(zone)
             return
         end
 
-        print("Despawning monsters in zone ID: " .. zone.id)
+        --print("Despawning monsters in zone ID: " .. zone.id)
         for monsterId, _ in pairs(zone.spawnedMonsters) do
             local monster = Monster(monsterId)
             if monster then
@@ -1055,7 +1055,7 @@ end
 
 
 local function onLeaveZone(player, zoneId)
-    print("Player " .. player:getName() .. " leaving zone ID: " .. zoneId)
+    --print("Player " .. player:getName() .. " leaving zone ID: " .. zoneId)
     player:setStorageValue(10001, 0)
     activePlayers[player:getId()] = nil
     
@@ -1067,7 +1067,7 @@ local function onLeaveZone(player, zoneId)
         despawnMonsters(zones[zoneId])
     else
         zones[zoneId].playercount = zones[zoneId].playercount - 1
-        print("New zone count: " .. zones[zoneId].playercount)
+        --print("New zone count: " .. zones[zoneId].playercount)
     end
 end
 
@@ -1135,7 +1135,7 @@ function zoneOut.onStepOut(creature, item, position, fromPosition, zoneid)
     
     -- Check if the zones are different
     if not areZonesEqual(previousZones, newZones) and zoneid > 0 then
-        print("zoneid: " .. zoneid)
+        --print("zoneid: " .. zoneid)
         onLeaveZone(player, zoneid)
     end
 
@@ -1167,7 +1167,7 @@ function creatureeventlogin.onLogin(player)
                 local zone = zones[zoneId]
                 if zone and zone.activeWeather then
                     player:setMapShader(zone.activeWeather, true)
-                    print("Applied weather " .. zone.activeWeather .. " for " .. player:getName() .. " on login")
+                    --print("Applied weather " .. zone.activeWeather .. " for " .. player:getName() .. " on login")
                 end
             end
         end
@@ -1199,7 +1199,7 @@ function creatureeventlogout.onLogout(player)
 
     -- Reset the player's weather to default on logout
     player:setMapShader("Map - Default", true)
-    print("Reset weather for " .. player:getName() .. " on logout.")
+    --print("Reset weather for " .. player:getName() .. " on logout.")
 
     return true
 end
@@ -1243,11 +1243,11 @@ TargetCombatEvent:register()
 
 
 local function populateZonesOnStartup()
-    print("Populating all zones with monsters on startup...")
+    --print("Populating all zones with monsters on startup...")
 
     for _, zone in pairs(zones) do
         if zone.onStartup then
-            print("Filling zone: " .. zone.name)
+            --print("Filling zone: " .. zone.name)
 
             -- Ensure tiles are counted for monster limits
             if zone.tiles == 0 then
@@ -1302,7 +1302,7 @@ function globalevent.onThink()
             for _, player in ipairs(Game.getZonePlayersVector(zone.id)) do
                 if player then
                     player:setMapShader(zone.activeWeather, true)
-                    print("Updated weather for player " .. player:getName() .. " in zone " .. zone.name .. " to " .. zone.activeWeather)
+                    --print("Updated weather for player " .. player:getName() .. " in zone " .. zone.name .. " to " .. zone.activeWeather)
                 end
             end
         end

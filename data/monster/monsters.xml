@@ -22,6 +22,9 @@
 	<monster name="Baby" file="wilds/baby.xml" />
 	<monster name="Sand Crab" file="wilds/sand crab.xml" />
 	<monster name="Camel" file="wilds/camel.xml" />
+	<monster name="Chicken" file="wilds/chicken.xml" />
+	<monster name="Sheep" file="wilds/sheep.xml" />
+	<monster name="Black Sheep" file="wilds/black sheep.xml" />
 
 	<!--TIER 1 bosses-->
 	<monster name="Vael the Betrayer" file="tier 1/bosses/vael_the_betrayer.xml" />

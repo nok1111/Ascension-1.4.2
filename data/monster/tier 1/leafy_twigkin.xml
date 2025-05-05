@@ -24,7 +24,7 @@
 		<attack name="melee" interval="2000" min="-2" max="-54" />
 		<attack name="earth" interval="1000" chance="10" range="4" radius="1" target="1" min="-3" max="-65">
 			<attribute key="shootEffect" value="earth" />
-			<attribute key="areaEffect" value="poisonplant" />
+			<attribute key="areaEffect" value="carniphila" />
 		</attack>
 
 		<attack name="outfit" interval="2000" chance="1" target="1" range="5" monster="green frog" duration="2000" />

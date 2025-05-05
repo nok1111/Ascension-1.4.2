@@ -553,9 +553,6 @@
 	<item id="423" name="stairs">
 		<attribute key="floorchange" value="down" />
 	</item>
-	<item id="23935" article="a" name="stairs">
-		<attribute key="floorchange" value="west" />
-	</item>
 	<item id="424" article="a" name="stone tile" />
 	<item fromid="425" toid="426" article="a" name="stone tile">
 		<attribute key="description" value="It seems to be a switch." />
@@ -3075,7 +3072,7 @@
 		<attribute key="weight" value="80" />
 		<attribute key="armor" value="2" />
 		<attribute key="slotType" value="ring" />
-		<attribute key="skillmagic" value="1" />
+		<attribute key="magiclevelpoints" value="1" />
 	</item>
 	
 	
@@ -4819,7 +4816,7 @@
 		<attribute key="defense" value="17" />
 		<attribute key="weaponType" value="shield" />
 	</item>
-	<item id="2511" article="a" name="emblem shield">
+	<item id="2511" article="a" name="castle shield">
 		<attribute key="weight" value="6000" />
 		<attribute key="defense" value="39" />
 		<attribute key="weaponType" value="shield" />
@@ -5353,7 +5350,6 @@
 	<item id="24067" article="a" name="sea ground" />
 	<item id="24068" article="a" name="sea ground" />
 	<item id="24074" article="a" name="sea ground" />
-	<item id="23937" article="a" name="sea ground" />
 	<item id="23958" article="a" name="sea ground" />
 	<item id="24038" article="a" name="sea ground" />
 	
@@ -25219,7 +25215,7 @@
 	<item fromid="14780" toid="14788" name="cracked insectoid eggs" />
 	<item fromid="14792" toid="14794" article="an" name="insectoid hivecomb" />
 	<item fromid="14795" toid="14797" article="a" name="dry insectoid hivecomb" />
-	<item fromid="14789" toid="14800" article="an" name="insectoid hivecomb" />
+	<item id="14800" article="an" name="insectoid hivecomb" />
 	<item fromid="14801" toid="14811" article="a" name="hive structure" />
 	<item id="14818" article="a" name="ramp">
 		<attribute key="floorchange" value="north" />
@@ -36335,9 +36331,6 @@
 	<item id="31794" article="a" name="old orders #1">
   <attribute key="description" value="someone may want this." />
 </item>
-<item id="31796" article="a" name="old orders #2">
-  <attribute key="description" value="Someone may want this." />
-</item>
 <item id="31801" article="a" name="Amelo's shield">
 		<attribute key="description" value="Who is that guy?." />
 		<attribute key="weight" value="5700" />
@@ -37449,17 +37442,7 @@
 		<attribute key="range" value="5" />
 		<attribute key="description" value="poisons the target." />
 	</item>
-	<item id="36236" article="a" name="DeathSinger Bow">
-		<attribute key="weight" value="100" />
-		<attribute key="defense" value="30" />
-		<attribute key="attack" value="60" />
-		<attribute key="hitChance" value="80" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="brings death upon enemies." />
-	</item>
+
 	<item id="36245" article="a" name="Jungle longBow">
 		<attribute key="weight" value="200" />
 		<attribute key="attack" value="57" />
@@ -39334,12 +39317,6 @@
 		<attribute key="slotType" value="body" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-		<item id="33430" article="a" name="Howl of the Cunjury">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="7" />
-		<attribute key="slotType" value="head" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
 
 		<item id="33431" article="a" name="Robe of the Cunjury">
 		<attribute key="weight" value="400" />
@@ -39499,10 +39476,7 @@
 		<attribute key="description" value="this is pet click on it to summon" />
 		<attribute key="weight" value="30" />
 	</item>
-	<item id="37887" article="a" name="Gray Cat Egg">
-		<attribute key="description" value="this is pet click on it to summon" />
-		<attribute key="weight" value="30" />
-	</item>
+
 	<item id="37900" article="a" name="Black Cat Egg">
 		<attribute key="description" value="this is pet click on it to summon" />
 		<attribute key="weight" value="30" />
@@ -40714,47 +40688,6 @@
 	
 	
 	
-	<item id="37582" article="a" name="Blacksteel Shield">
-		<attribute key="weight" value="300" />
-		<attribute key="defense" value="100" />
-		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34063" article="a" name="Blacksteel Behemoth">		
-		<attribute key="weight" value="500" />
-		<attribute key="attack" value="120" />
-		<attribute key="defense" value="50" />
-		<attribute key="absorbPercentEnergy" value="3" />
-		<attribute key="elementDeath" value="5" />		
-		<attribute key="weaponType" value="sword" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34065" article="a" name="Blacksteel Sword">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="65" />
-		<attribute key="defense" value="35" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="elementDeath" value="2" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34064" article="a" name="Blacksteel Edge">
-		<attribute key="weight" value="300" />
-		<attribute key="attack" value="70" />
-		<attribute key="defense" value="30" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="elementDeath" value="3" />
-		<attribute key="weaponType" value="sword" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	
-	
-	
 	
 	<item id="31905" article="a" name="Paladins Helmet">
 		<attribute key="weight" value="200" />
@@ -40768,29 +40701,12 @@
 		<attribute key="slotType" value="head" />
 		
 	</item>
-	<item id="33459" article="a" name="Druids Helmet">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="22" />
-		<attribute key="slotType" value="head" />
-		
-	</item>
-	<item id="34107" article="a" name="Inner-force Helmet">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="21" />
-		<attribute key="slotType" value="head" />
-		
-	</item>
+
 	<item id="33430" article="a" name="High Magic Hat">
 		<attribute key="weight" value="200" />
 		<attribute key="armor" value="22" />
 		<attribute key="slotType" value="head" />
 		
-	</item>
-	<item id="33472" article="a" name="Demonic Helmet">
-		<attribute key="weight" value="200" />
-		<attribute key="armor" value="24" />
-		<attribute key="slotType" value="head" />
-			
 	</item>
 	
 	
@@ -40801,49 +40717,13 @@
 		<attribute key="slotType" value="body" />
 			
 	</item>
-	<item id="33468" article="a" name="Paladins Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="23" />	
-		<attribute key="slotType" value="body" />
-			
-	</item>
+
 	<item id="33990" article="a" name="Crusader Armor">
 		<attribute key="weight" value="400" />
 		<attribute key="armor" value="25" />	
 		<attribute key="slotType" value="body" />
 		
 	</item>
-	<item id="33460" article="a" name="Druid Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="22" />	
-		<attribute key="slotType" value="body" />
-			
-	</item>
-	<item id="34108" article="a" name="Inner-Force Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="24" />	
-		<attribute key="slotType" value="body" />
-			
-	</item>
-	<item id="34131" article="a" name="Prophets Robe">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="20" />	
-		<attribute key="slotType" value="body" />
-			
-	</item>
-	<item id="33431" article="a" name="High Magic Robe">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="18" />	
-		<attribute key="slotType" value="body" />
-		
-	</item>
-	<item id="33468" article="a" name="Demonic Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="28" />	
-		<attribute key="slotType" value="body" />
-		
-	</item>
-
 
 	<item id="33469" name="Cruel Legs">
 		<attribute key="weight" value="500" />
@@ -40869,19 +40749,6 @@
 		<attribute key="absorbPercentEnergy" value="2" />
 		<attribute key="slotType" value="legs" />	
 	</item>
-	<item id="33432" name="High Magic Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="21" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="slotType" value="legs" />	
-	</item>
-	<item id="33474" name="Demonic Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="26" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="slotType" value="legs" />	
-	</item>
-	
 
 
 
@@ -40903,57 +40770,6 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="description" value="forged in a distorted field." />	
 	</item>
-	
-	<item id="34071" article="a" name="Blacksteel Armor">
-		<attribute key="weight" value="400" />
-		<attribute key="armor" value="30" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="slotType" value="body" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34070" name="Blacksteel Legs">
-		<attribute key="weight" value="500" />
-		<attribute key="armor" value="26" />
-		<attribute key="absorbPercentEnergy" value="2" />
-		<attribute key="slotType" value="legs" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-	
-	
-	<item id="34069" name="Blacksteel Boots">
-		<attribute key="weight" value="250" />
-		<attribute key="armor" value="16" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="absorbPercentEnergy" value="1" />
-		<attribute key="description" value="forged in a distorted field." />
-	</item>
-	
-	<item id="34032" article="a" name="Blacksteel Bow">
-		<attribute key="weight" value="200" />
-		<attribute key="attack" value="120" />
-		<attribute key="defense" value="50" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="forged in a distorted field." />	
-	</item>
-	
-	<item id="34062" article="a" name="Blacksteel Wand">
-		<attribute key="attack" value="120" />
-		<attribute key="defense" value="50" />
-		<attribute key="slotType" value="two-handed" />
-		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-		<attribute key="hitChance" value="75" />
-		<attribute key="shootType" value="energy" />
-		<attribute key="range" value="5" />
-		<attribute key="description" value="Shoots multiple attacks at once." />	
-	</item>
-
-
 
 
 	<item id="38612" article="a" name="Skullcracker Armor Blueprint">

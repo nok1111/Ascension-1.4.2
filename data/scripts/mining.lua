@@ -4,13 +4,13 @@ local cfg = {
     stage2Regen = 900 * 1000, -- 15 minutes
     stage3Regen = 900 * 1000, -- 15 minutes
     ores = {
-        {effect = CONST_ME_SMOKE, ore = 40034, bonusore = 13757, amount = {2, 6}, skillReq = 0,  points = 10, fame = 1, veins = {
+        {effect = CONST_ME_SMOKE, ore = 40034, bonusore = 13757, amount = {2, 3}, skillReq = 0,  points = 10, fame = 1, veins = {
                 {id = 39985, lv = 8}, -- copper ore
                 {id = 40024, lv = 8} -- vein destruida
                 
             }
         },
-		 {effect = CONST_ME_SMOKE, ore = 40035, bonusore = 13757, amount = {2, 6}, skillReq = 1,  points = 10, fame = 1, veins = {
+		 {effect = CONST_ME_SMOKE, ore = 40035, bonusore = 13757, amount = {2, 3}, skillReq = 1,  points = 10, fame = 1, veins = {
                 {id = 39981, lv = 8}, -- silver ore
                 {id = 40024, lv = 8} -- vein destruida
                 
@@ -40,8 +40,31 @@ local miningSystem = Action()
 function miningSystem.onUse(player, item, fromPosition, target, toPosition, isHotkey)
 
 
+--print("target", target.itemid)
 
 
+local row, vein = nil, nil
+local newTarget = nil
+for i, tree in ipairs(cfg.ores) do
+    for j, veinData in ipairs(cfg.ores[i].veins) do
+        local tile = Tile(toPosition)
+        if tile then
+                for _, thing in ipairs(tile:getItems() or {}) do
+                    if thing:getId() == veinData.id then
+                        row, vein = i, j
+                        newTarget = thing
+                        break
+                    end
+                end
+            end
+            if row and vein then break end
+        end
+        if row and vein then break end
+    end
+
+    if newTarget then
+        target = newTarget
+    end
     
  local row, vein = isInTable(target.itemid)
     if (row and vein) then
@@ -168,5 +191,5 @@ function miningSystem.onUse(player, item, fromPosition, target, toPosition, isHo
     return true
 end
 
-miningSystem:id(4874)
+miningSystem:id(2553)
 miningSystem:register()

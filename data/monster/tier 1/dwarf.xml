@@ -29,5 +29,12 @@
 	</voices>
 	<loot>
 
+	<item id="38291" chance="3000" /> <!-- regen -->
+	<item id="32859" chance="3000" /> <!-- chain coat -->
+	<item id="39137" chance="9000" /> <!-- stolen leather boots -->
+	<item id="36358" chance="6000" /> <!-- skullcraker knife -->
+
+
+
 	</loot>
 </monster>
