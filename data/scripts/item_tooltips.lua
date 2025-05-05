@@ -109,7 +109,9 @@ function Item:buildTooltip()
   local item_data = {
     uid = uid,
     itemName = itemType:getName(),
-    clientId = itemType:getClientId()
+    clientId = itemType:getClientId(),
+    -- Add equipType for OTClient tooltip
+    equipType = itemType:getEquipTypeString()
   }
 
   if self:getType():isUpgradable() or self:getType():canHaveItemLevel() then

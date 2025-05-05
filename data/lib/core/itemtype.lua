@@ -139,3 +139,30 @@ function ItemType:getWeaponString()
 
 	return weaponString
 end
+
+function ItemType:getEquipTypeString()
+  if self:isHelmet() then
+    return "Helmet"
+  elseif self:isArmor() then
+    return "Armor"
+  elseif self:isLegs() then
+    return "Legs"
+  elseif self:isBoots() then
+    return "Boots"
+  elseif self:isShield() then
+    return "Shield"
+  elseif self:isRing() then
+    return "Ring"
+  elseif self:isNecklace() then
+    return "Amulet"
+  elseif self:isWeapon() then
+    if self:isTwoHanded() then
+      return "Two-Handed"
+    else
+      return "One-Handed"
+    end
+  elseif self:isAmmo() then
+    return "Ammo"
+  end
+  return nil
+end
