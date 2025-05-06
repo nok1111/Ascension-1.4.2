@@ -289,20 +289,7 @@ function removeStat(player, data)
 end
 
 function resetStats(player)
-    -- Check for free restarts
-    local freeRestarts = player:getStorageValue(STORAGE_FREE_STAT_RESETS) or 0
-    local availablePoints = player:getStatsPoints()
-    
-    if freeRestarts <= 0 and availablePoints <= 0 then
-        player:sendTextMessage(MESSAGE_STATUS_WARNING, "You don't have any stat reset points left.")
-        return false
-    end
-    
-    -- Deduct free restart if used
-    if freeRestarts > 0 then
-        player:setStorageValue(STORAGE_FREE_STAT_RESETS, freeRestarts - 1)
-    end
-    
+ 
     -- Original reset logic
     for i = CHARSTAT_FIRST, CHARSTAT_LAST do
         local points = player:getStorageValue(characterStatsPoints + i + 1)
@@ -319,7 +306,7 @@ function resetStats(player)
     end
 
     player:updateCharacterStats()
-    return true
+
 end
 
 function Player:updateCharacterStats()

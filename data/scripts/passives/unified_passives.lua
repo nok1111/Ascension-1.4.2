@@ -256,7 +256,7 @@ local PASSIVES = {
   
   luck_dodge = {
     config = {
-      playerOnly = true,
+      vocation = "all",
       type = "OnDefend"
     },
     trigger = function(player, target, damage, origin)
@@ -272,31 +272,59 @@ local PASSIVES = {
     end
   },
   
-  compassion_shield = {
+  resilience_stat = { --reduce damage taken
     config = {
-      playerOnly = true,
+      vocation = "all",
       type = "OnDefend"
     },
     trigger = function(player, target, damage, origin)
       return true
     end,
     effect = function(player, target, damage)
-      local reduction = player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003
-      return damage * (1 - reduction)
+      local resilience = player:getCharacterStat(CHARSTAT_RESILIENCE)
+      
+      -- First 20% of damage gets strong reduction (0.8% per point)
+      local firstReduction = math.min(damage * 0.2, resilience * 0.008)
+      
+      -- Remaining 80% gets normal reduction (0.2% per point)
+      local secondReduction = (damage - firstReduction) * resilience * 0.002
+      
+      local totalReduction = firstReduction + secondReduction
+      local finalDamage = damage - totalReduction
+      
+      print(string.format("Resilience Defense (%d points):", resilience))
+      print(string.format("First 20%% reduced by %.1f%% (%.1f damage)", 
+                          firstReduction/damage*100, firstReduction))
+      print(string.format("Remaining 80%% reduced by %.1f%% (%.1f damage)",
+                          secondReduction/damage*100, secondReduction))
+      print(string.format("Total reduction: %.1f%% (from %.1f to %.1f)",
+                          totalReduction/damage*100, damage, finalDamage))
+      
+      return finalDamage
     end
   },
   
   voracity_leech = {
     config = {
-      playerOnly = true,
+      vocation = "all", -- All vocations example
       type = "OnAttack"
     },
     trigger = function(player, target, damage, origin)
       return origin ~= ORIGIN_HEALING
     end,
     effect = function(player, target, damage)
-      local leechPercent = player:getCharacterStat(CHARSTAT_VORACITY) * 0.002
-      local healAmount = math.floor(damage * leechPercent)
+      -- Very powerful early-game formula
+      local base = 0.05  -- 5% base leech
+      local linear = player:getCharacterStat(CHARSTAT_VORACITY) * 0.003  -- 0.3% per point
+      local diminishing = math.pow(player:getCharacterStat(CHARSTAT_VORACITY), 0.6) * 0.0005  -- Strong early scaling
+      
+      local leechPercent = math.min(base + linear + diminishing, 0.30)  -- Cap at 30%
+      local healAmount = math.max(math.floor(math.abs(damage) * leechPercent), 2)  -- Minimum 2 HP
+      
+      print("Voracity Leech:")
+      print("Base:", base, "Linear:", linear, "Diminishing:", diminishing)
+      print("Total %:", leechPercent, "Heal:", healAmount)
+      
       player:addHealth(healAmount)
       player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
       return damage
@@ -305,7 +333,6 @@ local PASSIVES = {
   
   frostbloom_shield = {
     config = {
-      playerOnly = true,
       subid = 25961,
       type = "OnDefend"
     },
@@ -342,22 +369,6 @@ local PASSIVES = {
     end,
     effect = function(player, target, damage)
       return damage * (1 - player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003)
-    end
-  },
-  
-  voracity_leech_stat = {
-    config = {
-      playerOnly = true,
-      type = "OnAttack"
-    },
-    trigger = function(player, target, damage, origin)
-      return origin ~= ORIGIN_HEALING
-    end,
-    effect = function(player, target, damage)
-      local heal = math.floor(damage * player:getCharacterStat(CHARSTAT_VORACITY) * 0.002)
-      player:addHealth(heal)
-      player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-      return damage
     end
   },
   
@@ -436,7 +447,7 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
         
         -- Check requirements
         if not (passiveData.config.playerOnly and not creature:isPlayer()) then
-          local meetsReq = (passiveData.config.vocation and vocationId == passiveData.config.vocation) or 
+          local meetsReq = (passiveData.config.vocation and (type(passiveData.config.vocation) == "table" and table.contains(passiveData.config.vocation, vocationId) or vocationId == passiveData.config.vocation)) or 
                           (passiveData.config.storage and player:getStorageValue(passiveData.config.storage) > 0) or
                           (passiveData.config.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.condition))
           
@@ -467,7 +478,7 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
         
         -- Check requirements
         if not (passiveData.config.playerOnly and not creature:isPlayer()) then
-          local meetsReq = (passiveData.config.vocation and vocationId == passiveData.config.vocation) or 
+          local meetsReq = (passiveData.config.vocation and (type(passiveData.config.vocation) == "table" and table.contains(passiveData.config.vocation, vocationId) or vocationId == passiveData.config.vocation)) or 
                           (passiveData.config.storage and player:getStorageValue(passiveData.config.storage) > 0) or
                           (passiveData.config.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.condition))
           
