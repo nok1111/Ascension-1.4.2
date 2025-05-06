@@ -6,16 +6,6 @@ US_BUFFS = {}
 
 local US_SUBID = {}
 
--- Skill key to attribute and config map (extend as needed)
-SKILL_ATTRIBUTE_MAP = {
-    [SKILL_CLUB] = {attr = ITEM_ATTRIBUTE_SKILL_CLUB, per_upgrade = 'SKILL_CLUB_PER_UPGRADE'},
-    [SKILL_SWORD] = {attr = ITEM_ATTRIBUTE_SKILL_SWORD, per_upgrade = 'SKILL_SWORD_PER_UPGRADE'},
-    [SKILL_AXE] = {attr = ITEM_ATTRIBUTE_SKILL_AXE, per_upgrade = 'SKILL_AXE_PER_UPGRADE'},
-    [SKILL_DISTANCE] = {attr = ITEM_ATTRIBUTE_SKILL_DISTANCE, per_upgrade = 'SKILL_DISTANCE_PER_UPGRADE'},
-    [SKILL_SHIELD] = {attr = ITEM_ATTRIBUTE_SKILL_SHIELD, per_upgrade = 'SKILL_SHIELD_PER_UPGRADE'},
-    [SKILL_FISHING] = {attr = ITEM_ATTRIBUTE_SKILL_FISHING, per_upgrade = 'SKILL_FISHING_PER_UPGRADE'},
-}
-
 local TargetCombatEvent = EventCallback
 TargetCombatEvent.onTargetCombat = function(creature, target)
     target:registerEvent("UpgradeSystemHealth")
@@ -150,7 +140,10 @@ function us_onLogin(player)
                                 US_CONDITIONS[bonusId][bonusValue][itemId] = Condition(attr.condition)
                                 if attr.condition ~= CONDITION_MANASHIELD then
                                     US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(CONDITION_PARAM_SUBID, 1000 + player:getNextSubId(slot, i))
-                                    US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(attr.param, attr.percentage == true and 100 + bonusValue or bonusValue)
+                                    US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(
+                                        attr.param,
+                                        attr.percentage == true and 100 + bonusValue or bonusValue
+                                    )
                                     US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(CONDITION_PARAM_TICKS, -1)
                                 else
                                     US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(CONDITION_PARAM_TICKS, 86400000)
@@ -357,8 +350,8 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
 									--	print(tostring("on cooldown"))
 									end
 								end
-					
-                      
+						 
+						
                     end
                   elseif attr.name == "Double Damage" then
                     doubleDamageTotal = doubleDamageTotal + value[2]
@@ -982,6 +975,224 @@ function Player:onInventoryUpdate(item, slot, equip)
     return true
 end
 
+function Item.rollAttribute(self, player, itemType, weaponType, unidentify)
+ if not itemType:isUpgradable() or self:isUnique() then
+    return false
+  end
+  local attrIds = {}
+  local item_level = self:getItemLevel()
+  if unidentify then
+    if US_CONFIG.IDENTIFY_UPGRADE_LEVEL then
+      local upgrade_level = 1
+      for i = US_CONFIG.MAX_UPGRADE_LEVEL, 1, -1 do
+        if i >= US_CONFIG.UPGRADE_LEVEL_DESTROY then
+          if math.random(100) <= US_CONFIG.UPGRADE_DESTROY_CHANCE[i] then
+            upgrade_level = i
+            break
+          end
+        else
+          if math.random(100) <= US_CONFIG.UPGRADE_SUCCESS_CHANCE[i] then
+            upgrade_level = i
+            break
+          end
+        end
+      end
+      self:setUpgradeLevel(upgrade_level)
+    end
+    local slots = math.random(1, self:getMaxAttributes())
+    local usItemType = self:getItemType()
+    for i = 1, slots do
+      local attrId = math.random(1, #US_ENCHANTMENTS)
+      local attr = US_ENCHANTMENTS[attrId]
+      while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
+        attr.chance and math.random(100) >= attr.chance do
+        attrId = math.random(1, #US_ENCHANTMENTS)
+        attr = US_ENCHANTMENTS[attrId]
+      end
+      table.insert(attrIds, attrId)
+      local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
+      self:setCustomAttribute("Slot" .. i, attrId .. "|" .. value)
+    end
+    return true
+  else
+    local bonuses = self:getBonusAttributes()
+    if bonuses then
+      if #bonuses >= self:getMaxAttributes() then
+        player:sendTextMessage(MESSAGE_STATUS_WARNING, "Max number of bonuses reached!")
+        return false
+      end
+      for v, k in pairs(bonuses) do
+        table.insert(attrIds, k[1])
+      end
+    end
+    local usItemType = self:getItemType()
+    local attrId = math.random(1, #US_ENCHANTMENTS)
+    local attr = US_ENCHANTMENTS[attrId]
+    while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
+      attr.chance and math.random(100) >= attr.chance do
+      attrId = math.random(1, #US_ENCHANTMENTS)
+      attr = US_ENCHANTMENTS[attrId]
+    end
+    local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
+    self:setCustomAttribute("Slot" .. self:getLastSlot() + 1, attrId .. "|" .. value)
+    return true
+  end
+  return false
+end
+
+function Item.addAttribute(self, slot, attr, value)
+    self:setCustomAttribute("Slot" .. slot, attr .. "|" .. value)
+end
+
+function Item.setAttributeValue(self, slot, value)
+    self:setCustomAttribute("Slot" .. slot, value)
+end
+
+function Item.getBonusAttribute(self, slot)
+    local bonuses = self:getCustomAttribute("Slot" .. slot)
+    if bonuses then
+        local data = {}
+        for bonus in bonuses:gmatch("([^|]+)") do
+            data[#data + 1] = tonumber(bonus)
+        end
+        return data
+    end
+
+    return nil
+end
+
+function Item.getBonusAttributes(self)
+    local data = {}
+    for i = 1, self:getMaxAttributes() do
+        local bonuses = self:getCustomAttribute("Slot" .. i)
+        if bonuses then
+            local t = {}
+            for bonus in bonuses:gmatch("([^|]+)") do
+                t[#t + 1] = tonumber(bonus)
+            end
+            data[#data + 1] = t
+        end
+    end
+
+    return #data > 0 and data or nil
+end
+
+function Item.getLastSlot(self)
+    local last = 0
+    for i = 1, self:getMaxAttributes() do
+        if self:getCustomAttribute("Slot" .. i) then
+            last = i
+        end
+    end
+    return last
+end
+
+function Item.setItemLevel(self, level, first)
+   local oldLevel = self:getItemLevel()
+  local itemType = ItemType(self.itemid)
+  local finalValue = 0
+  local value = 0
+  if oldLevel < level then
+    value = (level - oldLevel)
+  else
+    value = (oldLevel - level)
+  end
+  if itemType:getAttack() > 0 then
+    if value >= US_CONFIG.ATTACK_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.ATTACK_PER_ITEM_LEVEL) * US_CONFIG.ATTACK_FROM_ITEM_LEVEL)
+    else
+      finalValue = 0
+    end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ATTACK,
+        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + finalValue) or (itemType:getAttack() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ATTACK,
+        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - finalValue) or (itemType:getAttack() - finalValue)
+      )
+    end
+  end
+  if itemType:getDefense() > 0 then
+    if value >= US_CONFIG.DEFENSE_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.DEFENSE_PER_ITEM_LEVEL) * US_CONFIG.DEFENSE_FROM_ITEM_LEVEL)
+    else
+      finalValue = 0
+    end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_DEFENSE,
+        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + finalValue) or (itemType:getDefense() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_DEFENSE,
+        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - finalValue) or (itemType:getDefense() - finalValue)
+      )
+    end
+  end
+  if itemType:getArmor() > 0 then
+    if value >= US_CONFIG.ARMOR_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.ARMOR_PER_ITEM_LEVEL) * US_CONFIG.ARMOR_FROM_ITEM_LEVEL)
+    else
+      finalValue = 0
+    end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ARMOR,
+        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + finalValue) or (itemType:getArmor() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_ARMOR,
+        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - finalValue) or (itemType:getArmor() - finalValue)
+      )
+    end
+  end
+  
+
+  if itemType:getHitChance() > 0 then
+    if value >= US_CONFIG.HITCHANCE_PER_ITEM_LEVEL then
+      finalValue = math.floor((value / US_CONFIG.HITCHANCE_PER_ITEM_LEVEL) * US_CONFIG.HITCHANCE_FROM_ITEM_LEVEL)
+    else
+      finalValue = 0
+    end
+    if oldLevel < level then
+      self:setAttribute(
+        ITEM_ATTRIBUTE_HITCHANCE,
+        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or
+          (itemType:getHitChance() + finalValue)
+      )
+    else
+      self:setAttribute(
+        ITEM_ATTRIBUTE_HITCHANCE,
+        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or
+          (itemType:getHitChance() - finalValue)
+      )
+    end
+  end
+  
+  if first then
+    if itemType:getAttack() > 0 then
+      level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
+    end
+    if itemType:getDefense() > 0 then
+      level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
+    end
+    if itemType:getArmor() > 0 then
+      level = level + math.floor((itemType:getArmor() * 4.0) / US_CONFIG.ITEM_LEVEL_PER_ARMOR )
+    end
+	
+	
+    if itemType:getHitChance() > 0 then
+      level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
+    end
+  end
+  return self:setCustomAttribute("item_level", level)
+end
+
 function Item.getItemLevel(self)
     return self:getCustomAttribute("item_level") and self:getCustomAttribute("item_level") or 0
 end
@@ -1018,6 +1229,7 @@ function Item.setUpgradeLevel(self, level)
     end
   end
   
+
   if itemType:getHitChance() > 0 then
     if oldLevel < level then
       self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + (level - oldLevel) * US_CONFIG.HITCHANCE_PER_UPGRADE)
@@ -1026,159 +1238,14 @@ function Item.setUpgradeLevel(self, level)
     end
   end
   
-  -- Additional stat and special skill logic (do NOT remove old logic, only add below)
-
-  -- Magic Level
-  local magicLevel = itemType.getStat and itemType:getStat(STAT_MAGICPOINTS)
-  if magicLevel and magicLevel > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MAGICPOINTS, self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) + (level - oldLevel) * US_CONFIG.MAGIC_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MAGICPOINTS, self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) - (oldLevel - level) * US_CONFIG.MAGIC_PER_UPGRADE)
-    end
+  self:setCustomAttribute("upgrade", level)
+  if oldLevel < level then
+    self:setItemLevel(self:getItemLevel() + (US_CONFIG.ITEM_LEVEL_PER_UPGRADE * (level - oldLevel)))
   end
+end
 
-  -- Max HP (scaling)
-  local maxHP = itemType.getStat and itemType:getStat(STAT_MAXHITPOINTS)
-  if maxHP and maxHP > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS, self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) + (level - oldLevel) * US_CONFIG.MAXHP_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS, self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) - (oldLevel - level) * US_CONFIG.MAXHP_PER_UPGRADE)
-    end
-  end
-
-  -- Max MP (scaling)
-  local maxMP = itemType.getStat and itemType:getStat(STAT_MAXMANAPOINTS)
-  if maxMP and maxMP > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS, self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) + (level - oldLevel) * US_CONFIG.MAXMP_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS, self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) - (oldLevel - level) * US_CONFIG.MAXMP_PER_UPGRADE)
-    end
-  end
-
-  -- Special Skills (all scaling)
-  local critChance = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE)
-  if critChance and critChance > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) + (level - oldLevel) * US_CONFIG.CRITCHANCE_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) - (oldLevel - level) * US_CONFIG.CRITCHANCE_PER_UPGRADE)
-    end
-  end
-
-  local critAmount = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITAMOUNT)
-  if critAmount and critAmount > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT, self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) + (level - oldLevel) * US_CONFIG.CRITAMOUNT_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT, self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) - (oldLevel - level) * US_CONFIG.CRITAMOUNT_PER_UPGRADE)
-    end
-  end
-
-  local lifeLeechChance = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHCHANCE)
-  if lifeLeechChance and lifeLeechChance > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE, self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) + (level - oldLevel) * US_CONFIG.LIFELEECHCHANCE_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE, self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) - (oldLevel - level) * US_CONFIG.LIFELEECHCHANCE_PER_UPGRADE)
-    end
-  end
-
-  local lifeLeechAmount = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT)
-  if lifeLeechAmount and lifeLeechAmount > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT, self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) + (level - oldLevel) * US_CONFIG.LIFELEECHAMOUNT_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT, self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) - (oldLevel - level) * US_CONFIG.LIFELEECHAMOUNT_PER_UPGRADE)
-    end
-  end
-
-  local manaLeechChance = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE)
-  if manaLeechChance and manaLeechChance > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE, self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) + (level - oldLevel) * US_CONFIG.MANALEECHCHANCE_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE, self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) - (oldLevel - level) * US_CONFIG.MANALEECHCHANCE_PER_UPGRADE)
-    end
-  end
-
-  local manaLeechAmount = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT)
-  if manaLeechAmount and manaLeechAmount > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT, self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) + (level - oldLevel) * US_CONFIG.MANALEECHAMOUNT_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT, self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) - (oldLevel - level) * US_CONFIG.MANALEECHAMOUNT_PER_UPGRADE)
-    end
-  end
-
-  local attackSpeed = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED)
-  if attackSpeed and attackSpeed > 0 then
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_ATTACKSPEED, self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) + (level - oldLevel) * US_CONFIG.ATTACKSPEED_PER_UPGRADE)
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_ATTACKSPEED, self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) - (oldLevel - level) * US_CONFIG.ATTACKSPEED_PER_UPGRADE)
-    end
-  end
-
-    -- SKILLS
-    if itemType.getSkill then
-        for skillKey, v in pairs(SKILL_ATTRIBUTE_MAP) do
-            local skillValue = itemType:getSkill(skillKey)
-            if skillValue and skillValue > 0 then
-                local per_upgrade = US_CONFIG[v.per_upgrade] or 1
-                if oldLevel < level then
-                    self:setAttribute(v.attr, self:getAttribute(v.attr) + (level - oldLevel) * per_upgrade)
-                else
-                    self:setAttribute(v.attr, self:getAttribute(v.attr) - (oldLevel - level) * per_upgrade)
-                end
-            end
-        end
-    end
-    -- Health/Mana Regen
-    local healthGain = itemType.getHealthGain and itemType:getHealthGain()
-    if healthGain and healthGain > 0 then
-        local per_upgrade = US_CONFIG.HEALTHGAIN_PER_UPGRADE or 1
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHGAIN, self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) + (level - oldLevel) * per_upgrade)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHGAIN, self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) - (oldLevel - level) * per_upgrade)
-        end
-    end
-    local healthTicks = itemType.getHealthTicks and itemType:getHealthTicks()
-    if healthTicks and healthTicks > 0 then
-        local per_upgrade = US_CONFIG.HEALTHTICKS_PER_UPGRADE or 1
-        if oldLevel < level then
-            -- Upgrades LOWER the tick interval (faster regen)
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHTICKS, math.max(1, self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) - (level - oldLevel) * per_upgrade))
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHTICKS, self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) + (oldLevel - level) * per_upgrade)
-        end
-    end
-    local manaGain = itemType.getManaGain and itemType:getManaGain()
-    if manaGain and manaGain > 0 then
-        local per_upgrade = US_CONFIG.MANAGAIN_PER_UPGRADE or 1
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_MANAGAIN, self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) + (level - oldLevel) * per_upgrade)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_MANAGAIN, self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) - (oldLevel - level) * per_upgrade)
-        end
-    end
-    local manaTicks = itemType.getManaTicks and itemType:getManaTicks()
-    if manaTicks and manaTicks > 0 then
-        local per_upgrade = US_CONFIG.MANATICKS_PER_UPGRADE or 1
-        if oldLevel < level then
-            -- Upgrades LOWER the tick interval (faster regen)
-            self:setAttribute(ITEM_ATTRIBUTE_MANATICKS, math.max(1, self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) - (level - oldLevel) * per_upgrade))
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_MANATICKS, self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) + (oldLevel - level) * per_upgrade)
-        end
-    end
-    self:setCustomAttribute("upgrade", level)
-    if oldLevel < level then
-        self:setItemLevel(self:getItemLevel() + (US_CONFIG.ITEM_LEVEL_PER_UPGRADE * (level - oldLevel)))
-    end
+function Item.getUpgradeLevel(self)
+    return self:getCustomAttribute("upgrade") and self:getCustomAttribute("upgrade") or 0
 end
 
 function Item.reduceUpgradeLevel(self)
@@ -1551,421 +1618,3 @@ KillEvent:type("kill")
 KillEvent:register()
 PrepareDeathEvent:type("preparedeath")
 PrepareDeathEvent:register()
-
-function Item.setItemLevel(self, level, first)
-   local oldLevel = self:getItemLevel()
-  local itemType = ItemType(self.itemid)
-  local finalValue = 0
-  local value = 0
-  if oldLevel < level then
-    value = (level - oldLevel)
-  else
-    value = (oldLevel - level)
-  end
-  if itemType:getAttack() > 0 then
-    if value >= US_CONFIG.ATTACK_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.ATTACK_PER_ITEM_LEVEL) * US_CONFIG.ATTACK_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ATTACK,
-        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + finalValue) or (itemType:getAttack() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ATTACK,
-        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - finalValue) or (itemType:getAttack() - finalValue)
-      )
-    end
-  end
-  if itemType:getDefense() > 0 then
-    if value >= US_CONFIG.DEFENSE_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.DEFENSE_PER_ITEM_LEVEL) * US_CONFIG.DEFENSE_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_DEFENSE,
-        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + finalValue) or (itemType:getDefense() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_DEFENSE,
-        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - finalValue) or (itemType:getDefense() - finalValue)
-      )
-    end
-  end
-  if itemType:getArmor() > 0 then
-    if value >= US_CONFIG.ARMOR_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.ARMOR_PER_ITEM_LEVEL) * US_CONFIG.ARMOR_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ARMOR,
-        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + finalValue) or (itemType:getArmor() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ARMOR,
-        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - finalValue) or (itemType:getArmor() - finalValue)
-      )
-    end
-  end
-
-  -- Restore original hit chance logic
-  if itemType:getHitChance() > 0 then
-    if value >= US_CONFIG.HITCHANCE_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.HITCHANCE_PER_ITEM_LEVEL) * US_CONFIG.HITCHANCE_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_HITCHANCE,
-        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or
-          (itemType:getHitChance() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_HITCHANCE,
-        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or
-          (itemType:getHitChance() - finalValue)
-      )
-    end
-  end
-
-  -- Additional stat and special skill logic (do NOT remove old logic, only add below)
-
-  -- Magic Level
-  local magicLevel = itemType.getStat and itemType:getStat(STAT_MAGICPOINTS)
-  if magicLevel and magicLevel > 0 then
-    if value >= US_CONFIG.MAGIC_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.MAGIC_PER_ITEM_LEVEL) * US_CONFIG.MAGIC_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MAGICPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) + finalValue) or (magicLevel + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MAGICPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) - finalValue) or (magicLevel - finalValue))
-    end
-  end
-
-  -- Max HP (scaling)
-  local maxHP = itemType.getStat and itemType:getStat(STAT_MAXHITPOINTS)
-  if maxHP and maxHP > 0 then
-    if value >= (US_CONFIG.MAXHP_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.MAXHP_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MAXHP_FROM_ITEM_LEVEL or 10))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) + finalValue) or (maxHP + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) - finalValue) or (maxHP - finalValue))
-    end
-  end
-
-  -- Max MP (scaling)
-  local maxMP = itemType.getStat and itemType:getStat(STAT_MAXMANAPOINTS)
-  if maxMP and maxMP > 0 then
-    if value >= (US_CONFIG.MAXMP_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.MAXMP_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MAXMP_FROM_ITEM_LEVEL or 10))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) + finalValue) or (maxMP + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) - finalValue) or (maxMP - finalValue))
-    end
-  end
-
-  -- Special Skills (all scaling)
-  local critChance = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE)
-  if critChance and critChance > 0 then
-    if value >= (US_CONFIG.CRITCHANCE_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.CRITCHANCE_PER_ITEM_LEVEL or 10)) * (US_CONFIG.CRITCHANCE_FROM_ITEM_LEVEL or 1))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) + finalValue) or (critChance + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) - finalValue) or (critChance - finalValue))
-    end
-  end
-
-  local critAmount = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITAMOUNT)
-  if critAmount and critAmount > 0 then
-    if value >= (US_CONFIG.CRITAMOUNT_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.CRITAMOUNT_PER_ITEM_LEVEL or 10)) * (US_CONFIG.CRITAMOUNT_FROM_ITEM_LEVEL or 1))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) + finalValue) or (critAmount + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) - finalValue) or (critAmount - finalValue))
-    end
-  end
-
-  local lifeLeechChance = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHCHANCE)
-  if lifeLeechChance and lifeLeechChance > 0 then
-    if value >= (US_CONFIG.LIFELEECHCHANCE_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.LIFELEECHCHANCE_PER_ITEM_LEVEL or 10)) * (US_CONFIG.LIFELEECHCHANCE_FROM_ITEM_LEVEL or 1))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) + finalValue) or (lifeLeechChance + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) - finalValue) or (lifeLeechChance - finalValue))
-    end
-  end
-
-  local lifeLeechAmount = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT)
-  if lifeLeechAmount and lifeLeechAmount > 0 then
-    if value >= (US_CONFIG.LIFELEECHAMOUNT_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.LIFELEECHAMOUNT_PER_ITEM_LEVEL or 10)) * (US_CONFIG.LIFELEECHAMOUNT_FROM_ITEM_LEVEL or 1))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) + finalValue) or (lifeLeechAmount + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) - finalValue) or (lifeLeechAmount - finalValue))
-    end
-  end
-
-  local manaLeechChance = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE)
-  if manaLeechChance and manaLeechChance > 0 then
-    if value >= (US_CONFIG.MANALEECHCHANCE_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.MANALEECHCHANCE_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MANALEECHCHANCE_FROM_ITEM_LEVEL or 1))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) + finalValue) or (manaLeechChance + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) - finalValue) or (manaLeechChance - finalValue))
-    end
-  end
-
-  local manaLeechAmount = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT)
-  if manaLeechAmount and manaLeechAmount > 0 then
-    if value >= (US_CONFIG.MANALEECHAMOUNT_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.MANALEECHAMOUNT_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MANALEECHAMOUNT_FROM_ITEM_LEVEL or 1))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) + finalValue) or (manaLeechAmount + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) - finalValue) or (manaLeechAmount - finalValue))
-    end
-  end
-
-  local attackSpeed = itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED)
-  if attackSpeed and attackSpeed > 0 then
-    if value >= (US_CONFIG.ATTACKSPEED_PER_ITEM_LEVEL or 10) then
-      finalValue = math.floor((value / (US_CONFIG.ATTACKSPEED_PER_ITEM_LEVEL or 10)) * (US_CONFIG.ATTACKSPEED_FROM_ITEM_LEVEL or 1))
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(ITEM_ATTRIBUTE_ATTACKSPEED, (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) + finalValue) or (attackSpeed + finalValue))
-    else
-      self:setAttribute(ITEM_ATTRIBUTE_ATTACKSPEED, (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) - finalValue) or (attackSpeed - finalValue))
-    end
-  end
-
-    -- SKILLS
-    local skillKey, v in pairs(SKILL_ATTRIBUTE_MAP) do
-        local skillValue = itemType:getSkill(skillKey)
-        if skillValue and skillValue > 0 then
-            local per_level = US_CONFIG[v.per_upgrade:gsub('_PER_UPGRADE', '_PER_ITEM_LEVEL')] or 1
-            if oldLevel < level then
-                self:setAttribute(v.attr, self:getAttribute(v.attr) + value * per_level)
-            else
-                self:setAttribute(v.attr, self:getAttribute(v.attr) - value * per_level)
-            end
-        end
-    end
-    -- Health/Mana Regen
-    local healthGain = itemType.getHealthGain and itemType:getHealthGain()
-    if healthGain and healthGain > 0 then
-        local per_level = US_CONFIG.HEALTHGAIN_PER_ITEM_LEVEL or 1
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHGAIN, self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) + value * per_level)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHGAIN, self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) - value * per_level)
-        end
-    end
-    local healthTicks = itemType.getHealthTicks and itemType:getHealthTicks()
-    if healthTicks and healthTicks > 0 then
-        local per_level = US_CONFIG.HEALTHTICKS_PER_ITEM_LEVEL or 1
-        if oldLevel < level then
-            -- Upgrades LOWER the tick interval (faster regen)
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHTICKS, math.max(1, self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) - value * per_level))
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_HEALTHTICKS, self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) + value * per_level)
-        end
-    end
-    local manaGain = itemType.getManaGain and itemType:getManaGain()
-    if manaGain and manaGain > 0 then
-        local per_level = US_CONFIG.MANAGAIN_PER_ITEM_LEVEL or 1
-        if oldLevel < level then
-            self:setAttribute(ITEM_ATTRIBUTE_MANAGAIN, self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) + value * per_level)
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_MANAGAIN, self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) - value * per_level)
-        end
-    end
-    local manaTicks = itemType.getManaTicks and itemType:getManaTicks()
-    if manaTicks and manaTicks > 0 then
-        local per_level = US_CONFIG.MANATICKS_PER_ITEM_LEVEL or 1
-        if oldLevel < level then
-            -- Upgrades LOWER the tick interval (faster regen)
-            self:setAttribute(ITEM_ATTRIBUTE_MANATICKS, math.max(1, self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) - value * per_level))
-        else
-            self:setAttribute(ITEM_ATTRIBUTE_MANATICKS, self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) + value * per_level)
-        end
-    end
-    if first then
-        if itemType:getAttack() > 0 then
-            level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
-        end
-        if itemType:getDefense() > 0 then
-            level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
-        end
-        if itemType:getArmor() > 0 then
-            level = level + math.floor((itemType:getArmor() * 4.0) / US_CONFIG.ITEM_LEVEL_PER_ARMOR )
-        end
-	
-        if itemType:getHitChance() > 0 then
-            level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
-        end
-    end
-    return self:setCustomAttribute("item_level", level)
-end
-
-function Item.getUpgradeLevel(self)
-    return self:getCustomAttribute("upgrade") and self:getCustomAttribute("upgrade") or 0
-end
-
-function Item.rollAttribute(self, player, itemType, weaponType, unidentify)
- if not itemType:isUpgradable() or self:isUnique() then
-    return false
-  end
-  local attrIds = {}
-  local item_level = self:getItemLevel()
-  if unidentify then
-    if US_CONFIG.IDENTIFY_UPGRADE_LEVEL then
-      local upgrade_level = 1
-      for i = US_CONFIG.MAX_UPGRADE_LEVEL, 1, -1 do
-        if i >= US_CONFIG.UPGRADE_LEVEL_DESTROY then
-          if math.random(100) <= US_CONFIG.UPGRADE_DESTROY_CHANCE[i] then
-            upgrade_level = i
-            break
-          end
-        else
-          if math.random(100) <= US_CONFIG.UPGRADE_SUCCESS_CHANCE[i] then
-            upgrade_level = i
-            break
-          end
-        end
-      end
-      self:setUpgradeLevel(upgrade_level)
-    end
-    local slots = math.random(1, self:getMaxAttributes())
-    local usItemType = self:getItemType()
-    for i = 1, slots do
-      local attrId = math.random(1, #US_ENCHANTMENTS)
-      local attr = US_ENCHANTMENTS[attrId]
-      while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
-        attr.chance and math.random(100) >= attr.chance do
-        attrId = math.random(1, #US_ENCHANTMENTS)
-        attr = US_ENCHANTMENTS[attrId]
-      end
-      table.insert(attrIds, attrId)
-      local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
-      self:setCustomAttribute("Slot" .. i, attrId .. "|" .. value)
-    end
-    return true
-  else
-    local bonuses = self:getBonusAttributes()
-    if bonuses then
-      if #bonuses >= self:getMaxAttributes() then
-        player:sendTextMessage(MESSAGE_STATUS_WARNING, "Max number of bonuses reached!")
-        return false
-      end
-      for v, k in pairs(bonuses) do
-        table.insert(attrIds, k[1])
-      end
-    end
-    local usItemType = self:getItemType()
-    local attrId = math.random(1, #US_ENCHANTMENTS)
-    local attr = US_ENCHANTMENTS[attrId]
-    while isInArray(attrIds, attrId) or attr.minLevel and item_level < attr.minLevel or bit.band(usItemType, attr.itemType) == 0 or
-      attr.chance and math.random(100) >= attr.chance do
-      attrId = math.random(1, #US_ENCHANTMENTS)
-      attr = US_ENCHANTMENTS[attrId]
-    end
-    local value = attr.VALUES_PER_LEVEL and math.random(1, math.ceil(item_level * attr.VALUES_PER_LEVEL)) or 1
-    self:setCustomAttribute("Slot" .. self:getLastSlot() + 1, attrId .. "|" .. value)
-    return true
-  end
-  return false
-end
-
-function Item.addAttribute(self, slot, attr, value)
-    self:setCustomAttribute("Slot" .. slot, attr .. "|" .. value)
-end
-
-function Item.setAttributeValue(self, slot, value)
-    self:setCustomAttribute("Slot" .. slot, value)
-end
-
-function Item.getBonusAttribute(self, slot)
-    local bonuses = self:getCustomAttribute("Slot" .. slot)
-    if bonuses then
-        local data = {}
-        for bonus in bonuses:gmatch("([^|]+)") do
-            data[#data + 1] = tonumber(bonus)
-        end
-        return data
-    end
-
-    return nil
-end
-
-function Item.getBonusAttributes(self)
-    local data = {}
-    for i = 1, self:getMaxAttributes() do
-        local bonuses = self:getCustomAttribute("Slot" .. i)
-        if bonuses then
-            local t = {}
-            for bonus in bonuses:gmatch("([^|]+)") do
-                t[#t + 1] = tonumber(bonus)
-            end
-            data[#data + 1] = t
-        end
-    end
-
-    return #data > 0 and data or nil
-end
-
-function Item.getLastSlot(self)
-    local last = 0
-    for i = 1, self:getMaxAttributes() do
-        if self:getCustomAttribute("Slot" .. i) then
-            last = i
-        end
-    end
-    return last
-end

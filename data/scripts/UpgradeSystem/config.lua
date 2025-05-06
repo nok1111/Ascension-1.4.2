@@ -103,25 +103,6 @@ US_CONFIG = {
   MAGIC_PER_UPGRADE = 0, -- amount of bonus armor per upgrade level
   HITCHANCE_PER_UPGRADE = 1, -- amount of bonus hit chance per upgrade level
   --
-  MAXHP_PER_ITEM_LEVEL = 10, -- every X Item Level +MAXHP_FROM_ITEM_LEVEL max hp
-  MAXHP_FROM_ITEM_LEVEL = 10, -- +X bonus max hp for every MAXHP_PER_ITEM_LEVEL
-  MAXMP_PER_ITEM_LEVEL = 10, -- every X Item Level +MAXMP_FROM_ITEM_LEVEL max mp
-  MAXMP_FROM_ITEM_LEVEL = 10, -- +X bonus max mp for every MAXMP_PER_ITEM_LEVEL
-  CRITCHANCE_PER_ITEM_LEVEL = 10, -- every X Item Level +CRITCHANCE_FROM_ITEM_LEVEL crit chance
-  CRITCHANCE_FROM_ITEM_LEVEL = 1, -- +X bonus crit chance for every CRITCHANCE_PER_ITEM_LEVEL
-  CRITAMOUNT_PER_ITEM_LEVEL = 10, -- every X Item Level +CRITAMOUNT_FROM_ITEM_LEVEL crit amount
-  CRITAMOUNT_FROM_ITEM_LEVEL = 1, -- +X bonus crit amount for every CRITAMOUNT_PER_ITEM_LEVEL
-  LIFELEECHCHANCE_PER_ITEM_LEVEL = 10, -- every X Item Level +LIFELEECHCHANCE_FROM_ITEM_LEVEL life leech chance
-  LIFELEECHCHANCE_FROM_ITEM_LEVEL = 1, -- +X bonus life leech chance for every LIFELEECHCHANCE_PER_ITEM_LEVEL
-  LIFELEECHAMOUNT_PER_ITEM_LEVEL = 10, -- every X Item Level +LIFELEECHAMOUNT_FROM_ITEM_LEVEL life leech amount
-  LIFELEECHAMOUNT_FROM_ITEM_LEVEL = 1, -- +X bonus life leech amount for every LIFELEECHAMOUNT_PER_ITEM_LEVEL
-  MANALEECHCHANCE_PER_ITEM_LEVEL = 10, -- every X Item Level +MANALEECHCHANCE_FROM_ITEM_LEVEL mana leech chance
-  MANALEECHCHANCE_FROM_ITEM_LEVEL = 1, -- +X bonus mana leech chance for every MANALEECHCHANCE_PER_ITEM_LEVEL
-  MANALEECHAMOUNT_PER_ITEM_LEVEL = 10, -- every X Item Level +MANALEECHAMOUNT_FROM_ITEM_LEVEL mana leech amount
-  MANALEECHAMOUNT_FROM_ITEM_LEVEL = 1, -- +X bonus mana leech amount for every MANALEECHAMOUNT_PER_ITEM_LEVEL
-  ATTACKSPEED_PER_ITEM_LEVEL = 10, -- every X Item Level +ATTACKSPEED_FROM_ITEM_LEVEL attack speed
-  ATTACKSPEED_FROM_ITEM_LEVEL = 1, -- +X bonus attack speed for every ATTACKSPEED_PER_ITEM_LEVEL
-
   CRYSTAL_FOSSIL_DROP_CHANCE = 30, -- 1:X chance that Crystal Fossil will drop from monster, X means that approximately every X monster will drop Crystal Fossil
   CRYSTAL_FOSSIL_DROP_LEVEL = 10, -- X monster level needed to drop Crystal Fossil
   UNIDENTIFIED_DROP_CHANCE = 12, --(12W) 1:X chance that item in monster corpse will be unidentified, X means that approximately every X item will be unidentified
@@ -520,6 +501,7 @@ US_UNIQUES = {
 	
 	
 	---YELLOW RUNES
+	
 	
 	[31] = {
     name = "[Corrupted] Holy Crusader",
@@ -1443,6 +1425,193 @@ US_UNIQUES = {
         chance = 50,
         itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.ARMOR
     },
+    [114] = {
+        name = "[Wizard] Arcane Blast",
+        attributes = {
+            2,  -- Max Mana
+            21, -- Magic Damage
+            67  -- Meteor on Attack
+        },
+        minLevel = 22,
+        chance = 25,
+        itemType = US_ITEM_TYPES.WEAPON_WAND
+    },
+    [115] = {
+        name = "[Slayer] Relentless",
+        attributes = {
+            4,  -- Melee Skills
+            12, -- Life Steal
+            36  -- Death Strike on Attack
+        },
+        minLevel = 28,
+        chance = 30,
+        itemType = US_ITEM_TYPES.WEAPON_MELEE
+    },
+    [116] = {
+        name = "[Guardian] Sentinel's Shield",
+        attributes = {
+            1,  -- Max HP
+            5,  -- Defence Celestial
+            22  -- Physical Protection
+        },
+        minLevel = 18,
+        chance = 35,
+        itemType = US_ITEM_TYPES.SHIELD
+    },
+    [117] = {
+        name = "[Mystic] Arcane Ward",
+        attributes = {
+            2,  -- Max Mana
+            21, -- Magic Damage
+            57  -- Magic Healing on Attack [RUNE]
+        },
+        minLevel = 25,
+        chance = 40,
+        itemType = US_ITEM_TYPES.WEAPON_WAND
+    },
+    [118] = {
+        name = "[Scout] Sharpshooter",
+        attributes = {
+            9,  -- Distance
+            44, -- Mana on Kill
+            67  -- Meteor on Attack
+        },
+        minLevel = 20,
+        chance = 45,
+        itemType = US_ITEM_TYPES.WEAPON_DISTANCE + US_ITEM_TYPES.AMMO
+    },
+    [119] = {
+        name = "[Paladin] Holy Guardian",
+        attributes = {
+            1,  -- Max HP
+            49, -- Increased Healing
+            22  -- Physical Protection
+        },
+        minLevel = 18,
+        chance = 30,
+        itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.ARMOR
+    },
+    [120] = {
+        name = "[Mage] Elemental Fury",
+        attributes = {
+            2,  -- Max Mana
+            15, -- Fire Damage
+            30  -- Flame Strike on Attack
+        },
+        minLevel = 22,
+        chance = 35,
+        itemType = US_ITEM_TYPES.WEAPON_WAND
+    },
+    [121] = {
+        name = "[Warden] Iron Wall",
+        attributes = {
+            1,  -- Max HP
+            60, -- Heal on Hit
+            10  -- Defence
+        },
+        minLevel = 25,
+        chance = 25,
+        itemType = US_ITEM_TYPES.SHIELD
+    },
+    [122] = {
+        name = "[Sorcerer] Arcane Blast",
+        attributes = {
+            2,  -- Max Mana
+            21, -- Magic Damage
+            67  -- Meteor on Attack
+        },
+        minLevel = 22,
+        chance = 30,
+        itemType = US_ITEM_TYPES.WEAPON_WAND
+    },
+    [123] = {
+        name = "[Hunter] Precision Shot",
+        attributes = {
+            9,  -- Distance
+            14, -- Weapon Damage
+            32  -- Ice Strike on Attack
+        },
+        minLevel = 20,
+        chance = 40,
+        itemType = US_ITEM_TYPES.WEAPON_DISTANCE + US_ITEM_TYPES.AMMO
+    },
+    [124] = {
+        name = "[Champion] Valor",
+        attributes = {
+            1,  -- Max HP
+            43, -- Health on Kill
+            22  -- Physical Protection
+        },
+        minLevel = 20,
+        chance = 50,
+        itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.ARMOR
+    },
+    [125] = {
+        name = "[Wizard] Arcane Power",
+        attributes = {
+            2,  -- Max Mana
+            21, -- Magic Damage
+            57  -- Magic Healing on Attack [RUNE]
+        },
+        minLevel = 22,
+        chance = 25,
+        itemType = US_ITEM_TYPES.WEAPON_WAND
+    },
+    [126] = {
+        name = "[Assassin] Death's Whisper",
+        attributes = {
+            9,  -- Distance
+            27, -- Treasure Goblin on Kill
+            63  -- Execute on Attack
+        },
+        minLevel = 30,
+        chance = 20,
+        itemType = US_ITEM_TYPES.WEAPON_DISTANCE
+    },
+    [127] = {
+        name = "[Sentinel] Iron Will",
+        attributes = {
+            1,  -- Max HP
+            5,  -- Defence Celestial
+            60  -- Heal on Hit
+        },
+        minLevel = 20,
+        chance = 35,
+        itemType = US_ITEM_TYPES.SHIELD
+    },
+    [128] = {
+        name = "[Invoker] Arcane Mastery",
+        attributes = {
+            2,  -- Max Mana
+            45, -- Mana Steal
+            57  -- Magic Healing on Attack [RUNE]
+        },
+        minLevel = 25,
+        chance = 30,
+        itemType = US_ITEM_TYPES.WEAPON_WAND
+    },
+    [129] = {
+        name = "[Ranger] Eagle Eye",
+        attributes = {
+            9,  -- Distance
+            14, -- Weapon Damage
+            67  -- Meteor on Attack
+        },
+        minLevel = 18,
+        chance = 40,
+        itemType = US_ITEM_TYPES.WEAPON_DISTANCE + US_ITEM_TYPES.AMMO
+    },
+    [130] = {
+        name = "[Champion] Unyielding",
+        attributes = {
+            1,  -- Max HP
+            43, -- Health on Kill
+            22  -- Physical Protection
+        },
+        minLevel = 20,
+        chance = 50,
+        itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.ARMOR
+    },
 	
 }
 
@@ -1803,7 +1972,7 @@ US_ENCHANTMENTS = {
 	 end
     end,
     format = function(value)
-      return "[***] " ..value.. "%% to find fame monsters on Kill and randomly healing 5% of your max health. VPL[0.1*ilvl]"
+      return "[***] " ..value .."%% to find fame monsters on Kill and randomly healing 5% of your max health. VPL[0.1*ilvl]"
     end,
     itemType = US_ITEM_TYPES.NECKLACE +  US_ITEM_TYPES.RING,
 	minLevel = 7,
@@ -3085,5 +3254,3 @@ end
 
 
 
-
-```
