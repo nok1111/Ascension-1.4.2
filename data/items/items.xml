@@ -39879,8 +39879,8 @@
 		<attribute key="manaGain" value="8" />
 		<attribute key="manaTicks" value="6000" />
 		<attribute key="criticalhitchance" value="3" />
-		<attribute key="criticalhitamount" value="10" />
 		<attribute key="maxhitpointspercent" value="108" />
+		<attribute key="attackspeed" value="10" />
 	</item>
 	
 	<item id="38323" article="a" name="Ring of the Guardian">
