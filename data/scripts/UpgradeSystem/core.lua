@@ -638,7 +638,6 @@ local function classifyLoot(position)
         end
     end
 end
-
 local baseChance = 1000
 
 local enchantitems = {
@@ -1160,37 +1159,367 @@ function Item.setItemLevel(self, level, first)
       finalValue = 0
     end
     if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_HITCHANCE,
-        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or
-          (itemType:getHitChance() + finalValue)
-      )
+      self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or (itemType:getHitChance() + finalValue))
     else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_HITCHANCE,
-        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or
-          (itemType:getHitChance() - finalValue)
-      )
+      self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or (itemType:getHitChance() - finalValue))
     end
   end
+
+
+      -- Magic Level
+    if itemType:getStat(STAT_MAGICPOINTS) > 0 then
+      if value >= US_CONFIG.MAGIC_PER_ITEM_LEVEL then
+        finalValue = math.floor((value / US_CONFIG.MAGIC_PER_ITEM_LEVEL) * US_CONFIG.MAGIC_FROM_ITEM_LEVEL)
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_MAGICPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) + finalValue) or (itemType:getStat(STAT_MAGICPOINTS) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_MAGICPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAGICPOINTS) - finalValue) or (itemType:getStat(STAT_MAGICPOINTS) - finalValue))
+      end
+    end
   
-  if first then
-    if itemType:getAttack() > 0 then
-      level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
+    -- Max HP (scaling)
+    if itemType:getStat(STAT_MAXHITPOINTS) > 0 then
+      if value >= (US_CONFIG.MAXHP_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.MAXHP_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MAXHP_FROM_ITEM_LEVEL or 10))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) + finalValue) or (itemType:getStat(STAT_MAXHITPOINTS) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXHITPOINTS) - finalValue) or (itemType:getStat(STAT_MAXHITPOINTS) - finalValue))
+      end
     end
-    if itemType:getDefense() > 0 then
-      level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
+  
+    -- Max MP (scaling)
+    if itemType:getStat(STAT_MAXMANAPOINTS) > 0 then
+      if value >= (US_CONFIG.MAXMP_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.MAXMP_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MAXMP_FROM_ITEM_LEVEL or 10))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) + finalValue) or (itemType:getStat(STAT_MAXMANAPOINTS) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS, (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MAXMANAPOINTS) - finalValue) or (itemType:getStat(STAT_MAXMANAPOINTS) - finalValue))
+      end
     end
-    if itemType:getArmor() > 0 then
-      level = level + math.floor((itemType:getArmor() * 4.0) / US_CONFIG.ITEM_LEVEL_PER_ARMOR )
+  
+    -- Special Skills (all scaling)
+    if itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) > 0 then
+      if value >= (US_CONFIG.CRITCHANCE_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.CRITCHANCE_PER_ITEM_LEVEL or 10)) * (US_CONFIG.CRITCHANCE_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) + finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITCHANCE) - finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) - finalValue))
+      end
     end
+  
+    if itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITAMOUNT) > 0 then
+      if value >= (US_CONFIG.CRITAMOUNT_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.CRITAMOUNT_PER_ITEM_LEVEL or 10)) * (US_CONFIG.CRITAMOUNT_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) + finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITAMOUNT) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_CRITICALHITAMOUNT) - finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITAMOUNT) - finalValue))
+      end
+    end
+  
+    if itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHCHANCE) > 0 then
+      if value >= (US_CONFIG.LIFELEECHCHANCE_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.LIFELEECHCHANCE_PER_ITEM_LEVEL or 10)) * (US_CONFIG.LIFELEECHCHANCE_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) + finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHCHANCE) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHCHANCE) - finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHCHANCE) - finalValue))
+      end
+    end
+  
+    if itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT) > 0 then
+      if value >= (US_CONFIG.LIFELEECHAMOUNT_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.LIFELEECHAMOUNT_PER_ITEM_LEVEL or 10)) * (US_CONFIG.LIFELEECHAMOUNT_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) + finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_LIFELEECHAMOUNT) - finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT) - finalValue))
+      end
+    end
+  
+    if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) > 0 then
+      if value >= (US_CONFIG.MANALEECHCHANCE_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.MANALEECHCHANCE_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MANALEECHCHANCE_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) + finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHCHANCE) - finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) - finalValue))
+      end
+    end
+  
+    if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) > 0 then
+      if value >= (US_CONFIG.MANALEECHAMOUNT_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.MANALEECHAMOUNT_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MANALEECHAMOUNT_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) + finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT, (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANALEECHAMOUNT) - finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) - finalValue))
+      end
+    end
+  
+    if itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) > 0 then
+      if value >= (US_CONFIG.ATTACKSPEED_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.ATTACKSPEED_PER_ITEM_LEVEL or 10)) * (US_CONFIG.ATTACKSPEED_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+        self:setAttribute(ITEM_ATTRIBUTE_ATTACKSPEED, (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) + finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) + finalValue))
+      else
+        self:setAttribute(ITEM_ATTRIBUTE_ATTACKSPEED, (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACKSPEED) - finalValue) or (itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) - finalValue))
+      end
+    end
+
+-- Club
+    if itemType:getSkill(SKILL_CLUB) > 0 then
+      if value >= (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.SKILLS_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_CLUB, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_CLUB) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_CLUB) + finalValue) or (itemType:getSkill(SKILL_CLUB) + finalValue))
+      else
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_CLUB, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_CLUB) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_CLUB) - finalValue) or (itemType:getSkill(SKILL_CLUB) - finalValue))
+      end
+    end
+
+-- Sword
+    if itemType:getSkill(SKILL_SWORD) > 0 then
+      if value >= (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.SKILLS_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_SWORD, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SWORD) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SWORD) + finalValue) or (itemType:getSkill(SKILL_SWORD) + finalValue))
+      else
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_SWORD, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SWORD) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SWORD) - finalValue) or (itemType:getSkill(SKILL_SWORD) - finalValue))
+      end
+    end
+
+-- Axe
+    if itemType:getSkill(SKILL_AXE) > 0 then
+      if value >= (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.SKILLS_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_AXE, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_AXE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_AXE) + finalValue) or (itemType:getSkill(SKILL_AXE) + finalValue))
+      else
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_AXE, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_AXE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_AXE) - finalValue) or (itemType:getSkill(SKILL_AXE) - finalValue))
+      end
+    end
+
+-- Distance
+    if itemType:getSkill(SKILL_DISTANCE) > 0 then
+      if value >= (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.SKILLS_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_DISTANCE, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_DISTANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_DISTANCE) + finalValue) or (itemType:getSkill(SKILL_DISTANCE) + finalValue))
+      else
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_DISTANCE, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_DISTANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_DISTANCE) - finalValue) or (itemType:getSkill(SKILL_DISTANCE) - finalValue))
+      end
+    end
+
+-- Shield
+    if itemType:getSkill(SKILL_SHIELD) > 0 then
+      if value >= (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.SKILLS_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_SHIELD, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SHIELD) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SHIELD) + finalValue) or (itemType:getSkill(SKILL_SHIELD) + finalValue))
+      else
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_SHIELD, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SHIELD) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_SHIELD) - finalValue) or (itemType:getSkill(SKILL_SHIELD) - finalValue))
+      end
+    end
+
+-- Fishing
+    if itemType:getSkill(SKILL_FISHING) > 0 then
+      if value >= (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10) then
+        finalValue = math.floor((value / (US_CONFIG.SKILLS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.SKILLS_FROM_ITEM_LEVEL or 1))
+      else
+        finalValue = 0
+      end
+      if oldLevel < level then
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_FISHING, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_FISHING) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_FISHING) + finalValue) or (itemType:getSkill(SKILL_FISHING) + finalValue))
+      else
+          self:setAttribute(ITEM_ATTRIBUTE_SKILL_FISHING, (self:getAttribute(ITEM_ATTRIBUTE_SKILL_FISHING) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_SKILL_FISHING) - finalValue) or (itemType:getSkill(SKILL_FISHING) - finalValue))
+      end
+    end
+
+      -- Health/Mana Regen
+      if itemType:getHealthGain() then
+        if value >= (US_CONFIG.HEALTHGAIN_PER_ITEM_LEVEL or 10) then
+          finalValue = math.floor((value / (US_CONFIG.HEALTHGAIN_PER_ITEM_LEVEL or 10)) * (US_CONFIG.HEALTHGAIN_FROM_ITEM_LEVEL or 1))
+        else
+          finalValue = 0
+        end
+          if oldLevel < level then
+              self:setAttribute(ITEM_ATTRIBUTE_HEALTHGAIN, (self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) + finalValue) or (itemType:getHealthGain() + finalValue))
+          else
+              self:setAttribute(ITEM_ATTRIBUTE_HEALTHGAIN, (self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HEALTHGAIN) - finalValue) or (itemType:getHealthGain() - finalValue))
+          end
+      end
+
+      if itemType:getHealthTicks() then
+        if value >= (US_CONFIG.HEALTHTICKS_PER_ITEM_LEVEL or 10) then
+          finalValue = math.floor((value / (US_CONFIG.HEALTHTICKS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.HEALTHTICKS_FROM_ITEM_LEVEL or 1))
+        else
+          finalValue = 0
+        end
+          if oldLevel < level then
+              -- Upgrades LOWER the tick interval (faster regen)
+              self:setAttribute(ITEM_ATTRIBUTE_HEALTHTICKS, (self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) - finalValue) or (itemType:getHealthTicks() - finalValue))
+          else
+              self:setAttribute(ITEM_ATTRIBUTE_HEALTHTICKS, (self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HEALTHTICKS) + finalValue) or (itemType:getHealthTicks() + finalValue))
+          end
+      end
+      if itemType:getManaGain() then
+        if value >= (US_CONFIG.MANAGAIN_PER_ITEM_LEVEL or 10) then
+          finalValue = math.floor((value / (US_CONFIG.MANAGAIN_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MANAGAIN_FROM_ITEM_LEVEL or 1))
+        else
+          finalValue = 0
+        end
+          if oldLevel < level then
+              self:setAttribute(ITEM_ATTRIBUTE_MANAGAIN, (self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) + finalValue) or (itemType:getManaGain() + finalValue))
+          else
+              self:setAttribute(ITEM_ATTRIBUTE_MANAGAIN, (self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANAGAIN) - finalValue) or (itemType:getManaGain() - finalValue))
+          end
+      end
+      if itemType:getManaTicks() then
+        if value >= (US_CONFIG.MANATICKS_PER_ITEM_LEVEL or 10) then
+          finalValue = math.floor((value / (US_CONFIG.MANATICKS_PER_ITEM_LEVEL or 10)) * (US_CONFIG.MANATICKS_FROM_ITEM_LEVEL or 1))
+        else
+          finalValue = 0
+        end
+          if oldLevel < level then
+              -- Upgrades LOWER the tick interval (faster regen)
+              self:setAttribute(ITEM_ATTRIBUTE_MANATICKS, (self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) - finalValue) or (itemType:getManaTicks() - finalValue))
+          else
+              self:setAttribute(ITEM_ATTRIBUTE_MANATICKS, (self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_MANATICKS) + finalValue) or (itemType:getManaTicks() + finalValue))
+          end
+      end
+  -- Additional stat and special skill logic (do NOT remove old logic, only add below)
+
+  
+    if first then
+        if itemType:getAttack() > 0 then
+            level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
+        end
+        if itemType:getDefense() > 0 then
+            level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
+        end
+        if itemType:getArmor() > 0 then
+            level = level + math.floor((itemType:getArmor() * 4.0) / US_CONFIG.ITEM_LEVEL_PER_ARMOR )
+        end
 	
-	
-    if itemType:getHitChance() > 0 then
-      level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
+        if itemType:getHitChance() > 0 then
+            level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
+        end
+
+        if itemType:getStat(STAT_MAGICPOINTS) > 0 then
+            level = level + math.floor(itemType:getMagicLevel() / US_CONFIG.ITEM_LEVEL_PER_MAGICLEVEL)
+        end
+
+        if itemType:getStat(STAT_MAXHITPOINTS) > 0 then
+            level = level + math.floor(itemType:getMaxHP() / US_CONFIG.ITEM_LEVEL_PER_MAXHP)
+        end
+
+        if itemType:getStat(STAT_MAXMANAPOINTS) > 0 then
+            level = level + math.floor(itemType:getMaxMP() / US_CONFIG.ITEM_LEVEL_PER_MAXMP)
+        end
+
+        if itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) > 0 then
+            level = level + math.floor(itemType:getCritChance() / US_CONFIG.ITEM_LEVEL_PER_CRITCHANCE)
+        end
+
+        if itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) > 0 then
+            level = level + math.floor(itemType:getCritAmount() / US_CONFIG.ITEM_LEVEL_PER_CRITAMOUNT)
+        end
+
+        if itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) > 0 then
+            level = level + math.floor(itemType:getLifeLeechChance() / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHCHANCE)
+        end
+
+        if itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) > 0 then
+            level = level + math.floor(itemType:getLifeLeechAmount() / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHAMOUNT)
+        end
+
+        if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) > 0 then
+            level = level + math.floor(itemType:getManaLeechChance() / US_CONFIG.ITEM_LEVEL_PER_MANALEECHCHANCE)
+        end
+
+        if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) > 0 then
+            level = level + math.floor(itemType:getManaLeechAmount() / US_CONFIG.ITEM_LEVEL_PER_MANALEECHAMOUNT)
+        end
+
+        if itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) > 0 then
+            level = level + math.floor(itemType:getAttackSpeed() / US_CONFIG.ITEM_LEVEL_PER_ATTACKSPEED)
+        end
+
+        if itemType:getSkill(SKILL_CLUB) > 0 then
+          level = level + math.floor(itemType:getSkill(SKILL_CLUB) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+        end
+
+        if itemType:getSkill(SKILL_SWORD) > 0 then
+          level = level + math.floor(itemType:getSkill(SKILL_SWORD) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+        end
+
+        if itemType:getSkill(SKILL_AXE) > 0 then
+          level = level + math.floor(itemType:getSkill(SKILL_AXE) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+        end
+
+        if itemType:getSkill(SKILL_DISTANCE) > 0 then
+          level = level + math.floor(itemType:getSkill(SKILL_DISTANCE) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+        end
+
+        if itemType:getSkill(SKILL_SHIELD) > 0 then
+          level = level + math.floor(itemType:getSkill(SKILL_SHIELD) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+        end
+
+        if itemType:getSkill(SKILL_FISHING) > 0 then
+          level = level + math.floor(itemType:getSkill(SKILL_FISHING) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+        end
+
     end
-  end
-  return self:setCustomAttribute("item_level", level)
+    return self:setCustomAttribute("item_level", level)
 end
 
 function Item.getItemLevel(self)
