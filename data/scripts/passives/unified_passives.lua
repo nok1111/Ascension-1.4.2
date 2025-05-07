@@ -434,7 +434,7 @@ local PASSIVES = {
 
 -- Health change handler
 function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
-  print("[Passive System] Health change event triggered for " .. creature:getName())
+  --print("[Passive System] Health change event triggered for " .. creature:getName())
   
   -- Handle attacker passives (OnAttack)
   if attacker and attacker:isPlayer() then
@@ -443,7 +443,7 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
     
     for passiveName, passiveData in pairs(PASSIVES) do
       if passiveData.config.type == "OnAttack" then
-        print("[Passive System] Checking attack passive: " .. passiveName)
+        --print("[Passive System] Checking attack passive: " .. passiveName)
         
         -- Check requirements
         if not (passiveData.config.playerOnly and not creature:isPlayer()) then
