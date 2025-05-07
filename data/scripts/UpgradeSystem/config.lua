@@ -95,6 +95,21 @@ US_CONFIG = {
   ITEM_LEVEL_PER_MAGIC = 5, -- +1 to Item Level for every X Armor in item
   ITEM_LEVEL_PER_HITCHANCE = 80, -- +1 to Item Level for every X Hit Chance in item
   ITEM_LEVEL_PER_UPGRADE = 1, -- additional item level per upgrade level
+  ITEM_LEVEL_PER_RARITY = 1.5, -- multiplies overal itemlevel by X
+
+  ITEM_LEVEL_PER_MAGICLEVEL = 1, -- additional item level per magic level
+  ITEM_LEVEL_PER_MAXHP = 45, -- additional item level per max hp
+  ITEM_LEVEL_PER_MAXMP = 35, -- additional item level per max mp
+  ITEM_LEVEL_PER_CRITCHANCE = 2, -- additional item level per crit chance
+  ITEM_LEVEL_PER_LIFELEECHCHANCE = 1, -- additional item level per life leech chance
+  ITEM_LEVEL_PER_LIFELEECHAMOUNT = 1, -- additional item level per life leech amount
+  ITEM_LEVEL_PER_MANALEECHCHANCE = 1, -- additional item level per mana leech chance
+  ITEM_LEVEL_PER_MANALEECHAMOUNT = 1, -- additional item level per mana leech amount
+  ITEM_LEVEL_PER_ATTACKSPEED = 2, -- additional item level per attack speed
+  ITEM_LEVEL_PER_SKILL = 1, -- additional item level per skill
+  ITEM_LEVEL_PER_HEALTHGAIN = 4, -- additional item level per health gain
+  ITEM_LEVEL_PER_MANAGAIN = 3, -- additional item level per mana gain
+
   --
   ATTACK_PER_UPGRADE = 1, -- amount of bonus attack per upgrade level
   DEFENSE_PER_UPGRADE = 1, -- amount of bonus defense per upgrade level
@@ -102,7 +117,8 @@ US_CONFIG = {
   ARMOR_PER_UPGRADE = 1, -- amount of bonus armor per upgrade level
   MAGIC_PER_UPGRADE = 0, -- amount of bonus armor per upgrade level
   HITCHANCE_PER_UPGRADE = 1, -- amount of bonus hit chance per upgrade level
-  --
+
+
   CRYSTAL_FOSSIL_DROP_CHANCE = 30, -- 1:X chance that Crystal Fossil will drop from monster, X means that approximately every X monster will drop Crystal Fossil
   CRYSTAL_FOSSIL_DROP_LEVEL = 10, -- X monster level needed to drop Crystal Fossil
   UNIDENTIFIED_DROP_CHANCE = 12, --(12W) 1:X chance that item in monster corpse will be unidentified, X means that approximately every X item will be unidentified

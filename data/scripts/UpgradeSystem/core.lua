@@ -1088,109 +1088,171 @@ function Item.getLastSlot(self)
 end
 
 function Item.setItemLevel(self, level, first)
-   local oldLevel = self:getItemLevel()
-  local itemType = ItemType(self.itemid)
-  local finalValue = 0
-  local value = 0
-  if oldLevel < level then
-    value = (level - oldLevel)
-  else
-    value = (oldLevel - level)
-  end
-  if itemType:getAttack() > 0 then
-    if value >= US_CONFIG.ATTACK_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.ATTACK_PER_ITEM_LEVEL) * US_CONFIG.ATTACK_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ATTACK,
-        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + finalValue) or (itemType:getAttack() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ATTACK,
-        (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - finalValue) or (itemType:getAttack() - finalValue)
-      )
-    end
-  end
-  if itemType:getDefense() > 0 then
-    if value >= US_CONFIG.DEFENSE_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.DEFENSE_PER_ITEM_LEVEL) * US_CONFIG.DEFENSE_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_DEFENSE,
-        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + finalValue) or (itemType:getDefense() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_DEFENSE,
-        (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - finalValue) or (itemType:getDefense() - finalValue)
-      )
-    end
-  end
-  if itemType:getArmor() > 0 then
-    if value >= US_CONFIG.ARMOR_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.ARMOR_PER_ITEM_LEVEL) * US_CONFIG.ARMOR_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ARMOR,
-        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + finalValue) or (itemType:getArmor() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_ARMOR,
-        (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - finalValue) or (itemType:getArmor() - finalValue)
-      )
-    end
-  end
-  
+  local oldLevel = self:getItemLevel()
+ local itemType = ItemType(self.itemid)
+ local finalValue = 0
+ local value = 0
+ if oldLevel < level then
+   value = (level - oldLevel)
+ else
+   value = (oldLevel - level)
+ end
+ if itemType:getAttack() > 0 then
+   if value >= US_CONFIG.ATTACK_PER_ITEM_LEVEL then
+     finalValue = math.floor((value / US_CONFIG.ATTACK_PER_ITEM_LEVEL) * US_CONFIG.ATTACK_FROM_ITEM_LEVEL)
+   else
+     finalValue = 0
+   end
+   if oldLevel < level then
+     self:setAttribute(
+       ITEM_ATTRIBUTE_ATTACK,
+       (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + finalValue) or (itemType:getAttack() + finalValue)
+     )
+   else
+     self:setAttribute(
+       ITEM_ATTRIBUTE_ATTACK,
+       (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ATTACK) - finalValue) or (itemType:getAttack() - finalValue)
+     )
+   end
+ end
+ if itemType:getDefense() > 0 then
+   if value >= US_CONFIG.DEFENSE_PER_ITEM_LEVEL then
+     finalValue = math.floor((value / US_CONFIG.DEFENSE_PER_ITEM_LEVEL) * US_CONFIG.DEFENSE_FROM_ITEM_LEVEL)
+   else
+     finalValue = 0
+   end
+   if oldLevel < level then
+     self:setAttribute(
+       ITEM_ATTRIBUTE_DEFENSE,
+       (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) + finalValue) or (itemType:getDefense() + finalValue)
+     )
+   else
+     self:setAttribute(
+       ITEM_ATTRIBUTE_DEFENSE,
+       (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) - finalValue) or (itemType:getDefense() - finalValue)
+     )
+   end
+ end
+ if itemType:getArmor() > 0 then
+   if value >= US_CONFIG.ARMOR_PER_ITEM_LEVEL then
+     finalValue = math.floor((value / US_CONFIG.ARMOR_PER_ITEM_LEVEL) * US_CONFIG.ARMOR_FROM_ITEM_LEVEL)
+   else
+     finalValue = 0
+   end
+   if oldLevel < level then
+     self:setAttribute(
+       ITEM_ATTRIBUTE_ARMOR,
+       (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) + finalValue) or (itemType:getArmor() + finalValue)
+     )
+   else
+     self:setAttribute(
+       ITEM_ATTRIBUTE_ARMOR,
+       (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - finalValue) or (itemType:getArmor() - finalValue)
+     )
+   end
+ end
+ 
 
-  if itemType:getHitChance() > 0 then
-    if value >= US_CONFIG.HITCHANCE_PER_ITEM_LEVEL then
-      finalValue = math.floor((value / US_CONFIG.HITCHANCE_PER_ITEM_LEVEL) * US_CONFIG.HITCHANCE_FROM_ITEM_LEVEL)
-    else
-      finalValue = 0
-    end
-    if oldLevel < level then
-      self:setAttribute(
-        ITEM_ATTRIBUTE_HITCHANCE,
-        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or
-          (itemType:getHitChance() + finalValue)
-      )
-    else
-      self:setAttribute(
-        ITEM_ATTRIBUTE_HITCHANCE,
-        (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or
-          (itemType:getHitChance() - finalValue)
-      )
-    end
-  end
-  
-  if first then
-    if itemType:getAttack() > 0 then
-      level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
-    end
-    if itemType:getDefense() > 0 then
-      level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
-    end
-    if itemType:getArmor() > 0 then
-      level = level + math.floor((itemType:getArmor() * 4.0) / US_CONFIG.ITEM_LEVEL_PER_ARMOR )
-    end
-	
-	
-    if itemType:getHitChance() > 0 then
-      level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
-    end
-  end
-  return self:setCustomAttribute("item_level", level)
+ if itemType:getHitChance() > 0 then
+   if value >= US_CONFIG.HITCHANCE_PER_ITEM_LEVEL then
+     finalValue = math.floor((value / US_CONFIG.HITCHANCE_PER_ITEM_LEVEL) * US_CONFIG.HITCHANCE_FROM_ITEM_LEVEL)
+   else
+     finalValue = 0
+   end
+   if oldLevel < level then
+     self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + finalValue) or (itemType:getHitChance() + finalValue))
+   else
+     self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0) and (self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) - finalValue) or (itemType:getHitChance() - finalValue))
+   end
+ end
+ -- Additional stat and special skill logic (do NOT remove old logic, only add below)
+
+ 
+   if first then
+       if itemType:getAttack() > 0 then
+           level = level + math.floor(itemType:getAttack() / US_CONFIG.ITEM_LEVEL_PER_ATTACK)
+       end
+       if itemType:getDefense() > 0 then
+           level = level + math.floor(itemType:getDefense() / US_CONFIG.ITEM_LEVEL_PER_DEFENSE)
+       end
+       if itemType:getArmor() > 0 then
+           level = level + math.floor((itemType:getArmor() * 4.0) / US_CONFIG.ITEM_LEVEL_PER_ARMOR )
+       end
+ 
+       if itemType:getHitChance() > 0 then
+           level = level + math.floor(itemType:getHitChance() / US_CONFIG.ITEM_LEVEL_PER_HITCHANCE)
+       end
+
+       if itemType:getStat(STAT_MAGICPOINTS) > 0 then
+           level = level + math.floor(itemType:getStat(STAT_MAGICPOINTS) / US_CONFIG.ITEM_LEVEL_PER_MAGICLEVEL)
+       end
+
+       if itemType:getStat(STAT_MAXHITPOINTS) > 0 then
+           level = level + math.floor(itemType:getStat(STAT_MAXHITPOINTS) / US_CONFIG.ITEM_LEVEL_PER_MAXHP)
+       end
+
+       if itemType:getStat(STAT_MAXMANAPOINTS) > 0 then
+           level = level + math.floor(itemType:getStat(STAT_MAXMANAPOINTS) / US_CONFIG.ITEM_LEVEL_PER_MAXMP)
+       end
+
+       if itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) > 0 then
+           level = level + math.floor(itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) / US_CONFIG.ITEM_LEVEL_PER_CRITCHANCE)
+       end
+
+       if itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) > 0 then
+           level = level + math.floor(itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHCHANCE)
+       end
+
+       if itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) > 0 then
+           level = level + math.floor(itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHAMOUNT)
+       end
+
+       if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) > 0 then
+           level = level + math.floor(itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) / US_CONFIG.ITEM_LEVEL_PER_MANALEECHCHANCE)
+       end
+
+       if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) > 0 then
+           level = level + math.floor(itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) / US_CONFIG.ITEM_LEVEL_PER_MANALEECHAMOUNT)
+       end
+
+       if itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) > 0 then
+           level = level + math.floor(itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) / US_CONFIG.ITEM_LEVEL_PER_ATTACKSPEED)
+       end
+
+       if itemType:getSkill(SKILL_CLUB) > 0 then
+         level = level + math.floor(itemType:getSkill(SKILL_CLUB) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+       end
+
+       if itemType:getSkill(SKILL_SWORD) > 0 then
+         level = level + math.floor(itemType:getSkill(SKILL_SWORD) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+       end
+
+       if itemType:getSkill(SKILL_AXE) > 0 then
+         level = level + math.floor(itemType:getSkill(SKILL_AXE) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+       end
+
+       if itemType:getSkill(SKILL_DISTANCE) > 0 then
+         level = level + math.floor(itemType:getSkill(SKILL_DISTANCE) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+       end
+
+       if itemType:getSkill(SKILL_SHIELD) > 0 then
+         level = level + math.floor(itemType:getSkill(SKILL_SHIELD) / US_CONFIG.ITEM_LEVEL_PER_SKILL)
+       end
+
+       if itemType:getHealthGain() > 0 then
+         level = level + math.floor(itemType:getHealthGain() / US_CONFIG.ITEM_LEVEL_PER_HEALTHGAIN)
+       end
+
+       if itemType:getManaGain() > 0 then
+         level = level + math.floor(itemType:getManaGain() / US_CONFIG.ITEM_LEVEL_PER_MANAGAIN)
+       end
+
+       
+
+       
+
+   end
+   return self:setCustomAttribute("item_level", level)
 end
 
 function Item.getItemLevel(self)
@@ -1200,6 +1262,7 @@ end
 function Item.setUpgradeLevel(self, level)
     local itemType = ItemType(self.itemid)
   local oldLevel = self:getUpgradeLevel()
+  print("setUpgradeLevel")
   if itemType:getAttack() > 0 then
     if oldLevel < level then
       self:setAttribute(ITEM_ATTRIBUTE_ATTACK, self:getAttribute(ITEM_ATTRIBUTE_ATTACK) + (level - oldLevel) * US_CONFIG.ATTACK_PER_UPGRADE)
@@ -1228,8 +1291,6 @@ function Item.setUpgradeLevel(self, level)
       self:setAttribute(ITEM_ATTRIBUTE_ARMOR, self:getAttribute(ITEM_ATTRIBUTE_ARMOR) - (oldLevel - level) * US_CONFIG.ARMOR_PER_UPGRADE)
     end
   end
-  
-
   if itemType:getHitChance() > 0 then
     if oldLevel < level then
       self:setAttribute(ITEM_ATTRIBUTE_HITCHANCE, self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) + (level - oldLevel) * US_CONFIG.HITCHANCE_PER_UPGRADE)
@@ -1501,6 +1562,20 @@ end
 
 function Item.setRarity(self, rarity)
     self:setCustomAttribute("rarity", rarity)
+
+    if self:getCustomAttribute("rarity") > 0 and self:getCustomAttribute("item_level") > 0 then
+      local raritylevel = self:getCustomAttribute("rarity")
+      local level = self:getCustomAttribute("item_level")
+      
+      -- Modified formula using 1.5 base multiplier with diminishing returns
+      local rarityMultiplier = 1 + (raritylevel * (US_CONFIG.ITEM_LEVEL_PER_RARITY / 4))
+      level = math.floor(level * rarityMultiplier)
+      
+      print(string.format("Rarity %d (%.2fx) increased item level from %d to %d", 
+          raritylevel, rarityMultiplier, self:getCustomAttribute("item_level"), level))
+      self:setCustomAttribute("item_level", level)
+  end
+
 end
 
 function Item.rollRarity(self)
