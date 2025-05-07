@@ -98,6 +98,7 @@ US_CONFIG = {
   ITEM_LEVEL_PER_RARITY = 1.5, -- multiplies overal itemlevel by X
 
   ITEM_LEVEL_PER_MAGICLEVEL = 1, -- additional item level per magic level
+  ITEM_LEVEL_PER_MAGICLEVEL_MULTIPLIER = 2,
   ITEM_LEVEL_PER_MAXHP = 45, -- additional item level per max hp
   ITEM_LEVEL_PER_MAXMP = 35, -- additional item level per max mp
   ITEM_LEVEL_PER_CRITCHANCE = 2, -- additional item level per crit chance

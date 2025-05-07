@@ -1184,7 +1184,7 @@ function Item.setItemLevel(self, level, first)
        end
 
        if itemType:getStat(STAT_MAGICPOINTS) > 0 then
-           level = level + math.floor(itemType:getStat(STAT_MAGICPOINTS) / US_CONFIG.ITEM_LEVEL_PER_MAGICLEVEL)
+           level = level + math.floor((itemType:getStat(STAT_MAGICPOINTS) * US_CONFIG.ITEM_LEVEL_PER_MAGICLEVEL_MULTIPLIER) / US_CONFIG.ITEM_LEVEL_PER_MAGICLEVEL)
        end
 
        if itemType:getStat(STAT_MAXHITPOINTS) > 0 then
