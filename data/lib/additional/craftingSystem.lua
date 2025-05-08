@@ -25,12 +25,12 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 32766,
+			craftedItemId = 8980,
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
 			requiredSkill = 0,
-			desc = "Armor +5 rarity chance of get a higher quality item is determined by players crafting level.",
+			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
 			craftPoints = 5,
@@ -41,1392 +41,70 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 32763,
-			craftedCount = 1,
-			tier = 0,
+			craftedItemId = 5947,
+			craftedCount = 1, --
+			tier = 0, 
 			fame = 2, -- used for description
 			requiredSkill = 0,
-			desc = "Armor +5 rarity chance of get a higher quality item is determined by players crafting level.",
+			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
 			craftPoints = 5,
 			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 32702, required = 4},
+				{id = 32702, required = 5},
 			},
 		},
 		{
-			craftedItemId = 32764,
-			craftedCount = 1,
-			tier = 0,
+			craftedItemId = 2163,
+			craftedCount = 1, --
+			tier = 0, 
 			fame = 2, -- used for description
 			requiredSkill = 0,
-			desc = "Armor +8 rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 4,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32702, required = 4},
-			},
-		},
-		{
-			craftedItemId = 32765,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "Armor +2 rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 2,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32702, required = 3},
-			},
-		},
-		{
-			craftedItemId = 32767,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "Armor +1 rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 2,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32702, required = 3},
-			},
-		},
-		{
-			craftedItemId = 2186,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "Armor +8 rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 4,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 701,
-			ingredients = {
-				{id = 32702, required = 6},
-				{id = 29020, required = 8},
-			},
-		},
-		{
-			craftedItemId = 32789,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "one handed weapon Attk +40, Def +20, STR +1 rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 7,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32702, required = 7},
-			},
-		},
-		{
-			craftedItemId = 32788,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "Second Recipe.",
-			desc = "Two handed weapon Attk +36, Def +26 rarity chance of get a higher quality item is determined by players crafting level.",
-			itemlvl = 10,
-			craftPoints = 8,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32702, required = 8},
-			},
-		},
-
-		{
-			craftedItemId = 30759,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "Two handed weapon Attk +37, Def +25, rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 13,
-			cost = 2, -- points for crafting that recipe
-			
-			recipestorage = 0,
-			ingredients = {
-				{id = 32702, required = 25},
-			},
-		},
-		{
-			craftedItemId = 32058,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "Two handed weapon Attk +33, Def +14, Range +7 rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 8,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 702,
-			ingredients = {
-				{id = 32702, required = 8},
-			},
-		},
-		{
-			craftedItemId = 36357,
-			craftedCount = 1,
-			tier = 0,
-			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "Armor +8 rarity chance of get a higher quality item is determined by players crafting level.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 4,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 700,
-			ingredients = {
-				{id = 32702, required = 4},
-			},
-		},
-		{
-			craftedItemId = 32703,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 2,
-			desc = "Smelt copper ores and tin ores into Bronce Bars. required for crafting a variety of equipment.",
+			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
 			craftPoints = 5,
 			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 35481, required = 2},
-				{id = 35484, required = 1},
+				{id = 32702, required = 5},
 			},
 		},
 		{
-			craftedItemId = 32739,
-			craftedCount = 1,
-			tier = 1,
+			craftedItemId = 2512,
+			craftedCount = 1, --
+			tier = 0, 
 			fame = 2, -- used for description
-			requiredSkill = 2,
-			desc = "Armor +7, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 15,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 8},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32740,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 2,
-			desc = "Armor +12, rarity chance [RARE+].",
-			rollrarity = 3, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 14,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 7},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32744,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 2,
-			desc = "Armor +7, rarity chance [RARE+].",
-			rollrarity = 3, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 15,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 8},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32745,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "Armor +2, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 7},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 2191,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "1 handed weapon Attk +39, Def +19 rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 4},
-				{id = 29020, required = 4},
-				{id = 21401, required = 4},
-			},
-		},
-		{
-			craftedItemId = 36359,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "1 handed weapon Attk +39, Def +19 rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 703,
-			ingredients = {
-				{id = 32703, required = 9},
-				{id = 29020, required = 4},
-			},
-		},
-		{
-			craftedItemId = 32741,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "1 handed weapon Attk +39, Def +19 rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 9},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 2385,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "1 handed weapon Attk +39, Def +19 rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 705,
-			ingredients = {
-				{id = 32703, required = 10},
-				{id = 29020, required = 4},
-			},
-		},
-		{
-			craftedItemId = 32743,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "1 handed weapon Attk +37, Def +21, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 15,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 8},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32742,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "Def +25, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 16,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32703, required = 10},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 31802,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "1 handed weapon Attk +39, Def +19 rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 704,
-			ingredients = {
-				{id = 32703, required = 4},
-				{id = 29020, required = 4},
-				{id = 21401, required = 4},
-			},
-		},
-		{
-			craftedItemId = 2185,
-			craftedCount = 1,
-			tier = 1,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "1 handed weapon Attk +39, Def +19 rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 704,
-			ingredients = {
-				{id = 32703, required = 4},
-				{id = 29020, required = 7},
-			},
-		},
-		{
-			craftedItemId = 32704,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "Smelt Arcanium ores into Arcanium Bar. required for crafting a variety of equipment..",
+			requiredSkill = 0,
+			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
-			craftPoints = 8,
+			craftPoints = 5,
 			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 35480, required = 2},
+				{id = 32702, required = 5},
 			},
 		},
 		{
-			craftedItemId = 3982,
-			craftedCount = 1,
-			tier = 2,
+			craftedItemId = 36373,
+			craftedCount = 1, --
+			tier = 0, 
 			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Armor +2, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 712,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 4},
-				{id = 39134, required = 4},
-				
-			},
-		},
-		{
-			craftedItemId = 36228,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Def +63, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 706,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 2},
-				{id = 33203, required = 2},
-			},
-		},
-		{
-			craftedItemId = 32746,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Armor +8, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 31886,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Attk +38, Elemental Damage +5, Def +22, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 707,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 2},
-				{id = 33202, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32747,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Armor +14, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 18,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32704, required = 11},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32439,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Armor +17, +3 magic level, -3 physical resistance. rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 708,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 1},
-				{id = 12470, required = 4},
-			},
-		},
-		{
-			craftedItemId = 36322,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "[2h] Attk +66, Def +33, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 709,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 4},
-				
-			},
-		},
-		{
-			craftedItemId = 32748,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Def +27, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 1},
-			},
-		},
-	
-		{
-			craftedItemId = 32749,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Armor +8, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 15,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32704, required = 9},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32750,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Armor +3, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 15,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32704, required = 8},
-				{id = 29020, required = 1},
-			},
-		},
-		{
-			craftedItemId = 32751,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Attk +46, Def +22, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 18,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 32704, required = 12},
-				{id = 29020, required = 1},
-			},			
-		},
-			{
-			craftedItemId = 30607,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "[2h] Attk +65, Def +34, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 710,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 4},
-				{id = 36164, required = 4},
-				
-			},
-		},
-		{
-			craftedItemId = 36274,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "[2h] Attk +63, Def +36, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 711,
-			ingredients = {
-				{id = 32704, required = 10},
-				{id = 29020, required = 4},
-				{id = 39146, required = 4},
-				
-			},
-		},
-		{
-			craftedItemId = 21382,--Eggsplosive Robo-Chicken Blueprint
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "This feathery automaton marches into battle, clucking and flapping its way to mischief. But when triggered, it's no yolk – watch as it detonates with eggsplosive force, leaving chaos in its wake!",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 17,
-			cost = 150, -- points for crafting that recipe
-			recipestorage = 711,
-			ingredients = {
-				{id = 32704, required = 50},
-				{id = 29020, required = 8},
-				{id = 5890, required = 15},
-				
-			},
-		},
-		
-		{
-			craftedItemId = 37135,
-			craftedCount = 1,
-			tier = 3,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Smelt Iron ores into Iron Bars. required for crafting a variety of equipment..",
+			requiredSkill = 0,
+			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
-			craftPoints = 10,
+			craftPoints = 5,
 			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
+			upgraded = "true",
 			ingredients = {
-				{id = 36837, required = 2},
+				{id = 32702, required = 5},
 			},
 		},
-		
-		{
-			craftedItemId = 12318,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "[2h] Attk +74, Def +45, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 22,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 713,
-			ingredients = {
-				{id = 37135, required = 8},
-				{id = 29020, required = 2},
-				{id = 33203, required = 2},
-			},
-		},
-		{
-			craftedItemId = 31858,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "[1h] Attk +74, Def +45, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 22,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 714,
-			ingredients = {
-				{id = 37135, required = 8},
-				{id = 29020, required = 2},
-				{id = 39147, required = 1},
-			},
-		},
-			{
-			craftedItemId = 9777,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "[2h] Armor +8, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 22,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 717,
-			ingredients = {
-				{id = 37135, required = 8},
-				{id = 29020, required = 2},
-			},
-		},
-		{
-			craftedItemId = 12646,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "[2h] Armor +3, speed +30, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 22,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 718,
-			ingredients = {
-				{id = 37135, required = 8},
-				{id = 29020, required = 2},
-			},
-		},
-		{
-			craftedItemId = 37146,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "Armor +4, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 22,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 37135, required = 8},
-				{id = 29020, required = 2},
-			},
-		},
-		{
-			craftedItemId = 37143,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "Armor +8, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 26,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 37135, required = 12},
-				{id = 29020, required = 2},
-			},
-		},
-		{
-			craftedItemId = 37145,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "Armor +9, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 19,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 37135, required = 12},
-				{id = 29020, required = 2},
-			},
-		},
-			{
-			craftedItemId = 31891,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "Def +77, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 26,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 715,
-			ingredients = {
-				{id = 37135, required = 12},
-				{id = 29020, required = 2},
-				{id = 21401, required = 1},
-			},
-		},
-		{
-			craftedItemId = 37144,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "Armor +15, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 32,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37135, required = 16},
-				{id = 29020, required = 2},
-			},
-		},
-		{
-			craftedItemId = 37147,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "Def +34, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 28,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37135, required = 14},
-				{id = 29020, required = 2},
-			},
-		},
-			{
-			craftedItemId = 32475,
-			craftedCount = 1,
-			tier = 3,
-			fame = 10, -- used for description
-			requiredSkill = 5,
-			desc = "[2h] Attk +79, Def +46, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 22,
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 716,
-			ingredients = {
-				{id = 37135, required = 8},
-				{id = 29020, required = 2},
-				{id = 33202, required = 3},
-			},
-		},
-		{
-			craftedItemId = 37136,
-			craftedCount = 1,
-			tier = 4,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Smelt Crystal ores into Crystal Bars. required for crafting a variety of equipment.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37134, required = 2},
-			},
-		},
-		{
-			craftedItemId = 37138,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "armor +9, chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 34,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 10},
-				{id = 29020, required = 4},
-			},
-		},
-		{
-			craftedItemId = 31961,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = " Armor +11, HP regen +17 (every 6 seconds) rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 30,
-			cost = 2, -- cost in gold coins
-			recipestorage = 724,
-			ingredients = {
-				{id = 37136, required = 10},
-				{id = 29020, required = 7},
-				{id = 39130, required = 3},
-			},
-		},
-			{
-			craftedItemId = 37139,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "armor +19, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 37,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 14},
-				{id = 29020, required = 4},
-			},
-		},
-			{
-			craftedItemId = 37141,
-			craftedCount = 6,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "armor +19, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 35,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 12},
-				{id = 29020, required = 6},
-			},
-		},
-			{
-			craftedItemId = 37140,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "armor +26, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 38,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 16},
-				{id = 29020, required = 6},
-			},
-		},
-		{
-			craftedItemId = 36197,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "[2h] Attk +86, Def +55, ElementalDamage + 3, Elemental Resistance + 2%, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 30,
-			cost = 2, -- cost in gold coins
-			recipestorage = 723,
-			ingredients = {
-				{id = 37136, required = 10},
-				{id = 29020, required = 13},
-				{id = 33201, required = 2},
-			},
-		},
-			{
-			craftedItemId = 32467,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "Attk +66, Def +34. 1 Handed, Elemental Resistance + 2%, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 30,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 10},
-				{id = 29020, required = 7},
-			},
-		},
-		
-		{
-			craftedItemId = 36153,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "[1h] Attk +69, Def +35, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 30,
-			cost = 2, -- cost in gold coins
-			recipestorage = 720,
-			ingredients = {
-				{id = 37136, required = 10},
-				{id = 29020, required = 17},
-				{id = 33201, required = 1},
-			},
-		},
-			{
-			craftedItemId = 8907,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "Def +38, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 28,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 9},
-				{id = 29020, required = 5},
-			},
-		},
-		{
-			craftedItemId = 36390,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "Def +85, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 28,
-			cost = 2, -- cost in gold coins
-			recipestorage = 721,
-			ingredients = {
-				{id = 37136, required = 9},
-				{id = 29020, required = 5},
-				{id = 39185, required = 3},
-			},
-		},
-			{
-			craftedItemId = 34026,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "Attk +43, Def +21, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 39,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 16},
-				{id = 29020, required = 6},
-			},
-		},
-			{
-			craftedItemId = 32506,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "Attk +32, Def +34, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 38,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 37136, required = 15},
-				{id = 29020, required = 7},
-			},
-		},
-		{
-			craftedItemId = 34080,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "[2h] Attk +87, Def +54, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 30,
-			cost = 2, -- cost in gold coins
-			recipestorage = 722,
-			ingredients = {
-				{id = 37136, required = 10},
-				{id = 29020, required = 13},
-				{id = 33201, required = 2},
-			},
-		},
-		{
-			craftedItemId = 36249,
-			craftedCount = 1,
-			tier = 4,
-			fame = 15, -- used for description
-			requiredSkill = 5,
-			desc = "[2h] Attk +89, Def +56, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 30,
-			cost = 2, -- cost in gold coins
-			recipestorage = 719,
-			ingredients = {
-				{id = 37136, required = 10},
-				{id = 29020, required = 7},
-				{id = 33202, required = 2},
-			},
-		},
-		{
-			craftedItemId = 39195, --T5 ORES
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- blacksteel ore
-			requiredSkill = 5,
-			desc = "Smelt blacksteel ores into blacksteel Bars. required for crafting a variety of equipment.",
-			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 12,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 35483, required = 5},
-			},
-		},
-		{
-			craftedItemId = 38168,
-			craftedCount = 1,
-			tier = 5,
-			fame = 15, -- used for description
-			requiredSkill = 6,
-			desc = "Transmute Celestial Lava Enchantment.",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 38,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 38174, required = 6},
-				{id = 29020, required = 15},
-			},
-		},
-
-
-
-		{
-			craftedItemId = 34072, --T5 HELM
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 6,
-			desc = " Armor +32, Elemental Resistance + 2%, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 80,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 20},
-				{id = 29020, required = 7},
-				{id = 39189, required = 5},
-				{id = 39188, required = 2},
-				{id = 39188, required = 2},
-			},
-		},
-			{
-			craftedItemId = 34071, --T5 armor
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 6,
-			desc = " Armor +36, Elemental Resistance + 2%, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 80,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 30},
-				{id = 29020, required = 10},
-				{id = 39189, required = 8},
-				{id = 39188, required = 4},
-				{id = 39188, required = 2},
-			},
-		},
-		{
-			craftedItemId = 34070, --T5 legs
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 6,
-			desc = " Armor +32, Elemental Resistance + 2%, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 80,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 22},
-				{id = 29020, required = 10},
-				{id = 39189, required = 6},
-				{id = 39188, required = 3},
-				{id = 39188, required = 2},
-			},
-		},
-		{
-			craftedItemId = 34069, --T5 boots
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 6,
-			desc = " Armor +20, Elemental Resistance + 1%, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 12},
-				{id = 29020, required = 7},
-				{id = 39189, required = 4},
-				{id = 39188, required = 1},
-				{id = 39188, required = 2},
-			},
-		},
-
-
-		{
-			craftedItemId = 34032, --T5 bow
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 7,
-			desc = "Attack +145, Def +72, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 50},
-				{id = 29020, required = 20},
-				{id = 39189, required = 10},
-				{id = 39188, required = 3},
-				{id = 39188, required = 2},
-			},
-		},
-
-		{
-			craftedItemId = 34062, --T5 wand
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 7,
-			desc = "Attack +145, Def +72, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 50},
-				{id = 29020, required = 20},
-				{id = 39189, required = 10},
-				{id = 39188, required = 3},
-				{id = 39188, required = 2},
-			},
-		},
-
-		{
-			craftedItemId = 34065, --T5 1h sword
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 7,
-			desc = "1H Attack +80, Def +70, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 30},
-				{id = 29020, required = 10},
-				{id = 39189, required = 10},
-				{id = 39188, required = 1},
-				{id = 39188, required = 1},
-			},
-		},
-		{
-			craftedItemId = 34064, --T5 1h AXE
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 7,
-			desc = "1H Attack +88, Def +60, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 30},
-				{id = 29020, required = 10},
-				{id = 39189, required = 10},
-				{id = 39188, required = 1},
-				{id = 39188, required = 1},
-			},
-		},
-
-		{
-			craftedItemId = 37582, --T5 SHIELD
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 7,
-			desc = "Def +140, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 30},
-				{id = 29020, required = 10},
-				{id = 39189, required = 10},
-				{id = 39188, required = 1},
-				{id = 39188, required = 1},
-			},
-		},
-
-		{
-			craftedItemId = 34063, --T5 2H HAMMER
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 7,
-			desc = "Attack +145, Def +72, rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 50},
-				{id = 29020, required = 20},
-				{id = 39189, required = 10},
-				{id = 39188, required = 3},
-				{id = 39188, required = 2},
-			},
-		},
-
-		{
-			craftedItemId = 34066, --T5 RING
-			craftedCount = 1,
-			tier = 5,
-			fame = 18, -- used for description
-			requiredSkill = 7,
-			desc = "Armor +6, elemental resistance +2%, physical resistance +2% rarity chance [RARE+].",
-			rollrarity = 2, --1 COMMON, 2 RARE, 3 EPIC
-			itemlvl = 10,
-			craftPoints = 40,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 39195, required = 30},
-				{id = 29020, required = 20},
-				{id = 39189, required = 10},
-				{id = 39188, required = 3},
-				{id = 39188, required = 2},
-			},
-		},
-
 
 
 	},
@@ -4793,6 +3471,60 @@ function Crafting:craftRecipe(player, recipeId, amount, profId, item)
 	return true
 end
 
+function generateCustomDescription(itemType)
+    local itemName = itemType:getName()
+    local baseDescription = itemType:getDescription()
+
+    -- Start with the item name and then describe its properties
+    local description = string.format("%s, ", itemName)
+
+    -- Determine if the item is a weapon and provide detailed attributes
+    if itemType:isWeapon() then
+        local attack = itemType:getAttack()
+        local defense = itemType:getDefense()
+        local handedness = itemType:isTwoHanded() and "a two-handed" or "a one-handed"
+
+        if itemType:isBow() then
+            description = description .. string.format("This crafted %s distance weapon boasts an attack value of %d, ideal for long-range combat. ", handedness, attack)
+        else
+            local weaponTypeDescription = "weapon"
+            description = description .. string.format("This finely crafted %s %s features an attack value of %d and a defense value of %d, making it a reliable choice for combat.. ", handedness, weaponTypeDescription, attack, defense)
+        end
+    elseif itemType:isArmor() then
+    local armor = itemType:getArmor()
+    description = description .. string.format("This piece of armor provides an impressive armor rating of %d, offering superior protection. ", armor)
+	elseif itemType:isHelmet() then
+	    local armor = itemType:getArmor()
+	    description = description .. string.format("This helmet is crafted to provide an armor rating of %d, ensuring protection for your head. ", armor)
+	elseif itemType:isLegs() then
+	    local armor = itemType:getArmor()
+	    description = description .. string.format("These well-crafted leg guards provide an armor rating of %d, offering sturdy defense. ", armor)
+	elseif itemType:isBoots() then
+	    local armor = itemType:getArmor()
+	    description = description .. string.format("These boots are designed to offer an armor rating of %d, protecting your feet with durable materials. ", armor)
+
+    elseif itemType:isShield() then
+        local defense = itemType:getDefense()
+        local extraDefense = itemType:getExtraDefense() or 0  -- Assume a method to get extra defense
+        description = description .. string.format("This shield offers a defense value of %d, perfect for blocking incoming attacks", defense)
+        if extraDefense > 0 then
+            description = description .. string.format(" and provides extra defense of %d. ", extraDefense)
+        else
+            description = description .. ". "
+        end
+    else
+        -- Use default description if no specific type matched
+        description = description .. baseDescription
+    end
+
+    -- Add the base item description at the end for more context
+    if baseDescription and baseDescription ~= "" then
+        description = description .. " " .. baseDescription
+    end
+
+    return description
+end
+
 -- protocol
 function Crafting:sendOpenCraftingWindow(player, professionId)
 	local msg = NetworkMessage()
@@ -4817,13 +3549,25 @@ function Crafting:sendOpenCraftingWindow(player, professionId)
 		if storageValue == -1 then
 			storageValue = 0
 		end
+
+		local customDescription
+		if recipe.desc then
+		    customDescription = recipe.desc
+		else
+		    customDescription = generateCustomDescription(it)
+		end
+
+		if not recipe.upgraded then
+			recipe.upgraded = "false"
+		end
 		msg:addU16(it:getClientId())
 		msg:addU16(recipe.craftedCount)
 		msg:addString(it:getName())
 		msg:addByte(recipe.tier)
 		msg:addString(recipe.desc)
 		msg:addU16(recipe.cost)
-		msg:addU16(recipe.recipestorage)	
+		msg:addU16(recipe.recipestorage)
+		msg:addString(recipe.upgraded)	
 		msg:addU16(storageValue)
 		msg:addU16(recipe.requiredSkill or 0)
 		--print(player:getStorageValue(recipe.recipestorage))
