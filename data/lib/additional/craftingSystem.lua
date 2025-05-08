@@ -2272,104 +2272,103 @@ function generateCustomDescription(itemType)
     local itemName = itemType:getName()
     local baseDescription = itemType:getDescription()
 
-    local secondaryDescription = ""
-    -- Add attribute details to secondaryDescription
-    if itemType.getStat and itemType:getStat(STAT_MAGICPOINTS) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Magic Level: +%d. ", itemType:getStat(STAT_MAGICPOINTS))
-    end
-    if itemType.getStat and itemType:getStat(STAT_MAXHITPOINTS) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Max HP: +%d. ", itemType:getStat(STAT_MAXHITPOINTS))
-    end
-    if itemType.getStat and itemType:getStat(STAT_MAXMANAPOINTS) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Max MP: +%d. ", itemType:getStat(STAT_MAXMANAPOINTS))
-    end
-    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Crit Chance: +%d%%. ", itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE))
-    end
-    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Life Leech Chance: +%d%%. ", itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE))
-    end
-    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Life Leech Amount: +%d. ", itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT))
-    end
-    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Mana Leech Chance: +%d%%. ", itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE))
-    end
-    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Mana Leech Amount: +%d. ", itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT))
-    end
-    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Attack Speed: +%d. ", itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED))
-    end
-    if itemType.getSkill and itemType:getSkill(SKILL_CLUB) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Club Skill: +%d. ", itemType:getSkill(SKILL_CLUB))
-    end
-    if itemType.getSkill and itemType:getSkill(SKILL_SWORD) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Sword Skill: +%d. ", itemType:getSkill(SKILL_SWORD))
-    end
-    if itemType.getSkill and itemType:getSkill(SKILL_AXE) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Axe Skill: +%d. ", itemType:getSkill(SKILL_AXE))
-    end
-    if itemType.getSkill and itemType:getSkill(SKILL_DISTANCE) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Distance Skill: +%d. ", itemType:getSkill(SKILL_DISTANCE))
-    end
-    if itemType.getSkill and itemType:getSkill(SKILL_SHIELD) > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Shielding: +%d. ", itemType:getSkill(SKILL_SHIELD))
-    end
-    if itemType.getHealthGain and itemType:getHealthGain() > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Health Regen: +%d. ", itemType:getHealthGain())
-    end
-    if itemType.getManaGain and itemType:getManaGain() > 0 then
-        secondaryDescription = secondaryDescription .. string.format("Mana Regen: +%d. ", itemType:getManaGain())
-    end
-
-    -- Start with the item name and then describe its properties
-    local description = string.format("%s, %s", itemName, secondaryDescription)
-
-    -- Determine if the item is a weapon and provide detailed attributes
+    local typeInfo = ""
+    -- 1. Weapon/armor/shield/boots/helmet/legs type info first
     if itemType:isWeapon() then
         local attack = itemType:getAttack()
         local defense = itemType:getDefense()
         local handedness = itemType:isTwoHanded() and "a two-handed" or "a one-handed"
-
         if itemType:isBow() then
-            description = description .. string.format("This crafted %s distance weapon boasts an attack value of %d, ideal for long-range combat. ", handedness, attack)
+            typeInfo = string.format("This crafted %s distance weapon boasts an attack value of %d, ideal for long-range combat.", handedness, attack)
         else
             local weaponTypeDescription = "weapon"
-            description = description .. string.format("This finely crafted %s %s features an attack value of %d and a defense value of %d, making it a reliable choice for combat.. ", handedness, weaponTypeDescription, attack, defense)
+            typeInfo = string.format("This finely crafted %s %s features an attack value of %d and a defense value of %d, making it a reliable choice for combat.", handedness, weaponTypeDescription, attack, defense)
         end
     elseif itemType:isArmor() then
-    local armor = itemType:getArmor()
-    description = description .. string.format("This piece of armor provides an impressive armor rating of %d, offering superior protection. ", armor)
-	elseif itemType:isHelmet() then
-	    local armor = itemType:getArmor()
-	    description = description .. string.format("This helmet is crafted to provide an armor rating of %d, ensuring protection for your head. ", armor)
-	elseif itemType:isLegs() then
-	    local armor = itemType:getArmor()
-	    description = description .. string.format("These well-crafted leg guards provide an armor rating of %d, offering sturdy defense. ", armor)
-	elseif itemType:isBoots() then
-	    local armor = itemType:getArmor()
-	    description = description .. string.format("These boots are designed to offer an armor rating of %d, protecting your feet with durable materials. ", armor)
-
+        local armor = itemType:getArmor()
+        typeInfo = string.format("This piece of armor provides an impressive armor rating of %d, offering superior protection.", armor)
+    elseif itemType:isHelmet() then
+        local armor = itemType:getArmor()
+        typeInfo = string.format("This helmet is crafted to provide an armor rating of %d, ensuring protection for your head.", armor)
+    elseif itemType:isLegs() then
+        local armor = itemType:getArmor()
+        typeInfo = string.format("These well-crafted leg guards provide an armor rating of %d, offering sturdy defense.", armor)
+    elseif itemType:isBoots() then
+        local armor = itemType:getArmor()
+        typeInfo = string.format("These boots are designed to offer an armor rating of %d, protecting your feet with durable materials.", armor)
     elseif itemType:isShield() then
         local defense = itemType:getDefense()
-        local extraDefense = itemType:getExtraDefense() or 0  -- Assume a method to get extra defense
-        description = description .. string.format("This shield offers a defense value of %d, perfect for blocking incoming attacks", defense)
+        local extraDefense = itemType:getExtraDefense() or 0
+        typeInfo = string.format("This shield offers a defense value of %d, perfect for blocking incoming attacks", defense)
         if extraDefense > 0 then
-            description = description .. string.format(" and provides extra defense of %d. ", extraDefense)
+            typeInfo = typeInfo .. string.format(" and provides extra defense of %d.", extraDefense)
         else
-            description = description .. ". "
+            typeInfo = typeInfo .. "."
         end
-    else
-        -- Use default description if no specific type matched
-        description = description .. baseDescription
     end
 
-    -- Add the base item description at the end for more context
+    -- 2. Attribute info (each on a new line)
+    local secondaryDescription = ""
+    if itemType.getStat and itemType:getStat(STAT_MAGICPOINTS) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Magic Level: +%d.\n", itemType:getStat(STAT_MAGICPOINTS))
+    end
+    if itemType.getStat and itemType:getStat(STAT_MAXHITPOINTS) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Max HP: +%d.\n", itemType:getStat(STAT_MAXHITPOINTS))
+    end
+    if itemType.getStat and itemType:getStat(STAT_MAXMANAPOINTS) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Max MP: +%d.\n", itemType:getStat(STAT_MAXMANAPOINTS))
+    end
+    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Crit Chance: +%d%%.\n", itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE))
+    end
+    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Life Leech Chance: +%d%%.\n", itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE))
+    end
+    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Life Leech Amount: +%d.\n", itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT))
+    end
+    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Mana Leech Chance: +%d%%.\n", itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE))
+    end
+    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Mana Leech Amount: +%d.\n", itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT))
+    end
+    if itemType.getSpecialSkill and itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Attack Speed: +%d.\n", itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED))
+    end
+    if itemType.getSkill and itemType:getSkill(SKILL_CLUB) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Club Skill: +%d.\n", itemType:getSkill(SKILL_CLUB))
+    end
+    if itemType.getSkill and itemType:getSkill(SKILL_SWORD) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Sword Skill: +%d.\n", itemType:getSkill(SKILL_SWORD))
+    end
+    if itemType.getSkill and itemType:getSkill(SKILL_AXE) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Axe Skill: +%d.\n", itemType:getSkill(SKILL_AXE))
+    end
+    if itemType.getSkill and itemType:getSkill(SKILL_DISTANCE) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Distance Skill: +%d.\n", itemType:getSkill(SKILL_DISTANCE))
+    end
+    if itemType.getSkill and itemType:getSkill(SKILL_SHIELD) > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Shielding: +%d.\n", itemType:getSkill(SKILL_SHIELD))
+    end
+    if itemType.getHealthGain and itemType:getHealthGain() > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Health Regen: +%d.\n", itemType:getHealthGain())
+    end
+    if itemType.getManaGain and itemType:getManaGain() > 0 then
+        secondaryDescription = secondaryDescription .. string.format("Mana Regen: +%d.\n", itemType:getManaGain())
+    end
+
+    -- 3. Compose the final description
+    local description = itemName
+    if typeInfo ~= "" then
+        description = description .. "\n" .. typeInfo
+    end
+    if secondaryDescription ~= "" then
+        description = description .. "\n" .. secondaryDescription
+    end
     if baseDescription and baseDescription ~= "" then
-        description = description .. " " .. baseDescription
+        description = description .. "\n" .. baseDescription
     end
-
     return description
 end
 
@@ -2412,7 +2411,7 @@ function Crafting:sendOpenCraftingWindow(player, professionId)
 		msg:addU16(recipe.craftedCount)
 		msg:addString(it:getName())
 		msg:addByte(recipe.tier)
-		msg:addString(recipe.desc)
+		msg:addString(customDescription)
 		msg:addU16(recipe.cost)
 		msg:addU16(recipe.recipestorage)
 		msg:addString(recipe.upgraded)	
