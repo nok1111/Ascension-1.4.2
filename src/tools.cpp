@@ -1457,6 +1457,9 @@ std::string getSpecialSkillName(uint8_t skillid)
 		case SPECIALSKILL_ATTACKSPEED:
 			return "attack speed";
 
+		case SPECIALSKILL_WEAKEN:
+			return "damage dealt reduction";
+
 		default:
 			return "unknown";
 	}

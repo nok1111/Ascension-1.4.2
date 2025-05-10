@@ -154,6 +154,7 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_ALLOWDISTREAD,
 	ITEM_PARSE_STOREITEM,
 	ITEM_PARSE_ATTACKSPEED,
+	ITEM_PARSE_WEAKEN,
 };
 
 struct Abilities {

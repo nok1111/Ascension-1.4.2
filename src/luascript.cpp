@@ -2422,6 +2422,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(SPECIALSKILL_MANALEECHCHANCE)
 	registerEnum(SPECIALSKILL_MANALEECHAMOUNT)
 	registerEnum(SPECIALSKILL_ATTACKSPEED)
+	registerEnum(SPECIALSKILL_WEAKEN)
 
 		//TOOLTIPS
 		registerEnum(STAT_MAGICPOINTS)
