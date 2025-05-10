@@ -892,15 +892,11 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 		}
 
 		if (casterPlayer && damage.primary.type != COMBAT_HEALING) {
-			// Check for any shield in hand slots
-			Item* leftHand = casterPlayer->getInventoryItem(CONST_SLOT_LEFT);
-			Item* rightHand = casterPlayer->getInventoryItem(CONST_SLOT_RIGHT);
-			
-			if ((leftHand && leftHand->getWeaponType() == WEAPON_SHIELD) ||
-				(rightHand && rightHand->getWeaponType() == WEAPON_SHIELD)) {
-				// Apply 10% damage reduction
-				damage.primary.value = std::max(0, damage.primary.value * 90 / 100);
-				damage.secondary.value = std::max(0, damage.secondary.value * 90 / 100);
+			// Apply additional weaken effect from special skill
+			uint16_t weakenValue = casterPlayer->getSpecialSkill(SPECIALSKILL_WEAKEN);
+			if (weakenValue > 0) {
+				damage.primary.value = std::max(0, damage.primary.value * (100 - weakenValue) / 100);
+				damage.secondary.value = std::max(0, damage.secondary.value * (100 - weakenValue) / 100);
 			}
 		}
 
@@ -1112,15 +1108,11 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 	
 
 		if (casterPlayer && damageCopy.primary.type != COMBAT_HEALING) {
-			// Check for any shield in hand slots
-			Item* leftHand = casterPlayer->getInventoryItem(CONST_SLOT_LEFT);
-			Item* rightHand = casterPlayer->getInventoryItem(CONST_SLOT_RIGHT);
-			
-			if ((leftHand && leftHand->getWeaponType() == WEAPON_SHIELD) ||
-				(rightHand && rightHand->getWeaponType() == WEAPON_SHIELD)) {
-				// Apply 10% damage reduction
-				damageCopy.primary.value = std::max(0, damageCopy.primary.value * 90 / 100);
-				damageCopy.secondary.value = std::max(0, damageCopy.secondary.value * 90 / 100);
+			// Apply additional weaken effect from special skill
+			uint16_t weakenValue = casterPlayer->getSpecialSkill(SPECIALSKILL_WEAKEN);
+			if (weakenValue > 0) {
+				damageCopy.primary.value = std::max(0, damageCopy.primary.value * (100 - weakenValue) / 100);
+				damageCopy.secondary.value = std::max(0, damageCopy.secondary.value * (100 - weakenValue) / 100);
 			}
 		}
 
