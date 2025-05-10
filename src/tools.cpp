@@ -1460,6 +1460,9 @@ std::string getSpecialSkillName(uint8_t skillid)
 		case SPECIALSKILL_WEAKEN:
 			return "damage dealt reduction";
 
+		case SPECIALSKILL_EXTRAHEALING:
+			return "extra healing";
+
 		default:
 			return "unknown";
 	}

@@ -8,6 +8,8 @@ local specialSkills = {
   [SPECIALSKILL_MANALEECHCHANCE] = "mc",
   [SPECIALSKILL_MANALEECHAMOUNT] = "ma",
   [SPECIALSKILL_ATTACKSPEED] = "as",
+  [SPECIALSKILL_WEAKEN] = "wkn",
+  [SPECIALSKILL_EXTRAHEALING] = "eh",
 }
 
 local skills = {

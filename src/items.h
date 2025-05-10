@@ -155,6 +155,7 @@ enum ItemParseAttributes_t {
 	ITEM_PARSE_STOREITEM,
 	ITEM_PARSE_ATTACKSPEED,
 	ITEM_PARSE_WEAKEN,
+	ITEM_PARSE_EXTRAHEALING,
 };
 
 struct Abilities {

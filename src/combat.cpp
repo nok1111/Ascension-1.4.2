@@ -905,6 +905,10 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 			if (compassion > 0) {
 				damage.primary.value += damage.primary.value * compassion * 2 / 1000; // +0.2% per point
 			}
+			int32_t extrahealingvalue = casterPlayer->getSpecialSkill(SPECIALSKILL_EXTRAHEALING);
+			if (extrahealingvalue > 0) {
+				damage.primary.value = std::max(0, damage.primary.value * (100 - extrahealingvalue) / 100);
+			}
 			g_game.addMagicEffect(caster->getPosition(), CONST_ME_698);
 		}
 
@@ -1120,6 +1124,10 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 			int32_t compassion = caster->getPlayer()->getCharacterStat(CHARSTAT_COMPASSION);
 			if (compassion > 0) {
 				damageCopy.primary.value += damageCopy.primary.value * compassion * 2 / 1000; // +0.2% per point
+			}
+			int32_t extrahealingvalue = casterPlayer->getSpecialSkill(SPECIALSKILL_EXTRAHEALING);
+			if (extrahealingvalue > 0) {
+				damage.primary.value = std::max(0, damage.primary.value * (100 - extrahealingvalue) / 100);
 			}
 		}
 

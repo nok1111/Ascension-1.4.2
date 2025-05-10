@@ -2423,6 +2423,7 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(SPECIALSKILL_MANALEECHAMOUNT)
 	registerEnum(SPECIALSKILL_ATTACKSPEED)
 	registerEnum(SPECIALSKILL_WEAKEN)
+	registerEnum(SPECIALSKILL_EXTRAHEALING)
 
 		//TOOLTIPS
 		registerEnum(STAT_MAGICPOINTS)
