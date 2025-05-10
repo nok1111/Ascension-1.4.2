@@ -794,7 +794,7 @@ void Combat::doCombat(Creature* caster, const Position& position) const
 							if (caster == creature || !creature->isImmune(condition->getType())) {
 								Condition* conditionCopy = condition->clone();
 								if (caster) {
-									conditionCopy->setParam(CONDITION_PARAM_OWNER, caster->getID());
+								conditionCopy->setParam(CONDITION_PARAM_OWNER, caster->getID());
 								}
 
 								//TODO: infight condition until all aggressive conditions has ended
@@ -891,7 +891,18 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 			}
 		}
 
-
+		if (casterPlayer && damage.primary.type != COMBAT_HEALING) {
+			// Check for any shield in hand slots
+			Item* leftHand = casterPlayer->getInventoryItem(CONST_SLOT_LEFT);
+			Item* rightHand = casterPlayer->getInventoryItem(CONST_SLOT_RIGHT);
+			
+			if ((leftHand && leftHand->getWeaponType() == WEAPON_SHIELD) ||
+				(rightHand && rightHand->getWeaponType() == WEAPON_SHIELD)) {
+				// Apply 10% damage reduction
+				damage.primary.value = std::max(0, damage.primary.value * 90 / 100);
+				damage.secondary.value = std::max(0, damage.secondary.value * 90 / 100);
+			}
+		}
 
 		if (damage.primary.type == COMBAT_HEALING && caster && caster->getPlayer()) {
 			int32_t compassion = caster->getPlayer()->getCharacterStat(CHARSTAT_COMPASSION);
@@ -912,7 +923,7 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 				if (caster == target || !target->isImmune(condition->getType())) {
 					Condition* conditionCopy = condition->clone();
 					if (caster) {
-						conditionCopy->setParam(CONDITION_PARAM_OWNER, caster->getID());
+					conditionCopy->setParam(CONDITION_PARAM_OWNER, caster->getID());
 					}
 
 					//TODO: infight condition until all aggressive conditions has ended
@@ -932,21 +943,19 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 
 			int32_t totalDamage = std::abs(damage.primary.value + damage.secondary.value);
 
-			if (casterPlayer->getHealth() < casterPlayer->getMaxHealth()) {
-				uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_LIFELEECHCHANCE);
+			if (casterPlayer->getHealth() < casterPlayer->getMaxHealth() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 				uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT);
-				if (chance > 0 && skill > 0 && normal_random(1, 100) <= chance) {
-					leechCombat.primary.value = std::round(totalDamage * (skill / 100.));
+				if (skill > 0) {
+					leechCombat.primary.value = std::ceil(totalDamage * (skill + ((1) * (skill / 10.))) / 1);
 					g_game.combatChangeHealth(nullptr, casterPlayer, leechCombat);
 					casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_RED);
 				}
 			}
 
-			if (casterPlayer->getMana() < casterPlayer->getMaxMana()) {
-				uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE);
+			if (casterPlayer->getMana() < casterPlayer->getMaxMana() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 				uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT);
-				if (chance > 0 && skill > 0 && normal_random(1, 100) <= chance) {
-					leechCombat.primary.value = std::round(totalDamage * (skill / 100.));
+				if (skill > 0) {
+					leechCombat.primary.value = std::ceil(totalDamage * (skill + ((1) * (skill / 10.))) / 1);
 					g_game.combatChangeMana(nullptr, casterPlayer, leechCombat);
 					casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_BLUE);
 				}
@@ -978,6 +987,7 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 			criticalPrimary = std::round(damage.primary.value * 1.8); // 180% damage
 			criticalSecondary = std::round(damage.secondary.value * 1.8);
 			damage.critical = true;
+
 		}
 	}
 
@@ -1101,7 +1111,18 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 
 	
 
-		
+		if (casterPlayer && damageCopy.primary.type != COMBAT_HEALING) {
+			// Check for any shield in hand slots
+			Item* leftHand = casterPlayer->getInventoryItem(CONST_SLOT_LEFT);
+			Item* rightHand = casterPlayer->getInventoryItem(CONST_SLOT_RIGHT);
+			
+			if ((leftHand && leftHand->getWeaponType() == WEAPON_SHIELD) ||
+				(rightHand && rightHand->getWeaponType() == WEAPON_SHIELD)) {
+				// Apply 10% damage reduction
+				damageCopy.primary.value = std::max(0, damageCopy.primary.value * 90 / 100);
+				damageCopy.secondary.value = std::max(0, damageCopy.secondary.value * 90 / 100);
+			}
+		}
 
 		if (damageCopy.primary.type == COMBAT_HEALING && caster && caster->getPlayer()) {
 			int32_t compassion = caster->getPlayer()->getCharacterStat(CHARSTAT_COMPASSION);
@@ -1127,7 +1148,7 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 					if (caster == creature || !creature->isImmune(condition->getType())) {
 						Condition* conditionCopy = condition->clone();
 						if (caster) {
-							conditionCopy->setParam(CONDITION_PARAM_OWNER, caster->getID());
+						conditionCopy->setParam(CONDITION_PARAM_OWNER, caster->getID());
 						}
 
 						//TODO: infight condition until all aggressive conditions has ended
@@ -1143,21 +1164,20 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 			if (casterPlayer && !damage.leeched && damage.primary.type != COMBAT_HEALING && damage.origin != ORIGIN_CONDITION) {
 				int32_t targetsCount = toDamageCreatures.size();
 
-				if (casterPlayer->getHealth() < casterPlayer->getMaxHealth()) {
-					uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_LIFELEECHCHANCE);
+				if (casterPlayer->getHealth() < casterPlayer->getMaxHealth() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 					uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT);
-					if (chance > 0 && skill > 0 && normal_random(1, 100) <= chance) {
-						leechCombat.primary.value = std::ceil(totalDamage * ((skill / 100.) + ((targetsCount - 1) * ((skill / 100.) / 10.))) / targetsCount);
+					if (skill > 0) {
+						leechCombat.primary.value = std::ceil(totalDamage * (skill + ((targetsCount - 1) * (skill / 10.))) / targetsCount);
 						g_game.combatChangeHealth(nullptr, casterPlayer, leechCombat);
 						casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_RED);
 					}
 				}
 
-				if (casterPlayer->getMana() < casterPlayer->getMaxMana()) {
-					uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE);
+				// Change to:
+				if (casterPlayer->getMana() < casterPlayer->getMaxMana() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 					uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT);
-					if (chance > 0 && skill > 0 && normal_random(1, 100) <= chance) {
-						leechCombat.primary.value = std::ceil(totalDamage * ((skill / 100.) + ((targetsCount - 1) * ((skill / 100.) / 10.))) / targetsCount);
+					if (skill > 0) {
+						leechCombat.primary.value = std::ceil(totalDamage * (skill + ((targetsCount - 1) * (skill / 10.))) / targetsCount);
 						g_game.combatChangeMana(nullptr, casterPlayer, leechCombat);
 						casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_BLUE);
 					}
