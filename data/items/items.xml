@@ -2742,11 +2742,12 @@
 		<attribute key="showduration" value="1" />
 	</item>
 	<item id="2163" article="a" name="magic light wand">
-		<attribute key="slotType" value="ammo" />
-		<attribute key="weight" value="1500" />
-		<attribute key="decayTo" value="0" />
-		<attribute key="showduration" value="1" />
-		<attribute key="duration" value="3000" />
+		<attribute key="attack" value="20" />
+		<attribute key="defense" value="10" />
+		<attribute key="weight" value="290" />
+		<attribute key="weaponType" value="axe" />	
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="3" />
 	</item>
 	
 	<item id="24810" article="a" name="dark wizard's crown">
@@ -2870,20 +2871,16 @@
 		<attribute key="attack" value="49" />
 		<attribute key="defense" value="32" />
 		<attribute key="maxmanapoints" value="350" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-	
+		<attribute key="weaponType" value="axe" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
 	</item>
 	<item id="2182" article="a" name="Snakebite Rod">
 		<attribute key="attack" value="48" />
 		<attribute key="defense" value="34" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
-		
+		<attribute key="weaponType" value="axe" />	
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
 	</item>
@@ -2901,9 +2898,8 @@
 		<attribute key="manaGain" value="20" />
 		<attribute key="manaTicks" value="5000" />
 		<attribute key="maxmanapoints" value="150" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
@@ -2913,9 +2909,8 @@
 		<attribute key="defense" value="20" />
 		<attribute key="criticalhitamount" value="5" />
 		<attribute key="maxmanapoints" value="185" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
@@ -2923,9 +2918,8 @@
 	<item id="2186" article="a" name="Moonlight Rod">
 		<attribute key="attack" value="38" />
 		<attribute key="defense" value="15" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
@@ -2937,9 +2931,8 @@
 		<attribute key="attack" value="42" />
 		<attribute key="defense" value="19" />
 		<attribute key="manaleechamount" value="7" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
@@ -2956,9 +2949,8 @@
 	<item id="2189" article="a" name="wand of blessings">
 		<attribute key="attack" value="68" />
 		<attribute key="defense" value="40" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="4" />
@@ -2966,9 +2958,8 @@
 	<item id="2190" article="a" name="wand of vortex">
 		<attribute key="attack" value="28" />
 		<attribute key="defense" value="16" />
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="4" />
@@ -2978,9 +2969,8 @@
 		<attribute key="defense" value="36" />
 		<attribute key="magiclevelpoints" value="2" />
 		<attribute key="maxmanapoints" value="150" />	
-		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="distance" />
+		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="4" />
@@ -35934,6 +35924,14 @@
 		<attribute key="weight" value="1" />
 		<attribute key="description" value="Can be used on a piece of equipment to change values of all attributes." />
 	</item>
+
+
+
+	<item id="33626" article="a" name="Awakened Orb">
+		<attribute key="weight" value="10" />
+		<attribute key="description" value="Used in several recipes to craft strong pieces of equipment." />
+	</item>
+
 	<item id="29080" article="a" name="Mystic Pouch">
 		<attribute key="weight" value="1" />
 		<attribute key="description" value="Contains various valuable items. Click to open." />

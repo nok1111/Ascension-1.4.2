@@ -16,17 +16,17 @@
 		<skill id="1" multiplier="2.0" />
 		<skill id="2" multiplier="2.0" />
 		<skill id="3" multiplier="2.0" />
-		<skill id="4" multiplier="2.0" />
+		<skill id="4" multiplier="1.1" />
 		<skill id="5" multiplier="1.5" />
-		<skill id="6" multiplier="1.1" />
+		<skill id="6" multiplier="1.4" />
 	</vocation>
 	<vocation id="2" clientid="2" name="Templar" description="a templar" gaincap="10" gainhp="15" gainmana="5" gainhpticks="3" gainhpamount="8" gainmanaticks="4" gainmanaamount="18" manamultiplier="3.0" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="2">
 		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" />
-	<skill id="0" multiplier="1.1" />
+		<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
 		<skill id="3" multiplier="1.1" />
-		<skill id="4" multiplier="1.8" />
+		<skill id="4" multiplier="2.0" />
 		<skill id="5" multiplier="1.1" />
 		<skill id="6" multiplier="1.1" />
 	</vocation>
@@ -36,9 +36,9 @@
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
 		<skill id="3" multiplier="1.1" />
-		<skill id="4" multiplier="1.1" />
+		<skill id="4" multiplier="2.0" />
 		<skill id="5" multiplier="1.1" />
-		<skill id="6" multiplier="1.1" />
+		<skill id="6" multiplier="1.4" />
 	</vocation>
 	<vocation id="4" clientid="4" name="Dragon Knight" description="a Dragon Knight" gaincap="10" gainhp="15" gainmana="5" gainhpticks="3" gainhpamount="8" gainmanaticks="4" gainmanaamount="12" manamultiplier="3.0" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="4">
 		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" />
@@ -46,7 +46,7 @@
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
 		<skill id="3" multiplier="1.1" />
-		<skill id="4" multiplier="1.6" />
+		<skill id="4" multiplier="2.0" />
 		<skill id="5" multiplier="1.1" />
 		<skill id="6" multiplier="1.1" />
 	</vocation>
@@ -56,9 +56,9 @@
 		<skill id="1" multiplier="1.8" />
 		<skill id="2" multiplier="1.8" />
 		<skill id="3" multiplier="1.8" />
-		<skill id="4" multiplier="1.8" />
+		<skill id="4" multiplier="1.1" />
 		<skill id="5" multiplier="1.5" />
-		<skill id="6" multiplier="1.1" />
+		<skill id="6" multiplier="1.4" />
 	</vocation>
 		<vocation id="6" clientid="6" name="Stellar" description="a Stellar" gaincap="10" gainhp="5" gainmana="22" gainhpticks="6" gainhpamount="8" gainmanaticks="2" gainmanaamount="21" manamultiplier="1.1" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="6">
 		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
@@ -66,7 +66,7 @@
 		<skill id="1" multiplier="1.4" />
 		<skill id="2" multiplier="1.4" />
 		<skill id="3" multiplier="1.4" />
-		<skill id="4" multiplier="1.4" />
+		<skill id="4" multiplier="1.1" />
 		<skill id="5" multiplier="1.4" />
 		<skill id="6" multiplier="1.4" />
 	</vocation>
@@ -76,7 +76,7 @@
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
 		<skill id="3" multiplier="1.1" />
-		<skill id="4" multiplier="1.8" />
+		<skill id="4" multiplier="2.0" />
 		<skill id="5" multiplier="1.1" />
 		<skill id="6" multiplier="1.1" />
 	</vocation>
@@ -86,9 +86,9 @@
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
 		<skill id="3" multiplier="1.1" />
-		<skill id="4" multiplier="1.8" />
+		<skill id="4" multiplier="1.1" />
 		<skill id="5" multiplier="1.1" />
-		<skill id="6" multiplier="1.1" />
+		<skill id="6" multiplier="1.4" />
 	</vocation>
 		<vocation id="9" clientid="9" name="Light Dancer" description="a Light Dancer" gaincap="10" gainhp="10" gainmana="15" gainhpticks="4" gainhpamount="8" gainmanaticks="3" gainmanaamount="12" manamultiplier="1.7" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="9">
 		<formula meleeDamage="1.5" distDamage="1.0" defense="1.0" armor="1.0" />
@@ -96,9 +96,9 @@
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
 		<skill id="3" multiplier="1.1" />
-		<skill id="4" multiplier="1.1" />
+		<skill id="4" multiplier="2.0" />
 		<skill id="5" multiplier="1.1" />
-		<skill id="6" multiplier="1.1" />
+		<skill id="6" multiplier="1.2" />
 	</vocation>
 		<vocation id="10" clientid="10" name="Archer" description="an Archer" gaincap="10" gainhp="10" gainmana="15" gainhpticks="4" gainhpamount="8" gainmanaticks="2" gainmanaamount="12" manamultiplier="1.8" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="10">
 		<formula meleeDamage="1.0" distDamage="1.2" defense="1.0" armor="1.0" />
@@ -106,8 +106,8 @@
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
 		<skill id="3" multiplier="1.1" />
-		<skill id="4" multiplier="1.1" />
+		<skill id="4" multiplier="2.0" />
 		<skill id="5" multiplier="1.1" />
-		<skill id="6" multiplier="1.1" />
+		<skill id="6" multiplier="1.4" />
 	</vocation>
 </vocations>
