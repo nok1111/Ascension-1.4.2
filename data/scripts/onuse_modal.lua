@@ -2,7 +2,7 @@
 -- TFS revscript: Opens a modal window with selectable rewards on item use.
 -- Replace ITEM_ID with your actual item ID.
 
-local ITEM_ID = 12345 -- TODO: Replace with your real item ID
+local ITEM_ID = 37763 -- TODO: Replace with your real item ID
 
 local onuseModal = Action()
 
