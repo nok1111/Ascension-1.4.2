@@ -2869,6 +2869,7 @@
 	<item id="2181" article="a" name="Rod of the Earthflow">
 		<attribute key="attack" value="49" />
 		<attribute key="defense" value="32" />
+		<attribute key="maxmanapoints" value="350" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="distance" />
@@ -2895,11 +2896,23 @@
 		<attribute key="range" value="3" />
 	</item>
 	<item id="2184" article="a" name="crystal wand">
-		<attribute key="weight" value="2800" />
+		<attribute key="attack" value="40" />
+		<attribute key="defense" value="20" />
+		<attribute key="manaGain" value="20" />
+		<attribute key="manaTicks" value="5000" />
+		<attribute key="maxmanapoints" value="150" />
+		<attribute key="slotType" value="two-handed" />
+		<attribute key="weight" value="290" />
+		<attribute key="weaponType" value="distance" />
+		<attribute key="hitChance" value="75" />
+		<attribute key="shootType" value="energy" />
+		<attribute key="range" value="3" />
 	</item>
 	<item id="2185" article="a" name="Blackmagic Rod">
 		<attribute key="attack" value="40" />
 		<attribute key="defense" value="20" />
+		<attribute key="criticalhitamount" value="5" />
+		<attribute key="maxmanapoints" value="185" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="distance" />
@@ -2923,14 +2936,13 @@
 	<item id="2187" article="a" name="Wand Of Endless Fire">
 		<attribute key="attack" value="42" />
 		<attribute key="defense" value="19" />
+		<attribute key="manaleechamount" value="7" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
-		<attribute key="manaGain" value="5" />
-		<attribute key="manaTicks" value="5000" />
 		<attribute key="description" value="deals aoe damage to all enemies around the target." />
 	</item>
 	<item id="2188" article="a" name="wand of decay">
@@ -2964,6 +2976,8 @@
 	<item id="2191" article="a" name="fire essence wand">
 		<attribute key="attack" value="52" />
 		<attribute key="defense" value="36" />
+		<attribute key="magiclevelpoints" value="2" />
+		<attribute key="maxmanapoints" value="150" />	
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="distance" />
@@ -3916,6 +3930,23 @@
 		<attribute key="weight" value="2500" />
 		<attribute key="defense" value="40" />
 		<attribute key="attack" value="48" />
+		<attribute key="maxhitpoints" value="250" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="extradef" value="1" />
+	</item>
+		<item id="36366" article="a" name="Verdel Longsword">
+		<attribute key="weight" value="2500" />
+		<attribute key="defense" value="37" />
+		<attribute key="attack" value="55" />
+		<attribute key="skillSword" value="3" />
+		<attribute key="weaponType" value="sword" />
+		<attribute key="extradef" value="1" />
+	</item>
+		<item id="36210" article="a" name="Grevious Axe">
+		<attribute key="weight" value="2500" />
+		<attribute key="defense" value="37" />
+		<attribute key="attack" value="55" />
+		<attribute key="lifeleechamount" value="6" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
 	</item>
@@ -3966,6 +3997,7 @@
 		<attribute key="defense" value="20" />
 		<attribute key="attack" value="33" />
 		<attribute key="elementFire" value="5" />
+		<attribute key="magiclevelpoints" value="1" />	
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
 	</item>
@@ -3986,6 +4018,7 @@
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="23" />
 		<attribute key="attack" value="34" />
+		<attribute key="lifeleechamount" value="5" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
 	</item>
@@ -4806,25 +4839,14 @@
 		<attribute key="slotType" value="body" />
 		<attribute key="armor" value="6" />
 	</item>
-	<item id="2509" article="a" name="steel shield">
-		<attribute key="weight" value="6900" />
-		<attribute key="defense" value="43" />
-		<attribute key="weaponType" value="shield" />
-	</item>
-	<item id="2510" article="a" name="plate shield">
-		<attribute key="weight" value="6500" />
-		<attribute key="defense" value="17" />
-		<attribute key="weaponType" value="shield" />
-	</item>
-	<item id="2511" article="a" name="castle shield">
-		<attribute key="weight" value="6000" />
-		<attribute key="defense" value="39" />
-		<attribute key="weaponType" value="shield" />
-	</item>
+
 	<item id="2512" article="a" name="wooden shield">
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="28" />
+		<attribute key="weaken" value="10" />
+		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
 	</item>
 	<item id="2513" article="a" name="battle shield">
 		<attribute key="weight" value="6200" />
@@ -37088,6 +37110,7 @@
 		<attribute key="attack" value="49" />
 		<attribute key="defense" value="40" />
 		<attribute key="hitChance" value="75" />
+		<attribute key="attackspeed" value="8" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="shootType" value="greenstar" />
@@ -37113,6 +37136,7 @@
 		<attribute key="attack" value="55" />
 		<attribute key="defense" value="30" />
 		<attribute key="hitChance" value="75" />
+		<attribute key="criticalhitchance" value="5" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="shootType" value="greenstar" />
@@ -37691,13 +37715,7 @@
 		
 			
 	</item>
-	<item id="32721" article="a" name="Necromancer's Practice Book">
-		<attribute key="weight" value="1800" />
-		<attribute key="defense" value="12" />
-		<attribute key="weaponType" value="shield" />
-		
-			
-	</item>
+	
 	<item id="32722" article="a" name="Lost Magic Book">
 		<attribute key="weight" value="1800" />
 		<attribute key="defense" value="11" />
@@ -38559,10 +38577,11 @@
 
 	
 	
-		<item id="31802" article="a" name="Dragonbreath Crossbow">
+	<item id="31802" article="a" name="Dragonbreath Crossbow">
 		<attribute key="weight" value="200" />
 		<attribute key="attack" value="52" />
 		<attribute key="defense" value="42" />
+		<attribute key="magiclevelpoints" value="1" />
 		<attribute key="hitChance" value="85" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
@@ -38611,6 +38630,7 @@
 		<item id="36242" article="a" name="doubleshot bow">
 		<attribute key="weight" value="200" />
 		<attribute key="attack" value="50" />
+		<attribute key="lifeleechamount" value="4" />
 		<attribute key="defense" value="36" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="weaponType" value="distance" />
@@ -38647,6 +38667,7 @@
 		<attribute key="weight" value="500" />
 		<attribute key="defense" value="12" />
 		<attribute key="attack" value="39" />
+		<attribute key="criticalhitchance" value="3" />
 		<attribute key="weaponType" value="sword" />
 	</item>
 	<item id="36362" article="a" name="savage axe">
@@ -38665,12 +38686,14 @@
 		<attribute key="weight" value="500" />
 		<attribute key="defense" value="11" />
 		<attribute key="attack" value="39" />
+		<attribute key="attackspeed" value="8" />
 		<attribute key="weaponType" value="sword" />
 	</item>
 		<item id="36373" article="a" name="grevious lance">
 		<attribute key="weight" value="6700" />
-		<attribute key="defense" value="33" />
+		<attribute key="defense" value="35" />
 		<attribute key="attack" value="49" />
+		<attribute key="criticalhitchance" value="5" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 	</item>
@@ -38686,19 +38709,70 @@
 	<item id="36388" article="a" name="Old Remorse">
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="48" />
+		<attribute key="maxhitpoints" value="200" />
+		<attribute key="manaGain" value="10" />
+		<attribute key="manaTicks" value="5000" />
+		<attribute key="weaken" value="10" />
+		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+	
 	</item>
 	<item id="36389" article="a" name="king's pride">
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="47" />
+		<attribute key="maxhitpoints" value="350" />
+		<attribute key="weaken" value="10" />
+		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="weaponType" value="shield" />
+		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+	
 	</item>
 	<item id="36396" article="a" name="Bello Futurio">
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="50" />
+		<attribute key="maxhitpoints" value="150" />
+		<attribute key="healthGain" value="30" />
+		<attribute key="healthTicks" value="5000" />
+		<attribute key="absorbPercentAll" value="15" />
+		<attribute key="weaken" value="10" />
+		<attribute key="weaponType" value="shield" />
+		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+	
+	</item>
+
+	<item id="2511" article="a" name="Orb of Eternal Breath">
+		<attribute key="weight" value="4000" />
+		<attribute key="defense" value="30" />
+		<attribute key="manaGain" value="20" />
+		<attribute key="manaTicks" value="5000" />
+		<attribute key="extrahealing" value="15" />
 		<attribute key="weaponType" value="shield" />
 	</item>
-	
+
+	<item id="2509" article="a" name="Healing Lotus">
+		<attribute key="weight" value="4000" />
+		<attribute key="defense" value="30" />
+		<attribute key="magiclevelpoints" value="3" />
+		<attribute key="extrahealing" value="15" />
+		<attribute key="weaponType" value="shield" />
+	</item>
+	<item id="2510" article="a" name="Fragment of Pure Life">
+		<attribute key="weight" value="4000" />
+		<attribute key="defense" value="40" />
+		<attribute key="healthGain" value="25" />
+		<attribute key="healthTicks" value="5000" />
+		<attribute key="manaGain" value="25" />
+		<attribute key="manaTicks" value="5000" />
+		<attribute key="weaponType" value="shield" />
+	</item>
+	<item id="32721" article="a" name="Necromancer's Practice Book">
+		<attribute key="weight" value="4000" />
+		<attribute key="defense" value="30" />
+		<attribute key="magiclevelpoints" value="4" />
+		<attribute key="criticalhitchance" value="3" />	
+		<attribute key="weaponType" value="shield" />		
+	</item>
 	
 	
 	
@@ -39880,7 +39954,13 @@
 		<attribute key="manaTicks" value="6000" />
 		<attribute key="criticalhitchance" value="3" />
 		<attribute key="maxhitpointspercent" value="108" />
+		<attribute key="lifeleechamount" value="5" />
+		<attribute key="manaleechamount" value="5" />
 		<attribute key="attackspeed" value="10" />
+		<attribute key="weaken" value="10" />
+		<attribute key="absorbPercentAll" value="15" />
+		<attribute key="extrahealing" value="80" />
+		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
 	</item>
 	
 	<item id="38323" article="a" name="Ring of the Guardian">
@@ -40329,13 +40409,19 @@
 		<attribute key="maxmanapoints" value="85" />
 		<attribute key="speed" value="15" />
 		<attribute key="healthGain" value="6" />
-		<attribute key="healthTicks" value="6000" />
+		<attribute key="healthTicks" value="5000" />
 		<attribute key="manaGain" value="8" />
-		<attribute key="manaTicks" value="6000" />
+		<attribute key="manaTicks" value="5000" />
+		<attribute key="manaleechamount" value="2" />
+		<attribute key="lifeleechamount" value="1" />
 		<attribute key="criticalhitchance" value="3" />
 		<attribute key="criticalhitamount" value="10" />
 		<attribute key="maxhitpointspercent" value="108" />
 		<attribute key="maxmanapointspercent" value="105" />
+		<attribute key="absorbPercentAll" value="15" />
+		<attribute key="absorbPercentPhysical" value="15" />
+		<attribute key="absorbPercentEnergy" value="15" />
+		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
 	</item>
 	
 	<item id="38265" article="a" name="Arctic Guardian">
