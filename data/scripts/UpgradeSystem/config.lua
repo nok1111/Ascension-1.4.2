@@ -142,12 +142,12 @@ US_CONFIG = {
     [EPIC] = {
       name = "[EPIC]",
       maxBonus = 2, -- max amount of bonus attributes
-      chance = 100 -- 1:X chance that item will be common (1 = 100%)
+      chance = 0 -- 1:X chance that item will be common (1 = 100%)
     },
     [LEGENDARY] = {
       name = "[LEGENDARY]",
       maxBonus = 3, -- max amount of bonus attributes
-      chance = 500 -- 1:X chance that item will be common (1 = 100%)
+      chance = 0 -- 1:X chance that item will be common (1 = 100%)
     }
   }
 }

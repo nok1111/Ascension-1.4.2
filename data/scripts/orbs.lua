@@ -416,14 +416,40 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
         creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. (monsterLevel * 10) .. " gold.")
     elseif rewardTypeId == blue_orb then
         local lootTable = {
-            {itemId = 2160, minLevel = 1, maxLevel = 10},
-            {itemId = 2161, minLevel = 11, maxLevel = 20},
-            {itemId = 2162, minLevel = 21, maxLevel = 9999}
+            {itemId = 39161, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 3},  -- 1-3 valuable pouches
+            {itemId = 37763, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 1},  -- always 1 dream feather
+            {itemId = 2161, minLevel = 11, maxLevel = 20, chance = 50, minAmount = 2, maxAmount = 5},   -- 2-5 of item 2161
+            {itemId = 2162, minLevel = 21, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1}  -- always 1 of item 2162
         }
         for _, loot in ipairs(lootTable) do
             if monsterLevel >= loot.minLevel and monsterLevel <= loot.maxLevel then
-                creature:addItem(loot.itemId, 1)
-                creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received a loot item.")
+                local roll = math.random(1, 100)
+                if roll <= loot.chance then
+                    local amount = math.random(loot.minAmount, loot.maxAmount)
+                    local itemnew = creature:addItem(loot.itemId, amount)
+                    creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received a loot item (" .. amount .. "x).")
+
+                    local itemType = ItemType(loot.itemId)
+                    if itemType:canHaveItemLevel() then
+                        -- 20% chance to be RARE, otherwise COMMON
+                        local rarity = "COMMON"
+                        if math.random(1, 100) <= 20 then
+                            rarity = "RARE"
+                        end
+
+                        local weaponType = itemType:getWeaponType()
+                        itemnew:setItemLevel(1, true)
+                        itemnew:setRarity(rarity)
+                        local rarityLevel = itemnew:getRarityId()
+                        if weaponType and rarityLevel > 1 then
+                            if not itemnew:rollAttribute(creature, itemType, weaponType) then
+                                  print("Failed to roll attribute for item: " .. itemnew:getId())
+                            end
+                        end
+                    end
+                else
+                    creature:sendTextMessage(MESSAGE_INFO_DESCR, "No loot this time.")
+                end
                 break
             end
         end
