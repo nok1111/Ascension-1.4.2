@@ -411,15 +411,17 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
     end
 
     local rewardTypeId = item:getId()
+    --YELLOW ORB HERE
     if rewardTypeId == yellow_orb then
         creature:addMoney(monsterLevel * 10)
         creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. (monsterLevel * 10) .. " gold.")
+    --BLUE ORB HERE
     elseif rewardTypeId == blue_orb then
         local lootTable = {
-            {itemId = 39161, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 3},  -- 1-3 valuable pouches
-            {itemId = 37763, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 1},  -- always 1 dream feather
-            {itemId = 2161, minLevel = 11, maxLevel = 20, chance = 50, minAmount = 2, maxAmount = 5},   -- 2-5 of item 2161
-            {itemId = 2162, minLevel = 21, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1}  -- always 1 of item 2162
+            {itemId = 39161, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 3},  -- valuable pouches
+            {itemId = 37763, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 1},  -- dream feather
+            {itemId = 2161, minLevel = 11, maxLevel = 20, chance = 50, minAmount = 2, maxAmount = 5},   -- item 2161
+            {itemId = 2162, minLevel = 21, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1}  -- item 2162
         }
         for _, loot in ipairs(lootTable) do
             if monsterLevel >= loot.minLevel and monsterLevel <= loot.maxLevel then
@@ -453,9 +455,11 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
                 break
             end
         end
+    --GREEN ORB HERE
     elseif rewardTypeId == green_orb then
         creature:addExperience(monsterLevel * 100)
         creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received " .. (monsterLevel * 100) .. " experience.")
+    --PURPLE ORB HERE
     elseif rewardTypeId == purple_orb then
         local monsterName = item:getCustomAttribute("MonsterName")
         local variation = eliteVariations[math.random(#eliteVariations)]
