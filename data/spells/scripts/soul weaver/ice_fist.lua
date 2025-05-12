@@ -49,5 +49,6 @@ function onCastSpell(player, variant)
             end, i * 250)
         end
     end
+    addElementalBoost(player, "ice", 1)
     return true
 end

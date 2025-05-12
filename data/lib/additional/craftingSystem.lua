@@ -121,6 +121,24 @@ Crafting.recipes = {
 				{id = 32702, required = 5},
 			},
 		},
+		{
+			craftedItemId = 2385,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+		
 
 
 	},

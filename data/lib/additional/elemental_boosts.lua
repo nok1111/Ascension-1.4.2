@@ -31,7 +31,7 @@ function updatePlayerEffects(player)
     
     -- First remove all existing effects
     for _, effectId in pairs(data.currentEffects) do
-        player:detachEffectById(effectId)
+        player:detachEffectById(effectId, true)
     end
     data.currentEffects = {}
     
@@ -41,7 +41,7 @@ function updatePlayerEffects(player)
     elseif #data.boosters == 1 then
         local effectId = effectMapping[data.boosters[1].type]
         if effectId then
-            player:attachEffectById(effectId, false)
+            player:attachEffectById(effectId, true)
             table.insert(data.currentEffects, effectId)
         end
     else
@@ -64,7 +64,7 @@ function updatePlayerEffects(player)
         
         local effectId = effectMapping[effectKey]
         if effectId then
-            player:attachEffectById(effectId, false)
+            player:attachEffectById(effectId, true)
             table.insert(data.currentEffects, effectId)
         end
     end
@@ -96,7 +96,7 @@ function ClearBooster(player)
     if playerBoosters[id] then
         -- First remove all attached effects
         for _, effectId in pairs(playerBoosters[id].currentEffects) do
-            player:detachEffectById(effectId)
+            player:detachEffectById(effectId, true)
         end
         -- Then clear the boosters
         playerBoosters[id] = {
@@ -126,7 +126,7 @@ function removeElementalBoost(player, boostType, amount)
     
     -- First remove all effects to prevent visual glitches
     for _, effectId in pairs(data.currentEffects) do
-        player:detachEffectById(effectId)
+        player:detachEffectById(effectId, true)
     end
     data.currentEffects = {}
     

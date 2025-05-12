@@ -18,7 +18,7 @@ local talk2 = TalkAction("/df", "!df")
 
 function talk2.onSay(player, words, param)
 	if  param ~= "" then
-		player:detachEffectById(param)
+		player:detachEffectById(param, true)
 	else
 		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "wrong id")
 	end

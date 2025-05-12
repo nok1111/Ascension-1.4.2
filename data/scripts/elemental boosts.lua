@@ -2,13 +2,13 @@ local elementalBoosts = {}
 
 local SpellElementalMapping = {
     -- Spells that add boosters
-    ["fire fist"]    = { type = "fire", action = "add", amount = 1 },
-    ["ice fist"]    = { type = "ice",  action = "add", amount = 1 },
-    ["life fist"]   = { type = "life", action = "add", amount = 1 },
+    ["xxxx"]    = { type = "fire", action = "add", amount = 1 },
+    ["xxxx"]    = { type = "ice",  action = "add", amount = 1 },
+    ["xxxx"]   = { type = "life", action = "add", amount = 1 },
     
     -- Spells that consume boosters
-    ["fire wave"]    = { type = "fire", action = "consume", amount = 1 },
-    ["ice blast"]    = { type = "ice",  action = "consume", amount = 1 },
+    ["xxxx"]    = { type = "fire", action = "consume", amount = 1 },
+    ["xxxx"]    = { type = "ice",  action = "consume", amount = 1 },
     ["life beam"]    = { type = "life", action = "consume", amount = 1 }
 }
 

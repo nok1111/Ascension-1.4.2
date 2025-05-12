@@ -47,10 +47,11 @@ function onCastSpell(player, variant)
     local target = player:getTarget()
     if target then
         for i = 0, 1 do
-    addEvent(function()
-        arcaneDamage(player:getId(), variant, target:getId(), 185 + i)
-    end, i * 250)
-end
+            addEvent(function()
+                arcaneDamage(player:getId(), variant, target:getId(), 185 + i)
+            end, i * 250)
+        end
     end
+    addElementalBoost(player, "fire", 1)
     return true
 end

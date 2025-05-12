@@ -4,7 +4,7 @@ local passiveEvent = CreatureEvent("UnifiedPassives")
 local PASSIVES = {
   stellar = {
     config = {
-      vocation = 7,
+      vocation = 6,
       chance = 10,
       type = "OnAttack"
     },

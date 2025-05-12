@@ -149,11 +149,11 @@ experienceStages = {
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages above
-rateExp = 5
-rateSkill = 3
-rateLoot = 2
-rateMagic = 3
-rateSpawn = 1
+rateExp = 1
+rateSkill = 15
+rateLoot = 1
+rateMagic = 12
+rateSpawn = 2
 
 -- Monster Despawn Config
 -- despawnRange is the amount of floors a monster can be from its spawn position
@@ -166,7 +166,7 @@ removeOnDespawn = true
 walkToSpawnRadius = 15
 
 -- Stamina
-staminaSystem = true
+staminaSystem = false
 
 -- Scripts
 warnUnsafeScripts = true

@@ -3433,6 +3433,7 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 			player->diswing();
 		}
 		player->detachEffectById(player->getCurrentWing());
+		player->setCurrentWing(0);
 		player->wasWinged = false;
 	}
 	// @ 
@@ -3456,6 +3457,7 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 			player->diseffect();
 		}
 		player->detachEffectById(player->getCurrentEffect());
+		player->setCurrentEffect(0);
 		player->wasEffected = false;
 	}
 	// @ 
@@ -3479,6 +3481,7 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 			player->disaura();
 		}
 		player->detachEffectById(player->getCurrentAura());
+		player->setCurrentAura(0);
 		player->wasAuraed = false;
 	}
 	// @
@@ -3503,6 +3506,7 @@ void Game::playerChangeOutfit(uint32_t playerId, Outfit_t outfit)
 			player->disshader();
 		}
 		player->sendShader(player, "Outfit - Default");
+		player->setCurrentShader(0);
 		player->wasShadered = false;
 	}
 

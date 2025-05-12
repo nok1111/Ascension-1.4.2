@@ -270,7 +270,7 @@ function onCastSpell(player, variant)
             frostbloomCombat:execute(player, Variant(target:getPosition()))
             
             player:addCondition(damageReductionCondition)
-            target:sendMagicEffect(CONST_ME_MAGIC_BLUE) -- Visual effect
+            target:getPosition():sendMagicEffect(53) -- Visual effect
         end
         
         player:say("Frostbloom Fist!", TALKTYPE_MONSTER_SAY)

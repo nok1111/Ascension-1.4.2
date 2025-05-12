@@ -305,16 +305,16 @@
 	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" selftarget="1" exhaustion="30000" groupcooldown="1900" script="soul weaver/drain_soul.lua">
 	<vocation name="Monk" />
 	</instant>
-	<instant group="support" spellid="131" name="Adaptive Fist" words="adaptive fist" lvl="70" mana="80" direction="1" aggressive="0"  cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/adaptive_fist.lua">
+	<instant group="support" spellid="131" name="Adaptive Fist" words="adaptive fist" lvl="15" mana="80" direction="1" aggressive="0"  cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/adaptive_fist.lua">
 	<vocation name="Monk" />
 	</instant>
 	<instant group="attack" spellid="132" name="Fire Fist" words="fire fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/fire_fist.lua">
     <vocation name="Monk" />
     </instant>
-	<instant group="attack" spellid="133" name="Ice Fist" words="ice fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/ice_fist.lua">
+	<instant group="attack" spellid="132" name="Ice Fist" words="ice fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/ice_fist.lua">
     <vocation name="Monk" />
     </instant>
-    <instant group="attack" spellid="134" name="Life Fist" words="life fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/life_fist.lua">
+    <instant group="attack" spellid="132" name="Life Fist" words="life fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/life_fist.lua">
     <vocation name="Monk" />
     </instant>
 	

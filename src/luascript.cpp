@@ -9520,6 +9520,10 @@ int LuaScriptInterface::luaCreatureDetachEffectById(lua_State* L)
 	}
 
 	uint16_t id = getNumber<uint16_t>(L, 2);
+	bool temp = getBoolean(L, 3, false);
+	if (temp)
+		g_game.sendDetachEffect(creature, id);
+	else
 	creature->detachEffectById(id);
 
 	return 1;

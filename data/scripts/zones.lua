@@ -7,10 +7,10 @@ local zones = {
         monsters = {"spider", "tarantula"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 7000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering  
@@ -34,10 +34,10 @@ local zones = {
         monsters = {"twigkin", "flaming twigkin", "leafy twigkin"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -56,10 +56,10 @@ local zones = {
         monsters = {"dwarf", "dwarf guard"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -76,10 +76,10 @@ local zones = {
         monsters = {"dwarf", "dwarf guard", "dwarf soldier"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -96,10 +96,10 @@ local zones = {
         monsters = {"dwarf", "dwarf guard", "dwarf geomancer", "dwarf soldier"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -111,10 +111,10 @@ local zones = {
         monsters = {"troll", "dark troll", "wolf cub", "wolf"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -126,10 +126,10 @@ local zones = {
         monsters = {"thief", "rogue"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -141,10 +141,10 @@ local zones = {
         monsters = {"troll", "dark troll"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -156,10 +156,10 @@ local zones = {
         monsters = {"troll", "dark troll", "apprentice witch"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -172,10 +172,10 @@ local zones = {
         monsters = {"troll", "dark troll", "apprentice witch", "witch"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -187,10 +187,10 @@ local zones = {
         monsters = {"troll", "dark troll", "apprentice witch", "witch"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = {},
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -202,10 +202,10 @@ local zones = {
         monsters = {"bear", "bear cub"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = {},
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -217,10 +217,10 @@ local zones = {
         monsters = {"skeleton"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -232,10 +232,10 @@ local zones = {
         monsters = {"spider", "tarantula"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -247,10 +247,10 @@ local zones = {
         monsters = {"spider", "tarantula", "giant spider"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -262,10 +262,10 @@ local zones = {
         monsters = {"skeleton", "witch", "witch apprentice", "poison skeleton", "rogue"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -285,10 +285,10 @@ local zones = {
         monsters = {"minotaur", "minotaur mage", "minotaur archer", "minotaur guard"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -300,10 +300,10 @@ local zones = {
         monsters = {"minotaur", "minotaur mage", "skeleton", "minotaur guard"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -315,10 +315,10 @@ local zones = {
         monsters = {"thornback turtle", "mature thornback turtle", "turtle"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -330,10 +330,10 @@ local zones = {
         monsters = {"elf", "elf scout", "elf arcanist"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -346,10 +346,10 @@ local zones = {
         monsters = {"zombie", "mutated zombie", "skeleton", "poison skeleton", "witch"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -361,10 +361,10 @@ local zones = {
         monsters = {"zombie", "mutated zombie", "abomination specimen", "skeleton", "poison skeleton", "witch"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -376,10 +376,10 @@ local zones = {
         monsters = {"Thornback Turtle", "Mature Thornback Turtle", "Banshee", "Ghostly Appearance", "Vengeful Spirit"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -391,10 +391,10 @@ local zones = {
         monsters = {"Banshee", "Ghostly Appearance", "Vengeful Spirit"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -406,10 +406,10 @@ local zones = {
         monsters = {"earth elemental", "poison skeleton", "earth overlord", "medusa", "bonelord"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -422,10 +422,10 @@ local zones = {
         monsters = {"fire skeleton", "fire spider", "fire elemental"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -443,10 +443,10 @@ local zones = {
         monsters = {"Nameless Skeleton", "Nameless Zombie", "Nameless Putrid Zombie"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -464,10 +464,10 @@ local zones = {
         monsters = {"Nameless Skeleton", "Nameless Zombie", "Nameless Putrid Zombie"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -485,10 +485,10 @@ local zones = {
         monsters = {"sporecrawler", "fungal shambler", "fungus"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -507,10 +507,10 @@ local zones = {
         monsters = {"sporecrawler", "fungal shambler", "fungus"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -529,10 +529,10 @@ local zones = {
         monsters = {"ivy", "rotbloom", "overgrowth ivy"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -547,10 +547,10 @@ local zones = {
         monsters = {"sporecrawler", "fungal shambler", "fungus"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -569,10 +569,10 @@ local zones = {
         monsters = {"wyrm", "furious wyrm"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -591,10 +591,10 @@ local zones = {
         monsters = {"war troll", "spearman troll", "shaman troll"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -613,10 +613,10 @@ local zones = {
         monsters = {"war troll", "spearman troll", "shaman troll", "blademaster troll"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -639,10 +639,10 @@ local zones = {
         monsters = {"hog", "tuskhog", "hog smasher", "hog bomber", "hog spearman", "hog champion", "hog elite", "hog shaman"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -661,10 +661,10 @@ local zones = {
         monsters = {"murlok", "murlok axeman", "murlok piercer", "murlok champion", "murlok shellthorn", "murlok shaman"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -683,10 +683,10 @@ local zones = {
         monsters = {"bonesand brawler", "bonesand hexbone", "bonesand lancer", "bonesand sentinel"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -700,10 +700,10 @@ local zones = {
         monsters = {"desert draptor"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
-        active = false,
+    
         tiles = 0,
         maxMonsters = 0,
-        playercount = 0,
+    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -798,12 +798,24 @@ local function calculateSpawnInterval(zone)
 end
 
 
+--
+-- SPAWN LOGIC: Only zone.filled is used to control spawning.
+-- If zone.filled == true, the zone is at max monster capacity and no further spawns are scheduled.
+-- When a monster dies and the zone is no longer full, zone.filled is set to false and spawning resumes.
+--
+local function canZoneSpawn(zone)
+    return not zone.filled
+end
+
+local function isZoneAtMonsterCap(zone)
+    return zone.filled
+end
+
 local function scheduleNextSpawn(zone)
-    --print("scheduleNextSpawn called for zone " .. zone.id)
+    print("scheduleNextSpawn called for zone " .. zone.id)
 
-    -- Stop spawning if the zone is inactive or has no players
-    if not zone.active or zone.playercount < 1 then
-        --print("Zone " .. zone.id .. " is inactive or has no players. Stopping spawn.")
+    if not canZoneSpawn(zone) then
+        print("Zone " .. zone.id .. " is at monster cap (filled). Stopping spawn.")
         if zone.spawnEvent then
             stopEvent(zone.spawnEvent)
             zone.spawnEvent = nil
@@ -811,27 +823,15 @@ local function scheduleNextSpawn(zone)
         return
     end
 
-    -- Check current monster count
-    local currentMonsterCount = tablelength(zone.spawnedMonsters)
-    if currentMonsterCount >= zone.maxMonsters then
-        --print("Zone " .. zone.id .. " is at max monster capacity (" .. currentMonsterCount .. "/" .. zone.maxMonsters .. "). Skipping spawn.")
-        if zone.spawnEvent then
-            stopEvent(zone.spawnEvent)
-            zone.spawnEvent = nil
-        end
-        return
-    end
-
-    -- **Use the new dynamic spawn interval based on player count**
-    local nextSpawnInterval = calculateSpawnInterval(zone)
-   -- print("Scheduling next spawn for zone " .. zone.id .. " in " .. nextSpawnInterval .. " ms.")
+    local nextSpawnInterval = math.random(zone.spawnIntervalMin, zone.spawnIntervalMax)
+    print("Scheduling next spawn for zone " .. zone.id .. " in " .. nextSpawnInterval .. " ms.")
 
     zone.spawnEvent = addEvent(function()
-        -- Ensure conditions are still valid before spawning
-        if tablelength(zone.spawnedMonsters) < zone.maxMonsters and zone.active and zone.playercount > 0 then
+        if canZoneSpawn(zone) then
+            print("Spawning monster in zone " .. zone.id .. ".")
             spawnMonsters(zone)
         else
-            --print("Spawn loop stopped for zone " .. zone.id .. " (conditions no longer met).")
+            print("Spawn loop stopped for zone " .. zone.id .. " (zone is filled).")
             zone.spawnEvent = nil
         end
     end, nextSpawnInterval)
@@ -855,13 +855,13 @@ local function spawnMonster(zone, currentMonsterCount)
     local monsterName = zone.monsters[math.random(#zone.monsters)]
     local monster = Game.createMonster(monsterName, spawnPosition, false)
     if monster then
-
+        print("Spawning " .. monster:getName() .. " in zone " .. zone.id .. " at position (" .. spawnPosition.x .. ", " .. spawnPosition.y .. ", " .. spawnPosition.z .. ").")
         if monster:getName() == "Furious Wyrm" then
             monster:setShader("Monster Might")
          end
         zone.spawnedMonsters[monster:getId()] = true -- Track the spawned monster
         --print("Spawned " .. monster:getName() .. " in zone " .. zone.id .. " at position (" .. spawnPosition.x .. ", " .. spawnPosition.y .. ", " .. spawnPosition.z .. ").")
-        monster:registerEvent("zone_death") -- Register the monster death event
+        monster:registerEvent("death_zones") -- Register the monster death event
         return true -- Return true to indicate a monster was successfully spawned
     else
         --print("Failed to spawn monster " .. monsterName .. " in zone " .. zone.id)
@@ -872,28 +872,21 @@ end
 
 
 function spawnMonsters(zone)
-    if not zone.active or zone.playercount < 1 then
-        --print("Zone " .. zone.id .. " is inactive or has no players. Skipping spawn.")
+    if not canZoneSpawn(zone) then
+        print("Zone " .. zone.id .. " is at monster cap (filled). Skipping spawn.")
         return
     end
 
-    -- Call Game.getZoneMonsterCount once
     local currentMonsterCount = Game.getZoneMonsterCount(zone.id)
-    --print("Current monsters in zone " .. zone.id .. ": " .. currentMonsterCount .. "/" .. zone.maxMonsters)
+    print("Current monsters in zone " .. zone.id .. ": " .. currentMonsterCount .. "/" .. zone.maxMonsters)
 
-    if currentMonsterCount >= zone.maxMonsters then
-        --print("Zone " .. zone.id .. " has reached max monster capacity. Skipping spawn.")
-        return
-    end
-
-    -- Attempt to spawn a monster
     if spawnMonster(zone, currentMonsterCount) then
-        -- Schedule the next spawn only if a monster was successfully spawned
-        if currentMonsterCount + 1 < zone.maxMonsters then
-            --print("Monster spawned. Scheduling next spawn for zone " .. zone.id)
-            scheduleNextSpawn(zone)
+        -- Update filled status
+        if currentMonsterCount + 1 >= zone.maxMonsters then
+            zone.filled = true
+            print("Zone " .. zone.id .. " is now filled (at monster cap). No further spawns scheduled.")
         else
-            --print("Max monster capacity reached after spawn. No further spawns scheduled for zone " .. zone.id)
+            scheduleNextSpawn(zone)
         end
     end
 end
@@ -923,6 +916,7 @@ local function spawnZoneBoss(zone)
         boss:setShader(RedShader)
         boss:attachEffectById(9, false)
         boss:attachEffectById(32, false)
+        boss:registerEvent("death_zones")
 
         zone.spawnedBoss = boss:getId()  -- Store the boss ID
         print("Boss " .. zone.boss .. " spawned in " .. zone.name .. "!")
@@ -942,89 +936,37 @@ end
 
 function onMonsterDeath(monster, killer)
     local zoneIds = Tile(monster:getPosition()):getZoneId()
-    --print("Monster " .. monster:getName() .. " died in zone IDs: " .. table.concat(zoneIds, ", "))
+    print("Monster " .. monster:getName() .. " died in zone IDs: " .. table.concat(zoneIds, ", "))
 
     for _, zoneId in ipairs(zoneIds) do
-        if zones[zoneId] then
-            local zone = zones[zoneId]
+        local zone = zones[zoneId]
+        if zone then
+            -- Remove monster from tracking
             zone.spawnedMonsters[monster:getId()] = nil
 
-            -- If the dead monster is the boss, remove the reference
+            -- Boss defeat logic
             if zone.spawnedBoss == monster:getId() then
                 print("Boss " .. zone.boss .. " has been defeated in " .. zone.name)
                 zone.spawnedBoss = nil
             end
 
-            -- Increase kill counter
+            -- Increase kill counter and handle boss spawn
             zone.killCount = (zone.killCount or 0) + 1
-           
-            -- Check if boss should spawn
             if zone.boss and not zone.spawnedBoss and zone.killCount >= zone.bossKillThreshold then
-
                 spawnZoneBoss(zone)
-                zone.killCount = 0 -- Reset kill count after boss spawns
+                zone.killCount = 0
             end
 
-            --print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
+            print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
+
+            -- Always allow the zone to schedule next spawn after a monster death
+            zone.filled = false
+            print("Scheduling next spawn for zone " .. zone.id .. " after monster death.")
             scheduleNextSpawn(zone)
+
         end
     end
     return true
-end
-
-
-local function onEnterZone(player, zoneId)
-    local zone = zones[zoneId]
-    if not zone then
-        return
-    end
-
-    --print("onEnterZone")
-    if not zone.active then
-        zone.active = true
-        scheduleNextSpawn(zone)
-    end
-
-    local storageValue = player:getStorageValue(10001)
-    if storageValue ~= zone.id then
-        --print("Player " .. player:getName() .. " entering zone ID: " .. zoneId)
-
-        if zone.showZoneName then
-            player:sendExtendedOpcode(76, "You have entered the zone " .. zone.name)
-        end
-        player:setStorageValue(10001, zone.id)
-    end
-
-    -- Apply the currently active weather of the zone
-    if zone.activeWeather then
-        player:setMapShader(zone.activeWeather, true)
-        --print("Player " .. player:getName() .. " received weather " .. zone.activeWeather)
-    end
-
-    -- Initialize tiles if they are empty
-    if not zone.tiles or zone.tiles == 0 then
-        local tileCount = getNumerPositionInZone(zoneId)
-        --print("Number of tiles: " .. tileCount)
-        zone.tiles = tileCount
-        zone.maxMonsters = (tileCount / zonemax_monsters_divider) + 1
-    else
-        --print("Zone " .. zoneId .. " already has tiles: " .. zone.tiles .. " tiles. Max monsters: " .. zone.maxMonsters)
-    end
-
-    -- Initialize player count
-    if not zone.playercount or zone.playercount == 0 then
-        local newplayerscount = Game.getZonePlayerCount(zoneId)
-        --print("Number of players: " .. newplayerscount)
-        zone.playercount = newplayerscount
-    else
-        zone.playercount = zone.playercount + 1 -- Increment player count
-        --print("Zone " .. zoneId .. " already has players: " .. zone.playercount)
-    end
-    zone.active = true
-
-    if not zone.spawnEvent then
-        scheduleNextSpawn(zone)
-    end
 end
 
 
@@ -1050,25 +992,46 @@ local function despawnMonsters(zone)
 end
 
 
+local function onEnterZone(player, zoneId)
+    local zone = zones[zoneId]
+    if not zone then
+        return
+    end
+
+    print("onEnterZone")
+    local storageValue = player:getStorageValue(10001)
+    if storageValue ~= zone.id then
+        if zone.showZoneName then
+            player:sendExtendedOpcode(76, "You have entered the zone " .. zone.name)
+        end
+        player:setStorageValue(10001, zone.id)
+    end
+
+    -- Apply the currently active weather of the zone
+    if zone.activeWeather then
+        player:setMapShader(zone.activeWeather, true)
+    end
+
+    -- Initialize tiles if they are empty
+    if not zone.tiles or zone.tiles == 0 then
+        local tileCount = getNumerPositionInZone(zoneId)
+        zone.tiles = tileCount
+        zone.maxMonsters = (tileCount / zonemax_monsters_divider) + 1
+    end
+
+end
+
+
+
+
 
 
 
 
 local function onLeaveZone(player, zoneId)
-    --print("Player " .. player:getName() .. " leaving zone ID: " .. zoneId)
     player:setStorageValue(10001, 0)
     activePlayers[player:getId()] = nil
-    
-    -- Reset weather to default when leaving
     player:setMapShader("Map - Default", true)
-
-    if zones[zoneId].playercount < 1 then
-        zones[zoneId].active = false
-        despawnMonsters(zones[zoneId])
-    else
-        zones[zoneId].playercount = zones[zoneId].playercount - 1
-        --print("New zone count: " .. zones[zoneId].playercount)
-    end
 end
 
 
@@ -1215,10 +1178,11 @@ creatureeventlogout:register()
 local creatureeventDeath = CreatureEvent("death_zones")
 
 function creatureeventDeath.onDeath(creature, corpse, killer, mostDamage, unjustified, mostDamage_unjustified)
-   if not creature:isMonster() then
+  
+    if not creature:isMonster() then
         return true
     end
-
+    
     -- Check if the monster is a summon by verifying if it has a master
     if creature:getMaster() then
         return true  -- Skip further processing if the monster was a summon
@@ -1226,17 +1190,11 @@ function creatureeventDeath.onDeath(creature, corpse, killer, mostDamage, unjust
 
     -- Call the onMonsterDeath function if it's not a summon
    onMonsterDeath(creature, killer)
+   return true
 end 
 
 creatureeventDeath:register()  
 
-
-local TargetCombatEvent = EventCallback
-TargetCombatEvent.onTargetCombat = function(creature, target)
-    target:registerEvent("death_zones")
-    return RETURNVALUE_NOERROR
-end
-TargetCombatEvent:register()
 
 
 
@@ -1263,6 +1221,7 @@ local function populateZonesOnStartup()
                     local monsterName = zone.monsters[math.random(#zone.monsters)]
                     local monster = Game.createMonster(monsterName, spawnPosition, false)
                     if monster then
+                        monster:registerEvent("death_zones")
 
                         if monster:getName() == "Furious Wyrm" then
                             monster:setShader("Monster Might")

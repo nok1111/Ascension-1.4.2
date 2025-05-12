@@ -29,12 +29,21 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
 
     local pos = creature:getPosition()
     local playerpos = player:getPosition()
+
     Position(playerpos):sendDistanceEffect(pos, effectId)
-    --Position(pos.x + 1, pos.y + 1, pos.z):sendMagicEffect(341)
+
     combat:execute(player, variant)
-    healCombat:execute(player, Variant(playerpos))
 
 
+
+    return true
+end
+
+local function heal(playerId, variant)
+    local player = Player(playerId)
+    if not player then return true end
+
+    healCombat:execute(player, Variant(player:getId()))
     return true
 end
 
@@ -44,8 +53,10 @@ function onCastSpell(player, variant)
         for i = 0, 1 do
             addEvent(function()
                 arcaneDamage(player:getId(), variant, target:getId(), 189 + i)
+                heal(player:getId(), variant, target:getId())
             end, i * 250)
         end
     end
+    addElementalBoost(player, "life", 1)
     return true
 end

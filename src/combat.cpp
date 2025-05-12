@@ -895,8 +895,8 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 			// Apply additional weaken effect from special skill
 			uint16_t weakenValue = casterPlayer->getSpecialSkill(SPECIALSKILL_WEAKEN);
 			if (weakenValue > 0) {
-				damage.primary.value = std::max(0, damage.primary.value * (100 - weakenValue) / 100);
-				damage.secondary.value = std::max(0, damage.secondary.value * (100 - weakenValue) / 100);
+				damage.primary.value -= damage.primary.value * weakenValue / 100;
+				damage.secondary.value -= damage.secondary.value * weakenValue / 100;
 			}
 		}
 
@@ -907,7 +907,7 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 			}
 			int32_t extrahealingvalue = casterPlayer->getSpecialSkill(SPECIALSKILL_EXTRAHEALING);
 			if (extrahealingvalue > 0) {
-				damage.primary.value = std::max(0, damage.primary.value * (100 - extrahealingvalue) / 100);
+				damage.primary.value += damage.primary.value * extrahealingvalue / 100;
 			}
 			g_game.addMagicEffect(caster->getPosition(), CONST_ME_698);
 		}
@@ -1115,8 +1115,8 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 			// Apply additional weaken effect from special skill
 			uint16_t weakenValue = casterPlayer->getSpecialSkill(SPECIALSKILL_WEAKEN);
 			if (weakenValue > 0) {
-				damageCopy.primary.value = std::max(0, damageCopy.primary.value * (100 - weakenValue) / 100);
-				damageCopy.secondary.value = std::max(0, damageCopy.secondary.value * (100 - weakenValue) / 100);
+				damageCopy.primary.value -= damageCopy.primary.value * weakenValue / 100;
+				damageCopy.secondary.value -= damageCopy.secondary.value * weakenValue / 100;
 			}
 		}
 
@@ -1127,7 +1127,7 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 			}
 			int32_t extrahealingvalue = casterPlayer->getSpecialSkill(SPECIALSKILL_EXTRAHEALING);
 			if (extrahealingvalue > 0) {
-				damage.primary.value = std::max(0, damage.primary.value * (100 - extrahealingvalue) / 100);
+				damageCopy.primary.value += damageCopy.primary.value * extrahealingvalue / 100;
 			}
 		}
 

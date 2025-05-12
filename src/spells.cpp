@@ -559,7 +559,6 @@ bool Spell::playerSpellCheck(Player* player) const
 	}
 
 	if (player->hasFlag(PlayerFlag_IgnoreSpellCheck)) {
-		g_events->eventPlayerOnSpellCheck(player, this); // Trigger the event
 		return true; // Keep skipping all other checks for GM
 	}
 
@@ -651,9 +650,6 @@ bool Spell::playerSpellCheck(Player* player) const
 		return false;
 	}
 
-	if (!g_events->eventPlayerOnSpellCheck(player, this)) {
-		return false;
-	}
 
 	return true;
 }
@@ -1011,8 +1007,9 @@ bool InstantSpell::playerCastInstant(Player* player, std::string& param)
 				bool echoSuccess = internalCastSpell(player, var);
 				if (echoSuccess) {
 					g_game.internalCreatureSay(player, TALKTYPE_MONSTER_SAY, "Magic Echo!", false);
-					player->detachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
-					player->attachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+					//player->detachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+					//player->attachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+					g_game.sendAttachedEffect(player, g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
 					
 				}
 			}
@@ -1059,6 +1056,11 @@ bool InstantSpell::castSpell(Creature* creature)
 		var.pos = creature->getPosition();
 	}
 
+	Player* player = creature->getPlayer();
+    if (!player && !g_events->eventPlayerOnSpellCheck(player, this)) {
+        return false;
+    }
+
 	return internalCastSpell(creature, var);
 }
 
@@ -1068,6 +1070,12 @@ bool InstantSpell::castSpell(Creature* creature, Creature* target)
 		LuaVariant var;
 		var.type = VARIANT_NUMBER;
 		var.number = target->getID();
+
+		Player* player = creature->getPlayer();
+        if (!player && !g_events->eventPlayerOnSpellCheck(player, this)) {
+            return false;
+        }
+
 		return internalCastSpell(creature, var);
 	} else {
 		return castSpell(creature);
