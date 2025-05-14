@@ -28,18 +28,18 @@ local KillEvent = CreatureEvent("UpgradeSystemKill")
 local PrepareDeathEvent = CreatureEvent("UpgradeSystemPD")
 
 function us_onEquip(cid, iuid, slot)
+    print("us_onEquip1")
     local player = Player(cid)
     if not player:getSlotItem(slot) then
+      print("not player:getSlotItem(slot)")
         return
     end
+    print(iuid)
     
-    iuid = iuid + 1
-    local slotUid = player:getSlotItem(slot):getUniqueId()
-    if iuid ~= slotUid then
-        return
-    end
-    
+  
     local item = Item(iuid)
+    -- Restrict: item must be in its correct slottype
+
     if player and item then
         local maxHP = player:getMaxHealth()
         local maxMP = player:getMaxMana()
@@ -55,6 +55,7 @@ function us_onEquip(cid, iuid, slot)
             local attr = US_ENCHANTMENTS[bonusId]
             
             if attr then
+              print("attr")
                 if attr.combatType == US_TYPES.CONDITION then
                     if not US_CONDITIONS[bonusId] then
                         US_CONDITIONS[bonusId] = {}
@@ -78,13 +79,15 @@ function us_onEquip(cid, iuid, slot)
                         US_CONDITIONS[bonusId][bonusValue][itemId]:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
                         player:addCondition(US_CONDITIONS[bonusId][bonusValue][itemId])
                         
-                        if attr == BONUS_TYPE_MAXHP then
+                        if attr.param == CONDITION_PARAM_STAT_MAXHITPOINTS then
+                          print("MaxHP")
                             if player:getHealth() == maxHP then
                                 player:addHealth(player:getMaxHealth())
                             end
                         end
                         
-                        if attr == BONUS_TYPE_MAXMP then
+                        if attr.param == CONDITION_PARAM_STAT_MAXMANAPOINTS then
+                          print("MaxMP")
                             if player:getMana() == maxMP then
                                 player:addMana(player:getMaxMana())
                             end
@@ -92,12 +95,14 @@ function us_onEquip(cid, iuid, slot)
                     else
                         player:addCondition(US_CONDITIONS[bonusId][bonusValue][itemId])
                         if attr.param == CONDITION_PARAM_STAT_MAXHITPOINTS then
+                          print("MaxHP2")
                             if player:getHealth() == maxHP then
                                 player:addHealth(player:getMaxHealth())
                             end
                         end
                         
                         if attr.param == CONDITION_PARAM_STAT_MAXMANAPOINTS then
+                          print("MaxMP2")
                             if player:getMana() == maxMP then
                                 player:addMana(player:getMaxMana())
                             end
@@ -117,7 +122,7 @@ function us_onLogin(player)
 
     local maxHP = player:getMaxHealth()
     local maxMP = player:getMaxMana()
-    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
         local item = player:getSlotItem(slot)
         if item then
             local newBonuses = item:getBonusAttributes()
@@ -242,7 +247,7 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
         if attacker:isPlayer() then
             local primaryTotal = 0
             local secondaryTotal = 0
-            for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+            for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
                 local item = attacker:getSlotItem(slot)
                 if item then
                     if item:getType():usesSlot(slot) then
@@ -275,7 +280,7 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
         if creature:isPlayer() then
             local primaryTotal = 0
             local secondaryTotal = 0
-            for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+            for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
                 local item = creature:getSlotItem(slot)
                 if item then
                     if item:getType():usesSlot(slot) then
@@ -326,7 +331,7 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
         local secondaryDamageTotal = 0
         local lifeStealTotal = 0
         local manaStealTotal = 0
-        for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+        for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
       local item = attacker:getSlotItem(slot)
       if item then
         if item:getType():usesSlot(slot) then
@@ -423,7 +428,7 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
    if creature:isPlayer() then
     local primaryDamageTotal = 0
     local secondaryDamageTotal = 0
-    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
       local item = creature:getSlotItem(slot)
       if item then
         if item:getType():usesSlot(slot) then
@@ -504,7 +509,7 @@ function KillEvent.onKill(player, target, lastHit)
         return
     end
     local center = target:getPosition()
-    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
         local item = player:getSlotItem(slot)
         if item then
             local values = item:getBonusAttributes()
@@ -524,7 +529,7 @@ end
 
 function PrepareDeathEvent.onPrepareDeath(creature, killer)
     if creature:isPlayer() then
-        for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+        for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
             local item = creature:getSlotItem(slot)
             if item then
                 local values = item:getBonusAttributes()
@@ -555,7 +560,7 @@ end
 
 local GainExperienceEvent = EventCallback
 GainExperienceEvent.onGainExperience = function(player, source, exp, rawExp)
-    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
         local item = player:getSlotItem(slot)
         if item then
             local values = item:getBonusAttributes()
@@ -690,7 +695,7 @@ function us_CheckCorpse(monsterType, corpsePosition, killerId)
 	
   
   
-    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
       local item = killer:getSlotItem(slot)
       if item then
         local values = item:getBonusAttributes()
@@ -921,7 +926,7 @@ LookEvent.onLook = function(player, thing, position, distance, description)
     end
     elseif thing:isPlayer() then
     local iLvl = 0
-    for slot = CONST_SLOT_HEAD, CONST_SLOT_AMMO do
+    for slot = CONST_SLOT_HEAD, CONST_SLOT_RUNE3 do
       local item = thing:getSlotItem(slot)
       if item then
         iLvl = iLvl + item:getItemLevel()
@@ -933,9 +938,38 @@ LookEvent.onLook = function(player, thing, position, distance, description)
 end
 LookEvent:register(10)
 
-function Player:onInventoryUpdate(item, slot, equip)
+
+local slotNames = {
+  [CONST_SLOT_HEAD] = "Head",
+  [CONST_SLOT_NECKLACE] = "Necklace",
+  [CONST_SLOT_BACKPACK] = "Backpack",
+  [CONST_SLOT_ARMOR] = "Armor",
+  [CONST_SLOT_RIGHT] = "Right Hand",
+  [CONST_SLOT_LEFT] = "Left Hand",
+  [CONST_SLOT_LEGS] = "Legs",
+  [CONST_SLOT_FEET] = "Feet",
+  [CONST_SLOT_RING] = "Ring",
+  [CONST_SLOT_AMMO] = "Ammo",
+  [CONST_SLOT_RUNE1] = "Rune1",
+  [CONST_SLOT_RUNE2] = "Rune2",
+  [CONST_SLOT_RUNE3] = "Rune3"
+}
+
+-- Function to get readable slot names for an item
+local function getItemExpectedSlots(itemType)
+  local slots = {}
+  for slotConst, slotName in pairs(slotNames) do
+      if itemType:usesSlot(slotConst) then
+          table.insert(slots, slotName)
+      end
+  end
+  return table.concat(slots, ", ")
+end
+
+
+function USonInventoryUpdate(player, item, slot, equip)
     -- Skip non-equipment slots
-    if slot > CONST_SLOT_AMMO then
+    if slot > CONST_SLOT_RUNE3 then
         return true
     end
 
@@ -956,20 +990,74 @@ function Player:onInventoryUpdate(item, slot, equip)
 
         -- Check unidentified
         if item:isUnidentified() then
-            self:sendTextMessage(MESSAGE_STATUS_SMALL, "You can't wear unidentified items.")
+          player:sendTextMessage(MESSAGE_STATUS_SMALL, "You can't wear unidentified items.")
             return false
         end
 
         -- Check level requirements
-        if US_CONFIG.REQUIRE_LEVEL and self:getLevel() < item:getItemLevel() and not item:isLimitless() then
-            self:sendTextMessage(MESSAGE_STATUS_SMALL, "You need higher level to equip that item.")
+        if US_CONFIG.REQUIRE_LEVEL and player:getLevel() < item:getItemLevel() and not item:isLimitless() then
+            player:sendTextMessage(MESSAGE_STATUS_SMALL, "You need higher level to equip that item.")
             return false
         end
 
+        -- Usage example in your equip check:
+        local expectedSlots = getItemExpectedSlots(item:getType())
+        print(string.format("[UpgradeSystem] %s (id:%d) expected slot(s): %s", item:getName(), item:getId(), expectedSlots))
+
+        -- Individual check for runes
+        if item:getType():isRune() then
+          print("rune")
+            if slot == 12 or slot == 13 or slot == 14 then
+                 print(string.format("[UpgradeSystem1] Blocked: Rune %s (id:%d) cannot be equipped in slot %d", item:getName(), item:getId(), slot))
+                return us_onEquip(player:getId(), item:getUniqueId(), slot)
+            else
+              player:sendTextMessage(MESSAGE_STATUS_SMALL, "Runes can only be equipped in rune slots.")
+               
+            end
+        elseif item:getType():isShield() or item:getType():isWeapon() then
+            if slot == 5 or slot == 6  then
+                   return us_onEquip(player:getId(), item:getUniqueId(), slot)
+            else
+              player:sendTextMessage(MESSAGE_STATUS_SMALL, "Shields and weapons can only be equipped in shield and weapon slots.")
+            end
+          else
+            -- Check if item is in the correct slot using parameter slot as slot number
+            if item:getType():usesSlot(slot) and not item:getType():isRune() then
+                player:sendTextMessage(MESSAGE_STATUS_SMALL, "You can't equip this item in that slot.")
+                print(string.format("[UpgradeSystem2] Blocked: %s (id:%d) cannot be equipped in slot %d", item:getName(), item:getId(), slot))
+                return us_onEquip(player:getId(), item:getUniqueId(), slot)
+            end
+        end
+
         -- Process equip
-        us_onEquip(self:getId(), item:getUniqueId(), slot)
+        
     else
-        -- Handle unequip (add logic if needed)
+      print("unequip")
+      local bonuses = item:getBonusAttributes()
+      if bonuses then
+        local itemId = item:getId()
+        for i = 1, #bonuses do
+            local value = bonuses[i]
+            local bonusId = value[1]
+            local bonusValue = value[2]
+            local attr = US_ENCHANTMENTS[bonusId]
+            if attr then
+                if attr.combatType == US_TYPES.CONDITION then
+                    if US_CONDITIONS[bonusId] and US_CONDITIONS[bonusId][bonusValue] and US_CONDITIONS[bonusId][bonusValue][itemId] then
+                        if US_CONDITIONS[bonusId][bonusValue][itemId]:getType() ~= CONDITION_MANASHIELD then
+                            player:removeCondition(
+                                US_CONDITIONS[bonusId][bonusValue][itemId]:getType(),
+                                CONDITIONID_COMBAT,
+                                US_CONDITIONS[bonusId][bonusValue][itemId]:getSubId()
+                            )
+                        else
+                            player:removeCondition(US_CONDITIONS[bonusId][bonusValue][itemId]:getType(), CONDITIONID_COMBAT)
+                        end
+                    end
+                end
+            end
+        end
+    end
     end
 
     return true
@@ -1556,6 +1644,15 @@ function Item.getItemType(self)
         if slot == SLOTP_RING then
             return US_ITEM_TYPES.RING
         end
+        if slot == SLOTP_RUNE1 then
+            return US_ITEM_TYPES.RUNE1
+        end
+        if slot == SLOTP_RUNE2 then
+            return US_ITEM_TYPES.RUNE
+        end
+        if slot == SLOTP_RUNE3 then
+            return US_ITEM_TYPES.RUNE
+        end
     end
     return US_ITEM_TYPES.ALL
 end
@@ -1625,7 +1722,7 @@ function ItemType.isUpgradable(self)
       return true
     end
   else
-    if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING or slot == SLOTP_AMMO then
+    if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING or slot == SLOTP_AMMO or slot == SLOTP_RUNE1 or slot == SLOTP_RUNE2 or slot == SLOTP_RUNE3 then
       return true
     end
   end
@@ -1647,7 +1744,7 @@ function ItemType.canHaveItemLevel(self)
       return true
     end
   else
-    if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING or slot == SLOTP_AMMO then
+    if slot == SLOTP_HEAD or slot == SLOTP_ARMOR or slot == SLOTP_LEGS or slot == SLOTP_FEET or slot == SLOTP_NECKLACE or slot == SLOTP_RING or slot == SLOTP_AMMO or slot == SLOTP_RUNE1 or slot == SLOTP_RUNE2 or slot == SLOTP_RUNE3 then
       return true
     end
   end

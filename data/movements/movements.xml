@@ -6435,4 +6435,114 @@
 		<movevent event="Equip" itemid="12651" slot="ammo" function="onEquipItem" />
 		<movevent event="DeEquip" itemid="12651" slot="ammo" function="onDeEquipItem" />
 
+		<!-- Rune of Arcanists -->
+		<movevent event="Equip" itemid="35379" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35379" slot="rune1" function="onDeEquipItem" />
+
+		<!-- Rune of Spellbound Knowledge -->
+		<movevent event="Equip" itemid="35380" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35380" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Magician -->
+		<movevent event="Equip" itemid="35381" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35381" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Mana Insight -->
+		<movevent event="Equip" itemid="35382" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35382" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Lost Sage -->
+		<movevent event="Equip" itemid="35383" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35383" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Chaos -->
+		<movevent event="Equip" itemid="35384" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35384" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Distortion -->
+		<movevent event="Equip" itemid="35385" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35385" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Magic Echoes -->
+		<movevent event="Equip" itemid="35386" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35386" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Hunter -->
+		<movevent event="Equip" itemid="35387" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35387" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Assassin -->
+		<movevent event="Equip" itemid="35388" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35388" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Betrayer -->
+		<movevent event="Equip" itemid="35389" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35389" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Despair -->
+		<movevent event="Equip" itemid="35390" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35390" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Humble -->
+		<movevent event="Equip" itemid="35391" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35391" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Thief -->
+		<movevent event="Equip" itemid="35392" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35392" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Eros -->
+		<movevent event="Equip" itemid="35393" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35393" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Glory -->
+		<movevent event="Equip" itemid="35395" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35395" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Devotion -->
+		<movevent event="Equip" itemid="35399" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35399" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Righteousness -->
+		<movevent event="Equip" itemid="35396" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35396" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Dawn of Justice -->
+		<movevent event="Equip" itemid="35397" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35397" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Faith -->
+		<movevent event="Equip" itemid="35398" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35398" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Sinless -->
+		<movevent event="Equip" itemid="35400" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35400" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Sin Eater -->
+		<movevent event="Equip" itemid="35401" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35401" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Agony -->
+		<movevent event="Equip" itemid="35404" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35404" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Flesh Eater -->
+		<movevent event="Equip" itemid="35403" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35403" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Drowned Sorrows -->
+		<movevent event="Equip" itemid="35405" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35405" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Monarch -->
+		<movevent event="Equip" itemid="35406" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35406" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Doomed Prophet -->
+		<movevent event="Equip" itemid="35407" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35407" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Void -->
+		<movevent event="Equip" itemid="35408" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35408" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Eclipse -->
+		<movevent event="Equip" itemid="35409" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35409" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Ashes -->
+		<movevent event="Equip" itemid="35412" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35412" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Berserker -->
+		<movevent event="Equip" itemid="35413" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35413" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Juggernaut -->
+		<movevent event="Equip" itemid="35414" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35414" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Wrath -->
+		<movevent event="Equip" itemid="35415" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35415" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Warden -->
+		<movevent event="Equip" itemid="35416" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35416" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of Aegis -->
+		<movevent event="Equip" itemid="35417" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35417" slot="rune1" function="onDeEquipItem" />
+		<!-- Rune of the Hammer -->
+		<movevent event="Equip" itemid="35418" slot="rune1" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="35418" slot="rune1" function="onDeEquipItem" />
+
 </movements>

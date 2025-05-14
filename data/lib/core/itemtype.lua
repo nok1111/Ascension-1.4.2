@@ -35,8 +35,8 @@ function ItemType:setiroll()
 	return self:rollRarity()
 end
 
-function ItemType:isHelmet()
-	return self:usesSlot(CONST_SLOT_HEAD)
+function ItemType:isRune()
+	return self:usesSlot(CONST_SLOT_RUNE1)
 end
 
 function ItemType:isArmor()
@@ -166,6 +166,8 @@ function ItemType:getEquipTypeString()
     end
   elseif self:isAmmo() then
     return "Ammo"
+  elseif self:isRune() then
+    return "Rune"
   end
   return nil
 end

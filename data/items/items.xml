@@ -38231,7 +38231,7 @@
 	
 	<item id="35387" article="a" name="Rune of the Hunter">
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />	
+		<attribute key="slotType" value="rune1" />	
 	</item>
 	
 	<item id="35388" article="a" name="Rune of the Assassin">

@@ -2170,7 +2170,7 @@ local specialCraftItems = {
 -- Special unique items (e.g., runes) with itemlevel and unique values
 local specialUniqueItems = {
     -- BLUE RUNES
-    [35379] = {itemlevel = itemlevel_runes1, unique = 15},
+    [35379] = {itemlevel = 50, unique = 15},
     [35380] = {itemlevel = itemlevel_runes3, unique = 16},
     [35381] = {itemlevel = itemlevel_runes1, unique = 17},
     [35382] = {itemlevel = itemlevel_runes4, unique = 18},
@@ -2215,8 +2215,7 @@ local specialUniqueItems = {
     [35419] = {itemlevel = itemlevel_runes1, unique = nil}, -- no unique value set in original
 }
 
--- Attach the recipe to the item for downstream use
-itemnew.craftedFromRecipe = recipe
+
 
 if recipe.fame and recipe.fame > 0 then
     FameSystem:addPoints(player, recipe.fame)
@@ -2232,6 +2231,20 @@ if specialCraftItems[itemnew:getId()] then
     Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
     player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 end
+
+if specialUniqueItems[itemnew:getId()] then
+	local uniqueInfo = specialUniqueItems[itemnew:getId()]
+    itemnew:setItemLevel(uniqueInfo.itemlevel, true)
+    if uniqueInfo and uniqueInfo.unique then
+        itemnew:setUnique(uniqueInfo.unique, true)
+    end
+    itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
+    local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
+    FameSystem:addPoints(player, recipe.fame)
+    Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
+    player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
+end
+
     -- If recipe has upgraded = "true" and item is upgradable, set rarity to RARE
     local itemType = itemnew:getType()
 if itemType and itemType.isUpgradable and itemType:isUpgradable() and recipe.upgraded == "true" then

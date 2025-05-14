@@ -336,7 +336,7 @@ US_UNIQUES = {
     name = "[Corrupted] Arcane Knowledge",
     attributes = {
         2,
-		15	   -- revive on death
+		34	   -- revive on death
     },
 	 minLevel = 1, -- Required Item Level to become Unique
     chance = 1, -- % chance to roll this unique
