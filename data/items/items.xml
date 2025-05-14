@@ -25849,6 +25849,7 @@
 		<attribute key="description" value="This staff is able to destroy calamity runes." />
 	</item>
 	<item id="30320" article="a" name="Rune of Calamity">
+
 	</item>
 		<item id="26226" article="a" name="Calamity fragment">
 		<attribute key="description" value="This is a quest item. someone may want this." />
@@ -38179,44 +38180,44 @@
 		<item id="35380" article="a" name="Rune of Spellbound Knowledge">
 		<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 		<item id="35381" article="a" name="Rune of the Magician">
 		<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />		
+		<attribute key="slotType" value="rune1" />		
 	</item>
 		
 	<item id="35382" article="a" name="Rune of Mana Insight">
 	<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 		
 	<item id="35383" article="a" name="Rune of the Lost Sage">
 	<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	
 	<item id="35384" article="a" name="Rune of Chaos">
 	<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35385" article="a" name="Rune of Distortion">
 	<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35386" article="a" name="Rune of Magic Echoes">
 	<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	
@@ -38236,32 +38237,32 @@
 	
 	<item id="35388" article="a" name="Rune of the Assassin">
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 		
 	</item>
 	<item id="35389" article="a" name="Rune of the Betrayer">
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35390" article="a" name="Rune of Despair">
 		<attribute key="armor" value="1" />
 		<attribute key="showattributes" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 		<item id="35391" article="a" name="Rune of the Humble">
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 		<item id="35392" article="a" name="Rune of the Thief">
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 		<item id="35393" article="a" name="Rune of Eros">
 		<attribute key="armor" value="1" />
 		<attribute key="showattributes" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	
@@ -38273,72 +38274,71 @@
 	
 	<item id="35395" article="a" name="Rune of Glory">
 	   <attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35399" article="a" name="Rune of Devotion">
 	    <attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35396" article="a" name="Rune of Righteousness">
 	    <attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	<item id="35397" article="a" name="Rune of Dawn of Justice">
 		 <attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	<item id="35398" article="a" name="Rune of Faith">
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	<item id="35400" article="a" name="Rune of the Sinless">
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35401" article="a" name="Rune of Sin Eater">
 		<attribute key="armor" value="1" />		
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	
 	
 	<item id="35404" article="a" name="Rune of Agony">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35403" article="a" name="Rune of Flesh Eater">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35405" article="a" name="Rune of Drowned Sorrows">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
-		<attribute key="showattributes" value="1" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35406" article="a" name="Rune of the Monarch">
 	    <attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35407" article="a" name="Rune of Doomed Prophet">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35408" article="a" name="Rune of the Void">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 		<attribute key="showattributes" value="1" />
 	</item>
 	<item id="35409" article="a" name="Rune of the Eclipse">		
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 		<attribute key="showattributes" value="1" />
 	</item>
 	
@@ -38349,33 +38349,33 @@
 	
 		<item id="35412" article="a" name="Rune of Ashes">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35413" article="a" name="Rune of the Berserker">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	<item id="35414" article="a" name="Rune of the Juggernaut">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	<item id="35415" article="a" name="Rune of Wrath">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	<item id="35416" article="a" name="Rune of Warden">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	<item id="35417" article="a" name="Rune of Aegis">
 		<attribute key="armor" value="1" />	
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	<item id="35418" article="a" name="Rune of the Hammer">
 		<attribute key="armor" value="1" />		
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 	

@@ -121,6 +121,66 @@ Crafting.recipes = {
 				{id = 32702, required = 5},
 			},
 		},
+
+		
+		{
+			craftedItemId = 36370,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+		
+		{
+			craftedItemId = 31919,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+		{
+			craftedItemId = 36396,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+		
+
+
+
 		{
 			craftedItemId = 2385,
 			craftedCount = 1, --
@@ -139,6 +199,188 @@ Crafting.recipes = {
 			},
 		},
 		
+		
+		{
+			craftedItemId = 2395,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+		
+		{
+			craftedItemId = 32058,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+		
+		
+		{
+			craftedItemId = 36389,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+
+		
+		{
+			craftedItemId = 36366,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+
+		{
+			craftedItemId = 2392,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+		
+		{
+			craftedItemId = 31802,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},	
+
+
+		{
+			craftedItemId = 36388,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+		
+		{
+			craftedItemId = 36210,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+		{
+			craftedItemId = 36359,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+		{
+			craftedItemId = 36242,
+			craftedCount = 1, --
+			tier = 0, 
+			fame = 2, -- used for description
+			desc = false,
+			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
+			itemlvl = 10,
+			craftPoints = 5,
+			cost = 2, -- points for crafting that recipe
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 32702, required = 5},
+			},
+		},
+
+
+
 
 
 	},
