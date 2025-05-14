@@ -1843,6 +1843,12 @@ slots_t getSlotType(const ItemType& it)
 			slot = CONST_SLOT_AMMO;
 		} else if (slotPosition & SLOTP_TWO_HAND || slotPosition & SLOTP_LEFT) {
 			slot = CONST_SLOT_LEFT;
+		} else if (slotPosition & SLOTP_RUNE1) {
+			slot = CONST_SLOT_RUNE1;
+		} else if (slotPosition & SLOTP_RUNE2) {
+			slot = CONST_SLOT_RUNE2;
+		} else if (slotPosition & SLOTP_RUNE3) {
+			slot = CONST_SLOT_RUNE3;
 		}
 	}
 

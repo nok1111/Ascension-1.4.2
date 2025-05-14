@@ -38173,7 +38173,7 @@
 	<item id="35379" article="a" name="Rune of Arcanists"> 
 		<attribute key="weight" value="120" />
 		<attribute key="armor" value="1" />
-		<attribute key="slotType" value="ammo" />
+		<attribute key="slotType" value="rune1" />
 	</item>
 	
 		<item id="35380" article="a" name="Rune of Spellbound Knowledge">

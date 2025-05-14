@@ -754,6 +754,12 @@ void Items::parseItemNode(const pugi::xml_node& itemNode, uint16_t id)
 						it.slotPosition |= SLOTP_AMMO;
 					} else if (tmpStrValue == "hand") {
 						it.slotPosition |= SLOTP_HAND;
+					} else if (tmpStrValue == "rune1") {
+						it.slotPosition |= SLOTP_RUNE1;
+					} else if (tmpStrValue == "rune2") {
+						it.slotPosition |= SLOTP_RUNE2;
+					} else if (tmpStrValue == "rune3") {
+						it.slotPosition |= SLOTP_RUNE3;
 					} else {
 						std::cout << "[Warning - Items::parseItemNode] Unknown slotType: " << valueAttribute.as_string() << std::endl;
 					}
