@@ -2406,8 +2406,7 @@ ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, 
 	if ((slotPosition & SLOTP_HEAD) || (slotPosition & SLOTP_NECKLACE) ||
 		(slotPosition & SLOTP_BACKPACK) || (slotPosition & SLOTP_ARMOR) ||
 		(slotPosition & SLOTP_LEGS) || (slotPosition & SLOTP_FEET) ||
-		(slotPosition & SLOTP_RING) || (slotPosition & SLOTP_RUNE1) ||
-		(slotPosition & SLOTP_RUNE2) || (slotPosition & SLOTP_RUNE3)) {
+		(slotPosition & SLOTP_RING)) {
 		ret = RETURNVALUE_CANNOTBEDRESSED;
 	}
 	else if (slotPosition & SLOTP_TWO_HAND) {
@@ -2423,6 +2422,7 @@ ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, 
 	}
 
 	switch (index) {
+	
 	case CONST_SLOT_HEAD: {
 		if (slotPosition & SLOTP_HEAD) {
 			ret = RETURNVALUE_NOERROR;
@@ -2598,26 +2598,14 @@ ReturnValue Player::queryAdd(int32_t index, const Thing& thing, uint32_t count, 
 		break;
 	}
 
-	case CONST_SLOT_RUNE1: {
+	case CONST_SLOT_RUNE1:
+	case CONST_SLOT_RUNE2:
+	case CONST_SLOT_RUNE3:
 		if (slotPosition & SLOTP_RUNE1) {
 			ret = RETURNVALUE_NOERROR;
 		}
 		break;
-	}
-
-	case CONST_SLOT_RUNE2: {
-		if (slotPosition & SLOTP_RUNE2) {
-			ret = RETURNVALUE_NOERROR;
-		}
-		break;
-	}
-
-	case CONST_SLOT_RUNE3: {
-		if (slotPosition & SLOTP_RUNE3) {
-			ret = RETURNVALUE_NOERROR;
-		}
-		break;
-	}
+	
 
 	case CONST_SLOT_WHEREEVER:
 	case -1:
