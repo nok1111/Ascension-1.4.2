@@ -5750,11 +5750,15 @@
 		<attribute key="weight" value="1800" />
 		<attribute key="showcount" value="1" />
 	</item>
-	<item id="26171" name="dangerous proto matter">
+	<item id="26171" name="Prismatic Cube">
 		<attribute key="weight" value="1200" />
 		<attribute key="showcount" value="0" />
 	</item>
-	<item id="26170" name="volatile proto matter">
+	<item id="26169" name="Prismatic Cube">
+		<attribute key="weight" value="600" />
+		<attribute key="showcount" value="0" />
+	</item>
+	<item id="26170" name="Prismatic Cube">
 		<attribute key="weight" value="600" />
 		<attribute key="showcount" value="0" />
 	</item>
@@ -15102,8 +15106,8 @@
 	<item id="7734" article="a" name="watering can">
 		<attribute key="weight" value="850" />
 	</item>
-	<item id="7735" article="a" name="spellwand">
-		<attribute key="description" value="It might have some strange effects." />
+	<item id="7735" article="a" name="Enchanters Rod">
+		<attribute key="description" value="Used to disenchant rare items." />
 		<attribute key="weight" value="200" />
 	</item>
 	<item id="7736" article="a" name="rotten heart">

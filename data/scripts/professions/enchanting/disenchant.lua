@@ -83,5 +83,5 @@ function disenchant.onUse(player, item, fromPosition, target, toPosition, isHotk
     target:remove(1)
     return true
 end
-disenchant:id(10944)
+disenchant:id(7735)
 disenchant:register()

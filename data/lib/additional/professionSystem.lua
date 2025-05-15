@@ -41,7 +41,7 @@ SKILL_MINING = 5
 SKILL_HERBALISM = 6
 SKILL_FISHING = 7
 SKILL_RUNE_SEEKER = 8
-SKILL_TEMPORAL_CRAFTING = 9
+SKILL_REFINERY = 9
 
 local skillIdToName = {
 	[SKILL_BLACKSMITH] = "blacksmith",
@@ -52,7 +52,7 @@ local skillIdToName = {
 	[SKILL_HERBALISM] = "herbalism",
 	[SKILL_FISHING] = "fishing",
 	[SKILL_RUNE_SEEKER] = "woodcutting",
-	[SKILL_TEMPORAL_CRAFTING] = "temporal",
+	[SKILL_REFINERY] = "refinery",
 }
 
 local skillIdToDbName = {
@@ -64,7 +64,7 @@ local skillIdToDbName = {
 	[SKILL_HERBALISM] = "skill_herbalism",
 	[SKILL_FISHING] = "skill_fishing",
 	[SKILL_RUNE_SEEKER] = "skill_rune_seeker",
-	[SKILL_TEMPORAL_CRAFTING] = "skill_temporal_crafting",
+	[SKILL_REFINERY] = "skill_temporal_crafting",
 }
 
 local professionColors = {
@@ -76,7 +76,7 @@ local professionColors = {
     [SKILL_HERBALISM] = TEXTCOLOR_LIGHTGREEN,
     [SKILL_FISHING] = TEXTCOLOR_LIGHTBLUE,
     [SKILL_RUNE_SEEKER] = TEXTCOLOR_ELECTRICPURPLE,
-    [SKILL_TEMPORAL_CRAFTING] = TEXTCOLOR_YELLOW,
+    [SKILL_REFINERY] = TEXTCOLOR_YELLOW,
 }
 
 if not ProfessionSystem then
@@ -372,7 +372,7 @@ ProfessionSystem.config = {
 			
 		},
 	},
-	 [SKILL_TEMPORAL_CRAFTING] = {
+	 [SKILL_REFINERY] = {
 		description = "Blacksmith description here",
 		levels = {
 			[1] = 250,
@@ -518,7 +518,7 @@ function ProfessionSystem:getProfessionValues(player)
 		return res
 	end
 	
-	for i = SKILL_BLACKSMITH, SKILL_TEMPORAL_CRAFTING do
+	for i = SKILL_BLACKSMITH, SKILL_REFINERY do
 		res.skills[i] = {}
 		res.skills[i].level = result.getNumber(resultId, skillIdToDbName[i])
 		local pointsForNextLevel = self.config[i] and self.config[i].levels[res.skills[i].level + 1] or 0 or 0
@@ -534,12 +534,12 @@ function ProfessionSystem:onPlayerLogin(player)
 	local resultId = db.storeQuery("SELECT `profession_id` FROM `player_profession` WHERE `player_id` = " .. player:getGuid())
 	if not resultId then
 		local query = "INSERT INTO `player_profession` (`player_id`, `profession_id`, "
-		for i = SKILL_BLACKSMITH, SKILL_TEMPORAL_CRAFTING do
+		for i = SKILL_BLACKSMITH, SKILL_REFINERY do
 			query = query .. ("`%s`,`%s`,"):format(skillIdToDbName[i], skillIdToDbName[i] .. "_points")
 		end
 		query = query:sub(1, -2) -- trim last comma
 		query = query .. ") VALUES (" .. player:getGuid() .. ",0,"
-		for i = SKILL_BLACKSMITH, SKILL_TEMPORAL_CRAFTING + 9 do -- + 8 cause points for each level
+		for i = SKILL_BLACKSMITH, SKILL_REFINERY + 9 do -- + 8 cause points for each level
 			query = query .. "0,"
 		end
 		query = query:sub(1, -2) -- trim last comma
