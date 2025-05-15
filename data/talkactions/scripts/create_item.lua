@@ -45,13 +45,17 @@ function onSay(player, words, param)
 
 	local result = player:addItem(itemType:getId(), count)
 	if result then
+
 		if not itemType:isStackable() then
 			if type(result) == "table" then
 				for _, item in ipairs(result) do
 					item:decay()
+
 				end
 			else
 				result:decay()
+				print("shadering")
+					result:setShader("pulse")
 			end
 		end
 		player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)

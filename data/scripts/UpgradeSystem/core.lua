@@ -1659,6 +1659,15 @@ end
 
 function Item.setRarity(self, rarity)
     self:setCustomAttribute("rarity", rarity)
+    print("set rarity", rarity)
+    local rarityName = US_CONFIG.RARITY[rarity] and US_CONFIG.RARITY[rarity].name or tostring(rarity)
+    local itemName = self:getName()
+    if rarity > 1 then
+        local newName = rarityName .. " " .. itemName
+        self:setAttribute(ITEM_ATTRIBUTE_NAME, newName)
+    else
+        self:setAttribute(ITEM_ATTRIBUTE_NAME, itemName)
+    end
 
     if self:getCustomAttribute("rarity") > 0 and self:getCustomAttribute("item_level") > 0 then
       local raritylevel = self:getCustomAttribute("rarity")
@@ -1684,6 +1693,14 @@ function Item.rollRarity(self)
         end
     end
     self:setRarity(rarity)
+    local rarityName = US_CONFIG.RARITY[rarity] and US_CONFIG.RARITY[rarity].name or tostring(rarity)
+    local itemName = self:getName()
+    if rarity > 1 then
+        local newName = rarityName .. " " .. itemName
+        self:setAttribute(ITEM_ATTRIBUTE_NAME, newName)
+    else
+        self:setAttribute(  ITEM_ATTRIBUTE_NAME, itemName)
+    end
 end
 
 function Item.getRarity(self)

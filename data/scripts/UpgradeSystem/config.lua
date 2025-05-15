@@ -135,17 +135,17 @@ US_CONFIG = {
       chance = 1 -- 1:X chance that item will be common (1 = 100%)
     },
     [RARE] = {
-      name = "[RARE]",
+      name = "Orbital",
       maxBonus = 1, -- max amount of bonus attributes
       chance = 25 -- 1:X chance that item will be common (1 = 100%)
     },
     [EPIC] = {
-      name = "[EPIC]",
+      name = "Forged",
       maxBonus = 2, -- max amount of bonus attributes
       chance = 0 -- 1:X chance that item will be common (1 = 100%)
     },
     [LEGENDARY] = {
-      name = "[LEGENDARY]",
+      name = "Ascended",
       maxBonus = 3, -- max amount of bonus attributes
       chance = 0 -- 1:X chance that item will be common (1 = 100%)
     }
