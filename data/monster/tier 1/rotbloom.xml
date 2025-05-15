@@ -38,12 +38,6 @@
 		<immunity invisible="1" />
 	</immunities>
 	<loot>
-		<item name="corncob" chance="890" />
-		<item name="dark mushroom" chance="7692" />
-		<item name="sling herb" countmax="2" chance="446" />
-		<item name="shadow herb" chance="880" />
-		<item name="seeds" chance="490" />
-		<item name="carniphila seeds" chance="4166" />
-		<item name="carrot on a stick" chance="170" />
+		
 	</loot>
 </monster>

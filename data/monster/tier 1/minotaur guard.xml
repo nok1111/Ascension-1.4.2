@@ -30,28 +30,7 @@
 		<voice sentence="Kaplar!" />
 	</voices>
 	<loot>
-		<item name="health potion" countmax="2" chance="490" />	<!-- health potion -->
-
-		<item id="2465" chance="4390" />					<!-- brass armor -->
-		<item id="2464" chance="3000" />					<!-- chain armor -->
-		<item id="2513" chance="2000" />					<!-- battle shield -->
-		<item id="5878" chance="1000" />					<!-- minotaur leather -->
 		
-		<item id="2387" chance="400" />					<!-- headripper axe -->
-		<item id="36373" chance="370" />					<!-- health potion -->
-		<item id="7401" chance="90" />					<!-- minotaur trophy -->
-
-		<item id="36324" chance="530" />
-		<item id="32864" chance="530" />
-		<item id="2477" chance="530" />	
-		<item id="36357" chance="530" />
-		<item id="31879" chance="530" />
-		
-
-		
-		<item id="38291" chance="4500" /> <!-- regen resilence -->
-		
-		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
 		
 		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
 		<item id="39101" countmax="1" chance="6000" /><!-- sell -->

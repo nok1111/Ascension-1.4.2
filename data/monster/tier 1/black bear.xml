@@ -28,9 +28,9 @@
 		<voice sentence="Groar" />
 	</voices>
 	<loot>
-		<item name="meat" countmax="4" chance="39750" />
-		<item name="ham" countmax="3" chance="20000" />
-		<item name="bear paw" chance="2000" />
+		<item id="35339" countmax="5" chance="35000" />
+		<item id="39128" countmax="1" chance="10500" /><!-- sell -->
+		<item id="39108" countmax="2" chance="27500" /><!-- sell -->
 		<item name="honeycomb" chance="460" />
 	</loot>
 </monster>

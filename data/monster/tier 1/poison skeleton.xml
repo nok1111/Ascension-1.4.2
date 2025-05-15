@@ -38,24 +38,7 @@
 
 	<loot>
 		<item id="2230" chance="1130" /><!-- bone -->	
-		<item name="short sword" chance="8870" />
-		<item name="bone club" chance="4900" />
-		<item name="leather helmet" chance="1940" />
-		<item name="leather armor" chance="2510" />
-		<item id="31890" chance="300" />
-		<item id="2541" chance="5000" />
-		<item id="31903" chance="530" />
-		<item id="2464" chance="530" />
-		<item id="2479" chance="530" />
-		<item id="36355" chance="530" />
-		<item id="36367" chance="530" />
-		<item id="2181" chance="530" />
-		<item id="32865" chance="530" />
-		<item id="36357" chance="500" />
-		<item id="36367" chance="500" />
-		<item id="2397" chance="500" />
-		<item id="2182" chance="500" />
-		<item id="38325" chance="4500" /> <!-- ring of the witch -->
+		
 		
 		<item id="39077" countmax="2" chance="10500" /><!-- sell -->
 		<item id="39162" countmax="2" chance="27500" /><!-- sell -->

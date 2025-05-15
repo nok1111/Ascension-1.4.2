@@ -29,24 +29,6 @@
 		<voice sentence="Hurr!" />
 	</voices>
 	<loot>
-		<item id="2480" chance="300" />
-		<item id="2419" chance="1860" /><!-- scimitar -->
-		<item id="2667" chance="29400" /><!-- fish -->
-		<item name="brown mushroom" chance="9650" />	
-		<item name="amazonic helmet" chance="3230" />
-		<item name="steel shield" chance="970" />
-		<item name="plate shield" chance="1900" />
-		
-		<item id="32789" chance="1000" />
-		<item id="2462" chance="1000" />
-		<item id="32825" chance="1000" />
-		<item id="2477" chance="500" />
-
-		<item id="36324" chance="530" />
-		<item id="32864" chance="530" />
-		<item id="2477" chance="530" />	
-		<item id="36357" chance="530" />
-		<item id="31879" chance="530" />
 		
 		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
 		<item id="39101" countmax="1" chance="6000" /><!-- sell -->
