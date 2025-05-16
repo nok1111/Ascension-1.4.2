@@ -99,6 +99,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
+        onStartup = true, -- This will trigger monster spawn at startup
     
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -114,7 +115,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -129,7 +130,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -144,7 +145,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -159,7 +160,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -175,7 +176,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -190,7 +191,7 @@ local zones = {
     
         tiles = {},
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -205,7 +206,7 @@ local zones = {
     
         tiles = {},
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -220,7 +221,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -235,7 +236,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -250,7 +251,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -288,11 +289,12 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
     },
     [18] = { 
         id = 18,
@@ -303,6 +305,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
+        onStartup = true, -- This will trigger monster spawn at startup
     
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -318,7 +321,8 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup
+        
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -333,6 +337,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
+        onStartup = true, -- This will trigger monster spawn at startup
     
         spawnedMonsters = {}, 
         spawnEvent = nil,
@@ -349,7 +354,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -364,7 +369,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -379,7 +384,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = false, -- Whether to show the zone name on entering
@@ -394,7 +399,7 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
@@ -446,12 +451,11 @@ local zones = {
     
         tiles = 0,
         maxMonsters = 0,
-    
+        onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
         showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
-        onStartup = true, -- This will trigger monster spawn at startup
 
           -- WEATHER SETTINGS
         weather = {"Map - Fog"}, -- Possible weather types

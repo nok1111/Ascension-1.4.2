@@ -8,8 +8,8 @@ function onGetFormulaValues(player, skill, attack, factor)
     local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
     local power = sword * attack
     local level = player:getLevel()
-    local min = (level / 5) + (power * 0.045) + attack
-    local max = (level / 5) + (power * 0.085) + attack * 1.5
+    local min = (level / 5) + (power * 0.025) + attack
+    local max = (level / 5) + (power * 0.035) + attack * 1.5
     return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
@@ -32,6 +32,11 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
     local level = player:getLevel()
     local base = ((level / 10) + (magic * 2)) * 0.01
     local damage = math.floor(base * creature:getMaxHealth())
+
+    local monsterType = MonsterType(creature:getName())
+    if monsterType and monsterType:isBoss() then
+        damage = damage / 3
+    end
 
     local burn = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
     burn:setParameter(CONDITION_PARAM_DELAYED, true)

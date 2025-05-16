@@ -135,15 +135,38 @@
 	<action itemid="5553" script="other/fluids.lua" />
 
 	<!-- Potions -->
-	<action itemid="6558" script="other/potions.lua" />
-	<action fromid="7439" toid="7440" script="other/potions.lua" />
-	<action itemid="7443" script="other/potions.lua" />
-	<action fromid="7588" toid="7591" script="other/potions.lua" />
+	<action itemid="26031" script="other/potions.lua" />
+	<action itemid="26030" script="other/potions.lua" />
+	<action itemid="26029" script="other/potions.lua" />
+	
+	<action itemid="7588" script="other/potions.lua" />
+	<action itemid="7589" script="other/potions.lua" />
+	<action itemid="7590" script="other/potions.lua" />
+	<action itemid="7591" script="other/potions.lua" />
 	<action itemid="7618" script="other/potions.lua" />
 	<action itemid="7620" script="other/potions.lua" />
-	<action fromid="8472" toid="8474" script="other/potions.lua" />
+	<action itemid="8472" script="other/potions.lua" />
+	<action itemid="8473" script="other/potions.lua" />
+	<action itemid="8474" script="other/potions.lua" />
 	<action itemid="8704" script="other/potions.lua" />
-	<action fromid="26029" toid="26031" script="other/potions.lua" />
+	
+	<action itemid="35762" script="other/potions.lua" />
+	<action itemid="35763" script="other/potions.lua" />
+	<action itemid="35764" script="other/potions.lua" />
+	<action itemid="35765" script="other/potions.lua" />
+	<action itemid="35766" script="other/potions.lua" />
+	<action itemid="35767" script="other/potions.lua" />
+	<action itemid="35768" script="other/potions.lua" />
+	<action itemid="35769" script="other/potions.lua" />
+	<action itemid="35782" script="other/potions.lua" />
+	
+	<action itemid="37282" script="other/potions.lua" />
+	<action itemid="37283" script="other/potions.lua" />
+	<action itemid="37284" script="other/potions.lua" />
+
+	<action itemid="7439" script="other/strengthening_potions.lua" />
+	<action itemid="7440" script="other/strengthening_potions.lua" />
+	<action itemid="7443" script="other/strengthening_potions.lua" />
 
 	<!-- Other -->
 	<action itemid="430" script="other/teleport.lua" />

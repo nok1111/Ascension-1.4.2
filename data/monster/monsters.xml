@@ -28,6 +28,7 @@
 
 	<!--TIER 1 bosses-->
 	<monster name="Vael the Betrayer" file="tier 1/bosses/vael_the_betrayer.xml" />
+	<monster name="Malrith, the Hungering Shade" file="tier 1/bosses/Malrith the Hungering Shade.xml" />
 	
 	<!--TIER 1-->
 	<monster name="Rat" file="tier 1/rat.xml" />

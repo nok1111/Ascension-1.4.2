@@ -6545,4 +6545,7 @@
 		<movevent event="Equip" itemid="35418" slot="rune1" function="onEquipItem" />
 		<movevent event="DeEquip" itemid="35418" slot="rune1" function="onDeEquipItem" />
 
+		<movevent event="Equip" itemid="36210" slot="left-hand" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="36210" slot="left-hand" function="onDeEquipItem" />
+
 </movements>

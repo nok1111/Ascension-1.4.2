@@ -35,7 +35,7 @@ monsterBonusDefense = 0.2
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 -- NOTE: allowWalkthrough is only applicable to players
-ip = "127.0.0.1"
+ip = "25.45.177.79"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -102,7 +102,7 @@ freePremium = false
 kickIdlePlayerAfterMinutes = 15
 maxMessageBuffer = 4
 emoteSpells = true
-classicEquipmentSlots = false
+classicEquipmentSlots = true
 classicAttackSpeed = false
 showScriptsLogInConsole = false
 showOnlineStatusInCharlist = false

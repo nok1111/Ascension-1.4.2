@@ -567,6 +567,9 @@
 	<item id="429" article="a" name="trapdoor">
 		<attribute key="floorchange" value="down" />
 	</item>
+	<item id="22840" article="a" name="trapdoor">
+		<attribute key="floorchange" value="down" />
+	</item>
 	<item id="430" article="a" name="sewer grate" />
 	<item id="431" name="stone floor" />
 	<item fromid="432" toid="433" name="stairs">

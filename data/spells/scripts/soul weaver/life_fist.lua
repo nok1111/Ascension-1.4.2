@@ -10,17 +10,6 @@ function onGetFormulaValues(player, level, magicLevel)
 end
 combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
--- Healing formula (adjust values as needed)
-local healCombat = Combat()
-healCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
-healCombat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_GREEN)
-
-function onGetHealValues(player, level, magicLevel)
-    local min = (level / 5) + (magicLevel * 2.5) + 15
-    local max = (level / 5) + (magicLevel * 4.2) + 25
-    return min, max  -- Positive values indicate healing
-end
-healCombat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetHealValues")
 
 local function arcaneDamage(playerId, variant, targetId, effectId)
     local player = Player(playerId)
@@ -34,16 +23,18 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
 
     combat:execute(player, variant)
 
-
-
     return true
 end
 
 local function heal(playerId, variant)
     local player = Player(playerId)
     if not player then return true end
-
-    healCombat:execute(player, Variant(player:getId()))
+    local magicLevel = player:getMagicLevel()
+    local level = player:getLevel()
+    local base = ((level / 10) + (magicLevel * 2)) + level
+    local healAmount = math.floor(base * player:getMaxHealth())
+    player:addHealth(healAmount)
+    player:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
     return true
 end
 
@@ -53,7 +44,7 @@ function onCastSpell(player, variant)
         for i = 0, 1 do
             addEvent(function()
                 arcaneDamage(player:getId(), variant, target:getId(), 189 + i)
-                heal(player:getId(), variant, target:getId())
+                heal(player:getId(), variant)
             end, i * 250)
         end
     end

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Vael the Betrayer" nameDescription="a Vael the Betrayer" race="blood" experience="40" speed="170" manacost="290">
-	<health now="80" max="80" />
+	<health now="50" max="50" />
 	<level min="80" max="80" />
 	<look type="2695" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
@@ -21,15 +21,15 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-220" />		
-<attack name="physical" interval="2000" chance="15" range="7" min="-50" max="-260">
+<attack name="melee" interval="2000" min="-2" max="-160" />		
+<attack name="physical" interval="2000" chance="15" range="7" min="-50" max="-220">
 			<attribute key="shootEffect" value="distance174" />
 		</attack>
-		<attack name="physical" interval="3000" chance="30" range="1" radius="2" target="1" min="-3" max="-240">
+		<attack name="physical" interval="3000" chance="30" range="1" radius="2" target="1" min="-3" max="-120">
 			<attribute key="areaEffect" value="newearthquake" />
 		</attack>
 
-<attack name="scythe teleport" interval="3000" chance="20" range="5" target="1" min="-35" max="-55"/>
+<attack name="scythe teleport" interval="3000" chance="20" range="5" target="1" min="-35" max="-150"/>
 <attack name="blade fan" interval="2000" chance="20"  min="-35" max="-55"/>
 
 
