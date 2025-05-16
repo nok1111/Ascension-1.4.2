@@ -47,23 +47,8 @@
 		<voice sentence="IIIIEEEeeeeeehhhHHHH!" yell="1" />
 	</voices>
 	<loot>
-		
-		<item name="silver amulet" chance="8700" />
-		<item id="2175" chance="520" /><!-- spellbook -->
-		<item id="32426" chance="900" /><!-- wands-->
-		<item id="2189" chance="900" /><!-- wands-->
-		<item id="32509" chance="500" /><!-- helmet-->
-	
-		<item id="38284"  chance="4500" /><!--kneck magic mana -->
-		<item id="38279"  chance="4500" /><!--kneck magic  max mana + mana -->
-		
-		<item id="38333"  chance="4500" /><!--doom magic -->
-	
 		<item id="39145" countmax="1" chance="7500" /><!-- sell -->
 	    <item id="39055" countmax="1" chance="6000" /><!-- sell -->
 	    <item id="39070" countmax="2" chance="15500" /><!-- sell -->
-
-		
-		<item id="33441" chance="520" /><!-- spellbook -->
 	</loot>
 </monster>

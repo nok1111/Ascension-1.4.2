@@ -32,12 +32,6 @@
 <voice sentence="Frikna draxa!" />
 	</voices>
 	<loot>
-		<item id="2511" chance="6400" />	
-		<item id="38294" chance="4500" /> <!-- mana master -->
-		<item id="38296" chance="4500" /> <!-- magic heaven -->
-		<item id="38325" chance="4500" /> <!-- ring of the witch -->
-		
-		<item id="32723" chance="3500" />
 		<item id="39162" countmax="1" chance="5500" /><!-- sell -->
 		<item id="2674" countmax="2" chance="15500" /><!-- sell -->
 	</loot>
