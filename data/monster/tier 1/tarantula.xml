@@ -37,14 +37,7 @@
 		<item id="39077" countmax="1" chance="7000" /><!-- sell -->
 		<item id="39068" countmax="1" chance="7000" /><!-- sell -->
 		<item id="39162" countmax="1" chance="7000" /><!-- sell -->
-		<item id="2477" chance="870" /><!-- knight legs -->
-		<item id="2169" chance="710" /><!-- time ring -->
-		<item id="2171" chance="280" /><!-- platinum amulet -->
-		<item id="2476" chance="530" /><!-- explorer armor -->
-		<item id="32867" chance="320" /><!-- lightning headband -->
-		<item id="2169" chance="320" /><!-- time ring -->
-		<item id="2182" chance="500" /><!-- time ring -->
-		<item id="38295" chance="350" /><!-- time ring -->
+		
 
 	</loot>
 </monster>

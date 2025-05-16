@@ -41,6 +41,8 @@
 	</voices>
 	<loot>
 		
-		
+		<item id="39111" countmax="1" chance="10500" />
+		<item id="39177" countmax="1" chance="15500" />
+		<item id="39145" countmax="1" chance="10500" />
 	</loot>
 </monster>

@@ -36,14 +36,9 @@
 		<voice sentence="Death to the defilers!" />
 	</voices>
 	<loot>
-		<item name="Blackskull Longsword" chance="10800" />
-		<item name="studded helmet" chance="13500" />
-		<item name="studded armor" chance="8960" />
-		<item name="plate shield" chance="9300" />
-		<item name="arrow" countmax="3" chance="7060" />
-		<item name="leather boots" chance="11410" />
-		<item id="5921" chance="940" /><!-- heaven blossom -->
-		<item name="plum" countmax="2" chance="20000" />
-		<item name="elvish talisman" chance="2100" />
+		<item id="2681" chance="17750" /><!-- grape -->
+		<item id="39136" countmax="1" chance="10500" />
+		<item id="39153" countmax="1" chance="15500" />
+		<item id="39146" countmax="1" chance="10500" />
 	</loot>
 </monster>

@@ -1422,85 +1422,99 @@ Crafting.recipes = {
 		[4] = { -- all recipes for enchanting
 		--TIER 1 runes
 		{
-			craftedItemId = 2287, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 7735, -- prismatic cube
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Makes 15 Light Magic Missile Runes. Shoots a weak attack that causes Energy Damage. Req: lvl 10",
+			desc = "Useful tool necessary for disenchanting items.",
 			itemlvl = 10,
 			craftPoints = 2, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35372, required = 1},
+				{id = 13197, required = 1},
 			},
 		},
 		{
-			craftedItemId = 2311, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 26170, -- prismatic cube
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Makes 15 Heavy Light Magic Missile Runes. Shoots a weak attack that causes Energy Damage. Req: lvl 15 ML: 3",
+			desc = "Prismatic cubes can be disenchanted to create runes and other materials.",
 			itemlvl = 10,
-			craftPoints = 5, -- points for crafting that recipe
+			craftPoints = 2, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35372, required = 1},
-				{id = 29020, required = 1},
+				{id = 13197, required = 1},
 			},
 		},
 		{
-			craftedItemId = 2271, -- server id of item that you gonna get from that recipe
-			craftedCount = 10, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 26169, -- prismatic cube 2
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Makes 10 Icicle Runes. Shoots an Ice attack. Req: lvl 18 ML: 5",
+			requiredSkill = 3, -- if your profession level is lower you cant craft that recipe
+			desc = "Prismatic cubes can be disenchanted to create runes and other materials.",
 			itemlvl = 10,
-			craftPoints = 5, -- points for crafting that recipe
+			craftPoints = 2, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35372, required = 1},
-				{id = 29020, required = 2},
+				{id = 13197, required = 1},
 			},
 		},
-			{
-			craftedItemId = 2292, -- server id of item that you gonna get from that recipe
-			craftedCount = 10, -- amount of items that you gonnna get from that recipe
+		{
+			craftedItemId = 26171, -- prismatic cube 3
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Makes 10 Stalagmite Runes. Shoots an Earth attack. Req: lvl 18 ML: 5",
+			requiredSkill = 6, -- if your profession level is lower you cant craft that recipe
+			desc = "Prismatic cubes can be disenchanted to create runes and other materials.",
 			itemlvl = 10,
-			craftPoints = 5, -- points for crafting that recipe
+			craftPoints = 2, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35372, required = 1},
-				{id = 29020, required = 2},
-			},
-		},
-			{
-			craftedItemId = 2301, -- server id of item that you gonna get from that recipe
-			craftedCount = 5, -- amount of items that you gonnna get from that recipe
-			tier = 1, -- used for description
-			fame = 2, -- used for description
-			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Makes 5 Fire Field Runes. Creates a Fire Field. Req: lvl 20 ML: 1",
-			itemlvl = 10,
-			craftPoints = 5, -- points for crafting that recipe
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 35372, required = 1},
-				{id = 29020, required = 2},
+				{id = 13197, required = 1},
 			},
 		},
 		
+
+		{
+			craftedItemId = 2187, -- wand of inferno
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 2, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13197, required = 1},
+			},
+		},
+		{
+			craftedItemId = 2184, -- crystal wand
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 2, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13197, required = 1},
+			},
+		},
 		
 		--TIER 2
 		
@@ -2216,136 +2230,115 @@ Crafting.recipes = {
 		},
 	--END	ENCHANTING
 	},
-	[9] = { -- all recipes for enchanting
+	[9] = { -- all recipes for Refinery
 		--TIER 1 runes
 		{
-			craftedItemId = 38985, -- server id of item that you gonna get from that recipe
+			craftedItemId = 39962, -- server id of item that you gonna get from that recipe
 			craftedCount = 15, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
+			desc = false,
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
+				{id = 39961, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-		craftedItemId = 38984, -- server id of item that you gonna get from that recipe
+			craftedItemId = 39966, -- server id of item that you gonna get from that recipe
 			craftedCount = 15, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
+			desc = false,
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
+				{id = 39965, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-		craftedItemId = 38978, -- server id of item that you gonna get from that recipe
+			craftedItemId = 39968, -- server id of item that you gonna get from that recipe
 			craftedCount = 15, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
+			desc = false,
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
+				{id = 39967, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-		craftedItemId = 38972, -- server id of item that you gonna get from that recipe
+			craftedItemId = 39972, -- server id of item that you gonna get from that recipe
 			craftedCount = 15, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
+			desc = false,
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
+				{id = 39971, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-		craftedItemId = 38966, -- server id of item that you gonna get from that recipe
+			craftedItemId = 39974, -- server id of item that you gonna get from that recipe
 			craftedCount = 15, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
+			desc = false,
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
+				{id = 39973, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-		craftedItemId = 38955, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
-			tier = 1, -- used for description
-			fame = 2, -- used for description
+			craftedItemId = 32703, -- server id of item that you gonna get from that recipe
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 0, -- used for description
+			fame = 0, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
-			itemlvl = 0,
-			craftPoints = 0, -- points for crafting that recipe
-			cost = 2, -- cost in gold coins
+			desc = "Smelt copper ores into Copper Bar. required for crafting a variety of equipment.",
+			craftPoints = 2, -- points for crafting that recipe		
+			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
+				{id = 35481, required = 5},
+				{id = 40035, required = 1}, --coal
 			},
 		},
 		{
-		craftedItemId = 38949, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
-			tier = 1, -- used for description
-			fame = 2, -- used for description
+			craftedItemId = 32704, -- server id of item that you gonna get from that recipe
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 0, -- used for description
+			fame = 0, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
-			itemlvl = 0,
-			craftPoints = 0, -- points for crafting that recipe
-			cost = 2, -- cost in gold coins
+			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			craftPoints = 2, -- points for crafting that recipe		
+			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
+				{id = 40035, required = 5},
+				{id = 40036, required = 1}, --coal
 			},
 		},
-		{
-		craftedItemId = 38943, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
-			tier = 1, -- used for description
-			fame = 2, -- used for description
-			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Rune of xxxx, xxxxxx, this rune can be further upgraded wich will increase its effects.",
-			itemlvl = 0,
-			craftPoints = 0, -- points for crafting that recipe
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 38701, required = 25}, --TIME ESSENCE
-				{id = 35372, required = 1}, --ETERNITY HOURGLASS
-			},
-		},
+
+		
 	
 	},
 }

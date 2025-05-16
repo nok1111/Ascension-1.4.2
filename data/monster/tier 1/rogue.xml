@@ -49,23 +49,7 @@
 	<loot>
 		<item id="2110" chance="520" />  <!-- doll -->
 		<item id="13537" chance="800" /> <!-- mount -->
-		<item id="7495" countmax="2" chance="9800" /> <!-- beer -->
-		
 
-		
-		<item id="32859" chance="5530" />
-		<item id="2511" chance="530" />
-		<item id="2379" chance="530" />
-		<item id="2695" countmax="3" chance="9730" /><!-- eggs -->
-		<item id="35420" countmax="2" chance="4730" /><!-- eggs -->
-		<item id="32863" chance="3000" />
-		<item id="36350" chance="100" />
-		
-
-		<item id="38324" chance="4500" /> <!-- ring of the explorer -->
-		<item id="38293" chance="4500" /> <!-- critical coup -->
-		
-		
 		<item id="39137" countmax="2" chance="5000" /><!-- sell -->
 		<item id="39152" countmax="2" chance="10000" /><!-- sell -->
 	</loot>

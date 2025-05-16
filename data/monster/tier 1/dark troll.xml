@@ -31,17 +31,6 @@
 		<voice sentence="Groar" />
 	</voices>
 	<loot>
-		
-		<item name="silver amulet" chance="230" />
-		<item id="6087" chance="5000" />
-		<item id="5883" chance="45000" />
-		<item name="halberd" chance="1003" />
-		<item name="short sword" chance="8000" />
-		<item name="dark helmet" chance="220" />
-		<item name="plate shield" chance="2500" />
-		<item name="battle shield" chance="1400" />
-		<item name="meat" chance="30070" />
-		
 		<item id="39099" countmax="1" chance="10000" /><!-- sell -->
 		<item id="39070" countmax="1" chance="10000" /><!-- sell -->
 		<item id="39108" countmax="1" chance="10000" /><!-- sell -->

@@ -38,25 +38,5 @@
 	
 		<item id="39111" countmax="1" chance="8500" /><!-- sell -->
 		<item id="39177" countmax="1" chance="7500" /><!-- sell -->
-		
-		
-		<item id="2230" chance="49100" /><!-- bone -->
-		<item id="2229" chance="15100" /><!-- skull -->
-		<item id="2541" chance="5000" />
-		<item id="2050" chance="10000" /><!-- torch -->
-		<item name="pelvis bone" chance="9500" />
-		<item name="viking helmet" chance="7520" />
-		<item name="hatchet" chance="5100" />
-		<item name="mace" chance="4350" />
-		<!-- Heavy Old Tome 2.16% -->
-		<item id="2376" chance="2060" /><!-- sword -->
-		<item id="36358" chance="500" />
-		<item id="36367" chance="500" />
-		<item id="2397" chance="500" />
-		
-		<item id="38323" chance="4500" /> <!-- ring of the guardian -->
-
-		<item id="38291" chance="4500" /> <!-- regen resilence -->
-
 	</loot>
 </monster>

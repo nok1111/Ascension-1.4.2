@@ -43,31 +43,7 @@
 	</voices>
 	<loot>
 		<item id="2110" chance="520" /><!-- doll -->
-		<item id="38612" chance="400" />
-		<item id="6087" chance="5000" />
-		<item id="7495" countmax="2" chance="9800" />	
-		<item id="2509" chance="17000" />
-		<item id="13537" chance="800" />
 		<item id="13247" chance="800" /> <!-- boar tamming item -->
-		<item name="leather legs" chance="27500" />
-		<item id="2695" countmax="3" chance="9730" /><!-- eggs -->
-		<item id="2585" countmax="4" chance="9730" /><!-- eggs -->
-		<item id="8843" countmax="2" chance="9730" /><!-- eggs -->
-		<item id="35420" countmax="2" chance="9730" /><!-- eggs -->
-		<item name="short sword" chance="8000" />
-		<item name="dark helmet" chance="220" />
-		<item name="plate shield" chance="2500" />
-		<item name="battle shield" chance="1400" />
-		<item id="32863" chance="3000" />
-		<item id="2395" chance="2500" /><!-- Darkblade -->
-		<item id="31903" chance="530" />
-		<item id="2464" chance="530" />
-		<item id="36355" chance="530" />
-		<item id="32859" chance="530" />
-		
-		<item id="38295" chance="530" />
-		<item id="38324" chance="4500" /> <!-- ring of the explorer -->
-		
 		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
 		<item id="39153" countmax="1" chance="6000" /><!-- sell -->
 		<item id="39152" countmax="1" chance="6000" /><!-- sell -->

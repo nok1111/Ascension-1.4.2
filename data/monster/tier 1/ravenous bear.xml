@@ -32,6 +32,6 @@
 		<item name="ham" countmax="3" chance="20000" />
 		<item name="bear paw" chance="2000" />
 		<item name="honeycomb" chance="460" />
-		<item id="37881" chance="1000" />
+		<item id="37881" chance="3000" />
 	</loot>
 </monster>

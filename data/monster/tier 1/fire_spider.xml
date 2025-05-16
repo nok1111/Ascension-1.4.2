@@ -42,7 +42,7 @@
 		<voice sentence="Yag! Yag! Yag!" />
 	</voices>
 	<loot>
-		
-	
+		<item id="39162" countmax="1" chance="10500" />
+		<item id="39068" countmax="1" chance="15500" />
 	</loot>
 </monster>

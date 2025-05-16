@@ -39,25 +39,6 @@
 	</voices>
 	<loot>
 		
-		<item id="2208" chance="500" />				<!-- broken crossbow -->
-		
-		<item id="12439" chance="8260" />				<!-- piece of archer armor -->
-		<item id="2666" chance="5000" />					<!-- meat -->
-		<item id="31919" chance="830" />					<!-- crossbow -->
-		<item id="36357" chance="530" />					<!-- brass armor -->
-		<item id="2483" chance="530" />					<!-- scale armor -->
-
-		<item id="36242" chance="530" />
-		<item id="32864" chance="530" />
-		<item id="2477" chance="530" />	
-		<item id="36357" chance="530" />
-		<item id="31879" chance="530" />	
-
-
-		<item id="38324" chance="4500" /> <!-- ring of the explorer -->
-
-		<item id="38293" chance="4500" /> <!-- critical coup -->
-		
 		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
 		<item id="39101" countmax="1" chance="6000" /><!-- sell -->
 		<item id="39152" countmax="1" chance="6000" /><!-- sell -->

@@ -32,11 +32,8 @@
 		<voice sentence="Hail Durin!" />
 	</voices>
 	<loot>
-		<item id="38291" chance="3000" /> <!-- regen -->
-	<item id="32859" chance="3000" /> <!-- chain coat -->
-	<item id="39137" chance="9000" /> <!-- stolen leather boots -->
-	<item id="36358" chance="6000" /> <!-- skullcraker knife -->
-
-
+		<item id="39137" countmax="1" chance="8000" />
+		<item id="39138" countmax="1" chance="8000" />
+		<item id="39151" countmax="1" chance="8000" />
 	</loot>
 </monster>
