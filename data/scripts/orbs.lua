@@ -6,6 +6,9 @@ local blue_orb = 38694
 local yellow_orb = 39941
 local orange_orb = 39940
 
+local purpleorbstorage = 999899
+
+
 local directions = {
     {x = 1, y = 0, z = 0},   -- East
     {x = -1, y = 0, z = 0},  -- West
@@ -47,35 +50,73 @@ local function orbeffectLoop(position, text, color, loops)
 end
 
 local rewardTypes = {
-    {type = "Gold", itemId = yellow_orb, chance = 70, textcolor = TEXTCOLOR_YELLOW},
-    {type = "Loot", itemId = blue_orb, chance = 70, textcolor = TEXTCOLOR_BLUE},
-    {type = "Experience", itemId = green_orb, chance = 70, textcolor = TEXTCOLOR_LIGHTGREEN},
-    {type = "Death", itemId = purple_orb, chance = 70, textcolor = TEXTCOLOR_PURPLE}
+    {type = "Gold", itemId = yellow_orb, chance = 15, textcolor = TEXTCOLOR_YELLOW},
+    {type = "Loot", itemId = blue_orb, chance = 8, textcolor = TEXTCOLOR_BLUE},
+    {type = "Experience", itemId = green_orb, chance = 10, textcolor = TEXTCOLOR_LIGHTGREEN},
+    {type = "Death", itemId = purple_orb, chance = 50, textcolor = TEXTCOLOR_PURPLE}
 }
 
 local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty]", "[Terra]"}
 
 local Monster_orb = CreatureEvent("monsterorb")
 function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
-    if not killer or not killer:isPlayer() or creature:getMaster() then return end
+    print("Orb")
+    if not killer or not killer:isPlayer() or creature:getMaster() and  creature:getMonsterLevel() and  creature:getMonsterLevel() < 1 then return end
     local monsterType = MonsterType(creature:getName())
     if monsterType and monsterType:isBoss() then return end
+    
 
-    local rewardType = rewardTypes[math.random(#rewardTypes)]
-    if math.random(100) > rewardType.chance then return end
+    if creature:getStorageValue(purpleorbstorage) == 1 then
+        -- Place each orb at a unique adjacent position if possible
+        print("Purple Orb")
 
-    local orbPosition = getAdjacentPosition(creature:getPosition())
-    local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
+        local yelloworb = Game.createItem(yellow_orb, 1, getAdjacentPosition(creature:getPosition()))
+        local blueorb = Game.createItem(blue_orb, 1, getAdjacentPosition(creature:getPosition()))
+        local greenorb = Game.createItem(green_orb, 1, getAdjacentPosition(creature:getPosition()))
 
-    rewardOrb:setCustomAttribute("ownerId", killer:getId())
-    rewardOrb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
-    rewardOrb:setCustomAttribute("rewardType", rewardType.type)
-    if rewardType.type == "Death" then
-        rewardOrb:setCustomAttribute("MonsterName", creature:getName())
+        if yelloworb then 
+            yelloworb:setCustomAttribute("ownerId", killer:getId())
+            yelloworb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
+            yelloworb:setCustomAttribute("rewardType", "Gold")
+            orbeffectLoop(yelloworb:getPosition(), "Gold", TEXTCOLOR_YELLOW, 10)
+        end
+
+        if blueorb then 
+            blueorb:setCustomAttribute("ownerId", killer:getId())
+            blueorb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
+            blueorb:setCustomAttribute("rewardType", "Loot")
+            orbeffectLoop(blueorb:getPosition(), "Loot", TEXTCOLOR_BLUE, 10)
+        end
+        
+        if greenorb then 
+            greenorb:setCustomAttribute("ownerId", killer:getId())
+            greenorb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
+            greenorb:setCustomAttribute("rewardType", "Experience")
+            orbeffectLoop(greenorb:getPosition(), "Experience", TEXTCOLOR_LIGHTGREEN, 10)
+        end
+        return true
     end
 
-    orbeffectLoop(orbPosition, rewardType.type, rewardType.textcolor, 10)
-    return true
+    
+
+    for _, rewardType in ipairs(rewardTypes) do
+        local mathrandom = math.random(100)
+        print("mathrandom", mathrandom)
+        print("rewardType.chance", rewardType.chance)
+        if mathrandom <= rewardType.chance then
+            local orbPosition = getAdjacentPosition(creature:getPosition())
+            local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
+            rewardOrb:setCustomAttribute("ownerId", killer:getId())
+            rewardOrb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
+            rewardOrb:setCustomAttribute("rewardType", rewardType.type)
+            if rewardType.type == "Death" then
+                rewardOrb:setCustomAttribute("MonsterName", creature:getName())
+            end
+            orbeffectLoop(orbPosition, rewardType.type, rewardType.textcolor, 10)
+            droppedAny = true
+        end
+    end
+    if droppedAny then return true end
 end
 Monster_orb:register()
 
@@ -470,6 +511,7 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
             boss:addHealth(boss:getMaxHealth())
             boss:rename(bossName)
             boss:setStorageValue(variation.storage, 1)
+            boss:setStorageValue(purpleorbstorage, 1)
             boss:setShader(variation.shader)
             boss:attachEffectById(9, true)
             boss:attachEffectById(25, true)
@@ -484,14 +526,6 @@ end
 StepOnOrb:id(38572,38693,38694,39940,39941)
 StepOnOrb:register()
 
--- Register creature events once
-local TargetCombatEvent = EventCallback
-TargetCombatEvent.onTargetCombat = function(creature, target)
-    target:registerEvent("monsterorb")
-    target:registerEvent("EliteMonsterCombatHP")
-    target:registerEvent("EliteMonsterCombatMana")
-    return RETURNVALUE_NOERROR
-end
-TargetCombatEvent:register()
 
-print(">> Loaded Orb Reward System with Fixes")
+
+print(">> Loaded Orb Reward System")
