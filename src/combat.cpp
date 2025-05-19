@@ -946,7 +946,7 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 			if (casterPlayer->getHealth() < casterPlayer->getMaxHealth() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 				uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT);
 				if (skill > 0) {
-					leechCombat.primary.value = std::ceil(totalDamage * (skill + ((1) * (skill / 10.))) / 1);
+					leechCombat.primary.value = std::ceil(totalDamage * (skill / 100.));
 					g_game.combatChangeHealth(nullptr, casterPlayer, leechCombat);
 					casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_RED);
 				}
@@ -955,7 +955,7 @@ std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 			if (casterPlayer->getMana() < casterPlayer->getMaxMana() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 				uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT);
 				if (skill > 0) {
-					leechCombat.primary.value = std::ceil(totalDamage * (skill + ((1) * (skill / 10.))) / 1);
+					leechCombat.primary.value = std::ceil(totalDamage * (skill / 100.));
 					g_game.combatChangeMana(nullptr, casterPlayer, leechCombat);
 					casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_BLUE);
 				}
