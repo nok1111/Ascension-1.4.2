@@ -923,6 +923,7 @@ local function spawnZoneBoss(zone)
         boss:registerEvent("death_zones")
 
         zone.spawnedBoss = boss:getId()  -- Store the boss ID
+        zone.killCount = 0
         print("Boss " .. zone.boss .. " spawned in " .. zone.name .. "!")
 
         -- Notify all players in the zone
@@ -958,7 +959,7 @@ function onMonsterDeath(monster, killer)
             zone.killCount = (zone.killCount or 0) + 1
             if zone.boss and not zone.spawnedBoss and zone.killCount >= zone.bossKillThreshold then
                 spawnZoneBoss(zone)
-                zone.killCount = 0
+                --zone.killCount = 0
             end
 
             print("Monster " .. monster:getName() .. " died. Current monsters: " .. Game.getZoneMonsterCount(zone.id))
