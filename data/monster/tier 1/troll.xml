@@ -32,13 +32,6 @@
 		<voice sentence="Hmmm, dogs" />
 	</voices>
 	<loot>
-	
-		<item id="6087" chance="5000" />
-		<item id="5883" chance="38000" />
-		<item name="halberd" chance="1003" />
-		<item name="short sword" chance="8000" />
-		<item name="dark helmet" chance="220" />
-		<item name="battle shield" chance="1400" />
 		<item name="meat" chance="30070" />
 		
 		<item id="39099" countmax="1" chance="10000" /><!-- sell -->
