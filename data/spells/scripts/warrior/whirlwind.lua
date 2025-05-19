@@ -85,8 +85,7 @@ conditionburn_within:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
 
 function onGetFormulaValues1(player, skill, attack, factor)
 
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -95,8 +94,7 @@ function onGetFormulaValues1(player, skill, attack, factor)
 	return -min, -max
 end
 function onGetFormulaValues2(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -105,8 +103,7 @@ function onGetFormulaValues2(player, skill, attack, factor)
 	return -min, -max
 end
 function onGetFormulaValues3(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -115,8 +112,7 @@ function onGetFormulaValues3(player, skill, attack, factor)
 	return -min, -max
 end
 function onGetFormulaValues4(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -126,8 +122,7 @@ function onGetFormulaValues4(player, skill, attack, factor)
 end
 
 function onGetFormulaValues5(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 

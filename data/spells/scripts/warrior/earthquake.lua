@@ -62,8 +62,7 @@ combat3:setArea(createCombatArea(earth3))
 
  
  function onGetFormulaValues1(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -74,8 +73,7 @@ end
 combat1:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues1")
 
  function onGetFormulaValues2(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -86,8 +84,7 @@ end
 combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
 
  function onGetFormulaValues3(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 

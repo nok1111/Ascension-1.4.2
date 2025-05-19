@@ -29,10 +29,8 @@ local area = createCombatArea(arr)
 	combat1:setArea(area)
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
-	local magic = player:getMagicLevel()
 
 	local min = (level / 5) + (power * 0.075) + (attack * 2.5) + 75
 	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 85
