@@ -72,7 +72,9 @@ if MyMaster and targetIsPlayer then
 end
 
 if creature and target and creature:isPlayer() and target:isMonster() then -- and target:isMonster()
-		
+    target:registerEvent("monsterorb")
+    target:registerEvent("EliteMonsterCombatHP")
+    target:registerEvent("EliteMonsterCombatMana")
 		target:registerEvent("quests_kill_drops") 
         target:registerEvent("LuckDrops") 
 end
