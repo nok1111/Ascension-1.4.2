@@ -88,45 +88,50 @@ PassiveSkills.treeData = {
 		name = "Sorcerer Tree",
 		background = "1",
 		branches = {
-			[1] = { -- Offensive
+			[1] = { -- fire - offensive
 				color = '#ad1109',
 				border = 10,
 				nodes = {
 					[1] = {
-						name = "Glass Canon",
-						description = "+1.5% Spell Damage per level, -1% Resistance per level",
+						name = "Ember Surge",
+						description = "Increases Fire Ball damage by 5% per level",
 						-- totalBuffsDesc = {desc = "you are currently benefiting from +[[var1]]% BuffX", vars = {var1 = 1}}, -- var1 * current node level
 						effect = {
 							{ type = "storage", name = "GlassCanon", storage = PassiveSkills.GlassCanon, value = 1.5 },
 							{ type = "storage", name = "GlassCanonPenalty", storage = PassiveSkills.GlassCanonPenalty, value = -1 }
 						},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Paralysis",
-						description = "Lightning spells have a 1.5% chance per level to stun for 1.5s", -- if no totalBuffsDesc existing then description is used
+						name = "Hand of God",
+						description = "Unlocks the spell Hand of God", -- if no totalBuffsDesc existing then description is used
 						effect = {
-							{ type = "storage", name = "Paralysis", storage = PassiveSkills.Paralysis, value = 1.5 }
+							{ type = "spell", name = "Hand of God" }
 						},
-						maxLevel = 10
+						maxLevel = 1
 					},
 					[3] = {
-						name = "Spell Amplification",
-						description = "+1% spell and rune damage per level",
+						name = "Lucky Strike",
+						description = "Increases critical chance by 1% per level",
 						-- totalBuffsDesc = {desc = "you are currently benefiting from +[[var1]]% Critical Chance and +[[var2]]% Critical Amount", vars = {var1 = 1, var2 = 2}},
 						effect = {
-							{ type = "storage", name = "SpellAmplification", storage = PassiveSkills.SpellAmplification, value = 1 }
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 0.5}}
+							}
 						},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[4] = {
-						name = "Elemental Affliction",
-						description = "Damaging spells have a 5% chance per level to apply a DoT (Burn, Freeze, Poison, Electrify) scaling with spell damage",
+						name = "Pyromaniac",
+						description = "Fire spells have a 2% chance per level to trigger 2 extra fireballs at 75% effectiveness",
 						effect = {
-							{ type = "storage", name = "ElementalAfflictionChance", storage = PassiveSkills.ElementalAfflictionChance, value = 5 },
+							{ type = "storage", name = "ElementalAfflictionChance", storage = PassiveSkills.ElementalAfflictionChance, value = 1 },
 							{ type = "storage", name = "ElementalAfflictionScaling", storage = PassiveSkills.ElementalAfflictionScaling, value = 1 } -- you can scale this value to spell damage%
 						},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[5] = {
 						name = "Elemental Cycle",
@@ -138,7 +143,7 @@ PassiveSkills.treeData = {
 					},
 				},
 			},
-			[2] = { -- Defensive
+			[2] = { -- arcane - regenss
 				color = '#979c08',
 				border = 10,
 				nodes = {
@@ -185,7 +190,7 @@ PassiveSkills.treeData = {
 					},
 				},
 			},
-			[3] = { -- Support
+			[3] = { -- frost - defensive
 				color = '#06a5ba',
 				border = 10,
 				nodes = {
