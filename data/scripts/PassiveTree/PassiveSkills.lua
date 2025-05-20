@@ -40,6 +40,30 @@ function PassiveSkills.addPassivePoints(player, pointsToAdd)
 end
 
 
+local creatureevent = CreatureEvent("Talent_onAdvance")
+
+function creatureevent.onAdvance(player, skill, oldLevel, newLevel)
+    local LEVEL_INTERVAL = 5 -- Give a point every 5 levels
+    if skill == SKILL_LEVEL then
+        local lastGiven = player:getStorageValue(PassiveSkills.lastPassivePointLevel)
+        if lastGiven < 0 then lastGiven = 0 end
+
+        for lvl = lastGiven + 1, newLevel do
+            if lvl % LEVEL_INTERVAL == 0 then
+                PassiveSkills.addPassivePoints(player, 1)
+				player:sendExtendedOpcode(76, "You have received a talent point!")
+               -- print(string.format("Granted passive point at level %d to %s", lvl, player:getName()))
+            end
+        end
+        if newLevel > lastGiven then
+            player:setStorageValue(PassiveSkills.lastPassivePointLevel, newLevel)
+        end
+    end
+    return true
+end
+
+creatureevent:register()
+
 ------ Player Events Handling
 
 local creatureEvent = CreatureEvent("PassiveSkills_onExtendedOpcode")
@@ -72,6 +96,7 @@ creatureEvent:register()
 local onLoginEvent = CreatureEvent("PassiveSkills_onLogin")
 function onLoginEvent.onLogin(player)
 	player:registerEvent("PassiveSkills_onExtendedOpcode")
+	player:registerEvent("Talent_onAdvance")
 	PassiveSkills.cachePlayerTreeProgress(player)
 	PassiveSkills.applyBuffsToPlayer(player)
 	return true
@@ -464,6 +489,7 @@ function PassiveSkills.sendBaseData(player)
 		treeData = PassiveSkills.treeData[treeId] or 0,
 	}
 
+	--print("Sending passive tree data to client: " .. json.encode(message))
 	player:sendExtendedJSONOpcode(PassiveSkills.opCode, message)
 end
 

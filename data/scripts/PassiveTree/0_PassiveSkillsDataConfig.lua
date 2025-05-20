@@ -21,13 +21,22 @@ CONDITION_PARAM_HEALTHTICKS, CONDITION_PARAM_MANATICKS = 3
 
 -- Tree to Vocations Mapping
 PassiveSkills.TreeVocations = {
-	[1] = {1, 5},	-- Sorcerer
-	[2] = {2, 6},	-- Druid
-	[3] = {4, 8},	-- Knight
-	[4] = {3, 7},	-- Paladin
+	[1] = {1},	-- Magician
+	[2] = {2},	-- Templar
+	[3] = {3},	-- nightblade
+	[4] = {4},	-- Dragon Knight
+	[5] = {5},	-- Warlock
+	[6] = {6},	-- Stellar
+	[7] = {7},	-- monk
+	[8] = {8},	-- Druid
+	[9] = {9},	-- Light Dancer
+	[10] = {10},-- Archer
 }
 
 PassiveSkills.LastElementUsed = 875600
+
+--last level stored onAdvance
+PassiveSkills.lastPassivePointLevel = 3225000
 
 -- Buff placeholders
 PassiveSkills.BuffX = 875535
