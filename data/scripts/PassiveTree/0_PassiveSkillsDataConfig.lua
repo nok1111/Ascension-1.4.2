@@ -80,7 +80,9 @@ PassiveSkills.resetCost = {
 
 -- if prevNodeLevelNeeded is not mentioned then it is 1 by default
 -- if maxLevel is not mentioned then it is 1 by default
--- Conditions can be of type: CONDITION_REGENERATION, CONDITION_ATTRIBUTES or CONDITION_HASTE
+--types storage, condition or spell
+-- { type = "spell", name = "frost_wave" }
+-- Conditions can be of type: CONDITION_REGENERATION, CONDITION_ATTRIBUTES or CONDITION_HASTE or
 PassiveSkills.treeData = {
 	[1] = { -- Tree 1
 		name = "Sorcerer Tree",
