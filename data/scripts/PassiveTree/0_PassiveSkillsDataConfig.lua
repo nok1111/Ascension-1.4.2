@@ -43,39 +43,34 @@ PassiveSkills.BuffX = 875535
 PassiveSkills.BuffY = 875536
 PassiveSkills.BuffZ = 875537
 
--- Sorcerer Offensive
-PassiveSkills.GlassCanon = 875540
-PassiveSkills.Paralysis = 875541
-PassiveSkills.SpellAmplification = 875542
-PassiveSkills.ElementalAfflictionChance = 875543
-PassiveSkills.ElementalCycle = 875544
-PassiveSkills.GlassCanonPenalty = 875545
-PassiveSkills.ElementalAfflictionScaling = 875546
+-- Sorcerer FIRE
+PassiveSkills.EmberSurge = 875540
+PassiveSkills.Pyromaniac = 875541
+PassiveSkills.BlazingDecree = 875542
 
--- Sorcerer Defensive
-PassiveSkills.Blur = 875550
-PassiveSkills.ManaShield = 875551
-PassiveSkills.Dodge = 875552
-PassiveSkills.ArcaneFlow = 875553
-PassiveSkills.SpellGuardEnergy = 875554
-PassiveSkills.SpellGuardFire = 875555
+-- Sorcerer ARCANE
+PassiveSkills.SurgeRecovery = 875544
+PassiveSkills.ArcaneBarrage = 875545
+PassiveSkills.TeleportDistance = 875546
 
--- Sorcerer Support
-PassiveSkills.SoulGainSpeed = 875560
-PassiveSkills.ManaEfficiency = 875561
-PassiveSkills.WandDamage = 875562
-PassiveSkills.ArcaneReach = 875563
-PassiveSkills.ManaFromFlasks = 875564
+
+-- Sorcerer ICE
+PassiveSkills.FrostDamage = 875547
+PassiveSkills.WandDamage = 875548
+PassiveSkills.IceBarrage = 875549
+PassiveSkills.IceCloneDamage = 875550
+
+
 
 PassiveSkills.resetCost = {
-	gold = 10000,
-	items = {
-		{id = 4851, amount = 2},
-	},
-	storage = {
-		{name = "task points", value = 5151, amount = 10}
-	},
-	points = 500
+	gold = 50,
+	--items = {
+	--	{id = 4851, amount = 2},
+	--},
+	--storage = {
+	--	{name = "task points", value = 5151, amount = 10}
+	--},
+	--points = 500
 }
 
 -- if prevNodeLevelNeeded is not mentioned then it is 1 by default
@@ -85,7 +80,7 @@ PassiveSkills.resetCost = {
 -- Conditions can be of type: CONDITION_REGENERATION, CONDITION_ATTRIBUTES or CONDITION_HASTE or
 PassiveSkills.treeData = {
 	[1] = { -- Tree 1
-		name = "Sorcerer Tree",
+		name = "Magician Talents",
 		background = "1",
 		branches = {
 			[1] = { -- fire - offensive
@@ -94,11 +89,10 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Ember Surge",
-						description = "Increases Fire Ball damage by 5% per level",
+						description = "Increases Fire Blast damage by 5% per level",
 						-- totalBuffsDesc = {desc = "you are currently benefiting from +[[var1]]% BuffX", vars = {var1 = 1}}, -- var1 * current node level
 						effect = {
-							{ type = "storage", name = "GlassCanon", storage = PassiveSkills.GlassCanon, value = 1.5 },
-							{ type = "storage", name = "GlassCanonPenalty", storage = PassiveSkills.GlassCanonPenalty, value = -1 }
+							{ type = "storage", name = "EmberSurge", storage = PassiveSkills.EmberSurge, value = 5 },
 						},
 						maxLevel = 5
 					},
@@ -108,7 +102,8 @@ PassiveSkills.treeData = {
 						effect = {
 							{ type = "spell", name = "Hand of God" }
 						},
-						maxLevel = 1
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Lucky Strike",
@@ -119,27 +114,38 @@ PassiveSkills.treeData = {
 								type = "condition",
 								name = "Critcial Chance",
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 0.5}}
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					},
 					[4] = {
 						name = "Pyromaniac",
-						description = "Fire spells have a 2% chance per level to trigger 2 extra fireballs at 75% effectiveness",
+						description = "Fire spells have a 2% chance per level to trigger 2 extra fireballs wich deal AOE fire damage",
 						effect = {
-							{ type = "storage", name = "ElementalAfflictionChance", storage = PassiveSkills.ElementalAfflictionChance, value = 1 },
-							{ type = "storage", name = "ElementalAfflictionScaling", storage = PassiveSkills.ElementalAfflictionScaling, value = 1 } -- you can scale this value to spell damage%
+							{ type = "storage", name = "Pyromaniac", storage = PassiveSkills.Pyromaniac, value = 2 },
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Elemental Cycle",
-						description = "+1% spell damage per level if casting different element than previous",
+						name = "Blazing Decree",
+						description = "Increases all fire damage by 2% per level",
 						effect = {
-							{ type = "storage", name = "ElementalCycle", storage = PassiveSkills.ElementalCycle, value = 1 }
+							{ type = "storage", name = "BlazingDecree", storage = PassiveSkills.BlazingDecree, value = 2 }
 						},
-						maxLevel = 10
+						maxLevel = 10,
+						prevNodeLevelNeeded = 5
+					},
+					[6] = {
+						name = "Hell's Core",
+						description = "Unlocks the spell Hells Core", -- if no totalBuffsDesc existing then description is used
+						effect = {
+							{ type = "spell", name = "Hells Core" }
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 10
 					},
 				},
 			},
@@ -148,45 +154,62 @@ PassiveSkills.treeData = {
 				border = 10,
 				nodes = {
 					[1] = {
-						name = "Blur",
-						description = "-1.5% damage taken per level",
+						name = "Mana Infusion",
+						description = "Increases max mana by 2% per level",
 						effect = {
-							{ type = "storage", name = "Blur", storage = PassiveSkills.Blur, value = -1.5 }
+							{
+								type = "condition",
+								name = "Max Mana percent",   
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 2.0}}
+							}
 						},
 						maxLevel = 10
 					},
 					[2] = {
-						name = "Mana Shield Efficiency",
-						description = "Reduces mana cost to absorb damage by 1.5% per level",
+						name = "Surge Recovery",
+						description = "Increase the mana recovery of when using energy blast and mana flow 5% per level",
 						effect = {
-							{ type = "storage", name = "ManaShield", storage = PassiveSkills.ManaShield, value = 1.5 }
+							{ type = "storage", name = "SurgeRecovery", storage = PassiveSkills.SurgeRecovery, value = 5 }
 						},
-						maxLevel = 10
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					},
 					[3] = {
-						name = "Dodge",
-						description = "+0.5% dodge chance per level",
+						name = "Arcane Missiles",
+						description = "Unlocks the spell Arcane Missiles", -- if no totalBuffsDesc existing then description is used
 						effect = {
-							{ type = "storage", name = "IA_DODGE", storage = PassiveSkills.Dodge, value = 500 }
+							{ type = "spell", name = "Arcane Missiles" }
 						},
-						maxLevel = 10
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[4] = {
-						name = "Arcane Flow",
-						description = "+1% spell damage per level while below 30% mana",
+						name = "Arcane Barrage",
+						description = "Increse the amount of shots of Arcane Missiles by 1 per level",
 						effect = {
-							{ type = "storage", name = "ArcaneFlow", storage = PassiveSkills.ArcaneFlow, value = 1 }
+							{ type = "storage", name = "ArcaneBarrage", storage = PassiveSkills.ArcaneBarrage, value = 1 }
 						},
-						maxLevel = 10
+						maxLevel = 7,
+						prevNodeLevelNeeded = 1
 					},
 					[5] = {
-						name = "Spell Guard",
-						description = "+0.5% resistance to Fire and Energy per level",
+						name = "Riftwalker",
+						description = "Increses the distance traveled of teleport by 1 square per level",
 						effect = {
-							{ type = "storage", name = "IA_ABSORBENERGY", storage = PassiveSkills.SpellGuardEnergy, value = 0.5 },
-							{ type = "storage", name = "IA_ABSORBFIRE", storage = PassiveSkills.SpellGuardFire, value = 0.5 }
+							{ type = "storage", name = "TeleportDistance", storage = PassiveSkills.TeleportDistance, value = 1 },
 						},
-						maxLevel = 10
+						maxLevel = 3,
+						prevNodeLevelNeeded = 7
+					},
+					[6] = {
+						name = "Mana Distortion",
+						description = "Unlocks the spell Mana Distortion", -- if no totalBuffsDesc existing then description is used
+						effect = {
+							{ type = "spell", name = "Mana Distortion" }
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 3
 					},
 				},
 			},
@@ -195,20 +218,21 @@ PassiveSkills.treeData = {
 				border = 10,
 				nodes = {
 					[1] = {
-						name = "Soul Mastery",
-						description = "Reduce soul gain interval by 1 second for each level.",
+						name = "Glacial Empowerment",
+						description = "Increse the damage of your frost spells by 5% per level",
 						effect = {
-							{ type = "storage", name = "SoulGainSpeed", storage = PassiveSkills.SoulGainSpeed, value = 1 }
+							{ type = "storage", name = "FrostDamage", storage = PassiveSkills.FrostDamage, value = 5 }
 						},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Mana Efficiency",
-						description = "-0.5% mana cost per level",
+						name = "Ice Nova",
+						description = "Unlocks the spell Ice Nova",
 						effect = {
-							{ type = "storage", name = "ManaEfficiency", storage = PassiveSkills.ManaEfficiency, value = -0.5 }
+							{ type = "spell", name = "Ice Nova" }
 						},
-						maxLevel = 10
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Wand Specialist",
@@ -216,34 +240,35 @@ PassiveSkills.treeData = {
 						effect = {
 							{ type = "storage", name = "WandDamage", storage = PassiveSkills.WandDamage, value = 10 }
 						},
-						maxLevel = 10
+						maxLevel = 10,
+						prevNodeLevelNeeded = 1
 					},
 					[4] = {
-						name = "Arcane Precision",
-						description = "+0.5% Critical Chance and +0.5% Critical Damage per level",
+						name = "Frost Shards",
+						description = "Increse the amount of shots of Ice Barrage by 1 per level",
 						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 0.5}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 0.5}}
-							}
+							{ type = "storage", name = "IceBarrage", storage = PassiveSkills.IceBarrage, value = 1 }
 						},
-						maxLevel = 10
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					},
 					[5] = {
-						name = "Mana Flow",
-						description = "+2% more mana restored from fluids per level",
+						name = "Ice Clones",
+						description = "Unlocks the spell Ice Clones",
 						effect = {
-							{ type = "storage", name = "ManaFlow", storage = PassiveSkills.ManaFromFlasks, value = 2 }
+							{ type = "spell", name = "Ice Clones" }
 						},
-						maxLevel = 10
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
+					},
+					[6] = {
+						name = "Mirror of Winter",
+						description = "Increse the damage of your ice clones by 10% per level",
+						effect = {
+							{ type = "storage", name = "IceCloneDamage", storage = PassiveSkills.IceCloneDamage, value = 10 }
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					},
 				},
 			},

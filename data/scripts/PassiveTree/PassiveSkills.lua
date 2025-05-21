@@ -1,6 +1,8 @@
 
 ------ Points Handling Functions
 
+local costToLevelUp = 1
+
 function PassiveSkills.getAvailablePassivePoints(player)
 	local availablePoints = player:getStorageValue(PassiveSkills.availablePassivePoints)
 	return availablePoints > 0 and availablePoints or 0
@@ -37,6 +39,12 @@ function PassiveSkills.addPassivePoints(player, pointsToAdd)
 	PassiveSkills.addToAvailablePassivePoints(player, pointsToAdd)
 	PassiveSkills.addToTotalPassivePoints(player, pointsToAdd)
 	PassiveSkills.sendPointsUpdate(player)
+end
+
+function PassiveSkills.getSpentPassivePoints(player)
+    local total = PassiveSkills.getTotalPassivePoints(player)
+    local available = PassiveSkills.getAvailablePassivePoints(player)
+    return total - available
 end
 
 
@@ -265,7 +273,7 @@ function PassiveSkills.levelUpNode(player, branchId, nodeId)
 		return false, nodeName .. " has already reached its maximum level."
 	end
 
-	local costToLevelUp = currentLevel + 1
+	
 	if availablePoints < costToLevelUp then
 		return false, "You need " .. costToLevelUp .. " available passive points to reach level " .. (currentLevel + 1) .. " in " .. nodeName .. "."
 	end
@@ -305,11 +313,13 @@ end
 
 ------ Tree Reset Functions
 
-function PassiveSkills.getResetRequirements()
+function PassiveSkills.getResetRequirements(player)
 	local requirementString = ""
 	if PassiveSkills.resetCost.gold then
-		requirementString = requirementString .. "\n- " .. PassiveSkills.resetCost.gold .. " gold"
-	end
+    local spentPoints = PassiveSkills.getSpentPassivePoints(player)
+    local totalGoldCost = PassiveSkills.resetCost.gold * spentPoints
+    requirementString = requirementString .. "\n- " .. totalGoldCost .. " gold \n " .. PassiveSkills.resetCost.gold .. " gold per point"
+end
 	if PassiveSkills.resetCost.items then
 		for _, item in ipairs(PassiveSkills.resetCost.items) do
 			local itemName = ItemType(item.id):getName() or ""
@@ -328,7 +338,7 @@ function PassiveSkills.getResetRequirements()
 end
 
 function PassiveSkills.sendResetRequirements(player)
-	local requirements = PassiveSkills.getResetRequirements()
+	local requirements = PassiveSkills.getResetRequirements(player)
 	local reply = {
 		topic = "reset-requirements-reply",
 		requirements = requirements
@@ -338,9 +348,13 @@ end
 
 function PassiveSkills.checkResetRequirements(player)
 	local missingRequirements = {}
-	if PassiveSkills.resetCost.gold and player:getTotalMoney() < PassiveSkills.resetCost.gold then
-		table.insert(missingRequirements, "You need " .. PassiveSkills.resetCost.gold .. " gold.")
-	end
+	if PassiveSkills.resetCost.gold then
+    local spentPoints = PassiveSkills.getSpentPassivePoints(player)
+    local totalGoldCost = PassiveSkills.resetCost.gold * spentPoints
+    if player:getTotalMoney() < totalGoldCost then
+        table.insert(missingRequirements, "You need " .. totalGoldCost .. " gold.")
+    end
+end
 	if PassiveSkills.resetCost.items then
 		for _, item in ipairs(PassiveSkills.resetCost.items) do
 			local itemCount = player:getItemCount(item.id)
@@ -370,8 +384,10 @@ end
 
 function PassiveSkills.performReset(player)
 	if PassiveSkills.resetCost.gold then
-		player:removeTotalMoney(PassiveSkills.resetCost.gold)
-	end
+    local spentPoints = PassiveSkills.getSpentPassivePoints(player)
+    local totalGoldCost = PassiveSkills.resetCost.gold * spentPoints
+    player:removeTotalMoney(totalGoldCost)
+end
 	if PassiveSkills.resetCost.items then
 		for _, item in ipairs(PassiveSkills.resetCost.items) do
 			player:removeItem(item.id, item.amount)

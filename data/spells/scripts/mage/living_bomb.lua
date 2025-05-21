@@ -1,3 +1,7 @@
+if not PassiveSkills then
+    dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
+end
+
 local area = createCombatArea({
 {0, 0, 1, 0, 0},
 {0, 1, 1, 1, 0},
@@ -8,7 +12,7 @@ local area = createCombatArea({
 
 local config = {
 	effect = 196, -- effect of explosion.
-	type = COMBAT_ENERGYDAMAGE, -- damage of explosion.
+	type = COMBAT_FIREDAMAGE, -- damage of explosion.
 	disteffect = CONST_ANI_FIRE, -- shoot effect on cast.
 	conditiontype = CONDITION_FIRE, -- condition.
 	timer = 3 -- timer in seconds when bomb dissapears.
@@ -21,7 +25,7 @@ combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, config.disteffect)
 
 local condition = Condition(config.conditiontype, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_DELAYED, true)
-condition:addDamage(config.timer, 1000, -5)
+condition:addDamage(config.timer * 1000, 1000, -5)
 condition:setParameter(CONDITION_PARAM_SUBID, 25959)
 combat:addCondition(condition)
 
@@ -53,7 +57,6 @@ function Explosion(creature, target, onlyMonster)
 		local rand = math.floor(math.random(mmin, mmax))
 
 		if target then
-		target:unregisterEvent("livingbomb")
 		doTargetCombatHealth(creature, target, config.type, -rand, -rand, config.effect)		
 		end
 
@@ -89,14 +92,11 @@ function onCastSpell(creature, variant)
 	mainPos = tar:getPosition()
 	if tar:isPlayer() then onlyMonster = false end
 
-	if tar:getCondition(config.conditiontype,0, 25959) then creature:sendCancelMessage("Target already has a bomb equipped.") creature:getPosition():sendMagicEffect(CONST_ME_POFF) return false end -- prevents stacking the spell.
-
 	addEvent(checkPos_livingbomb, 100, tar:getId(), 0)
-	tar:registerEvent("livingbomb")
 	combat:execute(creature, variant)
 	
 	local targetmonster = creature:getTarget()	
-	targetmonster:sendProgressbar(config.timer * 1000, true)
+	--targetmonster:sendProgressbar(config.timer * 1000, true)
 	
 	addEvent(Explosion, config.timer * 1000, creature:getId(), tar:getId(), onlyMonster)
 

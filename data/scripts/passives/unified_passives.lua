@@ -1,7 +1,84 @@
 local passiveEvent = CreatureEvent("UnifiedPassives")
 
+if not PassiveSkills then
+  dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
+end
+
+local blazingdecree_area = createCombatArea({
+  {1, 1, 1},
+  {1, 3, 1},
+  {1, 1, 1}
+})
+
 -- Standardized passive structure implementation
+-- Spawns a fire distance effect and applies an area fire combat at the target's position
+function doExtraFireball(playerid, targetid, baseDamage)
+  print("doExtraFireball")
+  if not playerid or not targetid then return end
+  local player = Creature(playerid)
+  local target = Creature(targetid)
+  local fromPos = player:getPosition()
+  local toPos = target:getPosition()
+  -- Fire distance effect (e.g., 3 = fire, 36 = fireball, adjust as needed)
+  doSendDistanceShoot(fromPos, toPos, 76)
+  -- Calculate damage formula using player level and magic level
+  local level = player:getLevel()
+  local magic = player:getMagicLevel()
+  local bonus = (level * 0.8) + (magic * 3.0)
+  local totalDamage = baseDamage + bonus
+  -- Apply fire damage to area
+  
+  doAreaCombatHealth(player, COMBAT_FIREDAMAGE, toPos, blazingdecree_area, -math.floor(totalDamage), -math.floor(totalDamage), 7)
+end
+
 local PASSIVES = {
+  blazingdecree = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.BlazingDecree,
+    },
+    trigger = function(player, target, damage, primaryType)
+      if primaryType ~= COMBAT_FIREDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.BlazingDecree) or 0, 0)
+      return level > 0
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.BlazingDecree) or 0, 0)
+      local percent = 1 + (level / 100)
+      return damage * percent
+    end,
+  },
+  pyromaniac = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.Pyromaniac,
+    },
+    trigger = function(player, target, damage, primaryType)
+      if primaryType ~= COMBAT_FIREDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.Pyromaniac) or 0, 0)
+      print("chance: " .. level)
+      if level <= 0 then return false end
+      local chance = level
+      
+      return math.random(100) <= chance
+    end,
+    effect = function(player, target, damage)
+      -- Safe check: only trigger if player is valid and is a player
+      if not player or not player:isPlayer() then return end
+      -- First fireball immediately
+      doExtraFireball(player:getId(), target:getId(), damage * 0.35)
+      -- Second fireball after 100ms
+      addEvent(function()
+        if player and player:isPlayer() then
+          doExtraFireball(player:getId(), target:getId(), damage * 0.35)
+        end
+      end, 200)
+    end,
+  },
   stellar = {
     config = {
       vocation = 6,
@@ -451,7 +528,7 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
                           (passiveData.config.storage and player:getStorageValue(passiveData.config.storage) > 0) or
                           (passiveData.config.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.condition))
           
-          if meetsReq and passiveData.trigger(player, creature, primaryDamage, origin) then
+          if meetsReq and passiveData.trigger(player, creature, primaryDamage, primaryType) then
             print("[Passive System] Attack passive triggered: " .. passiveName)
             -- Handle chance-based passives
             if passiveData.config.chance then

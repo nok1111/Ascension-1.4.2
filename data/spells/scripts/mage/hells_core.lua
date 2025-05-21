@@ -1,3 +1,7 @@
+if not PassiveSkills then
+    dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
+end
+
 local config = {
 	meteor_effect = 632,
 	explosion_effect = 633,
@@ -7,7 +11,7 @@ local config = {
 
 
 local combat1 = Combat()
-combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat1:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat1:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 local area = createCombatArea({
@@ -32,7 +36,7 @@ end
 combat1:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 local area = createCombatArea({
@@ -57,7 +61,7 @@ end
 combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
 
 local combat3 = Combat()
-combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat3:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat3:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 

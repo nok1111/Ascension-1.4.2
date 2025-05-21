@@ -155,7 +155,7 @@
     <instant group="healing" spellid="47" name="Mana Flow" words="mana flow" lvl="40" mana="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/mana_flow.lua">
     <vocation name="Magician" />
 	</instant>
-	<instant group="attack" spellid="48" name="Hand of God" words="hand of god" lvl="30" mana="120" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/handofgod.lua">
+	<instant group="attack" spellid="48" name="Hand of God" words="hand of god" lvl="30" mana="120" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5000" groupcooldown="1900" needweapon="0" needlearn="1" script="mage/handofgod.lua">
     <vocation name="Magician" />
     </instant>
 	<instant group="attack" spellid="49" name="Frost Wave" words="frost wave" lvl="70" mana="200" direction="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="mage/frost_wave.lua">
@@ -172,6 +172,22 @@
 	</instant>
 	<instant group="attack" spellid="304" name="Hells Core" words="hells core" lvl="100"  mana="400" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/hells_core.lua">
 	<vocation name="Magician" />
+	</instant>
+	<instant group="attack" spellid="190" name="Ice Barrage" words="ice barrage" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/ice_barrage.lua">
+	 <vocation name="None" />
+	</instant>
+	<instant group="attack" spellid="195" name="Ice Wall" words="ice wall" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_wall.lua">
+    <vocation name="None" />
+	</instant>
+
+	<instant group="attack" spellid="195" name="Ice Clones" words="ice clones" lvl="42" mana="115" selftarget="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_clones.lua">
+    <vocation name="None" />
+	</instant>
+    <instant group="attack" spellid="196" name="Ice Tomb" words="ice tomb" lvl="10" mana="10" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/ice_trap.lua">
+    <vocation name="None" />
+    </instant>
+    <instant group="attack" spellid="197" name="Cryo Eruption" words="cryo" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/cryo_eruption.lua">
+    <vocation name="None" />
 	</instant>
 	
 	
@@ -443,9 +459,7 @@
 
 	<!-- spell 192 already used in revscripts-->
 
-		<instant group="attack" spellid="190" name="Ice Barrage" words="ice barrage" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/ice_barrage.lua">
-	 <vocation name="None" />
-	</instant>
+		
 
 	<instant group="attack" spellid="193" name="Earthquake" words="earthquake" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/earthquake.lua">
 	 <vocation name="None" />
@@ -455,19 +469,7 @@
     <vocation name="None" />
 	</instant>
 
-	<instant group="attack" spellid="195" name="Ice Wall" words="ice wall" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_wall.lua">
-    <vocation name="None" />
-	</instant>
-
-	<instant group="attack" spellid="195" name="Ice Clones" words="ice clones" lvl="42" mana="115" selftarget="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_clones.lua">
-    <vocation name="None" />
-	</instant>
-    <instant group="attack" spellid="196" name="Ice Tomb" words="ice tomb" lvl="10" mana="10" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/ice_trap.lua">
-    <vocation name="None" />
-    </instant>
-    <instant group="attack" spellid="197" name="Cryo Eruption" words="cryo" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/cryo_eruption.lua">
-    <vocation name="None" />
-	</instant>
+	
 
 	
 		

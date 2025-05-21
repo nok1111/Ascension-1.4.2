@@ -1,6 +1,10 @@
+if not PassiveSkills then
+    dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
+end
+
 local combat = Combat()
 
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_FIREHAND)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -9,7 +13,7 @@ combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 local combat2 = Combat()
 
 
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, 7)
 combat2:setArea(createCombatArea(AREA_SQUARE1X1))
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
