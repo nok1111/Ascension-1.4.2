@@ -1,7 +1,7 @@
 
 local combat2 = Combat()
 local time_between_hits2 = 0.5 --seconds
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, 40)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)

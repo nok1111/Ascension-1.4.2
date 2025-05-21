@@ -195,7 +195,7 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Riftwalker",
-						description = "Increses the distance traveled of teleport by 1 square per level",
+						description = "Increses the distance traveled of teleport by 1 tile per level",
 						effect = {
 							{ type = "storage", name = "TeleportDistance", storage = PassiveSkills.TeleportDistance, value = 1 },
 						},
@@ -276,7 +276,7 @@ PassiveSkills.treeData = {
 	},
 
 	[2] = {			-- Tree 2
-		name = "Druid Tree",
+		name = "Templar Talents",
 		background = "3",
 		branches = {
 			[1] = {
@@ -284,43 +284,47 @@ PassiveSkills.treeData = {
 				border = 9,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						name = "Unyielding Strength",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
 						maxLevel = 10
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Consecrated Strikes",
+						description = "Every 4 hits of a melee attack will have a 25% (per level) chance to trigger consecrated strike to deal extra holy damage",
+						effect = {{type = "storage", name = "ConsecratedStrikes", storage = PassiveSkills.ConsecratedStrikes, value = 25}},
+						maxLevel = 10,
+						prevNodeLevelNeeded = 10
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Blessed Judgment",
+						description = "Judment now heals 2% of your max health per level",
+						effect = {{type = "storage", name = "BlessedJudgment", storage = PassiveSkills.BlessedJudgment, value = 2}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Final Veredict",
+						description = "Exorcism deals an aditional 10% (per level) extra damage to enemies below 50% health",
+						effect = {{type = "storage", name = "FinalVeredict", storage = PassiveSkills.FinalVeredict, value = 10}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
 						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
 								conditionType = CONDITION_REGENERATION,
 								params = {
 									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
