@@ -114,9 +114,6 @@
 	<instant group="attack" spellid="26" name="Exorcism" words="exorcism" lvl="999" mana="125" prem="0" needweapon="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/exorcism.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="support" spellid="27" name="Divine Force" words="divine force" lvl="999" mana="125" premium="0" range="8" casterTargetOrDirection="1" blockwalls="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/grab.lua">
-	<vocation name="Templar" />
-	</instant>
 	<instant group="attack" spellid="28" name="Smite" words="smite" lvl="8" mana="20" prem="0" range="5" needtarget="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="templar/smite.lua">
 	<vocation name="Templar" />
 	</instant>
@@ -134,7 +131,7 @@
 	
 	<!-- mage -->
 	
-	<instant group="attack" spellid="40" name="Living Bomb" words="living bomb" lvl="120" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="17000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/living_bomb.lua">
+	<instant group="attack" spellid="40" name="Living Bomb" words="living bomb" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="17000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/living_bomb.lua">
     <vocation name="Magician" />
     </instant>
 	<instant group="attack" spellid="41" name="Energy Blast" words="energy blast" lvl="10" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/energy_blast.lua">
@@ -251,7 +248,7 @@
 	<instant group="attack" spellid="84" name="Backstab" words="backstab" lvl="15" mana="60" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="0" needweapon="1" needlearn="0" script="rogue/backstab.lua">
     <vocation name="Nightblade" />
 	</instant>	
-	<instant group="attack" spellid="85" name="Dark Ambush" words="dark ambush" lvl="70" mana="250"  direction="0" blockwalls="1" range="3" needtarget="1" needweapon="0" cooldown="22000" groupcooldown="1900" needlearn="0" script="rogue/Assassination.lua">
+	<instant group="attack" spellid="85" name="Assassination" words="assassination" lvl="70" mana="250"  direction="0" blockwalls="1" range="3" needtarget="1" needweapon="0" cooldown="22000" groupcooldown="1900" needlearn="0" script="rogue/Assassination.lua">
 	<vocation name="Nightblade" />	
 	</instant>
 	<instant group="attack" spellid="86" name="Fan of Knives" words="fan of knives" lvl="50" mana="100" premium="0" direction="0" blockwalls="1" range="6" cooldown="5000" groupcooldown="1900" needlearn="0" script="rogue/knives_fan.lua">

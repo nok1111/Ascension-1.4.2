@@ -288,14 +288,14 @@ PassiveSkills.treeData = {
 						name = "Unyielding Strength",
 						description = "Increase physical damage done by 5% per level",
 						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Consecrated Strikes",
 						description = "Every 4 hits of a melee attack will have a 25% (per level) chance to trigger consecrated strike to deal extra holy damage",
 						effect = {{type = "storage", name = "ConsecratedStrikes", storage = PassiveSkills.ConsecratedStrikes, value = 25}},
-						maxLevel = 10,
-						prevNodeLevelNeeded = 10
+						maxLevel = 4,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Blessed Judgment",
@@ -312,19 +312,17 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						name = "Righteous Focus",
+						description = "Your judment now grants you a 10% (per level) critical strike chance per 5 seconds",
+						effect = {{type = "storage", name = "RighteousFocus", storage = PassiveSkills.RighteousFocus, value = 10}},
 						maxLevel = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
+						name = "Divine Punishment",
+						description = "Learn the spell Divine Punishment (Requires Level 100)",
+						effect = {{type = "spell", name = "Divine Punishment"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -333,143 +331,143 @@ PassiveSkills.treeData = {
 				border = 9,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						name = "Blessed Fortitude",
+						description = "Increases max health by 3.0% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxHealthPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, value = 3.0}}
+							}
+						},
 						maxLevel = 10
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
+						name = "Echoing Command",
+						description = "Your Taunt spell now deals 5% (per level) of your max health as Holy damage",
+						effect = {{type = "storage", name = "TauntDamage", storage = PassiveSkills.TauntDamage, value = 5}},
+						maxLevel = 3,
 						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
+						name = "Consecrated Protection",
+						description = "Reduce All damage taken while standing in a holy ground by 2% (per level)",
+						effect = {{type = "storage", name = "ConsecratedProtection", storage = PassiveSkills.ConsecratedProtection, value = 2}},
 						maxLevel = 5
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
+						name = "Sanctified Power,
+						description = "Increase the damage of your holy ground by 10% (per level)",
+						effect = {{type = "storage", name = "SanctifiedPower", storage = PassiveSkills.SanctifiedPower, value = 10}},
+						maxLevel = 10
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
+						name = "Kings Blessing",
+						description = "Learn spell Kings Blessing (requires level 60)",
+						effect = {{type = "spell", name = "Kings Blessing"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 10
+					},		
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
+						name = "Guardian of Light",
+						description = "Learn spell Guardian of Light (requires level 80)",
+						effect = {{type = "spell", name = "Guardian of Light"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 10
 					}
 				},
 			},
 			[3] = {
+				color = '#c4102e',
+				border = 9,
+				nodes = {
+					[1] = {
+						name = "Well of Power",
+						description = "Increases max Mana by 2.0% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxManaPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 2.0}}
+							}
+						},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Radiant Focus",
+						description = "Light beam damage increased by 15% per level",
+						effect = {{type = "storage", name = "LightBeamDamage", storage = PassiveSkills.LightBeamDamage, value = 15}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
+					},
+					[3] = {
+						name = "Holy Ascendancy",
+						description = "Increase all holy damage by 5% per level",
+						effect = {{type = "storage", name = "HolyDamage", storage = PassiveSkills.HolyDamage, value = 5}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
+					},
+					
+				},
+			},
+			[4] = {
 				color = '#073da3',
 				border = 9,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Lawbringer’s Shock",
+						description = "your judment has a 20% chance to stun your target for 2 seconds",
+						effect = {{type = "storage", name = "JudmentStun", storage = PassiveSkills.JudmentStun, value = 20}},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Blessed Impact",
+						description = "Crusader strike now has a 10% chance to trigger a holy light wich heals you using your magic level.",
+						effect = {{type = "storage", name = "BlessedImpact", storage = PassiveSkills.BlessedImpact, value = 10}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Judgment of Wisdom",
+						description = "your judment now restores 5% (per level) of your total mana",
+						effect = {{type = "storage", name = "JudmentRestore", storage = PassiveSkills.JudmentRestore, value = 5}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
+						name = "Enlightened Punishment",
+						description = "Judgement and Exorcism deals 2% (per level) of your total mana as extra damage",
+						effect = {{type = "storage", name = "JudmentManaExtraDamage", storage = PassiveSkills.JudmentManaExtraDamage, value = 2}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+						name = "Sacred Ground",
+						description = "Learn spell Sacred Ground (requires level 40)",
+						effect = {{type = "spell", name = "Sacred Ground"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 10
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
+						name = "Judgment of Wisdom",
+						description = "your judment now will restore 10% of your total mana",
+						effect = {{type = "storage", name = "JudmentRestore", storage = PassiveSkills.JudmentRestore, value = 10}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					}
-				},
-			},
-		},
-	},
+				}
+			}
+		}
+	}
+
 
 
 	[3] = {			-- Tree 3
-		name = "Knight Tree",
+		name = "Nightblade Talents",
 		background = "5",
 		branches = {
 			[1] = {
@@ -477,66 +475,61 @@ PassiveSkills.treeData = {
 				border = 13,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Veiled Might",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 8
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
+						name = "Assassin’s Mastery",
+						description = "Lethal Dagger now deals 5% (per level) extra physical damage and adds a bleed to the target",
+						effect = {{type = "storage", name = "AssassinsMastery", storage = PassiveSkills.AssassinsMastery, value = 5}},
 						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Scent of Blood",
+						description = "Deal 3% (per level) extra damage to bleeding targets",
+						effect = {{type = "storage", name = "ScentOfBlood", storage = PassiveSkills.ScentOfBlood, value = 3}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Virulent Rupture",
+						description = "Dark rupture has a 20% (per level) chance to spill corrupted blood over nearby targets applying the same bleeding effects.",
+						effect = {
+							{
+								type = "storage",
+								name = "VirulentRupture",
+								storage = PassiveSkills.VirulentRupture,
+								value = 5
+							}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
+					},
+					[5] = {
+						name = "Blood Drinker",
+						description = "Increases the amount of life leech by 1% (per level)",
 						effect = {
 							{
 								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
+								name = "Life Leech",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT, value = 1}}
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
+					
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Assassination",
+						description = "Learn spell Assassination (requires level 70)",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "spell", name = "Assassination"}
 						},
-						maxLevel = 17
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -545,51 +538,37 @@ PassiveSkills.treeData = {
 				border = 13,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Elusive Dance",
+						description = "Increases Dodge Chance by 2% per level",
+						effect = {{type = "storage", name = "ElusiveDance", storage = PassiveSkills.ElusiveDance, value = 2}},
+						maxLevel = 3
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Frenzied Blades",
+						description = "Increases attack speed by 2% per level",
+						effect = {{
+							type = "condition",
+							name = "Attack Speed",
+							conditionType = CONDITION_ATTRIBUTES,
+							params = {{param = CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED, value = 2}}
+						},
+					},
+					maxLevel = 10,
+					prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Blackout",
+						description = "Learn spell Blackout (requires level 50)",
+						effect = {{type = "spell", name = "Blackout"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 10
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
+						name = "Death’s Approach",
+						description = "lethal dagger has a 25% (per level) chance to teleport you to your marked target and deal an aditional extra damage",
+						effect = {{type = "storage", name = "DeathApproach", storage = PassiveSkills.DeathApproach, value = 25}},
+						maxLevel = 4,
+						prevNodeLevelNeeded = 10
 					},
 					[5] = {
 						name = "Placeholder E",

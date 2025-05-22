@@ -102,7 +102,6 @@ function creatureSayCallback(cid, type, msg)
     elseif msgcontains(msg:lower(), "back") then
         doSendDialogNpc(cid, getNpcCid(), greetTextOptions[math.random(#greetTextOptions)], "Curious&Close")
     elseif msgcontains(msg:lower(), "close") then
-        npcHandler:addModule(FocusModule:new())
         doSendDialogNpcClose(cid)
         npcHandler:unGreet(cid)
     end
