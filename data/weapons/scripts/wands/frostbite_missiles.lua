@@ -6,10 +6,16 @@ combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 
 
 function onGetFormulaValues(player, skill, attack, factor)
-local magicfactor = player:getMagicLevel()
+	local magicfactor = player:getMagicLevel()
+    local damage = ((player:getLevel() / 5) + ((magicfactor * attack) * 0.060)) / 5 
 
-
-	local damage = ((player:getLevel() / 5) + ((magicfactor * attack) * 0.060)) / 5 
+    -- Apply WandDamage passive bonus
+    local wandLevel = 0
+    if player and player.getStorageValue then
+        wandLevel = math.max(player:getStorageValue(PassiveSkills.WandDamage) or 0, 0)
+    end
+    local wandBonus = 1 + (wandLevel / 100)
+    damage = damage * wandBonus 
 	return -damage
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")

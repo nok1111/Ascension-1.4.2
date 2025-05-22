@@ -3,6 +3,7 @@ local minMissiles = 2
 
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_PURPLEENERGY)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
@@ -17,9 +18,6 @@ local function arcaneDamage(player, var, target, missileEffectpos, animationroll
         local max = (level / 10) + (magiclevel * 0.22) + 18
         combat:setFormula(COMBAT_FORMULA_LEVELMAGIC, 0, -min, 0, -max)
         Position(missileEffectpos):sendDistanceEffect(creature:getPosition(), CONST_ANI_ENERGYBALL)
-        if animationroll == 1 then
-            creature:getPosition():sendMagicEffect(CONST_ME_PURPLEENERGY)
-        end
         combat:execute(player, var)
     end
     return true
@@ -100,7 +98,9 @@ function onCastSpell(player, var)
     local magiclevel = player:getMagicLevel()
 	
 	local level = player:getLevel()
-    local missileCount = minMissiles + math.floor(magiclevel / 15) -- extra missile every 20 magic levels
+    local arcaneBarrageLevel = math.max(player:getStorageValue(PassiveSkills.ArcaneBarrage) or 0, 0)
+    print("arcaneBarrageLevel" .. arcaneBarrageLevel)
+    local missileCount = minMissiles + arcaneBarrageLevel
     local count = 1
     for i = 1, missileCount do
         addEvent(arcaneBolt, 150 * (i - 1), player.uid, var, target.uid, count)

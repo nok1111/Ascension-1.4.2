@@ -8,7 +8,7 @@ local area = createCombatArea({
 
 local config = {
     effect = 331,
-    type = COMBAT_ENERGYDAMAGE,
+    type = COMBAT_EARTHDAMAGE,
     disteffect = 134,
     conditiontype = CONDITION_POISON,
     timer = 10,

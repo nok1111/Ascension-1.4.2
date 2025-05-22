@@ -15,37 +15,35 @@ end
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
-local maxCasts = 6
+local maxCasts = 3
 local interval = 350
 
-local function startCombat(param)
-    if not isPlayer(param.cid) or getTilePzInfo(getCreaturePos(param.cid)) then
+local function startIceBarrage(playerId, targetId, count, maxCasts)
+    local player = Creature(playerId)
+    local target = Creature(targetId)
+    if not player or not player:isPlayer() or player:isRemoved() or player:isPzLocked() or not target then
         return
     end
-    
-    if param.count >= maxCasts then
+    if count >= maxCasts then
         return
     end
-
-    local playerPos = getCreaturePosition(param.cid)
-    local target = param.target
-
-    if target and isMonster(target) and isSightClear(playerPos, getCreaturePosition(target), false) then
-        doCombat(param.cid, combat, positionToVariant(getCreaturePosition(target)))
+    if isSightClear(player:getPosition(), target:getPosition(), false) then
+        doCombat(player, combat, positionToVariant(target:getPosition()))
     end
-
-    param.count = param.count + 1
-    addEvent(startCombat, interval, param)
+    addEvent(startIceBarrage, interval, playerId, targetId, count + 1, maxCasts)
 end
 
 function onCastSpell(player, var)
-    local cid = player:getId()
-    local target = player:getTarget() -- Get the target from the spell variable
-
-    if not cid or not target then
+    if not player or not player:isPlayer() or player:isRemoved() then
         return false
     end
-    
-    startCombat({cid = cid, target = target, count = 0})
+    local target = player:getTarget()
+    if not target then
+        return false
+    end
+    local iceBarrageLevel = math.max(player:getStorageValue(PassiveSkills.IceBarrage) or 0, 0)
+    local totalCasts = maxCasts + iceBarrageLevel
+    startIceBarrage(player:getId(), target:getId(), 0, totalCasts)
     return true
 end
+

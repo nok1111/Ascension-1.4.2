@@ -159,7 +159,8 @@ PassiveSkills.treeData = {
 						effect = {
 							{
 								type = "condition",
-								name = "Max Mana percent",   
+								name = "MaxManaPercent", 
+								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
 								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 2.0}}
 							}
@@ -168,9 +169,9 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Surge Recovery",
-						description = "Increase the mana recovery of when using energy blast and mana flow 5% per level",
+						description = "Increase the mana recovery of when using energy blast and mana flow 10% per level",
 						effect = {
-							{ type = "storage", name = "SurgeRecovery", storage = PassiveSkills.SurgeRecovery, value = 5 }
+							{ type = "storage", name = "SurgeRecovery", storage = PassiveSkills.SurgeRecovery, value = 10 }
 						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 10
@@ -309,30 +310,6 @@ PassiveSkills.treeData = {
 						effect = {{type = "storage", name = "FinalVeredict", storage = PassiveSkills.FinalVeredict, value = 10}},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
-					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
-					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
-					}
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
 					},
 					[5] = {
 						name = "Placeholder E",

@@ -134,7 +134,7 @@
 	
 	<!-- mage -->
 	
-	<instant group="attack" spellid="40" name="Living Bomb" words="living bomb" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="17000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/living_bomb.lua">
+	<instant group="attack" spellid="40" name="Living Bomb" words="living bomb" lvl="120" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="17000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/living_bomb.lua">
     <vocation name="Magician" />
     </instant>
 	<instant group="attack" spellid="41" name="Energy Blast" words="energy blast" lvl="10" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/energy_blast.lua">

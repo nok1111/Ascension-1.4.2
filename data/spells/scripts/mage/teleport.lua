@@ -36,13 +36,12 @@ function onCastSpell(creature, var)
     local playerPos = creature:getPosition()
     local playerDirection = creature:getDirection()
     local magicLevel = creature:getMagicLevel()
-    local teleportDistance = 6
+    local teleportDistance = 4
     local skull = creature:getSkull()
 
-    -- Teleport extra sqm every 20 magic levels
-    if magicLevel >= 25 then
-        teleportDistance = teleportDistance + math.floor(magicLevel / 25)
-    end
+    -- Teleport extra sqm every talent point
+    teleportDistance = teleportDistance + math.max(creature:getStorageValue(PassiveSkills.TeleportDistance) or 0, 0)
+    
 
     -- Loop, starting from max distance
     -- This prioritizes max distance teleports and settles for lower range teleports if that is all that's available

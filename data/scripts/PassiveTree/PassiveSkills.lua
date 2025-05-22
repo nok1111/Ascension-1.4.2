@@ -220,6 +220,7 @@ function PassiveSkills.applyBuffsFromNode(player, effect, totalStorageBuffs, cur
 				local totalValue = buff.value * currentLevel
 				condition:setFormula(0, totalValue, 0, totalValue)
 			end
+			
 
 			condition:setParameter(CONDITION_PARAM_TICKS, -1)
 			player:addCondition(condition)

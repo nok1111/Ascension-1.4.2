@@ -32,6 +32,24 @@ function doExtraFireball(playerid, targetid, baseDamage)
 end
 
 local PASSIVES = {
+  GlacialEmpowerment = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.FrostDamage,
+    },
+    trigger = function(player, target, damage, primaryType)
+      if primaryType ~= COMBAT_ICEDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.FrostDamage) or 0, 0)
+      return level > 0
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.FrostDamage) or 0, 0)
+      local percent = 1 + (level / 100)
+      return damage * percent
+    end,
+  },
   blazingdecree = {
     config = {
       type = "OnAttack",
