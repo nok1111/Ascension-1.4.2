@@ -302,11 +302,11 @@ PassiveSkills.treeData = {
 						description = "Judment now heals 2% of your max health per level",
 						effect = {{type = "storage", name = "BlessedJudgment", storage = PassiveSkills.BlessedJudgment, value = 2}},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 4
 					},
 					[4] = {
 						name = "Final Veredict",
-						description = "Exorcism deals an aditional 10% (per level) extra damage to enemies below 50% health",
+						description = "Crusader strike deals an aditional 10% (per level) extra damage to enemies below 50% health",
 						effect = {{type = "storage", name = "FinalVeredict", storage = PassiveSkills.FinalVeredict, value = 10}},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
@@ -315,7 +315,8 @@ PassiveSkills.treeData = {
 						name = "Righteous Focus",
 						description = "Your judment now grants you a 10% (per level) critical strike chance per 5 seconds",
 						effect = {{type = "storage", name = "RighteousFocus", storage = PassiveSkills.RighteousFocus, value = 10}},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
 						name = "Divine Punishment",
@@ -349,19 +350,21 @@ PassiveSkills.treeData = {
 						description = "Your Taunt spell now deals 5% (per level) of your max health as Holy damage",
 						effect = {{type = "storage", name = "TauntDamage", storage = PassiveSkills.TauntDamage, value = 5}},
 						maxLevel = 3,
-						prevNodeLevelNeeded = 3
+						prevNodeLevelNeeded = 10
 					},
 					[3] = {
 						name = "Consecrated Protection",
 						description = "Reduce All damage taken while standing in a holy ground by 2% (per level)",
 						effect = {{type = "storage", name = "ConsecratedProtection", storage = PassiveSkills.ConsecratedProtection, value = 2}},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 3
 					},
 					[4] = {
-						name = "Sanctified Power,
+						name = "Sanctified Power",
 						description = "Increase the damage of your holy ground by 10% (per level)",
 						effect = {{type = "storage", name = "SanctifiedPower", storage = PassiveSkills.SanctifiedPower, value = 10}},
-						maxLevel = 10
+						maxLevel = 10,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Kings Blessing",
@@ -375,7 +378,7 @@ PassiveSkills.treeData = {
 						description = "Learn spell Guardian of Light (requires level 80)",
 						effect = {{type = "spell", name = "Guardian of Light"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 1
 					}
 				},
 			},
@@ -429,40 +432,40 @@ PassiveSkills.treeData = {
 						description = "Crusader strike now has a 10% chance to trigger a holy light wich heals you using your magic level.",
 						effect = {{type = "storage", name = "BlessedImpact", storage = PassiveSkills.BlessedImpact, value = 10}},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Judgment of Wisdom",
 						description = "your judment now restores 5% (per level) of your total mana",
 						effect = {{type = "storage", name = "JudmentRestore", storage = PassiveSkills.JudmentRestore, value = 5}},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 5
 					},
 					[4] = {
 						name = "Enlightened Punishment",
 						description = "Judgement and Exorcism deals 2% (per level) of your total mana as extra damage",
 						effect = {{type = "storage", name = "JudmentManaExtraDamage", storage = PassiveSkills.JudmentManaExtraDamage, value = 2}},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Sacred Ground",
 						description = "Learn spell Sacred Ground (requires level 40)",
 						effect = {{type = "spell", name = "Sacred Ground"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Judgment of Wisdom",
-						description = "your judment now will restore 10% of your total mana",
-						effect = {{type = "storage", name = "JudmentRestore", storage = PassiveSkills.JudmentRestore, value = 10}},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 10
-					}
-				}
-			}
-		}
-	}
+						name = "Angelic Form",
+						description = "Learn spell Angelic Form (requires level 90)",
+						effect = {{type = "spell", name = "Angelic Form"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 1
+					},
+				},
+			},
+		},
+	},
 
 
 
