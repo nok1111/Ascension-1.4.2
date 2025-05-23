@@ -574,19 +574,26 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 10
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						name = "Killing Instinct",
+						description = "Increases critical chance by 1% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+						
+						},
 						maxLevel = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Stealth",
+						description = "Increases stealth duration by 1 second per level",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
+							{type = "storage", name = "StealthDuration", storage = PassiveSkills.StealthDuration, value = 1},
+							},
+						maxLevel = 3
 					}
 				},
 			},
@@ -595,66 +602,41 @@ PassiveSkills.treeData = {
 				border = 13,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Butcher’s Art",
+						description = "Increases mutilate damage by 5% per level",
+						effect = {{type = "storage", name = "ButchersArt", storage = PassiveSkills.ButchersArt, value = 5}},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Dark Transmutation",
+						description = "Transforms Mutilate damage into Death Damage and increases Death Damage done  by 8% per level",
+						effect = {{type = "storage", name = "DarkTransmutation", storage = PassiveSkills.DarkTransmutation, value = 8}},
+						prevNodeLevelNeeded = 6
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Shadow Reflection",
+						description = "Lethal dagger now has a chance 20% per level to create a  shadow version of yourself wich will damage your target.",
+						effect = {{type = "storage", name = "ShadowReflection", storage = PassiveSkills.ShadowReflection, value = 20}},
+						prevNodeLevelNeeded = 5
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
+						name = "Deathwind",
+						description = "Transforms Fan of Knives damage into Death Damage and increases its over time damage effect  by 10% per level",
+						effect = {{type = "storage", name = "Deathwind", storage = PassiveSkills.Deathwind, value = 10}},
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						name = "Deathbringer",
+						description = "Your melee attacks have a 4% (per level) chance to deal extra death damage on hit.",
+						effect = {{type = "storage", name = "Deathbringer", storage = PassiveSkills.Deathbringer, value = 4}},
 						maxLevel = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
+						name = "Void Execution",
+						description = "Learn spell Void Execution (requires level 70)",
+						effect = {{type = "spell", name = "Void Execution"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
 					}
 				},
 			},
@@ -663,7 +645,7 @@ PassiveSkills.treeData = {
 
 
 	[4] = {			-- Tree 4
-		name = "Paladin Tree",
+		name = "Dragonknight Talents",
 		background = "7",
 		branches = {
 			[1] = {
@@ -671,57 +653,51 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
 						maxLevel = 10
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Shockwave",
+						description = "Learn spell Shockwave (requires level 50)",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
 						effect = {
 							{
 								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
 							}
 						},
-						maxLevel = 5
-					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+						maxLevel = 3,
+						prevNodeLevelNeeded = 4
 					},
 					[6] = {
 						name = "Placeholder F",
