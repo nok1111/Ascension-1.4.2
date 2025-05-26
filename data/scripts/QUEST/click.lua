@@ -517,7 +517,8 @@ function eventAction.onUse(player, item, fromPosition, target, toPosition)
     end
 
     if eventConfig.give_stat_points then
-        player:addStatsPoints(eventConfig.give_stat_points)
+       -- player:addStatsPoints(eventConfig.give_stat_points)
+        PassiveSkills.addPassivePoints(player, eventConfig.give_stat_points)
         player:attachEffectById(9, false)
     end
 

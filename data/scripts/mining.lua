@@ -10,12 +10,36 @@ local cfg = {
                 
             }
         },
-		 {effect = CONST_ME_SMOKE, ore = 40035, bonusore = 13757, amount = {2, 3}, skillReq = 1,  points = 10, fame = 1, veins = {
+		{effect = CONST_ME_SMOKE, ore = 40035, bonusore = 13757, amount = {2, 3}, skillReq = 1,  points = 10, fame = 1, veins = {
                 {id = 39981, lv = 8}, -- silver ore
                 {id = 40024, lv = 8} -- vein destruida
                 
             }
         },
+		{effect = CONST_ME_SMOKE, ore = 40041, bonusore = 13757, amount = {2, 3}, skillReq = 3,  points = 10, fame = 1, veins = {
+                {id = 40010, lv = 8}, -- gold mine
+                {id = 40028, lv = 8} -- vein destruida
+                
+            }
+        },
+		{effect = CONST_ME_SMOKE, ore = 40043, bonusore = 13757, amount = {2, 3}, skillReq = 4,  points = 10, fame = 1, veins = {
+                {id = 40017, lv = 8}, -- silver ore
+                {id = 40026, lv = 8} -- vein destruida
+                
+            }
+        },
+		{effect = CONST_ME_SMOKE, ore = 40036, bonusore = 13757, amount = {2, 3}, skillReq = 6,  points = 10, fame = 1, veins = {
+                {id = 39989, lv = 8}, -- silver ore
+                {id = 40026, lv = 8} -- vein destruida
+                
+            }
+        },
+        {effect = CONST_ME_SMOKE, ore = 40037, bonusore = 13757, amount = {2, 3}, skillReq = 7,  points = 10, fame = 1, veins = {
+            {id = 39993, lv = 8}, -- silver ore
+            {id = 40026, lv = 8} -- vein destruida
+            
+        }
+    },
 
         
        

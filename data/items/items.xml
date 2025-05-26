@@ -23725,14 +23725,20 @@
 	<item id="13213" name="red spices">
 		<attribute key="weight" value="50" />
 	</item>
-		<item id="13193" article="a" name="strang red powder" />		
-		
+
+	<item id="13193" article="a" name="strang red powder" />
+
+	<item id="13197" article="a" name="Mystic Powder" >
+		<attribute key="weight" value="5" />
+	</item>	
+	<item id="13215" name="Arcane Powderr">
+		<attribute key="weight" value="50" />
+	</item>
+
 	<item id="13214" name="strange yellow powder">
 		<attribute key="weight" value="50" />
 	</item>
-	<item id="13215" name="strange blue powder">
-		<attribute key="weight" value="50" />
-	</item>
+	
 	<item id="13216" name="screaming cherry">
 		<attribute key="description" value="This fruit was gathered from the Screaming Cherry Tree." />
 		<attribute key="weight" value="50" />
@@ -35965,7 +35971,8 @@
 	<item id="30028" name="swamp" />
 	<item id="30035" name="tea" />
 	<item id="30043" name="mead" />
-	<item id="30319" article="a" name="Copper ore">
+
+	<item id="30319" article="a" name="old Copper ore">
 		<attribute key="weight" value="1" />
 		<attribute key="description" value="Crafting Material" />
 	</item>
@@ -37697,7 +37704,7 @@
 		<attribute key="weight" value="20" />
 		<attribute key="description" value="Crafting Material" />
 		</item>
-	<item id="32704" article="a" name="arcanium bar">
+	<item id="32704" article="a" name="silver bar">
 		<attribute key="weight" value="12" />
 		<attribute key="description" value="Crafting Material" />
 	</item>
@@ -38400,7 +38407,7 @@
 		<attribute key="description" value="Blacksmiths may want this." />
 		<attribute key="weight" value="1" />
 	</item>
-	<item id="35481" article="a" name="copper ore">
+	<item id="35481" article="a" name="old copper ore">
 		<attribute key="description" value="Blacksmiths may want this." />
 		<attribute key="weight" value="1" />
 	</item>
@@ -41750,5 +41757,30 @@
         <attribute key="weight" value="55" />
     </item>
 
+	<item id="40034" article="a" name="copper ore">
+		<attribute key="description" value="Blacksmiths may want this." />
+		<attribute key="weight" value="1" />
+	</item>
+	<item id="40035" article="a" name="silver ore">
+		<attribute key="description" value="Blacksmiths may want this." />
+		<attribute key="weight" value="1" />
+	</item>
+	<item id="40041" article="a" name="gold ore">
+		<attribute key="description" value="Blacksmiths may want this." />
+		<attribute key="weight" value="1" />
+	</item>
+	<item id="40043" article="a" name="veridium ore">
+		<attribute key="description" value="Blacksmiths may want this." />
+		<attribute key="weight" value="1" />
+	</item>
+	<item id="40036" article="a" name="Aquarite ore">
+		<attribute key="description" value="Blacksmiths may want this." />
+		<attribute key="weight" value="1" />
+	</item>
+	<item id="40037" article="a" name="Saladium ore">
+		<attribute key="description" value="Blacksmiths may want this." />
+		<attribute key="weight" value="1" />
+	</item>
 	
+
 </items>

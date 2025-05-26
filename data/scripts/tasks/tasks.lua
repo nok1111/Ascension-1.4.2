@@ -58,505 +58,104 @@ local RewardType = {
     },
     Tasks = {
             {
-              RaceName = "Rat",
+              RaceName = "A new forest",
               Level = 1,
               type = "money",
               difficulty = "easy",
-              required = 100,
-              Monsters = {"Rat"},
+              required = 60,
+              Monsters = {"Leafy Twigkin", "Twigkin","Tarantula", "Spider", "Flaming Twigkin"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 2},
                   {Type = RewardType.Experience, BaseValue = 250},
                   {Type = RewardType.Gold, BaseValue = 100},
-                  {Type = RewardType.Research, BaseValue = 1}
               }
           },
             {
-              RaceName = "Cave Rat",
-              Level = 2,
-              type = "money",
-              difficulty = "easy",
-              required = 100,
-              Monsters = {"Cave Rat"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 2},
-                  {Type = RewardType.Experience, BaseValue = 500},
-                  {Type = RewardType.Gold, BaseValue = 200}
-              }
-          },
-            {
-              RaceName = "Troll",
+              RaceName = "Trollin' Around",
               Level = 8,
               type = "Experience",
               difficulty = "easy",
-              required = 100,
-              Monsters = {"Troll"},
+              required = 55,
+              Monsters = {"Troll", "Dark Troll"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 4},
                   {Type = RewardType.Experience, BaseValue = 1000}
               }
           },
             {
-              RaceName = "Rotworm",
+              RaceName = "Nightwatch",
               Level = 8,
               type = "Money",
               difficulty = "easy",
               required = 200,
-              Monsters = {"Rotworm"},
+              Monsters = {"Thief", "Rogue"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 4},
                   {Type = RewardType.Gold, BaseValue = 500}
               }
           },
             {
-              RaceName = "Skeleton",
+              RaceName = "Bone and Bane",
               Level = 10,
               type = "Money",
               difficulty = "easy",
               required = 100,
-              Monsters = {"Skeleton"},
+              Monsters = {"Skeleton", "Witch", "Witch Apprentice", "Poison Skeleton"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 4},
                   {Type = RewardType.Gold, BaseValue = 750}
               }
           },
             {
-              RaceName = "Frost Troll",
+              RaceName = "Horns of War",
               Level = 10,
               type = "Experience",
               difficulty = "easy",
               required = 200,
-              Monsters = {"Frost Troll"},
+              Monsters = {"Minotaur", "Minotaur Mage", "Minotaur Archer", "Minotaur Guard"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 4},
                   {Type = RewardType.Experience, BaseValue = 1200}
               }
           },
             {
-              RaceName = "Minotaurs",
+              RaceName = "Breaking Shells",
               Level = 15,
               type = "Experience",
               difficulty = "easy",
               required = 2500,
-              Monsters = {"Minotaur", "Minotaur Guard", "Minotaur Archer"},
+              Monsters = {"Thornback Turtle", "Mature Thornback Turtle", "Turtle"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 10},
                   {Type = RewardType.Experience, BaseValue = 50000}
               }
           },
             {
-              RaceName = "Crocodile",
+              RaceName = "Elven Hunt",
               Level = 20,
               type = "Experience",
               difficulty = "easy",
               required = 100,
-              Monsters = {"Crocodile"},
+              Monsters = {"Elf", "Elf Scout", "Elf Arcanist"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 4},
                   {Type = RewardType.Experience, BaseValue = 1000}
               }
           },
             {
-              RaceName = "Tarantula",
+              RaceName = "Corpse Control",
               Level = 25,
               type = "Experience",
               difficulty = "Easy",
               required = 500,
-              Monsters = {"Tarantula"},
+              Monsters = {"Zombie", "Mutated Zombie", "Abomination Specimen"},
               Rewards = {
                   {Type = RewardType.Ranking, BaseValue = 6},
                   {Type = RewardType.Experience, BaseValue = 10000}
               }
           },
-            {
-              RaceName = "Demon Skeleton",
-              Level = 30,
-              type = "Money",
-              difficulty = "Easy",
-              required = 200,
-              Monsters = {"Demon Skeleton"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 6},
-                  {Type = RewardType.Experience, BaseValue = 1500},
-                  {Type = RewardType.Gold, BaseValue = 1000}
-              }
-          },
-            {
-              RaceName = "Carniphila",
-              Level = 30,
-              type = "Money",
-              difficulty = "easy",
-              required = 200,
-              Monsters = {"Carniphila"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 6},
-                  {Type = RewardType.Gold, BaseValue = 1000}
-              }
-          },
-            {
-              RaceName = "Mammoth",
-              Level = 30,
-              type = "Money",
-              difficulty = "easy",
-              required = 200,
-              Monsters = {"Mammoth"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 6},
-                  {Type = RewardType.Gold, BaseValue = 1200}
-              }
-          },
-            {
-              RaceName = "Bonebeast",
-              Level = 35,
-              type = "Experience",
-              difficulty = "easy",
-              required = 200,
-              Monsters = {"Bonebeast"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 8},
-                  {Type = RewardType.Experience, BaseValue = 2500}
-              }
-          },
-            {
-              RaceName = "Vampire",
-              Level = 40,
-              type = "Experience",
-              difficulty = "easy",
-              required = 1000,
-              Monsters = {"Vampire"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 10},
-                  {Type = RewardType.Experience, BaseValue = 40000}
-              }
-          },
-            {
-              RaceName = "Necromancer",
-              Level = 40,
-              type = "Experience",
-              difficulty = "easy",
-              required = 1000,
-              Monsters = {"Necromancer"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 12},
-                  {Type = RewardType.Experience, BaseValue = 40000},
-                  {Type = RewardType.Gold, BaseValue = 5000}
-              }
-          },
-            {
-              RaceName = "Dragon",
-              Level = 40,
-              type = "Experience",
-              difficulty = "easy",
-              required = 1500,
-              Monsters = {"Dragon"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 40000}
-              }
-          },
-            {
-              RaceName = "Ice Golem",
-              Level = 45,
-              type = "Money",
-              difficulty = "easy",
-              required = 300,
-              Monsters = {"Ice Golem"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 10},
-                  {Type = RewardType.Gold, BaseValue = 1500}
-              }
-          },
-            {
-              RaceName = "Giant Spider",
-              Level = 45,
-              type = "Experience",
-              difficulty = "easy",
-              required = 1200,
-              Monsters = {"Giant Spider"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Gold, BaseValue = 4500},
-                  {Type = RewardType.Experience, BaseValue = 45000}
-              }
-          },
-            {
-              RaceName = "Black Knight",
-              Level = 50,
-              type = "Money",
-              difficulty = "Medium",
-              required = 4000,
-              Monsters = {"Black Knight"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 20},
-                  {Type = RewardType.Gold, BaseValue = 4500},
-                  {Type = RewardType.Experience, BaseValue = 45000},
-                  {Type = RewardType.Item, Id = 2641, Amount = 1}
-              }
-          },
-            {
-              RaceName = "Banshee",
-              Level = 50,
-              type = "Item",
-              difficulty = "Medium",
-              required = 6000,
-              Monsters = {"Banshee"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 20},
-                  {Type = RewardType.Experience, BaseValue = 600000},
-                  {Type = RewardType.Item, Id = 2658, Amount = 1}
-              }
-          },
-            {
-              RaceName = "Ancient Scarab",
-              Level = 50,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 2500,
-              Monsters = {"Ancient Scarab"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 100000}
-              }
-          },
-            {
-              RaceName = "Crystal Spider",
-              Level = 60,
-              type = "Money",
-              difficulty = "Medium",
-              required = 500,
-              Monsters = {"Crystal Spider"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 12},
-                  {Type = RewardType.Gold, BaseValue = 5000}
-              }
-          },
-            {
-              RaceName = "Underwater Quara",
-              Level = 60,
-              type = "Item",
-              difficulty = "Medium",
-              required = 2500,
-              Monsters = {"Quara Hydromancer", "Quara Predator", "Quara Constrictor", "Quara Mantassin", "Quara Pincher"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 20},
-                  {Type = RewardType.Item, Id = 5741, Amount = 1},
-                  {Type = RewardType.Experience, BaseValue = 125000}
-              }
-          },
-            {
-              RaceName = "Wyrm",
-              Level = 60,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 1000,
-              Monsters = {"Wyrm"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 105000}
-              }
-          },
-            {
-              RaceName = "Dragon Lord",
-              Level = 60,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 500,
-              Monsters = {"Dragon Lord"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 150000},
-                  {Type = RewardType.Gold, BaseValue = 7500}
-              }
-          },
-            {
-              RaceName = "Frost Dragon",
-              Level = 60,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 500,
-              Monsters = {"Frost Dragon"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 150000},
-                  {Type = RewardType.Gold, BaseValue = 7500}
-              }
-          },
-            {
-              RaceName = "Hydra",
-              Level = 60,
-              type = "Item",
-              difficulty = "Medium",
-              required = 500,
-              Monsters = {"Hydra"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 75000},
-                  {Type = RewardType.Gold, BaseValue = 8000},
-                  {Type = RewardType.Item, Id = 2195, Amount = 1}
-              }
-          },
-            {
-              RaceName = "Sea Serpent",
-              Level = 60,
-              type = "Money",
-              difficulty = "Medium",
-              required = 1200,
-              Monsters = {"Sea Serpent"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 20},
-                  {Type = RewardType.Experience, BaseValue = 105000},
-                  {Type = RewardType.Gold, BaseValue = 10000}
-              }
-          },
-            {
-              RaceName = "Hellspawn",
-              Level = 70,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 300,
-              Monsters = {"Hellspawn"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 18},
-                  {Type = RewardType.Gold, BaseValue = 5000}
-              }
-          },
-            {
-              RaceName = "Elder Wyrm",
-              Level = 70,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 750,
-              Monsters = {"Elder Wyrm"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 125000}
-              }
-          },
-            {
-              RaceName = "Serpent Spawn",
-              Level = 70,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 600,
-              Monsters = {"Serpent Spawn"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 15},
-                  {Type = RewardType.Experience, BaseValue = 100000}
-              }
-          },
-            {
-              RaceName = "Medusa",
-              Level = 80,
-              type = "Experience",
-              difficulty = "Medium",
-              required = 800,
-              Monsters = {"Medusa"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 18},
-                  {Type = RewardType.Experience, BaseValue = 100000},
-                  {Type = RewardType.Gold, BaseValue = 10000}
-              }
-          },
-            {
-              RaceName = "Behemoth",
-              Level = 90,
-              type = "Money",
-              difficulty = "Hard",
-              required = 500,
-              Monsters = {"Behemoth"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 20},
-                  {Type = RewardType.Gold, BaseValue = 20000}
-              }
-          },
-            {
-              RaceName = "Hellhound",
-              Level = 100,
-              type = "Experience",
-              difficulty = "Hard",
-              required = 500,
-              Monsters = {"Hellhound"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 25},
-                  {Type = RewardType.Gold, BaseValue = 30000},
-                  {Type = RewardType.Experience, BaseValue = 250000}
-              }
-          },
-            {
-              RaceName = "Ghastly Dragon",
-              Level = 100,
-              type = "Experience",
-              difficulty = "Hard",
-              required = 500,
-              Monsters = {"Ghastly Dragon"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 25},
-                  {Type = RewardType.Experience, BaseValue = 300000}
-              }
-          },
-            {
-              RaceName = "Destroyer",
-              Level = 100,
-              type = "Experience",
-              difficulty = "Hard",
-              required = 300,
-              Monsters = {"Destroyer"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 25},
-                  {Type = RewardType.Experience, BaseValue = 150000},
-                  {Type = RewardType.Gold, BaseValue = 30000}
-              }
-          },
-            {
-              RaceName = "Undead Dragon",
-              Level = 100,
-              type = "Experience",
-              difficulty = "Hard",
-              required = 100,
-              Monsters = {"Undead Dragon"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 40},
-                  {Type = RewardType.Experience, BaseValue = 200000},
-                  {Type = RewardType.Gold, BaseValue = 50000}
-              }
-          },
-            {
-              RaceName = "Asuras",
-              Level = 100,
-              type = "Experience",
-              difficulty = "Hard",
-              required = 1000,
-              Monsters = {"Midnight Asura", "Dawnfire Asura"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 40},
-                  {Type = RewardType.Experience, BaseValue = 500000}
-              }
-          },
-            {
-              RaceName = "Demon",
-              Level = 100,
-              type = "Experience",
-              difficulty = "Hard",
-              required = 6666,
-              Monsters = {"Demon"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 100},
-                  {Type = RewardType.Experience, BaseValue = 1000000},
-                  {Type = RewardType.Gold, BaseValue = 100000}
-              }
-          },
-            {
-              RaceName = "Dark Torturer",
-              Level = 100,
-              type = "Experience",
-              difficulty = "Hard",
-              required = 500,
-              Monsters = {"Dark Torturer"},
-              Rewards = {
-                  {Type = RewardType.Ranking, BaseValue = 40},
-                  {Type = RewardType.Experience, BaseValue = 750000}
-              }
-          },
+           
+           
         },
       }
   

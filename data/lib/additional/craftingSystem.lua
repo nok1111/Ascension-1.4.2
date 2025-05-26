@@ -11,20 +11,6 @@ SERVER_CRAFTING_WINDOW = 2
 Crafting.recipes = {
 	[1] = { -- all recipes for blacksmith
 		{
-			craftedItemId = 32702, -- server id of item that you gonna get from that recipe
-			craftedCount = 1, -- amount of items that you gonnna get from that recipe
-			tier = 0, -- used for description
-			fame = 0, -- used for description
-			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Smelt copper ores into Copper Bar. required for crafting a variety of equipment.",
-			craftPoints = 2, -- points for crafting that recipe		
-			cost = 2, -- points for crafting that recipe
-			recipestorage = 0,
-			ingredients = {
-				{id = 35481, required = 2},
-			},
-		},
-		{
 			craftedItemId = 2377,
 			craftedCount = 1, --
 			tier = 0, 
@@ -961,11 +947,11 @@ Crafting.recipes = {
 		--TIER 1 runes
 		{
 			craftedItemId = 39962, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			desc = "Refine sturdy oak logs into versatile oak planks, essential for crafting a variety of wooden items.",
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
@@ -975,12 +961,12 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 39966, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 39966, -- Greenheart Plank
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			desc = "Refine sturdy greenheart logs into versatile greenheart planks, essential for crafting a variety of wooden items.",
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
@@ -990,12 +976,12 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 39968, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 39968, -- Bloodwood Plank
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			desc = "Refine sturdy bloodwood logs into versatile bloodwood planks, essential for crafting a variety of wooden items.",
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
@@ -1005,12 +991,12 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 39972, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 39972, -- Pine Plank
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			desc = "Refine sturdy pine logs into versatile pine planks, essential for crafting a variety of wooden items.",
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
@@ -1020,12 +1006,12 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 39974, -- server id of item that you gonna get from that recipe
-			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 39974, -- Maple Plank
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			desc = "Refine sturdy maple logs into versatile maple planks, essential for crafting a variety of wooden items.",
 			itemlvl = 0,
 			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
@@ -1035,7 +1021,7 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 32703, -- server id of item that you gonna get from that recipe
+			craftedItemId = 32703, -- Copper Bar
 			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 0, -- used for description
 			fame = 0, -- used for description
@@ -1045,23 +1031,23 @@ Crafting.recipes = {
 			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 35481, required = 5},
-				{id = 40035, required = 1}, --coal
+				{id = 40034, required = 5},
+				{id = 40035, required = 2}, --coal
 			},
 		},
 		{
-			craftedItemId = 32704, -- server id of item that you gonna get from that recipe
+			craftedItemId = 32704, -- silver bar
 			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 0, -- used for description
 			fame = 0, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			desc = "Smelt silver ores into Silver Bar. required for crafting a variety of equipment.",
 			craftPoints = 2, -- points for crafting that recipe		
 			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
 				{id = 40035, required = 5},
-				{id = 40036, required = 1}, --coal
+				{id = 40036, required = 2}, --coal
 			},
 		},
 

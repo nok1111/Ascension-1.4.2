@@ -721,16 +721,17 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 3,
-						prevNodeLevelNeeded = 4
+						prevNodeLevelNeeded = 2
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
 						effect = {
 							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
 							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
 						},
-						maxLevel = 17
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
 					}
 				},
 			},

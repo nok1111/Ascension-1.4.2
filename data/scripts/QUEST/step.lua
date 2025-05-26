@@ -190,7 +190,8 @@ function stepInEvent.onStepIn(creature, item, position, fromPosition)
     end
 
     if config.give_stat_points then
-        player:addStatsPoints(config.give_stat_points)
+       -- player:addStatsPoints(config.give_stat_points)
+        PassiveSkills.addPassivePoints(player, config.give_stat_points)
         player:attachEffectById(9, false)
     end
 

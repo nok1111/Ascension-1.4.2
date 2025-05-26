@@ -242,7 +242,8 @@ local function handleRewards(player, rewardConfig)
     
     -- Stat points
     if rewardConfig.stats and rewardConfig.stats.points then
-        player:addStatsPoints(rewardConfig.stats.points)
+       -- player:addStatsPoints(rewardConfig.stats.points)
+        PassiveSkills.addPassivePoints(player, rewardConfig.stats.points)
     end
     
     -- Achievements

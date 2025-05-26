@@ -19,10 +19,10 @@ function onCreatureSay(cid, type, msg)
 end
 
 local herb_items = {
-    {name = "Mandrake Root", id = 30001, min = 2, max = 6, pouches = 2},
-    {name = "Nightshade Leaf", id = 30002, min = 2, max = 5, pouches = 3},
-    {name = "Sunblossom", id = 30003, min = 1, max = 4, pouches = 4},
-    {name = "Frost Lotus", id = 30004, min = 1, max = 2, pouches = 6},
+    {name = "Crimson Rose", id = 35440, min = 2, max = 6, pouches = 3},
+    {name = "Morning Iris", id = 35439, min = 2, max = 5, pouches = 4},
+    {name = "Sweet Pea", id = 35442, min = 1, max = 4, pouches = 5},
+    {name = "Delphinium", id = 35443, min = 1, max = 2, pouches = 6},
 }
 local valuable_pouch_id = 9001
 
@@ -41,49 +41,49 @@ function creatureSayCallback(cid, type, msg)
 
     if msgcontains(msg_l, "valuable pouches") then
         local dialog = "Which herb are you seeking?\n"
-        dialog = dialog .. "1. Mandrake Root ("..herb_items[1].pouches.." pouches)\n"
-        dialog = dialog .. "2. Nightshade Leaf ("..herb_items[2].pouches.." pouches)\n"
-        dialog = dialog .. "3. Sunblossom ("..herb_items[3].pouches.." pouches)\n"
-        dialog = dialog .. "4. Frost Lotus ("..herb_items[4].pouches.." pouches)\n"
-        dialog = dialog .. "Type 'mandrake', 'nightshade', 'sunblossom', or 'lotus' to choose."
-        doSendDialogNpc(cid, getNpcCid(), dialog, "mandrake&nightshade&sunblossom&lotus&No")
-    elseif msgcontains(msg_l, "mandrake") then
+        dialog = dialog .. "1. Crimson Rose ("..herb_items[1].pouches.." pouches)\n"
+        dialog = dialog .. "2. Morning Iris ("..herb_items[2].pouches.." pouches)\n"
+        dialog = dialog .. "3. Sweet Pea ("..herb_items[3].pouches.." pouches)\n"
+        dialog = dialog .. "4. Delphinium ("..herb_items[4].pouches.." pouches)\n"
+        dialog = dialog .. "Type 'crimson', 'morning', 'sweet', or 'delphinium' to choose."
+        doSendDialogNpc(cid, getNpcCid(), dialog, "crimson&morning&sweet&delphinium&No")
+    elseif msgcontains(msg_l, "crimson") then
         local item = herb_items[1]
         if player:getItemCount(valuable_pouch_id) >= item.pouches then
             player:removeItem(valuable_pouch_id, item.pouches)
             local amount = math.random(item.min, item.max)
             player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Mandrake Root! Potent and peculiar—use it wisely.", "mandrake&Thanks&Close")
+            doSendDialogNpc(cid, getNpcCid(), "Crimson Rose! Potent and peculiar—use it wisely.", "crimson&Thanks&Close")
         else
             doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
         end
-    elseif msgcontains(msg_l, "nightshade") then
+    elseif msgcontains(msg_l, "morning") then
         local item = herb_items[2]
         if player:getItemCount(valuable_pouch_id) >= item.pouches then
             player:removeItem(valuable_pouch_id, item.pouches)
             local amount = math.random(item.min, item.max)
             player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Nightshade Leaf! Handle with care—deadly but useful.", "nightshade&Close")
+            doSendDialogNpc(cid, getNpcCid(), "Morning Iris! Handle with care—deadly but useful.", "morning&Close")
         else
             doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
         end
-    elseif msgcontains(msg_l, "sunblossom") then
+    elseif msgcontains(msg_l, "sweet") then
         local item = herb_items[3]
         if player:getItemCount(valuable_pouch_id) >= item.pouches then
             player:removeItem(valuable_pouch_id, item.pouches)
             local amount = math.random(item.min, item.max)
             player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Sunblossom! Bright as the midday sun.", "sunblossom&Close")
+            doSendDialogNpc(cid, getNpcCid(), "Sweet Pea! Bright as the midday sun.", "sweet&Close")
         else
             doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
         end
-    elseif msgcontains(msg_l, "lotus") then
+    elseif msgcontains(msg_l, "delphinium") then
         local item = herb_items[4]
         if player:getItemCount(valuable_pouch_id) >= item.pouches then
             player:removeItem(valuable_pouch_id, item.pouches)
             local amount = math.random(item.min, item.max)
             player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Frost Lotus! Rare and prized by alchemists.", "lotus&Close")
+            doSendDialogNpc(cid, getNpcCid(), "Delphinium! Rare and prized by alchemists.", "delphinium&Close")
         else
             doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
         end

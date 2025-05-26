@@ -3,12 +3,14 @@ local disenchant = Action()
 function disenchant.onUse(player, item, fromPosition, target, toPosition, isHotkey)
     -- Default reward table: itemId, name, base drop chance (in percent)
     local disenchantRewards = {
-        {itemId = 13197, name = "Mystic Powder", baseChance = 10, minAmount = 1, maxAmount = 2},
-        {itemId = 33201, name = "Blue Crystal", baseChance = 10, minAmount = 1, maxAmount = 1},
-        {itemId = 33203, name = "Green Crystal", baseChance = 8, minAmount = 1, maxAmount = 1},
+        
+        {itemId = 13215, name = "Arcane Powder", baseChance = 10, minAmount = 1, maxAmount = 3},
+        {itemId = 13197, name = "Mystic Powder", baseChance = 9, minAmount = 1, maxAmount = 2},
+        {itemId = 33201, name = "Blue Crystal", baseChance = 8, minAmount = 1, maxAmount = 1},
+        {itemId = 33203, name = "Green Crystal", baseChance = 7, minAmount = 1, maxAmount = 1},
         {itemId = 35789, name = "Yellow Crystal", baseChance = 6, minAmount = 1, maxAmount = 1},
-        {itemId = 33202, name = "Purple Crystal", baseChance = 4, minAmount = 1, maxAmount = 1},
-        {itemId = 35788, name = "Red Crystal", baseChance = 2, minAmount = 1, maxAmount = 1},
+        {itemId = 33202, name = "Purple Crystal", baseChance = 5, minAmount = 1, maxAmount = 1},
+        {itemId = 35788, name = "Red Crystal", baseChance = 4, minAmount = 1, maxAmount = 1},
     }
     -- Individual loot tables for special items
     local specialLootTables = {
@@ -17,11 +19,11 @@ function disenchant.onUse(player, item, fromPosition, target, toPosition, isHotk
             {itemId = 35378, name = "Empty Enchanting Rune of Magellan", baseChance = 50, minAmount = 1, maxAmount = 1},
             },
         [26169] = {
-            {itemId = 35377, name = "Empty Enchanting Rune of Elysium", baseChance = 100, minAmount = 2, maxAmount = 2},
+            {itemId = 35377, name = "Empty Enchanting Rune of Elysium", baseChance = 70, minAmount = 2, maxAmount = 2},
             {itemId = 35375, name = "Empty Enchanting Rune of Eldric", baseChance = 30, minAmount = 1, maxAmount = 1},
         },
         [26171] = {
-            {itemId = 35374, name = "Empty Enchanting Rune of Solstice", baseChance = 100, minAmount = 1, maxAmount = 2},
+            {itemId = 35374, name = "Empty Enchanting Rune of Solstice", baseChance = 75, minAmount = 1, maxAmount = 2},
             {itemId = 35373, name = "Empty Enchanting Rune of Euphoria", baseChance = 25, minAmount = 1, maxAmount = 1},
         }
     }

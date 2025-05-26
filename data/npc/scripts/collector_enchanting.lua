@@ -19,10 +19,9 @@ function onCreatureSay(cid, type, msg)
 end
 
 local enchanting_items = {
-    {name = "Arcane Dust", id = 40001, min = 2, max = 6, pouches = 2},
-    {name = "Mystic Crystal", id = 40002, min = 2, max = 5, pouches = 3},
-    {name = "Enchanted Shard", id = 40003, min = 1, max = 4, pouches = 4},
-    {name = "Celestial Essence", id = 40004, min = 1, max = 2, pouches = 6},
+    {name = "Arcane Powder", id = 13215, min = 2, max = 6, pouches = 2},
+    {name = "Mystic Powder", id = 13197, min = 2, max = 5, pouches = 3},
+    {name = "Crystal Essence", id = 40003, min = 1, max = 4, pouches = 4},
 }
 local valuable_pouch_id = 9001
 
@@ -41,49 +40,40 @@ function creatureSayCallback(cid, type, msg)
 
     if msgcontains(msg_l, "valuable pouches") then
         local dialog = "Which enchanting material do you seek?\n"
-        dialog = dialog .. "1. Arcane Dust ("..enchanting_items[1].pouches.." pouches)\n"
-        dialog = dialog .. "2. Mystic Crystal ("..enchanting_items[2].pouches.." pouches)\n"
-        dialog = dialog .. "3. Enchanted Shard ("..enchanting_items[3].pouches.." pouches)\n"
-        dialog = dialog .. "4. Celestial Essence ("..enchanting_items[4].pouches.." pouches)\n"
-        dialog = dialog .. "Type 'dust', 'crystal', 'shard', or 'essence' to choose."
-        doSendDialogNpc(cid, getNpcCid(), dialog, "dust&crystal&shard&essence&No")
-    elseif msgcontains(msg_l, "dust") then
+        dialog = dialog .. "1. Arcane Powder ("..enchanting_items[1].pouches.." pouches)\n"
+        dialog = dialog .. "2. Mystic Powder ("..enchanting_items[2].pouches.." pouches)\n"
+        dialog = dialog .. "3. Crystal Essence ("..enchanting_items[3].pouches.." pouches)\n"
+        dialog = dialog .. "Type 'arcane', 'mystic', 'crystal' to choose."
+        doSendDialogNpc(cid, getNpcCid(), dialog, "arcane&mystic&crystal&No")
+    elseif msgcontains(msg_l, "arcane") then
         local item = enchanting_items[1]
         if player:getItemCount(valuable_pouch_id) >= item.pouches then
             player:removeItem(valuable_pouch_id, item.pouches)
             local amount = math.random(item.min, item.max)
             player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Arcane Dust! May your runes glow ever brighter.", "dust&Thanks&Close")
+            doSendDialogNpc(cid, getNpcCid(), "Arcane Powder! May your runes glow ever brighter.", "arcane&Thanks&Close")
         else
             doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
         end
-    elseif msgcontains(msg_l, "crystal") then
+    elseif msgcontains(msg_l, "mystic") then
         local item = enchanting_items[2]
         if player:getItemCount(valuable_pouch_id) >= item.pouches then
             player:removeItem(valuable_pouch_id, item.pouches)
             local amount = math.random(item.min, item.max)
             player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Mystic Crystal! Channel the energies wisely.", "crystal&Close")
+            doSendDialogNpc(cid, getNpcCid(), "Mystic Powder! Channel the energies wisely.", "mystic&Close")
         else
             doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
         end
-    elseif msgcontains(msg_l, "shard") then
+    elseif msgcontains(msg_l, "crystal") then
         local item = enchanting_items[3]
         if player:getItemCount(valuable_pouch_id) >= item.pouches then
             player:removeItem(valuable_pouch_id, item.pouches)
             local amount = math.random(item.min, item.max)
-            player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Enchanted Shard! Fragments of true power.", "shard&Close")
-        else
-            doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
-        end
-    elseif msgcontains(msg_l, "essence") then
-        local item = enchanting_items[4]
-        if player:getItemCount(valuable_pouch_id) >= item.pouches then
-            player:removeItem(valuable_pouch_id, item.pouches)
-            local amount = math.random(item.min, item.max)
-            player:addItem(item.id, amount)
-            doSendDialogNpc(cid, getNpcCid(), "Celestial Essence! The rarest of magical substances.", "essence&Close")
+            local Crystalvalues = {35788, 33202, 33201, 33203, 35789}
+            local randomValue = Crystalvalues[math.random(1, #values)]
+            player:addItem(randomValue, amount)
+            doSendDialogNpc(cid, getNpcCid(), "Crystal Essence! Fragments of true power.", "crystal&Close")
         else
             doSendDialogNpc(cid, getNpcCid(), "You don't have enough valuable pouches for this trade. Come back when you've got more!", "Close")
         end
