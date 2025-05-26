@@ -4791,7 +4791,7 @@
 	</item>
 	<item id="2501" article="a" name="Hunter's prestige">
 		<attribute key="weight" value="4000" />
-		<attribute key="armor" value="13" />
+		<attribute key="armor" value="8" />
 		<attribute key="slotType" value="head" />
 	</item>
 	<item id="2502" article="a" name="dwarven helmet">
@@ -37098,6 +37098,7 @@
 	<item id="31890" name="Goblin Swifties">
 		<attribute key="weight" value="85" />
 		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="1" />
 		<attribute key="speed" value="20" />
 		<attribute key="showattributes" value="1" />
 	</item>
@@ -41703,5 +41704,51 @@
         <attribute key="description" value="this item is part of a quest." />
         <attribute key="weight" value="55" />
     </item>
+
+	<item id="39961" article="a" name="Oak Log">
+        <attribute key="description" value="can be turned into planks using a refinery table." />
+        <attribute key="weight" value="55" />
+    </item>
+	<item id="39962" article="a" name="Oak Plank">
+        <attribute key="description" value="Used in several crafting recipes." />
+        <attribute key="weight" value="55" />
+    </item>
+
+	<item id="39965" article="a" name="Greenheart Log">
+        <attribute key="description" value="can be turned into planks using a refinery table." />
+        <attribute key="weight" value="55" />
+    </item>
+	<item id="39966" article="a" name="Greenheart Plank">
+        <attribute key="description" value="Used in several crafting recipes." />
+        <attribute key="weight" value="55" />
+    </item>
+
+	<item id="39967" article="a" name="Bloodwood Log">
+        <attribute key="description" value="can be turned into planks using a refinery table." />
+        <attribute key="weight" value="55" />
+    </item>
+	<item id="39968" article="a" name="Bloodwood Plank">
+        <attribute key="description" value="Used in several crafting recipes." />
+        <attribute key="weight" value="55" />
+    </item>
+
+	<item id="39971" article="a" name="Pine Log">
+        <attribute key="description" value="can be turned into planks using a refinery table." />
+        <attribute key="weight" value="55" />
+    </item>
+	<item id="39972" article="a" name="Pine Plank">
+        <attribute key="description" value="Used in several crafting recipes." />
+        <attribute key="weight" value="55" />
+    </item>
+
+	<item id="39973" article="a" name="Maple Log">
+        <attribute key="description" value="can be turned into planks using a refinery table." />
+        <attribute key="weight" value="55" />
+    </item>
+	<item id="39974" article="a" name="Maple Plank">
+        <attribute key="description" value="Used in several crafting recipes." />
+        <attribute key="weight" value="55" />
+    </item>
+
 	
 </items>
