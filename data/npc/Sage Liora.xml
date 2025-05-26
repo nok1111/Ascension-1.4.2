@@ -1,6 +1,6 @@
 <npc name="Sage Liora" script="collector_herbs.lua" walkinterval="2000">
 	<health now="100" max="100" />
-	<look type="15" />
+	<look type="2781" body="105" legs="127"/>
 	<parameters>
 		<parameter key="message_farewell" value="May your path be fragrant!" />
 	</parameters>

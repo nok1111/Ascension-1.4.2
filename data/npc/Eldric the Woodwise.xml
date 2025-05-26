@@ -1,6 +1,6 @@
-<npc name="Eldric the Woodwise" script="collector_wood.lua" walkinterval="2000">
+<npc name="Eldric the Woodwise" script="collector_wood.lua" walkinterval="0">
 	<health now="100" max="100" />
-	<look type="15" />
+	<look type="2502" />
 	<parameters>
 		<parameter key="message_farewell" value="May the woods shelter you!" />
 	</parameters>
