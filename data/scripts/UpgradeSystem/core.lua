@@ -6,13 +6,13 @@ US_BUFFS = {}
 
 local US_SUBID = {}
 
-local TargetCombatEvent = EventCallback
-TargetCombatEvent.onTargetCombat = function(creature, target)
+local TargetCombatEventUpgrade = EventCallback
+TargetCombatEventUpgrade.onTargetCombat = function(creature, target)
     target:registerEvent("UpgradeSystemHealth")
     target:registerEvent("UpgradeSystemDeath")
     return RETURNVALUE_NOERROR
 end
-TargetCombatEvent:register()
+TargetCombatEventUpgrade:register()
 
 local LoginEvent = CreatureEvent("UpgradeSystemLogin")
 
@@ -1662,15 +1662,16 @@ function Item.setRarity(self, rarity)
     print("set rarity", rarity)
     local rarityName = US_CONFIG.RARITY[rarity] and US_CONFIG.RARITY[rarity].name or tostring(rarity)
     local itemName = self:getName()
-    if rarity > 1 then
+    if rarity == 2 or rarity == 3 or rarity == 4 then
         local newName = rarityName .. " " .. itemName
         self:setAttribute(ITEM_ATTRIBUTE_NAME, newName)
     else
         self:setAttribute(ITEM_ATTRIBUTE_NAME, itemName)
     end
-
-    if self:getCustomAttribute("rarity") > 0 and self:getCustomAttribute("item_level") > 0 then
-      local raritylevel = self:getCustomAttribute("rarity")
+    
+    if rarity and self:getCustomAttribute("item_level") > 0 then
+      local raritylevel = rarity
+      print("rarity level", raritylevel)
       local level = self:getCustomAttribute("item_level")
       
       -- Modified formula using 1.5 base multiplier with diminishing returns
@@ -1693,18 +1694,33 @@ function Item.rollRarity(self)
         end
     end
     self:setRarity(rarity)
-    local rarityName = US_CONFIG.RARITY[rarity] and US_CONFIG.RARITY[rarity].name or tostring(rarity)
-    local itemName = self:getName()
-    if rarity > 1 then
-        local newName = rarityName .. " " .. itemName
-        self:setAttribute(ITEM_ATTRIBUTE_NAME, newName)
-    else
-        self:setAttribute(  ITEM_ATTRIBUTE_NAME, itemName)
-    end
+
 end
 
 function Item.getRarity(self)
     return self:getCustomAttribute("rarity") and US_CONFIG.RARITY[self:getCustomAttribute("rarity")] or US_CONFIG.RARITY[COMMON]
+end
+
+-- Rarity level mapping: 0=COMMON, 1=RARE, 2=EPIC, 3=LEGENDARY
+
+
+function Item.getRarityLevel(self)
+  local rarityId = self:getCustomAttribute("rarity")
+  -- If already a number, just map to 0-based
+  if type(rarityId) == "number" then
+      return rarityId - 1
+  end
+  -- If it's a string, map it
+  if type(rarityId) == "string" then
+      local rarityMap = {
+          ["COMMON"] = 0,
+          ["RARE"] = 1,
+          ["EPIC"] = 2,
+          ["LEGENDARY"] = 3
+      }
+      return rarityMap[rarityId] or 0
+  end
+  return 0 -- default to COMMON
 end
 
 function Item.getRarityId(self)
