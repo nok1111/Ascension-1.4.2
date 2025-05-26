@@ -2,7 +2,7 @@
 local herbCategories = {
     commonHerb = {
         emptyPositions = {},
-        maxAmount = 150, -- Individual max amount
+        maxAmount = 180, -- Individual max amount
         effectOnAppear = 12,
         emptyHerbId = 40055,
         activeHerbs = {

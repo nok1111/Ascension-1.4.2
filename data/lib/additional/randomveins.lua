@@ -2,7 +2,7 @@
 local oreVeinCategories = {
     copper = {
         emptyPositions = {},
-        maxAmount = 1000, -- Individual max amount
+        maxAmount = 150, -- Individual max amount
         effectOnAppear = 12,
         emptyVeinId = 40024,
         activeVeins = {
@@ -12,7 +12,7 @@ local oreVeinCategories = {
     },
     silver = {
         emptyPositions = {},
-        maxAmount = 1000, -- Individual max amount
+        maxAmount = 100, -- Individual max amount
         effectOnAppear = 12,
         emptyVeinId = 29425,
         activeVeins = {
