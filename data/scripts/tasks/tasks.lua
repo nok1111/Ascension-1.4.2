@@ -624,9 +624,9 @@ end
     end
   end
   
-  local LoginEvent = CreatureEvent("TasksLogin")
+  local LoginEventTasks = CreatureEvent("TasksLogin")
   
-  function LoginEvent.onLogin(player)
+  function LoginEventTasks.onLogin(player)
     player:registerEvent("TasksExtended")
     player:registerEvent("TasksKill")
     player:sendTasksData()
@@ -1141,8 +1141,8 @@ end
   end
   
 
-  LoginEvent:type("login")
-  LoginEvent:register()
+  LoginEventTasks:type("login")
+  LoginEventTasks:register()
   ExtendedEvent:type("extendedopcode")
   ExtendedEvent:register()
   KillEvent:type("kill")
