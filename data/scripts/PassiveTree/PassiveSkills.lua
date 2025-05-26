@@ -101,15 +101,15 @@ function creatureEvent.onExtendedOpcode(player, opcode, buffer)
 end
 creatureEvent:register()
 
-local onLoginEvent = CreatureEvent("PassiveSkills_onLogin")
-function onLoginEvent.onLogin(player)
+local onLoginEventPassive = CreatureEvent("PassiveSkills_onLogin")
+function onLoginEventPassive.onLogin(player)
 	player:registerEvent("PassiveSkills_onExtendedOpcode")
 	player:registerEvent("Talent_onAdvance")
 	PassiveSkills.cachePlayerTreeProgress(player)
 	PassiveSkills.applyBuffsToPlayer(player)
 	return true
 end
-onLoginEvent:register()
+onLoginEventPassive:register()
 
 
 
