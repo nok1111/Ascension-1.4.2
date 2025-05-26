@@ -27,10 +27,10 @@ end
 killEvent:register()
 
 -- Register the event on player login
-local loginEvent = CreatureEvent("OgreKillLogin")
-function loginEvent.onLogin(player)
+local loginEventOgre = CreatureEvent("OgreKillLogin")
+function loginEventOgre.onLogin(player)
     player:registerEvent("OgreKillTracker")
     return true
 end
 
-loginEvent:register()
+loginEventOgre:register()
