@@ -5,6 +5,7 @@ ec.onTargetCombat = function(creature, target)
         return RETURNVALUE_NOERROR
     end
 	
+    
 -- Get attacker and target information
 local selfIsPlayer = creature:isPlayer()
 local targetIsPlayer = target:isPlayer()
@@ -61,6 +62,8 @@ if selfIsPlayer and TargetMaster then
     if targetMasterIsPlayer and MyMaster == targetMaster then
         return RETURNVALUE_YOUMAYNOTATTACKTHISCREATURE
     end
+
+    
 end
 
 -- Check summon vs. player interactions (reverse case)
@@ -72,11 +75,10 @@ if MyMaster and targetIsPlayer then
 end
 
 if creature and target and creature:isPlayer() and target:isMonster() then -- and target:isMonster()
-    target:registerEvent("monsterorb")
-    target:registerEvent("EliteMonsterCombatHP")
-    target:registerEvent("EliteMonsterCombatMana")
-		target:registerEvent("quests_kill_drops") 
-        target:registerEvent("LuckDrops") 
+    print("Registering events for", target:getName())
+
+	target:registerEvent("quests_kill_drops") 
+	target:registerEvent("LuckDrops") 
 end
 --ScarabDeath
 
