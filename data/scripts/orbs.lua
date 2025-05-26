@@ -459,42 +459,145 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
     --BLUE ORB HERE
     elseif rewardTypeId == blue_orb then
         local lootTable = {
-            {itemId = 39161, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 3},  -- valuable pouches
-            {itemId = 37763, minLevel = 1, maxLevel = 10, chance = 100, minAmount = 1, maxAmount = 1},  -- dream feather
-            {itemId = 2161, minLevel = 11, maxLevel = 20, chance = 50, minAmount = 2, maxAmount = 5},   -- item 2161
-            {itemId = 2162, minLevel = 21, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1}  -- item 2162
+            {itemId = 39161, minLevel = 1, maxLevel = 1000, chance = 100, minAmount = 1, maxAmount = 3},  -- valuable pouches
+            {itemId = 37763, minLevel = 1, maxLevel = 1000, chance = 100, minAmount = 1, maxAmount = 1},  -- dream feather
+
+            --one handed
+            {itemId = 32789, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 36358, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 36362, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 2403, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+            --two handed
+            {itemId = 2397, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 23544, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 36381, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+            --wands
+            {itemId = 2182, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 2181, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 2190, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+            --bows
+            {itemId = 31919, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 32058, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},
+            {itemId = 36242, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+            --shields
+            {itemId = 2541, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 36241, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 36389, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+            --orbs
+            {itemId = 2511, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 32723, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 2509, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 32721, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+
+            --helms
+            {itemId = 36251, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 2462, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 2662, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 36193, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 36355, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 2501, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            --boots
+            {itemId = 31879, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 31890, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            --armor
+            {itemId = 32859, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 32867, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 36357, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 32863, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 32865, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+            --legs
+            {itemId = 32873, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 2477, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 2488, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 2648, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
+            --ring
+            {itemId = 38323, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
+            {itemId = 38325, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+            {itemId = 38324, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},
+            {itemId = 38326, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},
+            {itemId = 38331, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},
+            {itemId = 38332, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},
+
+            --global rings
+            {itemId = 2164, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},   -- item 2161
+            {itemId = 2165, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2166, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2167, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2168, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2169, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2207, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2208, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2209, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2213, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 2214, minLevel = 11, maxLevel = 9999, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+
+            --amulet
+            {itemId = 38296, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   -- item 2161
+            {itemId = 38291, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 38293, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 38294, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+            {itemId = 38295, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  -- item 2162
+
+    
         }
+        -- Gather all eligible loot for this monster level
+        local eligibleLoot = {}
         for _, loot in ipairs(lootTable) do
             if monsterLevel >= loot.minLevel and monsterLevel <= loot.maxLevel then
-                local roll = math.random(1, 100)
-                if roll <= loot.chance then
-                    local amount = math.random(loot.minAmount, loot.maxAmount)
-                    local itemnew = creature:addItem(loot.itemId, amount)
-                    creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received a loot item (" .. amount .. "x).")
+                table.insert(eligibleLoot, loot)
+            end
+        end
 
-                    local itemType = ItemType(loot.itemId)
-                    if itemType:canHaveItemLevel() then
-                        -- 20% chance to be RARE, otherwise COMMON
-                        local rarity = "COMMON"
-                        if math.random(1, 100) <= 20 then
-                            rarity = "RARE"
-                        end
+        -- Shuffle eligible loot to randomize order
+        for i = #eligibleLoot, 2, -1 do
+            local j = math.random(i)
+            eligibleLoot[i], eligibleLoot[j] = eligibleLoot[j], eligibleLoot[i]
+        end
 
-                        local weaponType = itemType:getWeaponType()
-                        itemnew:setItemLevel(1, true)
-                        itemnew:setRarity(rarity)
-                        local rarityLevel = itemnew:getRarityId()
-                        if weaponType and rarityLevel > 1 then
-                            if not itemnew:rollAttribute(creature, itemType, weaponType) then
-                                  print("Failed to roll attribute for item: " .. itemnew:getId())
-                            end
+        local drops = 0
+        local maxDrops = 4
+        for _, loot in ipairs(eligibleLoot) do
+            if drops >= maxDrops then break end
+            local roll = math.random(1, 100)
+            if roll <= loot.chance then
+                local amount = math.random(loot.minAmount, loot.maxAmount)
+                local itemnew = creature:addItem(loot.itemId, amount)
+                creature:sendTextMessage(MESSAGE_INFO_DESCR, "You received a loot item (" .. amount .. "x).")
+
+                local itemType = ItemType(loot.itemId)             
+                if itemType and itemType:canHaveItemLevel() then
+                    -- 20% chance to be RARE, otherwise COMMON
+                    local rarity = COMMON
+                    if math.random(1, 100) <= 20 then
+                        rarity = RARE
+                    end
+
+                    itemnew:setItemLevel(1, true)
+                    itemnew:setRarity(rarity)
+                    
+                    
+
+                    local rarityLevel = itemnew:getRarityId()
+                    local weaponType = itemType:getWeaponType()
+                    if rarityLevel > 1 then
+                        if not itemnew:rollAttribute(creature, itemType, weaponType) then
+                              print("Failed to roll attribute for item: " .. itemnew:getId())
                         end
                     end
-                else
-                    creature:sendTextMessage(MESSAGE_INFO_DESCR, "No loot this time.")
                 end
-                break
+                drops = drops + 1
             end
+        end
+        if drops == 0 then
+            creature:sendTextMessage(MESSAGE_INFO_DESCR, "No loot this time.")
         end
     --GREEN ORB HERE
     elseif rewardTypeId == green_orb then
@@ -526,6 +629,11 @@ end
 StepOnOrb:id(38572,38693,38694,39940,39941)
 StepOnOrb:register()
 
+local TargetCombatEventOrb = EventCallback
+TargetCombatEventOrb.onTargetCombat = function(creature, target)
 
+    return RETURNVALUE_NOERROR
+end
+TargetCombatEventOrb:register()
 
 print(">> Loaded Orb Reward System")
