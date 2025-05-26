@@ -958,465 +958,113 @@ Crafting.recipes = {
 	},
 	
 		[3] = { -- all recipes for cooking
+		--TIER 1 runes
 		{
-			craftedItemId = 35342, -- server id of item that you gonna get from that recipe
-			craftedCount = 2, -- amount of items that you gonnna get from that recipe
+			craftedItemId = 39962, -- server id of item that you gonna get from that recipe
+			craftedCount = 15, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
-			desc = "2 slice of cheese: This item can be eated or used on future recepies.",
-			craftPoints = 3, -- points for crafting that recipe
+			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			itemlvl = 0,
+			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35343, required = 2},
+				{id = 39961, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-			craftedItemId = 35338,
-			craftedCount = 1,
-			tier = 1,
+			craftedItemId = 39966, -- server id of item that you gonna get from that recipe
+			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "Big round cheese: This item can be eated, eating big round cheese will grant full your belly with one bite.",
-			craftPoints = 5,
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			itemlvl = 0,
+			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35342, required = 5},
+				{id = 39965, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-			craftedItemId = 2689,
-			craftedCount = 15,
-			tier = 1,
+			craftedItemId = 39968, -- server id of item that you gonna get from that recipe
+			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "15 pieces of simple bread: This item can be eated or used on future recepies.",
-			craftPoints = 2,
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			itemlvl = 0,
+			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 2692, required = 1},
-				{id = 2695, required = 1},
+				{id = 39967, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-			craftedItemId = 2691,
-			craftedCount = 10,
-			tier = 1,
+			craftedItemId = 39972, -- server id of item that you gonna get from that recipe
+			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "10 brown breads: This item can be eated or used on future recepies.",
-			craftPoints = 5,
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			itemlvl = 0,
+			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 2692, required = 1},
-				{id = 2695, required = 1},
+				{id = 39971, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-			craftedItemId = 38033,
-			craftedCount = 1,
-			tier = 1,
+			craftedItemId = 39974, -- server id of item that you gonna get from that recipe
+			craftedCount = 15, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "Baked bass: Eating this will increase your Mana regeneration by 6 points every 2 seconds and last for 30 minutes. (this effect can not stack with other mana regen dishes).",
-			craftPoints = 5,
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			itemlvl = 0,
+			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35427, required = 2},
-				
+				{id = 39973, required = 5}, --TIME ESSENCE
 			},
 		},
 		{
-			craftedItemId = 35365,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 2,
-			desc = "eating this will grant you a minor elemental protection buff.",
-			craftPoints = 5,
-			cost = 2, -- cost in gold coins
+			craftedItemId = 32703, -- server id of item that you gonna get from that recipe
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 0, -- used for description
+			fame = 0, -- used for description
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = "Smelt copper ores into Copper Bar. required for crafting a variety of equipment.",
+			craftPoints = 2, -- points for crafting that recipe		
+			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 35422, required = 2},
-				{id = 35358, required = 1},
-				
+				{id = 35481, required = 5},
+				{id = 40035, required = 1}, --coal
 			},
 		},
 		{
-			craftedItemId = 35359,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "bread with ham. Eting this will increase your Hp regeneration by 5 points every 2 seconds for 30 minutes. (this effect can not stack with other health regen dishes)",
-			craftPoints = 7,
-			cost = 2, -- cost in gold coins
+			craftedItemId = 32704, -- server id of item that you gonna get from that recipe
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 0, -- used for description
+			fame = 0, -- used for description
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = "Smelt tin ores into Tin Bar. required for crafting a variety of equipment.",
+			craftPoints = 2, -- points for crafting that recipe		
+			cost = 2, -- points for crafting that recipe
 			recipestorage = 0,
 			ingredients = {
-				{id = 2691, required = 2}, -- bread
-				{id = 2671, required = 2}, --ham
-				{id = 35358, required = 1}, --bowl
-				
-				
-			},
-		},
-		{
-			craftedItemId = 35361,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 1,
-			desc = "eating this will grant you a minor physical potection buff.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 8838, required = 2},
-				{id = 35339, required = 2},
-				{id = 35358, required = 1}, --bowl
-				
-				
-			},
-		},
-		{
-			craftedItemId = 35367,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 2,
-			desc = "eating this will grant you a minor weapon damage buff.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {				
-				{id = 35422, required = 1}, --bass
-				{id = 35427, required = 1}, --big mouth bass (green)
-				{id = 35358, required = 1}, --bowl								
-			},
-		},
-		{
-			craftedItemId = 35362,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 2,
-			desc = "eating this will grant you a minor elemental damage buff.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-				{id = 35421, required = 2}, --Largemouth Yellowfish
-				{id = 35358, required = 1}, --bowl								
+				{id = 40035, required = 5},
+				{id = 40036, required = 1}, --coal
 			},
 		},
 
-		{
-			craftedItemId = 18397,
-			craftedCount = 1,
-			tier = 3,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "eating this will grant you a weapon damage buff.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 2792, required = 5}, --mushroom
-                {id = 2692, required = 1},	--harina
-                {id = 6125, required = 3},	--egg			
-			},
-		},
-		{
-			craftedItemId = 35783,
-			craftedCount = 1,
-			tier = 3,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "Eating this will grant you a elemental damage boost.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35423, required = 2}, --t3 fish
-                {id = 13213, required = 1},	--especias
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35784,
-			craftedCount = 1,
-			tier = 3,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "Eating this will grant you an enhanced mana regen buff for 30 minutes.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35428, required = 2}, --t3 fish
-                {id = 13213, required = 1},	--especias
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35785,
-			craftedCount = 1,
-			tier = 3,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "Eating this will grant you a elemental Protection Boost.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 2672, required = 3}, --dragon ham
-                {id = 35339, required = 1},	--red meat
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35369,
-			craftedCount = 1,
-			tier = 3,
-			fame = 2, -- used for description
-			requiredSkill = 3,
-			desc = "Eating this will grant you a physical Protection Boost.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 2672, required = 5}, --dragon ham
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		--------------
-		{
-			craftedItemId = 35357,
-			craftedCount = 1,
-			tier = 4,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Eating this will grant you a great elemental Damage Boost.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35426, required = 3}, --fish
-				{id = 13213, required = 2},	--especias
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35371,
-			craftedCount = 1,
-			tier = 4,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Eating this will grant you a great weapon Damage Boost.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35420, required = 3}, --fish
-				{id = 19737, required = 1},	--especias
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35363,
-			craftedCount = 1,
-			tier = 4,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Eating this will increse your spirit regeneation (hp and mana) for 30 minutes.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 11429, required = 3}, --hydra ham
-				{id = 13213, required = 2},	--especias
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35356,
-			craftedCount = 1,
-			tier = 4,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Eating this will grant you a great physical protection Boost.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35337, required = 2}, --bones
-				{id = 2685, required = 2},	--tomatoes
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35370,
-			craftedCount = 1,
-			tier = 4,
-			fame = 2, -- used for description
-			requiredSkill = 4,
-			desc = "Eating this will grant you a great elemental protection Boost.",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 11429, required = 2}, --hydra ham
-				{id = 2672, required = 2},	--dragon ham
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-
-
-		{
-			craftedItemId = 35351,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "A mystical drink that enhances your spirit, increasing health and mana regeneration for 30 minutes.",
-			craftPoints = 8,
-			cost = 10, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 29020, required = 5}, --enchanted powder
-				{id = 21402, required = 1}, --milk
-				{id = 35358, required = 1}, --bowl
-
-			},
-		},
-		{
-			craftedItemId = 35353,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "An arcane elixir that boosts your elemental damage, making your spells hit harder for a limited time.",
-			craftPoints = 8,
-			cost = 10, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 29020, required = 5}, --enchanted powder
-				{id = 21402, required = 1}, --milk
-				{id = 35358, required = 1}, --bowl
-
-			},
-		},
-		{
-			craftedItemId = 35350,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "A hearty brew that fortifies your defenses, converting a portion of physical damage into mana for 30 minutes.",
-			craftPoints = 8,
-			cost = 10, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 29020, required = 5}, --enchanted powder
-				{id = 21402, required = 1}, --milk
-				{id = 35358, required = 1}, --bowl
-
-			},
-		},
-		--------------------------
-		{
-			craftedItemId = 12542,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "not implemented yet",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35337, required = 5}, --bones
-				{id = 2679, required = 2},	--cherry
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 11135,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "not implemented yet",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35429, required = 5}, --fish
-				{id = 5920, required = 2},	--green dragon scale		
-			},
-		},
-		{
-			craftedItemId = 35362,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "not implemented yet",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 35425, required = 6}, --fish
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		{
-			craftedItemId = 35354,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "not implemented yet",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 5943, required = 6}, --demon hearth
-                {id = 35358, required = 1},	--bowl			
-			},
-		},
-		
-
-
-
-
-
-
-
-		{
-			craftedItemId = 36131,
-			craftedCount = 1,
-			tier = 5,
-			fame = 2, -- used for description
-			requiredSkill = 5,
-			desc = "not implemented yet",
-			craftPoints = 8,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {		
-                {id = 2685, required = 3}, --demon hearth
-				{id = 2684, required = 3}, --demon hearth
-				{id = 2673, required = 3}, --demon hearth
-				{id = 8842, required = 3}, --demon hearth	
-				{id = 1989, required = 1}, --demon hearth
-			},
-		},
-		
 		
 	},
 		[4] = { -- all recipes for enchanting
