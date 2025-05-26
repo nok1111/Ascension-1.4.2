@@ -3,7 +3,7 @@ local passiveEvent = CreatureEvent("UnifiedPassives")
 if not PassiveSkills then
   dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
 end
-
+consacrated_counter = {}
 local blazingdecree_area = createCombatArea({
   {1, 1, 1},
   {1, 3, 1},
@@ -32,6 +32,62 @@ function doExtraFireball(playerid, targetid, baseDamage)
 end
 
 local PASSIVES = {
+  
+  holy_damage = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.HolyDamage,
+    },
+    trigger = function(player, target, damage, primaryType)
+      if primaryType ~= COMBAT_HOLYDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.HolyDamage) or 0, 0)
+      return level > 0
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.HolyDamage) or 0, 0)
+      local percent = 1 + (level / 100)
+      return damage * percent
+    end,
+  },
+
+  consecrated_protection = {
+    config = {
+      subid = 50,
+      type = "OnDefend",
+      storage = PassiveSkills.ConsecratedProtection,
+    },
+    trigger = function(player, target, damage, origin)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, 50)
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.ConsecratedProtection) or 0, 0)
+      -- Glacial Empowerment effect
+      local percent = level / 100
+     -- player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+      return damage * percent
+    end
+  },
+
+  unyielding_strength = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.UnyieldingStrength,
+    },
+    trigger = function(player, target, damage, primaryType)
+      if primaryType ~= COMBAT_PHYSICALDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.UnyieldingStrength) or 0, 0)
+      return level > 0
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.UnyieldingStrength) or 0, 0)
+      local percent = 1 + (level / 100)
+      return damage * percent
+    end,
+  },
   GlacialEmpowerment = {
     config = {
       type = "OnAttack",
@@ -46,10 +102,37 @@ local PASSIVES = {
     end,
     effect = function(player, target, damage)
       local level = math.max(player:getStorageValue(PassiveSkills.FrostDamage) or 0, 0)
+      -- Glacial Empowerment effect
       local percent = 1 + (level / 100)
       return damage * percent
     end,
   },
+
+  Consecrated_Strikes = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.ConsecratedStrikes,
+    },
+    -- Track hit counts per player
+    trigger = function(player, target, damage, primaryType)
+      if primaryType ~= COMBAT_PHYSICALDAMAGE then return false end
+      local level = math.max(player:getStorageValue(PassiveSkills.ConsecratedStrikes) or 0, 0)
+      if level <= 0 then return false end
+      local pid = player:getId()
+      consacrated_counter[pid] = (consacrated_counter[pid] or 0) + 1
+      if consacrated_counter[pid] < 4 then return false end
+      consacrated_counter[pid] = 0
+      return math.random(100) <= level
+    end,
+    effect = function(player, target, damage)
+      -- Deal extra holy damage equal to double the original primary damage
+      local holyDamage = damage * 2
+      doTargetCombatHealth(player, target, COMBAT_HOLYDAMAGE, -holyDamage, -holyDamage, CONST_ME_HOLYAREA)
+      target:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
+      return damage
+    end,
+  },
+
   blazingdecree = {
     config = {
       type = "OnAttack",
@@ -141,26 +224,14 @@ local PASSIVES = {
       return damage * 1.5
     end
   },
+
   
-  druid_elements = {
+  Monster_damage_reduction = {
     config = {
-      vocation = 8,
-      type = "OnAttack"
-    },
-    trigger = function(player, target, damage, primaryType)
-      return primaryType == COMBAT_PHYSICALDAMAGE or primaryType == COMBAT_ENERGYDAMAGE
-    end,
-    effect = function(player, target, damage)
-      target:getPosition():sendMagicEffect(445)
-      return damage * 0.80
-    end
-  },
-  
-  damage_reduction = {
-    config = {
+      vocation = "all",
       maxMissChance = 50,
       levelDifferenceFactor = 0.65,
-      type = "OnDefend"
+      type = "OnAttack"
     },
     trigger = function(player, target, damage, origin)
       local monster_level = target:getMonsterLevel()
@@ -174,11 +245,31 @@ local PASSIVES = {
       local miss_chance = math.min(level_difference * PASSIVES.damage_reduction.config.levelDifferenceFactor, PASSIVES.damage_reduction.config.maxMissChance)
       
       if math.random(100) <= miss_chance then
-        target:getPosition():sendMagicEffect(270)
-        target:getPosition():sendMagicEffect(577)
+        target:getPosition():sendMagicEffect(700)
         return 0
       end
       return damage
+    end
+  },
+
+  Monster_damage_amplification = {
+    config = {
+      vocation = "all",
+      amplificationFactor = 0.065, -- 6.5% more damage per level difference
+      type = "OnDefend"
+    },
+    trigger = function(player, target, damage, origin)
+      local monster_level = target:getMonsterLevel()
+      local player_level = player:getLevel()
+      return monster_level > 0 and (monster_level - player_level) > 0
+    end,
+    effect = function(player, target, damage)
+      local monster_level = target:getMonsterLevel()
+      local player_level = player:getLevel()
+      local level_difference = monster_level - player_level
+      local amp = 1 + (level_difference * PASSIVES.Monster_damage_amplification.config.amplificationFactor)
+      local new_damage = math.floor(damage * amp)
+      return new_damage
     end
   },
   
@@ -327,25 +418,6 @@ local PASSIVES = {
       local cond = Condition(CONDITION_STUNED)
       cond:setParameter(CONDITION_PARAM_TICKS, 1500)
       return cond
-    end
-  },
-  
-  one_with_elements = {
-    config = {
-      playerOnly = true,
-      vocation = 2,
-      type = "OnAttack"
-    },
-    trigger = function(player, target, damage, primaryType)
-      return primaryType == COMBAT_PHYSICALDAMAGE or primaryType == COMBAT_ENERGYDAMAGE or 
-             primaryType == COMBAT_FIREDAMAGE or primaryType == COMBAT_EARTHDAMAGE or 
-             primaryType == COMBAT_DEATHDAMAGE or primaryType == COMBAT_HOLYDAMAGE or 
-             primaryType == COMBAT_ICEDAMAGE
-    end,
-    effect = function(player, target, damage)
-      player:addMana(player:getMaxMana() * 0.02)
-      player:getPosition():sendMagicEffect(379)
-      return damage
     end
   },
   
@@ -656,26 +728,29 @@ end
 deathEvent:register()
 
 -- Login handler to register events
-local loginEvent = CreatureEvent("RegisterPassives")
-function loginEvent.onLogin(player)
+local loginEventpassives = CreatureEvent("RegisterPassives")
+function loginEventpassives.onLogin(player)
   player:registerEvent("UnifiedPassives")
   return true
 end
 
 -- Target combat handler to register events
-local TargetCombatEvent = EventCallback
-TargetCombatEvent.onTargetCombat = function(creature, target)
+local TargetCombatEventpassives = EventCallback
+TargetCombatEventpassives.onTargetCombat = function(creature, target)
     target:registerEvent("UnifiedPassives")
     target:registerEvent("NecroprophagyDeath")
+    target:registerEvent("monsterorb")
+    target:registerEvent("EliteMonsterCombatHP")
+    target:registerEvent("EliteMonsterCombatMana")
   return true
 end
 
-TargetCombatEvent:register()
+TargetCombatEventpassives:register()
 -- Register all events
 passiveEvent:type("healthchange")
 passiveEvent:register()
 
-loginEvent:type("login")
-loginEvent:register()
+loginEventpassives:type("login")
+loginEventpassives:register()
 
 print(">> Unified passives system loaded")
