@@ -60,7 +60,29 @@ PassiveSkills.WandDamage = 875548
 PassiveSkills.IceBarrage = 875549
 PassiveSkills.IceCloneDamage = 875550
 
+-- templar 1
+PassiveSkills.UnyieldingStrength = 875551
+PassiveSkills.ConsecratedStrikes = 875552
+PassiveSkills.BlessedJudgment = 875553
+PassiveSkills.FinalVeredict = 875554
+PassiveSkills.RighteousFocus = 875555
 
+
+--templar 2
+
+PassiveSkills.EchoingCommand = 875558
+PassiveSkills.ConsecratedProtection = 875559
+PassiveSkills.SanctifiedPower = 875560
+
+--templar 3
+PassiveSkills.RadiantFocus = 875561
+PassiveSkills.HolyDamage = 875562
+
+--templar 4
+PassiveSkills.JudmentStun = 875563
+PassiveSkills.BlessedImpact = 875564
+PassiveSkills.JudmentRestore = 875565
+PassiveSkills.JudmentManaExtraDamage = 875566
 
 PassiveSkills.resetCost = {
 	gold = 50,
@@ -299,8 +321,8 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Blessed Judgment",
-						description = "Judment now heals 2% of your max health per level",
-						effect = {{type = "storage", name = "BlessedJudgment", storage = PassiveSkills.BlessedJudgment, value = 2}},
+						description = "Judgement now heals 4% of your max health per level",
+						effect = {{type = "storage", name = "BlessedJudgment", storage = PassiveSkills.BlessedJudgment, value = 4}},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 4
 					},
@@ -313,8 +335,10 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Righteous Focus",
-						description = "Your judment now grants you a 10% (per level) critical strike chance per 5 seconds",
-						effect = {{type = "storage", name = "RighteousFocus", storage = PassiveSkills.RighteousFocus, value = 10}},
+						description = "Your judgement now grants you a 10% (per level) critical strike chance per 3 seconds",
+						effect = {
+							{type = "storage", name = "RighteousFocus", storage = PassiveSkills.RighteousFocus, value = 10}
+						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},
@@ -340,15 +364,15 @@ PassiveSkills.treeData = {
 								name = "MaxHealthPercent", 
 								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, value = 3.0}}
+								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 3.0}}
 							}
 						},
 						maxLevel = 10
 					},
 					[2] = {
 						name = "Echoing Command",
-						description = "Your Taunt spell now deals 5% (per level) of your max health as Holy damage",
-						effect = {{type = "storage", name = "TauntDamage", storage = PassiveSkills.TauntDamage, value = 5}},
+						description = "Your Taunt spell now deals Holy damage equal to 5% of your max health (per level)",
+						effect = {{type = "storage", name = "EchoingCommand", storage = PassiveSkills.EchoingCommand, value = 5}},
 						maxLevel = 3,
 						prevNodeLevelNeeded = 10
 					},
@@ -403,7 +427,7 @@ PassiveSkills.treeData = {
 					[2] = {
 						name = "Radiant Focus",
 						description = "Light beam damage increased by 15% per level",
-						effect = {{type = "storage", name = "LightBeamDamage", storage = PassiveSkills.LightBeamDamage, value = 15}},
+						effect = {{type = "storage", name = "RadiantFocus", storage = PassiveSkills.RadiantFocus, value = 15}},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 10
 					},
@@ -422,21 +446,21 @@ PassiveSkills.treeData = {
 				border = 9,
 				nodes = {
 					[1] = {
-						name = "Lawbringer’s Shock",
-						description = "your judment has a 20% chance to stun your target for 2 seconds",
+						name = "Lawbringer's Shock",
+						description = "your Judgement has a 20% chance to stun your target for 2 seconds",
 						effect = {{type = "storage", name = "JudmentStun", storage = PassiveSkills.JudmentStun, value = 20}},
 						maxLevel = 5
 					},
 					[2] = {
 						name = "Blessed Impact",
-						description = "Crusader strike now has a 10% chance to trigger a holy light wich heals you using your magic level.",
+						description = "Crusader strike now has a 10% chance to trigger a holy light wich heals you scaling with 10% of your max mana.",
 						effect = {{type = "storage", name = "BlessedImpact", storage = PassiveSkills.BlessedImpact, value = 10}},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Judgment of Wisdom",
-						description = "your judment now restores 5% (per level) of your total mana",
+						description = "your Judgement now restores 5% (per level) of your total mana",
 						effect = {{type = "storage", name = "JudmentRestore", storage = PassiveSkills.JudmentRestore, value = 5}},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
@@ -567,7 +591,7 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 10
 					},
 					[4] = {
-						name = "Death’s Approach",
+						name = "Death's Approach",
 						description = "lethal dagger has a 25% (per level) chance to teleport you to your marked target and deal an aditional extra damage",
 						effect = {{type = "storage", name = "DeathApproach", storage = PassiveSkills.DeathApproach, value = 25}},
 						maxLevel = 4,
@@ -602,7 +626,7 @@ PassiveSkills.treeData = {
 				border = 13,
 				nodes = {
 					[1] = {
-						name = "Butcher’s Art",
+						name = "Butcher's Art",
 						description = "Increases mutilate damage by 5% per level",
 						effect = {{type = "storage", name = "ButchersArt", storage = PassiveSkills.ButchersArt, value = 5}},
 						maxLevel = 5
