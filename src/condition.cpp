@@ -288,66 +288,49 @@ Condition* Condition::createCondition(PropStream& propStream)
 
 bool Condition::startCondition(Creature* creature)
 {
-    switch (conditionType) {
-        case CONDITION_BLEEDING:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_699);
-            }
-            break;
-        case CONDITION_FIRE:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_711);
-            }
-            break;
-        case CONDITION_CURSED:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_708);
-            }
-            break;
-        case CONDITION_ENERGY:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_709);
-            }
-            break;
-        case CONDITION_FREEZING:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
-            }
-            break;
-        case CONDITION_POISON:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_712);
-            }
-            break;
-        case CONDITION_DAZZLED:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_714);
-            }
-            break;
-        case CONDITION_STUN:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_703);
-            }
-            break;
-        case CONDITION_FEAR:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_702);
-            }
-            break;
-		case CONDITION_PARALYZE:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
-            }
-            break;
-		case CONDITION_REGENERATION:
-            if (creature && !creature->isRemoved()) {
-                g_game.addMagicEffect(creature->getPosition(), CONST_ME_701);
-            }
-            break;
-    }
+    
 
     if (ticks > 0) {
         endTime = ticks + OTSYS_TIME();
+
+		switch (conditionType) {
+		
+		
+		case CONDITION_FREEZING:
+			if (creature && !creature->isRemoved()) {
+				g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
+			}
+			break;
+		
+		case CONDITION_DAZZLED:
+			if (creature && !creature->isRemoved()) {
+				g_game.addMagicEffect(creature->getPosition(), CONST_ME_714);
+			}
+			break;
+		case CONDITION_STUN:
+			if (creature && !creature->isRemoved()) {
+				g_game.addMagicEffect(creature->getPosition(), CONST_ME_703);
+			}
+			break;
+		case CONDITION_FEAR:
+			if (creature && !creature->isRemoved()) {
+				g_game.addMagicEffect(creature->getPosition(), CONST_ME_702);
+			}
+			break;
+		case CONDITION_PARALYZE:
+			if (creature && !creature->isRemoved()) {
+				g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
+			}
+			break;
+		case CONDITION_REGENERATION:
+			if (creature && !creature->isRemoved()) {
+				g_game.addMagicEffect(creature->getPosition(), CONST_ME_701);
+			}
+			break;
+
+		default:
+			break;
+		}
     }
     return true;
 }
@@ -1369,6 +1352,33 @@ bool ConditionDamage::startCondition(Creature* creature)
 	if (!init()) {
 		return false;
 	}
+	switch (conditionType) {
+	case CONDITION_BLEEDING:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_699);
+		}
+		break;
+	case CONDITION_FIRE:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_711);
+		}
+		break;
+	case CONDITION_CURSED:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_708);
+		}
+		break;
+	case CONDITION_POISON:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_712);
+		}
+		break;
+	case CONDITION_ENERGY:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_709);
+		}
+		break;
+	}
 	return true;
 }
 
@@ -1425,42 +1435,8 @@ bool ConditionDamage::executeCondition(Creature* creature, int32_t interval)
 
 			doDamage(creature, damage);
 			// Add effect based on condition type
-			switch(conditionType) {
-				case CONDITION_BLEEDING:
-				if (creature && !creature->isRemoved()) {
-					g_game.addMagicEffect(creature->getPosition(), CONST_ME_699);
-				}
-					break;
-				case CONDITION_FIRE:
-					if (creature && !creature->isRemoved()) {
-					g_game.addMagicEffect(creature->getPosition(), CONST_ME_711); 
-					}
-					break;
-				case CONDITION_CURSED:
-					if (creature && !creature->isRemoved()) {
-					g_game.addMagicEffect(creature->getPosition(), CONST_ME_708);
-					}
-					break;
-				case CONDITION_ENERGY:
-					if (creature && !creature->isRemoved()) {
-					g_game.addMagicEffect(creature->getPosition(), CONST_ME_709);
-					}
-					break;
-				case CONDITION_FREEZING:
-					if (creature && !creature->isRemoved()) {
-					g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
-					}
-					break;
-				case CONDITION_POISON:
-					if (creature && !creature->isRemoved()) {
-					g_game.addMagicEffect(creature->getPosition(), CONST_ME_712);
-					}
-					break;
-				case CONDITION_REGENERATION:
-					break;
-				default:
-					break;
-			}
+			
+			
 		}
 
 		if (!bRemove) {
