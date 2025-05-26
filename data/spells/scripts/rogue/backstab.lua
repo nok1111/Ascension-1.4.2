@@ -59,7 +59,7 @@ function onCastSpell(creature, var, tar)
     addEvent(stunAnimationrogue, 0, stunCreature.uid, stunCreature:getPosition(), (stunDuration / 1000) * 2)
 	
 	
-	targetmonster:sendProgressbar(stunDuration, false)
+	--targetmonster:sendProgressbar(stunDuration, false)
 
     -- Execute Damage
     return combat:execute(creature, var)

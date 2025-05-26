@@ -1,5 +1,5 @@
 local effect_damage = 600
-
+local effect_damage2 = 511
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, effect_damage)
@@ -10,7 +10,7 @@ combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 local combat2 = Combat()
 local time_between_hits2 = 0.3 --seconds
 combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat2:setParameter(COMBAT_PARAM_EFFECT, effect_damage)
+combat2:setParameter(COMBAT_PARAM_EFFECT, effect_damage2)
 combat2:setArea(createCombatArea(AREA_SQUAREWAVE52, AREADIAGONAL_SQUAREWAVE5))
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -37,8 +37,14 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80	
+	local min = (level / 5) + (power * 0.045) + 55
+	local max = (level / 5) + (power * 0.085) + 80	
+	
+	local level = player:getStorageValue(PassiveSkills.RadiantFocus) or 0
+    if level > 0 then
+        min = min * (1 + (level / 100))
+        max = max * (1 + (level / 100))
+    end
 	return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
@@ -49,8 +55,14 @@ function onGetFormulaValues2(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80	
+	local min = (level / 5) + (power * 0.045) + 55
+	local max = (level / 5) + (power * 0.085) + 80	
+	
+	local level = player:getStorageValue(PassiveSkills.RadiantFocus) or 0
+    if level > 0 then
+        min = min * (1 + (level / 100))
+        max = max * (1 + (level / 100))
+    end
 	return -min, -max
 end
 combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
@@ -62,8 +74,14 @@ function onGetFormulaValues3(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80 		
+	local min = (level / 5) + (power * 0.045) + 55
+	local max = (level / 5) + (power * 0.085) + 80 	
+	
+	local level = player:getStorageValue(PassiveSkills.RadiantFocus) or 0
+    if level > 0 then
+        min = min * (1 + (level / 100))
+        max = max * (1 + (level / 100))
+    end
 	return -min, -max
 end
 combat3:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues3")
@@ -74,8 +92,14 @@ function onGetFormulaValues4(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80				
+	local min = (level / 5) + (power * 0.045) + 55
+	local max = (level / 5) + (power * 0.085) + 80	
+	
+	local level = player:getStorageValue(PassiveSkills.RadiantFocus) or 0
+    if level > 0 then
+        min = min * (1 + (level / 100))
+        max = max * (1 + (level / 100))
+    end
 	return -min, -max
 end
 combat4:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues4")

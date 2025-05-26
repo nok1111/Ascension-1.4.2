@@ -1,6 +1,6 @@
 local config = {
     duration = 10,
-    ticksBetween = 800,
+    ticksBetween = 1500,
     effect = 559,
     effect2 = 511
 }
@@ -14,19 +14,50 @@ combat:setArea(createCombatArea(AREA_CIRCLE2X2))
 
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = ((level / 5) + (power * 0.085) + (attack * 1.5) + 150) / 2.68
-	local max =  ((level / 5) + (power * 0.085) + (attack * 1.5) + 150) / 2.45
+	local min = ((level / 5) + (power * 0.025) + level) 
+	local max =  ((level / 5) + (power * 0.028) + level) 
+
+    local level = player:getStorageValue(PassiveSkills.SanctifiedPower) or 0
+    if level > 0 then
+        min = min * (1 + (level / 100))
+        max = max * (1 + (level / 100))
+    end
     return -min, -max
 end
 
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
+
+local function applyConsecratedProtection(areaCenter, creatureId)
+    local creature = Creature(creatureId)
+    if not creature then return end
+    -- Define area as 5x5 centered on areaCenter (adjust as needed)
+    for x = areaCenter.x - 2, areaCenter.x + 2 do
+        for y = areaCenter.y - 2, areaCenter.y + 2 do
+            local pos = Position(x, y, areaCenter.z)
+            local tile = Tile(pos)
+            if tile then
+                for _, thing in ipairs(tile:getCreatures() or {}) do
+                    if thing:isPlayer() then
+                        local level = thing:getStorageValue(PassiveSkills.ConsecratedProtection) or 0
+                        if level > 0 then
+                            local cond = Condition(CONDITION_ATTRIBUTES)
+                            cond:setParameter(CONDITION_PARAM_TICKS, 1000)
+                            cond:setParameter(CONDITION_PARAM_SUBID, 50)
+                            cond:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
+                            thing:addCondition(cond)
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
 
 local function doAnimation(creatureId, pos)
     local creature = Creature(creatureId)
@@ -39,14 +70,18 @@ local function doAnimation(creatureId, pos)
         if pos:isSightClear(randomPos, true) then
             randomPos:sendMagicEffect(595)
             combat:execute(creature, Variant(randomPos))
-             
         end
     end
+    -- Apply ConsecratedProtection to players in area
+    applyConsecratedProtection(pos, creatureId)
 end
 
 local function apply_floor(creatureId, positionnube)  	
-local creature = Creature(creatureId)
+    local creature = Creature(creatureId)
 	if not creature then
+		return
+	end
+    if not positionnube then
 		return
 	end
 	positionnube:sendMagicEffect(616)

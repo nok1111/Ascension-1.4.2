@@ -81,6 +81,16 @@ function onCastSpell(cid, creature, variant)
 		local vit = player:getMaxHealth() / 100
 		local a1 = (level/7) + (vit * 0.7) + (magic * 5) + 30
 		local b2 = (level/7) + (vit * 1.3) + (magic * 6.5) + 55
+
+         -- JudmentManaExtraDamage: add 2% of total mana per level as extra damage
+    local manaExtraLevel = player:getStorageValue(PassiveSkills.JudmentManaExtraDamage) or 0
+    if manaExtraLevel > 0 then
+        local maxMana = player:getMaxMana() or 0
+        local extra = maxMana * (manaExtraLevel / 100)
+        a1 = a1 + extra
+        b2 = b2 + extra
+    end
+    
     local dosdamage = {min = -a1, max = -b2}
     sendEffects(player:getId(), config.delay, config.areaEffect, config.distanceEffect)
     runSpell(player:getId(), 0, config.rounds, config.delay, config.radius, dosdamage, config.damageType, config.areaEffect, config.distanceEffect)
