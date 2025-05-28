@@ -50,5 +50,7 @@ function onLogin(player)
 	-- Send Fame Info
 	FameSystem:sendUpdateFame(player)
 
+	
+
 	return true
 end
