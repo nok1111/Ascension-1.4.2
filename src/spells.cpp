@@ -1002,15 +1002,17 @@ bool InstantSpell::playerCastInstant(Player* player, std::string& param)
 		postCastSpell(player);
 		
 		/* Vocation-specific effect */
-		if (player->getVocation()->getId() == 1) { // Check for vocation ID 1
-			if (uniform_random(1, 100) <= g_config.getNumber(ConfigManager::MAGIC_ECHO_CHANCE)) {
-				bool echoSuccess = internalCastSpell(player, var);
-				if (echoSuccess) {
-					g_game.internalCreatureSay(player, TALKTYPE_MONSTER_SAY, "Magic Echo!", false);
-					//player->detachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
-					//player->attachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
-					g_game.sendAttachedEffect(player, g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
-					
+		if (player->getVocation()->getId() == 1) {
+			int32_t value;
+			if (player->getStorageValue(875543, value) && value == 1) { 
+				if (uniform_random(1, 100) <= g_config.getNumber(ConfigManager::MAGIC_ECHO_CHANCE)) {
+					bool echoSuccess = internalCastSpell(player, var);
+					if (echoSuccess) {
+						g_game.internalCreatureSay(player, TALKTYPE_MONSTER_SAY, "Magic Echo!", false);
+						//player->detachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+						//player->attachEffectById(g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+						g_game.sendAttachedEffect(player, g_config.getNumber(ConfigManager::MAGIC_ECHO_EFFECT));
+					}
 				}
 			}
 		}

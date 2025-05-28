@@ -879,9 +879,8 @@ void Combat::doTargetCombat(Creature* caster, Creature* target, CombatDamage& da
 				damage.secondary.value /= 2;
 			}
 
-			if (!damage.critical && damage.primary.type != COMBAT_HEALING && damage.origin != ORIGIN_CONDITION) {
+			if (!damage.critical && damage.primary.type != COMBAT_HEALING) {
 				uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE);
-std::cout << "Critical hit chance: " << chance << "%" << std::endl;
 				if (chance > 0 && normal_random(1, 100) <= chance) {
 					damage.primary.value = std::round(damage.primary.value * 1.8); // 180% damage
 					damage.secondary.value = std::round(damage.secondary.value * 1.8);
@@ -981,7 +980,7 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 	Player* casterPlayer = caster ? caster->getPlayer() : nullptr;
 	int32_t criticalPrimary = 0;
 	int32_t criticalSecondary = 0;
-	if (!damage.critical && damage.primary.type != COMBAT_HEALING && casterPlayer && damage.origin != ORIGIN_CONDITION) {
+	if (!damage.critical && damage.primary.type != COMBAT_HEALING && casterPlayer) {
 		uint16_t chance = casterPlayer->getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE);
 		if (chance > 0 && normal_random(1, 100) <= chance) {
 			criticalPrimary = std::round(damage.primary.value * 1.8); // 180% damage
@@ -1167,7 +1166,7 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 				if (casterPlayer->getHealth() < casterPlayer->getMaxHealth() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 					uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_LIFELEECHAMOUNT);
 					if (skill > 0) {
-						leechCombat.primary.value = std::ceil(totalDamage * (skill + ((targetsCount - 1) * (skill / 10.))) / targetsCount);
+						leechCombat.primary.value = std::ceil(totalDamage * (skill / 100.));
 						g_game.combatChangeHealth(nullptr, casterPlayer, leechCombat);
 						casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_RED);
 					}
@@ -1177,7 +1176,7 @@ void Combat::doAreaCombat(Creature* caster, const Position& position, const Area
 				if (casterPlayer->getMana() < casterPlayer->getMaxMana() && damage.primary.type == COMBAT_PHYSICALDAMAGE) {
 					uint16_t skill = casterPlayer->getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT);
 					if (skill > 0) {
-						leechCombat.primary.value = std::ceil(totalDamage * (skill + ((targetsCount - 1) * (skill / 10.))) / targetsCount);
+						leechCombat.primary.value = std::ceil(totalDamage * (skill / 100.));
 						g_game.combatChangeMana(nullptr, casterPlayer, leechCombat);
 						casterPlayer->sendMagicEffect(casterPlayer->getPosition(), CONST_ME_MAGIC_BLUE);
 					}
