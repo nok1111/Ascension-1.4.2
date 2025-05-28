@@ -50,10 +50,10 @@ local function orbeffectLoop(position, text, color, loops)
 end
 
 local rewardTypes = {
-    {type = "Gold", itemId = yellow_orb, chance = 15, textcolor = TEXTCOLOR_YELLOW},
+    {type = "Gold", itemId = yellow_orb, chance = 10, textcolor = TEXTCOLOR_YELLOW},
     {type = "Loot", itemId = blue_orb, chance = 8, textcolor = TEXTCOLOR_BLUE},
-    {type = "Experience", itemId = green_orb, chance = 10, textcolor = TEXTCOLOR_LIGHTGREEN},
-    {type = "Death", itemId = purple_orb, chance = 50, textcolor = TEXTCOLOR_PURPLE}
+    {type = "Experience", itemId = green_orb, chance = 8, textcolor = TEXTCOLOR_LIGHTGREEN},
+    {type = "Death", itemId = purple_orb, chance = 2, textcolor = TEXTCOLOR_PURPLE}
 }
 
 local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty]", "[Terra]"}
