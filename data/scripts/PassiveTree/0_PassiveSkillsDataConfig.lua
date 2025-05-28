@@ -49,9 +49,11 @@ PassiveSkills.Pyromaniac = 875541
 PassiveSkills.BlazingDecree = 875542
 
 -- Sorcerer ARCANE
+PassiveSkills.MagicEcho = 875543
 PassiveSkills.SurgeRecovery = 875544
 PassiveSkills.ArcaneBarrage = 875545
 PassiveSkills.TeleportDistance = 875546
+
 
 
 -- Sorcerer ICE
@@ -83,6 +85,32 @@ PassiveSkills.JudmentStun = 875563
 PassiveSkills.BlessedImpact = 875564
 PassiveSkills.JudmentRestore = 875565
 PassiveSkills.JudmentManaExtraDamage = 875566
+
+--nightblade
+PassiveSkills.AssassinsMastery = 875567
+PassiveSkills.ScentOfBlood = 875568
+PassiveSkills.VirulentRupture = 875569
+
+--nightblade 2
+PassiveSkills.ElusiveDance = 875570
+PassiveSkills.DeathApproach = 875571
+PassiveSkills.StealthDuration = 875572
+
+--nightblade 3
+PassiveSkills.ButchersArt = 875570
+PassiveSkills.DarkTransmutation = 875571
+PassiveSkills.ShadowReflection = 875572
+PassiveSkills.Deathwind = 875573
+PassiveSkills.Deathbringer = 875574
+
+
+
+
+
+
+
+
+
 
 PassiveSkills.resetCost = {
 	gold = 50,
@@ -129,14 +157,14 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Lucky Strike",
-						description = "Increases critical chance by 1% per level",
+						description = "Increases critical chance by 2% per level",
 						-- totalBuffsDesc = {desc = "you are currently benefiting from +[[var1]]% Critical Chance and +[[var2]]% Critical Amount", vars = {var1 = 1, var2 = 2}},
 						effect = {
 							{
 								type = "condition",
 								name = "Critcial Chance",
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
 							}
 						},
 						maxLevel = 5,
@@ -226,10 +254,10 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 7
 					},
 					[6] = {
-						name = "Mana Distortion",
-						description = "Unlocks the spell Mana Distortion", -- if no totalBuffsDesc existing then description is used
+						name = "Magic Echo",
+						description = "Chance to echo your last spell", -- if no totalBuffsDesc existing then description is used
 						effect = {
-							{ type = "spell", name = "Mana Distortion" }
+							{ type = "storage", name = "MagicEcho", storage = PassiveSkills.MagicEcho, value = 1 },
 						},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 3
@@ -503,14 +531,15 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Veiled Might",
-						description = "Increase physical damage done by 5% per level",
-						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
-						maxLevel = 8
+						description = "Increase physical damage done by 10% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 10}},
+						maxLevel = 3
 					},
 					[2] = {
-						name = "Assassin’s Mastery",
-						description = "Lethal Dagger now deals 5% (per level) extra physical damage and adds a bleed to the target",
+						name = "Assassin's Mastery",
+						description = "Lethal Dagger now deals 5% (per level) extra physical damage and has a chance of 20% (per level) to apply a bleed to the target",
 						effect = {{type = "storage", name = "AssassinsMastery", storage = PassiveSkills.AssassinsMastery, value = 5}},
+						maxLevel = 5,
 						prevNodeLevelNeeded = 3
 					},
 					[3] = {
@@ -522,13 +551,13 @@ PassiveSkills.treeData = {
 					},
 					[4] = {
 						name = "Virulent Rupture",
-						description = "Dark rupture has a 20% (per level) chance to spill corrupted blood over nearby targets applying the same bleeding effects.",
+						description = "Dark rupture has a 20% (per level) chance to spill corrupted blood over nearby targets applying the same bleeding effects at 35% effectiveness.",
 						effect = {
 							{
 								type = "storage",
 								name = "VirulentRupture",
 								storage = PassiveSkills.VirulentRupture,
-								value = 5
+								value = 20
 							}
 						},
 						maxLevel = 5,
@@ -545,7 +574,7 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT, value = 1}}
 							}
 						},
-						maxLevel = 5,
+						maxLevel = 8,
 						prevNodeLevelNeeded = 5
 					},
 					
@@ -556,7 +585,7 @@ PassiveSkills.treeData = {
 							{type = "spell", name = "Assassination"}
 						},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 8
 					}
 				},
 			},
@@ -592,20 +621,20 @@ PassiveSkills.treeData = {
 					},
 					[4] = {
 						name = "Death's Approach",
-						description = "lethal dagger has a 25% (per level) chance to teleport you to your marked target and deal an aditional extra damage",
+						description = "lethal dagger has a 25% (per level) chance to teleport you to your marked target and deal an aditional extra deathdamage",
 						effect = {{type = "storage", name = "DeathApproach", storage = PassiveSkills.DeathApproach, value = 25}},
 						maxLevel = 4,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 1
 					},
 					[5] = {
 						name = "Killing Instinct",
-						description = "Increases critical chance by 1% per level",
+						description = "Increases critical chance by 2% per level",
 						effect = {
 							{
 								type = "condition",
 								name = "Critcial Chance",
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
 							},
 						
 						},
@@ -635,32 +664,36 @@ PassiveSkills.treeData = {
 						name = "Dark Transmutation",
 						description = "Transforms Mutilate damage into Death Damage and increases Death Damage done  by 8% per level",
 						effect = {{type = "storage", name = "DarkTransmutation", storage = PassiveSkills.DarkTransmutation, value = 8}},
-						prevNodeLevelNeeded = 6
+						maxLevel = 4,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Shadow Reflection",
-						description = "Lethal dagger now has a chance 20% per level to create a  shadow version of yourself wich will damage your target.",
+						description = "Lethal dagger now has a chance 20% per level to create a  shadow version of yourself wich deals death damage for 6 seconds.",
 						effect = {{type = "storage", name = "ShadowReflection", storage = PassiveSkills.ShadowReflection, value = 20}},
-						prevNodeLevelNeeded = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 4
 					},
 					[4] = {
 						name = "Deathwind",
 						description = "Transforms Fan of Knives damage into Death Damage and increases its over time damage effect  by 10% per level",
 						effect = {{type = "storage", name = "Deathwind", storage = PassiveSkills.Deathwind, value = 10}},
+						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Deathbringer",
 						description = "Your melee attacks have a 4% (per level) chance to deal extra death damage on hit.",
 						effect = {{type = "storage", name = "Deathbringer", storage = PassiveSkills.Deathbringer, value = 4}},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
 						name = "Void Execution",
-						description = "Learn spell Void Execution (requires level 70)",
+						description = "Learn spell Void Execution",
 						effect = {{type = "spell", name = "Void Execution"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},

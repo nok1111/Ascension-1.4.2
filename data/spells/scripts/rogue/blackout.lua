@@ -24,7 +24,7 @@ combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 function onCastSpell(creature, var, tar)
 	
-    local stunDuration = 2000
+    local stunDuration = 4000
 	local targetmonster = creature:getTarget()
 
 	
@@ -37,7 +37,8 @@ function onCastSpell(creature, var, tar)
     combat:execute(creature, var)
     -- Add animation
     if targetmonster then
-        targetmonster:attachEffectById(66, true)
+        targetmonster:attachEffectById(70, true)
+        targetmonster:getPosition():sendMagicEffect(568)
     end
     return true
 end

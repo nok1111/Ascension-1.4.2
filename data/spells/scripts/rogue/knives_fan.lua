@@ -13,21 +13,17 @@ local config = {
 
 local combatnodot = Combat()
 local combat = Combat()
-
-for i, c in ipairs({combat, combatnodot}) do
-    c:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-    c:setArea(createCombatArea(AREA_CIRCLE5X5))
-end
-
-
-
-
 combat:setArea(createCombatArea(AREA_CIRCLE5X5))
 
 local condition = Condition(CONDITION_POISON)
 condition:setTicks(15000)
 condition:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
+
+local conditioncursed = Condition(CONDITION_CURSED)
+conditioncursed:setTicks(15000)
+conditioncursed:setParameter(CONDITION_PARAM_DELAYED, 1)
+conditioncursed:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
 
 
 
@@ -51,23 +47,33 @@ local function CastSpell(cid, var)
 	
 	min = (level / 1) + (magic * 3.3)
     max = (level / 1) + (magic * 4.35)
+
+	local Deathwind = player:getStorageValue(PassiveSkills.Deathwind) or 0
+	if Deathwind > 0 then
+		min = min + (min * (Deathwind / 100))
+		max = max + (max * (Deathwind / 100))
+		conditioncursed:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))
+		combat:addCondition(conditioncursed)
+	else
+		condition:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))
+		combat:addCondition(condition)
+	end
 	
-    condition:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))
-    combat:addCondition(condition)
+    
 end
 
 
 ----------------------------------------------
 -- KNIVES FORMULA
 local combat1 = Combat()
-combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat1:setParameter(COMBAT_PARAM_EFFECT, 1)
 
 
 
 function onGetFormulaValues1(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -79,13 +85,12 @@ end
 combat1:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues1")
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat2:setParameter(COMBAT_PARAM_EFFECT, 547)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat2:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 
 function onGetFormulaValues2(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -97,13 +102,12 @@ end
 combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
 
 local combat3 = Combat()
-combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat3:setParameter(COMBAT_PARAM_EFFECT, 547)
+combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat3:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 
 function onGetFormulaValues3(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -115,13 +119,12 @@ end
 combat3:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues3")
 
 local combat4 = Combat()
-combat4:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat4:setParameter(COMBAT_PARAM_EFFECT, 547)
+combat4:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat4:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 
 function onGetFormulaValues4(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -133,12 +136,11 @@ end
 combat4:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues4")
 
 local combat5 = Combat()
-combat5:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat5:setParameter(COMBAT_PARAM_EFFECT, 547)
+combat5:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat5:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 function onGetFormulaValues5(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
@@ -369,10 +371,27 @@ end
 
 function onCastSpell(creature, variant)
 	local creatureId = creature:getId()
-	 CastSpell(creature:getId(), variant)
+
+	local Deathwind = creature:getStorageValue(PassiveSkills.Deathwind) or 0
+	if Deathwind > 0 then
+		for i, c in ipairs({combat, combatnodot, combat1, combat2, combat3, combat4, combat5}) do
+			c:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
+		end
+
+		combat2:setParameter(COMBAT_PARAM_EFFECT, 18)
+		combat3:setParameter(COMBAT_PARAM_EFFECT, 18)
+		combat4:setParameter(COMBAT_PARAM_EFFECT, 18)
+		combat5:setParameter(COMBAT_PARAM_EFFECT, 18)
+	else
+		for i, c in ipairs({combat, combatnodot}) do
+			c:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+		end
+	end
 	
+	CastSpell(creature:getId(), variant)	
 	addEvent(SpellAnimation, 1, creatureId, combat1, combat2, combat3, combat4, combat5)
 	combat:execute(creature, variant)
+	creature:getPosition():sendMagicEffect(735)
 
 	return true
 end

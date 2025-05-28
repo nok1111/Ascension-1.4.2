@@ -2,6 +2,7 @@ local disenchant = Action()
 
 function disenchant.onUse(player, item, fromPosition, target, toPosition, isHotkey)
     -- Default reward table: itemId, name, base drop chance (in percent)
+    print("target", target.itemid)
     local disenchantRewards = {
         
         {itemId = 13215, name = "Arcane Powder", baseChance = 10, minAmount = 1, maxAmount = 3},

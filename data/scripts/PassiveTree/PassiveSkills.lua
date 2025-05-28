@@ -51,7 +51,7 @@ end
 local creatureevent = CreatureEvent("Talent_onAdvance")
 
 function creatureevent.onAdvance(player, skill, oldLevel, newLevel)
-    local LEVEL_INTERVAL = 5 -- Give a point every 5 levels
+    local LEVEL_INTERVAL = 3 -- Give a point every 5 levels
     if skill == SKILL_LEVEL then
         local lastGiven = player:getStorageValue(PassiveSkills.lastPassivePointLevel)
         if lastGiven < 0 then lastGiven = 0 end
@@ -103,10 +103,24 @@ creatureEvent:register()
 
 local onLoginEventPassive = CreatureEvent("PassiveSkills_onLogin")
 function onLoginEventPassive.onLogin(player)
+
+	local foodConditionlogin = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
+	foodConditionlogin:setTicks(1200)
+	foodConditionlogin:setParameter(CONDITION_PARAM_HEALTHGAIN, 1)
+	foodConditionlogin:setParameter(CONDITION_PARAM_HEALTHTICKS, 1 * 1000)
+	foodConditionlogin:setParameter(CONDITION_PARAM_MANAGAIN, 1)
+	foodConditionlogin:setParameter(CONDITION_PARAM_MANATICKS, 1 * 1000)
+	player:addCondition(foodConditionlogin)
+
+	
 	player:registerEvent("PassiveSkills_onExtendedOpcode")
 	player:registerEvent("Talent_onAdvance")
 	PassiveSkills.cachePlayerTreeProgress(player)
 	PassiveSkills.applyBuffsToPlayer(player)
+
+	
+	player:addMana(100)
+
 	return true
 end
 onLoginEventPassive:register()

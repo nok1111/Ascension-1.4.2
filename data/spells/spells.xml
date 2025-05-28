@@ -161,13 +161,13 @@
     <instant group="healing" spellid="47" name="Mana Flow" words="mana flow" lvl="40" mana="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/mana_flow.lua">
     <vocation name="Magician" />
 	</instant>
-	<instant group="attack" spellid="48" name="Hand of God" words="hand of god" lvl="30" mana="120" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5000" groupcooldown="1900" needweapon="0" needlearn="1" script="mage/handofgod.lua">
+	<instant group="attack" spellid="48" name="Hand of God" words="hand of god" lvl="18" mana="120" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5000" groupcooldown="1900" needweapon="0" needlearn="1" script="mage/handofgod.lua">
     <vocation name="Magician" />
     </instant>
 	<instant group="attack" spellid="49" name="Frost Wave" words="frost wave" lvl="70" mana="200" direction="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="mage/frost_wave.lua">
     <vocation name="Magician" />
 	</instant>
-	<instant group="attack" spellid="51" name="Arcane Missiles" words="arcane missiles" lvl="18" mana="80" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="6000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/arcane_missiles.lua">
+	<instant group="attack" spellid="51" name="Arcane Missiles" words="arcane missiles" lvl="18" mana="80" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="6000" groupcooldown="1900" needweapon="0" needlearn="1" script="mage/arcane_missiles.lua">
      <vocation name="Magician" />
 	</instant>
 	<instant group="support"  spellid="52" name="Teleport" words="teleport" lvl="60" mana="150" prem="0" aggressive="0" cooldown="12000" groupcooldown="1900" script="mage/teleport.lua">
@@ -186,7 +186,7 @@
     <vocation name="None" />
 	</instant>
 
-	<instant group="attack" spellid="195" name="Ice Clones" words="ice clones" lvl="42" mana="115" selftarget="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_clones.lua">
+	<instant group="attack" spellid="195" name="Ice Clones" words="ice clones" lvl="42" mana="115" selftarget="1" cooldown="12000" groupcooldown="1900" needlearn="1" script="mage/ice_clones.lua">
     <vocation name="None" />
 	</instant>
     <instant group="attack" spellid="196" name="Ice Tomb" words="ice tomb" lvl="10" mana="10" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/ice_trap.lua">
@@ -269,12 +269,18 @@
 	<instant group="attack" spellid="88" name="Dark Rupture" words="dark rupture" lvl="30" mana="45" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="6000" groupcooldown="1900" needweapon="1" needlearn="0" script="rogue/dark_rupture.lua">
     <vocation name="Nightblade" />
 	</instant>	
-	<instant group="attack" spellid="89" name="Void Execution" words="Void Execution" lvl="100" mana="200" range="3" aggressive="1" blockwalls="1" selftarget="1" cooldown="22000" groupcooldown="1900" needweapon="1" needlearn="0" script="rogue/void_execution.lua">
+	<instant group="attack" spellid="89" name="Void Execution" words="Void Execution" lvl="1" mana="200" range="3" aggressive="1" blockwalls="1" selftarget="1" cooldown="22000" groupcooldown="1900" needweapon="1" needlearn="0" script="rogue/void_execution.lua">
     <vocation name="Nightblade" />
 	</instant>
 	<instant group="support" spellid="90" name="Blood Blades" words="blood blades" lvl="35" mana="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="rogue/blood_blades.lua">
     <vocation name="Nightblade" />
 	</instant>
+	<instant group="attack" spellid="91" name="Lethal Dagger" words="lethal dagger" lvl="15" mana="50" range="8" aggressive="1" blockwalls="1" needtarget="1" cooldown="2000" groupcooldown="0" needweapon="1" needlearn="0" script="rogue/lethal_dagger.lua">
+    <vocation name="Nightblade" />
+	</instant>
+	<instant group="attack" spellid="92" name="Blackout" words="blackout" lvl="1" mana="60" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="16000" groupcooldown="0" needweapon="1" needlearn="1" script="rogue/blackout.lua">
+    <vocation name="Nightblade" />
+	</instant>	
 	
 		<!-- stelalr -->
 	<instant group="attack" spellid="100" name="Cosmic Force" words="cosmic force" lvl="8" mana="30" range="4" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/earth_call.lua">
@@ -890,6 +896,7 @@
 	<instant name="summonhealer" words="###910" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonheal.lua"/>
 	<instant name="summonhealer-seraphin" words="###911" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonheal-seraphin.lua"/>
 	<instant name="summonicerange" words="###912" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonicerange.lua"/>
+	<instant name="summonshadowclone" words="###913" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonshadowclone.lua"/>
 	
 	
 	

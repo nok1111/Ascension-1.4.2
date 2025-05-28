@@ -14,8 +14,8 @@ function onGetFormulaValues2(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + attack
-	local max = (level / 5) + (power * 0.085) + attack * 1.5
+	local min = (level / 5) + (power * 0.075) + attack * 1.5
+	local max = (level / 5) + (power * 0.085) + attack * 1.6
 
     -- JudmentManaExtraDamage: add 2% of total mana per level as extra damage
     local manaExtraLevel = player:getStorageValue(PassiveSkills.JudmentManaExtraDamage) or 0

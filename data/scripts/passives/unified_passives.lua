@@ -70,6 +70,48 @@ local PASSIVES = {
     end
   },
 
+  elusive_dance = {
+    config = {
+      type = "OnDefense",
+      storage = PassiveSkills.ElusiveDance,
+    },
+    trigger = function(player, attacker, damage, primaryType)
+      local level = math.max(player:getStorageValue(PassiveSkills.ElusiveDance) or 0, 0)
+      return level > 0
+    end,
+    effect = function(player, attacker, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.ElusiveDance) or 0, 0)
+      if level > 0 then
+        local dodgeChance = level -- 2% per level
+        if math.random(1, 100) <= dodgeChance then
+          player:getPosition():sendMagicEffect(685)
+          return 0 -- Dodge successful
+        end
+      end
+      return damage
+    end,
+  },
+
+  scent_of_blood = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.ScentOfBlood,
+    },
+    trigger = function(player, target, damage, primaryType)
+      -- Check if target is bleeding
+      return target and target:getCondition(CONDITION_BLEEDING)
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.ScentOfBlood) or 0, 0)
+      print("level: " .. level)
+      if level > 0 then
+        local percent = 1 + (level / 100) -- 3% per level 
+        return damage * percent
+      end
+      return damage
+    end,
+  },
+
   unyielding_strength = {
     config = {
       type = "OnAttack",
@@ -363,33 +405,30 @@ local PASSIVES = {
     end
   },
   
-  lightbringer = {
+  Deathbringer = {
     config = {
-      storage = 5000,
-      chance = 20,
-      type = "OnAttack"
+      type = "OnAttack",
+      storage = PassiveSkills.Deathbringer,
     },
-    trigger = function(player, target, damage, origin)
-      return origin == ORIGIN_MELEE or origin == ORIGIN_RANGED or origin == ORIGIN_SPELL
+    trigger = function(player, target, damage, primaryType, origin)
+      if origin ~= ORIGIN_MELEE then
+        return false
+      end
+      return player:getStorageValue(PassiveSkills.Deathbringer) > 0
     end,
     effect = function(player, target, damage)
-      local extraDamage = damage * 1.8
-      
-      addEvent(function()
-        if target and player then
-          doTargetCombatHealth(player, target, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_PURPLEDEATH)
-          local min = (player:getMaxMana() * 0.14)
-          local max = (player:getMaxMana() * 0.17)
+      local extraDamage = 1.8
+      local level = math.max(player:getStorageValue(PassiveSkills.Deathbringer) or 0, 0)
+      if level > 0 then
+        if math.random(1, 100) <= level then
+          local new_damage = damage * extraDamage
+          doTargetCombatHealth(player, target, COMBAT_DEATHDAMAGE, -new_damage, -new_damage, 18)
+          local min = (damage * 0.35)
+          local max = (damage * 0.4)
           player:addMana(math.random(min, max))
-          player:say("Deathbringer!", TALKTYPE_MONSTER_SAY)
-          player:getPosition():sendMagicEffect(379)
-          player:getPosition():sendMagicEffect(318)
-          local explo = target:getPosition()
-          explo.x = explo.x + 1
-          explo.y = explo.y + 1
-          explo:sendMagicEffect(CONST_ME_CAKE)
+          player:attachEffectById(71, true)
         end
-      end, 200)
+      end
       return damage
     end
   },
@@ -421,83 +460,6 @@ local PASSIVES = {
     end
   },
   
-  luck_dodge = {
-    config = {
-      vocation = "all",
-      type = "OnDefend"
-    },
-    trigger = function(player, target, damage, origin)
-      return true
-    end,
-    effect = function(player, target, damage)
-      local luckChance = player:getCharacterStat(CHARSTAT_LUCK) * 10
-      if math.random(1, 10000) <= luckChance then
-        player:getPosition():sendMagicEffect(CONST_ME_685)
-        return 0
-      end
-      return damage
-    end
-  },
-  
-  resilience_stat = { --reduce damage taken
-    config = {
-      vocation = "all",
-      type = "OnDefend"
-    },
-    trigger = function(player, target, damage, origin)
-      return true
-    end,
-    effect = function(player, target, damage)
-      local resilience = player:getCharacterStat(CHARSTAT_RESILIENCE)
-      
-      -- First 20% of damage gets strong reduction (0.8% per point)
-      local firstReduction = math.min(damage * 0.2, resilience * 0.008)
-      
-      -- Remaining 80% gets normal reduction (0.2% per point)
-      local secondReduction = (damage - firstReduction) * resilience * 0.002
-      
-      local totalReduction = firstReduction + secondReduction
-      local finalDamage = damage - totalReduction
-      
-      print(string.format("Resilience Defense (%d points):", resilience))
-      print(string.format("First 20%% reduced by %.1f%% (%.1f damage)", 
-                          firstReduction/damage*100, firstReduction))
-      print(string.format("Remaining 80%% reduced by %.1f%% (%.1f damage)",
-                          secondReduction/damage*100, secondReduction))
-      print(string.format("Total reduction: %.1f%% (from %.1f to %.1f)",
-                          totalReduction/damage*100, damage, finalDamage))
-      
-      return finalDamage
-    end
-  },
-  
-  voracity_leech = {
-    config = {
-      vocation = "all", -- All vocations example
-      type = "OnAttack"
-    },
-    trigger = function(player, target, damage, origin)
-      return origin ~= ORIGIN_HEALING
-    end,
-    effect = function(player, target, damage)
-      -- Very powerful early-game formula
-      local base = 0.05  -- 5% base leech
-      local linear = player:getCharacterStat(CHARSTAT_VORACITY) * 0.003  -- 0.3% per point
-      local diminishing = math.pow(player:getCharacterStat(CHARSTAT_VORACITY), 0.6) * 0.0005  -- Strong early scaling
-      
-      local leechPercent = math.min(base + linear + diminishing, 0.30)  -- Cap at 30%
-      local healAmount = math.max(math.floor(math.abs(damage) * leechPercent), 2)  -- Minimum 2 HP
-      
-      print("Voracity Leech:")
-      print("Base:", base, "Linear:", linear, "Diminishing:", diminishing)
-      print("Total %:", leechPercent, "Heal:", healAmount)
-      
-      player:addHealth(healAmount)
-      player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-      return damage
-    end
-  },
-  
   frostbloom_shield = {
     config = {
       subid = 25961,
@@ -509,33 +471,6 @@ local PASSIVES = {
     effect = function(player, target, damage)
       player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
       return damage * 0.8
-    end
-  },
-  
-  luck_dodge_stat = {
-    config = {
-      playerOnly = true,
-      type = "OnDefend"
-    },
-    trigger = function(player, target, damage, origin)
-      return math.random(1, 10000) <= player:getCharacterStat(CHARSTAT_LUCK) * 10
-    end,
-    effect = function(player, target, damage)
-      player:getPosition():sendMagicEffect(CONST_ME_685)
-      return 0
-    end
-  },
-  
-  compassion_shield_stat = {
-    config = {
-      playerOnly = true,
-      type = "OnDefend"
-    },
-    trigger = function(player, target, damage, origin)
-      return true
-    end,
-    effect = function(player, target, damage)
-      return damage * (1 - player:getCharacterStat(CHARSTAT_COMPASSION) * 0.003)
     end
   },
   
@@ -618,7 +553,7 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
                           (passiveData.config.storage and player:getStorageValue(passiveData.config.storage) > 0) or
                           (passiveData.config.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.condition))
           
-          if meetsReq and passiveData.trigger(player, creature, primaryDamage, primaryType) then
+          if meetsReq and passiveData.trigger(player, creature, primaryDamage, primaryType, origin) then
             print("[Passive System] Attack passive triggered: " .. passiveName)
             -- Handle chance-based passives
             if passiveData.config.chance then
@@ -649,7 +584,7 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
                           (passiveData.config.storage and player:getStorageValue(passiveData.config.storage) > 0) or
                           (passiveData.config.condition and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.condition))
           
-          if meetsReq and passiveData.trigger(player, attacker, primaryDamage, origin) then
+          if meetsReq and passiveData.trigger(player, attacker, primaryDamage, primaryType, origin) then
             print("[Passive System] Defend passive triggered: " .. passiveName)
             -- Handle chance-based passives
             if passiveData.config.chance then
