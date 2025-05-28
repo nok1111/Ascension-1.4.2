@@ -723,6 +723,1459 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Shockwave",
+						description = "Learn spell Shockwave",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},
+					[6] = {
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
+					}
+				},
+			},
+			[2] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Goliath",
+						description = "Increase max health by 5% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxHealthPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 5}}
+							}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 3
+					},
+					[2] = {
+						name = "Bloodthirst",
+						description = "Increases life leech by 1% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Life Leech",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 10
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+			[3] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+		},
+	},
+
+	[5] = {			-- Tree 4
+		name = "Dragonknight Talents",
+		background = "7",
+		branches = {
+			[1] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
+					},
+					[3] = {
+						name = "Shockwave",
+						description = "Learn spell Shockwave (requires level 50)",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},
+					[6] = {
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
+					}
+				},
+			},
+			[2] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+			[3] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+		},
+	},
+
+	[6] = {			-- Tree 4
+		name = "Dragonknight Talents",
+		background = "7",
+		branches = {
+			[1] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
+					},
+					[3] = {
+						name = "Shockwave",
+						description = "Learn spell Shockwave (requires level 50)",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},
+					[6] = {
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
+					}
+				},
+			},
+			[2] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+			[3] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+		},
+	},
+	[7] = {			-- Tree 4
+		name = "Dragonknight Talents",
+		background = "7",
+		branches = {
+			[1] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
+					},
+					[3] = {
+						name = "Shockwave",
+						description = "Learn spell Shockwave (requires level 50)",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},
+					[6] = {
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
+					}
+				},
+			},
+			[2] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+			[3] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+		},
+	},
+	[8] = {			-- Tree 4
+		name = "Dragonknight Talents",
+		background = "7",
+		branches = {
+			[1] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
+					},
+					[3] = {
+						name = "Shockwave",
+						description = "Learn spell Shockwave (requires level 50)",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},
+					[6] = {
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
+					}
+				},
+			},
+			[2] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+			[3] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+		},
+	},
+	[9] = {			-- Tree 4
+		name = "Dragonknight Talents",
+		background = "7",
+		branches = {
+			[1] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
+					},
+					[3] = {
+						name = "Shockwave",
+						description = "Learn spell Shockwave (requires level 50)",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},
+					[6] = {
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
+					}
+				},
+			},
+			[2] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+			[3] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+		},
+	},
+	[10] = {			-- Tree 4
+		name = "Dragonknight Talents",
+		background = "7",
+		branches = {
+			[1] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
+					},
+					[3] = {
+						name = "Shockwave",
+						description = "Learn spell Shockwave (requires level 50)",
+						effect = {{type = "spell", name = "Shockwave"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Lifeblood Strike",
+						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						effect = {
+							{
+								type = "storage",
+								name = "LifebloodStrike",
+								storage = PassiveSkills.LifebloodStrike,
+								value = 25
+							}
+						},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Heartseeker",
+						description = "Increase critical strike chance by 2% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},
+					[6] = {
+						name = "Apex Predator",
+						description = "Increases all damage and attack speed by per missing health",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
+					}
+				},
+			},
+			[2] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+			[3] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Placeholder A",
+						description = "gain +1% x per level",
+						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Placeholder B",
+						description = "unlock x spell",
+						effect = {{type = "spell", name = "X"}},
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Placeholder C",
+						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critcial Chance",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+							},
+							{
+								type = "condition",
+								name = "Critical Amount",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+							}
+						},
+						maxLevel = 5
+					},
+					[4] = {
+						name = "Placeholder D",
+						description = "gain +1 health regeneration per level each sec",
+						effect = {
+							{
+								type = "condition",
+								name = "Health Regen",
+								conditionType = CONDITION_REGENERATION,
+								params = {
+									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
+									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
+								}
+							}
+						},
+						maxLevel = 5
+					},
+					[5] = {
+						name = "Placeholder E",
+						description = "gain +5 speed per level",
+						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						maxLevel = 5
+					},
+					[6] = {
+						name = "Placeholder F",
+						description = "gain +1% y per level \ngain +1 z per level",
+						effect = {
+							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
+							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+						},
+						maxLevel = 17
+					}
+				},
+			},
+		},
+	},
+	[11] = {			-- Tree 4
+		name = "Dragonknight Talents",
+		background = "7",
+		branches = {
+			[1] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Scaled Rupture",
+						description = "Increase Rend damage by 5% (per level)",
+						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						maxLevel = 10
+					},
+					[2] = {
+						name = "Colossal Blows",
+						description = "Increase physical damage done by 5% per level",
+						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						maxLevel = 4
+					},
+					[3] = {
+						name = "Shockwave",
 						description = "Learn spell Shockwave (requires level 50)",
 						effect = {{type = "spell", name = "Shockwave"}},
 						maxLevel = 1,
