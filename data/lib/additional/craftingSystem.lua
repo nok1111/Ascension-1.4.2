@@ -1067,7 +1067,7 @@ Crafting.recipes = {
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 13197, required = 1},
+				{id = 39962, required = 5},
 			},
 		},
 		{
