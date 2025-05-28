@@ -26,9 +26,9 @@ dualWieldingDamageRate = 100
 dualWieldingAttackSpeed = 1500
 
 --monster levels modifiers
-monsterBonusHealth = 2.80  --0.75 default
+monsterBonusHealth = 3.80  --0.75 default
 monsterBonusSpeed = 0.001
-monsterBonusDamage = 0.0015
+monsterBonusDamage = 0.0017
 monsterBonusArmor = 1.0
 monsterBonusDefense = 0.2
 
