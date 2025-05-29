@@ -26,6 +26,8 @@ combat:addCondition(condition)
 	
  local playerpos = creature:getPosition()
 	playerpos:sendMagicEffect(353)
+
+  player:attachEffectById(75, true)
 	
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
    player:sendAddBuffNotification(70, 15, 'Blood Rage: increase Melee skill by 50% for 8 seconds', 5, 0)

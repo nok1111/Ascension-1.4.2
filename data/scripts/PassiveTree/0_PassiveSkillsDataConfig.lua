@@ -801,21 +801,10 @@ PassiveSkills.treeData = {
 						maxLevel = 10
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Dragon Heart",
+						description = "Dragon aura now heals the caster, and increases the healing effectiveness by 10% per talent",
 						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
+							{type = "storage", name = "DragonHeart", storage = PassiveSkills.DragonHeart, value = 10},
 						},
 						maxLevel = 5
 					},

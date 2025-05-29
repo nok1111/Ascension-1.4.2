@@ -88,7 +88,10 @@
 	<vocation name="Dragon Knight" />
 	</instant>	
 	<instant group="attack" spellid="19" name="Shockwave" words="shockwave" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/shockwave.lua">
-	 <vocation name="None" />
+	 <vocation name="Dragon Knight" />
+	</instant>
+	<instant group="support" spellid="306" name="Blood Rage" words="blood rage" lvl="1" strenght="27" dexterity="0" mana="85" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1100" needlearn="1" script="warrior/blood_rage.lua">
+	<vocation name="Dragon Knight" />
 	</instant>
 	
 	
@@ -510,11 +513,7 @@
 	
 	<instant group="attack" spellid="305" name="Quick Chains" words="quick chains" lvl="50" dexterity="65"  mana="250" premium="0" direction="0" range="7" needtarget="1" needweapon="0" cooldown="17000" groupcooldown="1900" script="mastery/get_over_here.lua">
 	</instant>
-	<instant group="support" spellid="306" name="Blood Rage" words="blood rage" lvl="30" strenght="27" dexterity="0" mana="85" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1100" needlearn="0" script="warrior/blood_rage.lua">
-	<vocation name="Nightblade" />
-	<vocation name="Archer" />
-	<vocation name="Light Dancer" />
-	</instant>
+
 	<instant group="support" spellid="307" name="Magic Shield" words="Magic Shield" lvl="14" faith="0" intelligence="25" mana="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_shield.lua">
 	<vocation name="Magician" />
 	<vocation name="Warlock" />

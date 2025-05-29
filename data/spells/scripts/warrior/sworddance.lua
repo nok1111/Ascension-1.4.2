@@ -34,7 +34,7 @@ local function sendEffcDragon(cid, max_iterations, iterations)
     
     
     if not (tile:hasFlag(TILESTATE_PROTECTIONZONE)) then
-        pos:sendDistanceEffect(pos2, 4)
+        --pos:sendDistanceEffect(pos2, 4)
 		
 		local level = pid:getLevel()
 		local magic = pid:getMagicLevel()
@@ -59,8 +59,10 @@ function onCastSpell(creature, variant)
 	--creature:sendProgressbar(18500, false)
 	--player:sendAddBuffNotification(65, 17, 'Dragon Aura', 5, 0)
 	
-    local times_to_run = 15 * #positions
+    local times_to_run = 14 * #positions
     addEvent(sendEffcDragon, 150, creature.uid, times_to_run, times_to_run)
+    player:attachEffectById(73, true)
+    player:attachEffectById(74, true)
     return true
 end
 
