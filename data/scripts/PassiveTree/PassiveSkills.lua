@@ -104,22 +104,10 @@ creatureEvent:register()
 local onLoginEventPassive = CreatureEvent("PassiveSkills_onLogin")
 function onLoginEventPassive.onLogin(player)
 
-	local foodConditionlogin = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
-	foodConditionlogin:setTicks(1200)
-	foodConditionlogin:setParameter(CONDITION_PARAM_HEALTHGAIN, 1)
-	foodConditionlogin:setParameter(CONDITION_PARAM_HEALTHTICKS, 1 * 1000)
-	foodConditionlogin:setParameter(CONDITION_PARAM_MANAGAIN, 1)
-	foodConditionlogin:setParameter(CONDITION_PARAM_MANATICKS, 1 * 1000)
-	player:addCondition(foodConditionlogin)
-
-	
 	player:registerEvent("PassiveSkills_onExtendedOpcode")
 	player:registerEvent("Talent_onAdvance")
 	PassiveSkills.cachePlayerTreeProgress(player)
 	PassiveSkills.applyBuffsToPlayer(player)
-
-	
-	player:addMana(100)
 
 	return true
 end
