@@ -1,5 +1,5 @@
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 combat:setArea(createCombatArea(AREA_CIRCLE3X3))
 
@@ -15,8 +15,8 @@ combat:setCallback(CALLBACK_PARAM_LEVELMAGICFORMULA, "onGetFormulaValues")
 
 
 local combatNegative1 = Combat()
-combatNegative1:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combatNegative1:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_GRABFIRE)
+combatNegative1:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combatNegative1:setParameter(COMBAT_PARAM_EFFECT, 820)
 combatNegative1:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 
 
@@ -30,8 +30,8 @@ end
 combatNegative1:setCallback(CALLBACK_PARAM_LEVELMAGICFORMULA, "onGetFormulaValuesg")
 
 local combat0 = Combat()
-combat0:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat0:setParameter(COMBAT_PARAM_EFFECT, 564)
+combat0:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat0:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat0:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 
 local AREA_RING1X1 = {
@@ -55,8 +55,8 @@ end
 combat0:setCallback(CALLBACK_PARAM_LEVELMAGICFORMULA, "onGetFormulaValues0")
 
 local combat1 = Combat()
-combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat1:setParameter(COMBAT_PARAM_EFFECT, 564)
+combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat1:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat1:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 
 local AREA_RING2X2 = {
@@ -79,8 +79,8 @@ end
 combat1:setCallback(CALLBACK_PARAM_LEVELMAGICFORMULA, "onGetFormulaValues1")
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat2:setParameter(COMBAT_PARAM_EFFECT, 563)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat2:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 
 local AREA_RING3X3 = {
@@ -258,17 +258,22 @@ function onCastSpell(creature, variant)
 
 	combat2:execute(creature, variant)	--Executing combat 2 (outside)
 
-	addEvent(teleportTargets, 100, cid, confi2, pos)
+	creature:attachEffectById(78, true)
+	creature:attachEffectById(79, true)
+	creature:attachEffectById(80, true)
+	creature:attachEffectById(81, true)
 
-	addEvent(doDamage, 400, combat1, cid, variant)
+	addEvent(teleportTargets, 400, cid, confi2, pos)
+
+	--addEvent(doDamage, 400, combat1, cid, variant)
 
 	addEvent(teleportTargets, 500, cid, confi3, pos)
 
-	addEvent(doDamage, 700, combat0, cid, variant)
+	addEvent(doDamage, 500, combat0, cid, variant)
 
-	addEvent(gonnaGetCloser, 800, cid, confi4, pos)
+	addEvent(gonnaGetCloser, 550, cid, confi4, pos)
 
-	addEvent(doDamage, 1000, combatNegative1, cid, variant)
-	addEvent(function() combat:execute(creature, variant) end, 1200)
+	addEvent(doDamage, 600, combatNegative1, cid, variant)
+	addEvent(function() combat:execute(creature, variant) end, 600)
     return true
 end

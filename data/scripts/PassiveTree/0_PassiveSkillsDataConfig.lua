@@ -798,7 +798,8 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT, value = 1}}
 							}
 						},
-						maxLevel = 10
+						maxLevel = 10,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Dragon Heart",
@@ -806,23 +807,17 @@ PassiveSkills.treeData = {
 						effect = {
 							{type = "storage", name = "DragonHeart", storage = PassiveSkills.DragonHeart, value = 10},
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 10
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Fire Within",
+						description = "Learn spell Fire Within",
 						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
+							{type = "spell", name = "Fire Within"}
 						},
-						maxLevel = 5
+						maxLevel = 1,
+						prevNodeLevelNeeded = 10
 					},
 					[5] = {
 						name = "Placeholder E",
@@ -831,13 +826,13 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Draconic Chains",
+						description = "Learn spell Draconic Chains",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "spell", name = "Draconic Chains"}
 						},
-						maxLevel = 17
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},

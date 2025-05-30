@@ -1,9 +1,9 @@
 local config = {
     initialExplosionRadius = 1, -- Initial radius of the explosion
     maxExplosionRadius = 4, -- Maximum radius of the explosion
-    explosionEffect = 540, -- Effect for the explosions
+    explosionEffect = CONST_ME_NONE, -- Effect for the explosions
     damageType = COMBAT_FIREDAMAGE, -- Damage type
-    explosionCount = 5, -- Number of explosions
+    explosionCount = 8, -- Number of explosions
     explosionInterval = 500, -- Interval between explosions in milliseconds
     burnEffect = CONST_ME_FIREAREA, -- Effect for burning condition
     burnDuration = 5000, -- Duration of the burning condition in milliseconds
@@ -65,7 +65,7 @@ local function applyExplosionDamage(creature, position, radius)
     for _, target in ipairs(spectators) do
         if target and target:isCreature() and target:getId() ~= creature:getId() and not isExcludedTarget(creature, target) then
             combat:execute(creature, positionToVariant(target:getPosition()))
-			--target:attachEffectById(12, true)
+			target:attachEffectById(82, true)
 
         end
     end
@@ -78,7 +78,7 @@ local function createExplosions(creatureId, remainingExplosions, currentRadius)
     end
 
     local position = creature:getPosition()
-    position:sendMagicEffect(config.explosionEffect)
+    --position:sendMagicEffect(config.explosionEffect)
     applyExplosionDamage(creature, position, currentRadius)
 
     local nextRadius = math.min(currentRadius + 1, config.maxExplosionRadius)
