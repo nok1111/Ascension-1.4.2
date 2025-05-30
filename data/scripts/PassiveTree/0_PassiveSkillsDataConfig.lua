@@ -821,7 +821,7 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Placeholder E",
-						description = "gain +5 speed per level",
+						description = "Increas you health regeneration while",
 						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
 						maxLevel = 5
 					},
