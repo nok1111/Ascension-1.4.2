@@ -103,12 +103,23 @@ PassiveSkills.ShadowReflection = 875572
 PassiveSkills.Deathwind = 875573
 PassiveSkills.Deathbringer = 875574
 
+--dragon knight
+PassiveSkills.ScaledRupture = 875575
+PassiveSkills.LifebloodStrike = 875576
 
+--dragon knight 2
+PassiveSkills.DragonHeart = 875577
+PassiveSkills.SurvivalInstincts = 875578
 
+--dragon knight 3
+PassiveSkills.EmberTouch = 875579
+PassiveSkills.BerserkersTempo = 875580
+PassiveSkills.ReboundStrike = 875581
+PassiveSkills.FlameEater = 875582
 
-
-
-
+--dragon knight 4
+PassiveSkills.Emberhide = 875583
+PassiveSkills.Bloodline = 875585
 
 
 
@@ -753,15 +764,14 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
 							}
 						},
-						maxLevel = 3,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 2
 					},
 					[6] = {
-						name = "Apex Predator",
-						description = "Increases all damage and attack speed by per missing health",
+						name = "Bloodlust",
+						description = "Learn spell Bloodlust",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "spell", name = "Bloodlust"}
 						},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 6
@@ -789,13 +799,13 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Bloodthirst",
-						description = "Increases life leech by 1% (per level)",
+						description = "Increases life leech by 2% (per level)",
 						effect = {
 							{
 								type = "condition",
 								name = "Life Leech",
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT, value = 1}}
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT, value = 2}}
 							}
 						},
 						maxLevel = 10,
@@ -817,12 +827,12 @@ PassiveSkills.treeData = {
 							{type = "spell", name = "Fire Within"}
 						},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "Increas you health regeneration while",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						name = "Survival Instincts",
+						description = "Auto attacks heals you per missing health, the heal is increased 1% per missing % health per level",
+						effect = {{type = "storage", name = "SurvivalInstincts", storage = PassiveSkills.SurvivalInstincts, value = 1}},
 						maxLevel = 5
 					},
 					[6] = {
@@ -841,74 +851,72 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Ember Touch",
+						description = "Auto attacks apply have a 5% (per level) chance to apply a burning effect for 2 seconds (increased per level)",
+						effect = {{type = "storage", name = "EmberTouch", storage = PassiveSkills.EmberTouch, value = 5}},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
+						name = "Berserker's Tempo",
+						description = "Auto attacks have a 5% chance to apply a Burning effect for 1.5 seconds",
+						effect = {{type = "storage", name = "BerserkersTempo", storage = PassiveSkills.BerserkersTempo, value = 5}},
+						maxLevel = 2,
+						prevNodeLevelNeeded = 5
+					},
+					[3] = {
+						name = "Rebound Strike",
+						description = "Brutal swing has 20% chance to trigger a second strike and create a second hit in front of the main area",
+						effect = {{type = "storage", name = "ReboundStrike", storage = PassiveSkills.ReboundStrike, value = 20}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
+					},
+					[4] = {
+						name = "Flame Eater",
+						description = "Increase the damage done to burning targets by 5% (per level)",
+						effect = {{type = "storage", name = "FlameEater", storage = PassiveSkills.FlameEater, value = 5}},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
+					},
+					[5] = {
+						name = "Phoenix Wrath",
+						description = "Learn spell Phoenix Wrath",
+						effect = {{type = "spell", name = "Phoenix Wrath"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
+					},
+				},
+			},
+			[4] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Emberhide",
+						description = "Increase elemental resistance by 2% (per level)",
+						effect = {{type = "storage", name = "Emberhide", storage = PassiveSkills.Emberhide, value = 2}},
+						maxLevel = 3
+					},
+					[2] = {
+						name = "Dragon Soul",
+						description = "Learn spell Dragon Soul",
+						effect = {{type = "spell", name = "Dragon Soul"}},
+						maxLevel = 1,
 						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Bloodline",
+						description = "Increases the healing of Dragon Soul by 10% (per level)",
+						effect = {{type = "storage", name = "Bloodline", storage = PassiveSkills.Bloodline, value = 10}},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 1
 					},
-					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
-					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
-					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
-					}
 				},
 			},
 		},
 	},
 
 	[5] = {			-- Tree 4
-		name = "Dragonknight Talents",
+		name = "Warlock Talents",
 		background = "7",
 		branches = {
 			[1] = {
@@ -916,39 +924,41 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Scaled Rupture",
-						description = "Increase Rend damage by 5% (per level)",
-						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
-						maxLevel = 10
+						name = "Malefic Persistence",
+						description = "Increases the duration of Curse by 0.5 second (per level) \nIncreases curse damage by 10% (per level)",
+						effect = {{type = "storage", name = "MaleficPersistencedamage", storage = PassiveSkills.MaleficPersistencedamage, value = 10}},
+						effect = {{type = "storage", name = "MaleficPersistenceheal", storage = PassiveSkills.MaleficPersistenceheal, value = 5}},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Colossal Blows",
-						description = "Increase physical damage done by 5% per level",
-						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
-						maxLevel = 4
+						name = "Malediction",
+						description = "Learn spell Malediction",
+						effect = {{type = "spell", name = "Malediction"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Shockwave",
-						description = "Learn spell Shockwave (requires level 50)",
-						effect = {{type = "spell", name = "Shockwave"}},
+						name = "Plague Detonation",
+						description = "Malediction has a chance to 3% (per level) per tick to explode and send malefic pestilence to nearby enemies",
+						effect = {{type = "storage", name = "PlagueDetonation", storage = PassiveSkills.PlagueDetonation, value = 3}},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 3
+					},
+					[4] = {
+						name = "Dark Plague",
+						description = "Learn spell Dark Plague",
+						effect = {{type = "spell", name = "Dark Plague"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 4
 					},
-					[4] = {
-						name = "Lifeblood Strike",
-						description = "Increase the health gain from your brutal swing by 25% (per level)",
-						effect = {
-							{
-								type = "storage",
-								name = "LifebloodStrike",
-								storage = PassiveSkills.LifebloodStrike,
-								value = 25
-							}
-						},
-						maxLevel = 2,
+					[5] = {
+						name = "Lasting Blight",
+						description = "Increase malediction, curse and dark plague duration by 0.5 seconds per level",
+						effect = {{type = "storage", name = "LastingBlight", storage = PassiveSkills.LastingBlight, value = 5}},
+						maxLevel = 5,  --maxLevel/10
 						prevNodeLevelNeeded = 4
 					},
-					[5] = {
+					[6] = {
 						name = "Heartseeker",
 						description = "Increase critical strike chance by 2% (per level)",
 						effect = {
@@ -962,7 +972,7 @@ PassiveSkills.treeData = {
 						maxLevel = 3,
 						prevNodeLevelNeeded = 2
 					},
-					[6] = {
+					[7] = {
 						name = "Apex Predator",
 						description = "Increases all damage and attack speed by per missing health",
 						effect = {

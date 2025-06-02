@@ -2,16 +2,17 @@ local combat2 = Combat()
 local combatnodot2 = Combat()
 
 for i, c in ipairs({combat2, combatnodot2}) do
-    c:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+    c:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
     c:setParameter(COMBAT_PARAM_EFFECT, 230)
     c:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 110)
     c:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 end
 
 local condition2 = Condition(CONDITION_CURSED, CONDITIONID_COMBAT)
-condition2:setTicks(15000)
+condition2:setTicks(6000)
 condition2:setParameter(CONDITION_PARAM_DELAYED, 1)
-condition2:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
+condition2:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+condition2:setParameter(CONDITION_PARAM_SUBID, 259314)
 
 function onGetFormulaValues(player, skill, attack, factor)
 
@@ -41,9 +42,6 @@ end
  
 function onCastSpell(creature, var, tar)
     CastCurse_wl(creature:getId(), var)
-	
-	local targetmonster = creature:getTarget()	
-	targetmonster:sendProgressbar(15000, false)
 	
     return combat2:execute(creature, var)
 end

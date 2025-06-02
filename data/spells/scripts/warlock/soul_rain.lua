@@ -4,14 +4,14 @@ local config = {
 
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, 0)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setArea(createCombatArea(AREA_CROSS1X1))
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat2:setParameter(COMBAT_PARAM_EFFECT, 473)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
+combat2:setParameter(COMBAT_PARAM_EFFECT, 834)
 
 function onGetFormulaValues(player, skill, attack, factor)
 

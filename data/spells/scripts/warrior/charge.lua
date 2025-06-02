@@ -1,14 +1,16 @@
-local stunDuration = 3000
-local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
-stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
+local stunDuration = 1000
+
 
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HITAREA)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_USECHARGES, true)
-combat:addCondition(stun)
+
+local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
+stun:setParameter(CONDITION_PARAM_TICKS, 1000)
+
 
 local arr1 = {
     {0, 0, 0, 0, 0, 0, 0},
@@ -21,11 +23,7 @@ local arr1 = {
 }
 
 combat:setArea(createCombatArea(arr1))
-
-local condition = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
-condition:setParameter(CONDITION_PARAM_TICKS, 1000) -- 1000 = 1 second
-condition:setFormula(0.7, -56, 0.7, -56) -- Modify this to slow the player more or less
-combat:addCondition(condition)
+combat:addCondition(stun)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local power = skill * attack 
@@ -40,31 +38,6 @@ end
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
---------------------------------------------------------------------
-local combat1 = Combat()
-combat1:setArea(createCombatArea(arr1))
-
-function onTargetCreaturechargedragonknight(creature, target)
-local creature = Creature(creatureId)
-	if not creature then
-		return
-	end
-target:getPosition():sendMagicEffect(CONST_ME_STUN)
- addEvent(function()  target:getPosition():sendMagicEffect(CONST_ME_STUN) end, 300)
-  addEvent(function()  target:getPosition():sendMagicEffect(CONST_ME_STUN) end, 600)
-   addEvent(function()  target:getPosition():sendMagicEffect(CONST_ME_STUN) end, 900)
-    addEvent(function()  target:getPosition():sendMagicEffect(CONST_ME_STUN) end, 1200)
-	 addEvent(function()  target:getPosition():sendMagicEffect(CONST_ME_STUN) end, 1500)
-	  addEvent(function()  target:getPosition():sendMagicEffect(CONST_ME_STUN) end, 1800)
-	   addEvent(function()  target:getPosition():sendMagicEffect(CONST_ME_STUN) end, 2000)
-	return true
-end
-
-combat1:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreaturechargedragonknight")
-
-
-
--------------------------------------------------------------------------
 
 local minRange = 2
 local maxRange = 8
@@ -105,7 +78,6 @@ function castSpellchargedk(playerName, targetId)
 		end
 	else
 		combat:execute(player, varTable[1])
-		combat1:execute(player, varTable[1])
 	end
 return true
 end

@@ -41,8 +41,13 @@ local function sendEffcDragon(cid, max_iterations, iterations)
 		local vit = pid:getMaxHealth() / 100
 		local min = (level/5) + (vit * 0.5) + (magic * 2) + 10
 		local max = (level/5) + (vit * 1.0) + (magic * 3.5) + 15
-        doAreaCombatHealth(pid, COMBAT_ENERGYDAMAGE, pos, {1}, min, max, 585)
-		pid:addHealth(math.random(min/20, max/18))
+        doAreaCombatHealth(pid, COMBAT_FIREDAMAGE, pos, {1}, min, max, 585)
+
+        local DragonHeart = pid:getStorageValue(PassiveSkills.DragonHeart)
+		if DragonHeart > 0 then
+            --increases the healing effectiveness by 10% per talent
+			pid:addHealth(math.random(min/20, max/18) * (1 + DragonHeart/100))
+		end
 	--	doAreaCombatCondition(pid, pos, AREA_SQUARE1X1, condition, CONST_ME_NONE)
 		
     end

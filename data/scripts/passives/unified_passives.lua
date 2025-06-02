@@ -130,6 +130,114 @@ local PASSIVES = {
       return damage * percent
     end,
   },
+
+  survival_instincts = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.SurvivalInstincts,
+    },
+    trigger = function(player, target, damage, primaryType, origin)
+      -- Trigger on physical auto attacks
+      if origin ~= ORIGIN_MELEE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.SurvivalInstincts) or 0, 0)
+      return level > 0
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.SurvivalInstincts) or 0, 0)
+      if level > 0 then
+        local maxHealth = player:getMaxHealth()
+        local currentHealth = player:getHealth()
+        local missingPercent = math.max(0, (maxHealth - currentHealth) / maxHealth)
+        print("missingPercent: " .. missingPercent)
+        print("level: " .. level)
+        print("maxHealth: " .. maxHealth)
+
+        -- Heal = missingPercent * level * maxHealth * 0.01
+        local healAmount = math.floor(missingPercent * level * maxHealth * 0.01)
+        print("healAmount: " .. healAmount)
+        if healAmount > 0 then
+          player:addHealth(healAmount)
+          player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
+        end
+      end
+      return damage
+    end,
+  },
+
+  ember_touch = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.EmberTouch,
+    },
+    trigger = function(player, target, damage, primaryType, origin)
+      if origin ~= ORIGIN_MELEE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.EmberTouch) or 0, 0)
+      return level > 0 and target and target:isCreature()
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.EmberTouch) or 0, 0)
+      if level > 0 and target and target:isCreature() then
+        local chance = level
+        if math.random(1, 100) <= chance then
+          local burn = Condition(CONDITION_FIRE)
+          burn:setParameter(CONDITION_PARAM_TICKS, 2000 * level)
+          burn:setParameter(CONDITION_PARAM_DELAYED, 1)
+          burn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+          --target 0.5% max health
+          burn:setParameter(CONDITION_PARAM_PERIODICDAMAGE, -(target:getMaxHealth() * 0.03))
+          target:addCondition(burn)
+        end
+      end
+      return damage
+    end,
+  },
+
+  flame_eater = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.FlameEater,
+    },
+    trigger = function(player, target, damage, primaryType, origin)
+      if not target or not target:isCreature() then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.FlameEater) or 0, 0)
+      return level > 0 and target:getCondition(CONDITION_FIRE)
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.FlameEater) or 0, 0)
+      if level > 0 and target:getCondition(CONDITION_FIRE) then
+        local percent = 1 + (level / 100)
+        return damage * percent
+      end
+      return damage
+    end,
+  },
+
+  emberhide = {
+    config = {
+      type = "OnDefend",
+      storage = PassiveSkills.Emberhide,
+    },
+    trigger = function(player, attacker, damage, primaryType, origin)
+      -- Trigger for all non-physical damage types
+      return primaryType ~= COMBAT_PHYSICALDAMAGE and (player:getStorageValue(PassiveSkills.Emberhide) or 0) > 0
+    end,
+    effect = function(player, attacker, damage, primaryType, origin)
+      local level = math.max(player:getStorageValue(PassiveSkills.Emberhide) or 0, 0)
+      if level > 0 then
+        local percent = 1 - (level / 100)
+        return damage * percent
+      end
+      return damage
+    end,
+  },
+  },
+
   GlacialEmpowerment = {
     config = {
       type = "OnAttack",

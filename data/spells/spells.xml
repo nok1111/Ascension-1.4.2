@@ -84,13 +84,16 @@
 		<instant group="attack" spellid="2" name="Dragons Call" words="dragons call" lvl="100" mana="85" needtarget="1" needweapon="1" range="2" cooldown="30000" groupcooldown="1900" needlearn="0" script="warrior/dragon_decend.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="support" spellid="9" name="Death Shrine" words="dragon shrine" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_shrine.lua">
+	<instant group="support" spellid="9" name="Draconic Chains" words="draconic chains" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_shrine.lua">
 	<vocation name="Dragon Knight" />
 	</instant>	
 	<instant group="attack" spellid="19" name="Shockwave" words="shockwave" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/shockwave.lua">
 	 <vocation name="Dragon Knight" />
 	</instant>
-	<instant group="support" spellid="306" name="Blood Rage" words="blood rage" lvl="1" strenght="27" dexterity="0" mana="85" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1100" needlearn="1" script="warrior/blood_rage.lua">
+	<instant group="support" spellid="306" name="Bloodlust" words="bloodlust" lvl="1" strenght="27" dexterity="0" mana="85" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1100" needlearn="1" script="warrior/blood_rage.lua">
+	<vocation name="Dragon Knight" />
+	</instant>
+	<instant group="healing" spellid="307" name="Dragon Soul" words="dragon soul" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="1" script="warrior/dragon_soul.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
 	
@@ -243,6 +246,12 @@
 	<instant group="attack" spellid="74" name="Soul Rain" words="soul rain" lvl="50" mana="200" range="7"   cooldown="15000" groupcooldown="1900" needtarget="1" script="warlock/soul_rain.lua">
 	<vocation name="Warlock" />
 	</instant>
+	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" selftarget="1" exhaustion="30000" groupcooldown="1900" script="warlock/drain_soul.lua">
+	<vocation name="Warlock" />
+	</instant>
+	<instant group="attack" spellid="131" name="Malediction" words="malediction" lvl="1" mana="150"  aggressive="1" needtarget="1" exhaustion="30000" groupcooldown="1900" script="warlock/malediction.lua">
+	<vocation name="Warlock" />
+	</instant>
 	
 	<!-- Nightblade ROGUE -->
 	<instant group="attack" spellid="80" name="Stealth" words="stealth" lvl="40" mana="110"  cooldown="60000" groupcooldown="5000" needlearn="0"  script="rogue/cloak.lua">
@@ -333,9 +342,7 @@
 	<instant group="healing" spellid="129" name="Soul Link" words="soul link" lvl="90" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="50000" groupcooldown="1900" needlearn="0" script="soul weaver/soul_link.lua">
     <vocation name="Monk" />
     </instant>
-	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" selftarget="1" exhaustion="30000" groupcooldown="1900" script="soul weaver/drain_soul.lua">
-	<vocation name="Monk" />
-	</instant>
+	
 	<instant group="support" spellid="131" name="Adaptive Fist" words="adaptive fist" lvl="15" mana="80" direction="1" aggressive="0"  cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/adaptive_fist.lua">
 	<vocation name="Monk" />
 	</instant>

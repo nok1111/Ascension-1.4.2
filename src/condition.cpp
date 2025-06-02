@@ -322,14 +322,6 @@ bool Condition::startCondition(Creature* creature)
 				g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
 			}
 			break;
-		case CONDITION_REGENERATION:
-			if (creature && !creature->isRemoved()) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_701);
-			}
-			break;
-
-		default:
-			break;
 		}
     }
     return true;
@@ -1410,10 +1402,6 @@ bool ConditionDamage::executeCondition(Creature* creature, int32_t interval)
 					break;
 				case CONDITION_POISON:
 					g_game.addMagicEffect(creature->getPosition(), CONST_ME_712);
-					break;
-				case CONDITION_REGENERATION:
-					break;
-				default:
 					break;
 			}
 		}

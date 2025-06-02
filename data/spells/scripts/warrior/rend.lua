@@ -22,6 +22,12 @@ function onGetFormulaValues(player, skill, attack, factor)
 
 	local min = (level / 5) + (skill * 0.045) + attack
 	local max = (level / 5) + (skill * 0.085) + attack * 1.5
+
+    local scaledrupture = player:getStorageValue(PassiveSkills.ScaledRupture)
+    if scaledrupture > 0 then
+        min = min + (min * scaledrupture / 100)
+        max = max + (max * scaledrupture / 100)
+    end
 	return -min, -max
 end
 

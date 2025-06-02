@@ -15,10 +15,14 @@ local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 condition:setParameter(CONDITION_PARAM_SUBID, 571)
 condition:setParameter(CONDITION_PARAM_TICKS, 8000)
 condition:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, 150)
+condition:setParameter(CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED, 50)
+condition:setParameter(CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, 50)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(condition)
 
- 
+
+
+
   local position = creature:getPosition()  
 
     position:sendMagicEffect(265)

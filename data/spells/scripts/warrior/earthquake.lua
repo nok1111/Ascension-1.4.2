@@ -30,7 +30,7 @@ local earth3 = {
 
 
 local combat1 = Combat()
-combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat1:setParameter(COMBAT_PARAM_AGGRESSIVE, true)
 combat1:setParameter(COMBAT_PARAM_EFFECT, 256)
 combat1:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -38,14 +38,14 @@ combat1:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat2:setParameter(COMBAT_PARAM_AGGRESSIVE, true)
 combat2:setParameter(COMBAT_PARAM_EFFECT, 256)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 local combat3 = Combat()
-combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat3:setParameter(COMBAT_PARAM_AGGRESSIVE, true)
 combat3:setParameter(COMBAT_PARAM_EFFECT, 256)
 combat3:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -98,21 +98,26 @@ combat3:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues3")
 
 
 function onTargetCreature1(creature, target)
-target:attachEffectById(12, true)
-target:addCondition(stun)
+	if target and target:isCreature() and not target:isNpc() then
+		target:attachEffectById(12, true)
+		target:addCondition(stun)
+	end
 	return true
 end
 
 function onTargetCreature2(creature, target)
-target:attachEffectById(12, true)
-target:addCondition(stun)
+	if target and target:isCreature() and not target:isNpc() then
+		target:attachEffectById(12, true)
+		target:addCondition(stun)
+	end
 	return true
 end
 
 function onTargetCreature3(creature, target)
-target:attachEffectById(12, true)
-target:addCondition(stun)
-target:detachEffectById(12)
+	if target and target:isCreature() and not target:isNpc() then
+		target:attachEffectById(12, true)
+		target:addCondition(stun)
+	end
 	return true
 end
 
@@ -151,6 +156,7 @@ if not creature then
 	
 	addEvent(castSpell2, 300, creature:getId(), variant)
 	addEvent(castSpell3, 450, creature:getId(), variant)
+	creature:attachEffectById(39, true)
 
 
 

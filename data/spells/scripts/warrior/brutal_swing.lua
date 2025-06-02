@@ -80,12 +80,13 @@ end
 
 for i = 1, #hitArea do
     combats[i] = Combat()
-    combats[i]:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+    combats[i]:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
     combats[i]:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
     combats[i]:setParameter(COMBAT_PARAM_USECHARGES, true)
     combats[i]:setArea(createCombatArea(hitArea[i][1], hitArea[i][2]))
     --combats[i]:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_POFF)
 end
+
 
 local function animation(pos, playerpos)
     if not Tile(Position(pos)):hasProperty(CONST_PROP_BLOCKPROJECTILE) then
@@ -104,6 +105,45 @@ local function animation(pos, playerpos)
     end
     return true
 end
+
+local reboundArea = {
+    {1, 1, 1, 1, 1},
+    {0, 1, 1, 1, 0},
+    {0, 1, 1, 1, 0},
+    {0, 0, 3, 0, 0},
+    {0, 0, 0, 0, 0},
+    {0, 0, 0, 0, 0},
+}
+
+local combatrebound = Combat()
+combatrebound:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combatrebound:setParameter(COMBAT_PARAM_AGGRESSIVE, true)
+combatrebound:setParameter(COMBAT_PARAM_EFFECT, 6)
+combatrebound:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
+combatrebound:setParameter(COMBAT_PARAM_USECHARGES, true)
+combatrebound:setArea(createCombatArea(reboundArea))
+
+function onGetFormulaValuesRebound(player, skill, attack, factor)
+    local power = skill * attack 
+	local level = player:getLevel()
+	local magic = player:getMagicLevel()
+
+	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 50
+	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 65
+	return -min, -max
+end
+combatrebound:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValuesRebound")
+
+local function castSpellRebound(creatureId, variant, min)
+	local creature = Creature(creatureId)
+	if not creature then
+		return
+	end
+	
+    combatrebound:execute(creature, variant)
+    player:addHealth(min)
+end
+
 
 function onCastSpell(creature, var)
   
@@ -531,6 +571,20 @@ function onCastSpell(creature, var)
     
     -- Execute Damage
     combats[weapon]:execute(creature, var)
+    local LifebloodStrike = creature:getStorageValue(PassiveSkills.LifebloodStrike)
+    if LifebloodStrike > 0 then
+        min = min + (min * (LifebloodStrike / 100))
+        
+    end
+
+    local ReboundStrike = creature:getStorageValue(PassiveSkills.ReboundStrike)
+    if ReboundStrike > 0 and math.random(1, 100) <= ReboundStrike then
+        addEvent(castSpellRebound, 500, creature.uid, var, min)
+    end
 	player:addHealth(min)
+
+   
+
+   
     return true
 end

@@ -6,12 +6,12 @@ local config = {
 }
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, 303)
+combat:setParameter(COMBAT_PARAM_EFFECT, 301)
 combat:setArea(createCombatArea(AREA_CIRCLE2X2))
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 
-local bleed = Condition(CONDITION_POISON, CONDITIONID_COMBAT)
-	bleed:setParameter(COMBAT_PARAM_EFFECT, 248)
+local bleed = Condition(CONDITION_CURSED, CONDITIONID_COMBAT)
+	--bleed:setParameter(COMBAT_PARAM_EFFECT, 248)
 	bleed:setTicks(config.BleedingTicks) 
 	bleed:setParameter(CONDITION_PARAM_DELAYED, 1)
 	bleed:setParameter(CONDITION_PARAM_TICKINTERVAL, config.TimeBetweenTicks) 
@@ -59,7 +59,7 @@ local function castSpell12(creatureId, variant)
         sword.x = sword.x + 1
         sword.y = sword.y + 1
 
-    sword:sendMagicEffect(509, "turn into bones!")	
+    sword:sendMagicEffect(833, "turn into bones!")	
 	
     combat2:execute(creature, variant)
 end
