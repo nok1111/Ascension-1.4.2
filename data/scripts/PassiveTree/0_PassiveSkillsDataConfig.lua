@@ -924,6 +924,68 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
+						name = "Immortal Flesh",
+						description = "Increase max health % by 5% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxHealthPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 5}}
+							}
+						},
+						maxLevel = 5
+					},
+					[2] = {
+						name = "Malediction",
+						description = "Learn spell Malediction",
+						effect = {{type = "spell", name = "Malediction"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 3
+					},
+					[3] = {
+						name = "Plague Detonation",
+						description = "Malediction has a chance to 3% (per level) per tick to explode and send malefic pestilence to nearby enemies",
+						effect = {{type = "storage", name = "PlagueDetonation", storage = PassiveSkills.PlagueDetonation, value = 3}},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 3
+					},
+					[4] = {
+						name = "Dark Plague",
+						description = "Learn spell Dark Plague",
+						effect = {{type = "spell", name = "Dark Plague"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 4
+					},
+					[5] = {
+						name = "Lasting Blight",
+						description = "Increase malediction, curse and dark plague duration by 0.5 seconds per level",
+						effect = {{type = "storage", name = "LastingBlight", storage = PassiveSkills.LastingBlight, value = 5}},
+						maxLevel = 5,  --maxLevel/10
+						prevNodeLevelNeeded = 4
+					},
+					[6] = {
+						name = "Soulstorm",
+						description = "drain soul now also affect all cursed enemies around your targets.",
+						effect = {
+							{
+								type = "storage", 
+								name = "Soulstorm",
+								storage = PassiveSkills.Soulstorm,
+								value = 1
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 2
+					},				
+				},
+			},
+			[2] = {
+				color = '#134f1c',
+				border = 22,
+				nodes = {
+					[1] = {
 						name = "Malefic Persistence",
 						description = "Increases the duration of Curse by 0.5 second (per level) \nIncreases curse damage by 10% (per level)",
 						effect = {{type = "storage", name = "MaleficPersistencedamage", storage = PassiveSkills.MaleficPersistencedamage, value = 10}},
@@ -959,32 +1021,22 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 4
 					},
 					[6] = {
-						name = "Heartseeker",
-						description = "Increase critical strike chance by 2% (per level)",
+						name = "Soulstorm",
+						description = "drain soul now also affect all cursed enemies around your targets.",
 						effect = {
 							{
-								type = "condition",
-								name = "Critical Strike",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+								type = "storage", 
+								name = "Soulstorm",
+								storage = PassiveSkills.Soulstorm,
+								value = 1
 							}
 						},
 						maxLevel = 3,
 						prevNodeLevelNeeded = 2
-					},
-					[7] = {
-						name = "Apex Predator",
-						description = "Increases all damage and attack speed by per missing health",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 6
-					}
+					},				
 				},
 			},
-			[2] = {
+			[3] = {
 				color = '#9d9ea1',
 				border = 22,
 				nodes = {
@@ -1052,7 +1104,7 @@ PassiveSkills.treeData = {
 					}
 				},
 			},
-			[3] = {
+			[4] = {
 				color = '#a32c36',
 				border = 22,
 				nodes = {
