@@ -774,6 +774,15 @@ bool ConditionAttributes::setParam(ConditionParam_t param, int32_t value)
 			return true;
 		}
 
+		case CONDITION_PARAM_SPECIALSKILL_WEAKEN: {
+			specialSkills[SPECIALSKILL_WEAKEN] = value;
+			return true;
+		}
+
+		case CONDITION_PARAM_SPECIALSKILL_EXTRAHEALING: {
+			specialSkills[SPECIALSKILL_EXTRAHEALING] = value;
+			return true;
+		}
 		case CONDITION_PARAM_AGGRESSIVE: {
 			aggressive = (value != 0);
 			return true;
@@ -870,6 +879,12 @@ int32_t ConditionAttributes::getParam(ConditionParam_t param)
 
 		case CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED:
 			return specialSkills[SPECIALSKILL_ATTACKSPEED];
+
+		case CONDITION_PARAM_SPECIALSKILL_WEAKEN:
+			return specialSkills[SPECIALSKILL_WEAKEN];
+
+		case CONDITION_PARAM_SPECIALSKILL_EXTRAHEALING:
+			return specialSkills[SPECIALSKILL_EXTRAHEALING];
 
 		default:
 			return ConditionGeneric::getParam(param);

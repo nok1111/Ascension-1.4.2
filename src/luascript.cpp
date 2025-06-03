@@ -1321,6 +1321,8 @@ void LuaScriptInterface::registerFunctions()
 	registerEnum(CONDITION_PARAM_SPECIALSKILL_MANALEECHCHANCE)
 	registerEnum(CONDITION_PARAM_SPECIALSKILL_MANALEECHAMOUNT)
 	registerEnum(CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED)
+	registerEnum(CONDITION_PARAM_SPECIALSKILL_WEAKEN)
+	registerEnum(CONDITION_PARAM_SPECIALSKILL_EXTRAHEALING)
 	registerEnum(CONDITION_PARAM_AGGRESSIVE)
 
 	registerEnum(CONST_ME_NONE)
@@ -9037,9 +9039,9 @@ int LuaScriptInterface::luaCreatureAddHealth(lua_State* L)
     if (damage.primary.value >= 0) {
         damage.primary.type = COMBAT_HEALING;
         if (Player* player = creature->getPlayer()) {
-            int32_t compassion = player->getCharacterStat(CHARSTAT_COMPASSION);
-            if (compassion > 0) {
-                damage.primary.value += damage.primary.value * compassion * 2 / 1000;
+            int32_t extraHealing = player->getSpecialSkill(SPECIALSKILL_EXTRAHEALING);
+            if (extraHealing > 0) {
+                damage.primary.value += damage.primary.value * extraHealing * 2 / 1000;
             }
         }
     } else {
