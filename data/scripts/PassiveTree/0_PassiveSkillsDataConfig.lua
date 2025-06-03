@@ -938,47 +938,19 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Malediction",
-						description = "Learn spell Malediction",
-						effect = {{type = "spell", name = "Malediction"}},
+						name = "Dark Aura",
+						description = "Learn spell Dark Aura",
+						effect = {{type = "spell", name = "Dark Aura"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 3
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
-						name = "Plague Detonation",
-						description = "Malediction has a chance to 3% (per level) per tick to explode and send malefic pestilence to nearby enemies",
-						effect = {{type = "storage", name = "PlagueDetonation", storage = PassiveSkills.PlagueDetonation, value = 3}},
+						name = "Lingering Darkness",
+						description = "Increase the duration of Dark Aura by 0.5 seconds (per level)",
+						effect = {{type = "storage", name = "LingeringDarkness", storage = PassiveSkills.LingeringDarkness, value = 5}},
 						maxLevel = 3,
-						prevNodeLevelNeeded = 3
+						prevNodeLevelNeeded = 5
 					},
-					[4] = {
-						name = "Dark Plague",
-						description = "Learn spell Dark Plague",
-						effect = {{type = "spell", name = "Dark Plague"}},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 4
-					},
-					[5] = {
-						name = "Lasting Blight",
-						description = "Increase malediction, curse and dark plague duration by 0.5 seconds per level",
-						effect = {{type = "storage", name = "LastingBlight", storage = PassiveSkills.LastingBlight, value = 5}},
-						maxLevel = 5,  --maxLevel/10
-						prevNodeLevelNeeded = 4
-					},
-					[6] = {
-						name = "Soulstorm",
-						description = "drain soul now also affect all cursed enemies around your targets.",
-						effect = {
-							{
-								type = "storage", 
-								name = "Soulstorm",
-								storage = PassiveSkills.Soulstorm,
-								value = 1
-							}
-						},
-						maxLevel = 3,
-						prevNodeLevelNeeded = 2
-					},				
 				},
 			},
 			[2] = {
@@ -1003,7 +975,7 @@ PassiveSkills.treeData = {
 						name = "Plague Detonation",
 						description = "Malediction has a chance to 3% (per level) per tick to explode and send malefic pestilence to nearby enemies",
 						effect = {{type = "storage", name = "PlagueDetonation", storage = PassiveSkills.PlagueDetonation, value = 3}},
-						maxLevel = 3,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 3
 					},
 					[4] = {
@@ -1022,7 +994,7 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Soulstorm",
-						description = "drain soul now also affect all cursed enemies around your targets.",
+						description = "drain soul now also affect an additional nearby cursed enemies around your targets. (+1 additional enemy per level)",
 						effect = {
 							{
 								type = "storage", 
@@ -1031,9 +1003,16 @@ PassiveSkills.treeData = {
 								value = 1
 							}
 						},
-						maxLevel = 3,
+						maxLevel = 8,
 						prevNodeLevelNeeded = 2
-					},				
+					},	
+					[7] = {
+						name = "Haunt",
+						description = "Learn spell Haunt",
+						effect = {{type = "spell", name = "Haunt"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
+					},					
 				},
 			},
 			[3] = {
@@ -1041,66 +1020,65 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Demonic Bulwark",
+						description = "Increase the max health of your summons by an aditional 15% per level",
+						effect = {{type = "storage", name = "DemonicBulwark", storage = PassiveSkills.DemonicBulwark, value = 15}},
+						maxLevel = 6
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Infernal Command",
+						description = "Increases the damage of your summons by 8% per level.",
+						effect = {
+							{
+								type = "storage",
+								name = "InfernalCommand",
+								storage = PassiveSkills.InfernalCommand,
+								value = 8
+							}
+						},
+						maxLevel = 8,
+						prevNodeLevelNeeded = 6 
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Legion Mastery", 
+						description = "Increase the maximum number of summons you can control by 1 per level and increase your chance to successfully summon by 10% per level.",
 						effect = {
 							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+								type = "storage",
+								name = "InfernalCommandNumber",
+								storage = PassiveSkills.InfernalCommandNumber,
+								value = 1
 							},
 							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								type = "storage",
+								name = "InfernalCommandChance",
+								storage = PassiveSkills.InfernalCommandChance,
+								value = 10
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 4
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
+						name = "Void Sentinel",
+						description = "Learn Spell Summon Void Sentinel",
+						effect = {{type = "spell", name = "Summon Void Sentinel"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+						name = "Abyssal Refund",
+						description = "Your void summons refunds 8% (per level) of the mana spent to summon them.",
+						effect = {{type = "storage", name = "AbyssalRefund", storage = PassiveSkills.AbyssalRefund, value = 10}},
+						maxLevel = 6,
+						prevNodeLevelNeeded = 1
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
+						name = "Void Guard",
+						description = "Learn Spell Summon Void Guard",
+						effect = {{type = "spell", name = "Summon Void Guard"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -1109,74 +1087,30 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						name = "Pactmaster's Gift",
+						description = "Increase the mana transfer from blood pact by 10% per level",
+						effect = {{type = "storage", name = "PactmasterGift", storage = PassiveSkills.PactmasterGift, value = 10}},
 						maxLevel = 10
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Sanguine Shield",
+						description = "Increases the effectiveness of Blood Wall by 10% per level",
+						effect = {{type = "storage", name = "BloodWall", storage = PassiveSkills.BloodWall, value = 10}},
+						maxLevel = 3
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
+						name = "Zombie Wall",
+						description = "Learn Spell Zombie Wall",
+						effect = {{type = "spell", name = "Zombie Wall"}},
+						maxLevel = 1,
 					},
-					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
-					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
-					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
-					}
 				},
 			},
 		},
 	},
 
 	[6] = {			-- Tree 4
-		name = "Dragonknight Talents",
+		name = "Stellar Talents",
 		background = "7",
 		branches = {
 			[1] = {
