@@ -9041,7 +9041,7 @@ int LuaScriptInterface::luaCreatureAddHealth(lua_State* L)
         if (Player* player = creature->getPlayer()) {
             int32_t extraHealing = player->getSpecialSkill(SPECIALSKILL_EXTRAHEALING);
             if (extraHealing > 0) {
-                damage.primary.value += damage.primary.value * extraHealing * 2 / 1000;
+                damage.primary.value += damage.primary.value * extraHealing / 100;
             }
         }
     } else {
