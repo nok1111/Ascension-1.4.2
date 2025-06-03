@@ -236,7 +236,6 @@ local PASSIVES = {
       return damage
     end,
   },
-  },
 
   GlacialEmpowerment = {
     config = {
