@@ -1118,15 +1118,15 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Scaled Rupture",
-						description = "Increase Rend damage by 5% (per level)",
-						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
-						maxLevel = 10
+						name = "Cosmic Focus",
+						description = "Increase the energy damage done by 8% per level",
+						effect = {{type = "storage", name = "CosmicFocus", storage = PassiveSkills.CosmicFocus, value = 8}},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Colossal Blows",
-						description = "Increase physical damage done by 5% per level",
-						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						name = "Astral Burn",
+						description = "Star Fall now applies a damaging condition to the target wich deal energy damage for 10 seconds",
+						effect = {{type = "storage", name = "AstralBurn", storage = PassiveSkills.AstralBurn, value = 10}},
 						maxLevel = 4
 					},
 					[3] = {
