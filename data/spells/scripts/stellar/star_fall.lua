@@ -1,6 +1,6 @@
 local combat = Combat()
 
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
@@ -27,7 +27,8 @@ local function applyEffect(creatureId, targetId)
     combat:execute(creature, var)
     
     targetPos.x = targetPos.x + 1
-    targetPos:sendMagicEffect(345)
+    targetPos:sendMagicEffect(382)
+    target:attachEffectById(86, true)
 end
 
 local function isExcludedTarget(creature, target)
