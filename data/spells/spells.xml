@@ -255,6 +255,9 @@
 	<instant group="attack" spellid="75" name="Haunt" words="haunt" lvl="1" mana="250"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" script="warlock/haunt.lua">
 	<vocation name="Warlock" />
 	</instant>
+	<instant group="support" spellid="76" name="Dark Aura" words="dark Aura" lvl="1" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="1" script="warlock/dark_aura.lua">
+	<vocation name="Warlock" />
+	</instant>
 	
 	<!-- Nightblade ROGUE -->
 	<instant group="attack" spellid="80" name="Stealth" words="stealth" lvl="40" mana="110"  cooldown="60000" groupcooldown="5000" needlearn="0"  script="rogue/cloak.lua">
@@ -319,11 +322,11 @@
 	<instant group="healing" spellid="106" name="Sacred Rose" words="sacred rose" lvl="28" mana="150" prem="0" aggressive="0" selftarget="1" cooldown="4000" groupcooldown="1900" script="stellar/heal_party.lua">
    <vocation name="Stellar" />
    </instant>
-	<instant group="support" spellid="107" name="Grow" words="Grow" lvl="60" mana="100" params="1" needweapon="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="stellar/grow.lua">
+	<instant group="support" spellid="107" name="Grow" words="grow" lvl="60" mana="100" params="1" needweapon="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="stellar/grow.lua">
 	 <vocation name="Stellar" />
 	 <vocation name="Druid" />
 	</instant>
-	<instant group="attack" spellid="108" name="Lunar Beam" words="Lunar Beam" lvl="60"  mana="185" premium="0" selftarget="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="stellar/lunar_beam.lua">
+	<instant group="attack" spellid="108" name="Lunar Beam" words="lunar beam" lvl="60"  mana="185" premium="0" selftarget="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="stellar/lunar_beam.lua">
 	<vocation name="Stellar" />
 	</instant>
 	<instant group="attack" spellid="109" name="Aery Strikes" words="aery strikes" lvl="70" mana="135" prem="0"  cooldown="8000" groupcooldown="1900" needlearn="0" script="stellar/aery_dance.lua">

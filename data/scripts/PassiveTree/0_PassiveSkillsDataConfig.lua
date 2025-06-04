@@ -14,9 +14,9 @@ PassiveSkills.totalPassivePoints = 3224001
 PassiveSkills.availablePassivePoints = 3224002
 
 
-CONDITION_REGENERATION = 1
-CONDITION_PARAM_HEALTHGAIN, CONDITION_PARAM_MANAGAIN = 2
-CONDITION_PARAM_HEALTHTICKS, CONDITION_PARAM_MANATICKS = 3
+--CONDITION_REGENERATION = 1
+--CONDITION_PARAM_HEALTHGAIN, CONDITION_PARAM_MANAGAIN = 2
+--CONDITION_PARAM_HEALTHTICKS, CONDITION_PARAM_MANATICKS = 3
 
 
 -- Tree to Vocations Mapping
@@ -120,6 +120,27 @@ PassiveSkills.FlameEater = 875582
 --dragon knight 4
 PassiveSkills.Emberhide = 875583
 PassiveSkills.Bloodline = 875585
+
+--warlock1
+PassiveSkills.LingeringDarkness = 875586
+
+--warlock2
+PassiveSkills.MaleficPersistencedamage = 875587
+PassiveSkills.MaleficPersistenceheal = 875588
+PassiveSkills.PlagueDetonation = 875589
+PassiveSkills.LastingBlight = 875590
+PassiveSkills.Soulstorm = 875591
+
+--warlock 3
+PassiveSkills.DemonicBulwark = 875592
+PassiveSkills.InfernalCommand = 875593
+PassiveSkills.LegionMasteryNumber = 875594
+PassiveSkills.LegionMasteryChance = 875595
+PassiveSkills.AbyssalRefund = 875596
+
+--warlock 4
+PassiveSkills.PactmasterGift = 875597
+PassiveSkills.BloodWall = 875598
 
 
 
@@ -1045,14 +1066,14 @@ PassiveSkills.treeData = {
 						effect = {
 							{
 								type = "storage",
-								name = "InfernalCommandNumber",
-								storage = PassiveSkills.InfernalCommandNumber,
+								name = "LegionMasteryNumber",
+								storage = PassiveSkills.LegionMasteryNumber,
 								value = 1
 							},
 							{
 								type = "storage",
-								name = "InfernalCommandChance",
-								storage = PassiveSkills.InfernalCommandChance,
+								name = "LegionMasteryChance",
+								storage = PassiveSkills.LegionMasteryChance,
 								value = 10
 							}
 						},
