@@ -46,7 +46,7 @@ local passiveRegen = CreatureEvent("VocationPassiveRegen")
 
 function passiveRegen.onThink(player, interval)
     
-    checkHealth(player)
+    --checkHealth(player)
     return true
 end
 
