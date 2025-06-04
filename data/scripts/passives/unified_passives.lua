@@ -1,8 +1,5 @@
 local passiveEvent = CreatureEvent("UnifiedPassives")
 
-if not PassiveSkills then
-  dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
-end
 consacrated_counter = {}
 local blazingdecree_area = createCombatArea({
   {1, 1, 1},

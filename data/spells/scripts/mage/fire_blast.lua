@@ -1,13 +1,3 @@
-local maxBoosters = 3
-
--- Load PassiveSkills symbolic constants
-if not PassiveSkills then
-    dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
-end
-
-local PYROMANIAC_STORAGE = PassiveSkills.Pyromaniac -- or the storage ID directly
-local PYROMANIAC_EXTRA_FIREBALLS = 2
-local PYROMANIAC_FIREBALL_EFFECTIVENESS = 0.75
 
 
 -- Pre-create combat areas at load time.
@@ -62,21 +52,8 @@ combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
 function onCastSpell(creature, variant)
     if not creature then return false end
 
-    -- Execute the primary combat effect.
-    
-    -- Call unified passives with spellType context for fire spells
-    if passiveEvent and type(passiveEvent.onHealthChange) == "function" then
-        passiveEvent.onHealthChange(creature, creature, 0, 0, 0, 0, {spellType = "fire"})
-    end
-    
-
-    -- If the creature has reached max fire boosters, execute the extra effect.
-    if getElementalBoost(creature, "fire") >= maxBoosters then
-         combat2:execute(creature, variant)
-         ClearBooster(creature)
- else
  	combat:execute(creature, variant)
-    end
+
 
     return true
 end

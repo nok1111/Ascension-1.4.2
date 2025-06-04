@@ -1,6 +1,4 @@
-if not PassiveSkills then
-    dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
-end
+
 
 local config = {
     rounds = 8, -- amount of ticks

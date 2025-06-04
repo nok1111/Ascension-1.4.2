@@ -1,6 +1,3 @@
-if not PassiveSkills then
-    dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
-end
 
 local combat = Combat()
 

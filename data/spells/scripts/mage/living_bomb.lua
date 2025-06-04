@@ -1,6 +1,3 @@
-if not PassiveSkills then
-    dofile('data/scripts/PassiveTree/0_PassiveSkillsDataConfig.lua')
-end
 
 local area = createCombatArea({
     {0, 0, 1, 0, 0},
