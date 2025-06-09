@@ -1157,11 +1157,18 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Falling Stars",
-						description = "Learn spell Shockwave (requires level 50)",
-						effect = {{type = "spell", name = "Shockwave"}},
+						description = "Dealing energy damage has a 3% chance to trigger a starfall on the target",
+						effect = {
+							{
+								type = "storage",
+								name = "FallingStars",
+								storage = PassiveSkills.FallingStars,
+								value = 6
+							}
+						},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 4
-					},
+					}, 
 					[4] = {
 						name = "Lifeblood Strike",
 						description = "Increase the health gain from your brutal swing by 25% (per level)",
