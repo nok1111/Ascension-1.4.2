@@ -126,21 +126,22 @@ PassiveSkills.LingeringDarkness = 875586
 
 --warlock2
 PassiveSkills.MaleficPersistencedamage = 875587
-PassiveSkills.MaleficPersistenceheal = 875588
+PassiveSkills.MaleficPersistenceDuration = 875588
 PassiveSkills.PlagueDetonation = 875589
 PassiveSkills.LastingBlight = 875590
 PassiveSkills.Soulstorm = 875591
+PassiveSkills.SoulstormTicks = 875592
 
 --warlock 3
-PassiveSkills.DemonicBulwark = 875592
-PassiveSkills.InfernalCommand = 875593
-PassiveSkills.LegionMasteryNumber = 875594
-PassiveSkills.LegionMasteryChance = 875595
-PassiveSkills.AbyssalRefund = 875596
+PassiveSkills.DemonicBulwark = 875593
+PassiveSkills.InfernalCommand = 875594
+PassiveSkills.LegionMasteryNumber = 875595
+PassiveSkills.LegionMasteryChance = 875596
+PassiveSkills.AbyssalRefund = 875597
 
 --warlock 4
-PassiveSkills.PactmasterGift = 875597
-PassiveSkills.BloodWall = 875598
+PassiveSkills.PactmasterGift = 875598
+PassiveSkills.BloodWall = 875599
 
 
 
@@ -982,36 +983,36 @@ PassiveSkills.treeData = {
 						name = "Malefic Persistence",
 						description = "Increases the duration of Curse by 0.5 second (per level) \nIncreases curse damage by 10% (per level)",
 						effect = {{type = "storage", name = "MaleficPersistencedamage", storage = PassiveSkills.MaleficPersistencedamage, value = 10}},
-						effect = {{type = "storage", name = "MaleficPersistenceheal", storage = PassiveSkills.MaleficPersistenceheal, value = 5}},
-						maxLevel = 5
+						effect = {{type = "storage", name = "MaleficPersistenceDuration", storage = PassiveSkills.MaleficPersistenceDuration, value = 5}},
+						maxLevel = 6
 					},
 					[2] = {
 						name = "Malediction",
 						description = "Learn spell Malediction",
 						effect = {{type = "spell", name = "Malediction"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 3
+						prevNodeLevelNeeded = 6
 					},
 					[3] = {
 						name = "Plague Detonation",
-						description = "Malediction has a chance to 3% (per level) per tick to explode and send malefic pestilence to nearby enemies",
-						effect = {{type = "storage", name = "PlagueDetonation", storage = PassiveSkills.PlagueDetonation, value = 3}},
+						description = "When Malediction is applied to a target, it has a 20% chance to explode and send malefic pestilence to nearby enemies",
+						effect = {{type = "storage", name = "PlagueDetonation", storage = PassiveSkills.PlagueDetonation, value = 20}},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 3
+						prevNodeLevelNeeded = 1
 					},
 					[4] = {
 						name = "Dark Plague",
 						description = "Learn spell Dark Plague",
 						effect = {{type = "spell", name = "Dark Plague"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 4
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Lasting Blight",
 						description = "Increase malediction, curse and dark plague duration by 0.5 seconds per level",
 						effect = {{type = "storage", name = "LastingBlight", storage = PassiveSkills.LastingBlight, value = 5}},
 						maxLevel = 5,  --maxLevel/10
-						prevNodeLevelNeeded = 4
+						prevNodeLevelNeeded = 1
 					},
 					[6] = {
 						name = "Soulstorm",
@@ -1024,14 +1025,14 @@ PassiveSkills.treeData = {
 								value = 1
 							}
 						},
-						maxLevel = 8,
-						prevNodeLevelNeeded = 2
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},	
 					[7] = {
-						name = "Haunt",
-						description = "Learn spell Haunt",
-						effect = {{type = "spell", name = "Haunt"}},
-						maxLevel = 1,
+						name = "Soulstorm Echoes",
+						description = "Increases the number of times Drain Soul damages its targets by 1 per level.",
+						effect = {{type = "storage", name = "SoulstormTicks", storage = PassiveSkills.SoulstormTicks, value = 1}},
+						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},					
 				},
@@ -1046,7 +1047,28 @@ PassiveSkills.treeData = {
 						effect = {{type = "storage", name = "DemonicBulwark", storage = PassiveSkills.DemonicBulwark, value = 15}},
 						maxLevel = 6
 					},
+					
 					[2] = {
+						name = "Legion Mastery", 
+						description = "Increase the maximum number of Servants you can control by 1 per level and increase your chance to successfully summon by 100% per level.",
+						effect = {
+							{
+								type = "storage",
+								name = "LegionMasteryNumber",
+								storage = PassiveSkills.LegionMasteryNumber,
+								value = 1
+							},
+							{
+								type = "storage",
+								name = "LegionMasteryChance",
+								storage = PassiveSkills.LegionMasteryChance,
+								value = 1
+							}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 6
+					},
+					[3] = {
 						name = "Infernal Command",
 						description = "Increases the damage of your summons by 8% per level.",
 						effect = {
@@ -1059,26 +1081,6 @@ PassiveSkills.treeData = {
 						},
 						maxLevel = 8,
 						prevNodeLevelNeeded = 6 
-					},
-					[3] = {
-						name = "Legion Mastery", 
-						description = "Increase the maximum number of summons you can control by 1 per level and increase your chance to successfully summon by 10% per level.",
-						effect = {
-							{
-								type = "storage",
-								name = "LegionMasteryNumber",
-								storage = PassiveSkills.LegionMasteryNumber,
-								value = 1
-							},
-							{
-								type = "storage",
-								name = "LegionMasteryChance",
-								storage = PassiveSkills.LegionMasteryChance,
-								value = 10
-							}
-						},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 4
 					},
 					[4] = {
 						name = "Void Sentinel",
@@ -1096,8 +1098,11 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Void Guard",
-						description = "Learn Spell Summon Void Guard",
-						effect = {{type = "spell", name = "Summon Void Guard"}},
+						description = "Learn Spell Summon Void Guard and Summon Void Mender",
+						effect = {
+							{type = "spell", name = "Summon Void Guard"},
+							{type = "spell", name = "Summon Void Mender"}
+						},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
 					}

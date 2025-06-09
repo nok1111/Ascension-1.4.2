@@ -537,6 +537,19 @@ local PASSIVES = {
     end
   },
   
+  dark_aura_damage_reduction = {
+    config = {
+      condition = 3156,
+      type = "OnDefend"
+    },
+    trigger = function(player, target, damage, origin)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, 3156)
+    end,
+    effect = function(player, target, damage)
+      return damage * 0.75
+    end
+  },
+
   lighting_shield = {
     config = {
       condition = 25971,
@@ -588,7 +601,14 @@ local PASSIVES = {
     end,
     effect = function(player, target, damage)
       local function getMaxServants(playerLevel)
-        return math.min(math.max(math.floor(playerLevel / 25) + 2, 3), 7)
+        --default max 3
+        local maxServants = 3
+        local legionMasteryNumber = player:getStorageValue(PassiveSkills.LegionMasteryNumber)
+        
+        if legionMasteryNumber > 0 then
+          maxServants = maxServants + legionMasteryNumber
+        end
+        return maxServants
       end
       
       local function trySummonServant(player, chance)
@@ -604,14 +624,18 @@ local PASSIVES = {
         end
         
         local maxServants = getMaxServants(player:getLevel())
+        
         print("Max servants allowed: " .. maxServants)
+        
         
         -- Summon new servant if under limit and chance succeeds
         if undeadCount < maxServants and math.random(100) <= chance then
           local summon = Game.createMonster("servant", player:getPosition(), false, true)
           if summon then
             summon:setMaster(player)
-            local healthAmount = player:getMaxHealth() / 1.3
+            local healthAmount = player:getMaxHealth() * 0.7
+            local bulwark = math.max(player:getStorageValue(PassiveSkills.DemonicBulwark) or 0, 0)
+            healthAmount = healthAmount + (healthAmount * (bulwark / 100))
             summon:setMaxHealth(healthAmount)
             summon:setHealth(healthAmount)
             local deltaSpeed = math.max(player:getBaseSpeed() - summon:getBaseSpeed(), 0)
@@ -632,7 +656,8 @@ local PASSIVES = {
         end
         return false
       end
-      trySummonServant(player, 15)  -- 10% chance on damage
+      local LegionMasteryChance = player:getStorageValue(PassiveSkills.LegionMasteryChance) or 0
+      trySummonServant(player, 1 + LegionMasteryChance)  -- 10% chance on damage
       return damage
     end
   },

@@ -46,28 +46,75 @@ local function castNextSpell(cid, victims, count)
     end
 end
 
+local function isExcludedTarget(creature, target)
+    if not creature or not target then
+        return true
+    end
+
+    -- Exclude party members and their summons
+    if creature:isPlayer() and target:isPlayer() then
+        local creatureParty = creature:getParty()
+        local targetParty = target:getParty()
+        if creatureParty and targetParty and creatureParty == targetParty then
+            return true
+        end
+    end
+    if target:isMonster() and target:getMaster() then
+        local master = target:getMaster()
+        if master:isPlayer() and creature:getParty() and master:getParty() == creature:getParty() then
+            return true
+        end
+    end
+
+    -- Secure mode check to exclude non-party players and their summons
+    local player = creature:isPlayer() and creature or creature:getMaster()
+    if player and player:hasSecureMode() then
+        if target:isPlayer() or (target:isMonster() and target:getMaster() and target:getMaster():isPlayer()) then
+            return true
+        end
+    end
+    
+    return false
+end
+
 function onCastSpell(creature, variant)
-    local cid = creature:getId()
     if not creature then
         return false
     end
 
-    local specs = Game.getSpectators(creature:getPosition(), false, false, config.xradius, config.xradius, config.yradius, config.yradius)
-    local victims = {}
+    local target = creature:getTarget()
+    if not target or not target:isMonster() or isExcludedTarget(creature, target) then
+        creature:sendCancelMessage("You must target a valid enemy for this spell.")
+        return false
+    end
+
+    -- Calculate max victims
+    local soulstormLevel = math.max(creature:getStorageValue(PassiveSkills.Soulstorm) or 0, 0)
+    local maxVictims = 1 + soulstormLevel
+
+    -- Start with the selected target
+    local victims = {target}
+
+    -- Gather other valid monsters in range, excluding the caster and the selected target
+    local specs = Game.getSpectators(target:getPosition(), false, false, config.xradius, config.xradius, config.yradius, config.yradius)
     for _, spec in ipairs(specs) do
-        if spec:isMonster() and spec ~= creature then
+        if #victims >= maxVictims then break end
+        if spec ~= creature and spec ~= target and spec:isMonster() and not isExcludedTarget(creature, spec) and not spec:isNpc() then
             table.insert(victims, spec)
         end
     end
-    table.sort(victims, function(a, b) return a:getPosition():getDistance(creature:getPosition()) < b:getPosition():getDistance(creature:getPosition()) end)
 
     if #victims == 0 then
         creature:sendCancelMessage("There are no valid targets for this spell.")
         return false
     end
 
-    castNextSpell(cid, victims, 1) 
-    for i = 1, 10 do
+    local cid = creature:getId()
+    castNextSpell(cid, victims, 1)
+    local soulstormTicks = math.max(creature:getStorageValue(PassiveSkills.SoulstormTicks) or 0, 0)
+    local numTicks = 5 + soulstormTicks  -- Default 8, plus bonus from passive
+
+    for i = 1, numTicks do
         addEvent(castNextSpell, i * (math.random(config.speed, config.speed * 1.15)), cid, victims)
     end
     return true

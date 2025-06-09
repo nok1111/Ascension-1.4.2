@@ -10,21 +10,29 @@ combat:setParameter(COMBAT_PARAM_EFFECT, 301)
 combat:setArea(createCombatArea(AREA_CIRCLE2X2))
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 
-local bleed = Condition(CONDITION_CURSED, CONDITIONID_COMBAT)
-	--bleed:setParameter(COMBAT_PARAM_EFFECT, 248)
-	bleed:setTicks(config.BleedingTicks) 
-	bleed:setParameter(CONDITION_PARAM_DELAYED, 1)
-	bleed:setParameter(CONDITION_PARAM_TICKINTERVAL, config.TimeBetweenTicks) 
+
 
 
 --formula for poison damage
 local function CastSpell(cid, var) 
     local player = Player(cid)
+	if not player then
+		return
+	end
+
     local level = player:getLevel()
     local magic = player:getMagicLevel()
 	
 	min = (level / 5) + (magic * 1.0)
     max = (level / 5) + (magic * 1.2)
+
+	local LastingBlight = math.max(player:getStorageValue(PassiveSkills.LastingBlight) or 0, 0)
+
+	local bleed = Condition(CONDITION_CURSED, CONDITIONID_COMBAT)
+	bleed:setTicks(config.BleedingTicks + ((LastingBlight / 10) * 1000)) 
+	bleed:setParameter(CONDITION_PARAM_DELAYED, 1)
+	bleed:setParameter(CONDITION_PARAM_TICKINTERVAL, config.TimeBetweenTicks) 
+
 	
     bleed:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))
     combat:addCondition(bleed)

@@ -49,6 +49,10 @@ function onCastSpell(cid, variant)
     
     min = math.floor((maglevel * 2.0) + level)
     max = math.floor((maglevel * 2.3) + (level * 1.5))
+
+    local InfernalCommand = math.max(owner:getStorageValue(PassiveSkills.InfernalCommand) or 0, 0)
+    min = min + (min * (InfernalCommand / 100))
+    max = max + (max * (InfernalCommand / 100))
     
     local combatArea = getCombatAreaByLevel(level)
     

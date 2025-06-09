@@ -17,7 +17,7 @@ local function getSummonCount(player)
     local summons = player:getSummons()
     for i = 1, #summons do
         local summon = summons[i]
-        if summon:getName():lower() == "void guard" or summon:getName():lower() == "void healer" or summon:getName():lower() == "void archer" then
+        if summon:getName():lower() == "void guard" or summon:getName():lower() == "void mender" or summon:getName():lower() == "void sentinel" then
             undeadCount = undeadCount + 1
         end
     end
@@ -41,7 +41,7 @@ function onCastSpell(cid, var)
         return false
     end
 
-    local summonName = "void archer" 
+    local summonName = "void sentinel" 
     if not summonName then return false end
 
     local mySummonvoid = Game.createMonster(summonName, player:getPosition())
@@ -56,10 +56,12 @@ function onCastSpell(cid, var)
         end
     end
     
-    mySummonvoid:setMaxHealth(level * mySummonvoid:getMaxHealth())
-    mySummonvoid:setHealth(level * mySummonvoid:getMaxHealth())
-    mySummonvoid:registerEvent("Summon_Damage")
-    mySummonvoid:sendProgressbar(5 * 60 * 1000, false)
+    local bulwark = math.max(player:getStorageValue(PassiveSkills.DemonicBulwark) or 0, 0)
+    local summonhealth = level * mySummonvoid:getMaxHealth()
+    mySummonvoid:setMaxHealth(summonhealth + (summonhealth * (bulwark / 100)))
+    mySummonvoid:setHealth(summonhealth + (summonhealth * (bulwark / 100)))
+    
+    
 
     local deltaSpeed = math.max(player:getBaseSpeed() - mySummonvoid:getBaseSpeed(), 0)
     mySummonvoid:changeSpeed(deltaSpeed)

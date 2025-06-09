@@ -183,6 +183,17 @@
 	<monster name="heket" file="summons/heket.xml" />
 	<monster name="Bob Bomb" file="summons/bob_bomb.xml"/>
 	<monster name="Servant" file="summons/servant.xml"/>
+	<monster name="Void Guard" file="summons/void_guard.xml"/>
+	<monster name="Void Mender" file="summons/void_mage.xml"/>
+	<monster name="Void Sentinel" file="summons/void_archer.xml"/>
+
+
+
+
+
+
+
+
 	<!-- seeds -->
 	<monster name="Living Vile" file="summons/living_vile.xml"/>
 	<monster name="Living Tree" file="summons/living_tree.xml"/>

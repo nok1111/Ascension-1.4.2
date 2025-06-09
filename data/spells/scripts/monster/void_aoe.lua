@@ -11,6 +11,10 @@ function onCastSpell(cid, variant)
     local max = (owner:getLevel() / 5) + (owner:getMagicLevel() * 2.2) + 15
 	--print(min)
 	--print(max)
+
+    local InfernalCommand = math.max(owner:getStorageValue(PassiveSkills.InfernalCommand) or 0, 0)
+    min = min + (min * (InfernalCommand / 100))
+    max = max + (max * (InfernalCommand / 100))
     
     doAreaCombatHealth(owner:getId(), COMBAT_ENERGYDAMAGE, cid:getPosition(), area, -min, -max, 443)
     return true

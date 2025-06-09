@@ -219,7 +219,7 @@
 	<instant group="attack" spellid="64" name="Shadow Strike" words="shadow strike" lvl="30" mana="110" prem="0" range="6" casterTargetOrDirection="1" needtarget="1" blockwalls="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="warlock/death_strike.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="support" spellid="35" name="Summon Void Mender" words="summon void mender" lvl="70" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="0" script="warlock/summon_mage.lua">
+	<instant group="support" spellid="35" name="Summon Void Mender" words="summon void mender" lvl="70" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="1" script="warlock/summon_mage.lua">
 	<vocation name="Warlock" />
 	</instant>
 	<instant group="healing" spellid="66" name="Blood Pact" words="blood pact" lvl="40" health="0" aggressive="0" selftarget="1" cooldown="1500" groupcooldown="1900" needlearn="0" script="warlock/mana_dot.lua">
@@ -228,16 +228,16 @@
 	<instant group="support" spellid="67" name="Party Vitality" words="Party Vitality" lvl="60" mana="100" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="warlock/party_vit.lua">	
 	<vocation name="Warlock" />
     </instant>
-	<instant group="support" spellid="68" name="Summon Void Guard" words="summon void guard" lvl="100" mana="480"  cooldown="4000" groupcooldown="1900" needlearn="0" script="warlock/summon_guard.lua">
+	<instant group="support" spellid="68" name="Summon Void Guard" words="summon void guard" lvl="100" mana="480"  cooldown="4000" groupcooldown="1900" needlearn="1" script="warlock/summon_guard.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="support" spellid="69" name="Summon Void Sentinel" words="summon void sentinel" lvl="30" mana="150"  cooldown="10000" groupcooldown="1900" needlearn="0" script="warlock/summon_archer.lua">
+	<instant group="support" spellid="69" name="Summon Void Sentinel" words="summon void sentinel" lvl="30" mana="150"  cooldown="10000" groupcooldown="1900" needlearn="1" script="warlock/summon_archer.lua">
 	<vocation name="Warlock" />
 	</instant>
 	<instant group="support" spellid="70" name="Blood Wall" words="blood Wall" lvl="90" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="0" script="warlock/blood_wall.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="attack" spellid="71" name="Dark Plague" words="dark plague" lvl="100" mana="300" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="22000" groupcooldown="1900" needweapon="0" needlearn="0" script="warlock/dark_plague.lua">
+	<instant group="attack" spellid="71" name="Dark Plague" words="dark plague" lvl="100" mana="300" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="22000" groupcooldown="1900" needweapon="0" needlearn="1" script="warlock/dark_plague.lua">
     <vocation name="Warlock" />
     </instant>
 	<instant group="attack" spellid="73" name="Void Creep" words="creep" lvl="18" mana="60" needtarget="1" range="8" cooldown="6000" groupcooldown="1900" needlearn="0" script="warlock/void_creep.lua">
@@ -246,13 +246,13 @@
 	<instant group="attack" spellid="74" name="Soul Rain" words="soul rain" lvl="50" mana="200" range="7"   cooldown="15000" groupcooldown="1900" needtarget="1" script="warlock/soul_rain.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" selftarget="1" exhaustion="30000" groupcooldown="1900" script="warlock/drain_soul.lua">
+	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" needtarget="1" exhaustion="30000" groupcooldown="1900" script="warlock/drain_soul.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="attack" spellid="131" name="Malediction" words="malediction" lvl="1" mana="150"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" script="warlock/malediction.lua">
+	<instant group="attack" spellid="131" name="Malediction" words="malediction" lvl="1" mana="150"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" needlearn="1" script="warlock/malediction.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="attack" spellid="75" name="Haunt" words="haunt" lvl="1" mana="250"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" script="warlock/haunt.lua">
+	<instant group="attack" spellid="75" name="Haunt" words="haunt" lvl="1" mana="250"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" needlearn="1" script="warlock/haunt.lua">
 	<vocation name="Warlock" />
 	</instant>
 	<instant group="support" spellid="76" name="Dark Aura" words="dark Aura" lvl="1" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="1" script="warlock/dark_aura.lua">

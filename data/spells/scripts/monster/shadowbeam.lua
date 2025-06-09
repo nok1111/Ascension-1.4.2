@@ -14,6 +14,11 @@ function onCastSpell(cid, variant)
     local maglevel = owner:getMagicLevel()
         local min = (level / 5) + (maglevel * 1.1) + 5
         local max = (level / 5) + (maglevel * 1.3) + 7
+
+        local InfernalCommand = math.max(owner:getStorageValue(PassiveSkills.InfernalCommand) or 0, 0)
+    min = min + (min * (InfernalCommand / 100))
+    max = max + (max * (InfernalCommand / 100))
+    
                 creature:getPosition():sendDistanceEffect(target:getPosition(), 109)
                 doAreaCombatHealth(cid, COMBAT_ENERGYDAMAGE, Position(targetPos.x,targetPos.y,targetPos.z), {1}, -min, -max, CONST_ME_BLUESKULL)
                 doAreaCombatHealth(cid, COMBAT_ENERGYDAMAGE, Position(targetPos.x-1,targetPos.y,targetPos.z), {1}, -min, -max, CONST_ME_BLUESKULL)

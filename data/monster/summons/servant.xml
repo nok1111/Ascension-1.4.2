@@ -13,7 +13,7 @@
 		<flag canpushitems="0" />
 		<flag canpushcreatures="0" />
 		<flag targetdistance="1" />
-		<flag staticattack="90" />
+		<flag staticattack="60" />
 		<flag runonhealth="0" />
 		<flag canwalkonenergy="0" />
 		<flag canwalkonfire="0" />
@@ -21,7 +21,8 @@
 		
 	</flags>
 	<attacks>
-		<attack name="servant_explode" interval="1" range="1" chance="100"/>
+		<attack name="summonmelee" interval="2000" range="1" chance="100"/>
+		<attack name="servant_explode" interval="2000" range="1" chance="15"/>
 	</attacks>
 <defenses armor="1" defense="1"/>
 	<elements>

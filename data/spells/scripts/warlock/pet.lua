@@ -57,11 +57,14 @@ function onCastSpell(cid, var)
 	if player:getTarget() then
 	mySummon:setTarget(player:getTarget())
 	end
-	mySummon:setMaxHealth(halfhp)
-	mySummon:setHealth(halfhp)
-    mySummon:registerEvent("Summon_Damage")
-	mySummon:registerEvent("petheal")
-	mySummon:sendProgressbar(1*60*1000, false)
+    
+    local bulwark = math.max(player:getStorageValue(PassiveSkills.DemonicBulwark) or 0, 0)
+	local summonhealth = halfhp
+	mySummon:setMaxHealth(summonhealth + (summonhealth * (bulwark / 100)))
+	mySummon:setHealth(summonhealth + (summonhealth * (bulwark / 100)))
+    
+	
+	
 
     --local deltaSpeed = math.max(player:getBaseSpeed() - mySummon:getBaseSpeed(), 0)
    -- mySummon:changeSpeed(deltaSpeed)
