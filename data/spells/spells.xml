@@ -222,7 +222,7 @@
 	<instant group="support" spellid="35" name="Summon Void Mender" words="summon void mender" lvl="70" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="1" script="warlock/summon_mage.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="healing" spellid="66" name="Blood Pact" words="blood pact" lvl="40" health="0" aggressive="0" selftarget="1" cooldown="1500" groupcooldown="1900" needlearn="0" script="warlock/mana_dot.lua">
+	<instant group="healing" spellid="66" name="Blood Pact" words="blood pact" lvl="40" health="0" aggressive="0" selftarget="1" cooldown="1500" groupcooldown="1900" needlearn="0" script="warlock/blood_pact.lua">
 	<vocation name="Warlock" />
 	</instant>	
 	<instant group="support" spellid="67" name="Party Vitality" words="Party Vitality" lvl="60" mana="100" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="warlock/party_vit.lua">	

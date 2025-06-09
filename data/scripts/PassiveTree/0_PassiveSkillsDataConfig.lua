@@ -1116,7 +1116,7 @@ PassiveSkills.treeData = {
 						name = "Pactmaster's Gift",
 						description = "Increase the mana transfer from blood pact by 10% per level",
 						effect = {{type = "storage", name = "PactmasterGift", storage = PassiveSkills.PactmasterGift, value = 10}},
-						maxLevel = 10
+						maxLevel = 4
 					},
 					[2] = {
 						name = "Sanguine Shield",
@@ -1151,12 +1151,12 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Astral Burn",
-						description = "Star Fall now applies a damaging condition to the target wich deal energy damage for 10 seconds",
+						description = "Starfall now applies a damaging condition to the target wich deal energy damage for 10 seconds",
 						effect = {{type = "storage", name = "AstralBurn", storage = PassiveSkills.AstralBurn, value = 10}},
 						maxLevel = 4
 					},
 					[3] = {
-						name = "Shockwave",
+						name = "Falling Stars",
 						description = "Learn spell Shockwave (requires level 50)",
 						effect = {{type = "spell", name = "Shockwave"}},
 						maxLevel = 1,
