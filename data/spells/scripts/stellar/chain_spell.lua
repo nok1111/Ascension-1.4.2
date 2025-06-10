@@ -10,7 +10,7 @@ local config = {
 
 -- Define the combat object with the custom parameters and callback
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, config.mfx2)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -21,6 +21,13 @@ function onGetFormulaValues(player, skill, attack, factor)
     local power = magic * attack 
     local min = ((level / 5) + (power * 0.085) + (attack * 1.5) + 100) / 2
     local max =  ((level / 5) + (power * 0.085) + (attack * 1.5) + 120) / 1.5
+
+
+    local AstralCommandLevel = math.max(player:getStorageValue(PassiveSkills.AstralCommand) or 0, 0)
+    local damageMultiplier = 1 + ( AstralCommandLevel / 100)
+    min = min * damageMultiplier
+    max = max * damageMultiplier
+
     return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")

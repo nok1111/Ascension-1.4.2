@@ -21,6 +21,17 @@ local function applyEffect(creatureId, targetId)
     if not creature or not target then
         return
     end
+    local AstralBurnDurationLevel = math.max(player:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
+
+    local conditionastralburn = Condition(CONDITION_ENERGY, CONDITIONID_COMBAT)
+    local duration = AstralBurnDurationLevel * 1000
+    conditionastralburn:setTicks(duration)
+    conditionastralburn:setParameter(CONDITION_PARAM_DELAYED, 1)
+    conditionastralburn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+    conditionastralburn:setParameter(CONDITION_PARAM_SUBID, 259314)
+    if AstralBurnDurationLevel > 0 then
+        combat:addCondition(conditionastralburn)
+    end
 
     local targetPos = target:getPosition()
     local var = Variant(targetPos)

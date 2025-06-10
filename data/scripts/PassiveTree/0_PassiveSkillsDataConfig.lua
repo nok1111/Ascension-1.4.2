@@ -143,6 +143,23 @@ PassiveSkills.AbyssalRefund = 875597
 PassiveSkills.PactmasterGift = 875598
 PassiveSkills.BloodWall = 875599
 
+--stellar 1
+PassiveSkills.CosmicFocus = 875600
+PassiveSkills.AstralBurn = 875601
+PassiveSkills.FallingStars = 875602
+PassiveSkills.AstralCommand = 875603
+PassiveSkills.AstralDuality = 875604
+
+--stellar 2
+PassiveSkills.MoonLightManaCost = 875605
+PassiveSkills.RainFallHealing = 875606
+PassiveSkills.RainFallDuration = 875607
+PassiveSkills.LuminousBond = 875608
+PassiveSkills.CosmicFireManaRestore = 875609
+
+--stellar 3
+PassiveSkills.AeryManaRestore = 875610
+
 
 
 PassiveSkills.resetCost = {
@@ -1151,13 +1168,13 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Astral Burn",
-						description = "Starfall now applies a damaging condition to the target wich deal energy damage for 10 seconds",
-						effect = {{type = "storage", name = "AstralBurn", storage = PassiveSkills.AstralBurn, value = 10}},
+						description = "Starfall now applies a damaging condition to the target wich deal energy damage for 1 seconds per level",
+						effect = {{type = "storage", name = "AstralBurn", storage = PassiveSkills.AstralBurn, value = 1}},
 						maxLevel = 4
 					},
 					[3] = {
-						name = "Falling Stars",
-						description = "Dealing energy damage has a 3% chance to trigger a starfall on the target",
+						name = "Falling Stars", --missing
+						description = "Dealing energy damage has a 2% (per level) chance to trigger a starfall on the target",
 						effect = {
 							{
 								type = "storage",
@@ -1166,46 +1183,64 @@ PassiveSkills.treeData = {
 								value = 6
 							}
 						},
-						maxLevel = 1,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 4
 					}, 
 					[4] = {
-						name = "Lifeblood Strike",
-						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						name = "Holy Flare", --missing
+						description = "Learn Spell Holy Flare",
 						effect = {
 							{
-								type = "storage",
-								name = "LifebloodStrike",
-								storage = PassiveSkills.LifebloodStrike,
-								value = 25
+								type = "spell",
+								name = "Holy Flare"
 							}
 						},
-						maxLevel = 2,
+						maxLevel = 1,
 						prevNodeLevelNeeded = 4
 					},
 					[5] = {
-						name = "Heartseeker",
-						description = "Increase critical strike chance by 2% (per level)",
+						
+						name = "Astral Command",
+						description = "Increases the damage of your Aery’s Wrath by an additional 6% per level.",
+						effect = {
+							{
+								type = "storage",
+								name = "AstralCommand",
+								storage = PassiveSkills.AstralCommand,
+								value = 5
+							}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 4
+					},
+					[6] = {
+						name = "Celestial Insight",
+						description = "Increases your Magic Level by 2 points per level", 
 						effect = {
 							{
 								type = "condition",
-								name = "Critical Strike",
+								name = "MagicLevel", 
+								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+								params = {{param = CONDITION_PARAM_STAT_MAGICPOINTS, value = 2}}
 							}
 						},
-						maxLevel = 3,
-						prevNodeLevelNeeded = 2
+						maxLevel = 5
+						prevNodeLevelNeeded = 5
 					},
-					[6] = {
-						name = "Apex Predator",
-						description = "Increases all damage and attack speed by per missing health",
+					[7] = {
+						name = "Astral Duality", --missing
+						description = "Your astral spells have a 5% (per level) chance to ignite targets with Holy Fire, while your holy spells have a 5% (per level) chance to call down Starfall upon them.",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{
+								type = "storage",
+								name = "AstralDuality",
+								storage = PassiveSkills.AstralDuality,
+								value = 5
+							}
 						},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						maxLevel = 5,
+						prevNodeLevelNeeded = 4
 					}
 				},
 			},
@@ -1214,66 +1249,99 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Starwell",
+						description = "Increases max mana by 5% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxManaPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 5}}
+							}
+						},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
-					},
-					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Divine Restoration",
+						description = "Increases Healling effectivenessby 10% per level \nReduce the mana cost of moon light by 20% per level",
 						effect = {
 							{
 								type = "condition",
-								name = "Critcial Chance",
+								name = "HealingEffectiveness", 
+								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_EXTRAHEALING, value = 10}}
 							},
 							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								type = "storage",
+								name = "MoonLightManaCost",
+								storage = PassiveSkills.MoonLightManaCost,
+								value = 20
 							}
 						},
-						maxLevel = 5
+						maxLevel = 3,
+						prevNodeLevelNeeded = 1
 					},
-					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+					[3] = {
+						name = "Moonshower",
+						description = "Increase the healing of rain fall by 10%\nincrease the duration of rainfall by 1 second",
 						effect = {
 							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
+								type = "storage",
+								name = "RainFallHealing",
+								storage = PassiveSkills.RainFallHealing,
+								value = 10
+							},
+							{
+								type = "storage",
+								name = "RainFallDuration",
+								storage = PassiveSkills.RainFallDuration,
+								value = 1
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 2
 					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+					[4] = {
+						name = "Luminous Bond",
+						description = "Increase the passive healing of Aery by 30% per level",
+						effect = {
+							{
+								type = "storage",
+								name = "LuminousBond",
+								storage = PassiveSkills.LuminousBond,
+								value = 30
+							}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
+					},
+					[5] = { 
+						name = "Guiding Constellation",
+						description = "Cosmic Fire now restores 3% of your max mana per level",
+						effect = {
+							{
+								type = "storage",
+								name = "CosmicFireManaRestore",
+								storage = PassiveSkills.CosmicFireManaRestore,
+								value = 10
+							}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Solar Blessing",
+						description = "Learn Spell Solar Blessing",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{
+								type = "spell",
+								name = "Solar Blessing"
+							}
 						},
-						maxLevel = 17
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -1282,67 +1350,40 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Back to basics", 
+						description = "+10% wand damage per level",
+						effect = {
+							{ type = "storage", name = "WandDamage", storage = PassiveSkills.WandDamage, value = 10 }
+						},
+						maxLevel = 5,
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Mana Feather, 
+						description = "Aery now restores 0.5% (per level) of your max mana per basic attack",
+						effect = {
+							{
+								type = "storage",
+								name = "AeryManaRestore",
+								storage = PassiveSkills.AeryManaRestore,
+								value = 5
+							}
+						},
+						maxLevel = 5,
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Sacred Constitution",
+						description = "Increases max health by 5.0% per level",
 						effect = {
 							{
 								type = "condition",
-								name = "Critcial Chance",
+								name = "MaxHealthPercent", 
+								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 5.0}}
 							}
 						},
-						maxLevel = 5
-					},
-					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
-					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
-					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
-					}
+						maxLevel = 6
+					},					
 				},
 			},
 		},
