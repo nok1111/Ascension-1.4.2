@@ -939,7 +939,7 @@ PassiveSkills.treeData = {
 
 	[5] = {			-- Tree 4
 		name = "Warlock Talents",
-		background = "7",
+		background = "9",
 		branches = {
 			[1] = {
 				color = '#134f1c',
