@@ -335,10 +335,13 @@
 	<instant group="attack" spellid="111" name="Full Moon" words="full moon" lvl="100" mana="300" selftarget="1" prem="0" cooldown="45000" groupcooldown="1900" needlearn="0" script="stellar/full_moon.lua">
 	 <vocation name="Stellar" />
 	</instant>
-	<instant group="healing" spellid="112" name="Moon Light" words="moon light" lvl="27" mana="140" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="healing/moon_light.lua">
-		<vocation name="Druid" />
+	<instant group="healing" spellid="112" name="Moon Light" words="moon light" lvl="27" mana="140" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="stellar/moon_light.lua">
 	<vocation name="Stellar" />
 	</instant>
+	<instant group="healing" spellid="113" name="Holy Flare" words="holy flare" lvl="1" mana="140" aggressive="1" blockwalls="1" needtarget="1" cooldown="1000" groupcooldown="1900" needlearn="1" script="stellar/holy_flare.lua">
+	<vocation name="Stellar" />
+	</instant>
+		
 		
 		
 	<!-- Monk -->

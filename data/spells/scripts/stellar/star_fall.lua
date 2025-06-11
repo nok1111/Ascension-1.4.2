@@ -21,7 +21,8 @@ local function applyEffect(creatureId, targetId)
     if not creature or not target then
         return
     end
-    local AstralBurnDurationLevel = math.max(player:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
+
+    local AstralBurnDurationLevel = math.max(creature:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
 
     local conditionastralburn = Condition(CONDITION_ENERGY, CONDITIONID_COMBAT)
     local duration = AstralBurnDurationLevel * 1000

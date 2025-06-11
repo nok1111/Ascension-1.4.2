@@ -147,7 +147,7 @@ PassiveSkills.BloodWall = 875599
 PassiveSkills.CosmicFocus = 875600
 PassiveSkills.AstralBurn = 875601
 PassiveSkills.FallingStars = 875602
-PassiveSkills.AstralCommand = 875603
+PassiveSkills.StarfallConvergence = 875603
 PassiveSkills.AstralDuality = 875604
 
 --stellar 2
@@ -1200,14 +1200,14 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						
-						name = "Astral Command",
-						description = "Increases the damage of your Aery’s Wrath by an additional 6% per level.",
+						name = "Starfall Convergence",
+						description = "Your starfall can now trigger in an additional target (+1 additional target per level)",
 						effect = {
 							{
 								type = "storage",
-								name = "AstralCommand",
-								storage = PassiveSkills.AstralCommand,
-								value = 5
+								name = "StarfallConvergence",
+								storage = PassiveSkills.StarfallConvergence,
+								value = 1
 							}
 						},
 						maxLevel = 5,
@@ -1225,7 +1225,7 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_STAT_MAGICPOINTS, value = 2}}
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},
 					[7] = {
@@ -1358,7 +1358,7 @@ PassiveSkills.treeData = {
 						maxLevel = 5,
 					},
 					[2] = {
-						name = "Mana Feather, 
+						name = "Mana Feather", 
 						description = "Aery now restores 0.5% (per level) of your max mana per basic attack",
 						effect = {
 							{
