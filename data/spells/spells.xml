@@ -415,6 +415,9 @@
 	<instant group="attack" spellid="110" name="Earth Dance" words="earth dance" lvl="60" mana="225" direction="1" cooldown="16000" groupcooldown="1900" needlearn="0" script="druid/earth_wave.lua">
     <vocation name="Druid" />
 	</instant>
+	<instant group="healing" spellid="155" name="Focus Healing" words="focus healing" lvl="27" mana="140" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="druid/focus_healing.lua">
+	<vocation name="Druid" />
+	</instant>
 	
 	
 	

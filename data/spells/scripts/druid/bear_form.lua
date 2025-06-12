@@ -92,9 +92,6 @@ combats[5]:addCondition(outfit_bear)
         player:addHealth(maxhealth)
         player:sendAddBuffNotification(118, 15, 'Bear Form', 5, 0)
     else
-        -- Remove conditions based on the conditionIds table
-
-			print("remove")
 			player:removeCondition(outfit_bear)
 			player:removeCondition(regen_bear)
 			player:removeCondition(stunSpellAttacks)

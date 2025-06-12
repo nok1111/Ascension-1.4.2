@@ -1389,7 +1389,7 @@ PassiveSkills.treeData = {
 		},
 	},
 	[7] = {			-- Tree 4
-		name = "Dragonknight Talents",
+		name = "Monk Talents",
 		background = "7",
 		branches = {
 			[1] = {
@@ -1594,7 +1594,7 @@ PassiveSkills.treeData = {
 		},
 	},
 	[8] = {			-- Tree 4
-		name = "Dragonknight Talents",
+		name = "Druid Talents",
 		background = "7",
 		branches = {
 			[1] = {
@@ -1665,51 +1665,48 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						name = "Spirit Pool",
+						description = "Increases max mana by 5% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxManaPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 5.0}}
+							}
+						},
 						maxLevel = 10
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Life Bloom",
+						description = "Learn Life Bloom spell",
+						effect = {{type = "spell", name = "Life Bloom"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 10 
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Blooming Wisdom",
+						description = "Decrease the % mana cost required to cast life bloom by 2% per level",
 						effect = {
 							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								type = "storage",
+								name = "BloomingWisdom",
+								storage = PassiveSkills.BloomingWisdom,
+								value = 2
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 2
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Healing Concentration",
+						description = "Increase the effectiveness of Focus Healing by 20% per level",
 						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
+							{type = "storage", name = "FocusHealing", storage = PassiveSkills.HealingConcentration, value = 20}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Placeholder E",
@@ -1733,67 +1730,73 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Nature's Endurance",
+						description = "Increases max health by 4.0% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxHealthPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 4.0}}
+							}
+						},
+						maxLevel = 6
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Bear Form",
+						description = "Learn Bear Form spell",
+						effect = {{type = "spell", name = "Bear Form"}},
+						prevNodeLevelNeeded = 6,
+						maxLevel = 1,
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Wildhide Endurance",
+						description = "Increase the bear form max health and health regeneration by 5% per level",
+						effect = {
+							{type = "storage", name = "WildhideEndurance", storage = PassiveSkills.WildhideEndurance, value = 1}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
+					},
+					
+				},
+			},
+			[4] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Nature's Endurance",
+						description = "Increases max health by 4.0% per level",
 						effect = {
 							{
 								type = "condition",
-								name = "Critcial Chance",
+								name = "MaxHealthPercent", 
+								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 4.0}}
 							}
 						},
-						maxLevel = 5
+						maxLevel = 6
 					},
-					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+					[2] = {
+						name = "Bear Form",
+						description = "Learn Bear Form spell",
+						effect = {{type = "spell", name = "Bear Form"}},
+						prevNodeLevelNeeded = 6,
+						maxLevel = 1,
+					},
+					[3] = {
+						name = "Wildhide Endurance",
+						description = "Increase the bear form max health and health regeneration by 5% per level",
 						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
+							{type = "storage", name = "WildhideEndurance", storage = PassiveSkills.WildhideEndurance, value = 1}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
-					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
-					}
+					
 				},
 			},
 		},
