@@ -1,12 +1,12 @@
 local config = {
-    projectileEffect = 179, -- The projectile effect
-    combatEffect = 552, -- The combat effect
+    projectileEffect = 165, -- The projectile effect
+    combatEffect = 40, -- The combat effect
     spellCount = 3, -- Number of projectiles to shoot
     cooldown = 200, -- Cooldown in milliseconds
 }
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, config.combatEffect)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -42,7 +42,14 @@ end
 local function shootProjectile(creatureId, aeryId, targetId, count)
     local aery = Creature(aeryId)
     local target = Creature(targetId)
-    if not aery or not target or count > config.spellCount then
+    local player = Creature(creatureId)
+
+    if not player then
+        return
+    end
+
+    local AeryRapidfire = math.max(player:getStorageValue(PassiveSkills.AeryRapidfire) or 0, 0)
+    if not aery or not target or count > (config.spellCount + AeryRapidfire) then
         return
     end
 

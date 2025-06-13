@@ -2,8 +2,8 @@ local config = {
     speed = 150, -- time between each target
     mfx = 48, -- magic effect
     mfx2 = 571, -- magic effect
-    dfx = 132, -- distance effect
-    element = COMBAT_ENERGYDAMAGE,
+    dfx = 165, -- distance effect
+    element = COMBAT_HOLYDAMAGE,
     xradius = 2, -- choose your size <->
     yradius = 2 -- choose your size ^ V
 }
@@ -11,7 +11,7 @@ local config = {
 -- Define the combat object with the custom parameters and callback
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, config.mfx2)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
@@ -48,7 +48,7 @@ local function sendAery(creatureId)
 
     -- Companion
     local playerPosition = creature:getPosition()
-    local companion = Game.createMonster(CONST_SHADOW_DRAINER, Position(playerPosition.x + 1, playerPosition.y, playerPosition.z), false, true)
+    local companion = Game.createMonster("Aery", Position(playerPosition.x + 1, playerPosition.y, playerPosition.z), false, true)
     if companion then
         creature:addSummon(companion)
         companion:say("Master I'm back!", TALKTYPE_MONSTER_SAY)
@@ -116,6 +116,8 @@ local function chainAttack(creatureId, targetId, chainCount, hitTargets)
     if nextTarget then
         targetPos:sendDistanceEffect(nextTarget:getPosition(), config.dfx)
         combat:execute(creature, positionToVariant(nextTarget:getPosition()))
+        --attached effect
+        nextTarget:attachEffectById(88, true)
 
         addEvent(chainAttack, config.speed, creatureId, nextTarget:getId(), chainCount + 1, hitTargets)
     else
@@ -148,6 +150,7 @@ function onCastSpell(creature, variant)
     end
 
     combat:execute(creature, positionToVariant(target:getPosition()))
+    target:attachEffectById(88, true)
     addEvent(chainAttack, config.speed, creature:getId(), target:getId(), 1, {})
 	
 	-- Send a distance effect from the creature's position to the target's position

@@ -147,7 +147,7 @@ PassiveSkills.BloodWall = 875599
 PassiveSkills.CosmicFocus = 875600
 PassiveSkills.AstralBurn = 875601
 PassiveSkills.FallingStars = 875602
-PassiveSkills.StarfallConvergence = 875603
+PassiveSkills.AeryRapidfire = 875603
 PassiveSkills.AstralDuality = 875604
 
 --stellar 2
@@ -1200,18 +1200,18 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						
-						name = "Starfall Convergence",
-						description = "Your starfall can now trigger in an additional target (+1 additional target per level)",
+						name = "Aery's Rapidfire",
+						description = "Increase Aery's Strikes shots by 1 per level",
 						effect = {
 							{
 								type = "storage",
-								name = "StarfallConvergence",
-								storage = PassiveSkills.StarfallConvergence,
+								name = "AeryRapidfire",
+								storage = PassiveSkills.AeryRapidfire,
 								value = 1
 							}
 						},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 4
+						maxLevel = 3,
+						prevNodeLevelNeeded = 1
 					},
 					[6] = {
 						name = "Celestial Insight",
@@ -1220,7 +1220,6 @@ PassiveSkills.treeData = {
 							{
 								type = "condition",
 								name = "MagicLevel", 
-								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
 								params = {{param = CONDITION_PARAM_STAT_MAGICPOINTS, value = 2}}
 							}
@@ -1229,18 +1228,16 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[7] = {
-						name = "Astral Duality", --missing
-						description = "Your astral spells have a 5% (per level) chance to ignite targets with Holy Fire, while your holy spells have a 5% (per level) chance to call down Starfall upon them.",
+						name = "Full Moon", --missing
+						description = "Learn Spell Full Moon",
 						effect = {
 							{
-								type = "storage",
-								name = "AstralDuality",
-								storage = PassiveSkills.AstralDuality,
-								value = 5
+								type = "spell",
+								name = "Full Moon"
 							}
 						},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 4
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -1264,7 +1261,7 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Divine Restoration",
-						description = "Increases Healling effectivenessby 10% per level \nReduce the mana cost of moon light by 20% per level",
+						description = "Increases Healling effectivenessby 10% per level \nReduce the mana cost of moon light by 2% per level",
 						effect = {
 							{
 								type = "condition",
@@ -1277,7 +1274,7 @@ PassiveSkills.treeData = {
 								type = "storage",
 								name = "MoonLightManaCost",
 								storage = PassiveSkills.MoonLightManaCost,
-								value = 20
+								value = 2
 							}
 						},
 						maxLevel = 3,

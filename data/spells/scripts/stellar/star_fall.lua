@@ -15,21 +15,30 @@ end
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
-local function applyEffect(creatureId, targetId)
+local function Starfall(creatureId, targetId)
     local creature = Creature(creatureId)
     local target = Creature(targetId)
     if not creature or not target then
         return
     end
 
-    local AstralBurnDurationLevel = math.max(creature:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
+    local level = creature:getLevel()
+	local magic = creature:getMagicLevel()
 
+	local minburn = ((level / 5) + (magic * 1.5) + 2) + 2
+	local maxburn =  ((level / 5) + (magic * 1.6) + 2) + 3
+
+    local AstralBurnDurationLevel = math.max(creature:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
+    print("AstralBurnDurationLevel: " .. AstralBurnDurationLevel)
     local conditionastralburn = Condition(CONDITION_ENERGY, CONDITIONID_COMBAT)
-    local duration = AstralBurnDurationLevel * 1000
-    conditionastralburn:setTicks(duration)
-    conditionastralburn:setParameter(CONDITION_PARAM_DELAYED, 1)
-    conditionastralburn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+    local duration = AstralBurnDurationLevel + 1
+    print("duration: " .. duration)
+
+    
+    conditionastralburn:addDamage(duration, 1000, math.random(minburn, maxburn))
+    conditionastralburn:setParameter(CONDITION_PARAM_DELAYED, 1) 
     conditionastralburn:setParameter(CONDITION_PARAM_SUBID, 259314)
+
     if AstralBurnDurationLevel > 0 then
         combat:addCondition(conditionastralburn)
     end
@@ -43,36 +52,6 @@ local function applyEffect(creatureId, targetId)
     target:attachEffectById(86, true)
 end
 
-local function isExcludedTarget(creature, target)
-    if not creature or not target then
-        return true
-    end
-
-    -- Exclude party members and their summons
-    if creature:isPlayer() and target:isPlayer() then
-        local creatureParty = creature:getParty()
-        local targetParty = target:getParty()
-        if creatureParty and targetParty and creatureParty == targetParty then
-            return true
-        end
-    end
-    if target:isMonster() and target:getMaster() then
-        local master = target:getMaster()
-        if master:isPlayer() and creature:getParty() and master:getParty() == creature:getParty() then
-            return true
-        end
-    end
-
-    -- Secure mode check to exclude non-party players and their summons
-    local player = creature:isPlayer() and creature or creature:getMaster()
-    if player and player:hasSecureMode() then
-        if target:isPlayer() or (target:isMonster() and target:getMaster() and target:getMaster():isPlayer()) then
-            return true
-        end
-    end
-    
-    return false
-end
 
 function onCastSpell(creature, var)
     local target = creature:getTarget()
@@ -80,19 +59,8 @@ function onCastSpell(creature, var)
         return false
     end
 
-    local targetPos = target:getPosition()
-    local targets = {target}
+    Starfall(creature:getId(), target:getId())
 
-    local specs = Game.getSpectators(targetPos, false, false, 1, 1, 1, 1)
-    for _, spec in ipairs(specs) do
-        if spec ~= creature and spec ~= target and spec:isCreature() and not isExcludedTarget(creature, spec) then
-            table.insert(targets, spec)
-        end
-    end
-
-    for i, tgt in ipairs(targets) do
-        addEvent(applyEffect, 150 * (i - 1), creature:getId(), tgt:getId())
-    end
 
     local maxMana = creature:getMaxMana() / 100
     creature:addMana(maxMana * 5)

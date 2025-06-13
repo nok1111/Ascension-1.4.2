@@ -7,7 +7,7 @@ local fromPos = cid:getPosition()
 	local targetposition = target:getPosition()
     local min = (owner:getLevel() / 5) + (owner:getMagicLevel() * 0.4) + 5
     local max = (owner:getLevel() / 5) + (owner:getMagicLevel() * 0.8) + 6
-	fromPos:sendDistanceEffect(targetposition, 132)
-    doAreaCombatHealth(owner:getId(), COMBAT_ENERGYDAMAGE, target:getPosition(), {1}, -min, -max, 48)
+	fromPos:sendDistanceEffect(targetposition, 165)
+    doAreaCombatHealth(owner:getId(), COMBAT_HOLYDAMAGE, target:getPosition(), {1}, -min, -max, 40)
     return true
 end

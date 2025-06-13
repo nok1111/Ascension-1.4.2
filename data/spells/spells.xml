@@ -310,13 +310,13 @@
 	<instant group="attack" spellid="102" name="Aery Wrath" words="aery wrath" lvl="18" mana="45" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/chain_spell.lua">
     <vocation name="Stellar" />
     </instant>
-	<instant group="attack" spellid="103" name="Star Fall" words="star fall" lvl="50" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="0" needweapon="0" needlearn="0" script="stellar/star_fall.lua">
+	<instant group="attack" spellid="103" name="Starfall" words="starfall" lvl="50" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="0" needweapon="0" needlearn="0" script="stellar/star_fall.lua">
     <vocation name="Stellar" />
     </instant>
 	<instant group="attack" spellid="104" name="Falling Star" words="falling star" lvl="30" mana="95" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/falling_sword.lua">
     <vocation name="Stellar" />
     </instant>	
-	<instant group="healing" spellid="105" name="Rain fall" words="rain fall" lvl="25" mana="100" cooldown="20000" groupcooldown="1900" needlearn="0" script="stellar/rain_fall.lua">
+	<instant group="healing" spellid="105" name="Rain fall" words="rain fall" lvl="25" mana="100" cooldown="20000" groupcooldown="1900" selftarget="1" needlearn="0" script="stellar/rain_fall.lua">
 	<vocation name="Stellar" />
 	</instant>
 	<instant group="healing" spellid="106" name="Sacred Rose" words="sacred rose" lvl="28" mana="150" prem="0" aggressive="0" selftarget="1" cooldown="4000" groupcooldown="1900" script="stellar/heal_party.lua">
@@ -329,13 +329,13 @@
 	<instant group="attack" spellid="108" name="Lunar Beam" words="lunar beam" lvl="60"  mana="185" premium="0" selftarget="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="stellar/lunar_beam.lua">
 	<vocation name="Stellar" />
 	</instant>
-	<instant group="attack" spellid="109" name="Aery Strikes" words="aery strikes" lvl="70" mana="135" prem="0"  cooldown="8000" groupcooldown="1900" needlearn="0" script="stellar/aery_dance.lua">
+	<instant group="attack" spellid="109" name="Aery Strikes" words="aery strikes" lvl="70" mana="135" prem="0"  cooldown="8000" groupcooldown="1900" needlearn="0" script="stellar/aery_strikes.lua">
 	 <vocation name="Stellar" />
 	</instant>
-	<instant group="attack" spellid="111" name="Full Moon" words="full moon" lvl="100" mana="300" selftarget="1" prem="0" cooldown="45000" groupcooldown="1900" needlearn="0" script="stellar/full_moon.lua">
+	<instant group="attack" spellid="111" name="Full Moon" words="full moon" lvl="100" mana="300" selftarget="1" prem="0" cooldown="45000" groupcooldown="1900" needlearn="1" script="stellar/full_moon.lua">
 	 <vocation name="Stellar" />
 	</instant>
-	<instant group="healing" spellid="112" name="Moon Light" words="moon light" lvl="27" mana="140" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="stellar/moon_light.lua">
+	<instant group="healing" spellid="112" name="Moonlight" words="moonlight" lvl="27" mana="80" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="stellar/moon_light.lua">
 	<vocation name="Stellar" />
 	</instant>
 	<instant group="healing" spellid="113" name="Holy Flare" words="holy flare" lvl="1" mana="140" aggressive="1" blockwalls="1" needtarget="1" cooldown="1000" groupcooldown="1900" needlearn="1" script="stellar/holy_flare.lua">
@@ -919,6 +919,7 @@
 	<instant name="summonhealer-seraphin" words="###911" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonheal-seraphin.lua"/>
 	<instant name="summonicerange" words="###912" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonicerange.lua"/>
 	<instant name="summonshadowclone" words="###913" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonshadowclone.lua"/>
+	<instant name="summonaeryheal" words="###914" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonaeryheal.lua"/>
 	
 	
 	

@@ -1,23 +1,20 @@
 
 
 local config = {
-	Duration = 10,
-	Ticks_Between = 500,
+	Duration = 7,
+	RainEffectDuration = 5,
+	Ticks_Between = 800,
 	Ticks_Effect = 100,
 	Effect = CONST_ME_LOSEENERGY,
 	Effect2 = 326
 }
 
-local configMasRes = {
-	manaPercent = 4,
-	healPercent = 4,
-	timer = 10,
-	InitMana = 10,
-	InitHealth = 10
-}
 
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
+combat:setParameter(COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
+combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 combat:setArea(createCombatArea(AREA_CIRCLE2X2))
 
 
@@ -45,7 +42,6 @@ local function doAnimation(cid, pos)
 		end
 	end
 end
-
 
 local function healtargets(player, target)
     -- Check if player is valid
@@ -100,9 +96,32 @@ local function healtargets(player, target)
 end
 
 
-local function Triggered(combat, pos)
-	variant = positionToVariant(pos)
-	combat:execute(0, variant)
+function onTargetCreature(creature, target)
+	local player = creature:getPlayer()
+	local level = player:getLevel()
+	local magicLevel = player:getMagicLevel()
+	local min = (level / 10) + (magicLevel * 3.3) + 10
+	local max = (level / 8) + (magicLevel * 5.4) + 15
+
+	local RainFallHealing = player:getStorageValue(PassiveSkills.RainFallHealing) or 0
+	min = min + (min * (RainFallHealing / 100))
+	max = max + (max * (RainFallHealing / 100))
+
+	if healtargets(player, target) then
+		target:addHealth(math.random(min,max))
+	end
+	return true
+end
+
+combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
+
+
+local function HealEvent(creatureId, variant)
+	local creature = Creature(creatureId)
+	if not creature then
+		return
+	end
+	combat:execute(creatureId, variant)
 end
 
 local function apply_floor(creatureId, positionnube)  	
@@ -114,53 +133,32 @@ local creature = Creature(creatureId)
 end
 
 
-
 function onCastSpell(creature, variant)
-	local player = Player(creature)
-	local cid = creature:getId()
-	local pos = creature:getPosition()
-	local positionnube = creature:getPosition()
-	positionnube.x = creature:getPosition().x + 3
-	positionnube.y = creature:getPosition().y + 3
-	
-function doHeal_rain_fall(creature, target)
-    if not player then
-        stopEvent(event)
-        return false
+    local player = Player(creature)
+    local cid = creature:getId()
+    local pos = creature:getPosition()
+    local positionnube = creature:getPosition()
+    positionnube.x = creature:getPosition().x + 3
+    positionnube.y = creature:getPosition().y + 3
+
+	local RainFallDuration = player:getStorageValue(PassiveSkills.RainFallDuration) or 0
+	config.Duration = config.Duration + RainFallDuration
+	config.RainEffectDuration = config.RainEffectDuration + RainFallDuration
+
+    
+
+    for i = 0, config.Duration, 1 do
+        addEvent(HealEvent, 1000*i + 500, creature:getId(), variant)
     end
 
-    if not healtargets(player, target) then
-        return false
+    for i = 1, config.Duration * 1000 / 100 do
+        addEvent(apply_floor, 100 * i, creature:getId(), positionnube)
     end
+    apply_floor(creature:getId(), positionnube)
 
-    local min = (player:getLevel() / 5) +  (player:getMagicLevel() * 2.0) + 10
-    local max = (player:getLevel() / 5) +  (player:getMagicLevel() * 2.5) + 15
-    local FinalHealth = math.random(min, max)
-
-    target:addHealth(FinalHealth)
-    target:getPosition():sendMagicEffect(CONST_ME_HPUP)
+    for i = 0, (config.RainEffectDuration*1000)/config.Ticks_Effect, 1 do
+        addEvent(doAnimation, config.Ticks_Effect*i, cid, pos)
+    end
 
     return true
-end
-
-combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "doHeal_rain_fall")
-
-
-	for i = 0, configMasRes.timer, 1 do
-		addEvent(Triggered, 1000*i + 500, combat, pos)
-	end
-	
-	
-	for i = 1, config.Duration * 1000 / 100 do
-	addEvent(apply_floor, 100 * i, creature:getId(), positionnube)
-	end
-	apply_floor(creature:getId(), positionnube)
-	
-	
-	for i = 0, (config.Duration*1000)/config.Ticks_Effect, 1 do
-		addEvent(doAnimation, config.Ticks_Effect*i, cid, pos)
-	end
-
-
-	return true
 end

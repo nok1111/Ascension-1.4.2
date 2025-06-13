@@ -28,7 +28,74 @@ function doExtraFireball(playerid, targetid, baseDamage)
   doAreaCombatHealth(player, COMBAT_FIREDAMAGE, toPos, blazingdecree_area, -math.floor(totalDamage), -math.floor(totalDamage), 7)
 end
 
+local function StarfallPassive(playerId, targetId)
+  local player = Creature(playerId)
+  local target = Creature(targetId)
+  if not player or not target then
+      return
+  end
+
+  local level = player:getLevel()
+	local magic = player:getMagicLevel()
+
+	local minburn = ((level / 5) + (magic * 1.5) + 2) + 2
+	local maxburn =  ((level / 5) + (magic * 1.6) + 2) + 3
+
+    local AstralBurnDurationLevel = math.max(player:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
+    print("AstralBurnDurationLevel: " .. AstralBurnDurationLevel)
+    local conditionastralburn = Condition(CONDITION_ENERGY, CONDITIONID_COMBAT)
+    local duration = AstralBurnDurationLevel + 1
+    print("duration: " .. duration)
+
+    
+    conditionastralburn:addDamage(duration, 1000, math.random(minburn, maxburn))
+    conditionastralburn:setParameter(CONDITION_PARAM_DELAYED, 1) 
+    conditionastralburn:setParameter(CONDITION_PARAM_SUBID, 259314)
+
+    if AstralBurnDurationLevel > 0 then
+        target:addCondition(conditionastralburn)
+    end
+
+  local targetPos = target:getPosition()
+  targetPos.x = targetPos.x + 1
+  targetPos:sendMagicEffect(382)
+  target:attachEffectById(86, true)
+
+  local playerLevel = player:getLevel()
+  local playerMagic = player:getMagicLevel()
+  local playerBonus = (playerLevel * 0.8) + (playerMagic * 3.0)
+  local totalDamage = playerBonus
+
+  doAreaCombatHealth(player, COMBAT_ENERGYDAMAGE, target:getPosition(), 0, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+
+end
+
 local PASSIVES = {
+
+  Falling_Stars = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.FallingStars,
+    },
+    trigger = function(player, target, damage, primaryType)
+      if primaryType ~= COMBAT_ENERGYDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.FallingStars) or 0, 0)
+      return level > 0
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.FallingStars) or 0, 0)
+      -- 2% chance per level
+      local chance = level
+      if math.random(1, 100) <= chance then
+        -- Call the star fall effect
+          StarfallPassive(player:getId(), target:getId())
+      end
+      -- Optionally, return damage unchanged if no other effect
+      return damage
+    end,
+  },
 
   cosmic_focus = {
     config = {
@@ -345,32 +412,7 @@ local PASSIVES = {
       end, 200)
     end,
   },
-  stellar = {
-    config = {
-      vocation = 6,
-      chance = 10,
-      type = "OnAttack"
-    },
-    trigger = function(player, target, damage, origin)
-      return origin == ORIGIN_MELEE or origin == ORIGIN_RANGED or origin == ORIGIN_SPELL
-    end,
-    effect = function(player, target, damage)
-      local magic = player:getMagicLevel()
-      local level = player:getLevel()
-      local extraDamage = (level / 5) + (magic * 3.3) + 15
-      
-      addEvent(function()
-        if target and target:isMonster() and not target:getMaster() then
-          doTargetCombatHealth(player, target, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
-          player:say("stellar alligment!", TALKTYPE_MONSTER_SAY)
-          local explo = target:getPosition()
-          explo.x = explo.x + 1
-          explo:sendMagicEffect(382)
-        end
-      end, 200)
-      return damage
-    end
-  },
+ 
   
   blood_blades = {
     config = {

@@ -178,7 +178,6 @@
 	<monster name="Zombie Wall" file="summons/zombie_wall.xml"/>
 	<monster name="Shadow Seeker" file="summons/manadrainer.xml" />
 	<monster name="Guardian of Light" file="summons/holysummon.xml" />
-	<monster name="Aery" file="summons/wardensummon.xml" />
 	<monster name="abomination1" file="summons/abomination.xml" />
 	<monster name="heket" file="summons/heket.xml" />
 	<monster name="Bob Bomb" file="summons/bob_bomb.xml"/>
@@ -186,6 +185,7 @@
 	<monster name="Void Guard" file="summons/void_guard.xml"/>
 	<monster name="Void Mender" file="summons/void_mage.xml"/>
 	<monster name="Void Sentinel" file="summons/void_archer.xml"/>
+	<monster name="Aery" file="summons/aery.xml"/>
 
 
 
