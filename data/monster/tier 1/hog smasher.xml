@@ -21,7 +21,7 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-95" />
+<attack name="melee" interval="2000" min="-60" max="-150" />
 
    <!-- Wild Spin (small AoE burst) -->
     <attack name="physical" interval="4000" chance="25" radius="1" target="1" min="-20" max="-280">

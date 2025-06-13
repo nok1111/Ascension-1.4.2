@@ -21,7 +21,8 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />		<attack name="earth" interval="2000" chance="15" range="7" min="-2" max="-15">
+		<attack name="melee" interval="2000" min="-2" max="-135" />		
+		<attack name="earth" interval="2000" chance="15" range="7" min="-2" max="-180">
 			<attribute key="shootEffect" value="poison" />
 		</attack>
 		<attack name="speed" interval="2000" chance="15" length="3" spread="2" speedchange="-300" duration="5000">

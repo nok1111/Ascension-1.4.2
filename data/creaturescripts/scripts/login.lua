@@ -50,6 +50,23 @@ function onLogin(player)
 	-- Send Fame Info
 	FameSystem:sendUpdateFame(player)
 
+	--if vocation is id 6 then summon aery if doesnt exist
+	if player:getVocation():getId() == 6 then
+		local hasAery = false
+		for _, summon in ipairs(player:getSummons()) do
+			if summon:getName() == "Aery" then
+				hasAery = true
+				break
+			end
+		end
+		if not hasAery then
+			local playerPos = player:getPosition()
+			local aery = Game.createMonster("Aery", playerPos, false, true)
+			if aery then
+				player:addSummon(aery)
+			end
+		end
+	end
 	
 
 	return true

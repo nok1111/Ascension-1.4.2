@@ -301,7 +301,7 @@
 	</instant>	
 	
 		<!-- stelalr -->
-	<instant group="attack" spellid="100" name="Cosmic Force" words="cosmic force" lvl="8" mana="30" range="4" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/earth_call.lua">
+	<instant group="attack" spellid="100" name="Cosmic Force" words="cosmic force" lvl="8" mana="30" range="4" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/cosmic_force.lua">
     <vocation name="Stellar" />
     </instant>
 	<instant group="healing" spellid="101" name="Regrowth" words="regrowth" lvl="40"  mana="65" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="stellar/regrowth.lua">

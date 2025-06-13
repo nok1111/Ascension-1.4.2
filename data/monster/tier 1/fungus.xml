@@ -18,7 +18,7 @@
 		<flag runonhealth="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />		
+<attack name="melee" interval="2000" min="-2" max="-130" />		
 		<attack name="manadrain" interval="2000" chance="5" min="-30" max="-100" radius="4" target="0">
 			<attribute key="areaEffect" value="greenbubble" />
 		</attack>
@@ -29,7 +29,7 @@
 			<attribute key="shootEffect" value="smallearth" />
 			<attribute key="areaEffect" value="carniphila" />
 		</attack>
-		<attack name="earth" interval="2000" chance="10" min="-55" max="-100" radius="4" target="1">
+		<attack name="earth" interval="2000" chance="10" min="-55" max="-160" radius="4" target="1">
 			<attribute key="areaEffect" value="greenspark" />
 		</attack>
 		<attack name="earth" interval="2000" chance="10" radius="1" target="0">

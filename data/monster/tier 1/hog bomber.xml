@@ -21,7 +21,7 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="0" max="-95" />	
+<attack name="melee" interval="2000" min="0" max="-150" />	
 
 <attack name="self destroy" interval="2000" chance="18" range="1" min="-150" max="-210"/>
 </attacks>

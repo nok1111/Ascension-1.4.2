@@ -155,7 +155,7 @@ PassiveSkills.MoonLightManaCost = 875605
 PassiveSkills.RainFallHealing = 875606
 PassiveSkills.RainFallDuration = 875607
 PassiveSkills.LuminousBond = 875608
-PassiveSkills.CosmicFireManaRestore = 875609
+PassiveSkills.CosmicForceManaRestore = 875609
 
 --stellar 3
 PassiveSkills.AeryManaRestore = 875610
@@ -1316,13 +1316,13 @@ PassiveSkills.treeData = {
 					},
 					[5] = { 
 						name = "Guiding Constellation",
-						description = "Cosmic Fire now restores 3% of your max mana per level",
+						description = "Cosmic Force now restores 2% of your max mana per level",
 						effect = {
 							{
 								type = "storage",
-								name = "CosmicFireManaRestore",
-								storage = PassiveSkills.CosmicFireManaRestore,
-								value = 10
+								name = "CosmicForceManaRestore",
+								storage = PassiveSkills.CosmicForceManaRestore,
+								value = 2
 							}
 						},
 						maxLevel = 5,

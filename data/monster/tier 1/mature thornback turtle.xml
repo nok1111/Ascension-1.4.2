@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Mature Thornback Turtle" nameDescription="a Thornback Turtle" race="blood" experience="20" speed="170" manacost="320">
-	<health now="6" max="6" />
+	<health now="12" max="12" />
 	<level min="48" max="53" />
 	<look type="2717" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
@@ -21,7 +21,7 @@
 		<flag canwalkonpoison="0" />
 	</flags>
 	<attacks>
-<attack name="melee" interval="2000" min="-2" max="-10" />	
+<attack name="melee" interval="2000" min="-2" max="-85" />	
 
    <attack name="speed" interval="7000" chance="20" range="4" radius="2" target="1" speedchange="-500" duration="8000">
         <attribute key="shootEffect" value="poisonarrow"/>
