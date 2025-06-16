@@ -1,99 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <spells>
-		<instant group="support" spellid="900" name="mad" words="mad" lvl="1" mana="0" range="1" aggressive="0" blockwalls="0" needtarget="0" cooldown="1000" groupcooldown="0" needweapon="0" needlearn="0" script="mad.lua">
-    </instant>
-	
-	
-	<instant group="attack" spellid="901" name="Bouncing Sphere" words="bouncing sphere" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/pingpong.lua">
-	<vocation name="None" />
-	</instant>
-	<instant group="attack" spellid="902" name="cage" words="cage" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/cage.lua">
-	<vocation name="None" />
-	</instant>
-	<instant group="attack" spellid="903" name="explo" words="explo" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/poison_explosion.lua">
-	<vocation name="None" />
-	</instant>	
-	<instant group="attack" spellid="904" name="Burning Ice" words="burning ic" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" selftarget="1" needlearn="0" script="test/double_wave.lua">
-	<vocation name="None" />
-	</instant>
 
-	<instant group="attack" spellid="905" name="anihilation" words="anihilation" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_judment.lua">
-	<vocation name="None" />
-	</instant>
-	
-	
-		<!-- new tibia spells -->
-
-
-	<instant group="attack" spellid="907" name="mass ani" words="mass ani" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_annihilation.lua">
-	<vocation name="None" />
-	</instant>
-	
-	<instant group="attack" spellid="908" name="mass ani mon" words="mass ani mon" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_annihilation_monster.lua">
-	<vocation name="None" />
-	</instant>
-	
-	<instant group="support" spellid="909" name="push" words="push" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/push_out.lua">
-	<vocation name="None" />
-	</instant>	
-	
-	
-	
-		<instant group="support" spellid="910" name="rune" words="rune" lvl="1" mana="20" soul="0" cooldown="35000" groupcooldown="1000" needlearn="0" script="test/uh_create.lua">
-	<vocation name="None" />
-	</instant>
-	
-	
-	<instant group="attack" spellid="911" name="flat" words="flat" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="test/flat_percent.lua">
-	<vocation name="None" />
-	</instant>
-<instant group="support" spellid="912" name="pull" words="pull" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/pull_in.lua">
-	<vocation name="None" />
-	</instant>		
-	
-	
 	
 		<!-- warrior -->
 	<instant group="attack" spellid="1" name="Rend" words="rend" lvl="8" mana="20" range="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needweapon="1"  needtarget="1" needlearn="1" script="warrior/rend.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="attack" spellid="4" name="Brutal Swing" words="brutal swing" lvl="18" mana="55"  needweapon="1" needtarget="1" range="1" casterTargetOrDirection="1" cooldown="6000" groupcooldown="1900" script="warrior/brutal_swing.lua">
+	<instant group="attack" spellid="2" name="Brutal Swing" words="brutal swing" lvl="18" mana="55"  needweapon="1" needtarget="1" range="1" casterTargetOrDirection="1" cooldown="6000" groupcooldown="1900" script="warrior/brutal_swing.lua">
     <vocation name="Dragon Knight" />
     </instant>
-	<instant group="support" spellid="7" name="Challenging Spear" words="Challenging Spear" lvl="20" mana="30"  range="4" needtarget="1" blockwalls="1" needweapon="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="warrior/chaspear.lua">
+	<instant group="support" spellid="3" name="Challenging Spear" words="Challenging Spear" lvl="20" mana="30"  range="4" needtarget="1" blockwalls="1" needweapon="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="warrior/chaspear.lua">
 	<vocation name="Dragon Knight" />
 	</instant>	
-	<instant group="attack" spellid="3" name="Fire Within" words="fire within" lvl="70" mana="75" premium="0" range="5" selftarget="1" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/fire_within.lua">
+	<instant group="attack" spellid="4" name="Fire Within" words="fire within" lvl="70" mana="75" premium="0" range="5" selftarget="1" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/fire_within.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
 	<instant group="support" spellid="5" name="Charge" words="charge" lvl="40" mana="70" range="8" aggressive="1" blockwalls="1" needtarget="1" cooldown="15000" groupcooldown="1900" needweapon="0" needlearn="0" script="warrior/charge.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="attack" spellid="8" name="whirlwind" words="whirlwind" lvl="30" mana="85" prem="0" needweapon="0" cooldown="5000" groupcooldown="1900" needlearn="0" script="warrior/whirlwind.lua">
+	<instant group="attack" spellid="6" name="whirlwind" words="whirlwind" lvl="30" mana="85" prem="0" needweapon="0" cooldown="5000" groupcooldown="1900" needlearn="0" script="warrior/whirlwind.lua">
 	<vocation name="Dragon Knight" />
 	</instant>	
-	<instant group="support" spellid="10" name="Roar" words="roar" lvl="60" mana="20" cooldown="8000" groupcooldown="1900" script="warrior/shove.lua">
+
+	<instant group="attack" spellid="8" name="Phoenix Wrath" words="phoenix wrath" lvl="125" mana="115" direction="1" cooldown="17000" groupcooldown="1900" blockwalls="1" needlearn="0" script="warrior/phoenix_wrath.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="attack" spellid="11" name="Phoenix Wrath" words="phoenix wrath" lvl="125" mana="115" direction="1" cooldown="17000" groupcooldown="1900" blockwalls="1" needlearn="0" script="warrior/phoenix_wrath.lua">
+	<instant group="attack" spellid="9" name="Dragon Aura" words="dragon aura" lvl="50" mana="75" selftarget="1" prem="0" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/sworddance.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="attack" spellid="6" name="Dragon Aura" words="dragon aura" lvl="50" mana="75" selftarget="1" prem="0" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/sworddance.lua">
+		<instant group="attack" spellid="10" name="Dragons Call" words="dragons call" lvl="100" mana="85" needtarget="1" needweapon="1" range="2" cooldown="30000" groupcooldown="1900" needlearn="0" script="warrior/dragon_decend.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-		<instant group="attack" spellid="2" name="Dragons Call" words="dragons call" lvl="100" mana="85" needtarget="1" needweapon="1" range="2" cooldown="30000" groupcooldown="1900" needlearn="0" script="warrior/dragon_decend.lua">
-	<vocation name="Dragon Knight" />
-	</instant>
-	<instant group="support" spellid="9" name="Draconic Chains" words="draconic chains" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_shrine.lua">
+	<instant group="support" spellid="11" name="Draconic Chains" words="draconic chains" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_shrine.lua">
 	<vocation name="Dragon Knight" />
 	</instant>	
-	<instant group="attack" spellid="19" name="Shockwave" words="shockwave" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/shockwave.lua">
+	<instant group="attack" spellid="12" name="Shockwave" words="shockwave" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/shockwave.lua">
 	 <vocation name="Dragon Knight" />
 	</instant>
-	<instant group="support" spellid="306" name="Bloodlust" words="bloodlust" lvl="1" strenght="27" dexterity="0" mana="85" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1100" needlearn="1" script="warrior/blood_rage.lua">
+	<instant group="support" spellid="13" name="Bloodlust" words="bloodlust" lvl="1" strenght="27" dexterity="0" mana="85" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="1100" needlearn="1" script="warrior/blood_rage.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="healing" spellid="307" name="Dragon Soul" words="dragon soul" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="1" script="warrior/dragon_soul.lua">
+	<instant group="healing" spellid="14" name="Dragon Soul" words="dragon soul" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="1" script="warrior/dragon_soul.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
 	
@@ -110,35 +57,34 @@
 	<instant group="attack" spellid="22" name="Holy Ground" words="holy ground" lvl="50" mana="75" prem="0" needweapon="0" selftarget="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/areaholy.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="healing" spellid="22" name="Sacred Ground" words="sacred Ground" lvl="40" mana="100" prem="0" needweapon="0" aggressive="0" cooldown="30000" groupcooldown="1900" needlearn="0" script="templar/sacred_ground.lua">
+	<instant group="healing" spellid="23" name="Sacred Ground" words="sacred Ground" lvl="1" mana="100" prem="0" needweapon="0" aggressive="0" cooldown="30000" groupcooldown="1900" needlearn="1" script="templar/sacred_ground.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="attack" spellid="23" name="Crusader Strike" words="crusader strike" lvl="18" mana="50" prem="0" range="3" needtarget="1" blockwalls="1" needweapon="1" cooldown="6000" groupcooldown="1900" needlearn="0" script="templar/crusader_strike.lua">
+	<instant group="attack" spellid="24" name="Crusader Strike" words="crusader strike" lvl="18" mana="50" prem="0" range="3" needtarget="1" blockwalls="1" needweapon="1" cooldown="6000" groupcooldown="1900" needlearn="0" script="templar/crusader_strike.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="attack" spellid="24" name="Divine Storm" words="divine storm" lvl="70" mana="150" prem="0" needweapon="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/divine_storm.lua">
+	<instant group="attack" spellid="25" name="Divine Storm" words="divine storm" lvl="70" mana="150" prem="0" needweapon="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/divine_storm.lua">
 	<vocation name="Templar" />
 	</instant>	
-
 	<instant group="attack" spellid="26" name="Exorcism" words="exorcism" lvl="999" mana="125" prem="0" needweapon="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="templar/exorcism.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="attack" spellid="28" name="Smite" words="smite" lvl="8" mana="20" prem="0" range="5" needtarget="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="templar/smite.lua">
+	<instant group="attack" spellid="27" name="Smite" words="smite" lvl="8" mana="20" prem="0" range="5" needtarget="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="templar/smite.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="attack" spellid="29" name="Light Beam" words="light beam" lvl="30" mana="130" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="templar/lightbeam.lua">
+	<instant group="attack" spellid="28" name="Light Beam" words="light beam" lvl="30" mana="130" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="templar/lightbeam.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="support" spellid="30" name="Summon Guardian of Light" words="summon guardian" lvl="90" mana="250"  cooldown="100000" groupcooldown="1900" needlearn="0" script="templar/summon.lua">
+	<instant group="support" spellid="29" name="Summon Guardian of Light" words="summon guardian" lvl="90" mana="250"  cooldown="100000" groupcooldown="1900" needlearn="0" script="templar/summon.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="support" spellid="31" name="Kings Blessing" words="Kings Blessing" lvl="60" mana="50" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1900" needlearn="1" script="templar/party_kings.lua">	
+	<instant group="support" spellid="30" name="Kings Blessing" words="Kings Blessing" lvl="60" mana="50" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1900" needlearn="1" script="templar/party_kings.lua">	
 	<vocation name="Templar" />
     </instant>
-	<instant group="support" spellid="32" name="Angelic Form" words="angelic form" lvl="90" mana="500"  cooldown="100000" groupcooldown="1900" needlearn="0" script="templar/angel_form.lua">
+	<instant group="support" spellid="31" name="Angelic Form" words="angelic form" lvl="90" mana="500"  cooldown="100000" groupcooldown="1900" needlearn="0" script="templar/angel_form.lua">
 	<vocation name="Templar" />
 	</instant>
-	<instant group="attack" spellid="33" name="Judgement" words="judgement" lvl="15" mana="30" prem="0" range="4" needtarget="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="templar/judgement.lua">
+	<instant group="attack" spellid="32" name="Judgement" words="judgement" lvl="15" mana="30" prem="0" range="4" needtarget="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="templar/judgement.lua">
 	<vocation name="Templar" />
 	</instant>
 	
@@ -182,32 +128,29 @@
 	 <instant group="attack" spellid="53" name="Blizzard" words="blizzard" lvl="50" mana="200" range="7"  cooldown="15000" groupcooldown="1900" needtarget="1" script="mage/blizzard.lua">
 	<vocation name="Magician" />
 	</instant>
-	<instant group="attack" spellid="304" name="Hells Core" words="hells core" lvl="100"  mana="400" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/hells_core.lua">
+	<instant group="attack" spellid="54" name="Hells Core" words="hells core" lvl="100"  mana="400" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="0" script="mage/hells_core.lua">
 	<vocation name="Magician" />
 	</instant>
-	<instant group="attack" spellid="190" name="Ice Barrage" words="ice barrage" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/ice_barrage.lua">
+	<instant group="attack" spellid="55" name="Ice Barrage" words="ice barrage" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/ice_barrage.lua">
 	 <vocation name="None" />
 	</instant>
-	<instant group="attack" spellid="195" name="Ice Wall" words="ice wall" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_wall.lua">
+	<instant group="attack" spellid="56" name="Ice Wall" words="ice wall" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/ice_wall.lua">
     <vocation name="None" />
 	</instant>
 
-	<instant group="attack" spellid="195" name="Ice Clones" words="ice clones" lvl="42" mana="115" selftarget="1" cooldown="12000" groupcooldown="1900" needlearn="1" script="mage/ice_clones.lua">
+	<instant group="attack" spellid="57" name="Ice Clones" words="ice clones" lvl="42" mana="115" selftarget="1" cooldown="12000" groupcooldown="1900" needlearn="1" script="mage/ice_clones.lua">
     <vocation name="None" />
 	</instant>
-    <instant group="attack" spellid="196" name="Ice Tomb" words="ice tomb" lvl="10" mana="10" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/ice_trap.lua">
+    <instant group="attack" spellid="58" name="Ice Tomb" words="ice tomb" lvl="10" mana="10" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/ice_trap.lua">
     <vocation name="None" />
     </instant>
-    <instant group="attack" spellid="197" name="Cryo Eruption" words="cryo" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/cryo_eruption.lua">
-    <vocation name="None" />
-	</instant>
-	
+   
 	
 	<!-- warlock -->
 	<instant group="attack" spellid="60" name="Void Recall" words="void recall" lvl="100" mana="300"  cooldown="15000" groupcooldown="2000" needlearn="0" script="warlock/void_recall.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="support" spellid="61" name="Zombie Wall" lvl="40" words="zombie wall" mana="50" cooldown="20000" needlearn="0" script="warlock/zombie_wall.lua">
+	<instant group="support" spellid="61" name="Zombie Wall" lvl="40" words="zombie wall" mana="50" cooldown="20000" direction="1" needlearn="1" script="warlock/zombie_wall.lua">
 	<vocation name="Warlock" />
 	</instant>
 	<instant group="attack" spellid="62" name="Curse" words="curse" lvl="8" mana="35" range="5" needlearn="0" aggressive="1" cooldown="2000" groupcooldown="1900" blockwalls="1" needtarget="1" script="warlock/curse.lua">
@@ -219,7 +162,7 @@
 	<instant group="attack" spellid="64" name="Shadow Strike" words="shadow strike" lvl="30" mana="110" prem="0" range="6" casterTargetOrDirection="1" needtarget="1" blockwalls="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="warlock/death_strike.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="support" spellid="35" name="Summon Void Mender" words="summon void mender" lvl="70" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="1" script="warlock/summon_mage.lua">
+	<instant group="support" spellid="65" name="Summon Void Mender" words="summon void mender" lvl="70" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="1" script="warlock/summon_mage.lua">
 	<vocation name="Warlock" />
 	</instant>
 	<instant group="healing" spellid="66" name="Blood Pact" words="blood pact" lvl="40" health="0" aggressive="0" selftarget="1" cooldown="1500" groupcooldown="1900" needlearn="0" script="warlock/blood_pact.lua">
@@ -246,16 +189,16 @@
 	<instant group="attack" spellid="74" name="Soul Rain" words="soul rain" lvl="50" mana="200" range="7"   cooldown="15000" groupcooldown="1900" needtarget="1" script="warlock/soul_rain.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="attack" spellid="130" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" needtarget="1" exhaustion="30000" groupcooldown="1900" script="warlock/drain_soul.lua">
+	<instant group="attack" spellid="75" name="Drain Soul" words="drain soul" lvl="100" mana="150"  aggressive="1" needtarget="1" exhaustion="30000" groupcooldown="1900" script="warlock/drain_soul.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="attack" spellid="131" name="Malediction" words="malediction" lvl="1" mana="150"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" needlearn="1" script="warlock/malediction.lua">
+	<instant group="attack" spellid="76" name="Malediction" words="malediction" lvl="1" mana="150"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" needlearn="1" script="warlock/malediction.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="attack" spellid="75" name="Haunt" words="haunt" lvl="1" mana="250"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" needlearn="1" script="warlock/haunt.lua">
+	<instant group="attack" spellid="77" name="Haunt" words="haunt" lvl="1" mana="250"  aggressive="1" needtarget="1" exhaustion="15000" groupcooldown="1900" needlearn="1" script="warlock/haunt.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="support" spellid="76" name="Dark Aura" words="dark Aura" lvl="1" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="1" script="warlock/dark_aura.lua">
+	<instant group="support" spellid="78" name="Dark Aura" words="dark Aura" lvl="1" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="1" script="warlock/dark_aura.lua">
 	<vocation name="Warlock" />
 	</instant>
 	
@@ -335,10 +278,10 @@
 	<instant group="attack" spellid="111" name="Full Moon" words="full moon" lvl="100" mana="300" selftarget="1" prem="0" cooldown="45000" groupcooldown="1900" needlearn="1" script="stellar/full_moon.lua">
 	 <vocation name="Stellar" />
 	</instant>
-	<instant group="healing" spellid="112" name="Moonlight" words="moonlight" lvl="27" mana="80" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="stellar/moon_light.lua">
+	<instant group="healing" spellid="112" name="Moonlight" words="moonlight" lvl="27" mana="80" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="stellar/moon_light.lua">
 	<vocation name="Stellar" />
 	</instant>
-	<instant group="healing" spellid="113" name="Holy Flare" words="holy flare" lvl="1" mana="140" aggressive="1" blockwalls="1" needtarget="1" cooldown="1000" groupcooldown="1900" needlearn="1" script="stellar/holy_flare.lua">
+	<instant group="healing" spellid="113" name="Holy Flare" words="holy flare" lvl="1" mana="140" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needlearn="1" script="stellar/holy_flare.lua">
 	<vocation name="Stellar" />
 	</instant>
 		
@@ -346,76 +289,79 @@
 		
 	<!-- Monk -->
 	
-	<instant group="support" spellid="127" name="Lotus Kick" words="lotus kick" lvl="40" mana="30" aggressive="0" selftarget="1" cooldown="7000" groupcooldown="0" needlearn="0" script="soul weaver/cyclone_sweep.lua">
+	<instant group="support" spellid="127" name="Lotus Kick" words="lotus kick" lvl="40" mana="30" aggressive="0" selftarget="1" cooldown="7000" groupcooldown="0" needlearn="0" script="monk/cyclone_sweep.lua">
 	<vocation name="Monk" />
 	</instant>
-	<instant group="attack" spellid="128" name="Absolute Denial" words="absolute denial" lvl="60" mana="120"  aggressive="1" selftarget="1" exhaustion="20000" groupcooldown="1900" script="soul weaver/absolute_denial.lua">
+	<instant group="attack" spellid="128" name="Absolute Denial" words="absolute denial" lvl="60" mana="120"  aggressive="1" selftarget="1" exhaustion="20000" groupcooldown="1900" script="monk/absolute_denial.lua">
 	<vocation name="Monk" />
 	</instant>
-	<instant group="healing" spellid="129" name="Soul Link" words="soul link" lvl="90" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="50000" groupcooldown="1900" needlearn="0" script="soul weaver/soul_link.lua">
+	<instant group="healing" spellid="129" name="Soul Link" words="soul link" lvl="90" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="50000" groupcooldown="1900" needlearn="0" script="monk/soul_link.lua">
     <vocation name="Monk" />
     </instant>
 	
-	<instant group="support" spellid="131" name="Adaptive Fist" words="adaptive fist" lvl="15" mana="80" direction="1" aggressive="0"  cooldown="10000" groupcooldown="2000" needlearn="0" script="soul weaver/adaptive_fist.lua">
+	<instant group="support" spellid="130" name="Adaptive Punch" words="adaptive punch" lvl="15" mana="80" direction="1" aggressive="0"  cooldown="10000" groupcooldown="2000" needlearn="0" script="monk/adaptive_fist.lua">
 	<vocation name="Monk" />
 	</instant>
-	<instant group="attack" spellid="132" name="Fire Fist" words="fire fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/fire_fist.lua">
+	<instant group="attack" spellid="131" name="Fire Punch" words="fire punch" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="monk/fire_fist.lua">
     <vocation name="Monk" />
     </instant>
-	<instant group="attack" spellid="132" name="Ice Fist" words="ice fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/ice_fist.lua">
+	<instant group="attack" spellid="132" name="Ice Punch" words="ice punch" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="monk/ice_fist.lua">
     <vocation name="Monk" />
     </instant>
-    <instant group="attack" spellid="132" name="Life Fist" words="life fist" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="soul weaver/life_fist.lua">
+    <instant group="attack" spellid="133" name="Life Punch" words="life punch" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="monk/life_fist.lua">
     <vocation name="Monk" />
     </instant>
+	<instant group="attack" spellid="134" name="Fists of Fire" words="fists of fire" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/elemental_fists.lua">
+    <vocation name="Monk" />
+	</instant>
 	
 	<!-- DRUID -->
-	<instant group="attack" spellid="140" name="Terra Strike" words="terra strike" lvl="8" mana="30" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/terra_strike.lua">
+	<instant group="attack" spellid="150" name="Terra Strike" words="terra strike" lvl="8" mana="30" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/terra_strike.lua">
     <vocation name="Druid" />
     </instant>
-	<instant group="support" spellid="141" name="Living Seeds" words="living seeds" lvl="46" mana="150" soul="0" cooldown="35000" groupcooldown="1000" needlearn="0" script="druid/living_seeds.lua">
+	<instant group="support" spellid="151" name="Living Seeds" words="living seeds" lvl="46" mana="150" soul="0" cooldown="35000" groupcooldown="1000" needlearn="0" script="druid/living_seeds.lua">
 	<vocation name="Druid" />
 	</instant>
-	<instant group="healing" spellid="142" name="Life Bloom" words="life bloom" lvl="25"  mana="70" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1900" needlearn="0" script="druid/life_bloom.lua">
+	<instant group="healing" spellid="152" name="Life Bloom" words="life bloom" lvl="25"  mana="70" aggressive="0" selftarget="1" cooldown="6000" groupcooldown="1900" needlearn="0" script="druid/life_bloom.lua">
 	<vocation name="Druid" />
 	</instant>
-	<instant group="healing" spellid="143" name="Rejuvenation" words="rejuvenation" lvl="40"  mana="100" aggressive="0" selftarget="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="druid/rejuvenation.lua">
+	<instant group="healing" spellid="153" name="Rejuvenation" words="rejuvenation" lvl="40"  mana="100" aggressive="0" selftarget="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="druid/rejuvenation.lua">
 	<vocation name="Druid" />
  	</instant>
-	<instant group="attack" spellid="144" name="Seed Germination" words="seed germination" lvl="18" mana="75" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="15000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/seed_germination.lua">
+	<instant group="attack" spellid="154" name="Seed Germination" words="seed germination" lvl="18" mana="75" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="15000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/seed_germination.lua">
     <vocation name="Druid" />
     </instant>
-	<instant group="support" spellid="145" name="Travel Form" words="travel form" lvl="25" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="druid/travel_form.lua">
+	<instant group="support" spellid="155" name="Travel Form" words="travel form" lvl="25" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="druid/travel_form.lua">
 	<vocation name="Druid" />
 	</instant>
-	<instant group="attack" spellid="146" name="Carnivorous Vile" words="carnivorous vile" lvl="30" mana="85" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5500" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/carnivorous_vile.lua">
+	<instant group="attack" spellid="156" name="Carnivorous Vile" words="carnivorous vile" lvl="30" mana="85" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="5500" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/carnivorous_vile.lua">
     <vocation name="Druid" />
     </instant>
-	<instant group="healing" spellid="147" name="living ground" words="living ground" lvl="60" mana="200"  premium="0" aggressive="0" selftarget="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="druid/nature_ground.lua">
+	<instant group="healing" spellid="157" name="living ground" words="living ground" lvl="60" mana="200"  premium="0" aggressive="0" selftarget="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="druid/nature_ground.lua">
 	<vocation name="Druid" />
 	</instant>	
-	<instant group="support" spellid="148" name="Thorns" words="thorns" lvl="60" faith="0" mana="50" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="druid/thorns.lua">
+	<instant group="support" spellid="158" name="Thorns" words="thorns" lvl="60" faith="0" mana="50" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="druid/thorns.lua">
 	<vocation name="Druid" />
 	</instant>	
-	<instant group="attack" spellid="149" name="Piercing Wave" words="piercing wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="druid/peircing_wave.lua">
+	<instant group="attack" spellid="159" name="Piercing Wave" words="piercing wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="druid/peircing_wave.lua">
     <vocation name="Druid" />
 	</instant>
-	<instant group="support" spellid="150" name="Bear Form" words="bear form" lvl="45" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="2000" needlearn="0" script="druid/bear_form.lua">
+	<instant group="support" spellid="160" name="Bear Form" words="bear form" lvl="45" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="2000" needlearn="0" script="druid/bear_form.lua">
 	<vocation name="Druid" />
 	</instant>
-	<instant group="support" spellid="151" name="Bless of the Forest" words="bless of the forest" lvl="20" mana="50" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="druid/bless_of_the_forest.lua">
+	<instant group="support" spellid="161" name="Bless of the Forest" words="bless of the forest" lvl="20" mana="50" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="druid/bless_of_the_forest.lua">
 	<vocation name="Druid" />
 	</instant>
-	<instant group="attack" spellid="152" name="Wrath of Nature" words="wrath of nature" lvl="100" mana="420" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="30000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/wrath_of_nature.lua">
+	<instant group="attack" spellid="162" name="Wrath of Nature" words="wrath of nature" lvl="100" mana="420" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="30000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/wrath_of_nature.lua">
 	<vocation name="Druid" />
 	</instant>
-	<instant group="support" spellid="153" name="Holy Form" words="holy form" lvl="999" mana="250" prem="0" aggressive="0" selftarget="1" cooldown="120000" groupcooldown="0" needlearn="0" script="druid/soul_form.lua">
+	<instant group="support" spellid="163" name="Holy Form" words="holy form" lvl="999" mana="250" prem="0" aggressive="0" selftarget="1" cooldown="120000" groupcooldown="0" needlearn="0" script="druid/soul_form.lua">
 	<vocation name="Druid" />
 	</instant>
-	<instant group="attack" spellid="110" name="Earth Dance" words="earth dance" lvl="60" mana="225" direction="1" cooldown="16000" groupcooldown="1900" needlearn="0" script="druid/earth_wave.lua">
+	<instant group="attack" spellid="164" name="Earth Dance" words="earth dance" lvl="60" mana="225" direction="1" cooldown="16000" groupcooldown="1900" needlearn="0" script="druid/earth_wave.lua">
     <vocation name="Druid" />
 	</instant>
-	<instant group="healing" spellid="155" name="Focus Healing" words="focus healing" lvl="27" mana="140" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="druid/focus_healing.lua">
+	<instant group="healing" spellid="165" name="Focus Healing" words="focus healing" lvl="27" mana="140" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="druid/focus_healing.lua">
 	<vocation name="Druid" />
 	</instant>
 	
@@ -424,34 +370,34 @@
 	
 	<!-- Light Dancer -->
 	
-	<instant group="attack" spellid="160" name="Charged Strike" words="charged strike" lvl="8" mana="25" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="1" needlearn="0" script="light dancer/charged_strike.lua">
+	<instant group="attack" spellid="170" name="Charged Strike" words="charged strike" lvl="8" mana="25" range="1" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="1" needlearn="0" script="light dancer/charged_strike.lua">
     <vocation name="Light Dancer" />
     </instant>
-	<instant group="attack" spellid="161" name="Static Charge" words="static charge" lvl="15" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="2200" groupcooldown="0" needweapon="0" needlearn="0" script="light dancer/static_charge.lua">
+	<instant group="attack" spellid="171" name="Static Charge" words="static charge" lvl="15" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="2200" groupcooldown="0" needweapon="0" needlearn="0" script="light dancer/static_charge.lua">
     <vocation name="Light Dancer" />
     </instant>
-	<instant group="attack" spellid="162" name="Light Dash" words="light dash" lvl="18" mana="65"  blockwalls="1" needtarget="1" range="6" cooldown="6000" groupcooldown="0"  script="light dancer/light_dash.lua">
+	<instant group="attack" spellid="172" name="Light Dash" words="light dash" lvl="18" mana="65"  blockwalls="1" needtarget="1" range="6" cooldown="6000" groupcooldown="0"  script="light dancer/light_dash.lua">
     <vocation name="Light Dancer" />
     </instant>
-	<instant group="attack" spellid="163" name="Lightning Orb" words="lightning orb" lvl="80" mana="75" prem="0" needweapon="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="light dancer/lightning_orb.lua">
+	<instant group="attack" spellid="173" name="Lightning Orb" words="lightning orb" lvl="80" mana="75" prem="0" needweapon="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="light dancer/lightning_orb.lua">
     <vocation name="Light Dancer" />
 	</instant>
-		<instant group="support" spellid="164" name="Swift Elusion" words="swift elusion" lvl="70"  mana="0" premium="0" selftarget="1" needweapon="0" cooldown="15000" groupcooldown="1900" needlearn="0" script="light dancer/fission_break.lua">
+		<instant group="support" spellid="174" name="Swift Elusion" words="swift elusion" lvl="70"  mana="0" premium="0" selftarget="1" needweapon="0" cooldown="15000" groupcooldown="1900" needlearn="0" script="light dancer/fission_break.lua">
     <vocation name="Light Dancer" />
 	</instant>
-	<instant group="attack" spellid="165" name="Chain of Lightning" words="chain of lightning" lvl="50" mana="120" prem="0" needtarget="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="light dancer/aereal_shock.lua">
+	<instant group="attack" spellid="175" name="Chain of Lightning" words="chain of lightning" lvl="50" mana="120" prem="0" needtarget="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="light dancer/aereal_shock.lua">
 	<vocation name="Light Dancer" />
 	</instant>
-	<instant group="attack" spellid="166" name="Lightning Spear" words="lightning spear" lvl="30" mana="85" range="6" aggressive="1" blockwalls="1" needtarget="1" cooldown="12000" groupcooldown="1900" needweapon="0" needlearn="0" script="light dancer/lightning_spear.lua">
+	<instant group="attack" spellid="176" name="Lightning Spear" words="lightning spear" lvl="30" mana="85" range="6" aggressive="1" blockwalls="1" needtarget="1" cooldown="12000" groupcooldown="1900" needweapon="0" needlearn="0" script="light dancer/lightning_spear.lua">
     <vocation name="Light Dancer" />
     </instant>
-	<instant group="support" spellid="167" name="Overcharge" words="overcharge" lvl="45"  mana="115" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="0" needlearn="0" script="light dancer/overcharge.lua">
+	<instant group="support" spellid="177" name="Overcharge" words="overcharge" lvl="45"  mana="115" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="0" needlearn="0" script="light dancer/overcharge.lua">
 	<vocation name="Light Dancer" />
 	</instant>
-	<instant group="support" spellid="168" name="Magnetic Field" words="magnetic field" lvl="90" mana="175"  premium="0" aggressive="0" selftarget="1" cooldown="35000" groupcooldown="1900" needlearn="0" script="light dancer/magnetic_field.lua">
+	<instant group="support" spellid="178" name="Magnetic Field" words="magnetic field" lvl="90" mana="175"  premium="0" aggressive="0" selftarget="1" cooldown="35000" groupcooldown="1900" needlearn="0" script="light dancer/magnetic_field.lua">
 	<vocation name="Light Dancer" />
 	</instant>
-	<instant group="attack" spellid="169" name="Magnetic Orb" words="Magnetic Orb" lvl="100" mana="190" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="26000" groupcooldown="1900" needweapon="0" needlearn="0" script="light dancer/thunderstorm.lua">
+	<instant group="attack" spellid="179" name="Magnetic Orb" words="Magnetic Orb" lvl="100" mana="190" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="26000" groupcooldown="1900" needweapon="0" needlearn="0" script="light dancer/thunderstorm.lua">
     <vocation name="Light Dancer" />
     </instant>
 	
@@ -487,29 +433,13 @@
 	<vocation name="Archer" />
 	</instant>
 
-	<instant group="attack" spellid="123" name="Aspect Mastery" words="aspect mastery" lvl="100" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="ranger/aspect_mastery.lua">
+	<instant group="attack" spellid="190" name="Aspect Mastery" words="aspect mastery" lvl="100" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="ranger/aspect_mastery.lua">
 	<vocation name="Archer" />
 	</instant>
 	<instant group="attack" spellid="191" name="Frost Shots" words="frost shots" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/frost_bolt.lua">
 	 <vocation name="Archer" />
 	</instant>
 
-
-	<!-- spell 192 already used in revscripts-->
-
-		
-
-	<instant group="attack" spellid="193" name="Earthquake" words="earthquake" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/earthquake.lua">
-	 <vocation name="None" />
-	</instant>
-
-	<instant group="attack" spellid="194" name="Water Wave" words="water wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/water_wave.lua">
-    <vocation name="None" />
-	</instant>
-
-	
-
-	
 		
 	<!-- mastery spells -->
 	<instant group="healing" spellid="200" name="Minor Heal" words="minor heal" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="0" script="healing/light healing.lua">
@@ -519,75 +449,128 @@
 	<instant group="healing" spellid="202" name="Great Heal" words="great heal" lvl="50" mana="120" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="0" script="healing/great healing.lua">
 	</instant>
 	
-	<instant group="support" spellid="300" name="Shield Wall" words="Shield Wall" lvl="27" mana="0" prem="0"  aggressive="0" selftarget="1"  cooldown="15000" groupcooldown="1100" needlearn="0" script="warrior/shield_wall.lua">
+	<instant group="support" spellid="203" name="Shield Wall" words="Shield Wall" lvl="27" mana="0" prem="0"  aggressive="0" selftarget="1"  cooldown="15000" groupcooldown="1100" needlearn="0" script="warrior/shield_wall.lua">
 	<vocation name="Dragon Knight" />
 	<vocation name="Templar" />
 	</instant>
-	<instant group="support" spellid="301" name="Protection" words="protection" lvl="50" mana="50" prem="0" aggressive="0" selftarget="1" blockwalls="1"  cooldown="25000" groupcooldown="1100" needlearn="0" script="warrior/protection.lua">
+	<instant group="support" spellid="204" name="Protection" words="protection" lvl="50" mana="50" prem="0" aggressive="0" selftarget="1" blockwalls="1"  cooldown="25000" groupcooldown="1100" needlearn="0" script="warrior/protection.lua">
 	<vocation name="Dragon Knight" />
 	<vocation name="Templar" />
     </instant>
-	<instant group="support" spellid="302" name="Shield Bash" words="shield bash" lvl="25" mana="65" aggressive="1" needtarget="1" range="1"  cooldown="15000" groupcooldown="12000" script="mastery/shield_bash.lua"> 
+	<instant group="support" spellid="205" name="Shield Bash" words="shield bash" lvl="25" mana="65" aggressive="1" needtarget="1" range="1"  cooldown="15000" groupcooldown="12000" script="mastery/shield_bash.lua"> 
 	<vocation name="Dragon Knight" />
 	<vocation name="Templar" />
 	</instant>
-	<instant group="support" spellid="303" name="Sphere" words="sphere" lvl="100" mana="100" faith="40" intelligence="55" selftarget="1" needweapon="0" cooldown="10000" groupcooldown="1100" needlearn="0" script="mastery/earth_sphere.lua">
+	<instant group="support" spellid="206" name="Sphere" words="sphere" lvl="100" mana="100" faith="40" intelligence="55" selftarget="1" needweapon="0" cooldown="10000" groupcooldown="1100" needlearn="0" script="mastery/earth_sphere.lua">
 	</instant>
 	
-	<instant group="attack" spellid="305" name="Quick Chains" words="quick chains" lvl="50" dexterity="65"  mana="250" premium="0" direction="0" range="7" needtarget="1" needweapon="0" cooldown="17000" groupcooldown="1900" script="mastery/get_over_here.lua">
+	<instant group="attack" spellid="207" name="Quick Chains" words="quick chains" lvl="50" dexterity="65"  mana="250" premium="0" direction="0" range="7" needtarget="1" needweapon="0" cooldown="17000" groupcooldown="1900" script="mastery/get_over_here.lua">
 	</instant>
 
-	<instant group="support" spellid="307" name="Magic Shield" words="Magic Shield" lvl="14" faith="0" intelligence="25" mana="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_shield.lua">
+	<instant group="support" spellid="208" name="Magic Shield" words="Magic Shield" lvl="14" faith="0" intelligence="25" mana="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_shield.lua">
 	<vocation name="Magician" />
 	<vocation name="Warlock" />
 	<vocation name="Druid" />
 	<vocation name="Stellar" />
 	</instant>
-	<instant group="support" spellid="308" name="Find Person" words="exiva" lvl="8" mana="20" aggressive="0" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="support/find_person.lua">
+	<instant group="support" spellid="209" name="Find Person" words="exiva" lvl="8" mana="20" aggressive="0" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="support/find_person.lua">
 	</instant>	
-	<instant group="support" spellid="309" name="Food" words="exevo pan" lvl="8" faith="10" mana="15" soul="1" cooldown="2000" groupcooldown="2000" aggressive="0" needlearn="0" script="support/food.lua">
+	<instant group="support" spellid="210" name="Food" words="exevo pan" lvl="8" faith="10" mana="15" soul="1" cooldown="2000" groupcooldown="2000" aggressive="0" needlearn="0" script="support/food.lua">
 	</instant>	
 
-	<instant group="support" spellid="311" name="Haste" words="utani hur" lvl="14" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/haste.lua">
+	<instant group="support" spellid="211" name="Haste" words="utani hur" lvl="14" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/haste.lua">
 	</instant>
-	<instant group="healing" spellid="312" name="Heal Friend" words="exura sio" faith="28" intelligence="24" lvl="27" mana="140" prem="0" aggressive="0" blockwalls="1" needtarget="1" playernameparam="1" params="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="healing/heal_friend.lua">
-		<vocation name="Druid" />
-	<vocation name="Stellar" />
+	<instant group="support" spellid="212" name="Levitate" words="exani hur" lvl="12" mana="50" prem="0" aggressive="0" cooldown="2000" groupcooldown="2000" params="1" needlearn="0" script="support/levitate.lua">
 	</instant>
-
-	<instant group="support" spellid="313" name="Invisibility" words="utana vid" lvl="35" magic="50" mana="440" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/invisible.lua">
-		<vocation name="Druid" />
-	<vocation name="Stellar" />
+	<instant group="support" spellid="213" name="Light" words="utevo lux" lvl="8" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/light.lua">
 	</instant>
-	<instant group="support" spellid="314" name="Levitate" words="exani hur" lvl="12" mana="50" prem="0" aggressive="0" cooldown="2000" groupcooldown="2000" params="1" needlearn="0" script="support/levitate.lua">
-	</instant>
-	<instant group="support" spellid="315" name="Light" words="utevo lux" lvl="8" mana="20" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/light.lua">
-	</instant>
-	<instant group="healing" spellid="316" name="Light Healing" words="exura" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="healing/light_healing.lua">
+	<instant group="healing" spellid="214" name="Light Healing" words="exura" lvl="1" mana="20" aggressive="0" selftarget="1" cooldown="1000" groupcooldown="1900" needlearn="0" script="healing/light_healing.lua">
 	</instant>
 	
-	<instant group="support" spellid="317" name="Magic Rope" words="exani tera" lvl="8" mana="20" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_rope.lua">
+	<instant group="support" spellid="215" name="Magic Rope" words="exani tera" lvl="8" mana="20" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_rope.lua">
 	</instant>	
-	<instant group="support" spellid="319" name="Protect Party" words="utamo mas sio" lvl="32" mana="90" faith="55" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="party/protect_party.lua">
-		<vocation name="None" />
-	<vocation name="None" />
+	<instant group="support" spellid="216" name="Protect Party" words="utamo mas sio" lvl="32" mana="90" faith="55" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="party/protect_party.lua">
 	</instant>
-	<instant group="support" spellid="320" name="Protector" words="utamo tempo" lvl="55" mana="200" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/protector.lua">
+	<instant group="support" spellid="217" name="Protector" words="utamo tempo" lvl="55" mana="200" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/protector.lua">
 	</instant>
-	<instant group="support" spellid="322" name="Strong Haste" words="utani gran hur" lvl="40" faith="20"  mana="100" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/strong_haste.lua">
+	<instant group="support" spellid="218" name="Strong Haste" words="utani gran hur" lvl="40" faith="20"  mana="100" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/strong_haste.lua">
 	</instant>	
-	<instant group="support" spellid="323" name="Train Party" words="utito mas sio" lvl="32" faith="45" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="party/enchant_party.lua">
+	<instant group="support" spellid="219" name="Train Party" words="utito mas sio" lvl="32" faith="45" mana="60" prem="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="party/enchant_party.lua">
 	</instant>
-	<instant group="support" spellid="324" name="Taunt" words="Taunt" lvl="22"  mana="75" premium="0" aggressive="0" selftarget="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="mastery/taunting_cry.lua">
+	<instant group="support" spellid="220" name="Taunt" words="Taunt" lvl="22"  mana="75" premium="0" aggressive="0" selftarget="1" cooldown="15000" groupcooldown="1900" needlearn="0" script="mastery/taunting_cry.lua">
 	<vocation name="Monk" />
 	<vocation name="Dragon Knight" />
 	<vocation name="Templar" />
 	</instant>
 	
-	<instant group="support" spellid="325" name="Kings Call" words="kings call" lvl="8" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="3600000" groupcooldown="2000" needlearn="1" script="support/kings_call.lua">
+	<instant group="support" spellid="221" name="Kings Call" words="kings call" lvl="8" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="3600000" groupcooldown="2000" needlearn="1" script="support/kings_call.lua">
 	</instant>	
 	
-	<!-- Oils -->
+
+
+
+	<!-- spell 192 already used in revscripts-->
+
+		
+
+	<instant group="attack" spellid="500" name="Earthquake" words="earthquake" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/earthquake.lua">
+	 <vocation name="None" />
+	</instant>
+
+	<instant group="attack" spellid="501" name="Water Wave" words="water wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/water_wave.lua">
+    <vocation name="None" />
+	</instant>
+		<instant group="support" spellid="502" name="mad" words="mad" lvl="1" mana="0" range="1" aggressive="0" blockwalls="0" needtarget="0" cooldown="1000" groupcooldown="0" needweapon="0" needlearn="0" script="mad.lua">
+    </instant>
+	
+	
+	<instant group="attack" spellid="503" name="Bouncing Sphere" words="bouncing sphere" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/pingpong.lua">
+	<vocation name="None" />
+	</instant>
+	<instant group="attack" spellid="504" name="cage" words="cage" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/cage.lua">
+	<vocation name="None" />
+	</instant>
+	<instant group="attack" spellid="505" name="explo" words="explo" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/poison_explosion.lua">
+	<vocation name="None" />
+	</instant>	
+	<instant group="attack" spellid="506" name="Burning Ice" words="burning ic" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" selftarget="1" needlearn="0" script="test/double_wave.lua">
+	<vocation name="None" />
+	</instant>
+
+	<instant group="attack" spellid="507" name="anihilation" words="anihilation" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_judment.lua">
+	<vocation name="None" />
+	</instant>
+	<instant group="attack" spellid="508" name="mass ani" words="mass ani" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_annihilation.lua">
+	<vocation name="None" />
+	</instant>
+	
+	<instant group="attack" spellid="509" name="mass ani mon" words="mass ani mon" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_annihilation_monster.lua">
+	<vocation name="None" />
+	</instant>
+	
+	<instant group="support" spellid="510" name="push" words="push" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/push_out.lua">
+	<vocation name="None" />
+	</instant>	
+
+	<instant group="support" spellid="511" name="rune" words="rune" lvl="1" mana="20" soul="0" cooldown="35000" groupcooldown="1000" needlearn="0" script="test/uh_create.lua">
+	<vocation name="None" />
+	</instant>
+	<instant group="attack" spellid="512" name="flat" words="flat" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="test/flat_percent.lua">
+	<vocation name="None" />
+	</instant>
+	<instant group="support" spellid="513" name="pull" words="pull" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/pull_in.lua">
+	<vocation name="None" />
+	</instant>		
+	
+	 <instant group="attack" spellid="514" name="Cryo Eruption" words="cryo" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/cryo_eruption.lua">
+    <vocation name="None" />
+	</instant>
+	
+
+	
+
+	
+		<!-- Oils -->
 	<rune group="attack" spellid="330" name="oilbomb" id="31819" allowfaruse="1" charges="20" lvl="8" maglv="0" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/oil_bomb.lua" />
 	
 	<!-- bombs -->

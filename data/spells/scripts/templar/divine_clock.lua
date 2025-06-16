@@ -8,7 +8,7 @@ local config = {
 }
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -44,7 +44,7 @@ local function Damage_spell(creatureId, position)
 		return
 	end
 
-    combat:execute(creature, position)
+    combat:execute(creature, Variant(position))
 end
 
  local function apply_nube(position)  	

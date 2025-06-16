@@ -65,17 +65,17 @@ end
 
 
 glacialStep:name("Glacial Step")
-glacialStep:id(192)
+glacialStep:id(59)
 glacialStep:words("glacial step")
-glacialStep:level(15)
+glacialStep:level(1)
 glacialStep:mana(50)
 glacialStep:magicLevel(1)
-glacialStep:cooldown(3000)
-glacialStep:groupCooldown(3000)
+glacialStep:cooldown(25000)
+glacialStep:groupCooldown(2000)
 glacialStep:isSelfTarget(true)
 glacialStep:group(support)
 glacialStep:needLearn(true)
-glacialStep:vocation("none") -- Specify valid vocations here
+glacialStep:vocation("Magician") -- Specify valid vocations here
 
 glacialStep:register()
 

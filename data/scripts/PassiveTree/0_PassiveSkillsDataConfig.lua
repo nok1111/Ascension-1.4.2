@@ -327,10 +327,10 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Ice Nova",
-						description = "Unlocks the spell Ice Nova",
+						name = "Glacial Steps",
+						description = "Unlocks the spell Glacial Steps",
 						effect = {
-							{ type = "spell", name = "Ice Nova" }
+							{ type = "spell", name = "Glacial Steps" }
 						},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5

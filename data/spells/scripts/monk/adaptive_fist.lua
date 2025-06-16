@@ -66,8 +66,10 @@ function onTargetCreature_ice(creature, target)
     if not target or not creature then return end
     if target:getCondition(CONDITION_PARALYZE, CONDITIONID_DEFAULT) or target:getCondition(CONDITION_PARALYZE, CONDITIONID_COMBAT) then
         target:addCondition(stun)
+        target:attachEffectById(95, true)
     else
         target:addCondition(paralyzed)
+        target:attachEffectById(95, true)
     end
 end
 
@@ -124,6 +126,7 @@ function onTargetCreature_healingfist(creature, target)
 
 	doTargetCombatHealth(player, target, COMBAT_HEALING, min, max, 0)
     target:getPosition():sendMagicEffect(336)
+    target:attachEffectById(96, true)
 	return true
 end
 
@@ -369,6 +372,7 @@ function onCastSpell(player, variant)
         healingfist:execute(player, variant)
         
         player:say("Restoring Fist!", TALKTYPE_MONSTER_SAY)
+        player:attachEffectById(96, true)
     else
         player:sendCancelMessage("Invalid orb combination.")
         return false

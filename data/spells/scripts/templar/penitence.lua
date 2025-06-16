@@ -3,7 +3,7 @@ local config = {
     speed = 150, -- time between each target
     mfx = 298, -- magic effect
     dfx = 128, -- distance effect
-    element = COMBAT_ENERGYDAMAGE,
+    element = COMBAT_HOLYDAMAGE,
     xradius = 2, -- choose your size <->
     yradius = 2 -- choose your size ^ V
 }

@@ -186,6 +186,7 @@
 	<monster name="Void Mender" file="summons/void_mage.xml"/>
 	<monster name="Void Sentinel" file="summons/void_archer.xml"/>
 	<monster name="Aery" file="summons/aery.xml"/>
+	<monster name="Zombie Wall" file="summons/zombie_wall.xml"/>
 
 
 

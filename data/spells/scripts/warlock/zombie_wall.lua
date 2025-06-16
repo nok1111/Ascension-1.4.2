@@ -1,6 +1,6 @@
 local combat = createCombatObject()
 setCombatParam(combat, COMBAT_PARAM_TYPE, COMBAT_NONE)
-setCombatParam(combat, COMBAT_PARAM_EFFECT, CONST_ME_BIGPLANTS)
+setCombatParam(combat, COMBAT_PARAM_EFFECT, 841)
 
 local area = createCombatArea(AREA_CROSS1X1)
 setCombatArea(combat, area)
@@ -32,16 +32,19 @@ function onCastSpell(player, var)
 	
 	local lookDirection = player:getDirection()
 	for i = 1, #positions[lookDirection] do
-		local monster = Game.createMonster("Zombie Wall", positions[lookDirection][i])
+		local monster = Game.createMonster("Zombie Wall", positions[lookDirection][i], true)
 		if monster then
 		monster:setMaster(player)
-		monster:sendProgressbar(1 * 100 * 100, false)
+		monster:setDirection(lookDirection)
+		local playerhp = player:getMaxHealth()
+		monster:setMaxHealth(playerhp * 0.5)
+		monster:addHealth(playerhp * 0.5)
 		addEvent(function() if monster then monster:remove() end end, 1 * 100 * 100)
 		else
 		return false
 		end
 	end
-	player:getPosition():sendMagicEffect(CONST_ME_BIGPLANTS)
+	player:getPosition():sendMagicEffect(841)
 	
     return combat:execute(player, var)
 end
