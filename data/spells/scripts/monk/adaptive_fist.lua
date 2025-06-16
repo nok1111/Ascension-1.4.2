@@ -61,7 +61,6 @@ paralyzed:setFormula(-0.5, 0, -0.5, 0)
 
 -- Tempest Fist (ice_ice) target effect logic
 function onTargetCreature_ice(creature, target)
-    print("onTargetCreature_ice")
 
     if not target or not creature then return end
     if target:getCondition(CONDITION_PARALYZE, CONDITIONID_DEFAULT) or target:getCondition(CONDITION_PARALYZE, CONDITIONID_COMBAT) then
@@ -119,7 +118,6 @@ function onTargetCreature_healingfist(creature, target)
 
     if not healnonparty then
         if not isPartyMember(player, target) then
-            print("not party member")
             return true
         end
     end

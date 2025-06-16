@@ -311,7 +311,13 @@
     <instant group="attack" spellid="133" name="Life Punch" words="life punch" lvl="8" mana="35" range="2" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900"  needlearn="0" script="monk/life_fist.lua">
     <vocation name="Monk" />
     </instant>
-	<instant group="attack" spellid="134" name="Fists of Fire" words="fists of fire" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/elemental_fists.lua">
+	<instant group="attack" spellid="134" name="Fists of Fire" words="fists of fire" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/fists_of_fire.lua">
+    <vocation name="Monk" />
+	</instant>
+	<instant group="healing" spellid="135" name="Fists of Life" words="fists of life" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/fists_of_life.lua">
+    <vocation name="Monk" />
+	</instant>
+	<instant group="attack" spellid="136" name="Fists of Ice" words="fists of ice" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/fists_of_ice.lua">
     <vocation name="Monk" />
 	</instant>
 	

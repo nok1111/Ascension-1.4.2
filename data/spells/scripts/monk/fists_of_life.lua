@@ -1,26 +1,26 @@
 local combatNorth = Combat()
-combatNorth:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+combatNorth:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
 combatNorth:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatNorth:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatNorth:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combatNorth:setArea(createCombatArea(AREA_WAVEFIST_NORTH))
 
 local combatEast = Combat()
-combatEast:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+combatEast:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
 combatEast:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatEast:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatEast:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combatEast:setArea(createCombatArea(AREA_WAVEFIST_EAST))
 
 local combatSouth = Combat()
-combatSouth:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+combatSouth:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
 combatSouth:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatSouth:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatSouth:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combatSouth:setArea(createCombatArea(AREA_WAVEFIST_SOUTH))
 
 local combatWest = Combat()
-combatWest:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+combatWest:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
 combatWest:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatWest:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatWest:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -156,6 +156,14 @@ function onCastSpell(creatureId, variant, target)
     if not creature then
         return
     end
+
+    -- Require at least 2 fire orbs to cast
+    local lifeOrbs = getActiveOrbs(creatureId, "life")
+    if lifeOrbs < 2 then
+        doPlayerSendCancel(creatureId, "You need 2 life orbs to use Fists of Life.")
+        return false
+    end
+
     --LOOP COMBAT EVERY 50MS --USE GETID()
     addEvent(firefistloop, 50, creature:getId(), variant, target, 30)
     creature:attachEffectById(92, true)
