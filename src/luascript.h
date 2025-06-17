@@ -850,6 +850,7 @@ class LuaScriptInterface
 
 		// Creature
 		static int luaCreatureCreate(lua_State* L);
+		static int luaDoCreatureDash(lua_State* L);
 
 		static int luaCreatureGetEvents(lua_State* L);
 		static int luaCreatureRegisterEvent(lua_State* L);

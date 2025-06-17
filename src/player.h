@@ -1276,6 +1276,12 @@ class Player final : public Creature, public Cylinder
 			}
 		}
 
+		void sendDash(const Creature* creature, bool enabled)
+	{
+		if (client) {
+			client->sendDash(creature, enabled);
+		}
+	}
 
 		void receivePing() {
 			lastPong = OTSYS_TIME();

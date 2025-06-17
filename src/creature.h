@@ -477,6 +477,8 @@ class Creature : virtual public Thing
 		void detachEffectById(uint16_t id);
 		const std::vector<uint16_t> getAttachedEffectList() const { return attachedEffectList; }
 
+		bool manageDash(bool enabled);
+
 		const std::vector<uint16_t>& getZoneIds() const;
 
 	protected:

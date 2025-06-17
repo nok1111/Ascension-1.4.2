@@ -3181,6 +3181,7 @@ void LuaScriptInterface::registerFunctions()
 	registerMethod("Creature", "detachEffectById", LuaScriptInterface::luaCreatureDetachEffectById);
 	registerMethod("Creature", "getShader", LuaScriptInterface::luaCreatureGetShader);
 	registerMethod("Creature", "setShader", LuaScriptInterface::luaCreatureSetShader);
+	registerMethod("Creature", "doCreatureDash", LuaScriptInterface::luaDoCreatureDash);
 
 
 	registerMethod("Creature", "sendProgressbar", LuaScriptInterface::luaCreatureSetProgressbar);
@@ -8529,6 +8530,20 @@ int LuaScriptInterface::luaCreatureCreate(lua_State* L)
 	if (creature) {
 		pushUserdata<Creature>(L, creature);
 		setCreatureMetatable(L, -1, creature);
+	} else {
+		lua_pushnil(L);
+	}
+	return 1;
+}
+
+int LuaScriptInterface::luaDoCreatureDash(lua_State* L)
+{
+	// creature:doCreatureDash(enabled)
+	// Lua function to activate/deactivate blur behind the creature
+	const std::string& name = getString(L, 2);
+	Creature* creature = getUserdata<Creature>(L, 1);
+	if (creature) {
+		pushBoolean(L, creature->manageDash(getBoolean(L, 2)));
 	} else {
 		lua_pushnil(L);
 	}
