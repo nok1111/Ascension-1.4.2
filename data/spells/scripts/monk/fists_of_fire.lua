@@ -3,28 +3,26 @@ combatNorth:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combatNorth:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatNorth:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatNorth:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
-combatNorth:setArea(createCombatArea(AREA_WAVEFIST_NORTH))
+
 
 local combatEast = Combat()
 combatEast:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combatEast:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatEast:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatEast:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
-combatEast:setArea(createCombatArea(AREA_WAVEFIST_EAST))
 
 local combatSouth = Combat()
 combatSouth:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combatSouth:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatSouth:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatSouth:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
-combatSouth:setArea(createCombatArea(AREA_WAVEFIST_SOUTH))
 
 local combatWest = Combat()
 combatWest:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combatWest:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combatWest:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combatWest:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
-combatWest:setArea(createCombatArea(AREA_WAVEFIST_WEST))
+
 
 --CREATE AREAS FOR NORTH, EAST, SOUTH, WEST
 
@@ -59,7 +57,10 @@ AREA_WAVEFIST_WEST = {
     {1, 0, 0}
 }
 
-
+combatNorth:setArea(createCombatArea(AREA_WAVEFIST_NORTH))
+combatEast:setArea(createCombatArea(AREA_WAVEFIST_EAST))
+combatSouth:setArea(createCombatArea(AREA_WAVEFIST_SOUTH))
+combatWest:setArea(createCombatArea(AREA_WAVEFIST_WEST))
 
 function onTargetCreature(creature, target)
     if isExcludedTarget(creature, target) then
