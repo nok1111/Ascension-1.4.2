@@ -1394,37 +1394,44 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Blazing Impact",
-						description = "Increase Fire Pinch damage by 6% (per level)",
-						effect = {{type = "storage", name = "BlazingImpact", storage = PassiveSkills.BlazingImpact, value = 5}},
+						name = "Elemental Harmony",
+						description = "Increases the damage of your elemental fists (Fire, Ice, Life) by 3% per level when used in combination",
+						effect = {{type = "storage", name = "ElementalHarmony", storage = PassiveSkills.ElementalHarmony, value = 3}},
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Colossal Blows",
-						description = "Increase physical damage done by 5% per level",
-						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						name = "Vital Points",
+						description = "Increase critical strike chance by 2% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}} 
+							}	
+						},
 						maxLevel = 4
 					},
 					[3] = {
-						name = "Shockwave",
-						description = "Learn spell Shockwave (requires level 50)",
-						effect = {{type = "spell", name = "Shockwave"}},
-						maxLevel = 1,
+						name = "Mystic Punch",
+						description = "2% (per level) chance to land a mystic punch every time you deal physical damage",
+						effect = {{type = "storage", name = "MysticPunch", storage = PassiveSkills.MysticPunch, value = 2}},
+						maxLevel = 5,
 						prevNodeLevelNeeded = 4
 					},
 					[4] = {
-						name = "Lifeblood Strike",
-						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						name = "Inner Tempo",
+						description = "Landing a mystic punch increases your attack speed by 8% (per level) for 5 seconds",
 						effect = {
 							{
 								type = "storage",
-								name = "LifebloodStrike",
-								storage = PassiveSkills.LifebloodStrike,
-								value = 25
+								name = "InnerTempo",
+								storage = PassiveSkills.InnerTempo,
+								value = 8
 							}
 						},
-						maxLevel = 2,
-						prevNodeLevelNeeded = 4
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Heartseeker",
@@ -1457,9 +1464,9 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						name = "Meditative Recovery",
+						description = "Every time you use a healing spell, restore 2% of your maximum mana over 3 seconds.",
+						effect = {{type = "storage", name = "MeditativeRecovery", storage = PassiveSkills.MeditativeRecovery, value = 2}},
 						maxLevel = 10
 					},
 					[2] = {
@@ -1525,9 +1532,9 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
+						name = "Iron Body",
+						description = "Reduces all incoming physical damage by 4% per level.",
+						effect = {{type = "storage", name = "IronBody", storage = PassiveSkills.IronBody, value = 4}},
 						maxLevel = 10
 					},
 					[2] = {
