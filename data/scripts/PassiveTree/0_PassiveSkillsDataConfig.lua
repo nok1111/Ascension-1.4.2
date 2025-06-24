@@ -1511,10 +1511,10 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+						name = "Chi Bounce",
+						description = "Learn spell Chi Bounce",
+						effect = {{type = "spell", name = "Chi Bounce"}},
+						maxLevel = 1
 					},
 					[6] = {
 						name = "Placeholder F",
