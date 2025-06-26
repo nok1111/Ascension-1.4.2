@@ -19,7 +19,7 @@ local function executeReset(creatureId, cfg)
     end
 
     creature:doCreatureDash(false)
-    creature:changeSpeed(-800)
+    creature:changeSpeed(-5000)
 end
 
 local function executeMove(creatureId, cfg)
@@ -36,20 +36,20 @@ local function executeMove(creatureId, cfg)
         local toTile = Tile(cfg.position)
 
    if toTile and not toTile:isWalkable() then      --bug here when  there is a stairway down   
-                addEvent(executeReset, 100, creatureId, cfg)
+                addEvent(executeReset, 0, creatureId, cfg)
                 return true
             end
 
-        addEvent(executeMove, 100, creatureId, cfg)
+        addEvent(executeMove, 0, creatureId, cfg)
 
     else
-        addEvent(executeReset, 100, creatureId, cfg)
+        addEvent(executeReset, 0, creatureId, cfg)
     end
 end
 
 local function executeDash(creature, cfg)
     creature:doCreatureDash(true)
-    creature:changeSpeed(800)
+    creature:changeSpeed(5000)
     executeMove(creature:getId(), cfg)
 end
 

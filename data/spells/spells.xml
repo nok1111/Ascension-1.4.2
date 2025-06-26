@@ -292,12 +292,6 @@
 	<instant group="support" spellid="127" name="Lotus Kick" words="lotus kick" lvl="40" mana="30" aggressive="0" selftarget="1" cooldown="7000" groupcooldown="0" needlearn="0" script="monk/cyclone_sweep.lua">
 	<vocation name="Monk" />
 	</instant>
-	<instant group="attack" spellid="128" name="Absolute Denial" words="absolute denial" lvl="60" mana="120"  aggressive="1" selftarget="1" exhaustion="20000" groupcooldown="1900" script="monk/absolute_denial.lua">
-	<vocation name="Monk" />
-	</instant>
-	<instant group="healing" spellid="129" name="Soul Link" words="soul link" lvl="90" mana="0" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="50000" groupcooldown="1900" needlearn="0" script="monk/soul_link.lua">
-    <vocation name="Monk" />
-    </instant>
 	
 	<instant group="support" spellid="130" name="Adaptive Punch" words="adaptive punch" lvl="15" mana="80" direction="1" aggressive="0"  cooldown="10000" groupcooldown="2000" needlearn="0" script="monk/adaptive_fist.lua">
 	<vocation name="Monk" />
@@ -318,6 +312,9 @@
     <vocation name="Monk" />
 	</instant>
 	<instant group="attack" spellid="136" name="Fists of Ice" words="fists of ice" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/fists_of_ice.lua">
+    <vocation name="Monk" />
+	</instant>
+	<instant group="attack" spellid="137" name="Wind Step" words="wind step" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/wind_step.lua">
     <vocation name="Monk" />
 	</instant>
 	
