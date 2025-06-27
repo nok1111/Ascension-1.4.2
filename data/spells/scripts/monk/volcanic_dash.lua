@@ -36,7 +36,6 @@ local varTable = {}
 local function castwindstep(playerId, targetId)
 	local player = Player(playerId)
 	local target = Creature(targetId)
-	print("castwindstep")
 
 	if not player or not target then return true end
 	if Position(player:getPosition()):getDistance(target:getPosition()) >= 2 then
@@ -52,7 +51,6 @@ local function castwindstep(playerId, targetId)
 			addEvent(castwindstep, 0, player:getId(), target:getId())
 		end
 	else
-	print("else")
 		player:detachEffectById(97, true)
 		--combat:execute(player, variant)
 	end
@@ -60,12 +58,9 @@ local function castwindstep(playerId, targetId)
 end
 
 function onCastSpell(creature, variant)
-	print("onCastSpell")
 	if isPlayer(creature) then
-		print("isPlayer")
 		local target = creature:getTarget()
 		if target then
-			print("target")
 			if Position(creature:getPosition()):getDistance(target:getPosition()) >= minRange and Position(creature:getPosition()):getDistance(target:getPosition()) <= maxRange then
 				varTable[1] = variant
 				addEvent(castwindstep, 0, creature:getId(), target:getId())

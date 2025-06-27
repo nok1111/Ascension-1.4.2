@@ -314,7 +314,7 @@
 	<instant group="attack" spellid="136" name="Fists of Ice" words="fists of ice" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/fists_of_ice.lua">
     <vocation name="Monk" />
 	</instant>
-	<instant group="attack" spellid="137" name="Wind Step" words="wind step" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/wind_step.lua">
+	<instant group="attack" spellid="137" name="Volcanic Dash" words="volcanic dash" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/volcanic_dash.lua">
     <vocation name="Monk" />
 	</instant>
 	
