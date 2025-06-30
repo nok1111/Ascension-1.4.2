@@ -7,6 +7,14 @@ function onGetFormulaValues(player, skill, attack, factor)
     local level = player:getLevel()
     local min = (level / 5) + (power * 0.045) + attack
     local max = (level / 5) + (power * 0.085) + attack * 1.5
+
+     -- Increases the damage of your elemental fists (Fire, Ice, Life) by 3% per level when used in combination
+     local level = math.max(player:getStorageValue(PassiveSkills.ElementalHarmony) or 0, 0)
+     if level > 0 then
+         min = min * (1 + (level / 100))
+         max = max * (1 + (level / 100))
+     end
+     
     return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")

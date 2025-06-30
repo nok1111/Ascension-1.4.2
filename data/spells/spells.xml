@@ -317,6 +317,10 @@
 	<instant group="attack" spellid="137" name="Volcanic Dash" words="volcanic dash" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="3000" needlearn="0" script="monk/volcanic_dash.lua">
     <vocation name="Monk" />
 	</instant>
+	<instant group="attack" spellid="138" name="Stormfist" words="stormfist" lvl="1" mana="115" selftarget="1" cooldown="20000" groupcooldown="0" needlearn="1" script="monk/stormfist.lua">
+    <vocation name="Monk" />
+	</instant>
+
 	
 	<!-- DRUID -->
 	<instant group="attack" spellid="150" name="Terra Strike" words="terra strike" lvl="8" mana="30" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="druid/terra_strike.lua">

@@ -72,6 +72,80 @@ end
 
 local PASSIVES = {
 
+  tempest_god_stormfist_damage = {
+
+  mystic_punch = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.MysticPunch,
+    },
+    trigger = function(player, target, damage, primaryType, origin)
+      if primaryType ~= COMBAT_PHYSICALDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.MysticPunch) or 0, 0)
+      if level > 0 then
+        local chance = level
+        return math.random(100) <= chance
+      end
+      return false
+    end,
+    effect = function(player, target, damage)
+      -- Mystic Punch: deal 150% of original damage and show effect
+      local extraDamage = damage * 1.5
+      local mysticEffects = {814, 815, 816, 817}
+      local effectId = mysticEffects[math.random(#mysticEffects)]
+      doTargetCombatHealth(player, target, COMBAT_PHYSICALDAMAGE, -math.floor(extraDamage), -math.floor(extraDamage), effectId)
+      --Landing a mystic punch increases your attack speed by 8% (per level) for 5 seconds CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED
+      
+      
+      local InnerTempoLevel = math.max(player:getStorageValue(PassiveSkills.InnerTempo) or 0, 0)
+      if InnerTempoLevel > 0 then
+        local conditionInnerTempo = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
+        conditionInnerTempo:setParameter(CONDITION_PARAM_TICKS, 5 * 1000)
+        conditionInnerTempo:setParameter(CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED, InnerTempoLevel)
+        player:addCondition(conditionInnerTempo)
+      end
+
+      
+      
+      player:say("Mystic Punch!", TALKTYPE_MONSTER_SAY)
+      return damage
+    end,
+  },
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.StormfistDamage,
+    },
+    trigger = function(player, target, damage, primaryType, origin)
+      if primaryType ~= COMBAT_PHYSICALDAMAGE then
+        return false
+      end
+      -- Check for Stormfist buff (subid 29500)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, 29500)
+    end,
+    effect = function(player, target, damage)
+      local level = math.max(player:getStorageValue(PassiveSkills.StormfistDamage) or 0, 0)
+      local ampDamage = damage
+      if level > 0 then
+        ampDamage = damage * (1 + (level * 0.10))
+      end
+      -- Deal damage to main target
+      doTargetCombatHealth(player, target, COMBAT_PHYSICALDAMAGE, -math.floor(ampDamage), -math.floor(ampDamage), CONST_ME_HITAREA)
+      target:attachEffectById(9, true)
+      -- Deal damage to nearby monsters (radius 2)
+      local pos = target:getPosition()
+      local spectators = Game.getSpectators(pos, false, false, 2, 2, 2, 2)
+      for _, creature in ipairs(spectators) do
+        if creature ~= target and not creature:isNpc() then
+          doTargetCombatHealth(player, creature, COMBAT_PHYSICALDAMAGE, -math.floor(ampDamage), -math.floor(ampDamage), CONST_ME_HITAREA)
+          creature:attachEffectById(9, true)
+        end
+      end
+      return 0 -- Prevent double damage application
+    end,
+  },
+
   Falling_Stars = {
     config = {
       type = "OnAttack",

@@ -1434,28 +1434,26 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Heartseeker",
-						description = "Increase critical strike chance by 2% (per level)",
+						name = "Stormfist",
+						description = "Learn Spell Stormfist\n For the next 3 seconds your physical damage sends a lighting shock to nearby target",
 						effect = {
 							{
-								type = "condition",
-								name = "Critical Strike",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+								type = "spell",
+								name = "Stormfist"
 							}
 						},
-						maxLevel = 3,
-						prevNodeLevelNeeded = 2
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Apex Predator",
-						description = "Increases all damage and attack speed by per missing health",
+						name = "Tempest God",
+						description = "Empowers Stormfist, extending its duration by 1 second and amplifying its damage by 10% (per level)",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "StormfistDuration", storage = PassiveSkills.StormfistDuration, value = 1},
+							{type = "storage", name = "StormfistDamage", storage = PassiveSkills.StormfistDamage, value = 10}
 						},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					}
 				},
 			},

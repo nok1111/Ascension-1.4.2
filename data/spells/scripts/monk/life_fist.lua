@@ -6,6 +6,14 @@ combat:setParameter(COMBAT_PARAM_EFFECT, 572)
 function onGetFormulaValues(player, level, magicLevel)
     local min = (level / 5) + (magicLevel * 1.8) + 10
     local max = (level / 5) + (magicLevel * 3.0) + 20
+
+     -- Increases the damage of your elemental fists (Fire, Ice, Life) by 3% per level when used in combination
+     local level = math.max(player:getStorageValue(PassiveSkills.ElementalHarmony) or 0, 0)
+     if level > 0 then
+         min = min * (1 + (level / 100))
+         max = max * (1 + (level / 100))
+     end
+     
     return -min, -max  -- Negative values indicate damage
 end
 combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
