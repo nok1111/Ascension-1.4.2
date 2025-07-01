@@ -1462,66 +1462,82 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Meditative Recovery",
-						description = "Every time you use a healing spell, restore 2% of your maximum mana over 3 seconds.",
-						effect = {{type = "storage", name = "MeditativeRecovery", storage = PassiveSkills.MeditativeRecovery, value = 2}},
-						maxLevel = 10
+						name = "Rock Mentality",
+						description = "Increases max health by 5.0% per level",
+						effect = {
+							{
+								type = "condition",
+								name = "MaxHealthPercent", 
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 5.0}}
+							}
+						},
+						maxLevel = 6
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Meditative Recovery",
+						description = "Every time you use a healing spell, restore 1.2% of your maximum health and 2% of your maximum mana.",
+						effect = {{type = "storage", name = "MeditativeRecovery", storage = PassiveSkills.MeditativeRecovery, value = 2}},
+						maxLevel = 3
 					},
+					
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Mountain Stance",
+						description = "Learn spell Mountain Stance",
 						effect = {
 							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								type = "spell",
+								name = "Mountain Stance"
 							}
 						},
-						maxLevel = 5
+						maxLevel = 1,
+						prevNodeLevelNeeded = 6
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Glacial Palm",
+						description = "Your adaptive punch (ice + ice) now has a 5% (per level) chance to trigger Glacial Palm wich deals damage to the target and all nearby enemies.",
 						effect = {
+							--storage
 							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
+								type = "storage",
+								name = "GlacialPalm",
+								storage = PassiveSkills.GlacialPalm,
+								value = 5
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Chi Bounce",
-						description = "Learn spell Chi Bounce",
-						effect = {{type = "spell", name = "Chi Bounce"}},
-						maxLevel = 1
+						name = "Frozen Lotus",
+						description = "Triggering glacial palm will now heal you by 15% (per level) of the damage done .",
+						effect = {
+							--storage
+							{
+								type = "storage",
+								name = "FrozenLotus",
+								storage = PassiveSkills.FrozenLotus,
+								value = 20
+							}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Frost Blossom",
+						description = "Increase the damage by Frozen Lotus by 10% (per level)",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							--storage
+							{
+								type = "storage",
+								name = "FrostBlossom",
+								storage = PassiveSkills.FrostBlossom,
+								value = 5
+							}
 						},
-						maxLevel = 17
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -1530,16 +1546,32 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Iron Body",
-						description = "Reduces all incoming physical damage by 4% per level.",
-						effect = {{type = "storage", name = "IronBody", storage = PassiveSkills.IronBody, value = 4}},
-						maxLevel = 10
+						name = "Vital Palm",
+						description = "Increase the healing effectiveness of your adaptive punch (life + life) by 10% (per level)",
+						effect = {
+							--storage
+							{
+								type = "storage",
+								name = "VitalPalm",
+								storage = PassiveSkills.VitalPalm,
+								value = 10
+							}
+						},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Chi Transfer",
+						description = "Dealing physical melee damage has a chance 3% chance (per level) to send chi reserve to a nearby ally healing equal your damage done.",
+						effect = {
+							--storage
+							{
+								type = "storage",
+								name = "ChiTransfer",
+								storage = PassiveSkills.ChiTransfer,
+								value = 5
+							}
+						},
+						prevNodeLevelNeeded = 3 
 					},
 					[3] = {
 						name = "Placeholder C",
