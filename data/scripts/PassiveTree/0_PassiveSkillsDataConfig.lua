@@ -1652,10 +1652,10 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Scaled Rupture",
-						description = "Increase Rend damage by 5% (per level)",
+						name = "Savage Bloom",
+						description = "Increase terra strike and carnivorous vile damage by 8% (per level)",
 						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Colossal Blows",
