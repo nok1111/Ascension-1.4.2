@@ -176,8 +176,8 @@ PassiveSkills.FrostBlossom = 875619
 --monk 3
 PassiveSkills.VitalPalm = 875620
 PassiveSkills.ChiTransfer = 875621
-
-
+PassiveSkills.LifePulse = 875622
+PassiveSkills.SereneAmplification = 875623
 
 
 
@@ -1350,7 +1350,7 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Solar Blessing",
-						description = "Learn Spell Solar Blessing",
+						description = "Learn Spell Solar Blessing\nIncrease the target's max health by 50% for 10 seconds and healing them instantly for 50% of your max mana.",
 						effect = {
 							{
 								type = "spell",
@@ -1610,36 +1610,34 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Life Pulse,
+						description = "Every third consecutive Life punch has a 20% (per level) chance to triger a healing chi wave wich heals all nearby alles.",
 						effect = {
 							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
+								type = "storage",
+								name = "LifePulse",
+								storage = PassiveSkills.LifePulse,
+								value = 20
 							}
 						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+						name = "Zen Barrier",
+						description = "Learn spell Zen Barrier\nPlace a serenity sphere on a chosen player. Each time they take damage, the sphere absorbs the damage and instantly heals them for the same amount.",
+						effect = {{type = "spell", name = "Zen Barrier"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Serene Amplification",
+						description = "Increase the healing effectiveness of zen barrier by 10% (per level)",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "SereneAmplification", storage = PassiveSkills.SereneAmplification, value = 10},
 						},
-						maxLevel = 17
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					}
 				},
 			},
