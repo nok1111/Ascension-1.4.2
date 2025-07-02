@@ -160,6 +160,26 @@ PassiveSkills.CosmicForceManaRestore = 875609
 --stellar 3
 PassiveSkills.AeryManaRestore = 875610
 
+--Monk 1
+PassiveSkills.ElementalHarmony = 875611
+PassiveSkills.MysticPunch = 875612
+PassiveSkills.InnerTempo = 875613
+PassiveSkills.StormfistDuration = 875614
+PassiveSkills.StormfistDamage = 875615
+
+--monk 2
+PassiveSkills.MeditativeRecovery = 875616
+PassiveSkills.GlacialPalm = 875617
+PassiveSkills.FrozenLotus = 875618
+PassiveSkills.FrostBlossom = 875619
+
+--monk 3
+PassiveSkills.VitalPalm = 875620
+PassiveSkills.ChiTransfer = 875621
+
+
+
+
 
 
 PassiveSkills.resetCost = {
@@ -1571,26 +1591,23 @@ PassiveSkills.treeData = {
 								value = 5
 							}
 						},
+						maxLevel = 5,
 						prevNodeLevelNeeded = 3 
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Mystic Reserves",
+						description = "increase your maximum mana by 10% (per level)",
 						effect = {
 							{
 								type = "condition",
-								name = "Critcial Chance",
+								name = "MaxManaPercent", 
+								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 5.0}}
 							}
 						},
-						maxLevel = 5
+						maxLevel = 3,
+						prevNodeLevelNeeded = 5
 					},
 					[4] = {
 						name = "Placeholder D",
@@ -1606,7 +1623,8 @@ PassiveSkills.treeData = {
 								}
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Placeholder E",
@@ -1700,7 +1718,7 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Spirit Pool",
-						description = "Increases max mana by 5% per level",
+						description = "Increases maximum mana by 5% per level",
 						effect = {
 							{
 								type = "condition",
