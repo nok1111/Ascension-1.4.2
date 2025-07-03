@@ -1654,34 +1654,35 @@ PassiveSkills.treeData = {
 					[1] = {
 						name = "Savage Bloom",
 						description = "Increase terra strike and carnivorous vile damage by 8% (per level)",
-						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						effect = {{type = "storage", name = "SavageBloom", storage = PassiveSkills.SavageBloom, value = 8}},
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Colossal Blows",
-						description = "Increase physical damage done by 5% per level",
-						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
-						maxLevel = 4
+						name = "Primal Infestation",
+						description = "Your Nature or earth damage, has a 3% (per level) chance to trigger a carnivorous vile with 25% effectiveness.",
+						effect = {{type = "storage", name = "PrimalInfestation", storage = PassiveSkills.PrimalInfestation, value = 3}},
+						maxLevel = 4,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
-						name = "Shockwave",
-						description = "Learn spell Shockwave (requires level 50)",
-						effect = {{type = "spell", name = "Shockwave"}},
+						name = "Swarn of Insects",
+						description = "Learn spell Swarn of Insects\nPlace a swarm of insects on a target increasing it's damage received by 10% (per level) from all sources.",
+						effect = {{type = "spell", name = "Swarn of Insects"}}, 
 						maxLevel = 1,
 						prevNodeLevelNeeded = 4
 					},
 					[4] = {
-						name = "Lifeblood Strike",
-						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						name = "Hive Queen",
+						description = "Increase your critical damage chance by 2% (per level) for each enemy reached by Swarn of Insects",
 						effect = {
 							{
 								type = "storage",
-								name = "LifebloodStrike",
-								storage = PassiveSkills.LifebloodStrike,
-								value = 25
+								name = "HiveQueen",
+								storage = PassiveSkills.HiveQueen,
+								value = 4
 							}
 						},
-						maxLevel = 2,
+						maxLevel = 4,
 						prevNodeLevelNeeded = 4
 					},
 					[5] = {
