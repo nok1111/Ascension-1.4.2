@@ -39,6 +39,15 @@ local function infect(casterId, targetId, timeLeft)
     target:addCondition(infectionCondition)
     target:addCondition(cooldownCondition)
     target:attachEffectById(114, true)
+
+    local hiveQueenLevel = caster:getStorageValue(PassiveSkills.HiveQueen) or 0
+    print("hiveQueenLevel", hiveQueenLevel)
+    if hiveQueenLevel > 0 then
+        local critCond = Condition(CONDITION_ATTRIBUTES)
+        critCond:setParameter(CONDITION_PARAM_TICKS, DURATION)
+        critCond:setParameter(CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, hiveQueenLevel)
+        caster:addCondition(critCond)
+    end
     local ticks = math.floor(timeLeft / TICK_INTERVAL)
 
     local function doTick(casterId, targetId, count)
@@ -72,6 +81,15 @@ local function infect(casterId, targetId, timeLeft)
                     creature:addCondition(infectionCondition)
                     creature:addCondition(cooldownCondition)
                     creature:attachEffectById(114, true)
+
+                    local hiveQueenLevel = caster:getStorageValue(PassiveSkills.HiveQueen) or 0
+                    print("hiveQueenLevel", hiveQueenLevel)
+                    if hiveQueenLevel > 0 then
+                        local critCond = Condition(CONDITION_ATTRIBUTES)
+                        critCond:setParameter(CONDITION_PARAM_TICKS, DURATION)
+                        critCond:setParameter(CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, hiveQueenLevel)
+                        caster:addCondition(critCond)
+                    end
                     infect(casterId, creature:getId(), timeLeft)
                     break -- Infect only one new target per tick
                 end
@@ -87,10 +105,14 @@ local function infect(casterId, targetId, timeLeft)
 end
 
 function onCastSpell(creature, var)
-    local target = Creature(var.number or 0)
+    local target = creature:getTarget()
     if not target then
         creature:sendCancelMessage("No target found.")
         return false
+    end
+    if target:getCondition(CONDITION_POISON, 0, COOLDOWN_SUBID) then
+        creature:sendCancelMessage("Target is on cooldown.")
+        return true
     end
     infect(creature:getId(), target:getId(), DURATION)
     return true
