@@ -179,6 +179,20 @@ PassiveSkills.ChiTransfer = 875621
 PassiveSkills.LifePulse = 875622
 PassiveSkills.SereneAmplification = 875623
 
+--druid 1
+PassiveSkills.SavageBloom = 875624
+PassiveSkills.PrimalInfestation = 875625
+PassiveSkills.HiveQueen = 875626
+PassiveSkills.EntanglingRoots = 875627
+
+--druid 2
+PassiveSkills.BloomingWisdom = 875628
+PassiveSkills.HealingConcentration = 875629
+PassiveSkills.ThornedSanctuary = 875630
+
+--druid 3
+PassiveSkills.PermafrostTrap = 875638
+PassiveSkills.FrostAura = 875639
 
 
 
@@ -1350,7 +1364,7 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Solar Blessing",
-						description = "Learn Spell Solar Blessing\nIncrease the target's max health by 50% for 10 seconds and healing them instantly for 50% of your max mana.",
+						description = "Learn Spell Solar Blessing\nIncrease the target's max health by 65% for 8 seconds and healing them instantly for 50% of your max mana at the start and ending of spell.",
 						effect = {
 							{
 								type = "spell",
@@ -1407,7 +1421,7 @@ PassiveSkills.treeData = {
 	},
 	[7] = {			-- Tree 4
 		name = "Monk Talents",
-		background = "7",
+		background = "11",
 		branches = {
 			[1] = {
 				color = '#134f1c',
@@ -1430,12 +1444,13 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}} 
 							}	
 						},
-						maxLevel = 4
+						maxLevel = 4,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Mystic Punch",
-						description = "2% (per level) chance to land a mystic punch every time you deal physical damage",
-						effect = {{type = "storage", name = "MysticPunch", storage = PassiveSkills.MysticPunch, value = 2}},
+						description = "3% (per level) chance to land a mystic punch every time you deal physical damage",
+						effect = {{type = "storage", name = "MysticPunch", storage = PassiveSkills.MysticPunch, value = 3}},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 4
 					},
@@ -1467,12 +1482,12 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Tempest God",
-						description = "Empowers Stormfist, extending its duration by 1 second and amplifying its damage by 10% (per level)",
+						description = "Empowers Stormfist, extending its duration by 1 second and amplifying its damage by 25% (per level)",
 						effect = {
 							{type = "storage", name = "StormfistDuration", storage = PassiveSkills.StormfistDuration, value = 1},
-							{type = "storage", name = "StormfistDamage", storage = PassiveSkills.StormfistDamage, value = 10}
+							{type = "storage", name = "StormfistDamage", storage = PassiveSkills.StormfistDamage, value = 25}
 						},
-						maxLevel = 5,
+						maxLevel = 3,
 						prevNodeLevelNeeded = 1
 					}
 				},
@@ -1497,14 +1512,15 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Meditative Recovery",
-						description = "Every time you use a healing spell, restore 1.2% of your maximum health and 2% of your maximum mana.",
+						description = "Every time you use a monk healing spell, restore 1.2% of your maximum health and 2% of your maximum mana.",
 						effect = {{type = "storage", name = "MeditativeRecovery", storage = PassiveSkills.MeditativeRecovery, value = 2}},
-						maxLevel = 3
+						maxLevel = 3,
+						prevNodeLevelNeeded = 6
 					},
 					
 					[3] = {
 						name = "Mountain Stance",
-						description = "Learn spell Mountain Stance",
+						description = "Learn spell Mountain Stance\nReduce Damage taken by 30% and increases your max health by 25% for 10 seconds",
 						effect = {
 							{
 								type = "spell",
@@ -1546,7 +1562,7 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Frost Blossom",
-						description = "Increase the damage by Frozen Lotus by 10% (per level)",
+						description = "Increase the damage by Glacial Palm and Frozen Lotus haling by 10% (per level)",
 						effect = {
 							--storage
 							{
@@ -1588,11 +1604,11 @@ PassiveSkills.treeData = {
 								type = "storage",
 								name = "ChiTransfer",
 								storage = PassiveSkills.ChiTransfer,
-								value = 5
+								value = 3
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 3 
+						prevNodeLevelNeeded = 5 
 					},
 					[3] = {
 						name = "Mystic Reserves",
@@ -1610,8 +1626,8 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[4] = {
-						name = "Life Pulse,
-						description = "Every third consecutive Life punch has a 20% (per level) chance to triger a healing chi wave wich heals all nearby alles.",
+						name = "Life Pulse",
+						description = "Every third consecutive Life punch has a 20% (per level) chance to triger a healing chi wave wich heals a random nearby ally.",
 						effect = {
 							{
 								type = "storage",
@@ -1625,7 +1641,7 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Zen Barrier",
-						description = "Learn spell Zen Barrier\nPlace a serenity sphere on a chosen player. Each time they take damage, the sphere absorbs the damage and instantly heals them for the same amount.",
+						description = "Learn spell Zen Barrier\nPlace a serenity sphere on a chosen player for 8 seconds. Each time they take damage, the sphere absorbs the damage and instantly heals them for the same amount.",
 						effect = {{type = "spell", name = "Zen Barrier"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
@@ -1645,7 +1661,7 @@ PassiveSkills.treeData = {
 	},
 	[8] = {			-- Tree 4
 		name = "Druid Talents",
-		background = "7",
+		background = "12",
 		branches = {
 			[1] = {
 				color = '#134f1c',
@@ -1679,35 +1695,34 @@ PassiveSkills.treeData = {
 								type = "storage",
 								name = "HiveQueen",
 								storage = PassiveSkills.HiveQueen,
-								value = 4
+								value = 2
 							}
 						},
 						maxLevel = 4,
-						prevNodeLevelNeeded = 4
+						prevNodeLevelNeeded = 1
 					},
 					[5] = {
-						name = "Heartseeker",
-						description = "Increase critical strike chance by 2% (per level)",
+						name = "Entangling Roots",
+						description = "Piercing Wave have a 20% chance (per level) to stun enemies for 3 seconds if they are afflicted by Swarm of Insects or poisoned.",
 						effect = {
 							{
-								type = "condition",
-								name = "Critical Strike",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+								type = "storage", 
+								name = "EntanglingRoots",
+								storage = PassiveSkills.EntanglingRoots,
+								value = 2
 							}
 						},
-						maxLevel = 3,
-						prevNodeLevelNeeded = 2
+						maxLevel = 5,
+						prevNodeLevelNeeded = 4
 					},
 					[6] = {
-						name = "Apex Predator",
-						description = "Increases all damage and attack speed by per missing health",
+						name = "Force of Nature",
+						description = "Increase the damage done by Wrath of Nature by 10% (per level)",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "ForceOfNature", storage = PassiveSkills.ForceOfNature, value = 1}
 						},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -1717,7 +1732,7 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Spirit Pool",
-						description = "Increases maximum mana by 5% per level",
+						description = "Increases maximum mana by 8% per level",
 						effect = {
 							{
 								type = "condition",
@@ -1727,18 +1742,18 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 5.0}}
 							}
 						},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Life Bloom",
 						description = "Learn Life Bloom spell",
 						effect = {{type = "spell", name = "Life Bloom"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 10 
+						prevNodeLevelNeeded = 5 
 					},
 					[3] = {
 						name = "Blooming Wisdom",
-						description = "Decrease the % mana cost required to cast life bloom by 2% per level",
+						description = "Decrease the % mana cost required to cast life bloom by 1% per level",
 						effect = {
 							{
 								type = "storage",
@@ -1748,7 +1763,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 2
+						prevNodeLevelNeeded = 1
 					},
 					[4] = {
 						name = "Healing Concentration",
@@ -1760,19 +1775,20 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+						name = "Living Ground",
+						description = "Learn Living Ground spell\nPlace a nature ground on your current position wich heal all nearby allies while standing on it.",
+						effect = {{type = "spell", name = "Living Ground"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Thorned Sanctuary",
+						description = "Living ground now deals damage to nearby enemies every 1.0 seconds, dealing 1% (per level) of your max health as nature damage.",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "ThornedSanctuary", storage = PassiveSkills.ThornedSanctuary, value = 1},
 						},
-						maxLevel = 17
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					}
 				},
 			},
@@ -1781,35 +1797,47 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Nature's Endurance",
-						description = "Increases max health by 4.0% per level",
+						name = "Winter's Grasp",
+						description = "Increase the damage of your frost spells by 5% per level.",
 						effect = {
-							{
-								type = "condition",
-								name = "MaxHealthPercent", 
-								percent = true,
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 4.0}}
-							}
+							{ type = "storage", name = "FrostDamage", storage = PassiveSkills.FrostDamage, value = 5 }
 						},
 						maxLevel = 6
 					},
 					[2] = {
-						name = "Bear Form",
-						description = "Learn Bear Form spell",
-						effect = {{type = "spell", name = "Bear Form"}},
+						name = "Ice Shatter",
+						description = "Learn Ice Shatter spell\nTurn the target into a solid ice block dealing ice damage and a second AOE damage when it ends.", 
+						effect = {{type = "spell", name = "Ice Shatter"}},
 						prevNodeLevelNeeded = 6,
 						maxLevel = 1,
 					},
 					[3] = {
-						name = "Wildhide Endurance",
-						description = "Increase the bear form max health and health regeneration by 5% per level",
+						name = "Permafrost Trap",
+						description = "Dealing ice damage have a 5% chance to trigger Frost cage , wich dealth ice damage to the target and nearby enemies.",
 						effect = {
-							{type = "storage", name = "WildhideEndurance", storage = PassiveSkills.WildhideEndurance, value = 1}
+							{type = "storage", name = "PermafrostTrap", storage = PassiveSkills.PermafrostTrap, value = 5}
 						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 1
 					},
+					[4] = {
+						name = "Frost Armor",
+						description = "Learn Frost Armor spell\nGain a frost armor wich reduces your damage taken by 20% and deals ice damage back to the attacker.", 
+						effect = {{type = "spell", name = "Frost Armor"}},
+						prevNodeLevelNeeded = 5,
+						maxLevel = 1,
+					},
+					[5] = {
+						name = "Frost Aura",
+						description = "frost armor now deals damage to nearby enemies every 1.0 seconds, dealing 1% of your max mana as ice damage.",
+						effect = {
+							{type = "storage", name = "FrostAura", storage = PassiveSkills.FrostAura, value = 1}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
+					},
+
+
 					
 				},
 			},
@@ -1840,7 +1868,7 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Wildhide Endurance",
-						description = "Increase the bear form max health and health regeneration by 5% per level",
+						description = "Increase bear form maximum health and health regeneration by 5% per level",
 						effect = {
 							{type = "storage", name = "WildhideEndurance", storage = PassiveSkills.WildhideEndurance, value = 1}
 						},
@@ -1853,8 +1881,8 @@ PassiveSkills.treeData = {
 		},
 	},
 	[9] = {			-- Tree 4
-		name = "Dragonknight Talents",
-		background = "7",
+		name = "Light Dancer Talents",
+		background = "12",
 		branches = {
 			[1] = {
 				color = '#134f1c',

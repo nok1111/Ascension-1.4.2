@@ -70,6 +70,30 @@ function onTargetCreature_ice(creature, target)
         target:addCondition(paralyzed)
         target:attachEffectById(95, true)
     end
+
+    --Your adaptive punch (ice + ice) now has a 5% (per level) chance to trigger Glacial Palm wich deals damage to the target and all nearby enemies.
+    local glacialpalm_level = math.max(creature:getStorageValue(PassiveSkills.GlacialPalm) or 0, 0)
+    local glacialpalm_chance = glacialpalm_level
+    if math.random(1, 100) <= glacialpalm_chance then
+        --min, max should be based on the damage done by the icefist
+
+        --Increase the damage by Glacial Palm and Frozen Lotus haling by 10% (per level)
+        local frostblossom_level = math.max(creature:getStorageValue(PassiveSkills.FrostBlossom) or 0, 0)
+        local min = (creature:getLevel() / 3) 
+        local max = (creature:getLevel() / 2.2) 
+
+        min = min * (1 + (frostblossom_level / 100))
+        max = max * (1 + (frostblossom_level / 100))
+
+        doAreaCombatHealth(creature, target, COMBAT_ICEDAMAGE, min, max, CONST_ME_NONE)
+        target:attachEffectById(112, true)
+
+        --Triggering glacial palm will now heal you by 15% (per level) of the damage done
+        local frozenlotus_level = math.max(creature:getStorageValue(PassiveSkills.FrozenLotus) or 0, 0)
+        if frozenlotus_level > 0 then
+            doAreaCombatHealth(creature, target, COMBAT_HEALING, min, max, 493)
+        end
+    end
 end
 
 
@@ -108,6 +132,11 @@ function onTargetCreature_healingfist(creature, target)
 	local player = creature:getPlayer()
 	local min = (player:getLevel() / 5) + (player:getMagicLevel() * 4.6) + 100
 	local max = (player:getLevel() / 5) + (player:getMagicLevel() * 9.6) + 125
+
+    --Increase the healing effectiveness of your adaptive punch (life + life) by 10% (per level)
+    local vitalpalm_level = math.max(player:getStorageValue(PassiveSkills.VitalPalm) or 0, 0)
+    min = min * (1 + (vitalpalm_level / 100))
+    max = max * (1 + (vitalpalm_level / 100))
 
 	if not healMonsters then
 		local master = target:getMaster()
@@ -190,12 +219,41 @@ function onCastSpell(player, variant)
             end
             return positions
         end
+
+        local function secondApplyPunchEffect(playerId, positions, index)
+            local player = Player(playerId)
+            if not player or index > #positions then return end
+            --send magic effect
+            positions[index]:sendMagicEffect(324) 
+            
+            -- Schedule next position if there are more
+            if index < #positions then
+                addEvent(secondApplyPunchEffect, 120, playerId, positions, index + 1)
+            end
+        end
+
+        local function secondDamage(playerId, positions, index)
+            local player = Player(playerId)
+            if not player or index > #positions then return end
+            
+            -- Execute damage for current position
+            earthfist:execute(player, Variant(positions[index])) 
+            
+            -- Schedule next position if there are more
+            if index < #positions then
+                addEvent(secondDamage, 200, playerId, positions, index + 1)
+            end
+        end
+
         local function applyPunchDamage(playerId, positions, index)
             local player = Player(playerId)
             if not player or index > #positions then return end
             
             -- Execute damage for current position
             earthfist:execute(player, Variant(positions[index]))
+
+            --send magic effect
+            positions[index]:sendMagicEffect(324) 
             
             -- Schedule next position if there are more
             if index < #positions then
@@ -210,7 +268,10 @@ function onCastSpell(player, variant)
         
         -- Start the sequence with first position
         addEvent(applyPunchDamage, 120, player:getId(), punchPositions, 1)
+        addEvent(secondApplyPunchEffect, 120, player:getId(), punchPositions, 1)
+        addEvent(secondDamage, 200, player:getId(), punchPositions, 1)
         player:say("Rock Punch!", TALKTYPE_MONSTER_SAY)
+        player:attachEffectById(109, true)
 
     elseif (combination == 'fire_fire') then
         -- Blazing Punch: single target, AoE if burning
@@ -260,6 +321,9 @@ function onCastSpell(player, variant)
         icefist:execute(player, variant)
         
         fakeicefist:execute(player, variant)
+
+        --Your adaptive punch (ice + ice) now has a 5% (per level) chance to trigger Glacial Palm wich deals damage to the target and all nearby enemies.
+
         
         player:say("Tempest Fist!", TALKTYPE_MONSTER_SAY)
 
@@ -366,6 +430,7 @@ function onCastSpell(player, variant)
         local base = (level / 4) + (magic * 3)
         local maxhp = player:getMaxHealth()
         local heal = math.floor(base + (maxhp * 0.05))
+        --Increase the healing effectiveness of your adaptive punch (life + life) by 10% (per level)
         
         healingfist:execute(player, variant)
         

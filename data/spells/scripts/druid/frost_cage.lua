@@ -2,14 +2,15 @@ local combat = Combat()
 local combat2 = Combat()
 
 local time_between_hits2 = 1.75 --seconds
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, 438)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
+combat2:setArea(createCombatArea(AREA_SQUARE1X1))
 
 
 function onGetFormulaValues(player, skill, attack, factor)
@@ -38,32 +39,14 @@ end
 combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
 
 
-local function castSpell(creatureId, variant)
+local function castSpell(creatureId, variant, targetId)
 	local creature = Creature(creatureId)
 	if not creature then
 		return
-	end
-	
-	if creature:getTarget() then
-		creature:getTarget():getPosition():sendMagicEffect(173)
-	else
-		return 
-	end
-	
-    combat:execute(creature, variant)
-	
-end
-
-local function castSpell2(creatureId, variant)
-	local creature = Creature(creatureId)
-	if not creature then
-		return
-	end
-	
+	end	
     combat2:execute(creature, variant)
+	
 end
-
-
 
 function onCastSpell(creature, variant)
 if not creature then
@@ -71,15 +54,9 @@ if not creature then
     end
 local target = creature:getTarget()
 
-local INFECTION_SUBID = 101
-  if target:getCondition(CONDITION_POISON) then
-	target:attachEffectById(122, true)
-  addEvent(castSpell, 1250, creature:getId(), variant)
-  else
-  addEvent(castSpell2, 1250, creature:getId(), variant)
-  target:attachEffectById(115, true)
-  end
-  
+  addEvent(castSpell,650, creature:getId(), variant, target:getId())
+
+  target:attachEffectById(119, true)
   
   return true
 end

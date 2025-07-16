@@ -1,5 +1,5 @@
 local config = {
-	Duration = 10,
+	Duration = 11,
 	Ticks_Between = 500,
 	Ticks_Effect = 500,
 	Effect = 560,
@@ -119,21 +119,31 @@ function onCastSpell(creature, variant)
 function doHeal_living_ground(creature, target)
     if not player then
         stopEvent(event)
-        return false
+        return
     end
 
-    if not healtargets(player, target) then
-        return false
-    end
-
-    local min = (player:getLevel() / 5) +  (player:getMagicLevel() * 4.0) + 35
+    if healtargets(player, target) then
+		--print target name
+		print("heal target name", target:getName())
+	local min = (player:getLevel() / 5) +  (player:getMagicLevel() * 4.0) + 35
     local max = (player:getLevel() / 5) +  (player:getMagicLevel() * 4.5) + 45
     local FinalHealth = math.random(min, max)
 
     target:addHealth(FinalHealth)
     target:getPosition():sendMagicEffect(CONST_ME_HPUP)
-
-    return true
+		return true
+	elseif not healtargets(player, target) and not target:isNpc() then
+		print("damage target name", target:getName())
+		--PassiveSkills.ThornedSanctuary as % of players max hp as damage
+		local thornedSanctuary = player:getStorageValue(PassiveSkills.ThornedSanctuary) or 0
+		local damage = player:getMaxHealth() * (thornedSanctuary / 100)
+		print("damage", damage)
+		doTargetCombatHealth(player:getId(), target:getId(), COMBAT_EARTHDAMAGE, -damage, -damage, 17)
+		target:getPosition():sendMagicEffect(CONST_ME_HPMANA)
+		return true
+	else
+		return false
+	end
 end
 
 combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "doHeal_living_ground")

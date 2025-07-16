@@ -29,6 +29,12 @@ function onGetFormulaValues(player, skill, attack, factor)
 
     local min = (level / 5) + (power * 0.10) + (attack * 4.0) + 300
     local max = (level / 5) + (power * 0.11) + (attack * 4.1) + 350
+
+    local forceofnature = player:getStorageValue(PassiveSkills.ForceOfNature)
+    if forceofnature > 0 then
+        min = min + (min * forceofnature / 100)
+        max = max + (max * forceofnature / 100)
+    end
     return -min, -max
 end
 
@@ -44,6 +50,12 @@ function onGetFormulaValues2(player, skill, attack, factor)
 
     local doublemin = min * 2
     local doublemax  = max * 2
+
+    local forceofnature = player:getStorageValue(PassiveSkills.ForceOfNature)
+    if forceofnature > 0 then
+        doublemin = doublemin + (doublemin * forceofnature / 100)
+        doublemax = doublemax + (doublemax * forceofnature / 100)
+    end
     return -doublemin, -doublemax
 end
 

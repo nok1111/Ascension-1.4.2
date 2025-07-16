@@ -31,7 +31,6 @@ combats[1]:addCondition(haste_bear)
 
 -- Combat 2: Max Health Increase
 local maxhp_bear_bear = Condition(CONDITION_ATTRIBUTES)
-maxhp_bear_bear:setParameter(CONDITION_PARAM_SUBID, 600)
 maxhp_bear_bear:setParameter(CONDITION_PARAM_TICKS, 15000)
 maxhp_bear_bear:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 200)
 maxhp_bear_bear:setParameter(CONDITION_PARAM_BUFF_SPELL, true)

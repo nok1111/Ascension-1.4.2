@@ -26,10 +26,11 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
 
     local pos = creature:getPosition()
     local playerpos = player:getPosition()
-    pos:sendMagicEffect(42)
+    --pos:sendMagicEffect(42)
     Position(playerpos):sendDistanceEffect(pos, effectId)
     --Position(pos.x + 1, pos.y + 1, pos.z):sendMagicEffect(341)
     combat:execute(player, variant)
+    creature:attachEffectById(112, true)
 
     -- Add paralyze condition
     local paralyze = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)

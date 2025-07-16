@@ -9,7 +9,7 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_NONE)
 
 
-function removePet(creatureId)
+local function Removeorb(creatureId)
     local c = Creature(creatureId)
     if not c then return false end
 
@@ -30,8 +30,9 @@ function onCastSpell(creature, variant)
         local summonedMonster = Game.createMonster(config.summonMonster, targetPos, false, true)
         if summonedMonster then
 			creature:addSummon(summonedMonster)
+            summonedMonster:attachEffectById(128, true)
             targetPos:sendMagicEffect(config.effectOnSummon)
-			addEvent(removePet, 5 * 1000, summonedMonster:getId())
+			addEvent(Removeorb, 5 * 1000, summonedMonster:getId())
 			 summonedMonster:sendProgressbar(5 * 1000, false)
         end
     end, 300) -- Adjust the delay as needed for the distance effect to reach the target

@@ -3,7 +3,9 @@ local stunDuration = 3000
 --
 local combatnodot = Combat()
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+--effect
+combat:setParameter(COMBAT_PARAM_EFFECT, 448)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
@@ -44,58 +46,22 @@ end
 combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
 
-
-
-local function animation(pos, playerpos)
-
-        if Position(pos):isSightClear(playerpos) then
-			Position(pos):sendMagicEffect(450)
-			--Position(pos):sendMagicEffect(449)
-            --Position(pos):sendMagicEffect(448)
-        end
-
-end
-
 function onTargetCreature(creature, target)
-	
-    if creature:getId() and target:getMaster() and target:getMaster() == creature:getId() then
-        -- attacking master summons
-            return false
+	if not creature or not target then
+        return 
+    end  
+    if not target:getCondition(CONDITION_POISON) then
+        return
     end
-	
-	
-    if creature:isPlayer() and target:isPlayer() then
-    --target party protection
-        local party = creature:getParty()
-        if party then
-            local targetParty = target:getParty()
-            if targetParty and targetParty == party then
-                return false
-            end
+
+   local entanglingRoots = creature:getStorageValue(PassiveSkills.EntanglingRoots)
+   if entanglingRoots > 0 then
+    local random = math.random(1, 100)
+        if random <= entanglingRoots then
+            target:addCondition(stun)
+            target:attachEffectById(116, true)	
         end
 	end
-	
-target:sendProgressbar(stunDuration, true)
-
-local position = target:getPosition()
-	local positioneffect = position
-    positioneffect.x = position.x + 1
-    positioneffect.y = position.y + 1
-    
-if target:isMonster() then
---print(tostring(target:getSkull()))
-	if target:getSkull() == 0 then 
-		
-		target:addCondition(stun)
-		positioneffect:sendMagicEffect(448, "Impaled")
-		
-	end
-elseif target:isPlayer() then
-		target:addCondition(stun)
-		positioneffect:sendMagicEffect(448, "Impaled")
-return false
-end
-
 	return true
 end
 
@@ -188,8 +154,6 @@ function onCastSpell(creature, var)
             --print(animationDelay)
         end
 		
-        addEvent(animation, animationDelay, damagepos, playerpos)
-		 local party = creature:getParty()
 		if creature then
 			
 		CastSpell(creature:getId(), variant)

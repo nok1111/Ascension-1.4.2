@@ -30,10 +30,12 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
 
     local pos = creature:getPosition()
     local playerpos = player:getPosition()
-    pos:sendMagicEffect(6)
+    --pos:sendMagicEffect(6)
     Position(playerpos):sendDistanceEffect(pos, effectId)
      Position(pos.x + 1, pos.y + 1, pos.z):sendMagicEffect(341)
     combat:execute(player, variant)
+
+    creature:getPosition():attachEffectById(111, true)
 
     local magic = player:getMagicLevel()
     local level = player:getLevel()
