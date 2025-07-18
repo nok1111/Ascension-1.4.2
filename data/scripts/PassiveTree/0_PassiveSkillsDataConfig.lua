@@ -1889,61 +1889,63 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Scaled Rupture",
-						description = "Increase Rend damage by 5% (per level)",
-						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
+						name = "Short Circuit",
+						description = "Your attacks deal extra 20% (per level) damage to enemies affected by Static Shock.",
+						effect = {{type = "storage", name = "ShortCircuit", storage = PassiveSkills.ShortCircuit, value = 5}},
 						maxLevel = 10
 					},
 					[2] = {
-						name = "Colossal Blows",
-						description = "Increase physical damage done by 5% per level",
-						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
+						name = "Kinetic Dancer",
+						description = "Increase physical damage done by 5% and your energy damage by 3% (per level)",
+						effect = {
+							{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 3},
+							{type = "storage", name = "CosmicFocus", storage = PassiveSkills.CosmicFocus, value = 3}
+						},
 						maxLevel = 4
 					},
 					[3] = {
-						name = "Shockwave",
-						description = "Learn spell Shockwave (requires level 50)",
-						effect = {{type = "spell", name = "Shockwave"}},
-						maxLevel = 1,
+						name = "High Voltage",
+						description = "Your Short Circuit now have a chance to grant you High Voltage, wich increases your magic level by 10% (per level)",
+						effect = {
+							{type = "storage", name = "HighVoltage", storage = PassiveSkills.HighVoltage, value = 10}
+						},
+						maxLevel = 5,
 						prevNodeLevelNeeded = 4
 					},
 					[4] = {
-						name = "Lifeblood Strike",
-						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						name = "Stormpiercer",
+						description = "Lightning Spear have now grants you 10% attack speed for 8 seconds and deals 8% more damage per level",
 						effect = {
 							{
 								type = "storage",
-								name = "LifebloodStrike",
-								storage = PassiveSkills.LifebloodStrike,
-								value = 25
+								name = "Stormpiercer",
+								storage = PassiveSkills.Stormpiercer,
+								value = 8
 							}
 						},
-						maxLevel = 2,
-						prevNodeLevelNeeded = 4
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Heartseeker",
-						description = "Increase critical strike chance by 2% (per level)",
+						name = "Tempest Coin",
+						description = "Lern spell Tempest Coin\nToss a tempest coin in the air that will grant you Tempest Charges, Tempest charges will determine the times Charged Strike will be triggered on next cast based on token results (1-3).",
 						effect = {
 							{
-								type = "condition",
-								name = "Critical Strike",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+								type = "spell",
+								name = "Tempest Coin"
 							}
 						},
-						maxLevel = 3,
-						prevNodeLevelNeeded = 2
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Apex Predator",
-						description = "Increases all damage and attack speed by per missing health",
+						name = "Gambler's Luck",
+						description = "Increase the max number result from tempest coin by 1 (per level)",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "GamblerLuck", storage = PassiveSkills.GamblerLuck, value = 1}
 						},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						maxLevel = 3,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -1952,10 +1954,10 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Lightning Riposte",
+						description = "You have a 2% (per level) chance to deflect physical damage and send a small portion back to the attacker as energy damage.",
+						effect = {{type = "storage", name = "LightningRiposte", storage = PassiveSkills.LightningRiposte, value = 5}},
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Placeholder B",
