@@ -38,6 +38,7 @@ function onCastSpell(creature, var, tar)
     -- Add animation
     if targetmonster then
         targetmonster:attachEffectById(66, true)
+        targetmonster:attachEffectById(135, true)
     end
     return true
 end

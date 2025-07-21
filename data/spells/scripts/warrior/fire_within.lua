@@ -97,6 +97,7 @@ function onCastSpell(creature, variant)
 		positionnube2.x = creature:getPosition().x + 3
 		positionnube2.y = creature:getPosition().y + 3
         positionnube2:sendMagicEffect(655)
+        creature:attachEffectById(129, true)
 	
     return true
 end

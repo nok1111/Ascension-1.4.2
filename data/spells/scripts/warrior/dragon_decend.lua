@@ -20,7 +20,7 @@ function onGetFormulaValues(player, skill, attack, factor)
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
-local function castSpell(creatureId, variant, position_effect)
+local function castSpell(creatureId, variant, position_effect, targetId)
 	local creature = Creature(creatureId)
 	if not creature then
 		return
@@ -31,6 +31,11 @@ local function castSpell(creatureId, variant, position_effect)
 	positioneffect3:sendMagicEffect(580)
 	positioneffect3:sendMagicEffect(341)
     combat:execute(creature, variant)
+
+	local target = Creature(targetId)
+	if target then
+		target:attachEffectById(131, true)
+	end
 end
 
 function onCastSpell(creature, variant)
@@ -42,7 +47,7 @@ if not creature then
 	local position = target:getPosition()
 	local position_effect = target:getPosition()
 
-addEvent(castSpell, 700, creature:getId(), variant, position_effect)
+addEvent(castSpell, 700, creature:getId(), variant, position_effect, target:getId())
 
    
 	
@@ -57,6 +62,7 @@ addEvent(castSpell, 700, creature:getId(), variant, position_effect)
     position_target2.x = target:getPosition().x + 1
     position_target2.y = target:getPosition().y + 2
 	position_target2:sendMagicEffect(654)
+
 	else
 	local positioneffect = position
     positioneffect.x = position.x + 2

@@ -11,14 +11,15 @@ local area = {0, 0}
 local storage = {}
 local spell = SpellLib:new(area)
 
-spell:doSetCombatParam(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+spell:doSetCombatParam(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 spell:doSetCombatParam(COMBAT_PARAM_EFFECT, config.blood_effect, 1)
 spell:doSetCombatParam(COMBAT_PARAM_EFFECT, config.red_aura, 2)
 spell:doSetCombatParam(COMBAT_PARAM_BLOCKSHIELD, true)
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, math.random(489, 492))
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+--combat:setParameter(COMBAT_PARAM_EFFECT, math.random(489, 492))
+combat:setArea(createCombatArea(AREA_SQUARE1X1))
 
 function onGetFormulaValues(player, skill, attack, factor)
     local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
@@ -85,8 +86,8 @@ local function step3(param)
     if #positionsFree > 0 then
         local newPos = positionsFree[math.random(1, #positionsFree)]
         doTeleportThing(param.cid, newPos)
-        doSendMagicEffect(newPos, math.random(489, 492))
-		doSendMagicEffect(newPos, config.blood_aura)
+       -- doSendMagicEffect(newPos, math.random(489, 492))
+		--doSendMagicEffect(newPos, config.blood_aura)
 		
 
         p:setGhostMode(true)
@@ -185,6 +186,8 @@ function onCastSpell(p, var)
         local cid = p:getId()
         local guid = p:getGuid()
         storage[guid] = {pos = p:getPosition()}
+        p:attachEffectById(138, true)
+        
         
         if storage[guid] then   
             addEvent(function()
@@ -204,6 +207,7 @@ function onCastSpell(p, var)
         step1({cid = cid, p = p, var = var, countEffect = 0, count = 0, nextMonster = 0, monsters = monsters, currentSpeed = currentSpeed})
         return true
     end
+    
 
     return false
 end

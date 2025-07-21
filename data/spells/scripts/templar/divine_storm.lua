@@ -176,7 +176,7 @@ local function sendAnimationOutside(cid)
 	  	for i=0, #configOutside, 1 do
 	  		Position(configOutside[i][1]):sendDistanceEffect(Position(configOutside[i][2]), CONST_ANI_HOLY)
 			Position(configOutside[i][1]):sendDistanceEffect(Position(configOutside[i][2]), CONST_ANI_SMALLHOLY)
-			 positioneffect:sendMagicEffect(344)
+			 --positioneffect:sendMagicEffect(344)
 	  	end 
 	end
 end
@@ -184,14 +184,12 @@ end
 
 function onCastSpell(creature, variant)
 
-local position = creature:getPosition()
-	local positioneffect = position
-    positioneffect.x = position.x + 1
-    positioneffect.y = position.y + 1
-	
-    positioneffect:sendMagicEffect(344)
 	
 	combatheal:execute(creature, variant)
+
+	creature:attachEffectById(132, true)
+	creature:attachEffectById(133, true)
+
 	
 	-------------------------------------
 	local cid = creature:getId()
@@ -201,13 +199,13 @@ local position = creature:getPosition()
 	addEvent(doDamage, 400, cid, Outside)
 
 
-	addEvent(sendAnimationCenter, 0, cid)
-	addEvent(sendAnimationOutside, 50, cid)
-	addEvent(sendAnimationCenter, 150, cid)
-	addEvent(sendAnimationOutside, 200, cid)
-	addEvent(sendAnimationCenter, 300, cid)
-	addEvent(sendAnimationOutside, 350, cid)
-	addEvent(sendAnimationCenter, 450, cid)
-	addEvent(sendAnimationOutside, 500, cid)
+	--addEvent(sendAnimationCenter, 0, cid)
+	--addEvent(sendAnimationOutside, 50, cid)
+	--addEvent(sendAnimationCenter, 150, cid)
+	--addEvent(sendAnimationOutside, 200, cid)
+	--addEvent(sendAnimationCenter, 300, cid)
+	--addEvent(sendAnimationOutside, 350, cid)
+	--addEvent(sendAnimationCenter, 450, cid)
+	--addEvent(sendAnimationOutside, 500, cid)
 	return true
 end

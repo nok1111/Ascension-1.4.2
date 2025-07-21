@@ -51,7 +51,6 @@ function onCastSpell(creature, var, tar)
         enemy = creature:getTarget()
         targetPosition = enemy:getPosition()
         enemyDirection = enemy:getDirection()
-		targetmonster:sendProgressbar(stunDuration, false)
     else
         creature:sendCancelMessage("You need to select a target.")
         creaturePosition:sendMagicEffect(CONST_ME_POFF)
@@ -68,17 +67,21 @@ function onCastSpell(creature, var, tar)
     else
         targetPosition.x = targetPosition.x + 1
     end   
+     --send magic effect with offset x and y, below
+     local creaturePositionoffset = creature:getPosition()
+     local positioneffect = creaturePositionoffset
+     positioneffect.x = creaturePositionoffset.x + 1
+     positioneffect.y = creaturePositionoffset.y + 1
+     
+     positioneffect:sendMagicEffect(1070)
 	
-	
-       
-    creature:teleportTo(targetPosition)
+	creature:attachEffectById(134, true)
+    creature:teleportTo(targetPosition)  
     creature:setDirection(enemyDirection)
-    creaturePosition:sendMagicEffect(CONST_ME_SHADOWPORTAL)
-    creaturePosition = creature:getPosition()
-    creaturePosition:sendMagicEffect(CONST_ME_SHADOWPORTAL)
-	
-	if targetmonster then
-	creature:setTarget(targetmonster)
+   
+    
+	if creature:getTarget() then
+	creature:setTarget(creature:getTarget())
 	end
 	
 	 -- Damage formula

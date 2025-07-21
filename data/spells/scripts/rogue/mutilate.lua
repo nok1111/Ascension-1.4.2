@@ -14,7 +14,7 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local magic = player:getMagicLevel()
 
 	local min = ((level / 5) + (power * 0.045) + attack) * 0.4
-	local max = ((level / 5) + (power * 0.085) + attack * 1.5) * 0.4
+	local max = ((level / 5) + (power * 0.065) + attack * 1.3) * 0.4
 
 	local butchersArt = player:getStorageValue(PassiveSkills.ButchersArt) or 0
 	if butchersArt > 0 then
@@ -28,7 +28,7 @@ function onGetFormulaValues(player, skill, attack, factor)
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
-local function castSpell(creatureId, variant)
+local function castSpell(creatureId, variant, targetId)
 	local creature = Creature(creatureId)
 	if not creature then
 		return
@@ -39,25 +39,27 @@ end
 
 function onCastSpell(creature, variant)
 if not creature then
-        return false
+        return 
     end
    local target = creature:getTarget()
 	local position = target:getPosition()
-	local positioneffect = position
-    positioneffect.x = position.x + 1
-    positioneffect.y = position.y + 1
 	
-    positioneffect:sendMagicEffect(361)
 	
 
 	local butchersArt = creature:getStorageValue(PassiveSkills.ButchersArt) or 0
 	if butchersArt > 0 then
 		combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
+		target:attachEffectById(137, true)
+	else
+		combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+		target:attachEffectById(136, true)
 	end
 	
 combat:execute(creature, variant) 
-addEvent(castSpell, 400, creature:getId(), variant)
-addEvent(castSpell, 600, creature:getId(), variant)
+
+addEvent(castSpell, 400, creature:getId(), variant, target:getId())
+addEvent(castSpell, 600, creature:getId(), variant, target:getId())
+addEvent(castSpell, 1000, creature:getId(), variant, target:getId())
   return true
 end
 

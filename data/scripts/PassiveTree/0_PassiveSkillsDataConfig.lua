@@ -1960,10 +1960,13 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Lightning Waltz",
+						description = "Your elusive dance now heals you for 20% of your max health (per level)",
+						effect = {
+							{type = "storage", name = "LightningWaltz", storage = PassiveSkills.LightningWaltz, value = 1}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Placeholder C",

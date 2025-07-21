@@ -391,7 +391,7 @@
 	<instant group="attack" spellid="173" name="Lightning Orb" words="lightning orb" lvl="80" mana="75" prem="0" needweapon="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="light dancer/lightning_orb.lua">
     <vocation name="Light Dancer" />
 	</instant>
-	<instant group="support" spellid="174" name="Swift Elusion" words="swift elusion" lvl="70"  mana="0" premium="0" selftarget="1" needweapon="0" cooldown="15000" groupcooldown="1900" needlearn="0" script="light dancer/fission_break.lua">
+	<instant group="support" spellid="174" name="Elusive Dance" words="elusive dance" lvl="70"  mana="0" premium="0" selftarget="1" needweapon="0" cooldown="15000" groupcooldown="1900" needlearn="0" script="light dancer/fission_break.lua">
     <vocation name="Light Dancer" />
 	</instant>
 	<instant group="attack" spellid="175" name="Chain of Lightning" words="chain of lightning" lvl="50" mana="120" prem="0" needtarget="1" cooldown="3000" groupcooldown="1900" needlearn="0" script="light dancer/chain_of_lightning.lua">

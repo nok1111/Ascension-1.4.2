@@ -199,6 +199,7 @@ function onCastSpell(creature, variant)
 	  combat5:execute(creature, variant)
 	  
 	burning_within(creature:getId(), variant)
+	creature:attachEffectById(130, true)
 		
 
     return true

@@ -98,15 +98,20 @@ local VirulentRupture = creature:getStorageValue(PassiveSkills.VirulentRupture) 
 		if math.random(1, 100) <= (VirulentRupture) then				
 			bleed_mastery(creature:getId(), variant)
 			combatbleed:execute(creature, variant)
+			target:attachEffectById(141, true)
 		end
 	end
   
   if target:getCondition(CONDITION_STUN, 0) or target:getSkull() > 0 then
   --combat2:execute(creature, var) 
+  target:attachEffectById(140, true)
+  
   
 	castSpell2(creature:getId(), variant)
   else
 	combat:execute(creature, variant) 
+	target:attachEffectById(139, true)
+
   end
   
   return true
