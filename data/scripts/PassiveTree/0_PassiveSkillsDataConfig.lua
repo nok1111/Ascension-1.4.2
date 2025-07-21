@@ -2062,6 +2062,32 @@ PassiveSkills.treeData = {
 					}
 				},
 			},
+			[4] = {
+				color = '#9d9ea1',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Light's ON",
+						description = "Your short circuit procs now restore 2% of your total mana per hit. (per level)",
+						effect = {{type = "storage", name = "LightsON", storage = PassiveSkills.LightsON, value = 2}},
+						maxLevel = 3
+					},
+					[2] = {
+						name = "Critical Flow",
+						description = "Increase your cruitical chance by an aditional 10% (per level)",
+						effect = {
+							{
+								type = "condition",
+								name = "Critical Strike",
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 10}}
+							}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 3
+					},			
+				},
+			},
 		},
 	},
 	[10] = {			-- Tree 4
