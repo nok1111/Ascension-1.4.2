@@ -403,7 +403,7 @@
 	<instant group="support" spellid="177" name="Overcharge" words="overcharge" lvl="45"  mana="115" prem="0" aggressive="0" selftarget="1" cooldown="30000" groupcooldown="0" needlearn="0" script="light dancer/overcharge.lua">
 	<vocation name="Light Dancer" />
 	</instant>
-	<instant group="support" spellid="178" name="Magnetic Field" words="magnetic field" lvl="90" mana="175"  premium="0" aggressive="0" selftarget="1" cooldown="35000" groupcooldown="1900" needlearn="0" script="light dancer/magnetic_field.lua">
+	<instant group="attack" spellid="178" name="Elusive Blade" words="elusive blade" lvl="90" mana="175"  premium="0" aggressive="1" selftarget="1" cooldown="35000" groupcooldown="1900" needlearn="0" script="light dancer/elusive_blade.lua">
 	<vocation name="Light Dancer" />
 	</instant>
 	<instant group="attack" spellid="179" name="Magnetic Orb" words="Magnetic Orb" lvl="100" mana="190" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="26000" groupcooldown="1900" needweapon="0" needlearn="0" script="light dancer/magnetic_orb.lua">

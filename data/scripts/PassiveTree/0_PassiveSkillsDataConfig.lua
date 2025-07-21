@@ -1892,7 +1892,7 @@ PassiveSkills.treeData = {
 						name = "Short Circuit",
 						description = "Your attacks deal extra 20% (per level) damage to enemies affected by Static Shock.",
 						effect = {{type = "storage", name = "ShortCircuit", storage = PassiveSkills.ShortCircuit, value = 5}},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Kinetic Dancer",
@@ -1901,7 +1901,8 @@ PassiveSkills.treeData = {
 							{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 3},
 							{type = "storage", name = "CosmicFocus", storage = PassiveSkills.CosmicFocus, value = 3}
 						},
-						maxLevel = 4
+						maxLevel = 4,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "High Voltage",
@@ -1914,7 +1915,7 @@ PassiveSkills.treeData = {
 					},
 					[4] = {
 						name = "Stormpiercer",
-						description = "Lightning Spear have now grants you 10% attack speed for 8 seconds and deals 8% more damage per level",
+						description = "Lightning Spear now grants you 10% attack speed for 8 seconds and deals 8% more damage per level",
 						effect = {
 							{
 								type = "storage",
@@ -1945,7 +1946,16 @@ PassiveSkills.treeData = {
 							{type = "storage", name = "GamblerLuck", storage = PassiveSkills.GamblerLuck, value = 1}
 						},
 						maxLevel = 3,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 1
+					},
+					[7] = {
+						name = "Jackpot",
+						description = "Increase the damage of your casted charged strike based on your Tempest Coin roll by 1 % (per level) per roll",
+						effect = {
+							{type = "storage", name = "Jackpot", storage = PassiveSkills.Jackpot, value = 1}
+						},
+						maxLevel = 3,
+						prevNodeLevelNeeded = 3
 					}
 				},
 			},
@@ -1969,55 +1979,12 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
-						},
-						maxLevel = 5
-					},
-					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
-					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
-					},
-					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
-					}
+						name = "Magnetic Shield",
+						description = "Learn Magnetic Shield spell\nGain damage immunity for 5 seconds to all damage types but reduce your damage done by 80%",
+						effect = {{type = "spell", name = "Magnetic Shield"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
+					},				
 				},
 			},
 			[3] = {
@@ -2025,58 +1992,64 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Blade Mastery",
+						description = "Increase your Melee skill by an aditional 5% (per level).",
+						effect = {
+							--condition skill sword by %
+							{
+								type = "condition",
+								name = "Skill Sword",
+								percent = true,
+								conditionType = CONDITION_ATTRIBUTES,
+								params = {{param = CONDITION_PARAM_SKILL_SWORDPERCENT, value = 10}}
+							}
+						},
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
+						name = "Veil of Swords",
+						description = "Learn Veil of Swords\nDeal physical damage to all enemies in a 3x3 area",
+						effect = {{type = "spell", name = "Veil of Swords"}},
+						maxLevel = 1,
 						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "God of Spears",
+						description = "Lightning Spear is no longer range but its damage is increased by 20% and grants you a Elusive Charge.",
 						effect = {
 							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
+								type = "storage",
+								name = "GodOfSpears",
+								storage = PassiveSkills.GodOfSpears,
+								value = 1
 							}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 3
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+						name = "Dancing Edge ",
+						description = "Elusive Blade now has a 20% (per level) chance to trigger a second time at 50% effectiveness and grants you a Elusive Charge.",
 						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
+							{type = "storage", name = "DancingEdge", storage = PassiveSkills.DancingEdge, value = 20}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
+						name = "Veil of Echos",
+						description = "If you have 2 or more Elusive Charges, Veil of swords now turns into veil of Echos. Veil of Echos consume all Elusive Charges and deals high amounts of physical damage.",
+						effect = {
+							{
+								type = "storage",
+								name = "VeilOfEchos",
+								storage = PassiveSkills.VeilOfEchos,
+								value = 1
+							}
+							
+						},
 						maxLevel = 5
-					},
+					}, 
 					[6] = {
 						name = "Placeholder F",
 						description = "gain +1% y per level \ngain +1 z per level",
