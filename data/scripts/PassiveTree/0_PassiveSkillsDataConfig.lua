@@ -2015,7 +2015,7 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "God of Spears",
-						description = "Lightning Spear is no longer range but its damage is increased by 20% and grants you a Elusive Charge.",
+						description = "Lightning Spear is no longer range but its damage is increased by 20% and grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
 						effect = {
 							{
 								type = "storage",
@@ -2029,7 +2029,7 @@ PassiveSkills.treeData = {
 					},
 					[4] = {
 						name = "Dancing Edge ",
-						description = "Elusive Blade now has a 20% (per level) chance to trigger a second time at 50% effectiveness and grants you a Elusive Charge.",
+						description = "Elusive Blade now has a 20% (per level) chance to trigger a second time at 50% effectiveness and grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
 						effect = {
 							{type = "storage", name = "DancingEdge", storage = PassiveSkills.DancingEdge, value = 20}
 						},
@@ -2048,16 +2048,17 @@ PassiveSkills.treeData = {
 							}
 							
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					}, 
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Reverberation",
+						description = "Increase Veil of Echos and Veil of Swords damage by an aditional 10% (per level)",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "Reverberation", storage = PassiveSkills.Reverberation, value = 10}
 						},
-						maxLevel = 17
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
