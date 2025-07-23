@@ -2091,7 +2091,7 @@ PassiveSkills.treeData = {
 		},
 	},
 	[10] = {			-- Tree 4
-		name = "Dragonknight Talents",
+		name = "Archer Talents",
 		background = "7",
 		branches = {
 			[1] = {
@@ -2099,21 +2099,26 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Scaled Rupture",
-						description = "Increase Rend damage by 5% (per level)",
-						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
-						maxLevel = 10
+						name = "Volatile Ammunition",
+						description = "Increase your fire damage done by an additional 10% (per level)", 
+						effect = {
+							{ type = "storage", name = "BlazingDecree", storage = PassiveSkills.BlazingDecree, value = 10 }
+						},
+						maxLevel = 3
 					},
 					[2] = {
-						name = "Colossal Blows",
-						description = "Increase physical damage done by 5% per level",
-						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
-						maxLevel = 4
+						name = "Explosive Shot",
+						description = "Learn Explosive Shot\nShoot a powerful shot that explodes on impact after a short delay",
+						effect = {{type = "spell", name = "Explosive Shot"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Shockwave",
-						description = "Learn spell Shockwave (requires level 50)",
-						effect = {{type = "spell", name = "Shockwave"}},
+						name = "Demolition",
+						description = "Your fire damage have a 3% chance (per level) to trigger Demolition, Demolition deals aoe physical damage on impact.",
+						effect = {
+							{type = "storage", name = "Demolition", storage = PassiveSkills.Demolition, value = 1}
+						},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 4
 					},
