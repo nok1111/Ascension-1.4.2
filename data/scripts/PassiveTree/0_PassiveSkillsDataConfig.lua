@@ -2100,7 +2100,7 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Volatile Ammunition",
-						description = "Increase your fire damage done by an additional 10% (per level)", 
+						description = "Increase your fire and physical damage done by an additional 10% (per level)", 
 						effect = {
 							{ type = "storage", name = "BlazingDecree", storage = PassiveSkills.BlazingDecree, value = 10 }
 						},
@@ -2115,50 +2115,42 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Demolition",
-						description = "Your fire damage have a 3% chance (per level) to trigger Demolition, Demolition deals aoe physical damage on impact.",
+						description = "Your fire damage have a 2% chance (per level) to trigger Demolition, Demolition deals aoe physical damage on impact.",
 						effect = {
 							{type = "storage", name = "Demolition", storage = PassiveSkills.Demolition, value = 1}
 						},
-						maxLevel = 1,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 4
 					},
 					[4] = {
-						name = "Lifeblood Strike",
-						description = "Increase the health gain from your brutal swing by 25% (per level)",
+						name = "Volatile Impact",
+						description = "Demolition Proc's now grant you 10% (per level) critical chance and attack speed for 5 seconds",
 						effect = {
 							{
 								type = "storage",
-								name = "LifebloodStrike",
-								storage = PassiveSkills.LifebloodStrike,
-								value = 25
+								name = "VolatileImpact",
+								storage = PassiveSkills.VolatileImpact,
+								value = 10
 							}
 						},
-						maxLevel = 2,
-						prevNodeLevelNeeded = 4
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Heartseeker",
-						description = "Increase critical strike chance by 2% (per level)",
-						effect = {
-							{
-								type = "condition",
-								name = "Critical Strike",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
-							}
-						},
-						maxLevel = 3,
-						prevNodeLevelNeeded = 2
+						name = "Explosive Barrel",
+						description = "Learn Explosive Barrel\nPlace a barrel at your target location exploding after a 4 seconds delay, igniting all enemies nearby.",
+						effect = {{type = "spell", name = "Explosive Barrel"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
-						name = "Apex Predator",
-						description = "Increases all damage and attack speed by per missing health",
+						name = "Detonation Expert",
+						description = "Your  Explisive Shot now instantly detonates your existing explosive barrels, and increase their damage by an aditional 10%",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "DetonationExpert", storage = PassiveSkills.DetonationExpert, value = 10}
 						},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					}
 				},
 			},
@@ -2167,57 +2159,45 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Winter Hunter",
+						description = "Increase your ice and physical damage by an aditional 10% (per level)",
+						effect = {
+							{type = "storage", name = "WinterHunter", storage = PassiveSkills.WinterHunter, value = 10}
+						},
+						maxLevel = 5,
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
-						prevNodeLevelNeeded = 3
+						name = "Ice Barrel",
+						description = "Learn Ice Barrel\nPlace a barrel at your location exploding after a short delay, freezing all enemies nearby.",
+						effect = {{type = "spell", name = "Ice Barrel"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
+
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
+						name = "Frost Barrage",
+						description = "Increase the number of arrows you send when using frost shots by 1 (per level)",
 						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
+							{type = "storage", name = "FrostBarrage", storage = PassiveSkills.FrostBarrage, value = 1}
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					},
 					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
-						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
-						},
-						maxLevel = 5
+						name = "Ice Arrow",
+						description = "Learn Ice Arrow\nShoot a powerful ice arrow that slows the target for 5 seconds, if target is already slowed or frozen, it will deal double damage.",
+						effect = {{type = "spell", name = "Ice Arrow"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+						name = "Momentum",
+						description = "Your auto attacks now have a 50% chance to grant you Momentum, which increases your attack speed for 1% (per level)  to a maximum of 200% for 5 seconds every time your attacks hit an enemy, this effect last until duration is over. Attacks will refresh the duration of momentum.",
+						effect = {
+							{type = "storage", name = "Momentum", storage = PassiveSkills.Momentum, value = 1}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					},
 					[6] = {
 						name = "Placeholder F",
