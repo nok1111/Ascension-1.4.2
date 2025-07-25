@@ -112,7 +112,7 @@ local PASSIVES = {
       type = "OnDefend",
       subid = 29513,
     },
-    trigger = function(player, attacker, damage, origin)
+    trigger = function(player, attacker, damage, primaryType, origin)
       return player:getCondition(CONDITION_ATTRIBUTES, 0, 29513)
     end,
     effect = function(player, attacker, damage)
@@ -135,7 +135,7 @@ local PASSIVES = {
       type = "OnDefend",
       subid = 29505,
     },
-    trigger = function(player, attacker, damage, origin)
+    trigger = function(player, attacker, damage, primaryType, origin)
       return player:getCondition(CONDITION_ATTRIBUTES, 0, 29505)
     end,
     effect = function(player, attacker, damage)
@@ -153,7 +153,7 @@ local PASSIVES = {
       type = "OnDefend",
       subid = 29508,
     },
-    trigger = function(player, attacker, damage, origin)
+    trigger = function(player, attacker, damage, primaryType, origin)
       return player:getCondition(CONDITION_ATTRIBUTES, 0, 29508)
     end,
     effect = function(player, attacker, damage)
@@ -299,7 +299,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.FallingStars,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_ENERGYDAMAGE then
         return false
       end
@@ -327,7 +327,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.CosmicFocus,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_ENERGYDAMAGE then
         return false
       end
@@ -349,7 +349,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.HolyDamage,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_HOLYDAMAGE then
         return false
       end
@@ -372,7 +372,7 @@ local PASSIVES = {
       type = "OnDefend",
       storage = PassiveSkills.ConsecratedProtection,
     },
-    trigger = function(player, target, damage, origin)
+    trigger = function(player, attacker, damage, primaryType, origin) 
       return player:getCondition(CONDITION_ATTRIBUTES, 0, 50)
     end,
     effect = function(player, attacker, damage)
@@ -390,17 +390,17 @@ local PASSIVES = {
   elusive_dance = {
     config = {
       type = "OnDefense",
-      storage = PassiveSkills.ElusiveDance,
+      storage = PassiveSkills.Quickstep,
     },
-    trigger = function(player, attacker, damage, primaryType)
-      local level = math.max(player:getStorageValue(PassiveSkills.ElusiveDance) or 0, 0)
+    trigger = function(player, attacker, damage, primaryType, origin)
+      local level = math.max(player:getStorageValue(PassiveSkills.Quickstep) or 0, 0)
       return level > 0
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
         return
       end
-      local level = math.max(player:getStorageValue(PassiveSkills.ElusiveDance) or 0, 0)
+      local level = math.max(player:getStorageValue(PassiveSkills.Quickstep) or 0, 0)
       if level > 0 then
         local dodgeChance = level -- 2% per level
         if math.random(1, 100) <= dodgeChance then
@@ -417,7 +417,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.ScentOfBlood,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       -- Check if target is bleeding
       return target and target:getCondition(CONDITION_BLEEDING)
     end,
@@ -440,7 +440,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.UnyieldingStrength,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_PHYSICALDAMAGE then
         return false
       end
@@ -580,7 +580,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.FrostDamage,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_ICEDAMAGE then
         return false
       end
@@ -604,7 +604,7 @@ local PASSIVES = {
       storage = PassiveSkills.ConsecratedStrikes,
     },
     -- Track hit counts per player
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_PHYSICALDAMAGE then return false end
       local level = math.max(player:getStorageValue(PassiveSkills.ConsecratedStrikes) or 0, 0)
       if level <= 0 then return false end
@@ -631,7 +631,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.BlazingDecree,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_FIREDAMAGE then
         return false
       end
@@ -652,7 +652,7 @@ local PASSIVES = {
       type = "OnAttack",
       storage = PassiveSkills.Pyromaniac,
     },
-    trigger = function(player, target, damage, primaryType)
+    trigger = function(player, target, damage, primaryType, origin)
       if primaryType ~= COMBAT_FIREDAMAGE then
         return false
       end
@@ -686,7 +686,7 @@ local PASSIVES = {
       subid = 29500,
       type = "OnAttack"
     },
-    trigger = function(player, target, damage, origin)
+    trigger = function(player, target, damage, primaryType, origin)
       return origin == ORIGIN_MELEE
     end,
     effect = function(player, target, damage)
@@ -710,8 +710,8 @@ local PASSIVES = {
       levelDifferenceFactor = 0.65,
       type = "OnAttack"
     },
-    trigger = function(player, target, damage, origin)
-      local monster_level = target:getMonsterLevel()
+    trigger = function(player, attacker, damage, primaryType, origin)
+      local monster_level = attacker:getMonsterLevel()
       local player_level = player:getLevel()
       return monster_level > 0 and (monster_level - player_level) > 0
     end,
@@ -738,7 +738,7 @@ local PASSIVES = {
       amplificationFactor = 0.065, -- 6.5% more damage per level difference
       type = "OnDefend"
     },
-    trigger = function(player, target, damage, origin)
+    trigger = function(player, target, damage, primaryType, origin)
       local monster_level = target:getMonsterLevel()
       local player_level = player:getLevel()
       return monster_level > 0 and (monster_level - player_level) > 0
@@ -764,7 +764,7 @@ local PASSIVES = {
       type = "OnAttack"
     },
     lastUse = {},
-    trigger = function(player, target, damage, origin)
+    trigger = function(player, target, damage, primaryType, origin)
       return true
     end,
     effect = function(player, target, damage)
@@ -815,40 +815,43 @@ local PASSIVES = {
   
   light_dancer = {
     config = {
-      vocation = 9,
-      type = "OnAttack"
+      type = "OnAttack",
+      storage = PassiveSkills.ShortCircuit,
     },
-    trigger = function(player, target, damage, origin)
-      return origin == ORIGIN_MELEE and target:getCondition(CONDITION_ENERGY, 0, 25965)
+    trigger = function(player, target, damage, primaryType, origin)
+      if origin ~= ORIGIN_MELEE then
+        print("Origin is not melee")
+        return
+      end
+      return target:getCondition(CONDITION_ENERGY, 0, 25965)
     end,
     effect = function(player, target, damage)
       if not player or not target or not damage then
         return
       end
-      local magic = player:getMagicLevel()
-      local level = player:getLevel()
-      local extraDamage = damage + (damage * 0.55) + (magic * 10)
       
-      addEvent(function()
-        if target and player then
-          doTargetCombatHealth(player:getId(), target:getId(), COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
-          player:say("Short Circuit!", TALKTYPE_MONSTER_SAY)
-          local primaryPos = target:getPosition()
-          primaryPos:sendMagicEffect(414)
-          
-          -- Get nearby monsters with same condition
-          local creaturesList = Game.getSpectators(primaryPos, false, false, 2, 2, 2, 2)
-          for _, nearbyCreature in ipairs(creaturesList) do
-            if nearbyCreature:isMonster() and nearbyCreature:getId() ~= target:getId() and 
-               nearbyCreature:getCondition(CONDITION_ENERGY, 0, 25965) then
-              local reducedDamage = math.floor(extraDamage * 0.5)
-              doTargetCombatHealth(player:getId(), nearbyCreature:getId(), COMBAT_ENERGYDAMAGE, -reducedDamage, -reducedDamage, CONST_ME_NONE)
-              primaryPos:sendDistanceEffect(nearbyCreature:getPosition(), 117)
-            end
-          end
-        end
-      end, 300)
-      return damage
+      local ShortCircuitLevel = math.max(player:getStorageValue(PassiveSkills.ShortCircuit) or 0, 0)
+      --Your attacks deal extra 20% damage (per level)
+      local extraDamage = damage * (1 + (ShortCircuitLevel / 100))
+
+      doTargetCombatHealth(player:getId(), target:getId(), COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
+      target:attachEffectById(147, true)
+
+    local HighVoltageLevel = math.max(player:getStorageValue(PassiveSkills.HighVoltage) or 0, 0)
+    if HighVoltageLevel > 0 then
+      --15% chance
+      if math.random(1, 100) <= 25 then
+        --increases your magic level by 10% condition
+        local condition = Condition(CONDITION_ATTRIBUTES)
+        condition:setParameter(CONDITION_PARAM_SUBID, 146)
+        condition:setParameter(CONDITION_PARAM_TICKS, 6000)
+        condition:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, 100 + HighVoltageLevel)
+        condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
+        player:addCondition(condition)
+      end
+    end
+
+      return 0
     end
   },
   

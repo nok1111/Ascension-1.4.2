@@ -1,6 +1,5 @@
-local TEMPEST_COIN_RESULT_STORAGE = PassiveSkills.GamblerLuck -- Assign a unique storage key for the roll result
 local TEMPEST_COIN_BONUS_STORAGE = PlayerStorageKeys.gamblerLuck -- This is the Gambler's Luck bonus storage
-local BASE_MAX = 3
+local BASE_MAX = 3 
 
 function onCastSpell(creature, var)
     local player = Player(creature)
@@ -17,7 +16,8 @@ function onCastSpell(creature, var)
     local roll = math.random(1, maxRoll)
 
     -- Store the result in a dedicated storage
-    player:setStorageValue(TEMPEST_COIN_RESULT_STORAGE, roll)
+    player:setStorageValue(PassiveSkills.GamblerLuck, roll)
+    print("Tempest Coin roll: " .. player:getStorageValue(PassiveSkills.GamblerLuck))
 
     -- Announce the result
     player:say("Tempest Coin roll: " .. roll, TALKTYPE_MONSTER_SAY)

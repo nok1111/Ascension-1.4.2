@@ -92,7 +92,7 @@ PassiveSkills.ScentOfBlood = 875568
 PassiveSkills.VirulentRupture = 875569
 
 --nightblade 2
-PassiveSkills.ElusiveDance = 875570
+PassiveSkills.Quickstep = 875570
 PassiveSkills.DeathApproach = 875571
 PassiveSkills.StealthDuration = 875572
 
@@ -193,6 +193,24 @@ PassiveSkills.ThornedSanctuary = 875630
 --druid 3
 PassiveSkills.PermafrostTrap = 875638
 PassiveSkills.FrostAura = 875639
+
+--light dancer 1
+PassiveSkills.ShortCircuit = 875640
+PassiveSkills.HighVoltage = 875641
+PassiveSkills.Stormpiercer = 875642
+PassiveSkills.GamblerLuck = 875643
+PassiveSkills.Jackpot = 875644
+
+--light dancer 2
+PassiveSkills.LightningRiposte = 875645
+PassiveSkills.LightningWaltz = 875646
+PassiveSkills.GodOfSpears = 875647
+PassiveSkills.DancingEdge = 875648
+PassiveSkills.VeilOfEchos = 875649
+PassiveSkills.Reverberation = 875650
+
+--light dancer 3
+PassiveSkills.LightsON = 875651
 
 
 
@@ -678,9 +696,9 @@ PassiveSkills.treeData = {
 				border = 13,
 				nodes = {
 					[1] = {
-						name = "Elusive Dance",
+						name = "Quickstep",
 						description = "Increases Dodge Chance by 2% per level",
-						effect = {{type = "storage", name = "ElusiveDance", storage = PassiveSkills.ElusiveDance, value = 2}},
+						effect = {{type = "storage", name = "Quickstep", storage = PassiveSkills.Quickstep, value = 2}},
 						maxLevel = 3
 					},
 					[2] = {
@@ -1891,7 +1909,7 @@ PassiveSkills.treeData = {
 					[1] = {
 						name = "Short Circuit",
 						description = "Your attacks deal extra 20% (per level) damage to enemies affected by Static Shock.",
-						effect = {{type = "storage", name = "ShortCircuit", storage = PassiveSkills.ShortCircuit, value = 5}},
+						effect = {{type = "storage", name = "ShortCircuit", storage = PassiveSkills.ShortCircuit, value = 20}},
 						maxLevel = 5
 					},
 					[2] = {
@@ -1906,22 +1924,22 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "High Voltage",
-						description = "Your Short Circuit now have a chance to grant you High Voltage, wich increases your magic level by 10% (per level)",
+						description = "Your Short Circuit now have a chance 25% to grant you High Voltage, wich increases your magic level by 10% (per level) for 6 seconds.",
 						effect = {
-							{type = "storage", name = "HighVoltage", storage = PassiveSkills.HighVoltage, value = 10}
+							{type = "storage", name = "HighVoltage", storage = PassiveSkills.HighVoltage, value = 10} 
 						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 4
 					},
 					[4] = {
 						name = "Stormpiercer",
-						description = "Lightning Spear now grants you 10% attack speed for 8 seconds and deals 8% more damage per level",
+						description = "Lightning Spear now grants you 10% attack speed for 8 seconds and deals 10% more damage per level",
 						effect = {
 							{
 								type = "storage",
 								name = "Stormpiercer",
 								storage = PassiveSkills.Stormpiercer,
-								value = 8
+								value = 10
 							}
 						},
 						maxLevel = 5,
