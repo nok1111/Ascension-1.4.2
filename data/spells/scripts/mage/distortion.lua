@@ -46,7 +46,7 @@ condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 
 
 local condition2 = Condition(CONDITION_ATTRIBUTES)
-condition2:setParameter(CONDITION_PARAM_SUBID, 553)
+condition2:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.manaDistortion)
 condition2:setParameter(CONDITION_PARAM_TICKS, 1000)
 condition2:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, 120)
 condition2:setParameter(CONDITION_PARAM_DISABLE_DEFENSE, true)

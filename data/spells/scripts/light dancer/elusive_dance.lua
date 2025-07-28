@@ -59,7 +59,7 @@ function onCastSpell(creature, var)
         conditionstatsParry:setParameter(CONDITION_PARAM_TICKS, 5000)
         conditionstatsParry:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
         --subid
-        conditionstatsParry:setParameter(CONDITION_PARAM_SUBID, 11232)
+        conditionstatsParry:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.LightningWaltzparry)
         creature:addCondition(conditionstatsParry)
     end
     return true

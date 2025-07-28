@@ -23,7 +23,7 @@ function onCastSpell(creature, variant, isHotkey)
 		local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 local time = 20 * 60 * 1000
 local slvl = 120
-skill:setParameter(CONDITION_PARAM_SUBID, 556)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.party_vitality)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
@@ -44,7 +44,7 @@ player:addCondition(skill)
 				local time = 20 * 60 * 1000
 
 local slvl = 120
-skill:setParameter(CONDITION_PARAM_SUBID, 556)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.party_vitality)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
@@ -74,7 +74,7 @@ player:addCondition(skill)
         		local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 
 local slvl = 120
-skill:setParameter(CONDITION_PARAM_SUBID, 556)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.party_vitality)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
@@ -108,7 +108,7 @@ doPlayerSendTextMessage(targetPlayer, MESSAGE_INFO_DESCR, "Max Health increased 
 
 
 local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
-skill:setParameter(CONDITION_PARAM_SUBID, 556)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.party_vitality)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)

@@ -25,7 +25,7 @@ function onCastSpell(creature, variant)
     condition:setParameter(CONDITION_PARAM_TICKS, 15000)
     condition:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, shieldpercent)
     condition:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, maxhitpointpercent)
-    condition:setParameter(CONDITION_PARAM_SUBID, 3155) -- Unique sub ID for tracking
+    condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.bloodwall) -- Unique sub ID for tracking
     condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 
     combat:addCondition(condition)

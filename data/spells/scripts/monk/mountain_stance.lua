@@ -5,7 +5,7 @@ function onCastSpell(creature, variant)
 
 local mountain_stance = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 mountain_stance:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-mountain_stance:setParameter(CONDITION_PARAM_SUBID, 29505)
+mountain_stance:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.mountain_stance)
 mountain_stance:setParameter(CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, 125)
 
 --local durationLevel = math.max(player:getStorageValue(PassiveSkills.StormfistDuration) or 0, 0)

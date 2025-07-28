@@ -35,11 +35,11 @@ creature:say(randomLine, TALKTYPE_SAY)
 
     local condition = Condition(CONDITION_ATTRIBUTES)
     condition:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-    condition:setParameter(CONDITION_PARAM_SUBID, 105)
+    condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.petphysicalresist)
     condition:setParameter(CONDITION_PARAM_TICKS, t)
     condition:setParameter(CONDITION_PARAM_SKILL_SHIELD, resistanceIncrease / 3)  -- Assuming physical damage reduction is tied to shielding skill
 
-    owner:removeCondition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT, 105)
+    owner:removeCondition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT, ConditionsSubIds.petphysicalresist)
     owner:addCondition(condition)
     owner:setStorageValue(5, resistanceIncrease / 3)
 

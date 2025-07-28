@@ -1,6 +1,6 @@
 local condition = Condition(CONDITION_DRUNK)
 condition:setParameter(CONDITION_PARAM_TICKS, 8000)
-condition:setParameter(CONDITION_PARAM_SUBID, 25970)
+condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.beerbarrel)
 
 local combat = Combat()
 

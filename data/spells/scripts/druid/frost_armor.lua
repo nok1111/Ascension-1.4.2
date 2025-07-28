@@ -43,7 +43,7 @@ function onCastSpell(creature, variant)
 
     local frost_armor = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
     frost_armor:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-    frost_armor:setParameter(CONDITION_PARAM_SUBID, 29513)
+    frost_armor:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.frostarmor)
     frost_armor:setParameter(CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, 125)
 
     --local durationLevel = math.max(player:getStorageValue(PassiveSkills.StormfistDuration) or 0, 0)

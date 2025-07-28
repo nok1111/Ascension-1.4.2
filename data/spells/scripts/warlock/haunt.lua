@@ -9,7 +9,7 @@ local condition2 = Condition(CONDITION_CURSED, CONDITIONID_COMBAT)
 condition2:setTicks(1000)
 condition2:setParameter(CONDITION_PARAM_DELAYED, 1)
 condition2:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
-condition2:setParameter(CONDITION_PARAM_SUBID, 259319)
+condition2:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.haunt)
 
 function onGetFormulaValues(player, skill, attack, factor)
 

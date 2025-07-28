@@ -10,7 +10,7 @@ combat1:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 158)
 local static_charge = Condition(CONDITION_ENERGY)
 static_charge:setParameter(CONDITION_PARAM_DELAYED, true)
 static_charge:addDamage(10, 1000, -1)
-static_charge:setParameter(CONDITION_PARAM_SUBID, 25965)
+static_charge:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.static_charge)
 combat1:addCondition(static_charge)
 
 local arr = {

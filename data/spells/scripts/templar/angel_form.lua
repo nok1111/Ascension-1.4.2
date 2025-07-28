@@ -12,7 +12,7 @@ combat:setArea(createCombatArea(AREA_CIRCLE6X6))
 
 
 local condition2 = Condition(CONDITION_ATTRIBUTES)
-condition2:setParameter(CONDITION_PARAM_SUBID, 14)
+condition2:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.angel_form)
 condition2:setParameter(CONDITION_PARAM_TICKS, 15000)
 condition2:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, 135)
 condition2:setParameter(CONDITION_PARAM_DISABLE_DEFENSE, true)

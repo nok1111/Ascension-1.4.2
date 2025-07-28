@@ -2,7 +2,7 @@
 local MagneticShield = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 MagneticShield:setParameter(CONDITION_PARAM_TICKS, 5000)
 --subid
-MagneticShield:setParameter(CONDITION_PARAM_SUBID, 22421)
+MagneticShield:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.MagneticShield)
 MagneticShield:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 
 

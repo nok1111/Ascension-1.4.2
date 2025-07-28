@@ -35,12 +35,12 @@ creature:say(randomLine, TALKTYPE_SAY)
 
     local condition = Condition(CONDITION_ATTRIBUTES)
     condition:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-    condition:setParameter(CONDITION_PARAM_SUBID, 102)
+    condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.petfireresist)
     condition:setParameter(CONDITION_PARAM_TICKS, t)
     -- Assuming elemental damage reduction is tied to a specific skill or attribute; this line needs to be adjusted accordingly
     condition:setParameter(CONDITION_PARAM_ELEMENTALDAMAGEREDUCTION, resistanceIncrease)  
 
-    owner:removeCondition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT, 102)
+    owner:removeCondition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT, ConditionsSubIds.petfireresist)
     owner:addCondition(condition)
     owner:setStorageValue(5, resistanceIncrease)
 

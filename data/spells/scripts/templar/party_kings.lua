@@ -23,7 +23,7 @@ function onCastSpell(creature, variant, isHotkey)
 		local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 local time = 20 * 60 * 1000
 local slvl = 110
-skill:setParameter(CONDITION_PARAM_SUBID, 552)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.partykings)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)
@@ -47,7 +47,7 @@ player:addCondition(skill)
 				local time = 20 * 60 * 1000
 
 local slvl = 110
-skill:setParameter(CONDITION_PARAM_SUBID, 552)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.partykings)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)
@@ -80,7 +80,7 @@ player:addCondition(skill)
         		local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 
 local slvl = 110
-skill:setParameter(CONDITION_PARAM_SUBID, 552)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.partykings)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)
@@ -117,7 +117,7 @@ doPlayerSendTextMessage(targetPlayer, MESSAGE_INFO_DESCR, "Offensive Skills  inc
 
 
 local skill = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
-skill:setParameter(CONDITION_PARAM_SUBID, 552)
+skill:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.partykings)
 skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)

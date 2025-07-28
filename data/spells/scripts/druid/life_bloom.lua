@@ -35,14 +35,14 @@ function onCastSpell(creature, variant, isHotkey)
     forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
     forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
     forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-    forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25973)
+    forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.lifebloomhp)
 
     local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
     forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
     forest_condition_mana:setParameter(CONDITION_PARAM_MANAGAIN, manapercent)
     forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
     forest_condition_mana:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-    forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25974)
+    forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.lifebloommana)
 
     -- Use addPartyCondition for health
     local success = player:addPartyCondition(combat, variant, forest_condition_hp, baseMana)

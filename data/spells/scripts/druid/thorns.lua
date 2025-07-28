@@ -30,7 +30,7 @@ function onCastSpell(creature, variant, isHotkey)
 		
 local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-food:setParameter(CONDITION_PARAM_SUBID, 151)
+food:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.thorns)
 food:setParameter(CONDITION_PARAM_TICKS, t)
 
 	player:addCondition(food)
@@ -49,7 +49,7 @@ food:setParameter(CONDITION_PARAM_TICKS, t)
 		
 local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-food:setParameter(CONDITION_PARAM_SUBID, 151)
+food:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.thorns)
 food:setParameter(CONDITION_PARAM_TICKS, t)
 	
 	
@@ -83,7 +83,7 @@ food:setParameter(CONDITION_PARAM_TICKS, t)
 		
 local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-food:setParameter(CONDITION_PARAM_SUBID, 151)
+food:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.thorns)
 food:setParameter(CONDITION_PARAM_TICKS, t)
 combat:addCondition(skill)
 	
@@ -118,7 +118,7 @@ doPlayerSendTextMessage(targetPlayer, MESSAGE_INFO_DESCR, "Thorns Buff applied f
 	end
 local food = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 food:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-food:setParameter(CONDITION_PARAM_SUBID, 151)
+food:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.thorns)
 food:setParameter(CONDITION_PARAM_TICKS, t)
 combat:addCondition(skill)
 	

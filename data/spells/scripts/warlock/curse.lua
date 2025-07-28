@@ -42,7 +42,7 @@ local function CastCurse_wl(cid, var)
     condition2:setTicks(duration)
     condition2:setParameter(CONDITION_PARAM_DELAYED, 1)
     condition2:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
-    condition2:setParameter(CONDITION_PARAM_SUBID, 259314)
+    condition2:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.warlockcurse)
     
 
     -- Damage: increase by 10% per level

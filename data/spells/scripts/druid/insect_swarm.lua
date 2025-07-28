@@ -3,8 +3,8 @@
 local TICK_INTERVAL = 800 -- ms
 local DURATION = 7000 -- ms
 local INFECTION_RADIUS = 5 -- tiles
-local INFECTION_SUBID = 101
-local COOLDOWN_SUBID = 102
+local INFECTION_SUBID = ConditionsSubIds.insectswarminfection
+local COOLDOWN_SUBID = ConditionsSubIds.insectswarmcooldown
 local COOLDOWN_DURATION = 15000 -- ms
 -- Unique subid for poison condition tracking
 

@@ -8,7 +8,7 @@ combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 local static_charge = Condition(CONDITION_ENERGY)
 static_charge:setParameter(CONDITION_PARAM_DELAYED, true)
 static_charge:addDamage(10, 1000, -1)
-static_charge:setParameter(CONDITION_PARAM_SUBID, 25965)
+static_charge:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.static_charge)
 combat:addCondition(static_charge)
 
 local arr = {
@@ -78,7 +78,7 @@ function onCastSpell(creature, var)
     if StormpiercerLevel > 0 then
     --grants you 10% attack speed
     local condition = Condition(CONDITION_ATTRIBUTES)
-    condition:setParameter(CONDITION_PARAM_SUBID, 146)
+    condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.StormpiercerAttackSpeed)
     condition:setParameter(CONDITION_PARAM_TICKS, 8000)
     condition:setParameter(CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED, StormpiercerLevel)
     condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)

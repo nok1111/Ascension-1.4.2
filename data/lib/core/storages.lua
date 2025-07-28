@@ -21,6 +21,60 @@ PlayerStorageKeys = {
 GlobalStorageKeys = {
 }
 
+ConditionsSubIds = {
+    bearformhaste = 200,
+    bearformmaxhp = 201,
+    bearformregen = 202,
+    bearformoutfit = 203,
+    bearformcooldown = 204,
+
+    foresthp = 25971,
+    forestmana = 25972,
+
+    frostarmor = 29513,
+    insectswarmcooldown = 29514,
+    insectswarminfection = 29515,
+    lifebloomhp = 29516,
+    lifebloommana = 29517,
+    thorns = 29518,
+    LightningWaltzparry = 29519,
+    static_charge = 29520,
+    StormpiercerAttackSpeed = 29521,
+    MagneticShield = 29522,
+    manaDistortion = 29523,
+    FrostBomb = 29524,
+
+    frostbloom = 29525,
+    mountain_stance = 29526,
+    stormfist = 29527,
+    zen_sphere = 29528,
+    beerbarrel = 29529,
+    blood_blades = 29530,
+    angel_form = 29531,
+    consecratedprotection = 29532,
+    healingdot = 29533,
+    partykings = 29534,
+    bloodpact = 29535,
+    bloodwall = 29536,
+    warlockcurse = 29537,
+    darkaura = 29538,
+    haunt = 29539,
+    maleficpestilence = 29540,
+    malediction = 29541,
+    party_vitality = 29542,
+    bloodrage = 29543,
+    shieldwall = 29544
+    
+
+
+
+
+
+    --pets
+    petfireresist = 39529,
+    petphysicalresist = 39530,
+}
+
 MonsterStorage = {
     Vampiric    = 100,
     Sacred      = 101,

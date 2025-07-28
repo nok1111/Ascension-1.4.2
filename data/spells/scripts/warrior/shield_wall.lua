@@ -34,7 +34,7 @@ function onCastSpell(creature, variant)
     end
     
   local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
-condition:setParameter(CONDITION_PARAM_SUBID, 504)
+condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.shieldwall)
 condition:setParameter(CONDITION_PARAM_TICKS, 15000)
 condition:setParameter(CONDITION_PARAM_SKILL_SHIELD, 130)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)

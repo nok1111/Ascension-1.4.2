@@ -14,7 +14,7 @@ condition:setParameter(CONDITION_PARAM_TICKS, config.timer * config.rounds)
 condition:setParameter(CONDITION_PARAM_MANAGAIN, 0)
 condition:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-condition:setParameter(CONDITION_PARAM_SUBID, 25941)
+condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.bloodpact)
 
 local function bloodPactTick(cid, count)
     local creature = Creature(cid)
@@ -42,7 +42,7 @@ local function bloodPactTick(cid, count)
 end
 
 function onCastSpell(creature, variant)
-    if creature:getCondition(CONDITION_REGENERATION, CONDITIONID_COMBAT, 25941) then
+    if creature:getCondition(CONDITION_REGENERATION, CONDITIONID_COMBAT, ConditionsSubIds.bloodpact) then
         creature:sendCancelMessage("Spell is already active.")
         creature:getPosition():sendMagicEffect(CONST_ME_POFF)
         return false

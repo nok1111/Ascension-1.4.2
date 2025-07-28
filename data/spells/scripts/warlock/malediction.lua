@@ -18,7 +18,7 @@ local MaleficPestilenceCondition = Condition(CONDITION_POISON, CONDITIONID_COMBA
 MaleficPestilenceCondition:setTicks(3000)
 MaleficPestilenceCondition:setParameter(CONDITION_PARAM_DELAYED, 1)
 MaleficPestilenceCondition:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
-MaleficPestilenceCondition:setParameter(CONDITION_PARAM_SUBID, 259316)
+MaleficPestilenceCondition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.maleficpestilence)
 
 
 
@@ -66,7 +66,7 @@ local function CastMaledictionDot(cid, var)
     MaledictionCondition:setTicks(6000 + ((LastingBlight / 10) * 1000))
     MaledictionCondition:setParameter(CONDITION_PARAM_DELAYED, 1)
     MaledictionCondition:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
-    MaledictionCondition:setParameter(CONDITION_PARAM_SUBID, 259315)
+    MaledictionCondition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.malediction)
 	
     MaledictionCondition:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))
     combat1:addCondition(MaledictionCondition)

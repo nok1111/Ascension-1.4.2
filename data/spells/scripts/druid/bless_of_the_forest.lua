@@ -22,14 +22,14 @@ forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
+forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.foresthp)
 
 local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, manapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
 forest_condition_mana:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25972)
+forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.forestmana)
 	
 	
     local position = creature:getPosition()
@@ -38,7 +38,7 @@ forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25972)
 	local function foresthealing(creature, count)
 	local creature = Creature(creature)
 	if not creature then stopEvent(healing) return end
-	if not creature:getCondition(CONDITION_REGENERATION, 0, 25971) then
+	if not creature:getCondition(CONDITION_REGENERATION, 0, ConditionsSubIds.foresthp) then
 	creature:addHealth(healthpercent)
 	creature:addMana(manapercent)
 	creature:getPosition():sendMagicEffect(15)
@@ -83,14 +83,14 @@ forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
+forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.foresthp)
 
 local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, manapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
 forest_condition_mana:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25972)
+forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.forestmana)
 
 
 	player:addCondition(forest_condition_hp)
@@ -129,14 +129,14 @@ forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, healthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
+forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.foresthp)
 
 local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, manapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
 forest_condition_mana:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25972)
+forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.forestmana)
 
 	player:addCondition(forest_condition_hp)
 	player:addCondition(forest_condition_mana)
@@ -173,20 +173,20 @@ forest_condition_hp:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHGAIN, targetPlayerhealthpercent)
 forest_condition_hp:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 forest_condition_hp:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, 25971)
+forest_condition_hp:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.foresthp)
 
 local forest_condition_mana = Condition(CONDITION_REGENERATION, CONDITIONID_COMBAT)
 forest_condition_mana:setParameter(CONDITION_PARAM_TICKS, config.timer)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANAHGAIN, targetPlayermanapercent)
 forest_condition_mana:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
 forest_condition_mana:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, 25972)
+forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.forestmana)
 
 
 	local function targetPlayerforesthealing(creature, count)
 	local creature = Creature(creature)
 	if not creature then stopEvent(targetPlayerforesthealing) return end
-	if not creature:getCondition(CONDITION_REGENERATION, 0, 25971) and not creature:getCondition(CONDITION_REGENERATION, 0, 25972) then
+	if not creature:getCondition(CONDITION_REGENERATION, 0, ConditionsSubIds.foresthp) and not creature:getCondition(CONDITION_REGENERATION, 0, ConditionsSubIds.forestmana) then
 	creature:addHealth(targetPlayerhealthpercent)
 	creature:addMana(targetPlayermanapercent)
 	creature:getPosition():sendMagicEffect(15)

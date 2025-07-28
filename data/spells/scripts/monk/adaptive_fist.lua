@@ -164,9 +164,6 @@ local frostbloomCombat = Combat()
 frostbloomCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 frostbloomCombat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICETORNADO)
 
--- Damage reduction condition
-local damageReductionCondition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
-damageReductionCondition:setParameter(CONDITION_PARAM_SUBID, 25961) -- Unique subid for frostbloom
 
 function onGetFrostbloomValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
@@ -181,7 +178,7 @@ setCombatCallback(frostbloomCombat, CALLBACK_PARAM_SKILLVALUE, "onGetFrostbloomV
 
 
 local damageReductionCondition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
-damageReductionCondition:setParameter(CONDITION_PARAM_SUBID, 25961) -- Unique subid for frostbloom
+damageReductionCondition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.frostbloom) -- Unique subid for frostbloom
 damageReductionCondition:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 damageReductionCondition:setParameter(CONDITION_PARAM_TICKS, 8000)
 

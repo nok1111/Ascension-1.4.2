@@ -15,7 +15,7 @@ combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 
 local zen_sphere = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 zen_sphere:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-zen_sphere:setParameter(CONDITION_PARAM_SUBID, 29508)
+zen_sphere:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.zen_sphere)
 zen_sphere:setParameter(CONDITION_PARAM_TICKS, 8000)
 
 combat:addCondition(zen_sphere)

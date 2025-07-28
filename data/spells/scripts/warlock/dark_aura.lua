@@ -23,7 +23,7 @@ function onCastSpell(creature, variant)
 
   local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_DEFAULT)
   condition:setParameter(CONDITION_PARAM_TICKS, duration)
-  condition:setParameter(CONDITION_PARAM_SUBID, 3156) -- Unique sub ID for tracking
+  condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.darkaura) -- Unique sub ID for tracking
   condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 
   local playerGuid = player:getId()

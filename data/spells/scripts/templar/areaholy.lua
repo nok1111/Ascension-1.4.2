@@ -48,7 +48,7 @@ local function applyConsecratedProtection(areaCenter, creatureId)
                         if level > 0 then
                             local cond = Condition(CONDITION_ATTRIBUTES)
                             cond:setParameter(CONDITION_PARAM_TICKS, 1000)
-                            cond:setParameter(CONDITION_PARAM_SUBID, 50)
+                            cond:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.consecratedprotection)
                             cond:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
                             thing:addCondition(cond)
                         end

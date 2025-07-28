@@ -14,10 +14,10 @@ condition:setParameter(CONDITION_PARAM_TICKS, config.timer)
 condition:setParameter(CONDITION_PARAM_HEALTHGAIN, 0)
 condition:setParameter(CONDITION_PARAM_HEALTHTICKS, config.timer * config.rounds)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-condition:setParameter(CONDITION_PARAM_SUBID, 25941)
+condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.healingdot)
 
 function onCastSpell(creature, variant)
-if creature:getCondition(CONDITION_REGENERATION,0, 25941) then creature:sendCancelMessage("Spell is already active.") local pos = creature:getPosition(creature) pos:sendMagicEffect(CONST_ME_POFF) return false end -- prevents stacking the spell.
+if creature:getCondition(CONDITION_REGENERATION,0, ConditionsSubIds.healingdot) then creature:sendCancelMessage("Spell is already active.") local pos = creature:getPosition(creature) pos:sendMagicEffect(CONST_ME_POFF) return false end -- prevents stacking the spell.
 local magic = creature:getMagicLevel()
 
 
