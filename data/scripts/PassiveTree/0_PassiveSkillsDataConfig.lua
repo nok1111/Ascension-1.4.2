@@ -203,14 +203,17 @@ PassiveSkills.Jackpot = 875644
 
 --light dancer 2
 PassiveSkills.LightningRiposte = 875645
-PassiveSkills.LightningWaltz = 875646
-PassiveSkills.GodOfSpears = 875647
-PassiveSkills.DancingEdge = 875648
-PassiveSkills.VeilOfEchos = 875649
-PassiveSkills.Reverberation = 875650
+PassiveSkills.LightningWaltzHeal = 875646
+PassiveSkills.LightningWaltzparry = 875647
 
 --light dancer 3
-PassiveSkills.LightsON = 875651
+PassiveSkills.GodOfSpears = 875648
+PassiveSkills.DancingEdge = 875649
+PassiveSkills.VeilOfEchos = 875650
+PassiveSkills.Reverberation = 875651
+
+--light dancer 4
+PassiveSkills.LightsON = 875652
 
 
 
@@ -1983,15 +1986,16 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Lightning Riposte",
-						description = "You have a 2% (per level) chance to deflect physical damage and send a small portion back to the attacker as energy damage.",
-						effect = {{type = "storage", name = "LightningRiposte", storage = PassiveSkills.LightningRiposte, value = 5}},
+						description = "You have a 2% (per level) chance to parry physical damage and send a small portion back to the attacker as energy damage.",
+						effect = {{type = "storage", name = "LightningRiposte", storage = PassiveSkills.LightningRiposte, value = 2}},
 						maxLevel = 5
 					},
 					[2] = {
 						name = "Lightning Waltz",
-						description = "Your elusive dance now heals you for 20% of your max health (per level)",
+						description = "Your Veil of Swords now heals you for 12% of your max health (per level) and grants you a dodge chance of 25% (per level) for 5 seconds.",
 						effect = {
-							{type = "storage", name = "LightningWaltz", storage = PassiveSkills.LightningWaltz, value = 1}
+							{type = "storage", name = "LightningWaltzHeal", storage = PassiveSkills.LightningWaltzHeal, value = 12},
+							{type = "storage", name = "LightningWaltzparry", storage = PassiveSkills.LightningWaltzparry, value = 25}
 						},
 						maxLevel = 3,
 						prevNodeLevelNeeded = 5
@@ -2025,15 +2029,8 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Veil of Swords",
-						description = "Learn Veil of Swords\nDeal physical damage to all enemies in a 3x3 area",
-						effect = {{type = "spell", name = "Veil of Swords"}},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 3
-					},
-					[3] = {
 						name = "God of Spears",
-						description = "Lightning Spear is no longer range but its damage is increased by 20% and grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
+						description = "Lightning Spear is no longer range but its damage is increased by 6% (per level) and grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
 						effect = {
 							{
 								type = "storage",
@@ -2045,7 +2042,7 @@ PassiveSkills.treeData = {
 						maxLevel = 5,
 						prevNodeLevelNeeded = 3
 					},
-					[4] = {
+					[3] = {
 						name = "Dancing Edge ",
 						description = "Elusive Blade now has a 20% (per level) chance to trigger a second time at 50% effectiveness and grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
 						effect = {
@@ -2054,9 +2051,9 @@ PassiveSkills.treeData = {
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},
-					[5] = {
+					[4] = {
 						name = "Veil of Echos",
-						description = "If you have 2 or more Elusive Charges, Veil of swords now turns into veil of Echos. Veil of Echos consume all Elusive Charges and deals high amounts of physical damage.",
+						description = "If you have 2 or more Elusive Charges, Veil of swords now turns into veil of Echos. Veil of Echos consume all Elusive Charges and  deals high amounts of physical damage.",
 						effect = {
 							{
 								type = "storage",
@@ -2066,10 +2063,10 @@ PassiveSkills.treeData = {
 							}
 							
 						},
-						maxLevel = 5,
+						maxLevel = 1,
 						prevNodeLevelNeeded = 5
 					}, 
-					[6] = {
+					[5] = {
 						name = "Reverberation",
 						description = "Increase Veil of Echos and Veil of Swords damage by an aditional 10% (per level)",
 						effect = {

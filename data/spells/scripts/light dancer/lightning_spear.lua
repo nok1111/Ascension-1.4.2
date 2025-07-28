@@ -35,6 +35,12 @@ function onGetFormulaValues(player, skill, attack, factor)
         min = min * (1 + (StormpiercerLevel / 100))
         max = max * (1 + (StormpiercerLevel / 100))
     end
+
+    local GodOfSpearsLevel = player:getStorageValue(PassiveSkills.GodOfSpears) or 0
+    if GodOfSpearsLevel > 0 then
+        min = min * (1 + (GodOfSpearsLevel / 100))
+        max = max * (1 + (GodOfSpearsLevel / 100))
+    end
 	return -min, -max
 	
 end
@@ -45,10 +51,20 @@ combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 function onCastSpell(creature, var)
     if not creature then return end
 
-
-
+    local GodOfSpearsLevel = creature:getStorageValue(PassiveSkills.GodOfSpears) or 0
+    if GodOfSpearsLevel > 0 then
+        --distance between player and target is 1 with lua 
+        local target = creature:getTarget()
+        if getDistanceBetween(creature:getPosition(), target:getPosition()) > 2 then 
+            --send error message 
+            creature:getPlayer():sendCancelMessage("You need to be closer to your target.") 
+            creature:getPosition():sendMagicEffect(CONST_ME_POFF)
+            return
+        end
+        --grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)
+        addBuffStack(creature, "ElusiveCharge", 1, 10000)
+    end
 	
-		
 	local target = creature:getTarget()
 	local position = target:getPosition()
 	local positioneffect = position

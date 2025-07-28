@@ -27,3 +27,5 @@ dofile('data/lib/additional/randomfishpools.lua')
 dofile('data/lib/additional/randomveins.lua')
 dofile('data/lib/additional/randomtrees.lua')
 dofile('data/lib/additional/randomherbs.lua')
+dofile('data/lib/additional/buff_stacks.lua')
+

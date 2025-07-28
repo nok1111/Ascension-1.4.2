@@ -106,6 +106,73 @@ local PASSIVES = {
     end,
   },
 
+  -- 11232 Lightning Waltz parry
+  MagneticShield = {
+    config = {
+      type = "OnDefend",
+      subid = 22421,
+    },
+    trigger = function(player, attacker, damage, primaryType, origin)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, 22421)
+    end,
+    effect = function(player, attacker, damage)
+      if not player or not attacker or not damage then
+        return
+      end
+
+      return 0
+    end,
+  },
+
+  LightningWaltzParry = {
+    config = {
+      type = "OnDefend",
+      subid = 11232,
+    },
+    trigger = function(player, attacker, damage, primaryType, origin)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, 11232)
+    end,
+    effect = function(player, attacker, damage)
+      if not player or not attacker or not damage then
+        return
+      end
+      -- send magic effect on player pos
+      player:getPosition():sendMagicEffect(685)
+      return 0
+    end,
+  },
+
+
+  lightning_riposte = {
+    config = {
+      type = "OnDefend",
+      storage = PassiveSkills.LightningRiposte,
+    },
+    trigger = function(player, attacker, damage, primaryType, origin)
+      -- Only trigger on physical damage
+      if primaryType ~= COMBAT_PHYSICALDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.LightningRiposte) or 0, 0)
+      if level <= 0 then
+        return false
+      end
+      local chance = level -- 2% per level
+      return math.random(100) <= chance
+    end,
+    effect = function(player, attacker, damage)
+      if not player or not attacker or not damage then
+        return
+      end
+      -- Deflect: reduce incoming damage by 30% (customizable)
+      local reducedDamage = damage * 0.7
+      -- Reflect: send a portion (20% of reduced damage + scaling) as energy damage
+      doTargetCombatHealth(player:getId(), attacker:getId(), COMBAT_ENERGYDAMAGE, -reducedDamage, -reducedDamage, CONST_ME_ENERGYAREA)
+      player:attachEffectById(148, true)
+      player:attachEffectById(149, true) 
+      return 0
+    end,
+  },
 
   frost_armor = {
     config = {
@@ -849,6 +916,13 @@ local PASSIVES = {
         condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
         player:addCondition(condition)
       end
+    end
+
+    local LightsONLevel = math.max(player:getStorageValue(PassiveSkills.LightsON) or 0, 0)
+    if LightsONLevel > 0 then
+      --restore 2% of your total mana per hit
+      local mana = player:getMaxMana() * (LightsONLevel / 100)
+      player:addMana(mana)
     end
 
       return 0
