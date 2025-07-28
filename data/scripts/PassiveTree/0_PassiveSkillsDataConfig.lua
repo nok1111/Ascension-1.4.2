@@ -2215,13 +2215,13 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 1
 					},
 					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
+						name = "Frost Quiver",
+						description = "Every fourth attack you shoot a ice arrow wich 25% more damage as ice damage.",
 						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
+							{type = "storage", name = "FrostQuiver", storage = PassiveSkills.FrostQuiver, value = 25}
 						},
-						maxLevel = 17
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -2230,10 +2230,26 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Placeholder A",
-						description = "gain +1% x per level",
-						effect = {{type = "storage", name = "BuffX", storage = PassiveSkills.BuffX, value = 1}},
-						maxLevel = 10
+						name = "Tenacious Spirit",
+						description = "Increase your maximum health by 5% and 3 health points regeneration every 5 seconds (per level)",  
+						effect = {
+								{
+									type = "condition",
+									name = "Health Regen",
+									conditionType = CONDITION_REGENERATION,
+									params = {
+										{param = CONDITION_PARAM_HEALTHGAIN, value = 3},
+										{param = CONDITION_PARAM_HEALTHTICKS, value = 5000}}
+								},
+								{
+									type = "condition",
+									name = "MaxHealthPercent", 
+									percent = true,
+									conditionType = CONDITION_ATTRIBUTES,
+									params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 5.0}}
+								}
+							},
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Placeholder B",
@@ -2245,18 +2261,7 @@ PassiveSkills.treeData = {
 						name = "Placeholder C",
 						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
 						effect = {
-							{
-								type = "condition",
-								name = "Critcial Chance",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 1}}
-							},
-							{
-								type = "condition",
-								name = "Critical Amount",
-								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITAMOUNT, value = 1}}
-							}
+							
 						},
 						maxLevel = 5
 					},
