@@ -2256,46 +2256,41 @@ PassiveSkills.treeData = {
 						description = "Learn Beast Shot\nShoot a powerful shot that deals physical damage to the target and and stuns it for 3 seconds",
 						effect = {{type = "spell", name = "Beast Shot"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 3
 					},
 					[3] = {
 						name = "Falcon Shot",
 						description = "Learn Falcon Shot\nShoot a powerful shot that deals physical damage to the target and nearby enemies slowing them for 3 seconds",
 						effect = {{type = "spell", name = "Falcon Shot"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 3
 					},
-					[4] = {
-						name = "Placeholder D",
-						description = "gain +1 health regeneration per level each sec",
+					
+				},
+			},
+			[4] = {
+				color = '#a32c36',
+				border = 22,
+				nodes = {
+					[1] = {
+						name = "Aim Shot",
+						description = "Learn Aim Shot\nShoot a powerful shot that deals physical damage to the target",
+						effect = {{type = "spell", name = "Aim Shot"}},
+						maxLevel = 1,
+					},
+					[2] = {
+						name = "Hunter's Mercy",
+						description = "Your aim shot now deals 12% (per level) additional damage if the target is below 50% health.",
 						effect = {
-							{
-								type = "condition",
-								name = "Health Regen",
-								conditionType = CONDITION_REGENERATION,
-								params = {
-									{param = CONDITION_PARAM_HEALTHGAIN, value = 1},
-									{param = CONDITION_PARAM_HEALTHTICKS, value = 1000}
-								}
-							}
+							{type = "storage", name = "HunterMercy", storage = PassiveSkills.HunterMercy, value = 1}
 						},
-						maxLevel = 5
+						maxLevel = 4,
 					},
-					[5] = {
-						name = "Placeholder E",
-						description = "gain +5 speed per level",
-						effect = {{type = "condition", name = "Haste", haste = true, conditionType = CONDITION_HASTE, value = 10}},
-						maxLevel = 5
+					[3] = {
+						name = "Falcon Shot",
+						description = "Learn Falcon Shot\nShoot a powerful shot that deals physical damage to the target and nearby enemies slowing them for 3 seconds",
+						effect = {{type = "spell", name = "Falcon Shot"}},
+						maxLevel = 1,
 					},
-					[6] = {
-						name = "Placeholder F",
-						description = "gain +1% y per level \ngain +1 z per level",
-						effect = {
-							{type = "storage", name = "BuffY", storage = PassiveSkills.BuffY, value = 1},
-							{type = "storage", name = "BuffZ", storage = PassiveSkills.BuffZ, value = 1}
-						},
-						maxLevel = 17
-					}
+					
 				},
 			},
 		},
