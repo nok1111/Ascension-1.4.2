@@ -2252,18 +2252,18 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Placeholder B",
-						description = "unlock x spell",
-						effect = {{type = "spell", name = "X"}},
+						name = "Beast Shot",
+						description = "Learn Beast Shot\nShoot a powerful shot that deals physical damage to the target and and stuns it for 3 seconds",
+						effect = {{type = "spell", name = "Beast Shot"}},
+						maxLevel = 1,
 						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Placeholder C",
-						description = "gain +1 critical chance per level \n gain +1 critical amount per level",
-						effect = {
-							
-						},
-						maxLevel = 5
+						name = "Falcon Shot",
+						description = "Learn Falcon Shot\nShoot a powerful shot that deals physical damage to the target and nearby enemies slowing them for 3 seconds",
+						effect = {{type = "spell", name = "Falcon Shot"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 3
 					},
 					[4] = {
 						name = "Placeholder D",
