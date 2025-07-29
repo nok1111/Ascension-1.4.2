@@ -63,7 +63,7 @@ ConditionsSubIds = {
     malediction = 29541,
     party_vitality = 29542,
     bloodrage = 29543,
-    shieldwall = 29544
+    shieldwall = 29544,
     
 
 

@@ -21,8 +21,9 @@ zen_sphere:setParameter(CONDITION_PARAM_TICKS, 8000)
 combat:addCondition(zen_sphere)
 
 function onCastSpell(creature, variant)
+	if not creature then return end
 	creature:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
 	--attach effect
-	creature:attachEffectById(29508, true)
+	creature:attachEffectById(98, true)
 	return combat:execute(creature, variant)
 end
