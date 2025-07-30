@@ -1,11 +1,11 @@
 ChallengesIndex = {
-	CRYPT_OF_ETERNAL_FLAMES_BASINS = 1,
+	LUCELLA_DUNGEON_INDEX = 1,
 	CELESTIAL_CITADEL_FOUNTAIN = 2,
 	THE_MACHINISTS_VAULT_VALVES = 3,
 }
 
 ChallengesList = {
-	[ChallengesIndex.CRYPT_OF_ETERNAL_FLAMES_BASINS] = {
+	[ChallengesIndex.LUCELLA_DUNGEON_INDEX] = {
 		title = "Burning Flames",
 		description = "complete any puzzle inside Crypt of Eternal Flames.",
 		points = 5

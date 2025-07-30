@@ -1,0 +1,307 @@
+<?xml version="1.0"?>
+<spawns>
+	<spawn centerx="1020" centery="1020" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1022" centery="1020" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1022" centery="1022" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1020" centery="1023" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1019" centery="1026" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+		<monster name="Bat" x="1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1022" centery="1026" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1020" centery="1029" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1022" centery="1029" centerz="7" radius="1">
+		<monster name="Bat" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="994" centery="1057" centerz="8" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1028" centery="1057" centerz="8" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1032" centery="1057" centerz="8" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1017" centery="1058" centerz="8" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1012" centery="1059" centerz="8" radius="1">
+		<monster name="Thief" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1017" centery="1063" centerz="8" radius="1">
+		<monster name="Thief" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1029" centery="1063" centerz="8" radius="1">
+		<monster name="Witch" x="0" y="0" z="8" spawntime="60" />
+	</spawn>
+	<spawn centerx="1044" centery="1049" centerz="9" radius="1">
+		<monster name="Thief" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1043" centery="1057" centerz="9" radius="1">
+		<monster name="Witch" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1032" centery="1061" centerz="9" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1032" centery="1064" centerz="9" radius="1">
+		<monster name="Thief" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1043" centery="1066" centerz="9" radius="1">
+		<monster name="Thief" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1043" centery="1072" centerz="9" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1045" centery="1081" centerz="9" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1031" centery="1083" centerz="9" radius="1">
+		<monster name="Witch" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1031" centery="1087" centerz="9" radius="1">
+		<monster name="Thief" x="0" y="0" z="9" spawntime="60" />
+	</spawn>
+	<spawn centerx="1085" centery="1013" centerz="10" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1093" centery="1017" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="-1" z="10" spawntime="60" direction="2" />
+		<monster name="Thief" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1095" centery="1017" centerz="10" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1078" centery="1018" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="-1" y="0" z="10" spawntime="60" direction="2" />
+		<monster name="Witch Apprentice" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1076" centery="1020" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1098" centery="1020" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="-1" z="10" spawntime="60" direction="2" />
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1078" centery="1021" centerz="10" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1069" centery="1027" centerz="10" radius="1">
+		<monster name="Wolf" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1071" centery="1027" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1071" centery="1029" centerz="10" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1068" centery="1035" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1070" centery="1035" centerz="10" radius="1">
+		<monster name="Wolf Cub" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1072" centery="1035" centerz="10" radius="1">
+		<monster name="Wolf" x="0" y="-1" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1060" centery="1037" centerz="10" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1069" centery="1037" centerz="10" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1053" centery="1039" centerz="10" radius="1">
+		<monster name="Thief" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Poison Skeleton" x="-1" y="1" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1060" centery="1039" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1051" centery="1043" centerz="10" radius="1">
+		<monster name="Wolf" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1060" centery="1043" centerz="10" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1054" centery="1044" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1087" centery="1047" centerz="10" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1090" centery="1048" centerz="10" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1093" centery="1049" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="-1" y="-1" z="10" spawntime="60" direction="2" />
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1061" centery="1051" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1066" centery="1051" centerz="10" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1066" centery="1053" centerz="10" radius="1">
+		<monster name="Wolf" x="0" y="0" z="10" spawntime="60" />
+		<monster name="Poison Skeleton" x="-1" y="1" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1087" centery="1053" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1075" centery="1058" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="-1" z="10" spawntime="60" direction="2" />
+		<monster name="Skeleton" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1083" centery="1059" centerz="10" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1074" centery="1061" centerz="10" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1071" centery="1064" centerz="10" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="10" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1044" centery="1095" centerz="10" radius="1">
+		<monster name="Thief" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1031" centery="1096" centerz="10" radius="1">
+		<monster name="Thief" x="0" y="0" z="10" spawntime="60" />
+	</spawn>
+	<spawn centerx="1083" centery="1022" centerz="11" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="11" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1093" centery="1024" centerz="11" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1101" centery="1024" centerz="11" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="11" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1080" centery="1026" centerz="11" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="11" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1091" centery="1029" centerz="11" radius="1">
+		<monster name="Poison Skeleton" x="0" y="-1" z="11" spawntime="60" direction="2" />
+		<monster name="Skeleton" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1098" centery="1030" centerz="11" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1095" centery="1038" centerz="11" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1092" centery="1039" centerz="11" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1096" centery="1040" centerz="11" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="11" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1071" centery="1042" centerz="11" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1103" centery="1045" centerz="11" radius="1">
+		<monster name="Thief" x="0" y="0" z="11" spawntime="60" />
+		<monster name="Poison Skeleton" x="-1" y="1" z="11" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1076" centery="1051" centerz="11" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="11" spawntime="60" />
+	</spawn>
+	<spawn centerx="1091" centery="1023" centerz="12" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="12" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1093" centery="1025" centerz="12" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="12" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1089" centery="1021" centerz="13" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="13" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1087" centery="1022" centerz="13" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="13" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1091" centery="1023" centerz="13" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="13" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1090" centery="1026" centerz="13" radius="1">
+		<monster name="Poison Skeleton" x="0" y="0" z="13" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1093" centery="1026" centerz="13" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="13" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1092" centery="1028" centerz="13" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="13" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1099" centery="991" centerz="14" radius="1">
+		<monster name="Lucella" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1099" centery="1000" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1101" centery="1000" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1099" centery="1003" centerz="14" radius="1">
+		<monster name="Skeleton" x="1" y="-1" z="14" spawntime="60" direction="2" />
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1101" centery="1003" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1099" centery="1005" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1101" centery="1005" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1099" centery="1007" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1101" centery="1007" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1100" centery="1011" centerz="14" radius="1">
+		<monster name="Witch" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1090" centery="1013" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1095" centery="1013" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1100" centery="1013" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1091" centery="1015" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1096" centery="1015" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="1092" centery="1017" centerz="14" radius="1">
+		<monster name="Witch Apprentice" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1088" centery="1019" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1086" centery="1022" centerz="14" radius="1">
+		<monster name="Skeleton" x="1" y="-1" z="14" spawntime="60" direction="2" />
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1094" centery="1022" centerz="14" radius="1">
+		<monster name="Witch Apprentice" x="0" y="-1" z="14" spawntime="60" />
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
+	</spawn>
+	<spawn centerx="1091" centery="1026" centerz="14" radius="1">
+		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" direction="2" />
+	</spawn>
+</spawns>

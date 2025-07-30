@@ -18,7 +18,12 @@ DUNGEON_OPCODE = 109
 Dungeons.dungeonsConfig = {
 	["Lucellas Dungeon"] = {
 		aid = 16002,
-		monsters = {"bat", "Blue Djinn", "Green Djinn", "Scarab", "Mummy", "Vampire", "Warlock", "Scorpion"},
+		monsters = {"Wolf", "Skeleton", "Poison Skeleton", "Apprentice Witch", "Witch", "Thief"},
+		rewardBagId = 2003,
+	},
+	["Dr Pomelo Dungeon"] = {
+		aid = 16003,
+		monsters = {"Abomination Specimen", "Mutated Zombie", "Zombie", "Poison Skeleton", "Skeleton"},
 		rewardBagId = 2003,
 	},
 
