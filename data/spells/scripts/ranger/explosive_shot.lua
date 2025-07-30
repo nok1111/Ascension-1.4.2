@@ -86,7 +86,7 @@ local function doDamage(combat, cid, targetPos, variant)
             if Tile(x+x3, y+y3, z) ~= nil then
                 variant = positionToVariant(Position(x+x3, y+y3, z))
                 combat:execute(creature, variant)
-				if creature:getTarget() and creature:getTarget():getCondition(CONDITION_DRUNK, 0, 25970) then
+				if creature:getTarget() and creature:getTarget():getCondition(CONDITION_DRUNK, 0, ConditionsSubIds.beerbarrel) then
 				addEvent(CastSpellburningshots, 6*320, creature:getId(), variant)
 				end
             end

@@ -55,7 +55,7 @@ local function StarfallPassive(playerId, targetId)
     
     conditionastralburn:addDamage(duration, 1000, math.random(minburn, maxburn))
     conditionastralburn:setParameter(CONDITION_PARAM_DELAYED, 1) 
-    conditionastralburn:setParameter(CONDITION_PARAM_SUBID, 259314)
+    conditionastralburn:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.astralburn)
 
     if AstralBurnDurationLevel > 0 then
         target:addCondition(conditionastralburn)
@@ -106,14 +106,14 @@ local PASSIVES = {
     end,
   },
 
-  -- 11232 Lightning Waltz parry
+  
   MagneticShield = {
     config = {
       type = "OnDefend",
-      subid = 22421,
+      subid = ConditionsSubIds.MagneticShield,
     },
     trigger = function(player, attacker, damage, primaryType, origin)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 22421)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.MagneticShield)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
@@ -127,10 +127,10 @@ local PASSIVES = {
   LightningWaltzParry = {
     config = {
       type = "OnDefend",
-      subid = 11232,
+      subid = ConditionsSubIds.LightningWaltzparry,
     },
     trigger = function(player, attacker, damage, primaryType, origin)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 11232)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.LightningWaltzparry)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
@@ -177,10 +177,10 @@ local PASSIVES = {
   frost_armor = {
     config = {
       type = "OnDefend",
-      subid = 29513,
+      subid = ConditionsSubIds.frostarmor,
     },
     trigger = function(player, attacker, damage, primaryType, origin)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 29513)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.frostarmor)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
@@ -200,10 +200,10 @@ local PASSIVES = {
   mountain_stance = {
     config = {
       type = "OnDefend",
-      subid = 29505,
+      subid = ConditionsSubIds.mountain_stance,
     },
     trigger = function(player, attacker, damage, primaryType, origin)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 29505)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.mountain_stance)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
@@ -218,10 +218,10 @@ local PASSIVES = {
   zen_barrier = {
     config = {
       type = "OnDefend",
-      subid = 29508,
+      subid = ConditionsSubIds.zen_sphere,
     },
     trigger = function(player, attacker, damage, primaryType, origin)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 29508)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.zen_sphere)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
@@ -325,14 +325,14 @@ local PASSIVES = {
   tempest_god_stormfist_damage = {
     config = {
       type = "OnAttack",
-      subid = 29512,
+      subid = ConditionsSubIds.stormfist,
     },
     trigger = function(player, target, damage, primaryType, origin)
       if origin ~= ORIGIN_MELEE then
         return false
       end
-      -- Check for Stormfist buff (subid 29512)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 29512)
+      -- Check for Stormfist buff (subid ConditionsSubIds.stormfist)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.stormfist)
     end,
     effect = function(player, target, damage)
       if not player or not target or not damage then
@@ -435,12 +435,12 @@ local PASSIVES = {
 
   consecrated_protection = {
     config = {
-      subid = 50,
+      subid = ConditionsSubIds.consecratedprotection,
       type = "OnDefend",
       storage = PassiveSkills.ConsecratedProtection,
     },
     trigger = function(player, attacker, damage, primaryType, origin) 
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 50)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.consecratedprotection)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
@@ -750,7 +750,7 @@ local PASSIVES = {
   
   blood_blades = {
     config = {
-      subid = 29500,
+      subid = ConditionsSubIds.blood_blades,
       type = "OnAttack"
     },
     trigger = function(player, target, damage, primaryType, origin)
@@ -890,7 +890,7 @@ local PASSIVES = {
         print("Origin is not melee")
         return
       end
-      return target:getCondition(CONDITION_ENERGY, 0, 25965)
+      return target:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge)
     end,
     effect = function(player, target, damage)
       if not player or not target or not damage then
@@ -910,7 +910,7 @@ local PASSIVES = {
       if math.random(1, 100) <= 25 then
         --increases your magic level by 10% condition
         local condition = Condition(CONDITION_ATTRIBUTES)
-        condition:setParameter(CONDITION_PARAM_SUBID, 146)
+        condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.highvoltagelevel)
         condition:setParameter(CONDITION_PARAM_TICKS, 6000)
         condition:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, 100 + HighVoltageLevel)
         condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
@@ -962,11 +962,11 @@ local PASSIVES = {
   
   dark_aura_damage_reduction = {
     config = {
-      subid = 3156,
+      subid = ConditionsSubIds.darkaura,
       type = "OnDefend"
     },
     trigger = function(player, attacker, damage, origin)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 3156)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.darkaura)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
@@ -976,43 +976,30 @@ local PASSIVES = {
     end
   },
 
-  lighting_shield = {
+  shieldwall_damage_reduction = {
     config = {
-      subid = 25971,
+      subid = ConditionsSubIds.shieldwall,
       type = "OnDefend"
     },
     trigger = function(player, attacker, damage, origin)
-      return true
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.shieldwall)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then
         return
       end
-      if math.random(100) <= 75 then
-        player:getPosition():sendMagicEffect(548)
-        player:getPosition():sendMagicEffect(577)
-        if target and (target:isPlayer() or (target:isMonster() and target:getSkull() == SKULL_NONE)) then
-          target:addCondition(PASSIVES.lighting_shield.stunCondition())
-          target:getPosition():sendMagicEffect(CONST_ME_STUN)
-        end
-        return 0
-      end
-      return damage
-    end,
-    stunCondition = function()
-      local cond = Condition(CONDITION_STUNED)
-      cond:setParameter(CONDITION_PARAM_TICKS, 1500)
-      return cond
+      return damage * 0.75
     end
   },
+
   
   frostbloom_shield = {
     config = {
-      subid = 25961,
+      subid = ConditionsSubIds.frostbloom,
       type = "OnDefend"
     },
     trigger = function(player, attacker, damage, origin)
-      return player:getCondition(CONDITION_ATTRIBUTES, 0, 25961)
+      return player:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.frostbloom)
     end,
     effect = function(player, attacker, damage)
       if not player or not attacker or not damage then

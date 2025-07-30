@@ -62,7 +62,7 @@ function onCastSpell(creature, var, tar)
 	local targetmonster = creature:getTarget()	
 	--targetmonster:sendProgressbar(16500, false)
 	
-	if targetmonster:getCondition(CONDITION_DRUNK, 0, 25970) and creature then
+	if targetmonster:getCondition(CONDITION_DRUNK, 0, ConditionsSubIds.beerbarrel) and creature then
 	combat:execute(creature, var)
 	end
 	

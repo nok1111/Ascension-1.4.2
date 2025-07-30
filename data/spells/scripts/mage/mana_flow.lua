@@ -14,6 +14,7 @@ condition:setParameter(CONDITION_PARAM_TICKS, config.timer)
 condition:setParameter(CONDITION_PARAM_MANAGAIN, 0)
 condition:setParameter(CONDITION_PARAM_MANATICKS, config.timer * config.rounds)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
+condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.manaflowtick)
 
 -- Handles the periodic mana gain, including SurgeRecovery passive
 local function manaFlowTick(cid, count)
@@ -30,7 +31,7 @@ local function manaFlowTick(cid, count)
 end
 
 function onCastSpell(creature, variant)
-    if creature:getCondition(CONDITION_REGENERATION, CONDITIONID_DEFAULT, 25941) then
+    if creature:getCondition(CONDITION_REGENERATION, CONDITIONID_DEFAULT, ConditionsSubIds.manaflowtick) then
         creature:sendCancelMessage("Spell is already active.")
         creature:getPosition():sendMagicEffect(CONST_ME_POFF)
         return false

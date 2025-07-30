@@ -107,7 +107,7 @@ local function chainAttack(creatureId, targetId, chainCount, hitTargets)
         targetPos:sendDistanceEffect(nextTarget:getPosition(), config.chainEffect)
         combat:execute(creature, positionToVariant(nextTarget:getPosition()))
 
-        if nextTarget:getCondition(CONDITION_ENERGY, 0, 25965) then
+        if nextTarget:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge) then
             nextTarget:addCondition(stunCondition)
             applyStunEffect(nextTarget:getId(), stunDuration)
         end
@@ -124,7 +124,7 @@ function onCastSpell(creature, variant)
 
     combat:execute(creature, positionToVariant(target:getPosition()))
 
-    if target:getCondition(CONDITION_ENERGY, 0, 25965) then
+    if target:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge) then
         target:addCondition(stunCondition)
         applyStunEffect(target:getId(), stunDuration)
     end

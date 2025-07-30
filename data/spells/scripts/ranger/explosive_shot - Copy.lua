@@ -79,7 +79,7 @@ function onCastSpell(creature, variant)
 	addEvent(Explosive_damage, 1300, creature:getId(), variant)
 	addEvent(Explosive_damage, 1900, creature:getId(), variant)
 	
-	if creature:getTarget():getCondition(CONDITION_DRUNK, 0, 25970) and creature and creature:getTarget() then
+	if creature:getTarget():getCondition(CONDITION_DRUNK, 0, ConditionsSubIds.beerbarrel) and creature and creature:getTarget() then
 	addEvent(CastSpellburningshots, 2000, creature:getId(), variant)
 	end
 	

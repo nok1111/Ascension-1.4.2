@@ -65,7 +65,7 @@ function onCastSpell(creature, var)
     targetPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
     creature:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 
-    if target:getCondition(CONDITION_ENERGY, 0, 25965) then
+    if target:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge) then
         local stunDuration = 1800
         local adjustedStunDuration = target:isPlayer() and (stunDuration / 3) or stunDuration
         local stun = Condition(CONDITION_STUN)

@@ -64,6 +64,8 @@ ConditionsSubIds = {
     party_vitality = 29542,
     bloodrage = 29543,
     shieldwall = 29544,
+    astralburn = 29545,
+    highvoltagelevel = 29546
     
 
 

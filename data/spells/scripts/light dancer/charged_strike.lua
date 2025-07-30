@@ -106,7 +106,7 @@ local sword = target:getPosition()
    -- Get Gambler's Luck bonus (default to 0 if not set)
    local luck = creature:getStorageValue(PassiveSkills.GamblerLuck) or 0
 
-   if target:getCondition(CONDITION_ENERGY, 0, 25965) then
+   if target:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge) then
 	   -- 2 base procs + luck bonus
 	   for i = 1, 2 + (luck * 2) do
 		   addEvent(castSpell2, time_between_hits2 * (240 * i), creature:getId(), variant, target:getId())
