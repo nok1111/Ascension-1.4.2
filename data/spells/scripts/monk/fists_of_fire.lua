@@ -158,15 +158,22 @@ function onCastSpell(creatureId, variant, target)
         return
     end
 
+    local orb1, orb2 = getActiveOrbs(creature)
+    if not orb1 or not orb2 then
+        creature:sendCancelMessage("You need two fire orbs to use this spell.")
+        return false
+    end
+    local combination = orb1 .. '_' .. orb2
     -- Require at least 2 fire orbs to cast
-    local fireOrbs = getActiveOrbs(creatureId, "fire")
-    if fireOrbs < 2 then
-        doPlayerSendCancel(creatureId, "You need 2 fire orbs to use Fists of Fire.")
+    if combination ~= 'fire_fire' then
+        creature:sendCancelMessage("You need 2 fire orbs to use Fists of Fire.")
         return false
     end
 
     --LOOP COMBAT EVERY 50MS --USE GETID()
     addEvent(firefistloop, 50, creature:getId(), variant, target, 30)
     creature:attachEffectById(92, true)
+    ClearBooster(creature)
+    updatePlayerEffects(creature)
     return true
 end

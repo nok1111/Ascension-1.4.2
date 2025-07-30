@@ -52,13 +52,11 @@ end
 
 function onCastSpell(creature, variant)
  local player = Player(creature)
-local aura = creature:getPosition()
-        aura.x = aura.x + 1
-        aura.y = aura.y + 1
-		
-  aura:sendMagicEffect(281)
+
   creature:getPosition():sendMagicEffect(336)
-  player:attachEffectById(15, true)
+  player:attachEffectById(153, true)
+  player:attachEffectById(154, true)
+ 
   player:sendAddBuffNotification(48, 4, 'Shadow Form', 5, 0)
 
 	local cid = creature:getId()

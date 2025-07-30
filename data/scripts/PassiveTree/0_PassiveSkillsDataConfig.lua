@@ -1903,7 +1903,7 @@ PassiveSkills.treeData = {
 	},
 	[9] = {			-- Tree 4
 		name = "Light Dancer Talents",
-		background = "12",
+		background = "14",
 		branches = {
 			[1] = {
 				color = '#134f1c',
@@ -2043,7 +2043,7 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 3
 					},
 					[3] = {
-						name = "Dancing Edge ",
+						name = "Dancing Edge",
 						description = "Elusive Blade now has a 20% (per level) chance to trigger a second time at 50% effectiveness and grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
 						effect = {
 							{type = "storage", name = "DancingEdge", storage = PassiveSkills.DancingEdge, value = 20}
