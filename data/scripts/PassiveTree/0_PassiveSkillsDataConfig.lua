@@ -2282,13 +2282,44 @@ PassiveSkills.treeData = {
 						effect = {
 							{type = "storage", name = "HunterMercy", storage = PassiveSkills.HunterMercy, value = 1}
 						},
-						maxLevel = 4,
+						maxLevel = 4, 
+						prevNodeLevelNeeded = 1
 					},
 					[3] = {
-						name = "Falcon Shot",
-						description = "Learn Falcon Shot\nShoot a powerful shot that deals physical damage to the target and nearby enemies slowing them for 3 seconds",
-						effect = {{type = "spell", name = "Falcon Shot"}},
-						maxLevel = 1,
+						name = "Arrowstorm",
+						description = "Increase the shots from rapid fire by 1 (per level) and reduces its cast time.",
+						effect = {
+							{type = "storage", name = "Arrowstorm", storage = PassiveSkills.Arrowstorm, value = 1}
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 4
+					},
+					[4] = {
+						name = "Focused Fire",
+						description = "Increase the damage done by your Aim Shot, Falcon Shot and Rapid Fire by an additional 6% (per level)",
+						effect = {
+							{type = "storage", name = "FocusedFire", storage = PassiveSkills.FocusedFire, value = 6}
+						},
+						maxLevel = 6,
+						prevNodeLevelNeeded = 5
+					},
+					[5] = {
+						name = "Dead from above",
+						description = "Your physical damage has a 2% (per level) chance to trigger Dead from Above, Wich will trigger a bullet barrage from the sky that does fire damage to the target and nearby enemies.",
+						effect = {
+							{type = "storage", name = "DeadFromAbove", storage = PassiveSkills.DeadFromAbove, value = 2}
+						},
+						maxLevel = 4,
+						prevNodeLevelNeeded = 6
+					},
+					[6] = {
+						name = "Scorched Mark",
+						description = "Dead from above now increases your critical strike chance by 6% (per level) every time it triggers",
+						effect = {
+							{type = "storage", name = "DeadFromAbove", storage = PassiveSkills.DeadFromAbove, value = 6}
+						},
+						maxLevel = 4,
+						prevNodeLevelNeeded = 4
 					},
 					
 				},

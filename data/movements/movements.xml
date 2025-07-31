@@ -14,9 +14,10 @@
 	-->
 	
 	
-	<!-- waypoint -->
+	<!-- waypoint 
 	<movevent event="StepIn" actionid="61199" script="waypoints.lua" />
 	<movevent event="StepIn" actionid="61200" script="waypoints.lua" />
+	-->
 
 
 	<!-- Decaying tiles -->

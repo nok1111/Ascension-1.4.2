@@ -720,6 +720,28 @@ local zones = {
         activeWeather = nil, -- Stores the currently active weather
 
     },
+    [40] = {
+        id = 40,
+        name = "Tuskin West Mountain",
+        monsters = {"hog", "tuskhog", "hog smasher", "hog bomber", "hog spearman", "hog champion", "hog elite", "hog shaman"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+    
+        tiles = 0,
+        maxMonsters = 0,
+    
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Rain", "Map - Fog"}, -- Possible weather types
+        forceWeather = false, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
 
 
 

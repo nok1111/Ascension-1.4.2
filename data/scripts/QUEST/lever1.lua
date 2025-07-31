@@ -99,6 +99,16 @@ local leverConfigs = {
         resetTime = 10 * 60 * 1000,
         message = "The seals are in the correct order and 4 walls collapse revealing a hidden path.",
     },
+    [1009] = {
+        skipItemsCheck = true, -- Bypass itemsToCheck validation
+        wallPositions = {
+            Position(824, 983, 7),
+            Position(825, 983, 7)
+        },
+        wallItemId = 1544,
+        resetTime = 15 * 1000, 
+        message = "a hidden path has been discovered."
+    },
 }
 
 local leverAction = Action()
