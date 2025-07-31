@@ -10,16 +10,16 @@ lucella_dungeon:setRequiredParty(1, 5)
 
 -- Boss
 lucella_dungeon:setBoss("Lucella", Position(1060, 984, 14))
-lucella_dungeon:setKillPercent(90)
+lucella_dungeon:setKillPercent(80)
 
 -- Requirements
 lucella_dungeon:setRequiredLevel(35)
-lucella_dungeon:addRequiredItem(5898, 1) -- citadel key
+lucella_dungeon:addRequiredItem(37795, 1) -- citadel key
 lucella_dungeon:setRequiredGold(1 * 100 * 100)
 
 -- Boss Loot
-lucella_dungeon:addReward(2148, 25, 100) -- gold coin
-lucella_dungeon:addReward(2148, 50, 100) -- gold coin
+lucella_dungeon:addReward(2152, 25, 100) -- platinum coin
+lucella_dungeon:addReward(29032, 50, 100) -- orb of performance
 
 
 -- Challenges

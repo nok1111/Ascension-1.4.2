@@ -65,7 +65,7 @@ ConditionsSubIds = {
     bloodrage = 29543,
     shieldwall = 29544,
     astralburn = 29545,
-    highvoltagelevel = 29546
+    highvoltagelevel = 29546,
     
 
 
