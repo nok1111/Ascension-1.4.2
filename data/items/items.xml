@@ -2874,8 +2874,8 @@
 	<item id="2180" name="the orb of nature" />
 	
 	<item id="2181" article="a" name="Rod of the Earthflow">
-		<attribute key="attack" value="49" />
-		<attribute key="defense" value="32" />
+		<attribute key="attack" value="27" />
+		<attribute key="defense" value="19" />
 		<attribute key="maxmanapoints" value="350" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="axe" />
@@ -2899,8 +2899,8 @@
 		<attribute key="range" value="3" />
 	</item>
 	<item id="2184" article="a" name="crystal wand">
-		<attribute key="attack" value="40" />
-		<attribute key="defense" value="20" />
+		<attribute key="attack" value="23" />
+		<attribute key="defense" value="18" />
 		<attribute key="manaGain" value="20" />
 		<attribute key="manaTicks" value="5000" />
 		<attribute key="maxmanapoints" value="150" />
@@ -2934,8 +2934,8 @@
 		<attribute key="description" value="increases you mana regeneration by 7 points every 3 seconds" />
 	</item>
 	<item id="2187" article="a" name="Wand Of Endless Fire">
-		<attribute key="attack" value="42" />
-		<attribute key="defense" value="19" />
+		<attribute key="attack" value="26" />
+		<attribute key="defense" value="15" />
 		<attribute key="manaleechamount" value="7" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="axe" />
@@ -2962,8 +2962,9 @@
 		<attribute key="range" value="4" />
 	</item>
 	<item id="2190" article="a" name="wand of vortex">
-		<attribute key="attack" value="28" />
+		<attribute key="attack" value="30" />
 		<attribute key="defense" value="16" />
+		<attribute key="magiclevelpoints" value="1" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />

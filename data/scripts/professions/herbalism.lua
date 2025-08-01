@@ -3,13 +3,13 @@ local cfg = {
     stage2Regen = 900 * 1000, -- 15 minutes
     stage3Regen = 900 * 1000, -- 15 minutes
     ores = {
-        {effect = CONST_ME_SMOKE, ore = 35440, bonusore = 13757, amount = {1, 3}, skillReq = 0,  points = 10, fame = 1, veins = {
+        {effect = CONST_ME_SMOKE, ore = 35440, bonusore = 13757, amount = {1, 3}, skillReq = 0,  points = 4, fame = 1, veins = {
                 {id = 35730, lv = 8}, -- copper ore
                 {id = 40055, lv = 8} -- vein destruida
                 
             }
         },
-		 {effect = CONST_ME_SMOKE, ore = 35439, bonusore = 13757, amount = {1, 3}, skillReq = 0,  points = 10, fame = 1, veins = {
+		 {effect = CONST_ME_SMOKE, ore = 35439, bonusore = 13757, amount = {1, 3}, skillReq = 0,  points = 5, fame = 1, veins = {
                 {id = 35731, lv = 8}, -- silver ore
                 {id = 40055, lv = 8} -- vein destruida
                 

@@ -43,7 +43,7 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 5947,
+			craftedItemId = 5947, -- Elane's crossbow
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
@@ -59,7 +59,7 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 2163,
+			craftedItemId = 2163, --magic light wand
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
@@ -75,7 +75,7 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 2512,
+			craftedItemId = 2512, --wooden shield
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
@@ -191,6 +191,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -209,6 +210,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -228,6 +230,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -266,6 +269,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -283,6 +287,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -301,6 +306,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -336,6 +342,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -353,6 +360,7 @@ Crafting.recipes = {
 			craftedCount = 1, --
 			tier = 0, 
 			fame = 2, -- used for description
+			requiredSkill = 0,
 			desc = false,
 			rollrarity = 1, --1 COMMON, 2 RARE, 3 EPIC
 			itemlvl = 10,
@@ -423,7 +431,7 @@ Crafting.recipes = {
 			craftedCount = 5, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 2, -- if your profession level is lower you cant craft that recipe
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
 			desc = "Teaches you how to create a minor haste vial, drinking this vial will grant the user a small amount of speed for 5 minutes.",
 			craftPoints = 3, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
@@ -438,7 +446,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 1,
 			fame = 2, -- used for description
-			requiredSkill = 2,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a minor agility vial, drinking this vial will grant 3 Distance points for 10 minutes.",
 			craftPoints = 5,
 			cost = 2, -- cost in gold coins
@@ -452,7 +460,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 1,
 			fame = 2, -- used for description
-			requiredSkill = 2,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a minor mindflow vial, drinking this vial will grant 80 max mana points for 10 minutes.",
 			craftPoints = 5,
 			cost = 2, -- cost in gold coins
@@ -469,7 +477,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 1,
 			fame = 2, -- used for description
-			requiredSkill = 2,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a minor vial of fortitude, drinking this vial will grant 80 max helth points for 10 minutes.",
 			craftPoints = 7,
 			cost = 2, -- cost in gold coins
@@ -484,7 +492,7 @@ Crafting.recipes = {
 			craftedCount = 20,
 			tier = 2,
 			fame = 2, -- used for description
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a medium health potion, drinking this potion will restore a medium amount of health.",
 			craftPoints = 11,
 			cost = 2, -- cost in gold coins
@@ -499,7 +507,7 @@ Crafting.recipes = {
 			craftedCount = 20,
 			tier = 2,
 			fame = 2, -- used for description
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a medium mana potion, drinking this potion will restore a medium amount of mana.",
 			craftPoints = 11,
 			cost = 2, -- cost in gold coins
@@ -515,7 +523,7 @@ Crafting.recipes = {
 			craftedCount = 20,
 			tier = 2,
 			fame = 2, -- used for description
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a medium spirit potion, drinking this potion will restore a  medium of mana and health.",
 			craftPoints = 9,
 			cost = 2, -- cost in gold coins
@@ -531,7 +539,7 @@ Crafting.recipes = {
 			craftedCount = 3,
 			tier = 2,
 			fame = 2, -- used for description
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a minor vial of awakening, drinking this vial will grant 1 magic points for 10 minutes.",
 			craftPoints = 11,
 			cost = 2, -- cost in gold coins
@@ -547,7 +555,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 2,
 			fame = 2, -- stonegrasp potion
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a stonegrasp potion, drinking this vial will turn the target into stone and protect him from all damage.",
 			craftPoints = 40,
 			cost = 20, -- cost in gold coins
@@ -566,7 +574,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 2,
 			fame = 2, -- stonegrasp potion
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a proficiency skill vial. this vial grants a 20% boost to a skill of your choosing for 30 minutes. Choose wisely!.",
 			craftPoints = 40,
 			cost = 20, -- cost in gold coins
@@ -584,7 +592,7 @@ Crafting.recipes = {
 			craftedCount = 3,
 			tier = 2,
 			fame = 2, -- used for description
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a minor vial of the lion, drinking this vial will grant 3 Melee points for 10 minutes.",
 			craftPoints = 11,
 			cost = 2, -- cost in gold coins
@@ -599,7 +607,7 @@ Crafting.recipes = {
 			craftedCount = 3,
 			tier = 2,
 			fame = 2, -- used for description
-			requiredSkill = 3,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a minor elixir of magic resistance, drinking this elixir will grant 3% elemental resistance for 5 minutes.",
 			craftPoints = 11,
 			cost = 2, -- cost in gold coins
@@ -617,7 +625,7 @@ Crafting.recipes = {
 			craftedCount = 3,
 			tier = 3,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to transmute a fire essense.",
 			craftPoints = 15,
 			cost = 2, -- cost in gold coins
@@ -633,7 +641,7 @@ Crafting.recipes = {
 			craftedCount = 20,
 			tier = 3,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a big health potion, drinking this potion will restore a big amount of health.",
 			craftPoints = 15,
 			cost = 2, -- cost in gold coins
@@ -648,7 +656,7 @@ Crafting.recipes = {
 			craftedCount = 20,
 			tier = 3,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a big mana potion, drinking this potion will restore a big amount of mana.",
 			craftPoints = 15,
 			cost = 2, -- cost in gold coins
@@ -664,7 +672,7 @@ Crafting.recipes = {
 			craftedCount = 20,
 			tier = 3,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a big spirit potion, drinking this potion will restore a big amount of mana & health.",
 			craftPoints = 15,
 			cost = 2, -- cost in gold coins
@@ -680,7 +688,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 3,
 			fame = 0, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "This core pulses with unstable energy. Has a 5% chance to be stabilized.",
 			craftPoints = 5,
 			cost = 5, -- cost in gold coins
@@ -696,7 +704,7 @@ Crafting.recipes = {
 			craftedCount = 20,
 			tier = 3,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a Oil Bomb, deals aoe damage based on users alchemy level.",
 			craftPoints = 20,
 			cost = 2, -- cost in gold coins
@@ -711,7 +719,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 3,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a worm milk, increases your defence by 10 points and can be also used in other cooking recepies.",
 			craftPoints = 16,
 			cost = 2, -- cost in gold coins
@@ -727,7 +735,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 3,
 			fame = 7, -- elixir of sacrifice
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a elixir of sacrifice, dinking this will allow you to sacrificehalf your mana to refill all your health at once.",
 			craftPoints = 30,
 			cost = 40, -- cost in gold coins
@@ -745,7 +753,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 4,
 			fame = 2, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a Frozen Tear required for high level crafting recepies.",
 			craftPoints = 7,
 			cost = 2, -- cost in gold coins
@@ -762,7 +770,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 4,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a enchanted big health potion, drinking this potion will restore a big amount of health.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -778,7 +786,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 4,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a enchanted big mana potion, drinking this potion will restore a big amount of mana.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -795,7 +803,7 @@ Crafting.recipes = {
 			craftedCount = 5,
 			tier = 4,
 			fame = 7, -- used for description
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a enchanted big spirit potion, drinking this potion will restore a big amount of mana & health.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -812,7 +820,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 4,
 			fame = 7, -- chrono potion
-			requiredSkill = 4,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a chrono potion, drinking this potion will store your current health & mana in time and restore it again in 10 seconds.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -831,7 +839,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 5,
 			fame = 7, -- used for description
-			requiredSkill = 5,
+			requiredSkill = 0,
 			desc = "Teaches you how to create a elemental surge flask, contains a unknown surge of energy, will probably will not work as expected when attacking.",
 			craftPoints = 30,
 			cost = 2, -- elemental surge potion
@@ -848,7 +856,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 5,
 			fame = 7, -- used for description
-			requiredSkill = 5,
+			requiredSkill = 0,
 			desc = "Celestial Transmutation Distance boost Effect.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -864,7 +872,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 5,
 			fame = 7, -- used for description
-			requiredSkill = 5,
+			requiredSkill = 0,
 			desc = "Celestial Transmutation melee boost Effect.",
 			craftPoints = 60,
 			cost = 60, -- cost in gold coins
@@ -881,7 +889,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 5,
 			fame = 7, -- used for description
-			requiredSkill = 5,
+			requiredSkill = 0,
 			desc = "Celestial Transmutation defence boost Effect.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -897,7 +905,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 5,
 			fame = 7, -- used for description
-			requiredSkill = 5,
+			requiredSkill = 0,
 			desc = "Celestial Transmutation defence boost Effect.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -913,7 +921,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 5,
 			fame = 7, -- used for description
-			requiredSkill = 5,
+			requiredSkill = 0,
 			cost = 2, -- cost in gold coins
 			desc = "Celestial Transmutation physical protection Effect.",
 			craftPoints = 30,
@@ -929,7 +937,7 @@ Crafting.recipes = {
 			craftedCount = 1,
 			tier = 5,
 			fame = 7, -- used for description
-			requiredSkill = 5,
+			requiredSkill = 0,
 			desc = "Celestial Transmutation magic protection Effect.",
 			craftPoints = 30,
 			cost = 2, -- cost in gold coins
@@ -1056,14 +1064,14 @@ Crafting.recipes = {
 		[4] = { -- all recipes for enchanting
 		--TIER 1 runes
 		{
-			craftedItemId = 7735, -- prismatic cube
+			craftedItemId = 7735, -- Enchanters Rod
 			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
 			desc = "Useful tool necessary for disenchanting rare items or Prismatic cubes.",
 			itemlvl = 10,
-			craftPoints = 2, -- points for crafting that recipe
+			craftPoints = 5, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
@@ -1078,11 +1086,11 @@ Crafting.recipes = {
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
 			desc = "Prismatic cubes can be disenchanted to obtain mystic powder, runes and other materials.",
 			itemlvl = 10,
-			craftPoints = 2, -- points for crafting that recipe
+			craftPoints = 5, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 13197, required = 1},
+				{id = 13215, required = 10}, --arcane Powder
 			},
 		},
 		{
@@ -1090,14 +1098,15 @@ Crafting.recipes = {
 			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 3, -- if your profession level is lower you cant craft that recipe
+			requiredSkill = 10, -- if your profession level is lower you cant craft that recipe
 			desc = "Prismatic cubes can be disenchanted to create runes and other materials.",
 			itemlvl = 10,
-			craftPoints = 2, -- points for crafting that recipe
+			craftPoints = 0, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 13197, required = 1},
+				{id = 13215, required = 8},
+				{id = 13197, required = 8},
 			},
 		},
 		{
@@ -1105,32 +1114,36 @@ Crafting.recipes = {
 			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 6, -- if your profession level is lower you cant craft that recipe
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
 			desc = "Prismatic cubes can be disenchanted to create runes and other materials.",
 			itemlvl = 10,
-			craftPoints = 2, -- points for crafting that recipe
+			craftPoints = 15, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 13197, required = 1},
+				{id = 13197, required = 22},
 			},
 		},
 		
 
 		{
-			craftedItemId = 2187, -- wand of inferno
+			craftedItemId = 2187, -- Wand Of Endless Fire
 			craftedCount = 1, -- amount of items that you gonnna get from that recipe
 			tier = 1, -- used for description
 			fame = 2, -- used for description
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
 			desc = false,
 			itemlvl = 10,
-			craftPoints = 2, -- points for crafting that recipe
+			craftPoints = 6, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			upgraded = "true",
 			ingredients = {
-				{id = 13197, required = 1},
+				{id = 13215, required = 2}, --arcane Powder
+				{id = 39962, required = 8},
+				{id = 2163, required = 1},
+
+				
 			},
 		},
 		{
@@ -1141,23 +1154,60 @@ Crafting.recipes = {
 			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
 			desc = false,
 			itemlvl = 10,
-			craftPoints = 2, -- points for crafting that recipe
+			craftPoints = 6, -- points for crafting that recipe
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			upgraded = "true",
 			ingredients = {
-				{id = 13197, required = 1},
+				{id = 13215, required = 2},
+				{id = 39962, required = 8},
+				{id = 2163, required = 1},
 			},
 		},
-		
-		--TIER 2
-		
-		   {
+		{
+			craftedItemId = 2511, -- Orb of Eternal Breath
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 6, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13215, required = 2},
+				{id = 39962, required = 8},
+				{id = 2163, required = 1},
+			},
+		},
+		{
+			craftedItemId = 32723, -- Petit Albert
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 6, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13215, required = 2},
+				{id = 13197, required = 2},
+				{id = 39962, required = 8},
+				{id = 2163, required = 1},
+			},
+		},
+
+		{
 			craftedItemId = 35379, -- server id of item that you gonna get from that recipe
 			craftedCount = 1, -- amount of items that you gonnna get from that recipe
-			tier = 2, -- used for description
+			tier = 1, -- used for description
 			fame = 2, -- used for description
-			requiredSkill = 2, -- if your profession level is lower you cant craft that recipe
+			requiredSkill = 0, -- if your profession level is lower you cant craft that recipe
 			desc = "enchanted with Max Mana and Ability Damage.",
 			itemlvl = 10,
 			craftPoints = 7, -- points for crafting that recipe
@@ -1166,14 +1216,15 @@ Crafting.recipes = {
 			ingredients = {
 				{id = 35372, required = 1},
 				{id = 33201, required = 1},
+				{id = 13215, required = 5},
 			},
 		},
 		{
 			craftedItemId = 35387,
 			craftedCount = 1,
-			tier = 2,
+			tier = 1,
 			fame = 2, -- used for description
-			requiredSkill = 2,
+			requiredSkill = 0,
 			desc = "enchanted with Max HP and Distance.",
 			itemlvl = 10,
 			craftPoints = 7,
@@ -1182,14 +1233,15 @@ Crafting.recipes = {
 			ingredients = {
 				{id = 35372, required = 1},
 				{id = 33203, required = 1},
+				{id = 13215, required = 5},
 			},
 		},
 		{
 			craftedItemId = 35395,
 			craftedCount = 1,
-			tier = 2,
+			tier = 1,
 			fame = 2, -- used for description
-			requiredSkill = 2,
+			requiredSkill = 0,
 			desc = "enchanted with Magic Level and Melee.",
 			itemlvl = 10,
 			craftPoints = 7,
@@ -1198,14 +1250,15 @@ Crafting.recipes = {
 			ingredients = {
 				{id = 35372, required = 1},
 				{id = 35789, required = 1},
+				{id = 13215, required = 5},
 			},
 		},
 		{
 			craftedItemId = 35404,
 			craftedCount = 1,
-			tier = 2,
+			tier = 1,
 			fame = 2, -- used for description
-			requiredSkill = 2,
+			requiredSkill = 0,
 			desc = "enchanted with max mana and Physical Protection.",
 			itemlvl = 10,
 			craftPoints = 7,
@@ -1214,14 +1267,15 @@ Crafting.recipes = {
 			ingredients = {
 				{id = 35372, required = 1},
 				{id = 33202, required = 1},
+				{id = 13215, required = 5},
 			},
 		},
 		{
 			craftedItemId = 35412,
 			craftedCount = 1,
-			tier = 2,
+			tier = 1,
 			fame = 2, -- used for description
-			requiredSkill = 2,
+			requiredSkill = 0,
 			desc = "enchanted with Max Hp and Ability Damage Increased.",
 			itemlvl = 10,
 			craftPoints = 7,
@@ -1230,8 +1284,180 @@ Crafting.recipes = {
 			ingredients = {
 				{id = 35372, required = 1},
 				{id = 35788, required = 1},
+				{id = 13215, required = 5},
 			},
 		},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		{
+			craftedItemId = 2181, -- rod of the earthflow
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 3, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 8, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13215, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+
+		{
+			craftedItemId = 2190, -- vortex wand
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 3, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 8, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13215, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+
+		{
+			craftedItemId = 2509, -- healing lotus
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 3, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 8, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13215, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+		{
+			craftedItemId = 2186, -- moonlight
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 4, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 10, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13215, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+		{
+			craftedItemId = 32721, -- Necromancer's Practice Book
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 4, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 10, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13215, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+		{
+			craftedItemId = 2185, -- Blackmagic Rod
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 4, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 10, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13197, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+		{
+			craftedItemId = 2510, -- Fragment of Pure Life
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 5, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 13, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13197, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+		{
+			craftedItemId = 2191, -- Dragonbreath Wand
+			craftedCount = 1, -- amount of items that you gonnna get from that recipe
+			tier = 1, -- used for description
+			fame = 2, -- used for description
+			requiredSkill = 5, -- if your profession level is lower you cant craft that recipe
+			desc = false,
+			itemlvl = 10,
+			craftPoints = 13, -- points for crafting that recipe
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			upgraded = "true",
+			ingredients = {
+				{id = 13197, required = 4},
+				{id = 39962, required = 12},
+				{id = 2163, required = 1},
+			},
+		},
+		
+		
+		--TIER 2
+		
+		  
 		
 	
 		
@@ -2010,6 +2236,9 @@ local itemlevel_runes3 = math.floor(60 + (enchanting_level * 3.0))
 local itemlevel_runes4 = math.floor(75 + (enchanting_level * 3.5))
 local itemlevel_runes5 = math.floor(90 + (enchanting_level * 4.5))
 
+local itemlevel_wands = math.floor(3 + (enchanting_level * 1.8))
+
+
 local function createRarity_craft()
   local rarity = COMMON
   local roll = math.random(1, 100) + profession_level
@@ -2029,12 +2258,41 @@ end
 
 -- Special crafted items with item level and rarity logic
 local specialCraftItems = {
-    [32763] = itemlevel_bigequipment, [32764] = itemlevel_bigequipment, [32765] = itemlevel_smallequipment,
-    [32766] = itemlevel_bigequipment, [32767] = itemlevel_bigequipment, [32788] = itemlevel_bigequipment,
-    [32789] = itemlevel_bigequipment, [2377] = itemlevel_bigequipment, [30759] = itemlevel_bigequipment,
-    [2186] = itemlevel_bigequipment, [36357] = itemlevel_bigequipment, [31802] = itemlevel_bigequipment,
-    [36359] = itemlevel_bigequipment, [2385] = itemlevel_bigequipment, [2191] = itemlevel_bigequipment -- add more as needed
+    [32763] = itemlevel_bigequipment,
+	[32764] = itemlevel_bigequipment,
+	[32765] = itemlevel_smallequipment,
+	[32766] = itemlevel_bigequipment,
+	[32767] = itemlevel_bigequipment,
+	[32788] = itemlevel_bigequipment,
+	[32789] = itemlevel_bigequipment,
+	[2377] = itemlevel_bigequipment,
+	[30759] = itemlevel_bigequipment,
+	
+	[36357] = itemlevel_bigequipment,
+	[31802] = itemlevel_bigequipment,
+	[36359] = itemlevel_bigequipment,
+	[2385] = itemlevel_bigequipment,
+	 -- add more as needed
+
+	--wands
+	[2186] = itemlevel_wands,
+	[2191] = itemlevel_wands,
+	[2187] = itemlevel_wands,
+	[2184] = itemlevel_wands,
+	[2181] = itemlevel_wands,
+	[2185] = itemlevel_wands,
+	[2186] = itemlevel_wands,
+	[2191] = itemlevel_wands,
+
+	--offhands
+	[2509] = itemlevel_wands,
+	[2510] = itemlevel_wands,
+	[2511] = itemlevel_wands,
+	[32721] = itemlevel_wands,
+	[32723] = itemlevel_wands,
 }
+
+
 
 -- Special unique items (e.g., runes) with itemlevel and unique values
 local specialUniqueItems = {

@@ -11,9 +11,9 @@ local cfg = {
     },
     skillThresholds = {
         common = 0,
-        rare = 2,
-        epic = 4,
-        ultrarare = 6
+        rare = 5,
+        epic = 10,
+        ultrarare = 15
     },
     dropChances = {
         common = 70, -- 70% chance for common logs
@@ -22,10 +22,10 @@ local cfg = {
         ultrarare = 2 -- 2% chance for ultrarare logs
     },
     pointsPerRarity = {
-    common = 4,
-    rare = 6,
-    epic = 8,
-    ultrarare = 10
+    common = 1,
+    rare = 3,
+    epic = 10,
+    ultrarare = 17
     },
 
     trees = {
