@@ -69,7 +69,8 @@ ConditionsSubIds = {
     
 
 
-
+   --monsters only
+    lucellatransform = 29600,
 
 
     --pets

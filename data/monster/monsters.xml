@@ -30,6 +30,7 @@
 	<monster name="Vael the Betrayer" file="tier 1/bosses/vael_the_betrayer.xml" />
 	<monster name="Malrith, the Hungering Shade" file="tier 1/bosses/Malrith the Hungering Shade.xml" />
 	<monster name="Garnak the Warlord" file="tier 1/bosses/garnak_the_warlord.xml" />
+	<monster name="Lucella" file="tier 1/bosses/lucella.xml" />
 	
 	<!--TIER 1-->
 	<monster name="Rat" file="tier 1/rat.xml" />

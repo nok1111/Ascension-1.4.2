@@ -858,7 +858,7 @@ playersTasks = {
     taskGoals = {
         monsters = {
             [1] = {
-                name = "Lucella, the Weaving Dread",
+                name = "Lucella",
                 spriteId = 9275 -- Example sprite ID
             }
         }

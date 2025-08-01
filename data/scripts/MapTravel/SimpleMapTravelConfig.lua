@@ -13,6 +13,8 @@ SimpleMapTravelConfig = {
 local stepInEvent = MoveEvent()
 
 function stepInEvent.onStepIn(creature, item, position, fromPosition)
+    local player = creature:getPlayer()
+    if not player then return true end
     local destination = SimpleMapTravelConfig[item.actionid]
     if destination then
         MapTravel.launchMapTravel(player, destination)

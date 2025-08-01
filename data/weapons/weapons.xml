@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <weapons>
 
+	<wand id="2163" mana="1"  swing="true" script="wands/moon.lua" />
+
 	<wand id="2190" mana="2"  swing="true" script="wands/energy.lua" /> <!-- Wand of Vortex  20/5-->
 	
 	<wand id="2182" mana="3" swing="true" script="wands/earth.lua" />	<!-- Terra Rod 25/12 -->

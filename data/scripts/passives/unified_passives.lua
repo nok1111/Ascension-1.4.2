@@ -15,7 +15,6 @@ local permafrost_area = createCombatArea({
 -- Standardized passive structure implementation
 -- Spawns a fire distance effect and applies an area fire combat at the target's position
 function doExtraFireball(playerid, targetid, baseDamage)
-  print("doExtraFireball")
   if not playerid or not targetid then return end
   local player = Creature(playerid)
   local target = Creature(targetid)
@@ -47,10 +46,8 @@ local function StarfallPassive(playerId, targetId)
 	local maxburn =  ((level / 5) + (magic * 1.6) + 2) + 3
 
     local AstralBurnDurationLevel = math.max(player:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
-    print("AstralBurnDurationLevel: " .. AstralBurnDurationLevel)
     local conditionastralburn = Condition(CONDITION_ENERGY, CONDITIONID_COMBAT)
     local duration = AstralBurnDurationLevel + 1
-    print("duration: " .. duration)
 
     
     conditionastralburn:addDamage(duration, 1000, math.random(minburn, maxburn))
@@ -546,13 +543,9 @@ local PASSIVES = {
         local maxHealth = player:getMaxHealth()
         local currentHealth = player:getHealth()
         local missingPercent = math.max(0, (maxHealth - currentHealth) / maxHealth)
-        print("missingPercent: " .. missingPercent)
-        print("level: " .. level)
-        print("maxHealth: " .. maxHealth)
 
         -- Heal = missingPercent * level * maxHealth * 0.01
         local healAmount = math.floor(missingPercent * level * maxHealth * 0.01)
-        print("healAmount: " .. healAmount)
         if healAmount > 0 then
           player:addHealth(healAmount)
           player:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
@@ -1253,6 +1246,7 @@ TargetCombatEventpassives.onTargetCombat = function(creature, target)
     target:registerEvent("monsterorb")
     target:registerEvent("EliteMonsterCombatHP")
     target:registerEvent("EliteMonsterCombatMana")
+    target:registerEvent("LucellaTransform")
   return true
 end
 

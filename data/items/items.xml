@@ -2748,10 +2748,13 @@
 		<attribute key="attack" value="20" />
 		<attribute key="defense" value="10" />
 		<attribute key="weight" value="290" />
-		<attribute key="weaponType" value="axe" />	
+		<attribute key="weaponType" value="axe" />
+		<attribute key="hitChance" value="75" />	
 		<attribute key="shootType" value="energy" />
 		<attribute key="range" value="3" />
 	</item>
+
+
 	
 	<item id="24810" article="a" name="dark wizard's crown">
 		<attribute key="weight" value="1500" />

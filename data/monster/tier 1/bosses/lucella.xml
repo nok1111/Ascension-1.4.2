@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Lucella" nameDescription="Lucella" race="blood" experience="20" speed="222" >
+	<health now="120" max="120" /> 
+	<level min="50" max="50" />
+	<look type="1157" corpse="37129" />
+	<targetchange interval="4000" chance="20" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="0" />
+		<flag convinceable="0" />
+		<flag pushable="0" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="1" />
+		<flag targetdistance="3" />
+		<flag staticattack="95" />
+		<flag runonhealth="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="-2" max="-100" />		
+		<attack name="death" interval="1000" chance="10" range="6" radius="3" target="1" min="-3" max="-100">
+			<attribute key="shootEffect" value="distance69" />
+			<attribute key="areaEffect" value="effect230" />
+		</attack>
+		<attack name="custom spell 1" interval="2000" chance="10" min="-90" max="-250"/>
+		<attack name="custom spell 2" interval="2000" chance="10" min="-80" max="-250"/>
+		<attack name="custom spell 5" interval="2000" chance="10" min="-110" max="-230"/>
+		<attack name="meteor" interval="2000" chance="30" min="-250" max="-400"/>
+		
+		<attack name="death" interval="1000" chance="10" range="6" min="-3" max="-80">
+			<attribute key="shootEffect" value="distance69" />
+			<attribute key="areaEffect" value="effect230" />
+		</attack>
+		<attack name="speed" interval="1000" chance="15" radius="1" target="1" speedchange="-300" duration="30000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</attack>
+	</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="healing" interval="2000" chance="15" min="0" max="50">
+			<attribute key="areaEffect" value="blueshimmer" />
+		</defense>
+		
+	</defenses>
+	<elements>
+		<element energyPercent="35" />
+		<element icePercent="35" />
+		<element firePercent="35" />
+		<element holyPercent="35" />
+		<element earthPercent="35" />
+		<element physicalPercent="20" />
+		<element deathPercent="35" />
+	</elements>
+	
+	<voices interval="3000" chance="10">
+		<voice sentence="death to the gods!" />
+		<voice sentence="humans, angels whats the difference!" />
+		<voice sentence="My sin is your sin!" />
+		<voice sentence="My sin is your sin!" />
+	</voices>
+	<loot>
+		
+		
+		</loot>
+</monster>
