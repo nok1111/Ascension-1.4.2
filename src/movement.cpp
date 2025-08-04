@@ -388,6 +388,16 @@ MoveEvent* MoveEvents::getEvent(Item* item, MoveEvent_t eventType, slots_t slot)
 				return &moveEvent;
 			}
 		}
+		// Additional logic: try the mirror slot for one-handed weapons and shields
+	   // You may want to check item->getWeaponType() or similar here
+		if (slot == CONST_SLOT_LEFT || slot == CONST_SLOT_RIGHT) {
+			uint32_t mirrorSlotp = (slot == CONST_SLOT_LEFT) ? SLOTP_RIGHT : SLOTP_LEFT;
+			for (MoveEvent& moveEvent : moveEventList) {
+				if ((moveEvent.getSlot() & mirrorSlotp) != 0) {
+					return &moveEvent;
+				}
+			}
+		}
 	}
 	return nullptr;
 }
