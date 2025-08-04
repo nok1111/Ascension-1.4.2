@@ -1057,9 +1057,9 @@ std::string Item::getDescription(const ItemType& it, int32_t lookDistance,
 			}
 
 			for (uint8_t i = SPECIALSKILL_FIRST; i <= SPECIALSKILL_LAST; i++) {
-				std::cout << "[DEBUG] Checking special skill " << (int)i << " value: " << it.abilities->specialSkills[i] << std::endl;
+				//std::cout << "[DEBUG] Checking special skill " << (int)i << " value: " << it.abilities->specialSkills[i] << std::endl;
 				if (!it.abilities->specialSkills[i]) {
-					std::cout << "[DEBUG] Skipping special skill " << (int)i << " (zero value)" << std::endl;
+					//std::cout << "[DEBUG] Skipping special skill " << (int)i << " (zero value)" << std::endl;
 					continue;
 				}
 
