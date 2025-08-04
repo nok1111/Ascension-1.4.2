@@ -488,53 +488,6 @@ Crafting.recipes = {
 			},
 		},
 		{
-			craftedItemId = 35769,
-			craftedCount = 20,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "Teaches you how to create a medium health potion, drinking this potion will restore a medium amount of health.",
-			craftPoints = 11,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 35442, required = 3},
-				{id = 2245, required = 2},
-			},
-		},
-		{
-			craftedItemId = 35766,
-			craftedCount = 20,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "Teaches you how to create a medium mana potion, drinking this potion will restore a medium amount of mana.",
-			craftPoints = 11,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-				{id = 35442, required = 3},
-				{id = 2245, required = 2},
-				
-			},
-		},
-		{
-			craftedItemId = 35763,
-			craftedCount = 20,
-			tier = 2,
-			fame = 2, -- used for description
-			requiredSkill = 0,
-			desc = "Teaches you how to create a medium spirit potion, drinking this potion will restore a  medium of mana and health.",
-			craftPoints = 9,
-			cost = 2, -- cost in gold coins
-			recipestorage = 0,
-			ingredients = {
-
-				{id = 35442, required = 3},
-				{id = 35439, required = 1},
-			},
-		},
-		{
 			craftedItemId = 35770,
 			craftedCount = 3,
 			tier = 2,
@@ -549,44 +502,6 @@ Crafting.recipes = {
 				{id = 2245, required = 2},
 			},
 		},
-
-				{
-			craftedItemId = 35449,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- stonegrasp potion
-			requiredSkill = 0,
-			desc = "Teaches you how to create a stonegrasp potion, drinking this vial will turn the target into stone and protect him from all damage.",
-			craftPoints = 40,
-			cost = 20, -- cost in gold coins
-			recipestorage = 750,
-			ingredients = {
-				{id = 35443, required = 10},
-				{id = 2245, required = 8},
-				{id = 39128, required = 5},
-			},
-		},
-
-
-		
-		{
-			craftedItemId = 33073,
-			craftedCount = 1,
-			tier = 2,
-			fame = 2, -- stonegrasp potion
-			requiredSkill = 0,
-			desc = "Teaches you how to create a proficiency skill vial. this vial grants a 20% boost to a skill of your choosing for 30 minutes. Choose wisely!.",
-			craftPoints = 40,
-			cost = 20, -- cost in gold coins
-			recipestorage = 755,
-			ingredients = {
-				{id = 35443, required = 7},
-				{id = 2245, required = 2},
-				{id = 29020, required = 4},
-			},
-		},
-
-
 		{
 			craftedItemId = 35774,
 			craftedCount = 3,
@@ -602,39 +517,255 @@ Crafting.recipes = {
 				{id = 2245, required = 2},
 			},
 		},
+         --new potions
 		{
-			craftedItemId = 35777,
-			craftedCount = 3,
+			craftedItemId = 40221, --small vial of haste
+			craftedCount = 5,
+			tier = 1,
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = "Teaches you how to create a minor elixir of haste, drinking this vial will grant haste for 10 minutes.",
+			craftPoints = 7,
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35440, required = 3},
+				
+			},
+		},
+		{
+			craftedItemId = 40217, --starfish potion
+			craftedCount = 2,
+			tier = 1,
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = "Teaches you how to create a starfish potion, drinking this vial will regenerate 3 mana points every second for 10 minutes.",
+			craftPoints = 7,
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35440, required = 3},
+				
+			},
+		},
+		{
+			craftedItemId = 40238, --blooline potion
+			craftedCount = 2,
+			tier = 1,
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = "Teaches you how to create a blooline potion, drinking this vial will regenerate 4 health points every second for 10 minutes.",
+			craftPoints = 7,
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35440, required = 3},
+				
+			},
+		},
+
+
+
+		
+		{
+			craftedItemId = 35769,
+			craftedCount = 20,
 			tier = 2,
 			fame = 2, -- used for description
 			requiredSkill = 0,
-			desc = "Teaches you how to create a minor elixir of magic resistance, drinking this elixir will grant 3% elemental resistance for 5 minutes.",
+			desc = "Teaches you how to create a strong health potion, drinking this potion will restore a medium amount of health.",
 			craftPoints = 11,
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35443, required = 3},
+				{id = 35442, required = 3},
 				{id = 2245, required = 2},
 			},
 		},
-		
-		
-		
-			{
-			craftedItemId = 21401,
-			craftedCount = 3,
-			tier = 3,
-			fame = 7, -- used for description
+		{
+			craftedItemId = 35766,
+			craftedCount = 20,
+			tier = 2,
+			fame = 2, -- used for description
 			requiredSkill = 0,
-			desc = "Teaches you how to transmute a fire essense.",
-			craftPoints = 15,
+			desc = "Teaches you how to create a strong mana potion, drinking this potion will restore a medium amount of mana.",
+			craftPoints = 11,
 			cost = 2, -- cost in gold coins
 			recipestorage = 0,
 			ingredients = {
-				{id = 35779, required = 1},
-				{id = 29020, required = 1},
+				{id = 35442, required = 3},
+				{id = 2245, required = 2},
+				
 			},
 		},
+		{
+			craftedItemId = 35763,
+			craftedCount = 20,
+			tier = 2,
+			fame = 2, -- used for description
+			requiredSkill = 0,
+			desc = "Teaches you how to create a strong spirit potion, drinking this potion will restore a  medium of mana and health.",
+			craftPoints = 9,
+			cost = 2, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+
+				{id = 35442, required = 3},
+				{id = 35439, required = 1},
+			},
+		},
+		
+
+		{
+			craftedItemId = 40247, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- vial of of Mystic Petals
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+
+
+		
+		{
+			craftedItemId = 40237, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- vial of Royal Might
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+
+		{
+			craftedItemId = 40250, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- vial of the mushroom
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+		{
+			craftedItemId = 40219, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- Flask of the Deepflow
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+		{
+			craftedItemId = 40234, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- Flask of the Vital Currents
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+		{
+			craftedItemId = 40232, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- potion of stone
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+		{
+			craftedItemId = 40233, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- potion of nature
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,	
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+		{
+			craftedItemId = 40231, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- elixir of haste
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40,	
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+		{
+			craftedItemId = 40130, 
+			craftedCount = 1,
+			tier = 2,
+			fame = 2, -- Potion of ghosts
+			requiredSkill = 0,
+			desc = false,
+			craftPoints = 40, 	
+			cost = 20, -- cost in gold coins
+			recipestorage = 0,
+			ingredients = {
+				{id = 35443, required = 10},
+				{id = 2245, required = 8},
+				{id = 39128, required = 5},
+			},
+		},
+
+		
 		
 		{
 			craftedItemId = 35782,
@@ -666,6 +797,8 @@ Crafting.recipes = {
 				{id = 2245, required = 2},
 			},
 		},
+
+		
 		
 		{
 			craftedItemId = 35762,
@@ -2228,13 +2361,14 @@ end
 
 local profession_level = ProfessionSystem:getSkillLevel(player, SKILL_BLACKSMITH)
 local enchanting_level = ProfessionSystem:getSkillLevel(player, SKILL_ENCHANTING)
-local itemlevel_bigequipment = math.floor(3 + (profession_level * 1.8))
+local itemlevel_bigequipment = math.floor(1 + (profession_level * 1.8))
 local itemlevel_smallequipment = math.floor(1 + (profession_level * 0.5))
 local itemlevel_runes1 = math.floor(30 + (enchanting_level * 2.0))
 local itemlevel_runes2 = math.floor(58 + (enchanting_level * 2.5))
 local itemlevel_runes3 = math.floor(60 + (enchanting_level * 3.0))
 local itemlevel_runes4 = math.floor(75 + (enchanting_level * 3.5))
 local itemlevel_runes5 = math.floor(90 + (enchanting_level * 4.5))
+
 
 local itemlevel_wands = math.floor(3 + (enchanting_level * 1.8))
 
@@ -2247,7 +2381,7 @@ local function createRarity_craft()
     rarity = RARE
   end
   
-  return rarity
+  return EPIC
 end
 
 --print(createRarity_craft())
@@ -2265,39 +2399,66 @@ local specialCraftItems = {
 	[32767] = itemlevel_bigequipment,
 	[32788] = itemlevel_bigequipment,
 	[32789] = itemlevel_bigequipment,
-	[2377] = itemlevel_bigequipment,
 	[30759] = itemlevel_bigequipment,
 	
 	[36357] = itemlevel_bigequipment,
-	[31802] = itemlevel_bigequipment,
-	[36359] = itemlevel_bigequipment,
+
+     
+	--2 handers
+	[36373] = itemlevel_bigequipment,
 	[2385] = itemlevel_bigequipment,
-	 -- add more as needed
+	[36366] = itemlevel_bigequipment,
+	[36210] = itemlevel_bigequipment,
+
+	--1 handers
+	[36370] = itemlevel_bigequipment,
+	[2395] = itemlevel_bigequipment,
+	[2392] = itemlevel_bigequipment,
+	[36359] = itemlevel_bigequipment,
+
+	--bows
+	[31919] = itemlevel_bigequipment,
+	[32058] = itemlevel_bigequipment,
+	[31802] = itemlevel_bigequipment,
+	[36242] = itemlevel_bigequipment,
 
 	--wands
-	[2186] = itemlevel_wands,
-	[2191] = itemlevel_wands,
 	[2187] = itemlevel_wands,
+	[2190] = itemlevel_wands,
+	[2185] = itemlevel_wands,
+	[2191] = itemlevel_wands,
+
+	--rods
 	[2184] = itemlevel_wands,
 	[2181] = itemlevel_wands,
-	[2185] = itemlevel_wands,
 	[2186] = itemlevel_wands,
-	[2191] = itemlevel_wands,
 
 	--offhands
 	[2509] = itemlevel_wands,
 	[2510] = itemlevel_wands,
 	[2511] = itemlevel_wands,
 	[32721] = itemlevel_wands,
-	[32723] = itemlevel_wands,
+
+	--shields
+	[36396] = itemlevel_wands,
+	[36389] = itemlevel_wands,
+	[36388] = itemlevel_wands,
 }
 
 
+local commonItems = {
+	[2376] = itemlevel_smallequipment,
+	[2377] = itemlevel_smallequipment,
+	[5947] = itemlevel_smallequipment,
+	[2163] = itemlevel_smallequipment,
+	[2512] = itemlevel_smallequipment,
+	[32723] = itemlevel_smallequipment,	
+}
 
 -- Special unique items (e.g., runes) with itemlevel and unique values
 local specialUniqueItems = {
     -- BLUE RUNES
-    [35379] = {itemlevel = 50, unique = 15},
+    [35379] = {itemlevel = itemlevel_runes1, unique = 15},
     [35380] = {itemlevel = itemlevel_runes3, unique = 16},
     [35381] = {itemlevel = itemlevel_runes1, unique = 17},
     [35382] = {itemlevel = itemlevel_runes4, unique = 18},
@@ -2315,6 +2476,7 @@ local specialUniqueItems = {
     [35393] = {itemlevel = itemlevel_runes1, unique = 29},
     [35394] = {itemlevel = itemlevel_runes1, unique = 30},
     -- YELLOW RUNES
+	[35395] = {itemlevel = itemlevel_runes1, unique = 31},
     [35396] = {itemlevel = itemlevel_runes3, unique = 32},
     [35397] = {itemlevel = itemlevel_runes4, unique = 33},
     [35398] = {itemlevel = itemlevel_runes2, unique = 34},
@@ -2350,8 +2512,18 @@ if recipe.fame and recipe.fame > 0 then
     player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 end
 if specialCraftItems[itemnew:getId()] then
-    itemnew:setItemLevel(specialCraftItems[itemnew:getId()], true)
+    itemnew:setItemLevel(specialCraftItems[itemnew:getId()] or 1, true)
     itemnew:setRarity(createRarity_craft())
+    itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
+    local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
+    FameSystem:addPoints(player, recipe.fame)
+    Game.sendAnimatedText('+ fame points!', player:getPosition(), TEXTCOLOR_ORANGE)
+    player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
+end
+
+if commonItems[itemnew:getId()] then
+    itemnew:setItemLevel(commonItems[itemnew:getId()] or 1, true)
+    itemnew:setRarity(COMMON)
     itemnew:setAttribute(ITEM_ATTRIBUTE_DESCRIPTION, ("%s \n This item was created by %s"):format(itemnew:getAttribute(ITEM_ATTRIBUTE_DESCRIPTION), player:getName()))
     local addcraftexp = ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
     FameSystem:addPoints(player, recipe.fame)
@@ -2372,11 +2544,6 @@ if specialUniqueItems[itemnew:getId()] then
     player:getPosition():sendMagicEffect(CONST_ME_SHINNYSPARK)
 end
 
-    -- If recipe has upgraded = "true" and item is upgradable, set rarity to RARE
-    local itemType = itemnew:getType()
-if itemType and itemType.isUpgradable and itemType:isUpgradable() and recipe.upgraded == "true" then
-        itemnew:setRarity(RARE)
-end
 
 if recipe.craftPoints and recipe.craftPoints > 0 then
 	ProfessionSystem:addPoints(player, profId, recipe.craftPoints * amount)
@@ -2558,8 +2725,10 @@ function Crafting:sendOpenCraftingWindow(player, professionId)
 
 	local profId = ProfessionSystem:getProfessionId(player)
 
-	local pointsForNextLevel = ProfessionSystem.config[profId] and ProfessionSystem.config[profId].levels[level + 1] or 0 or 0
+	local pointsForNextLevel = ProfessionSystem.config[professionId] and ProfessionSystem.config[professionId].levels[level + 1] or 0 or 0
 	msg:addByte(math.floor(points / math.max(1, pointsForNextLevel or 0) * 100))
+	print("points", points)
+	print("pointsForNextLevel", pointsForNextLevel)
 	msg:addByte(professionId)
 
 	msg:addByte(#self.recipes[professionId])

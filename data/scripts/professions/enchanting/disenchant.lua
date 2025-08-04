@@ -5,8 +5,8 @@ function disenchant.onUse(player, item, fromPosition, target, toPosition, isHotk
     print("target", target.itemid)
     local disenchantRewards = {
         
-        {itemId = 13215, name = "Arcane Powder", baseChance = 10, minAmount = 1, maxAmount = 3},
-        {itemId = 13197, name = "Mystic Powder", baseChance = 9, minAmount = 1, maxAmount = 2},
+        {itemId = 13215, name = "Arcane Powder", baseChance = 80, minAmount = 1, maxAmount = 5},
+        {itemId = 13197, name = "Mystic Powder", baseChance = 9, minAmount = 1, maxAmount = 3},
         {itemId = 33201, name = "Blue Crystal", baseChance = 8, minAmount = 1, maxAmount = 1},
         {itemId = 33203, name = "Green Crystal", baseChance = 7, minAmount = 1, maxAmount = 1},
         {itemId = 35789, name = "Yellow Crystal", baseChance = 6, minAmount = 1, maxAmount = 1},
@@ -55,7 +55,7 @@ function disenchant.onUse(player, item, fromPosition, target, toPosition, isHotk
     local multiplier = rarityMultipliers[rarityLevel] or (isUnique and rarityMultipliers.unique) or 1.0
 
     local rewardsGiven = {}
-    local totalExp = 0
+    local totalExp = 2
     for _, reward in ipairs(lootTable) do
         -- Only apply rarity multiplier to default table
         local finalChance = reward.baseChance * ((lootTable == disenchantRewards) and multiplier or 1)
@@ -78,10 +78,11 @@ function disenchant.onUse(player, item, fromPosition, target, toPosition, isHotk
     if #rewardsGiven > 0 then
         player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "You received: " .. table.concat(rewardsGiven, ", "))
         if totalExp > 0 then
-            ProfessionSystem:addPoints(player, SKILL_ENCHANTING, totalExp)
+            ProfessionSystem:addPoints(player, 4, totalExp)
         end
     else
         player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "No rewards this time. Better luck next disenchant!")
+        ProfessionSystem:addPoints(player, 4, totalExp)
     end
     target:remove(1)
     return true

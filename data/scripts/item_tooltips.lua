@@ -254,10 +254,10 @@ function Item:buildTooltip()
     else
       item_data.attack = itemType:getAttack()
     end
-    if self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE) > 0 then
-      item_data.hitChance = self:getAttribute(ITEM_ATTRIBUTE_HITCHANCE)
+    if self:getAttribute(ITEM_ATTRIBUTE_DEFENSE) > 0 then
+      item_data.defense = self:getAttribute(ITEM_ATTRIBUTE_DEFENSE)
     else
-      item_data.hitChance = itemType:getHitChance()
+      item_data.defense = itemType:getDefense()
     end
     item_data.shootRange = itemType:getShootRange()
   elseif itemType:getAttack() > 0 then

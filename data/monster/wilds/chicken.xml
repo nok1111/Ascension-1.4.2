@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Chicken" namedescription="a chicken" race="blood" experience="20" speed="200" manacost="220">
 	<health now="6" max="6" />
-	<look type="111" corpse="37129" />
+	<look type="2808" corpse="37129" />
 	<targetchange interval="4000" chance="0" />
 	<flags>
 		<flag summonable="1" />

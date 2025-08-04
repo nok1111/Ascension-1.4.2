@@ -89,27 +89,27 @@ US_CONFIG = {
   HITCHANCE_PER_ITEM_LEVEL = 10, -- every X Item Level +HITCHANCE_FROM_ITEM_LEVEL hit chance
   HITCHANCE_FROM_ITEM_LEVEL = 1, -- +X bonus hit chance for every HITCHANCE_PER_ITEM_LEVEL
   --
-  ITEM_LEVEL_PER_ATTACK = 1, -- +1 to Item Level for every X Attack in item
-  ITEM_LEVEL_PER_DEFENSE = 1, -- +1 to Item Level for every X Defense in item
+  ITEM_LEVEL_PER_ATTACK = 5, -- +1 to Item Level for every X Attack in item
+  ITEM_LEVEL_PER_DEFENSE = 5, -- +1 to Item Level for every X Defense in item
   ITEM_LEVEL_PER_ARMOR = 1, -- +1 to Item Level for every X Armor in item
-  ITEM_LEVEL_PER_MAGIC = 5, -- +1 to Item Level for every X Armor in item
-  ITEM_LEVEL_PER_HITCHANCE = 80, -- +1 to Item Level for every X Hit Chance in item
+  ITEM_LEVEL_PER_MAGIC = 1, -- +1 to Item Level for every X Armor in item
+  ITEM_LEVEL_PER_HITCHANCE = 100, -- +1 to Item Level for every X Hit Chance in item
   ITEM_LEVEL_PER_UPGRADE = 1, -- additional item level per upgrade level
-  ITEM_LEVEL_PER_RARITY = 1.5, -- multiplies overal itemlevel by X
+  ITEM_LEVEL_PER_RARITY = 1.3, -- multiplies overal itemlevel by X
 
   ITEM_LEVEL_PER_MAGICLEVEL = 1, -- additional item level per magic level
   ITEM_LEVEL_PER_MAGICLEVEL_MULTIPLIER = 2,
-  ITEM_LEVEL_PER_MAXHP = 45, -- additional item level per max hp
-  ITEM_LEVEL_PER_MAXMP = 35, -- additional item level per max mp
-  ITEM_LEVEL_PER_CRITCHANCE = 2, -- additional item level per crit chance
+  ITEM_LEVEL_PER_MAXHP = 10, -- additional item level per max hp
+  ITEM_LEVEL_PER_MAXMP = 10, -- additional item level per max mp
+  ITEM_LEVEL_PER_CRITCHANCE = 1, -- additional item level per crit chance
   ITEM_LEVEL_PER_LIFELEECHCHANCE = 1, -- additional item level per life leech chance
   ITEM_LEVEL_PER_LIFELEECHAMOUNT = 1, -- additional item level per life leech amount
   ITEM_LEVEL_PER_MANALEECHCHANCE = 1, -- additional item level per mana leech chance
   ITEM_LEVEL_PER_MANALEECHAMOUNT = 1, -- additional item level per mana leech amount
-  ITEM_LEVEL_PER_ATTACKSPEED = 2, -- additional item level per attack speed
+  ITEM_LEVEL_PER_ATTACKSPEED = 1, -- additional item level per attack speed
   ITEM_LEVEL_PER_SKILL = 1, -- additional item level per skill
-  ITEM_LEVEL_PER_HEALTHGAIN = 4, -- additional item level per health gain
-  ITEM_LEVEL_PER_MANAGAIN = 3, -- additional item level per mana gain
+  ITEM_LEVEL_PER_HEALTHGAIN = 5, -- additional item level per health gain
+  ITEM_LEVEL_PER_MANAGAIN = 5, -- additional item level per mana gain
 
   --
   ATTACK_PER_UPGRADE = 1, -- amount of bonus attack per upgrade level
@@ -313,7 +313,14 @@ US_UNIQUES = {
     itemType = US_ITEM_TYPES.ALL -- Can be rolled only for items like Wands, Rods, Rings, Necklaces
 	},
 	
-	 [14] = {
+	 
+	
+	
+	
+	
+	--RUNES ENCHANTING
+
+  [14] = {
     name = "[Corrupted] Blessing of Ciroel The Forgotten King",
     attributes = {
         3,
@@ -325,11 +332,6 @@ US_UNIQUES = {
     chance = 1, -- % chance to roll this unique
     itemType = US_ITEM_TYPES.ALL -- Can be rolled only for items like Wands, Rods, Rings, Necklaces
 	},	
-	
-	
-	
-	
-	--RUNES ENCHANTING
 	
 	
 	[15] = {
@@ -1656,6 +1658,8 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Max HP +" .. value
     end,
+    minLevel = 15,
+    chance = 20,
     itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO
   },
   [2] = {
@@ -1667,6 +1671,8 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Max Mana +" .. value
     end,
+    minLevel = 15,
+    chance = 20,
     itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO
   },
   [3] = {
@@ -1678,8 +1684,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Magic +" .. value
     end,
-    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.WEAPON_ANY ,
-  },
+    minLevel = 15,
+    chance = 20,
+    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO },
 
 
   [4] = {
@@ -1691,48 +1698,49 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Melee +" .. value
     end,
-    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.WEAPON_ANY
-  },
-	
+    minLevel = 15,
+    chance = 20,
+    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO },
+
 	
 	 [5] = {
-    name = "Defence Celestial",
+    name = "Critical Hit Chance",
     combatType = US_TYPES.CONDITION,
     condition = CONDITION_ATTRIBUTES,
-    param = CONDITION_PARAM_SKILL_SHIELD,
+    param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE,
     VALUES_PER_LEVEL = 0.1,
     format = function(value)
-      return "[***] Celestial Defence +" .. value
+      return "Critical Hit Chance +" .. value
     end,
-     minLevel = 5,
-	chance = 0,
+    minLevel = 15,
+    chance = 20,
     itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO,
 	},
   [6] = {
-    name = "Distance Celestial",
+    name = "Attack Speed",
     combatType = US_TYPES.CONDITION,
     condition = CONDITION_ATTRIBUTES,
-    param = CONDITION_PARAM_SKILL_DISTANCE,
-    VALUES_PER_LEVEL = 0.2,
-    format = function(value)
-      return "[***] Celestial Distance +" .. value
-    end,
-    minLevel = 5,
-	chance = 0,
-    itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO,
-  },
-  [7] = {
-    name = "Magic Celestial",
-    combatType = US_TYPES.CONDITION,
-    condition = CONDITION_ATTRIBUTES,
-    param = CONDITION_PARAM_STAT_MAGICPOINTS,
+    param = CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED,
     VALUES_PER_LEVEL = 0.1,
     format = function(value)
-      return "[***] Celestial Magic +" .. value
+      return "Attack Speed +" .. value .. "%%"
     end,
-	minLevel = 5,
-	chance = 0,
-    itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO,
+    minLevel = 15,
+    chance = 15,
+    itemType =  US_ITEM_TYPES.WEAPON_ANY,
+  },
+  [7] = {
+    name = "Bonus Healing",
+    combatType = US_TYPES.CONDITION,
+    condition = CONDITION_ATTRIBUTES,
+    param = CONDITION_PARAM_SPECIALSKILL_EXTRAHEALING,
+    VALUES_PER_LEVEL = 0.1,
+    format = function(value)
+      return "Bonus Healing +" .. value .. "%%"
+    end,
+	minLevel = 15,
+	chance = 15,
+    itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.WEAPON_ANY,
   },
 
 
@@ -1759,7 +1767,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Distance +" .. value
     end,
-    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.AMMO
+    minLevel = 15,
+    chance = 20,
+    itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO,
   },
 
   [10] = {
@@ -1786,14 +1796,16 @@ US_ENCHANTMENTS = {
     
   [12] = {
     name = "Life Steal",
-    combatType = US_TYPES.OFFENSIVE,
-    VALUES_PER_LEVEL = 0.06,
+    combatType = US_TYPES.CONDITION,
+    condition = CONDITION_ATTRIBUTES,
+    param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT,
+    VALUES_PER_LEVEL = 0.1,
     format = function(value)
-      return "[***] Heal for " .. value .. "%% of dealt damage with spells"
+      return "Life Steal +" .. value .. "%%"
     end,
     itemType =  US_ITEM_TYPES.WEAPON_ANY,
     chance = 30,
-	minLevel = 20,
+	  minLevel = 15,
   },
   [13] = {
     name = "Experience",
@@ -1806,35 +1818,36 @@ US_ENCHANTMENTS = {
     minLevel = 25,
   },
   [14] = {
-    name = "Weapon Damage",
+    name = "Physical Damage",
     combatType = US_TYPES.OFFENSIVE,
     combatDamage = COMBAT_PHYSICALDAMAGE,
     VALUES_PER_LEVEL = 0.2,
     format = function(value)
-      return "Weapon Damage +" .. value .. "%%"
+      return "Physical Damage +" .. value .. "%%"
     end,
     itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING
   },
   [15] = {
-    name = "Ability Damage",
+    name = "Holy Damage",
     combatType = US_TYPES.OFFENSIVE,
-    combatDamage = COMBAT_ENERGYDAMAGE,
-    VALUES_PER_LEVEL = 0.08,
+    combatDamage = COMBAT_HOLYDAMAGE,
+    VALUES_PER_LEVEL = 0.2,
     format = function(value)
-      return "Ability Damage +" .. value .. "%%"
+      return "Holy Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
+    chance = 20 
   },
   [16] = {
-    name = "Potion Buff",
+    name = "Ice Damage",
     combatType = US_TYPES.OFFENSIVE,
-    combatDamage = COMBAT_EARTHDAMAGE,
-    VALUES_PER_LEVEL = 5.2,
+    combatDamage = COMBAT_ICEDAMAGE,
+    VALUES_PER_LEVEL = 0.2,
     format = function(value)
-      return "increase mana and health potion effects by " .. value .. "%%"
+      return "Ice Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.RING + US_ITEM_TYPES.NECKLACE,
-    chance = 0 
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
+    chance = 20 
   },
   [17] = {
     name = "Fire Damage",
@@ -1844,8 +1857,8 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Fire Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE,
-    chance = 0 
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
+    chance = 20 
   },
   [18] = {
 	name = "Mezmerize on Attack",
@@ -2142,7 +2155,7 @@ US_ENCHANTMENTS = {
     execute = function(attacker, target, damage)
       if math.random(100) < 10 then
         attacker:getPosition():sendDistanceEffect(target:getPosition(), CONST_ANI_FIRE)
-        doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_FIREATTACK, ORIGIN_CONDITION)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_FIRE, damage, damage, CONST_ME_FIREATTACK, ORIGIN_CONDITION)
       end
     end,
     format = function(value)
@@ -2161,7 +2174,7 @@ US_ENCHANTMENTS = {
     execute = function(attacker, target, damage)
 
         attacker:getPosition():sendDistanceEffect(target:getPosition(), CONST_ANI_FIRE)
-        doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_FIREATTACK, ORIGIN_CONDITION)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_FIREDAMAGE, damage, damage, CONST_ME_FIREATTACK, ORIGIN_CONDITION)
 
     end,
     format = function(value)
@@ -2178,7 +2191,7 @@ US_ENCHANTMENTS = {
     execute = function(attacker, target, damage)
       if math.random(100) <= 10 then
         attacker:getPosition():sendDistanceEffect(target:getPosition(), CONST_ANI_SMALLICE)
-        doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_ICEATTACK, ORIGIN_CONDITION)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_ICEDAMAGE, damage, damage, CONST_ME_ICEATTACK, ORIGIN_CONDITION)
 
         -- Apply slow effect
         local slowCondition = Condition(CONDITION_PARALYZE)
@@ -2203,7 +2216,7 @@ US_ENCHANTMENTS = {
     execute = function(attacker, target, damage)
       if math.random(100) < 20 then
         attacker:getPosition():sendDistanceEffect(target:getPosition(), CONST_ANI_SMALLICE)
-        doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_ICEATTACK, ORIGIN_CONDITION)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_ICEDAMAGE, damage, damage, CONST_ME_ICEATTACK, ORIGIN_CONDITION)
 		
 		 -- Apply slow effect
         local slowCondition = Condition(CONDITION_PARALYZE)
@@ -2264,7 +2277,7 @@ US_ENCHANTMENTS = {
     execute = function(attacker, target, damage)
       if math.random(100) < 2 then
         attacker:getPosition():sendDistanceEffect(target:getPosition(), CONST_ANI_DEATH)
-        doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_MORTAREA, ORIGIN_CONDITION)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_DEATHDAMAGE, damage, damage, CONST_ME_MORTAREA, ORIGIN_CONDITION)
       end
     end,
     format = function(value)
@@ -2281,7 +2294,7 @@ US_ENCHANTMENTS = {
     execute = function(attacker, target, damage)
       if math.random(100) < 10 then
         attacker:getPosition():sendDistanceEffect(target:getPosition(), CONST_ANI_DEATH)
-        doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_MORTAREA, ORIGIN_CONDITION)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_DEATHDAMAGE, damage, damage, CONST_ME_MORTAREA, ORIGIN_CONDITION)
       end
     end,
     format = function(value)
@@ -2290,47 +2303,38 @@ US_ENCHANTMENTS = {
     itemType = US_ITEM_TYPES.SHIELD
   },
   [38] = {
-    name = "Celestial Burn on Attack",
+    name = "Holy Strike on Attack",
     combatType = US_TYPES.TRIGGER,
     triggerType = US_TRIGGERS.ATTACK,
-    VALUES_PER_LEVEL = 1.4,
+    VALUES_PER_LEVEL = 10,
 	cooldown = 0.75,
-	
     execute = function(attacker, target, damage)
-
-        target:getPosition():sendMagicEffect(48)
-        --doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_HOLYDAMAGE, ORIGIN_CONDITION)
-		local magicdamage = attacker:getMagicLevel() * 0.35
-		local burn = math.floor(damage + magicdamage)
-         attacker:addDamageCondition(target, CONDITION_FIRE, DAMAGELIST_CONSTANT_PERIOD, burn, 2, 4)	
-	     doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, 1, magicdamage, 48, ORIGIN_CONDITION)
-
+      if math.random(100) < 2 then
+        attacker:getPosition():sendDistanceEffect(target:getPosition(), 38)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_HOLYDAMAGE, damage, damage, 40, ORIGIN_CONDITION)
+      end
     end,
     format = function(value)
-      return "[***] cast Celestial Burn on Attack dealing " .. value .. " burn damage + 35% your magic level every 2 seconds for 8 seconds. VPL[1.4*ilvl]"
+      return "2%% to cast Holy Strike on Attack dealing " .. value .. " damage. VPL[10*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY,
-	chance = 0
+    itemType = US_ITEM_TYPES.WEAPON_ANY
   },
   [39] = {
-    name = "Celestial Burn on Hit",
+    name = "Holy Strike on Hit",
     combatType = US_TYPES.TRIGGER,
     triggerType = US_TRIGGERS.HIT,
-    VALUES_PER_LEVEL = 1.2,
+    VALUES_PER_LEVEL = 5,
 	cooldown = 0.75,
     execute = function(attacker, target, damage)
-       
-        target:getPosition():sendMagicEffect(48)
-        --doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, CONST_ME_HOLYDAMAGE, ORIGIN_CONDITION)
-		local burn = math.floor((attacker:getMaxHealth() * 0.02) + damage)
-		attacker:addDamageCondition(target, CONDITION_FIRE, DAMAGELIST_CONSTANT_PERIOD, burn, 2, 4)		
-	   doTargetCombatHealth(attacker:getId(), target, COMBAT_ENERGYDAMAGE, damage, damage, 48, ORIGIN_CONDITION)
+      if math.random(100) < 10 then
+        attacker:getPosition():sendDistanceEffect(target:getPosition(), 38)
+        doTargetCombatHealth(attacker:getId(), target, COMBAT_HOLYDAMAGE, damage, damage, 40, ORIGIN_CONDITION)
+      end
     end,
     format = function(value)
-      return "[***] cast Celestial Burn on hit dealing " .. value .. "burn damage + 2% of your max health. VPL[1.2*ilvl]"
+      return "1%% to cast Holy Strike on Hit dealing " .. value .. " damage. VPL[5*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD,
-	chance = 0
+    itemType = US_ITEM_TYPES.SHIELD
   },
   [40] = {
     name = "Moonfire on Attack",
@@ -2447,14 +2451,16 @@ US_ENCHANTMENTS = {
   },
   [45] = {
     name = "Mana Steal",
-    combatType = US_TYPES.OFFENSIVE,
-    VALUES_PER_LEVEL = 0.03,
+    combatType = US_TYPES.CONDITION,
+    condition = CONDITION_ATTRIBUTES,
+    param = CONDITION_PARAM_SPECIALSKILL_MANALEECHAMOUNT,
+    VALUES_PER_LEVEL = 0.1,
     format = function(value)
-      return "[***] Regenerate Mana for " .. value .. "%% of dealt damage with spells. VPL[0.03*ilvl]"
+      return "Mana Steal +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY,
-	minLevel = 40,
-    chance = 5
+    itemType =  US_ITEM_TYPES.WEAPON_ANY,
+    chance = 30,
+	  minLevel = 15,
   },
   [46] = {
     name = "Full HP on Kill",

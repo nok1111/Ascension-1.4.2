@@ -72,6 +72,8 @@ ConditionsSubIds = {
    --monsters only
     lucellatransform = 29600,
 
+    --potions from 29700 - 29799
+
 
     --pets
     petfireresist = 39529,

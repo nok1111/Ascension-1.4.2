@@ -75,6 +75,47 @@ end
 local PASSIVES = {
 
 
+  vial_of_nature = {
+    config = {
+      type = "OnDefend",
+      subid = 29704,
+    },
+    trigger = function(player, attacker, damage, primaryType, origin)
+      -- physical damage reduction
+      return primaryType == COMBAT_EARTHDAMAGE or primaryType == COMBAT_FIREDAMAGE or primaryType == COMBAT_ICEDAMAGE or primaryType == COMBAT_HOLYDAMAGE or primaryType == COMBAT_DEATHDAMAGE
+    end,
+    effect = function(player, attacker, damage, primaryType, origin)
+      if not player or not attacker or not damage then
+        return
+      end
+ 
+        damage = damage * 0.95
+      
+      return damage
+    end,
+  },
+
+  vial_of_stone = {
+    config = {
+      type = "OnDefend",
+      subid = 29703,
+    },
+    trigger = function(player, attacker, damage, primaryType, origin)
+      -- physical damage reduction
+      return primaryType == COMBAT_PHYSICALDAMAGE
+    end,
+    effect = function(player, attacker, damage, primaryType, origin)
+      if not player or not attacker or not damage then
+        return
+      end
+ 
+        damage = damage * 0.95
+      
+      return damage
+    end,
+  },
+
+
   permafrost_trap = {
     config = {
       type = "OnAttack",

@@ -2913,7 +2913,7 @@
 	<item id="2185" article="a" name="Blackmagic Rod">
 		<attribute key="attack" value="40" />
 		<attribute key="defense" value="20" />
-		<attribute key="criticalhitamount" value="5" />
+		<attribute key="criticalhitchance" value="5" />
 		<attribute key="maxmanapoints" value="185" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="axe" />
@@ -3925,10 +3925,11 @@
 	</item>
 	<item id="2385" article="a" name="Black Hammer">
 		<attribute key="weight" value="2500" />
-		<attribute key="defense" value="40" />
+		<attribute key="defense" value="42" />
 		<attribute key="attack" value="48" />
 		<attribute key="maxhitpoints" value="250" />
 		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
 		<attribute key="extradef" value="1" />
 	</item>
 		<item id="36366" article="a" name="Verdel Longsword">
@@ -3937,6 +3938,7 @@
 		<attribute key="attack" value="55" />
 		<attribute key="skillSword" value="3" />
 		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
 		<attribute key="extradef" value="1" />
 	</item>
 		<item id="36210" article="a" name="Grevious Axe">
@@ -3945,6 +3947,7 @@
 		<attribute key="attack" value="55" />
 		<attribute key="lifeleechamount" value="6" />
 		<attribute key="weaponType" value="sword" />
+		<attribute key="slotType" value="two-handed" />
 		<attribute key="extradef" value="1" />
 	</item>
 	<item id="2386" article="an" name="bone axe">
@@ -4013,8 +4016,8 @@
 	</item>
 	<item id="2395" article="a" name="Darkblade">
 		<attribute key="weight" value="4000" />
-		<attribute key="defense" value="23" />
-		<attribute key="attack" value="34" />
+		<attribute key="defense" value="25" />
+		<attribute key="attack" value="35" />
 		<attribute key="lifeleechamount" value="5" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="extradef" value="1" />
@@ -4840,10 +4843,10 @@
 	<item id="2512" article="a" name="wooden shield">
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="28" />
-		<attribute key="weaken" value="10" />
+		<attribute key="weaken" value="25" />
 		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+		<attribute key="description" value="Damage taken by -15% and Damage dealt by -25%" />
 	</item>
 	<item id="2513" article="a" name="battle shield">
 		<attribute key="weight" value="6200" />
@@ -11031,7 +11034,7 @@
 	<item id="5946" article="a" name="comb">
 		<attribute key="weight" value="450" />
 	</item>
-	<item id="5947" name="Elane's crossbow">
+	<item id="5947" name="sturdy crossbow">
 		<attribute key="description" value="'For Elane, with Love' is engraved on it." />
 		<attribute key="weight" value="4000" />
 	</item>
@@ -23735,7 +23738,7 @@
 	<item id="13197" article="a" name="Mystic Powder" >
 		<attribute key="weight" value="5" />
 	</item>	
-	<item id="13215" name="Arcane Powderr">
+	<item id="13215" name="Arcane Powder">
 		<attribute key="weight" value="50" />
 	</item>
 
@@ -35765,7 +35768,7 @@
 	<item id="24322" article="a" name="truelove teddy">
 		<attribute key="weight" value="590" />
 	</item>
-	<item id="24323" article="a" name="crimson rose">
+	<item id="24323" article="a" name="beautiful crimson rose">
 		<attribute key="weight" value="80" />
 	</item>
 	<item id="24324" article="a" name="sweetheart ring">
@@ -37126,9 +37129,9 @@
 	<item id="31919" article="a" name="spike crossbow">
 		<attribute key="weight" value="200" />
 		<attribute key="attack" value="49" />
-		<attribute key="defense" value="40" />
+		<attribute key="defense" value="20" />
 		<attribute key="hitChance" value="75" />
-		<attribute key="attackspeed" value="8" />
+		<attribute key="attackspeed" value="6" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
 		<attribute key="shootType" value="greenstar" />
@@ -38682,9 +38685,9 @@
 	</item>
 		<item id="36359" article="a" name="sweet sadness">
 		<attribute key="weight" value="500" />
-		<attribute key="defense" value="12" />
-		<attribute key="attack" value="39" />
-		<attribute key="criticalhitchance" value="3" />
+		<attribute key="defense" value="18" />
+		<attribute key="attack" value="34" />
+		<attribute key="criticalhitchance" value="4" />
 		<attribute key="weaponType" value="sword" />
 	</item>
 	<item id="36362" article="a" name="savage axe">
@@ -38703,14 +38706,14 @@
 		<attribute key="weight" value="500" />
 		<attribute key="defense" value="11" />
 		<attribute key="attack" value="39" />
-		<attribute key="attackspeed" value="8" />
+		<attribute key="attackspeed" value="5" />
 		<attribute key="weaponType" value="sword" />
 	</item>
 		<item id="36373" article="a" name="grevious lance">
 		<attribute key="weight" value="6700" />
 		<attribute key="defense" value="35" />
 		<attribute key="attack" value="49" />
-		<attribute key="criticalhitchance" value="5" />
+		<attribute key="criticalhitchance" value="4" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />
 	</item>
@@ -38729,32 +38732,32 @@
 		<attribute key="maxhitpoints" value="200" />
 		<attribute key="manaGain" value="10" />
 		<attribute key="manaTicks" value="5000" />
-		<attribute key="weaken" value="10" />
+		<attribute key="weaken" value="25" />
 		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+		<attribute key="description" value="Damage taken by -15% and Damage dealt by -25%" />
 	
 	</item>
 	<item id="36389" article="a" name="king's pride">
 		<attribute key="weight" value="4000" />
-		<attribute key="defense" value="47" />
-		<attribute key="maxhitpoints" value="350" />
-		<attribute key="weaken" value="10" />
+		<attribute key="defense" value="45" />
+		<attribute key="maxhitpoints" value="180" />
+		<attribute key="weaken" value="25" />
 		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+		<attribute key="description" value="Damage taken by -15% and Damage dealt by -25%" />
 	
 	</item>
 	<item id="36396" article="a" name="Bello Futurio">
 		<attribute key="weight" value="4000" />
 		<attribute key="defense" value="50" />
-		<attribute key="maxhitpoints" value="150" />
+		<attribute key="maxhitpoints" value="100" />
 		<attribute key="healthGain" value="30" />
 		<attribute key="healthTicks" value="5000" />
 		<attribute key="absorbPercentAll" value="15" />
-		<attribute key="weaken" value="10" />
+		<attribute key="weaken" value="25" />
 		<attribute key="weaponType" value="shield" />
-		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+		<attribute key="description" value="Damage taken by -15% and Damage dealt by -25%" />
 	
 	</item>
 
@@ -39974,10 +39977,10 @@
 		<attribute key="lifeleechamount" value="5" />
 		<attribute key="manaleechamount" value="5" />
 		<attribute key="attackspeed" value="10" />
-		<attribute key="weaken" value="10" />
+		<attribute key="weaken" value="25" />
 		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="extrahealing" value="80" />
-		<attribute key="description" value="Damage reduction by 15% and Damage dealt by 10%" />
+		<attribute key="description" value="Damage taken by -15% and Damage dealt by -25%" />
 	</item>
 	
 	<item id="38323" article="a" name="Ring of the Guardian">
@@ -40047,7 +40050,6 @@
 		<attribute key="armor" value="5" />
 		<attribute key="slotType" value="ring" />
 		<attribute key="criticalhitchance" value="3" />
-		<attribute key="criticalhitamount" value="10" />
 		<attribute key="showattributes" value="1" />
 	</item>
 	
@@ -40075,7 +40077,6 @@
 		<attribute key="armor" value="6" />
 		<attribute key="skillSword" value="5" />
 		<attribute key="criticalhitchance" value="4" />
-		<attribute key="criticalhitamount" value="8" />
 
 	</item>
 	<item id="38306" article="a" name="Mystic Brawn">
@@ -40083,7 +40084,6 @@
 		<attribute key="slotType" value="ring" />
 		<attribute key="armor" value="5" />
 		<attribute key="skilldist" value="5" />
-		<attribute key="criticalhitamount" value="105" />
 		<attribute key="maxhitpointspercent" value="107" />
 	</item>
 	<item id="38304" article="a" name="Healing Touch">
@@ -40122,7 +40122,6 @@
 		<attribute key="healthGain" value="10" />
 		<attribute key="healthTicks" value="6000" />
 		<attribute key="criticalhitchance" value="4" />
-		<attribute key="criticalhitamount" value="5" />
 		<attribute key="maxhitpointspercent" value="108" />
 	</item>
 	<item id="38305" article="a" name="Mage's Seal">
@@ -40145,7 +40144,6 @@
 		<attribute key="healthGain" value="6" />
 		<attribute key="healthTicks" value="6000" />
 		<attribute key="criticalhitchance" value="3" />
-		<attribute key="criticalhitamount" value="10" />
 		<attribute key="maxhitpointspercent" value="108" />
 	</item>
 	<item id="38330" article="a" name="Warrior's Band">
@@ -40155,7 +40153,6 @@
 		<attribute key="skillSword" value="2" />
 		<attribute key="defense" value="3" />
 		<attribute key="criticalhitchance" value="1" />
-		<attribute key="criticalhitamount" value="5" />
 		<attribute key="maxhitpointspercent" value="104" />
 	</item>
 	<item id="38327" article="an" name="Ring of the Mage">
@@ -40166,7 +40163,6 @@
 		<attribute key="maxmanapoints" value="150" />
 		<attribute key="maxmanapointspercent" value="110" />
 		<attribute key="criticalhitchance" value="3" />
-		<attribute key="criticalhitamount" value="4" />
 </item>
 	<item id="38320" article="a" name="Ring of the Gods">
 		<attribute key="weight" value="80" />
@@ -40184,7 +40180,6 @@
 		<attribute key="skilldist" value="5" />
 		<attribute key="maxhitpointspercent" value="110" />
 		<attribute key="criticalhitchance" value="10" />
-		<attribute key="criticalhitamount" value="15" />
 		<attribute key="manaGain" value="8" />
 		<attribute key="manaTicks" value="6000" />
 	</item>
@@ -40237,7 +40232,6 @@
 		<attribute key="slotType" value="ring" />
 		<attribute key="armor" value="7" />
 		<attribute key="criticalhitchance" value="15" />
-		<attribute key="criticalhitamount" value="10" />
 	</item>
 	<item id="38315" article="a" name="Warlock's Loop">
 		<attribute key="weight" value="80" />
@@ -40245,7 +40239,6 @@
 		<attribute key="armor" value="8" />
 		<attribute key="magiclevelpoints" value="9" />
 		<attribute key="maxmanapoints" value="120" />
-		<attribute key="criticalhitamount" value="10" />
 		<attribute key="criticalhitchance" value="15" />
 	</item>
 	<item id="38313" article="a" name="Ring of the Shadow">
@@ -40297,7 +40290,6 @@
 		<attribute key="armor" value="3" />
 		<attribute key="skillSword" value="3" />	
 		<attribute key="criticalhitchance" value="2" />
-		<attribute key="criticalhitamount" value="2" />
 		<attribute key="maxhitpointspercent" value="102" />	
 	</item>
 	
@@ -40317,7 +40309,6 @@
 		<attribute key="magiclevelpoints" value="1" />	
 		<attribute key="skillSword" value="2" />
 		<attribute key="criticalhitchance" value="2" />
-		<attribute key="criticalhitamount" value="2" />
 	</item>
 	
 	<item id="38281" article="a" name="Nature's Embrace">
@@ -40335,7 +40326,6 @@
 		<attribute key="armor" value="5" />		
 		<attribute key="skillSword" value="5" />	
 		<attribute key="criticalhitchance" value="5" />
-		<attribute key="criticalhitamount" value="5" />	
 	</item>
 	
 	<item id="38282" article="a" name="Monkey's Magic">
@@ -40361,7 +40351,7 @@
 		<attribute key="armor" value="5" />		
 		<attribute key="skilldist" value="6" />	
 		<attribute key="criticalhitchance" value="4" />
-		<attribute key="criticalhitamount" value="4" />	
+		
 	</item>
 	
 	
@@ -40402,7 +40392,6 @@
 		<attribute key="armor" value="7" />
 		<attribute key="skillSword" value="10" />	
 		<attribute key="criticalhitchance" value="6" />
-		<attribute key="criticalhitamount" value="7" />	
 	</item>
 	
 	<item id="38279" article="a" name="Mirage Mirage">
@@ -40457,7 +40446,7 @@
 		<attribute key="magiclevelpoints" value="5" />			
 		<attribute key="skilldist" value="8" />	
 		<attribute key="criticalhitchance" value="8" />
-		<attribute key="criticalhitamount" value="8" />
+		
 	</item>
 	
 	<item id="38264" article="a" name="Ice Queen">
@@ -40473,7 +40462,6 @@
 		<attribute key="slotType" value="necklace" />
 		<attribute key="armor" value="9" />
 		<attribute key="criticalhitchance" value="9" />
-		<attribute key="criticalhitamount" value="15" />
 		<attribute key="maxmanapointspercent" value="115" />
 	</item>
 	
@@ -41761,6 +41749,11 @@
         <attribute key="weight" value="55" />
     </item>
 
+	<item id="39975" article="a" name="woodcutting axe">
+        <attribute key="description" value="Used to cut down trees." />
+        <attribute key="weight" value="55" />
+    </item>
+
 	<item id="40034" article="a" name="copper ore">
 		<attribute key="description" value="Blacksmiths may want this." />
 		<attribute key="weight" value="1" />
@@ -41785,6 +41778,69 @@
 		<attribute key="description" value="Blacksmiths may want this." />
 		<attribute key="weight" value="1" />
 	</item>
+
+
+	<item id="40221" article="a" name="Elixir of haste">
+		<attribute key="description" value="Drinking grants a speed buff. this effect will not remove any Flask or vial effect. this effects only last 60 seconds." />
+		<attribute key="weight" value="60" />
+	</item>
+	<item id="40231" article="a" name="Elixir of haste">
+		<attribute key="description" value="Drinking grants a speed buff. this effect will not remove any Flask or vial effect. this effects only last 3 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+	<item id="40130" article="a" name="Elixir of ghosts">
+		<attribute key="description" value="Turn the target into a ghost and cannot be detected. this effects lasts 2.5 seconds." />
+		<attribute key="weight" value="60" />
+	</item>
+
+
+
+	<item id="40237" article="a" name="Vial of royal might">
+		<attribute key="description" value="Drinking grants a melee skill buff. this effect will remove any other vial effect. this effects only last 20 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+	<item id="40247" article="a" name="Vial of mystic petals">
+		<attribute key="description" value="Drinking grants a magic and arcana skill buff. this effect will remove any other vial effect. this effects only last 20 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+	<item id="40250" article="a" name="Vial of the mushroom">
+		<attribute key="description" value="Drinking grants a skill distance buff. this effect will remove any other vial effect. this effects only last 20 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+
+
+
+
+	<item id="40217" article="a" name="Starfish flask">
+		<attribute key="description" value="Drinking grants a minor mana regeneration buff. this effect will remove any other flask effect. this effects lasts 10 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+	<item id="40238" article="a" name="Blooline flask">
+		<attribute key="description" value="Drinking grants a minor health regeneration buff. this effect will remove any other flask effect. this effects lasts 10 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+
+	<item id="40234" article="a" name="Flask of vital currents">
+		<attribute key="description" value="Drinking grants a health regeneration buff. this effect will remove any other flask effect. this effects lasts 10 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+
+	<item id="40219" article="a" name="Flask of the deepflow">
+		<attribute key="description" value="Drinking grants a mana regeneration buff. this effect will remove any other flask effect. this effects lasts 10 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+
+	<item id="40232" article="a" name="Potion of stone">
+		<attribute key="description" value="Drinking grants a 5% physical damage resistance buff. this effects lasts 10 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+
+	<item id="40233" article="a" name="Potion of nature">
+		<attribute key="description" value="Drinking grants a 5% elemental damage resistance buff. this effects lasts 10 minutes." />
+		<attribute key="weight" value="60" />
+	</item>
+
+	
 	
 
 </items>
