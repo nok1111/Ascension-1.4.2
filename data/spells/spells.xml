@@ -92,16 +92,10 @@
 	
 	<!-- mage -->
 	
-	<instant group="attack" spellid="40" name="Living Bomb" words="living bomb" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="17000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/living_bomb.lua">
-    <vocation name="Magician" />
-    </instant>
 	<instant group="attack" spellid="41" name="Energy Blast" words="energy blast" lvl="10" mana="0" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="4000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/energy_blast.lua">
     <vocation name="Magician" />
     </instant>
 	<instant group="attack" spellid="42" name="Fire Blast" words="fire blast" lvl="8" mana="25" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/fire_blast.lua">
-    <vocation name="Magician" />
-    </instant>
-	<instant group="attack" spellid="43" name="Elemental Blast" words="elemental blast" lvl="999" mana="200" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="mage/elemental_blast.lua">
     <vocation name="Magician" />
     </instant>
 	<instant group="attack" spellid="44" name="Ice Nova" words="ice nova" lvl="20" mana="180" prem="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="mage/ice_nova.lua">
@@ -147,9 +141,6 @@
    
 	
 	<!-- warlock -->
-	<instant group="attack" spellid="60" name="Void Recall" words="void recall" lvl="100" mana="300"  cooldown="15000" groupcooldown="2000" needlearn="0" script="warlock/void_recall.lua">
-	<vocation name="Warlock" />
-	</instant>
 	<instant group="support" spellid="61" name="Zombie Wall" lvl="40" words="zombie wall" mana="50" cooldown="20000" direction="1" needlearn="1" script="warlock/zombie_wall.lua">
 	<vocation name="Warlock" />
 	</instant>
@@ -162,7 +153,7 @@
 	<instant group="attack" spellid="64" name="Shadow Strike" words="shadow strike" lvl="30" mana="110" prem="0" range="6" casterTargetOrDirection="1" needtarget="1" blockwalls="1" cooldown="5000" groupcooldown="1900" needlearn="0" script="warlock/death_strike.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="support" spellid="65" name="Summon Void Mender" words="summon void mender" lvl="70" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="1" script="warlock/summon_mage.lua">
+	<instant group="support" spellid="65" name="Summon Void Mender" words="summon void mender" lvl="1" mana="300"  cooldown="5000" groupcooldown="1900" needlearn="1" script="warlock/summon_mage.lua">
 	<vocation name="Warlock" />
 	</instant>
 	<instant group="healing" spellid="66" name="Blood Pact" words="blood pact" lvl="40" health="0" aggressive="0" selftarget="1" cooldown="1500" groupcooldown="1900" needlearn="0" script="warlock/blood_pact.lua">
@@ -177,15 +168,12 @@
 	<instant group="support" spellid="69" name="Summon Void Sentinel" words="summon void sentinel" lvl="30" mana="150"  cooldown="10000" groupcooldown="1900" needlearn="1" script="warlock/summon_archer.lua">
 	<vocation name="Warlock" />
 	</instant>
-	<instant group="support" spellid="70" name="Blood Wall" words="blood Wall" lvl="90" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="0" script="warlock/blood_wall.lua">
+	<instant group="support" spellid="70" name="Blood Wall" words="blood Wall" lvl="1" mana="0" prem="0" aggressive="0" selftarget="1" cooldown="20000" groupcooldown="1900" needlearn="1" script="warlock/blood_wall.lua">
 	<vocation name="Warlock" />
 	</instant>
 	<instant group="attack" spellid="71" name="Dark Plague" words="dark plague" lvl="100" mana="300" range="3" aggressive="1" blockwalls="1" needtarget="1" cooldown="22000" groupcooldown="1900" needweapon="0" needlearn="1" script="warlock/dark_plague.lua">
     <vocation name="Warlock" />
     </instant>
-	<instant group="attack" spellid="73" name="Void Creep" words="creep" lvl="18" mana="60" needtarget="1" range="8" cooldown="6000" groupcooldown="1900" needlearn="0" script="warlock/void_creep.lua">
-	<vocation name="Warlock" />
-	</instant>
 	<instant group="attack" spellid="74" name="Soul Rain" words="soul rain" lvl="50" mana="200" range="7"   cooldown="15000" groupcooldown="1900" needtarget="1" script="warlock/soul_rain.lua">
 	<vocation name="Warlock" />
 	</instant>
@@ -247,9 +235,6 @@
 	<instant group="attack" spellid="100" name="Cosmic Force" words="cosmic force" lvl="8" mana="30" range="4" aggressive="1" blockwalls="1" needtarget="1" cooldown="3000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/cosmic_force.lua">
     <vocation name="Stellar" />
     </instant>
-	<instant group="healing" spellid="101" name="Regrowth" words="regrowth" lvl="40"  mana="65" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1900" needlearn="0" script="stellar/regrowth.lua">
-	<vocation name="Stellar" />
- 	</instant>
 	<instant group="attack" spellid="102" name="Aery Wrath" words="aery wrath" lvl="18" mana="45" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needweapon="0" needlearn="0" script="stellar/chain_spell.lua">
     <vocation name="Stellar" />
     </instant>
@@ -262,12 +247,8 @@
 	<instant group="healing" spellid="105" name="Rain fall" words="rain fall" lvl="25" mana="100" cooldown="20000" groupcooldown="1900" selftarget="1" needlearn="0" script="stellar/rain_fall.lua">
 	<vocation name="Stellar" />
 	</instant>
-	<instant group="healing" spellid="106" name="Sacred Rose" words="sacred rose" lvl="28" mana="150" prem="0" aggressive="0" selftarget="1" cooldown="4000" groupcooldown="1900" script="stellar/heal_party.lua">
-   <vocation name="Stellar" />
-   </instant>
 	<instant group="support" spellid="107" name="Grow" words="grow" lvl="60" mana="100" params="1" needweapon="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="stellar/grow.lua">
 	 <vocation name="Stellar" />
-	 <vocation name="Druid" />
 	</instant>
 	<instant group="attack" spellid="108" name="Lunar Beam" words="lunar beam" lvl="60"  mana="185" premium="0" selftarget="1" cooldown="13000" groupcooldown="1900" needlearn="0" script="stellar/lunar_beam.lua">
 	<vocation name="Stellar" />

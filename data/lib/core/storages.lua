@@ -66,6 +66,7 @@ ConditionsSubIds = {
     shieldwall = 29544,
     astralburn = 29545,
     highvoltagelevel = 29546,
+    blessed = 29547,
     
 
 

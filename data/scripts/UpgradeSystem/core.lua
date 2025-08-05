@@ -1284,47 +1284,47 @@ function Item.setItemLevel(self, level, first)
        end
 
        if itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) > 0 then
-           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) * 2) / US_CONFIG.ITEM_LEVEL_PER_CRITCHANCE)
+           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_CRITICALHITCHANCE) * 3) / US_CONFIG.ITEM_LEVEL_PER_CRITCHANCE)
        end
 
        if itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) > 0 then
-           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) * 2) / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHCHANCE)
+           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHCHANCE) * 3) / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHCHANCE)
        end
 
        if itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) > 0 then
-           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) * 2) / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHAMOUNT)
+           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_LIFLEECHAMOUNT) * 3) / US_CONFIG.ITEM_LEVEL_PER_LIFELEECHAMOUNT)
        end
 
        if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) > 0 then
-           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) * 2) / US_CONFIG.ITEM_LEVEL_PER_MANALEECHCHANCE)
+           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_MANALEECHCHANCE) * 3) / US_CONFIG.ITEM_LEVEL_PER_MANALEECHCHANCE)
        end
 
        if itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) > 0 then
-           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) * 2) / US_CONFIG.ITEM_LEVEL_PER_MANALEECHAMOUNT)
+           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_MANALEECHAMOUNT) * 3) / US_CONFIG.ITEM_LEVEL_PER_MANALEECHAMOUNT)
        end
 
        if itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) > 0 then
-           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) * 2)/ US_CONFIG.ITEM_LEVEL_PER_ATTACKSPEED)
+           level = level + math.floor((itemType:getSpecialSkill(SPECIALSKILL_ATTACKSPEED) * 3)/ US_CONFIG.ITEM_LEVEL_PER_ATTACKSPEED)
        end
 
        if itemType:getSkill(SKILL_CLUB) > 0 then
-         level = level + math.floor((itemType:getSkill(SKILL_CLUB) * 2)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
+         level = level + math.floor((itemType:getSkill(SKILL_CLUB) * 5)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
        end
 
        if itemType:getSkill(SKILL_SWORD) > 0 then
-         level = level + math.floor((itemType:getSkill(SKILL_SWORD) * 2)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
+         level = level + math.floor((itemType:getSkill(SKILL_SWORD) * 5)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
        end
 
        if itemType:getSkill(SKILL_AXE) > 0 then
-         level = level + math.floor((itemType:getSkill(SKILL_AXE) * 2)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
+         level = level + math.floor((itemType:getSkill(SKILL_AXE) * 5)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
        end
 
        if itemType:getSkill(SKILL_DISTANCE) > 0 then
-         level = level + math.floor((itemType:getSkill(SKILL_DISTANCE) * 2)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
+         level = level + math.floor((itemType:getSkill(SKILL_DISTANCE) * 5)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
        end
 
        if itemType:getSkill(SKILL_SHIELD) > 0 then
-         level = level + math.floor((itemType:getSkill(SKILL_SHIELD) * 2)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
+         level = level + math.floor((itemType:getSkill(SKILL_SHIELD) * 5)/ US_CONFIG.ITEM_LEVEL_PER_SKILL)
        end
 
        if itemType:getHealthGain() > 0 then

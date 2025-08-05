@@ -89,8 +89,8 @@ US_CONFIG = {
   HITCHANCE_PER_ITEM_LEVEL = 10, -- every X Item Level +HITCHANCE_FROM_ITEM_LEVEL hit chance
   HITCHANCE_FROM_ITEM_LEVEL = 1, -- +X bonus hit chance for every HITCHANCE_PER_ITEM_LEVEL
   --
-  ITEM_LEVEL_PER_ATTACK = 5, -- +1 to Item Level for every X Attack in item
-  ITEM_LEVEL_PER_DEFENSE = 5, -- +1 to Item Level for every X Defense in item
+  ITEM_LEVEL_PER_ATTACK = 1, -- +1 to Item Level for every X Attack in item
+  ITEM_LEVEL_PER_DEFENSE = 1, -- +1 to Item Level for every X Defense in item
   ITEM_LEVEL_PER_ARMOR = 1, -- +1 to Item Level for every X Armor in item
   ITEM_LEVEL_PER_MAGIC = 1, -- +1 to Item Level for every X Armor in item
   ITEM_LEVEL_PER_HITCHANCE = 100, -- +1 to Item Level for every X Hit Chance in item
