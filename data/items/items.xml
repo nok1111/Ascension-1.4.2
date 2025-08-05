@@ -37055,9 +37055,9 @@
 		
 	</item>
 	<item id="31890" name="Goblin Swifties">
-		<attribute key="weight" value="85" />
+		<attribute key="weight" value="10" />
 		<attribute key="slotType" value="feet" />
-		<attribute key="armor" value="1" />
+		<attribute key="armor" value="2" />
 		<attribute key="speed" value="20" />
 		<attribute key="showattributes" value="1" />
 	</item>

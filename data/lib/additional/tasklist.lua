@@ -129,7 +129,7 @@ playersTasks = {
             },
             storages = {
                [1] = {
-                    starageName = "Learn a Crafting Job.",
+                    starageName = "Learn about crafting.",
                     starageTaskId = Mainquest.learncrafting
                 }
             }
@@ -153,7 +153,7 @@ playersTasks = {
                     name = "dream feather",
                     itemCid = 33682,
                     itemSid = 37763,
-                    itemCnt = 2
+                    itemCnt = 1
                 },
                 },
             outfits = {
@@ -276,7 +276,7 @@ playersTasks = {
                 [1] = {
                     name = "gold coin",
                     itemSid = 2148,
-                    itemCnt = 85
+                    itemCnt = 5
                     },
                 },
             outfits = {
@@ -322,7 +322,7 @@ playersTasks = {
                 [1] = {
                     name = "gold coin",
                     itemSid = 2148,
-                    itemCnt = 85
+                    itemCnt = 5
                     },
                 },
             outfits = {
@@ -368,7 +368,7 @@ playersTasks = {
                 [1] = {
                     name = "gold coin",
                     itemSid = 2148,
-                    itemCnt = 85
+                    itemCnt = 5
                     },
                 },
             outfits = {
@@ -414,7 +414,7 @@ playersTasks = {
                 [1] = {
                     name = "gold coin",
                     itemSid = 2148,
-                    itemCnt = 85
+                    itemCnt = 8
                     },
                 },
             outfits = {
@@ -451,7 +451,7 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 100
+                itemCnt = 12
             },
             [2] = {
                 name = "Dwarven Pickaxe",
@@ -489,11 +489,11 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 150
+                itemCnt = 20
             },
             [2] = {
-                name = "Dwarven Battleaxe",
-                itemSid = 2435,
+                name = "Goblin Swifties",
+                itemSid = 31890,
                 itemCnt = 1
             }
         },
@@ -527,11 +527,11 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 50
+                itemCnt = 6
             },
             [2] = {
-                name = "Shadow Cloak",
-                itemSid = 2656,
+                name = "old dark robe",
+                itemSid = 31903,
                 itemCnt = 1
             }
         },
@@ -544,7 +544,7 @@ playersTasks = {
 [11] = {
     taskNumber = 11,
     taskName = "The Rogue\'s Gambit",
-    taskDescription = "Paladin Aric has learned that a dangerous outlaw, Vael the Betrayer, is hiding deep in Shadow Hollow. Find and defeat him before he strikes again.",
+    taskDescription = "Paladin Aric has learned that a dangerous outlaw, Vael the Betrayer, is hiding deep in Shadow Hollow. That rat won\'t come out until we get rid of his followers.",
     taskGoals = {
         monsters = {
             [1] = {
@@ -565,12 +565,12 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 120
+                itemCnt = 25
             },
             [2] = {
-                name = "Rogue’s Hood",
-                itemSid = 2660,
-                itemCnt = 1
+                name = "dream feather",
+                itemSid = 37763,
+                itemCnt = 3
             }
         },
          outfits = {},
@@ -583,7 +583,7 @@ playersTasks = {
 [12] = {
     taskNumber = 12,
     taskName = "The Broken Pact",
-    taskDescription = "Ranger Captain Dain has warned of elven hostility. He believes an outcast elf might know more. Find and speak to the outcast east in the woods.",
+    taskDescription = "Ranger Captain Dain has warned of elven hostility. He believes an outcast elf might know more. Find and speak to the outcast elf east in the woods.",
     taskGoals = {
         storages = {
             [1] = {
@@ -602,9 +602,9 @@ playersTasks = {
         experience = 5000,
         items = {
             [1] = {
-                name = "platinum coin",
-                itemSid = 2152,
-                itemCnt = 5
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 6
             }
         },
         outfits = {},
@@ -628,7 +628,7 @@ playersTasks = {
         }
     },
     preRequiredStorages = {40023}, -- Must complete "The Broken Pact" first
-    taskGoalCnt = 3, -- Recover 3 stolen relics
+    taskGoalCnt = 5, -- Recover 3 stolen relics
     taskMinLvl = 12,
     taskRepeat = false,
     taskStorageId = 40025,
@@ -637,13 +637,13 @@ playersTasks = {
         experience = 7000,
         items = {
             [1] = {
-                name = "platinum coin",
-                itemSid = 2152,
-                itemCnt = 8
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 16
             },
             [2] = {
-                name = "Enchanted Elven Charm",
-                itemSid = 11234,
+                name = "Regenerating Resilience",
+                itemSid = 38291,
                 itemCnt = 1
             }
         },
@@ -679,13 +679,13 @@ playersTasks = {
         experience = 10000,
         items = {
             [1] = {
-                name = "platinum coin",
-                itemSid = 2152,
-                itemCnt = 10
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 20
             },
             [2] = {
-                name = "Corrupted Heart",
-                itemSid = 15431,
+                name = "Ring of the Guardian",
+                itemSid = 38323,
                 itemCnt = 1
             }
         },
@@ -718,13 +718,13 @@ playersTasks = {
         experience = 12000,
         items = {
             [1] = {
-                name = "crystal coin",
-                itemSid = 2160,
-                itemCnt = 2
+                name = "gold coin",
+                itemSid = 2148,
+                itemCnt = 35
             },
             [2] = {
-                name = "Blessed Elven Amulet",
-                itemSid = 11236,
+                name = "Battle Mage's Might",
+                itemSid = 38295,
                 itemCnt = 1
             }
         },
@@ -738,7 +738,7 @@ playersTasks = {
 [16] = {
     taskNumber = 16,
     taskName = "The Old Man\'s Request",
-    taskDescription = "Edrin, an elderly hermit, needs strong elderwood logs to repair his home. He can no longer gather them himself and seeks your help.",
+    taskDescription = "Edrin, an elderly hermit, needs strong Bloodwood logs to repair his home. He can no longer gather them himself and seeks your help.",
     taskGoals = {
         items = {
             [1] = {
@@ -759,11 +759,11 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 100
+                itemCnt = 20
             },
             [2] = {
-                name = "Companion: Forest Spriggan",
-                itemSid = 9200, -- Example pet companion ID
+                name = "Companion: Old Dog",
+                itemSid = 37895, -- Example pet companion ID
                 itemCnt = 1
             }
         },
@@ -771,7 +771,7 @@ playersTasks = {
     },
     taskZoneName = "Deepwoods",
     taskSource = "Edrin the Hermit",
-    taskHint = "Elderwood trees grow near the cliffs at the edge of the Deepwoods."
+    taskHint = "woodcutting required"
 },
 
 [17] = {
@@ -798,7 +798,7 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 150
+                itemCnt = 15
             },
             [2] = {
                 name = "Cursed Signet",
@@ -808,14 +808,14 @@ playersTasks = {
         },
         outfits = {},
     },
-    taskZoneName = "Cursed Cathedral Grounds",
+    taskZoneName = "Near the Cathedral",
     taskSource = "Darian",
     taskHint = "A lone grave stands near the cathedral ruins. A red rose placed there may bring peace."
 },
 [18] = {
     taskNumber = 18,
     taskName = "The Cursed Signet",
-    taskDescription = "Darian has entrusted you with the Cursed Signet a gift from Lucella that sealed Elyria\'s fate. The only way to break its hold is to cast it into an enchanted witch\'s cauldron, hidden somewhere in the ruins. The ritual must be done correctly, or the curse may persist.",
+    taskDescription = "Darian has entrusted you with the Cursed Signet a gift from Lucella that sealed Elyria\'s fate. The only way to break its hold is to cast it into an enchanted witch\'s cauldron, hidden somewhere within the Cursed Cementery. The ritual must be done correctly, or the curse may persist.",
     taskGoals = {
         storages = {
             [1] = {
@@ -836,25 +836,25 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 250
+                itemCnt = 30
             },
             [2] = {
-                name = "Elyria's Blessing",
-                itemSid = 9212, -- A charm that carries Elyria's lingering warmth
+                name = "orb of performance",
+                itemSid = 29032, -- A charm that carries Elyria's lingering warmth
                 itemCnt = 1
             }
         },
         outfits = {},
     },
-    taskZoneName = "Witch’s Ritual Grounds",
+    taskZoneName = "Cursed Cementery",
     taskSource = "Darian",
-    taskHint = "An old cauldron hidden within the ruins may hold the key to breaking the curse."
+    taskHint = "An old cauldron hidden within the Cursed Cementery may hold the key to breaking the curse."
 },
 
 [19] = {
     taskNumber = 19,
     taskName = "Lucella, the Weaving Dread",
-    taskDescription = "Darian has gathered his strength. The time has come to end Lucella\'s influence once and for all. Her lair lies deep within the ruined cathedral, where she waits, weaving the last threads of her dark web. Reach her lair, defeat her, and cleanse this land of her corruption.",
+    taskDescription = "Darian has gathered his strength. The time has come to end Lucella\'s influence once and for all. Her lair lies deep within the eDark Cathedral, where she waits, weaving the last threads of her dark web. Reach her lair, defeat her, and cleanse this land of her corruption.",
     taskGoals = {
         monsters = {
             [1] = {
@@ -875,7 +875,7 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 500
+                itemCnt = 50
             },
             [2] = {
                 name = "Lucella’s Severed Veil",
@@ -885,9 +885,9 @@ playersTasks = {
         },
         outfits = {},
     },
-    taskZoneName = "Lucella’s Web",
+    taskZoneName = "Lucella's Lair [Dungeon]",
     taskSource = "Darian",
-    taskHint = "Lucella waits within the ruined cathedral, her lair hidden behind veils of shadow. Seek her out and end her dark reign."
+    taskHint = "somewhere inside the Dark Cathedral"
 },
 
 [20] = {
@@ -914,18 +914,18 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 200
+                itemCnt = 15
             },
             [2] = {
-                name = "Old Library Key",
-                itemSid = 9214, -- A rusted key to deeper areas of the library
+                name = "dream feather",
+                itemSid = 37763, -- A rusted key to deeper areas of the library
                 itemCnt = 1
             }
         },
         outfits = {},
     },
     taskZoneName = "Forgotten Library",
-    taskSource = "Old Librarian",
+    taskSource = "Old Man",
     taskHint = "The Blood Flower Seal binds Lily somewhere deep inside the Forgotten Library.",
 },
 
@@ -953,19 +953,19 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 100
+                itemCnt = 30
             }
         },
         outfits = {},
     },
-    taskZoneName = "Swamp of Forgotten Voices",
-    taskSource = "The Whispering Librarian",
-    taskHint = "An ancient tree in the swamp hides the ribbon, entangled in its roots.",
+    taskZoneName = "Forgotten Library",
+    taskSource = "Old Man",
+    taskHint = "somehere inside the Forgotten Library",
 },
 [22] = {
     taskNumber = 22,
     taskName = "A Faded Letter",
-    taskDescription = "Deep within the ruins of Lily\'s childhood home lies a forgotten letter. The Librarian believes it holds power over her fate. But the house has been abandoned for years... hasn’t it?",
+    taskDescription = "Deep within the ruins lies a forgotten love letter. The Librarian believes it holds power over her fate. But the library has been abandoned for years... hasn’t it?",
     taskGoals = {
         items = {
             [1] = {
@@ -986,13 +986,13 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 120
+                itemCnt = 25
             }
         },
         outfits = {},
     },
     taskZoneName = "Ruins of the Forsaken Home",
-    taskSource = "The Whispering Librarian",
+    taskSource = "Old Man",
     taskHint = "The letter is locked within the ruined house, waiting to be found.",
 },
 [23] = {
@@ -1019,13 +1019,13 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 150
+                itemCnt = 20
             }
         },
         outfits = {},
     },
     taskZoneName = "Forgotten Library",
-    taskSource = "The Whispering Librarian",
+    taskSource = "Old Man",
     taskHint = "The mirror lies shattered in the Forgotten Library, yet its reflection lingers.",
 },
 [24] = {
@@ -1163,7 +1163,7 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 150
+                itemCnt = 50
             },
             [2] = {
                 name = "Spirit Ward Amulet",
@@ -1202,18 +1202,18 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 200
+                itemCnt = 30
             },
             [2] = {
-                name = "Lily's Tear",
-                itemSid = 9203,
-                itemCnt = 1
+                name = "dream feather",
+                itemSid = 37763,
+                itemCnt = 4
             }
         },
         outfits = {},
     },
     taskZoneName = "Forgotten Library",
-    taskSource = "Old Librarian",
+    taskSource = "Old Man",
     taskHint = "Find the Lily\'s coffin in the last flor of the Forgotten Library and free lily."
 },
 [29] = {
@@ -1240,12 +1240,22 @@ playersTasks = {
             [1] = {
                 name = "gold coin",
                 itemSid = 2148,
-                itemCnt = 500
+                itemCnt = 50
             },
             [2] = {
-                name = "Malrith\'s Cursed Veil",
-                itemSid = 9215, -- Custom quest item
+                name = "Old Remorse", --shield
+                itemSid = 36388, -- Custom quest item
                 itemCnt = 1
+            },
+            [3] = {
+                name = "companion: black cat",
+                itemSid = 37900, -- Unique quest item
+                itemCnt = 1
+            },
+            [4] = {
+                name = "orb of performance",
+                itemSid = 29032, -- Unique quest item
+                itemCnt = 2
             }
         },
         outfits = {},
@@ -1281,9 +1291,9 @@ playersTasks = {
                 itemCnt = 100
             },
             [2] = {
-                name = "Old Sailor's Compass",
-                itemSid = 9205, -- Unique quest item
-                itemCnt = 1
+                name = "dream feather",
+                itemSid = 37763, -- Unique quest item
+                itemCnt = 2
             }
         },
         outfits = {},
@@ -1310,7 +1320,7 @@ playersTasks = {
     taskRewards = {
         experience = 3500,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 25 }
         },
          outfits = {},
     },
@@ -1336,7 +1346,7 @@ playersTasks = {
     taskRewards = {
         experience = 3500,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 30 }
         },
          outfits = {},
     },
@@ -1362,7 +1372,7 @@ playersTasks = {
     taskRewards = {
         experience = 4000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 60 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 30 }
         },
          outfits = {},
     },
@@ -1388,8 +1398,8 @@ playersTasks = {
     taskRewards = {
         experience = 7000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
-            [2] = { name = "Ancient Spirit Ward", itemSid = 9205, itemCnt = 1 } -- Special Item
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 60 },
+            [2] = { name = "Ancient Spirit Ward", itemSid = 13197, itemCnt = 10 } -- enchant here
         },
          outfits = {},
     },
@@ -1415,8 +1425,9 @@ playersTasks = {
     taskRewards = {
         experience = 7500,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
-            [2] = { name = "The Remembered Sigil", itemSid = 9215, itemCnt = 1 } -- Future use
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 65 },
+            [2] = { name = "ghost pet", itemSid = 37890, itemCnt = 1 } -- ghost pet
+            [3] = { name = "orb of performance", itemSid = 29032, itemCnt = 2 } -- orb of performance
         },
          outfits = {},
     },
@@ -1447,7 +1458,7 @@ playersTasks = {
     taskRewards = {
         experience = 8500,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 100 },
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 30 },
             [2] = { name = "Spore-Linked Talisman", itemSid = 9206, itemCnt = 1 }
         },
         outfits = {}
@@ -1477,7 +1488,7 @@ playersTasks = {
     taskRewards = {
         experience = 9500,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 120 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 }
         },
          outfits = {}
     },
@@ -1506,8 +1517,7 @@ playersTasks = {
     taskRewards = {
         experience = 10000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
-            [2] = { name = "Ancient Circuit Fragment", itemSid = 29742, itemCnt = 1 } -- Example item reward
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 44 },
         },
         outfits = {}
     },
@@ -1536,8 +1546,7 @@ playersTasks = {
     taskRewards = {
         experience = 12000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
-            [2] = { name = "Sporeshard Medallion", itemSid = 29743, itemCnt = 1 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 },
         },
         outfits = {}
     },
@@ -1567,8 +1576,7 @@ playersTasks = {
     taskRewards = {
         experience = 13000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 200 },
-            [2] = { name = "Verdant Core Fragment", itemSid = 29744, itemCnt = 1 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 50 },
         },
         outfits = {}
     },
@@ -1597,7 +1605,7 @@ playersTasks = {
     taskRewards = {
         experience = 9500,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 120 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 40 }
         },
         outfits = {}
     },
@@ -1626,7 +1634,7 @@ playersTasks = {
     taskRewards = {
         experience = 10000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 35 }
         },
         outfits = {}
     },
@@ -1656,7 +1664,7 @@ playersTasks = {
     taskRewards = {
         experience = 11000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 180 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 40 }
         },
         outfits = {}
     },
@@ -1688,9 +1696,9 @@ playersTasks = {
         experience = 5000,
         items = {
             [1] = {
-                name = "Bucket of Demon Milk",
-                itemSid = 2853, -- Bucket ID
-                itemCnt = 1
+                name = "Dream feather",
+                itemSid = 37763, -- Bucket ID
+                itemCnt = 6
             }
         },
         outfits = {},
@@ -1728,27 +1736,27 @@ playersTasks = {
         experience = 8000,
         items = {
             [1] = {
-                name = "Chicken Union Membership Card",
-                itemSid = 13993, -- Parchment ID
+                name = "companion: chicken",
+                itemSid = 37862, -- Parchment ID
                 itemCnt = 1
             },
             [2] = {
                 name = "Bag of Organic Feed",
-                itemSid = 6541, -- Seed bag ID
+                itemSid = 37763, -- Seed bag ID
                 itemCnt = 5
             }
         },
         outfits = {},
     },
     
-    taskZoneName = "Free-Range Chicken Coop",
+    taskZoneName = "Funny Farm",
     taskSource = "Farmer Cluckington",
     taskHint = "ask Farmer Cluckington for a broom to hit chickens and catch them safely!"
 },
 [46] = { -- Next available quest ID
     taskNumber = 46,
     taskName = "Sheepnapped!",
-    taskDescription = "Farmer Baaartholomew\'s prize sheep have ‘mysteriously vanished’ (read: staged a jailbreak). Your mission: \'Recruit\' them back—by any means necessary. No questions asked. *Wink*.",
+    taskDescription = "Farmer Baaartholomew\'s prize sheep have ‘mysteriously vanished’ from his farm. Your mission: \'Lure\' them here by any means necessary. No questions asked. *Wink*.",
      taskGoals = {
         storages = {
             [1] = {
@@ -1814,20 +1822,20 @@ playersTasks = {
         experience = 8000,
         items = {
             [1] = {
-                name = "Chicken Union Membership Card",
-                itemSid = 13993, -- Parchment ID
-                itemCnt = 1
+                name = "gold coin",
+                itemSid = 2148, -- Parchment ID
+                itemCnt = 50
             },
             [2] = {
-                name = "Bag of Organic Feed",
-                itemSid = 6541, -- Seed bag ID
+                name = "dream feather",
+                itemSid = 37763, -- Seed bag ID
                 itemCnt = 5
             }
         },
         outfits = {},
     },
     
-    taskZoneName = "Free-Range Chicken Coop",
+    taskZoneName = "Funny Farm",
     taskSource = "Chriss - Phil\'s Friend",
     taskHint = "Type \'haha\', \'lol\', or \'laugh\' after each joke - even if it hurts. Phil\'s ego is more fragile than his straw stuffing."
 },
@@ -1852,8 +1860,7 @@ playersTasks = {
     taskRewards = {
         experience = 13000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 200 },
-            [2] = { name = "Steelgard Token", itemSid = 5806, itemCnt = 1 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 65 },
         },
         outfits = {}
     },
@@ -1887,8 +1894,7 @@ playersTasks = {
     taskRewards = {
         experience = 16000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 250 },
-            [2] = { name = "Steelgard Axe", itemSid = 2429, itemCnt = 1 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 75 },
         },
         outfits = {}
     },
@@ -1917,8 +1923,7 @@ playersTasks = {
     taskRewards = {
         experience = 18000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 300 },
-            [2] = { name = "Steelgard Emblem", itemSid = 9219, itemCnt = 1 } -- A keepsake
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 150 },
         },
         outfits = {}
     },
@@ -1947,8 +1952,7 @@ playersTasks = {
     taskRewards = {
         experience = 25000,
         items = {
-            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 400 },
-            [2] = { name = "Coin-Eater’s Crown", itemSid = 9240, itemCnt = 1 }
+            [1] = { name = "gold coin", itemSid = 2148, itemCnt = 200 },
         },
         outfits = {
         }

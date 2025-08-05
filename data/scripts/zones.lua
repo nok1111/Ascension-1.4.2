@@ -214,7 +214,7 @@ local zones = {
     },
     [13] = { 
         id = 13,
-        name = "Mines of xxxxx",
+        name = "Graveyard of the Lost",
         monsters = {"skeleton"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
