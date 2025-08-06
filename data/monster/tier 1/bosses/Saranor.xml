@@ -14,8 +14,8 @@
 		<flag canpushitems="1" />
 		<flag canpushcreatures="1" />
 		<flag targetdistance="3" />
-		<flag staticattack="95" />
-		<flag runonhealth="0" />
+		<flag staticattack="50" />
+		<flag runonhealth="12" />
 	</flags>
 	<attacks>
 <attack name="melee" interval="2000" min="-2" max="-100" />		
@@ -23,10 +23,9 @@
 			<attribute key="shootEffect" value="distance69" />
 			<attribute key="areaEffect" value="effect230" />
 		</attack>
-		<attack name="custom spell 1" interval="2000" chance="10" min="-90" max="-250"/>
-		<attack name="custom spell 2" interval="2000" chance="10" min="-80" max="-250"/>
-		<attack name="custom spell 5" interval="2000" chance="10" min="-110" max="-230"/>
+		<attack name="death wave" interval="2000" chance="10" min="-90" max="-250"/>
 		<attack name="meteor" interval="2000" chance="30" min="-250" max="-400"/>
+		<attack name="laser beam death" interval="2000" chance="10" min="-230" max="-250"/>
 		
 		<attack name="death" interval="1000" chance="10" range="6" min="-3" max="-80">
 			<attribute key="shootEffect" value="distance69" />
@@ -53,11 +52,11 @@
 		<element deathPercent="35" />
 	</elements>
 	
-	<voices interval="3000" chance="10">
-		<voice sentence="death to the gods!" />
-		<voice sentence="humans, angels whats the difference!" />
-		<voice sentence="My sin is your sin!" />
-		<voice sentence="My sin is your sin!" />
+	<voices interval="3000" chance="20">
+		<voice sentence="I was cast out for seeking true power!" />
+		<voice sentence="Elves are nothing but cowards hiding behind trees." />
+		<voice sentence="I will erase every trace of my former kin!" />
+		<voice sentence="Darkness gave me more than the elven council ever did!" />
 	</voices>
 	<loot>
 		

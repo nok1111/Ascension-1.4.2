@@ -2184,8 +2184,8 @@
 	<spawn centerx="843" centery="1296" centerz="7" radius="1">
 		<monster name="Cobra" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1333" centery="394" centerz="8" radius="1">
-		<monster name="Elven High Priest" x="0" y="0" z="8" spawntime="60" direction="2" />
+	<spawn centerx="1333" centery="395" centerz="8" radius="1">
+		<monster name="Saranor" x="0" y="-1" z="8" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="454" centery="630" centerz="8" radius="1">
 		<monster name="Bug" x="0" y="1" z="8" spawntime="60" direction="2" />

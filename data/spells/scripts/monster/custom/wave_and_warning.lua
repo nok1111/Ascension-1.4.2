@@ -24,6 +24,7 @@ local function castCombatWarning(creatureId, var)
     if not creature then
         return
     end
+    
     combat_warning:execute(creature, var)
 end
 

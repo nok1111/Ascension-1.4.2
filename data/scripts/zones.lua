@@ -408,7 +408,7 @@ local zones = {
     [25] = {
         id = 25,
         name = "Veil of Corruption",
-        monsters = {"earth elemental", "poison skeleton", "earth overlord", "medusa", "bonelord"},
+        monsters = {"nightfiend", "bloodfiend", "poison skeleton", "abomination specimen", "witch"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
     
