@@ -1,6 +1,5 @@
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, 216)
 
 function getCombatFormulaValues()
     local minDamage = 150
@@ -58,9 +57,12 @@ function onCastSpell(creature, variant)
         return false
     end
 
+
+    creature:attachEffectById(157, true)
     local targetPosition = target:getPosition()
     local radius = 1 -- Teleport within 2 tiles around the target
     local positions = getRandomPositions(targetPosition, radius)
+    local effect = math.random(1136, 1137)
 
     if #positions == 0 then
         creature:sendTextMessage(MESSAGE_STATUS_SMALL, "No valid positions to teleport to.")
@@ -72,7 +74,7 @@ function onCastSpell(creature, variant)
 
     -- Show a pre-attack magic effect (1 second before the teleport)
     creature:say("Grrrrr!", TALKTYPE_MONSTER_YELL)
-    target:getPosition():sendMagicEffect(216)
+    target:getPosition():sendMagicEffect(math.random(1136, 1137))
 
     -- Perform the teleport and attack immediately
     performTeleportAttack(creature:getId(), target:getId(), newPosition)

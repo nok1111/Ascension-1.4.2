@@ -1,6 +1,6 @@
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_SKULLHORIZONTAL)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 		
 local conditionstats = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
@@ -20,8 +20,9 @@ end
 creature:addCondition(conditionstats)
 
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-player:attachEffectById(17, true)
-player:sendAddBuffNotification(51, 8, 'overcharged, all offensive stats increased by 40%. you will loose health due to its effects.', 5, 0)
+  creature:attachEffectById(17, true) 
+  
+  creature:sendAddBuffNotification(51, 8, 'overcharged, all offensive stats increased by 40%. you will loose health due to its effects.', 5, 0)
 
   
 return combat:execute(creature, variant)		

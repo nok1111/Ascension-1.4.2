@@ -1,11 +1,11 @@
 local SPELL_DELAY = 1000 -- Delay before casting (in ms)
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, 216)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, 525)
 
 local combat_warning = Combat()
-combat_warning:setParameter(COMBAT_PARAM_EFFECT, 573)
+combat_warning:setParameter(COMBAT_PARAM_EFFECT, 528)
 
 
 local arr = {

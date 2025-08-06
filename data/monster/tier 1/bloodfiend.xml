@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Bloodfiend" nameDescription="a Bloodfiend" race="blood" experience="50" speed="170" manacost="330">
+	<health now="10" max="10" />
+	<level min="65" max="68" />
+	<look type="2645" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="1" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="0" />
+		<flag canpushcreatures="0" />
+		<flag targetdistance="1" />
+		<flag staticattack="90" />
+		<flag runonhealth="0" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-150" >	
+<attribute key="areaEffect" value="effect1122"/>
+    </attack>
+<!-- Wild Spin (small AoE burst) -->
+    <attack name="wave adn warning" interval="4000" chance="25" min="-300" max="-330">
+        <attribute key="areaEffect" value="effect321"/>
+    </attack>	
+</attacks>
+<defenses armor="2" defense="1" />
+
+	<voices interval="5000" chance="10">
+		<voice sentence="Kaplar!" />
+		<voice sentence="Hurr!" />
+	</voices>
+	<loot>
+		<item id="39127" countmax="3" chance="10500" /><!-- sell -->
+		<item id="39101" countmax="1" chance="6000" /><!-- sell -->
+		<item id="39134" countmax="1" chance="6000" /><!-- sell -->
+	</loot>
+</monster>

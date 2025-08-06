@@ -1426,7 +1426,7 @@ playersTasks = {
         experience = 7500,
         items = {
             [1] = { name = "gold coin", itemSid = 2148, itemCnt = 65 },
-            [2] = { name = "ghost pet", itemSid = 37890, itemCnt = 1 } -- ghost pet
+            [2] = { name = "ghost pet", itemSid = 37890, itemCnt = 1 }, -- ghost pet
             [3] = { name = "orb of performance", itemSid = 29032, itemCnt = 2 } -- orb of performance
         },
          outfits = {},

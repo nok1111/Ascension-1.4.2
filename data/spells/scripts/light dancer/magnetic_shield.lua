@@ -15,7 +15,7 @@ function onCastSpell(creature, variant)
   if not player then return end
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
 	player:addCondition(MagneticShield)
-	player:attachEffectById(17, true)
+	player:attachEffectById(150, true)
     player:sendAddBuffNotification(51, 8, 'magnetic shield, Immune to all damage types for the duration.', 5, 0)
   
 return true		

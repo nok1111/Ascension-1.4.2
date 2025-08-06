@@ -31,6 +31,7 @@
 	<monster name="Malrith, the Hungering Shade" file="tier 1/bosses/Malrith the Hungering Shade.xml" />
 	<monster name="Garnak the Warlord" file="tier 1/bosses/garnak_the_warlord.xml" />
 	<monster name="Lucella" file="tier 1/bosses/lucella.xml" />
+	<monster name="Saranor" file="tier 1/bosses/saranor.xml" />
 	
 	<!--TIER 1-->
 	<monster name="Rat" file="tier 1/rat.xml" />
@@ -73,6 +74,8 @@
 	<monster name="Dwarf Miner" file="tier 1/dwarf miner.xml" />
 	<monster name="Dwarf Soldier" file="tier 1/dwarf soldier.xml" />
 	<monster name="Dwarf" file="tier 1/dwarf.xml" />
+	<monster name="Bloodfiend" file="tier 1/bloodfiend.xml" />
+	<monster name="Nightfiend" file="tier 1/nightfiend.xml" />
 
 	<monster name="Toad" file="tier 1/toad.xml" />
 
