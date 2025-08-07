@@ -2,14 +2,17 @@
 
 
 local stunDuration = 2000
-local stun = Condition(CONDITION_STUN)
-stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
-stun:setParameter(CONDITION_PARAM_SUBID, MonsterStorage.frostbarrel)
+local conditionburn = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
+conditionburn:setTicks(7500)
+conditionburn:setParameter(CONDITION_PARAM_DELAYED, 1)
+conditionburn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_BIGFROST)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
+combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combat:setArea(createCombatArea(AREA_SQUARE2X2))
-combat:addCondition(stun)
+
 
 local combat1 = Combat()
 combat1:setArea(createCombatArea(AREA_SQUARE2X2))
@@ -66,6 +69,16 @@ local function healtargets(player, target)
     return false
 end
 
+function onGetFormulaValues(player, skill, attack, factor)
+    local power = skill * attack 
+    local level = player:getLevel()
+
+    local min = (level / 5) + (power * 0.10) + (attack * 4.0) + 50
+    local max = (level / 5) + (power * 0.11) + (attack * 4.1) + 150
+    return -min, -max
+end
+
+combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 function onTargetCreature(creature, target)
 	if not creature then
@@ -80,8 +93,16 @@ function onTargetCreature(creature, target)
 		
 	
     if not healtargets(creature, target) then
-        doTargetCombatHealth(creature:getId(), target:getId(), COMBAT_ENERGYDAMAGE, -mindamage, -maxdamage, 416)
-        target:attachEffectById(164, true)
+        doTargetCombatHealth(creature:getId(), target:getId(), COMBAT_FIREDAMAGE, -mindamage, -maxdamage, 416)
+
+        local level = creature:getLevel()
+        local maglevel = creature:getMagicLevel()
+        
+        local minburn = level / 5 + (maglevel * 4) + 10
+        local maxburn = level / 5 + (maglevel * 6) + 15
+        
+        conditionburn:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-minburn,-maxburn))
+        target:addCondition(conditionburn)
     end
     	
 	return true
@@ -90,12 +111,22 @@ end
 combat1:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 
 
+
+
 function onCastSpell(creature, variant)
 if not creature then return end
 
         combat:execute(creature:getMaster(), variant)
 		combat1:execute(creature:getMaster(), variant)
-        creature:remove()
+        
+
+local creatureposition = creature:getPosition()
+local positioneffect = creatureposition
+    positioneffect.x = creatureposition.x + 3
+    positioneffect.y = creatureposition.y + 3
+    positioneffect:sendMagicEffect(1143)
+
+    creature:remove()
 		
     
     return true

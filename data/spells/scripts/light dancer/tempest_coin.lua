@@ -20,7 +20,13 @@ function onCastSpell(creature, var)
     print("Tempest Coin roll: " .. player:getStorageValue(PassiveSkills.GamblerLuck))
 
     -- Announce the result
-    player:say("Tempest Coin roll: " .. roll, TALKTYPE_MONSTER_SAY)
+    player:say("roll: " .. roll, TALKTYPE_MONSTER_SAY)
+
+    --make a table then roll random for one of these numbers 159,160,161,162
+    local effectIds = {159, 160, 161, 162}
+    local randomIndex = math.random(1, #effectIds)
+    local randomvalue = effectIds[randomIndex]
+    player:attachEffectById(randomvalue, true)
 
     return true
 end

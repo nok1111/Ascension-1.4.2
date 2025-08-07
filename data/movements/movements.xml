@@ -4673,6 +4673,10 @@
 		<movevent event="Equip" itemid="25947" slot="left-hand" function="onEquipItem" />
 		<movevent event="DeEquip" itemid="25947" slot="left-hand" function="onDeEquipItem" />
 
+		<!-- sturdy crossbow -->
+		<movevent event="Equip" itemid="5947" slot="left-hand" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="5947" slot="left-hand" function="onDeEquipItem" />
+
 		<!-- wand of everblazing -->
 		<movevent event="Equip" itemid="18409" slot="left-hand" function="onEquipItem" />
 		<movevent event="DeEquip" itemid="18409" slot="left-hand" function="onDeEquipItem" />

@@ -87,8 +87,19 @@
 	<vocation name="Dragon Knight" /> 
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
-
 	</distance>
+
+	<distance id="5947"  swing="true" script="bolt.lua" ><!-- crossbow 23/10 -->
+	<vocation name="Nightblade"/>
+	<vocation name="Templar"/>
+	<vocation name="Magician" />
+	<vocation name="Warlock" />
+	<vocation name="Dragon Knight" /> 
+	<vocation name="Stellar" />
+	<vocation name="Archer" />
+	<vocation name="Druid" />
+	</distance>
+
 	<distance id="2456"  swing="true" script="arrow.lua" ><!-- bow 20/10 -->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -97,8 +108,8 @@
 	<vocation name="Dragon Knight" /> 
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
-
 	</distance>
+
 	<distance id="31919"  swing="true" script="bleed.lua" ><!-- spike crossbow 28/14-->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -107,8 +118,8 @@
 	<vocation name="Dragon Knight" /> 
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
-
 	</distance>
+
 	<distance id="31802"  swing="true" script="dragonbreath.lua" ><!-- Dragonbreath Crossbow 35/17 -->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -118,6 +129,7 @@
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
 	</distance>
+
 	<distance id="32058"  swing="true" script="longbow.lua" ><!-- longbow 45/20 -->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -127,6 +139,7 @@
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
 	</distance>
+
 	<distance id="36242"  swing="true" script="2shot.lua" ><!-- doubleshot bow 35/16 -->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -136,6 +149,7 @@
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
 	</distance>
+
 	<distance id="36236"  swing="true" script="deathsinger.lua" ><!-- DeathSinger 55/27-->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -145,6 +159,7 @@
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
 	</distance>
+
 	<distance id="36279"  swing="true" script="poison.lua" ><!-- Tail Slacker bow 40/20-->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -154,6 +169,7 @@
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
 	</distance>
+
 	<distance id="36245"  swing="true" script="longbow_jungle.lua" ><!-- bow -->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -163,6 +179,7 @@
 	<vocation name="Stellar" />
 	<vocation name="Archer" />
 	</distance>
+
 	<distance id="30607"  swing="true" script="energyaoe.lua" >
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
@@ -184,7 +201,7 @@
 	</distance>
 	
 	<distance id="31917"  swing="true" script="burn.lua" >
-		<vocation name="Nightblade"/>
+	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
 	<vocation name="Magician" />
 	<vocation name="Warlock" />

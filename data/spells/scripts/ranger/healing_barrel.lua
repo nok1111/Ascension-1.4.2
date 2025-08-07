@@ -42,7 +42,7 @@ local positions = {
         if summon then
             creature:addSummon(summon)
 
-			summon:getPosition():sendMagicEffect(416)
+			summon:getPosition():sendMagicEffect(613)
 			addEvent(removesummon, 35 * 1000, summon.uid, variant)
         end
     end

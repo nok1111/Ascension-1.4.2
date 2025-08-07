@@ -72,6 +72,10 @@ ConditionsSubIds = {
 
    --monsters only
     lucellatransform = 29600,
+    frostbarrel = 29601,
+    windbarrel = 29602,
+    healingbarrel = 29603,
+    aimshotslow = 29604,
 
     --potions from 29700 - 29799
 

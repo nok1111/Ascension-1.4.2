@@ -2153,7 +2153,7 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Explosive Barrel",
-						description = "Learn Explosive Barrel\nPlace a barrel at your target location exploding after a 4 seconds delay, igniting all enemies nearby.",
+						description = "Learn Explosive Barrel\nPlace a barrel at your target location exploding after a 4 seconds delay, igniting all enemies nearby. (if you dont have target it will be placed in front of you)",
 						effect = {{type = "spell", name = "Explosive Barrel"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
@@ -2271,9 +2271,9 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
-						name = "Aim Shot",
-						description = "Learn Aim Shot\nShoot a powerful shot that deals physical damage to the target",
-						effect = {{type = "spell", name = "Aim Shot"}},
+						name = "Phantom Shot",
+						description = "Learn Phantom Shot\nShoot a powerful shot that deals physical damage to the target",
+						effect = {{type = "spell", name = "Phantom Shot"}},
 						maxLevel = 1,
 					},
 					[2] = {

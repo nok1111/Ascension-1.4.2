@@ -10980,7 +10980,6 @@
 		<attribute key="hitChance" value="75" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
-		<attribute key="shootType" value="greenstar" />
 		<attribute key="range" value="4" />
 	</item>
 	<item id="5948" article="a" name="red leather">
