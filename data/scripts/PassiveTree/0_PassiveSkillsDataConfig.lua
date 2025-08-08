@@ -215,6 +215,24 @@ PassiveSkills.Reverberation = 875651
 --light dancer 4
 PassiveSkills.LightsON = 875652
 
+-- ranger 1
+PassiveSkills.Demolition = 875653
+PassiveSkills.VolatileImpact = 875654
+PassiveSkills.DetonationExpert = 875655
+
+--ranger 2
+PassiveSkills.ExplosiveBarrel = 875656
+PassiveSkills.FrostBarrage = 875657
+PassiveSkills.Momentum = 875658
+PassiveSkills.FrostQuiver = 875659
+
+
+--ranger 4
+PassiveSkills.HunterMercy = 875660
+PassiveSkills.Arrowstorm = 875661
+PassiveSkills.FocusedFire = 875662
+PassiveSkills.DeadFromAbove = 875663
+PassiveSkills.ScorchedMark = 875664
 
 
 PassiveSkills.resetCost = {
@@ -2115,15 +2133,16 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Volatile Ammunition",
-						description = "Increase your fire and physical damage done by an additional 10% (per level)", 
+						description = "Increase your fire damage by an additional 10% (per level) and your physical damage done by an additional 8% (per level)", 
 						effect = {
-							{ type = "storage", name = "BlazingDecree", storage = PassiveSkills.BlazingDecree, value = 10 }
+							{ type = "storage", name = "BlazingDecree", storage = PassiveSkills.BlazingDecree, value = 10 },
+							{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 8}
 						},
 						maxLevel = 3
 					},
 					[2] = {
 						name = "Explosive Shot",
-						description = "Learn Explosive Shot\nShoot a powerful shot that explodes on impact after a short delay",
+						description = "Learn Explosive Shot\nShoot a powerful shot that explodes on impact after a short delay applying a burn to all nearby enemies",
 						effect = {{type = "spell", name = "Explosive Shot"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 3
@@ -2132,10 +2151,10 @@ PassiveSkills.treeData = {
 						name = "Demolition",
 						description = "Your fire damage have a 2% chance (per level) to trigger Demolition, Demolition deals aoe physical damage on impact.",
 						effect = {
-							{type = "storage", name = "Demolition", storage = PassiveSkills.Demolition, value = 1}
+							{type = "storage", name = "Demolition", storage = PassiveSkills.Demolition, value = 2}
 						},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 4
+						maxLevel = 4,
+						prevNodeLevelNeeded = 1
 					},
 					[4] = {
 						name = "Volatile Impact",
@@ -2160,7 +2179,7 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Detonation Expert",
-						description = "Your  Explisive Shot now instantly detonates your existing explosive barrels, and increase their damage by an aditional 10%",
+						description = "Your Explosive Shot now instantly detonates your existing explosive barrels, and increase their damage by an aditional 10%",
 						effect = {
 							{type = "storage", name = "DetonationExpert", storage = PassiveSkills.DetonationExpert, value = 10}
 						},
@@ -2174,14 +2193,22 @@ PassiveSkills.treeData = {
 				border = 22,
 				nodes = {
 					[1] = {
+						name = "Frostbite Weapon",
+						description = "Learn Ice Arrow\nShoot a powerful ice arrow that slows the target for 5 seconds, if target is already slowed or frozen, it will deal double damage.",
+						effect = {{type = "spell", name = "Ice Arrow"}},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
+					},
+
+					[2] = {
 						name = "Winter Hunter",
-						description = "Increase your ice and physical damage by an aditional 10% (per level)",
+						description = "Increase your ice damage by an aditional 8% (per level)",
 						effect = {
-							{type = "storage", name = "WinterHunter", storage = PassiveSkills.WinterHunter, value = 10}
+							{ type = "storage", name = "FrostDamage", storage = PassiveSkills.FrostDamage, value = 8 }
 						},
 						maxLevel = 5,
 					},
-					[2] = {
+					[3] = {
 						name = "Ice Barrel",
 						description = "Learn Ice Barrel\nPlace a barrel at your location exploding after a short delay, freezing all enemies nearby.",
 						effect = {{type = "spell", name = "Ice Barrel"}},
@@ -2189,22 +2216,16 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 
-					[3] = {
+					[4] = {
 						name = "Frost Barrage",
-						description = "Increase the number of arrows you send when using frost shots by 1 (per level)",
+						description = "Increase the number of arrows you send when using rapid fire by 1 (per level)\nArrow Barrage now deals ice damage and slows all enemies for 4 seconds.",
 						effect = {
 							{type = "storage", name = "FrostBarrage", storage = PassiveSkills.FrostBarrage, value = 1}
 						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 1
 					},
-					[4] = {
-						name = "Ice Arrow",
-						description = "Learn Ice Arrow\nShoot a powerful ice arrow that slows the target for 5 seconds, if target is already slowed or frozen, it will deal double damage.",
-						effect = {{type = "spell", name = "Ice Arrow"}},
-						maxLevel = 1,
-						prevNodeLevelNeeded = 5
-					},
+					
 					[5] = {
 						name = "Momentum",
 						description = "Your auto attacks now have a 50% chance to grant you Momentum, which increases your attack speed for 1% (per level)  to a maximum of 200% for 5 seconds every time your attacks hit an enemy, this effect last until duration is over. Attacks will refresh the duration of momentum.",
@@ -2278,7 +2299,7 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Hunter's Mercy",
-						description = "Your aim shot now deals 12% (per level) additional damage if the target is below 50% health.",
+						description = "Your phantom shot now deals 12% (per level) additional damage if the target is below 50% health.",
 						effect = {
 							{type = "storage", name = "HunterMercy", storage = PassiveSkills.HunterMercy, value = 1}
 						},
@@ -2296,9 +2317,9 @@ PassiveSkills.treeData = {
 					},
 					[4] = {
 						name = "Focused Fire",
-						description = "Increase the damage done by your Aim Shot, Falcon Shot and Rapid Fire by an additional 6% (per level)",
+						description = "Increase the damage done by your Phantom Shot, Falcon Shot and Rapid Fire by an additional 6% (per level)",
 						effect = {
-							{type = "storage", name = "FocusedFire", storage = PassiveSkills.FocusedFire, value = 6}
+							{type = "storage", name = "FocusedFire", storage = PassiveSkills.FocusedFire, value = 6} 
 						},
 						maxLevel = 6,
 						prevNodeLevelNeeded = 5
@@ -2316,7 +2337,7 @@ PassiveSkills.treeData = {
 						name = "Scorched Mark",
 						description = "Dead from above now increases your critical strike chance by 6% (per level) every time it triggers",
 						effect = {
-							{type = "storage", name = "DeadFromAbove", storage = PassiveSkills.DeadFromAbove, value = 6}
+							{type = "storage", name = "DeadFromAbove", storage = PassiveSkills.ScorchedMark, value = 6}
 						},
 						maxLevel = 4,
 						prevNodeLevelNeeded = 4
