@@ -573,7 +573,7 @@ function onCastSpell(creature, var)
     combats[weapon]:execute(creature, var)
     local LifebloodStrike = creature:getStorageValue(PassiveSkills.LifebloodStrike) or 0
     if LifebloodStrike > 0 then
-        min = min + (min * (LifebloodStrike / 100))
+        min = min * (1 + (LifebloodStrike / 100))
         
     end
     local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)

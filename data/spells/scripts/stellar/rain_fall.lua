@@ -105,8 +105,8 @@ function onTargetCreature(creature, target)
 
 	local RainFallHealing = player:getStorageValue(PassiveSkills.RainFallHealing) or 0
     if RainFallHealing > 0 then
-		min = min + (min * (RainFallHealing / 100))
-		max = max + (max * (RainFallHealing / 100))
+		min = min * (1 + (RainFallHealing / 100))
+		max = max * (1 + (RainFallHealing / 100))
 	end
 
     local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)

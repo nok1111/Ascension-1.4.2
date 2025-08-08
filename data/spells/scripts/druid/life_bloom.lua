@@ -21,8 +21,7 @@ function onCastSpell(creature, variant, isHotkey)
 
     local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
     if extrahealing > 0 then
-        healthpercent = healthpercent + (healthpercent * (extrahealing / 100))
-        manapercent = manapercent + (manapercent * (extrahealing / 100))
+        healthpercent = healthpercent * (1 + (extrahealing / 100))
     end
 
 	--addrequired mana to cast 15% of total players mana
