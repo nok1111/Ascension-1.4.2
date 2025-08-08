@@ -12,6 +12,12 @@ local permafrost_area = createCombatArea({
   {1, 1, 1}
 })
 
+local demolition_area = createCombatArea({
+  {1, 1, 1},
+  {1, 3, 1},
+  {1, 1, 1}
+})
+
 -- Standardized passive structure implementation
 -- Spawns a fire distance effect and applies an area fire combat at the target's position
 function doExtraFireball(playerid, targetid, baseDamage)
@@ -72,7 +78,72 @@ local function StarfallPassive(playerId, targetId)
 
 end
 
+function doDemolition(playerid, targetid, baseDamage)
+  if not playerid or not targetid then return end
+  local player = Creature(playerid)
+  local target = Creature(targetid)
+  local fromPos = player:getPosition()
+  local toPos = target:getPosition()
+  -- Calculate damage formula using player level and magic level
+  local level = player:getLevel()
+  local distance = player:getEffectiveSkillLevel(SKILL_DISTANCE) * 1
+  local bonus = (level * 0.8) + (distance * 3.0) + 50
+  local totalDamage = baseDamage + bonus
+  -- Apply fire damage to area
+  
+  doAreaCombatHealth(player:getId(), COMBAT_FIREDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+end
+
 local PASSIVES = {
+
+    -- Demolition Passive: Fire damage has a 2% chance per level to trigger AoE physical damage
+    demolition = {
+      config = {
+        type = "OnAttack",
+        storage = PassiveSkills.Demolition,
+      },
+      trigger = function(player, target, damage, primaryType, origin)
+        if primaryType ~= COMBAT_FIREDAMAGE then
+          return false
+        end
+        local level = math.max(player:getStorageValue(PassiveSkills.Demolition) or 0, 0)
+        if level > 0 then
+          local chance = level -- 2% per level
+          return math.random(100) <= chance 
+        end
+        return false
+      end,
+      effect = function(player, target, damage)
+        if not player or not target or not damage then
+          return
+        end
+        local fromPos = player:getPosition()
+        local toPos = target:getPosition()
+        -- Calculate damage formula using player level and magic level
+        local level = player:getLevel()
+        local distance = player:getEffectiveSkillLevel(SKILL_DISTANCE) * 1
+        local bonus = (level * 0.8) + (level * ((distance * 2) / 100)) + 50
+        local totalDamage = bonus
+        -- Apply fire damage to area
+        
+        doAreaCombatHealth(player:getId(), COMBAT_PHYSICALDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+        local positioneffect = toPos
+        positioneffect.x = toPos.x + 1
+        positioneffect.y = toPos.y + 1
+        positioneffect:sendMagicEffect(805)
+
+        local volatileImpactLevel = math.max(player:getStorageValue(PassiveSkills.VolatileImpact) or 0, 0)
+        if volatileImpactLevel > 0 then
+          local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
+          condition:setParameter(CONDITION_PARAM_TICKS, 5000)
+          condition:setParameter(CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, volatileImpactLevel)
+          condition:setParameter(CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED, volatileImpactLevel)
+          condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.volatileimpact)
+          player:addCondition(condition)
+        end
+        return damage
+      end,
+    },
 
 
   vial_of_nature = {
@@ -857,62 +928,6 @@ local PASSIVES = {
     end
   },
   
-  demolition = {
-    config = {
-      aspectModeStorage = 50010,
-      cooldown = 1.1,
-      manaDeduction = 3,
-      type = "OnAttack"
-    },
-    lastUse = {},
-    trigger = function(player, target, damage, primaryType, origin)
-      return true
-    end,
-    effect = function(player, target, damage)
-      if not player or not target or not damage then
-        return
-      end
-      local now = os.time()
-      if PASSIVES.demolition.lastUse[player:getId()] and now - PASSIVES.demolition.lastUse[player:getId()] < PASSIVES.demolition.config.cooldown then
-        return damage
-      end
-      
-      PASSIVES.demolition.lastUse[player:getId()] = now
-      local manaCost = player:getMaxMana() * (PASSIVES.demolition.config.manaDeduction / 100)
-      player:addMana(-manaCost)
-      
-      local level = player:getLevel()
-      local magic = player:getMagicLevel()
-      local min = (level/5) + (magic * 5) + 10
-      local max = (level/5) + (magic * 9) + 15
-      
-      addEvent(function()
-        if target and player then
-          local area = player:getStorageValue(PASSIVES.demolition.config.aspectModeStorage) == 1 and 
-            createCombatArea({
-              {0,0,1,0,0},
-              {0,1,1,1,0},
-              {1,1,3,1,1},
-              {0,1,1,1,0},
-              {0,0,1,0,0}
-            }) or
-            createCombatArea({
-              {1,1,1},
-              {1,3,1},
-              {1,1,1}
-            })
-          
-          doAreaCombatHealth(player:getId(), COMBAT_ENERGYDAMAGE, target:getPosition(), area, -min, -max, CONST_ME_NONE)
-          player:say("Demolition!", TALKTYPE_MONSTER_SAY) 
-          local explo = target:getPosition()
-          explo.x = explo.x + 3
-          explo.y = explo.y + 3
-          explo:sendMagicEffect(CONST_ME_CAKE) 
-        end
-      end, 200)
-      return damage
-    end
-  },
   
   light_dancer = {
     config = {
@@ -1117,6 +1132,8 @@ local PASSIVES = {
       return damage
     end
   },
+
+
 }
 
 -- Health change handler
