@@ -571,20 +571,21 @@ function onCastSpell(creature, var)
     
     -- Execute Damage
     combats[weapon]:execute(creature, var)
-    local LifebloodStrike = creature:getStorageValue(PassiveSkills.LifebloodStrike)
+    local LifebloodStrike = creature:getStorageValue(PassiveSkills.LifebloodStrike) or 0
     if LifebloodStrike > 0 then
         min = min + (min * (LifebloodStrike / 100))
         
+    end
+    local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        min = min * (1 + (extrahealing / 100))
     end
 
     local ReboundStrike = creature:getStorageValue(PassiveSkills.ReboundStrike)
     if ReboundStrike > 0 and math.random(1, 100) <= ReboundStrike then
         addEvent(castSpellRebound, 500, creature.uid, var, min)
     end
-	player:addHealth(min)
+	creature:addHealth(min)
 
-   
-
-   
     return true
 end

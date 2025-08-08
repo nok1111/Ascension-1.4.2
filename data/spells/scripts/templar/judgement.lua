@@ -61,6 +61,11 @@ function onCastSpell(creature, variant, target)
 		local maxHealth = creature:getMaxHealth()
 		local healPercent = blessedLevel / 100
 		local healAmount = math.floor(maxHealth * healPercent)
+
+        local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+        if extrahealing > 0 then
+            healAmount = healAmount * (1 + (extrahealing / 100))
+        end
 		if healAmount > 0 then
 			creature:addHealth(healAmount)
 			creature:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)

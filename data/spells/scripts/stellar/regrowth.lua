@@ -29,6 +29,11 @@ function onCastSpell(creature, variant)
     -- Periodic heal formula
     local min = (level / 5) + (maglevel * 1.4) + (maxHealth * 0.03)
     local max = (level / 5) + (maglevel * 1.8) + (maxHealth * 0.03)
+	local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        min = min * (1 + (extrahealing / 100))
+        max = max * (1 + (extrahealing / 100))
+    end
     local healthGainPerTick = math.random(min, max)
 
     local totalDuration = 6000 -- Total duration in milliseconds

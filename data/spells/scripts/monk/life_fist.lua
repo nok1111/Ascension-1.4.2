@@ -57,6 +57,10 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
                     local level = player:getLevel()
                     local base = ((level / 10) + (magicLevel * 2)) + level
                     local healAmount = math.floor(base * player:getMaxHealth())
+                    local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+                    if extrahealing > 0 then
+                        healAmount = healAmount * (1 + (extrahealing / 100))
+                    end
                     chosen:addHealth(healAmount)
                     chosen:getPosition():attachEffectById(110, true)
                     player:getPosition():attachEffectById(110, true)
@@ -76,6 +80,10 @@ local function heal(playerId, variant)
     local level = player:getLevel()
     local base = ((level / 10) + (magicLevel * 2)) + level
     local healAmount = math.floor(base * player:getMaxHealth())
+    local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        healAmount = healAmount * (1 + (extrahealing / 100))
+    end
     player:addHealth(healAmount)
     player:getPosition():attachEffectById(110, true)
 
@@ -83,6 +91,7 @@ local function heal(playerId, variant)
    local MeditativeRecovery_level = math.max(player:getStorageValue(PassiveSkills.MeditativeRecovery) or 0, 0)
 
    if MeditativeRecovery_level > 0 then
+    
 		player:addHealth(player:getMaxHealth() * (0.012 * MeditativeRecovery_level))
 		player:addMana(player:getMaxMana() * (0.02 * MeditativeRecovery_level))
 	end						

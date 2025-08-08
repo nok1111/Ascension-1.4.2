@@ -84,16 +84,9 @@ function onTargetCreature(creature, target)
 	if not creature then
         return
     end	
-   
-		local magic = creature:getMagicLevel()
-		local level = creature:getLevel() / 5
-		
-		local mindamage =  level + (magic * 1.2) + 10
-		local maxdamage =  level + (magic * 1.5) + 15
 		
 	
     if not healtargets(creature, target) then
-        doTargetCombatHealth(creature:getId(), target:getId(), COMBAT_FIREDAMAGE, -mindamage, -maxdamage, 416)
 
         local level = creature:getLevel()
         local maglevel = creature:getMagicLevel()
@@ -102,7 +95,7 @@ function onTargetCreature(creature, target)
         local maxburn = level / 5 + (maglevel * 6) + 15
         
         conditionburn:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-minburn,-maxburn))
-        target:addCondition(conditionburn)
+        combat1:addCondition(conditionburn)
     end
     	
 	return true

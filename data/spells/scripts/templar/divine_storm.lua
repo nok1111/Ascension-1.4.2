@@ -11,6 +11,11 @@ function onTargetCreature(creature, target)
 	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
 	local min = (player:getLevel() / 5) + (player:getMagicLevel() * 5.5) + 10.5
 	local max = (player:getLevel() / 5) + (player:getMagicLevel() * 7.0) + 12.5
+	local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        min = min * (1 + (extrahealing / 100))
+        max = max * (1 + (extrahealing / 100))
+    end
 
 	if not healMonsters then
 		local master = target:getMaster()

@@ -46,7 +46,12 @@ local function sendEffcDragon(cid, max_iterations, iterations)
         local DragonHeart = pid:getStorageValue(PassiveSkills.DragonHeart)
 		if DragonHeart > 0 then
             --increases the healing effectiveness by 10% per talent
-			pid:addHealth(math.random(min/20, max/18) * (1 + DragonHeart/100))
+            local healingproc = math.random(min/20, max/18) * (1 + DragonHeart/100)
+            local extrahealing = pid:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+            if extrahealing > 0 then
+                healingproc = healingproc * (1 + (extrahealing / 100))
+            end
+			pid:addHealth(healingproc)
 		end
 	--	doAreaCombatCondition(pid, pos, AREA_SQUARE1X1, condition, CONST_ME_NONE)
 		

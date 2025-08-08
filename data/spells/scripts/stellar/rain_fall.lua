@@ -104,8 +104,17 @@ function onTargetCreature(creature, target)
 	local max = (level / 8) + (magicLevel * 5.4) + 15
 
 	local RainFallHealing = player:getStorageValue(PassiveSkills.RainFallHealing) or 0
-	min = min + (min * (RainFallHealing / 100))
-	max = max + (max * (RainFallHealing / 100))
+    if RainFallHealing > 0 then
+		min = min + (min * (RainFallHealing / 100))
+		max = max + (max * (RainFallHealing / 100))
+	end
+
+    local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        min = min * (1 + (extrahealing / 100))
+        max = max * (1 + (extrahealing / 100))
+    end
+
 
 	if healtargets(player, target) then
 		target:addHealth(math.random(min,max))

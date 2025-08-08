@@ -46,6 +46,12 @@ function onCastSpell(cid, var)
         max = max + (max * (LuminousBond / 100))
     end
 
+    local extrahealing = owner:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        min = min * (1 + (extrahealing / 100))
+        max = max * (1 + (extrahealing / 100))
+    end
+
     local position = target:getPosition()
     position:sendMagicEffect(602)
     cid:getPosition():sendDistanceEffect(position, 166)

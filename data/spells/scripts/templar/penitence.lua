@@ -77,6 +77,11 @@ local function tauntEffect(cid, target)
     -- Apply effects
     target:getPosition():sendDistanceEffect(creature:getPosition(), config.dfx)
     doTargetCombatHealth(creature, target, config.element, min, max, config.mfx)
+	local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        minheal = minheal * (1 + (extrahealing / 100))
+        maxheal = maxheal * (1 + (extrahealing / 100))
+    end
     creature:addHealth(math.random(minheal, maxheal))
     creature:getPosition():sendMagicEffect(CONST_ME_HPUP)
 end

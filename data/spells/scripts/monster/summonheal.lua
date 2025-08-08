@@ -35,6 +35,12 @@ function onCastSpell(cid, var)
     local min = (owner:getLevel() / 5) + (owner:getMagicLevel() * 0.5) + 5
     local max = (owner:getLevel() / 5) + (owner:getMagicLevel() * 0.7) + 8
 
+    local extrahealing = owner:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        min = min * (1 + (extrahealing / 100))
+        max = max * (1 + (extrahealing / 100))
+    end
+
     local position = target:getPosition()
     position:sendMagicEffect(CONST_ME_HPUP)
     cid:getPosition():sendDistanceEffect(position, 112)

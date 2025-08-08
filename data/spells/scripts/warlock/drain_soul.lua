@@ -38,6 +38,13 @@ local function castNextSpell(cid, victims, count)
         if creature:getId() and victim:getId() then
             local min = ((creature:getLevel() / 5) + (creature:getMagicLevel() * 6.0) + 20) / 3.2
 			local max = ((creature:getLevel() / 5) + (creature:getMagicLevel() * 6.5) + 25) / 3.1
+
+			local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+            if extrahealing > 0 then
+                min = min * (1 + (extrahealing / 100))
+                max = max * (1 + (extrahealing / 100))
+            end
+
 			creature:addHealth(math.random(min, max))
             creature:getPosition():sendMagicEffect(config.mfx)
             victim:getPosition():sendDistanceEffect(creature:getPosition(), config.dfx)

@@ -1,66 +1,89 @@
--- Elusive Dance Spell (Rebuilt)
--- Single 3x3 area, executes every 200ms for 4 times, uses combat formula (onGetFormulaValues)
+-- Delay between animations.
+local animationDelay = 250
+local combat = {}
 
-local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
-combat:setArea(createCombatArea(AREA_SQUARE2X2))
+-- Frames (1 = Area, 2 = Player, 3 = Player + Self Damaging)
+local area = {
+    {
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {1, 1, 2, 1, 1},
+        {1, 1, 1, 1, 1},
+        {0, 1, 1, 1, 0}
+    },
+    {
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {1, 1, 2, 1, 1},
+        {1, 1, 1, 1, 1},
+        {0, 1, 1, 1, 0}
+    },
+    {
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {1, 1, 2, 1, 1},
+        {1, 1, 1, 1, 1},
+        {0, 1, 1, 1, 0}
+    },
+    {
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {1, 1, 2, 1, 1},
+        {1, 1, 1, 1, 1},
+        {0, 1, 1, 1, 0}
+    },
+	{
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {1, 1, 2, 1, 1},
+        {1, 1, 1, 1, 1},
+        {0, 1, 1, 1, 0}
+    },
+}
 
-function onGetFormulaValues(player, skill, attack, factor)
-    local power = skill * attack
+for i = 1, #area do
+    combat[i] = Combat()
+    combat[i]:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+    combat[i]:setParameter(COMBAT_PARAM_EFFECT, 2)
+	combat[i]:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
+	combat[i]:setParameter(COMBAT_PARAM_USECHARGES, true)
+end
+
+for x, _ in ipairs(area) do
+    combat[x]:setArea(createCombatArea(area[x]))
+end
+
+local function executeCombat_FireWithin(p, i)
+    if not p.player then
+        return false
+    end
+    if not p.player:isPlayer() then
+            return false
+    end
+    p.combat[i]:execute(p.player, p.var)
+end
+
+function onCastSpell(player, var)
+
+    local p = {player = player, var = var, combat = combat}
+
+    -- Damage formula
     local level = player:getLevel()
-    local min = (level / 5) + (power * 0.075) + (attack * 3.5) + 75
-    local max = (level / 5) + (power * 0.085) + (attack * 4.5) + 85
+    local str = player:getEffectiveSkillLevel(SKILL_SWORD)
+	local vit = player:getMaxHealth() / 100
+	local magic = player:getMagicLevel()
+	local min = (player:getLevel() / 5) +  (vit * 25)  + (magic * 30) 
+	local max = (player:getLevel() / 5) +  (vit * 25)  + (magic * 35) 
 
-
-    local Reverberation = math.max(player:getStorageValue(PassiveSkills.Reverberation) or 0, 0)
-    if Reverberation > 0 then
-        min = min * (1 + (Reverberation / 100))
-        max = max * (1 + (Reverberation / 100))
-    end
-    return -min, -max
-end
-combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
-
-local function repeatCombat(creatureId, var, times, delay, count)
-    count = count or 1
-    local creature = Creature(creatureId)
-    if not creature or not creature:isPlayer() then return end
-    combat:execute(creature, var)
-    if count < times then
-        addEvent(repeatCombat, delay, creatureId, var, times, delay, count + 1)
-    end
-end
-
-function onCastSpell(creature, var)
-    if not creature then return end
-    
-    local VeilOfEchos = math.max(creature:getStorageValue(PassiveSkills.VeilOfEchos) or 0, 0)
-    --If you have 2 or more Elusive Charges
-    local ElusiveCharge = math.max(getBuffStack(creature, "ElusiveCharge") or 0, 0)
-    if VeilOfEchos > 0 and ElusiveCharge >= 2 then
-        repeatCombat(creature:getId(), var, 4, 200)
-        creature:attachEffectById(151, true)
-        clearAllBuffStacks(creature)
-    else
-        creature:attachEffectById(146, true)
-        repeatCombat(creature:getId(), var, 2, 200)
+    for i = 1, #area do
+        combat[i]:setFormula(COMBAT_FORMULA_LEVELMAGIC, 0, -min, 0, -max)
+        if i == 1 then
+            combat[i]:execute(player, var)
+        else
+            addEvent(executeCombat_FireWithin, (animationDelay * i) - animationDelay, p, i)
+			
+        end
     end
 
-    local LightningWaltzHeal = math.max(creature:getStorageValue(PassiveSkills.LightningWaltzHeal) or 0, 0)
-    if LightningWaltzHeal > 0 then
-        creature:addHealth(creature:getMaxHealth() * (LightningWaltzHeal / 100))
-    end
-
-    local LightningWaltzparry = math.max(creature:getStorageValue(PassiveSkills.LightningWaltzparry) or 0, 0)
-    if LightningWaltzparry > 0 then
-        --add condition attributes with subid
-        local conditionstatsParry = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
-        conditionstatsParry:setParameter(CONDITION_PARAM_TICKS, 5000)
-        conditionstatsParry:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
-        --subid
-        conditionstatsParry:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.LightningWaltzparry)
-        creature:addCondition(conditionstatsParry)
-    end
     return true
 end

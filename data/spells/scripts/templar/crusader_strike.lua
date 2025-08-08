@@ -50,6 +50,10 @@ local function castSpell(creatureId, variant)
 	if blessedLevel > 0 and math.random(1, 100) <= blessedLevel then
 		local maxMana = creature:getMaxMana() or 0
 		local healAmount = math.floor(maxMana * 0.10)
+		local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+		if extrahealing > 0 then
+			healAmount = healAmount * (1 + (extrahealing / 100))
+		end
 		creature:addHealth(healAmount)
 		creature:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
 	end

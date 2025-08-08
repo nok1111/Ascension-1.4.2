@@ -10,6 +10,7 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_EFFECT, 15)
 combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 
+
 local baseMana = 100
 
 function onCastSpell(creature, variant, isHotkey)
@@ -17,6 +18,12 @@ function onCastSpell(creature, variant, isHotkey)
     local magic = player:getMagicLevel()
     local healthpercent = (player:getMaxHealth() * (config.hpPercent/100)) + magic * 4.3
     local manapercent = (player:getMaxMana() * (config.manaPercent/100)) + magic * 2.1
+
+    local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        healthpercent = healthpercent + (healthpercent * (extrahealing / 100))
+        manapercent = manapercent + (manapercent * (extrahealing / 100))
+    end
 
 	--addrequired mana to cast 15% of total players mana
 	local requiredMana = player:getMaxMana() * 0.15
@@ -48,6 +55,9 @@ function onCastSpell(creature, variant, isHotkey)
     local success = player:addPartyCondition(combat, variant, forest_condition_hp, baseMana)
     if not success then
         -- No party or no members in range, apply to self
+
+       --  print value of CONDITION_PARAM_SPECIALSKILL_EXTRAHEALING  
+      
         player:addCondition(forest_condition_hp)
         player:addCondition(forest_condition_mana)
         player:attachEffectById(125, true)
