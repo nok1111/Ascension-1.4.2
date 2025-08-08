@@ -8,8 +8,7 @@ local time_between_hits4 = 0.8 --seconds
 --combat:setParameter(COMBAT_PARAM_EFFECT, 172)
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 

@@ -16,7 +16,7 @@ combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
-    local power = magic * attack 
+    local power = skill * attack 
     local level = player:getLevel()
 
     local min = (level / 5) + (power * 0.10) + (attack * 4.0) + 300

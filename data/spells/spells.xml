@@ -408,9 +408,6 @@
 	<instant group="attack" spellid="185" name="Condemn Shot" words="condemn shot" lvl="28" mana="60" premium="0" direction="0" range="4" needtarget="1" needweapon="0" cooldown="25000" groupcooldown="1900" needlearn="0" script="ranger/javelin_shot.lua">
 	<vocation name="Archer" />
 	</instant>	
-	<instant group="attack" spellid="186" name="Nail bomb" words="nail bomb" lvl="30" mana="90" range="4" needweapon="0" blockwalls="1" needtarget="1" cooldown="10000" groupcooldown="1900" needlearn="0" script="ranger/nail_bomb.lua">
-	<vocation name="Archer" />
-	</instant>	
 	<instant group="healing" spellid="187" name="Healing Barrel" words="healing barrel" lvl="60" mana="120" selftarget="1" cooldown="8000" groupcooldown="1900" needlearn="0" script="ranger/healing_barrel.lua">
 	 <vocation name="Archer" />
 	</instant>
@@ -423,12 +420,14 @@
 	<instant group="attack" spellid="190" name="Phantom Shot" words="phantom shot" lvl="90" mana="250" premium="0" direction="0" range="8" needtarget="1" needDistanceWeapon="1" cooldown="22000" groupcooldown="1900" needlearn="0" script="ranger/destructive_shot.lua">
 	<vocation name="Archer" />
 	</instant>
-
-	<instant group="attack" spellid="191" name="Aspect Mastery" words="aspect mastery" lvl="100" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="ranger/aspect_mastery.lua">
+	<instant group="attack" spellid="191" name="Arrow Barrage" words="arrow barrage" lvl="50" mana="250" premium="0" direction="1" range="8" needtarget="0" needDistanceWeapon="1" cooldown="22000" groupcooldown="1900" needlearn="0" script="ranger/arrow_spray.lua">
 	<vocation name="Archer" />
 	</instant>
-	<instant group="attack" spellid="192" name="Frost Shots" words="frost shots" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="mage/frost_bolt.lua">
+	<instant group="attack" spellid="192" name="Rapid Fire" words="rapid fire" lvl="30" mana="75" premium="0" direction="0" range="8" needtarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="ranger/rapid_fire.lua">
 	 <vocation name="Archer" />
+	</instant>
+	<instant group="attack" spellid="193" name="Ice Arrow" words="ice arrow" lvl="8" mana="30" range="5" needlearn="0" aggressive="1" blockwalls="1" needDistanceWeapon="1" needtarget="1" cooldown="3000" groupcooldown="1900" script="ranger/ice_arrow.lua">
+	<vocation name="Archer" />
 	</instant>
 
 		

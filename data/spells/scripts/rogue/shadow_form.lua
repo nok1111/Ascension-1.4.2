@@ -23,6 +23,10 @@ function onTargetCreature(creature, target)
 		local FormulaHealthMin = (creature:getMaxHealth() * (configHeal.healPercent/100) + magic * 4.3) + 3
 		local FormulaHealthMax = (creature:getMaxHealth() * (configHeal.healPercent/100) + magic * 4.6) + 5
 		local FinalHealth = math.random(FormulaHealthMin, FormulaHealthMax)
+		local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+		if extrahealing > 0 then
+			FinalHealth = FinalHealth * (1 + (extrahealing / 100))
+		end
 		creature:addHealth(FinalHealth)
 		
 		--target:getPosition():sendMagicEffect(336)

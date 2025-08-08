@@ -2,13 +2,13 @@ local combat2 = Combat()
 local combatnodot2 = Combat()
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, 7)
 combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 7)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 
 for i, c in ipairs({combat2, combatnodot2}) do
-    c:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+    c:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
     c:setParameter(COMBAT_PARAM_EFFECT, 6)
     c:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 7)
     c:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -21,13 +21,12 @@ conditionburn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
 
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_DISTANCE) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.040) + attack
-	local max = (level / 5) + (power * 0.055) +  attack
+	local min = ((level / 5) + (power * 0.045) + attack) * 0.4
+	local max = ((level / 5) + (power * 0.065) + attack * 1.3) * 0.4
 	return -min, -max
 end
 

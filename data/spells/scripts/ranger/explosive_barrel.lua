@@ -23,7 +23,7 @@ function onCastSpell(creature, variant)
 if not creature then return end
 local target = creature:getTarget()
 if target then
-    local summon = Game.createMonster(monsterName, target:getPosition())
+    local summon = Game.createMonster(monsterName, target:getPosition(), true)
     if summon then
 		summon:attachEffectById(167, true)
         creature:addSummon(summon)
@@ -48,7 +48,7 @@ else
 		}
 		local lookDirection = creature:getDirection()
 		for i = 1, monsterCount do
-			local summon = Game.createMonster(monsterName, positions[lookDirection][i])
+			local summon = Game.createMonster(monsterName, positions[lookDirection][i], true)
 			if summon then
 				summon:attachEffectById(167, true)
 				creature:addSummon(summon)
