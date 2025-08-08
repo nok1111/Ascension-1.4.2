@@ -1686,7 +1686,7 @@ US_ENCHANTMENTS = {
     end,
     minLevel = 15,
     chance = 20,
-    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO },
+    itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO + US_ITEM_TYPES.WEAPON_ANY },
 
 
   [4] = {
@@ -1700,7 +1700,7 @@ US_ENCHANTMENTS = {
     end,
     minLevel = 15,
     chance = 20,
-    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO },
+    itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO + US_ITEM_TYPES.WEAPON_ANY },
 
 	
 	 [5] = {
@@ -1740,22 +1740,23 @@ US_ENCHANTMENTS = {
     end,
 	minLevel = 15,
 	chance = 15,
-    itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.WEAPON_ANY,
+    itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
   },
 
 
   [8] = {
-    name = "Melee Celestial",
+    name = "Arcana",
     combatType = US_TYPES.CONDITION,
     condition = CONDITION_ATTRIBUTES,
-    param = CONDITION_PARAM_SKILL_SWORD,
-    VALUES_PER_LEVEL = 0.2,
+    param = CONDITION_PARAM_SKILL_AXE,
+    VALUES_PER_LEVEL = 0.1,
     format = function(value)
-      return "[***] Celestial Melee +" .. value
+      return "Arcana +" .. value
     end,
-	minLevel = 5,
-	chance = 0,
-    itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO,
+    minLevel = 15,
+    chance = 20,
+    itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO + US_ITEM_TYPES.WEAPON_ANY },
+
   },
 
   [9] = {
@@ -1768,7 +1769,7 @@ US_ENCHANTMENTS = {
       return "Distance +" .. value
     end,
     minLevel = 15,
-    chance = 20,
+    chance = 25,
     itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO,
   },
 
@@ -1781,7 +1782,7 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Defence +" .. value
     end,
-    itemType = US_ITEM_TYPES.HELMET + US_ITEM_TYPES.ARMOR + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.AMMO
+    itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.AMMO
   },
   [11] = {
     name = "Mana Shield",
@@ -1803,8 +1804,8 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Life Steal +" .. value .. "%%"
     end,
-    itemType =  US_ITEM_TYPES.WEAPON_ANY,
-    chance = 30,
+    itemType =  WEAPON_ANY,
+    chance = 22,
 	  minLevel = 15,
   },
   [13] = {
@@ -1814,7 +1815,7 @@ US_ENCHANTMENTS = {
       return "Experience gain increased by +" .. value .. "%%"
     end,
     itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
-    chance = 0,
+    chance = 5,
     minLevel = 25,
   },
   [14] = {
@@ -1825,7 +1826,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Physical Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
+    chance = 20,
+    minLevel = 25,
   },
   [15] = {
     name = "Holy Damage",
@@ -1835,8 +1838,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Holy Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
-    chance = 20 
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
+    chance = 20,
+    minLevel = 25,
   },
   [16] = {
     name = "Ice Damage",
@@ -1846,8 +1850,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Ice Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
-    chance = 20 
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
+    chance = 20,
+    minLevel = 25,
   },
   [17] = {
     name = "Fire Damage",
@@ -1857,38 +1862,21 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Fire Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
-    chance = 20 
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
+    chance = 20,
+    minLevel = 25,
   },
   [18] = {
-	name = "Mezmerize on Attack",
-    combatType = US_TYPES.TRIGGER,
-    triggerType = US_TRIGGERS.ATTACK,
-    VALUES_PER_LEVEL = 0.8,
-	cooldown = 5,
-    execute = function(attacker, target, damage)
-	if target:isMonster() and target:getSkull() ~= SKULL_GREEN and target:getSkull() ~= SKULL_WHITE and target:getSkull() ~= SKULL_RED and target:getSkull() ~= SKULL_BLACK and target:getSpeed() > 0 then
-      if math.random(100) <= damage then
-			local targetPosition = target:getPosition()
-			local level = target:getMonsterLevel()
-			local mezmerizemob = Game.createMonster(target:getName(), targetPosition, true, true)
-			attacker:addSummon(mezmerizemob)
-			mezmerizemob:sendProgressbar(45*1000, false)
-			addEvent(removeMezmerize, 45*1000, mezmerizemob:getId())
-			attacker:getPosition():sendDistanceEffect(target:getPosition(), 133)
-			targetPosition:sendMagicEffect(319)
-			targetPosition:sendMagicEffect(295)
-			Game.sendAnimatedText('Mezmerize!.', target:getPosition(), TEXTCOLOR_ORANGE)
-			target:remove()		
-			return true
-		end
-	end
-    end,
+    name = "Death Damage",
+    combatType = US_TYPES.OFFENSIVE,
+    combatDamage = COMBAT_DEATHDAMAGE,
+    VALUES_PER_LEVEL = 0.2,
     format = function(value)
-      return "[***] " ..value.. "%% to Mezmerize enemy monsters on Attack for 45 seconds. VPL[0.8*ilvl]"
+      return "Death Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY,
-    chance = 0
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
+    chance = 20,
+    minLevel = 25,
   },
   [19] = {
        name = "Bob Bomb on Kill",
@@ -1959,15 +1947,16 @@ US_ENCHANTMENTS = {
     chance = 10
   },
   [21] = {
-    name = "Magic Damage",
+    name = "Energy Damage",
     combatType = US_TYPES.OFFENSIVE,
-    combatDamage = COMBAT_ENERGYDAMAGE + COMBAT_EARTHDAMAGE + COMBAT_FIREDAMAGE + COMBAT_ICEDAMAGE + COMBAT_HOLYDAMAGE + COMBAT_DEATHDAMAGE,
-    VALUES_PER_LEVEL = 0.1,
+    combatDamage = COMBAT_ENERGYDAMAGE,
+    VALUES_PER_LEVEL = 0.2,
     format = function(value)
-      return "Ability Damage +" .. value .. "%%"
+      return "Energy Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.HELMET + US_ITEM_TYPES.LEGS + US_ITEM_TYPES.RING + US_ITEM_TYPES.NECKLACE,
-    chance = 10
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
+    chance = 20,
+    minLevel = 25,
   },
   [22] = {
     name = "Physical Protection",
@@ -1992,21 +1981,16 @@ US_ENCHANTMENTS = {
 	minLevel = 10,
   },
   [24] = {
-    name = "Elite on Kill",
-    combatType = US_TYPES.TRIGGER,
-    triggerType = US_TRIGGERS.KILL,
-    VALUES_PER_LEVEL = 0.1,
-	execute = function(player, value, center, target)
-	if math.random(100) <= 5 then
-      player:addHealth(player:getMaxHealth() * 0.5)
-	 end
-    end,
+    name = "Earth Damage",
+    combatType = US_TYPES.OFFENSIVE,
+    combatDamage = COMBAT_EARTHDAMAGE,
+    VALUES_PER_LEVEL = 0.2,
     format = function(value)
-      return "[***] " ..value .."%% to find fame monsters on Kill and randomly healing 5% of your max health. VPL[0.1*ilvl]"
+      return "Earth Damage +" .. value .. "%%"
     end,
-    itemType = US_ITEM_TYPES.NECKLACE +  US_ITEM_TYPES.RING,
-	minLevel = 7,
-    chance = 0
+    itemType = US_ITEM_TYPES.WEAPON_ANY + US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING + US_ITEM_TYPES.SHIELD,
+    chance = 20,
+    minLevel = 25,
   },
   [25] = {
     name = "Celestial Iron Skin",
@@ -2122,7 +2106,7 @@ US_ENCHANTMENTS = {
     end,
     itemType = US_ITEM_TYPES.NECKLACE +  US_ITEM_TYPES.RING,
 	minLevel = 20,
-    chance = 0
+    chance = 5
   },
   [28] = {
     name = "Celestial Physical Protection",
@@ -2163,7 +2147,7 @@ US_ENCHANTMENTS = {
     end,
     itemType = US_ITEM_TYPES.WEAPON_ANY,
     minLevel = 10,
-    chance = 0
+    chance = 20
   },
   [31] = {
     name = "Flame Strike on Hit",
@@ -2180,7 +2164,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "cast Flame Strike on Hit dealing " .. value .. " damage. VPL[1.0*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD
+    itemType = US_ITEM_TYPES.SHIELD,
+	  minLevel = 10,
+    chance = 20
   },
   [32] = {
     name = "Ice Strike on Attack",
@@ -2205,7 +2191,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "10%% to cast Ice Strike on Attack dealing " .. value .. " damage and slowing the target for 3 seconds. VPL[1.5*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY
+    itemType = US_ITEM_TYPES.WEAPON_ANY,
+	  minLevel = 10,
+    chance = 20
   },
   [33] = {
     name = "Ice Strike on Hit",
@@ -2229,7 +2217,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "20%% to cast Ice Strike on Hit dealing " .. value .. " damage and slowing the target for 3 seconds. VPL[0.7*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD
+    itemType = US_ITEM_TYPES.SHIELD,
+	minLevel = 10,
+    chance = 20
   },
   [34] = {
     name = "Terra Strike on Attack",
@@ -2248,7 +2238,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "20%% to cast Terra Strike on Attack Poisoning the target dealing " .. value .. " damage every 2 seconds. VPL[1.3*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY
+    itemType = US_ITEM_TYPES.WEAPON_ANY,
+	minLevel = 10,
+    chance = 20
   },
   [35] = {
     name = "Terra Strike on Hit",
@@ -2266,7 +2258,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "50%% to cast Terra Strike on Hit poisoning the attaker and dealing " .. value .. " damage every 2 seconds. VPL[0.45*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD
+    itemType = US_ITEM_TYPES.SHIELD,
+	minLevel = 10,
+    chance = 20
   },
   [36] = {
     name = "Death Strike on Attack",
@@ -2283,7 +2277,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "2%% to cast Death Strike on Attack dealing " .. value .. " damage. VPL[10*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY
+    itemType = US_ITEM_TYPES.WEAPON_ANY,
+	minLevel = 10,
+    chance = 20
   },
   [37] = {
     name = "Death Strike on Hit",
@@ -2300,7 +2296,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "1%% to cast Death Strike on Hit dealing " .. value .. " damage. VPL[5*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD
+    itemType = US_ITEM_TYPES.SHIELD,
+	minLevel = 10,
+    chance = 20
   },
   [38] = {
     name = "Holy Strike on Attack",
@@ -2317,7 +2315,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "2%% to cast Holy Strike on Attack dealing " .. value .. " damage. VPL[10*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.WEAPON_ANY
+    itemType = US_ITEM_TYPES.WEAPON_ANY,
+	minLevel = 10,
+    chance = 20
   },
   [39] = {
     name = "Holy Strike on Hit",
@@ -2334,7 +2334,9 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "1%% to cast Holy Strike on Hit dealing " .. value .. " damage. VPL[5*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD
+    itemType = US_ITEM_TYPES.SHIELD,
+	minLevel = 10,
+    chance = 20
   },
   [40] = {
     name = "Moonfire on Attack",
@@ -2357,7 +2359,7 @@ US_ENCHANTMENTS = {
       return "[***] 10%% to cast Moonfire on Attack dealing " .. value .. " damage and recover " .. value * 1 .." mana. VPL[1.5*ilvl]"
     end,
     itemType = US_ITEM_TYPES.WEAPON_ANY,
-	chance = 0
+	chance = 20
   },
   [41] = {
     name = "Thunder on Hit",
@@ -2419,7 +2421,7 @@ US_ENCHANTMENTS = {
       return  "[***] 30%% to create a Poison Area on Kill dealing " .. value .. " damage + 250% of your magic level as poison damage every second for 4 seconds. VPL[5.3*ilvl]"
     end,
     itemType = US_ITEM_TYPES.WEAPON_ANY,
-	chance = 0
+	chance = 20
   },
   [43] = {
     name = "Health on Kill",
@@ -2432,8 +2434,8 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Regenerate " .. value .. " Health on Kill. VPL[1.3*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.NECKLACE+ US_ITEM_TYPES.AMMO,
-    chance = 25
+    itemType = US_ITEM_TYPES.SHIELD,
+    chance = 20
   },
   [44] = {
     name = "Mana on Kill",
@@ -2446,8 +2448,8 @@ US_ENCHANTMENTS = {
     format = function(value)
       return "Regenerate " .. value .. " Mana on Kill. VPL[1.3*ilvl]"
     end,
-    itemType = US_ITEM_TYPES.SHIELD + US_ITEM_TYPES.RING + US_ITEM_TYPES.NECKLACE  + US_ITEM_TYPES.AMMO,
-    chance = 25
+    itemType = US_ITEM_TYPES.SHIELD,
+    chance = 20
   },
   [45] = {
     name = "Mana Steal",
@@ -2522,7 +2524,7 @@ US_ENCHANTMENTS = {
     end,
     itemType = US_ITEM_TYPES.WEAPON_ANY,
     minLevel = 10,
-    chance = 0
+    chance = 20
   },
   [49] = {
     name = "Increased Healing",
@@ -2542,7 +2544,7 @@ US_ENCHANTMENTS = {
     end,
     itemType = US_ITEM_TYPES.BOOTS + US_ITEM_TYPES.RING + US_ITEM_TYPES.AMMO,
     minLevel = 10,
-    chance = 0
+    chance = 15
   },
   [51] = {
     name = "Double Damage",
@@ -2565,7 +2567,7 @@ US_ENCHANTMENTS = {
     end,
     itemType = US_ITEM_TYPES.NECKLACE + US_ITEM_TYPES.RING,
     minLevel = 2,
-    chance = 0
+    chance = 5
   },
   [53] = {
     name = "Damage Buff",
@@ -2680,10 +2682,10 @@ US_ENCHANTMENTS = {
   
   --power runes
   [56] = {
-    name = "Electrocute Strike on Attack [RUNE]",
+    name = "Electrocute Strike on Attack",
     combatType = US_TYPES.TRIGGER,
     triggerType = US_TRIGGERS.ATTACK,
-    VALUES_PER_LEVEL = 2.0,
+    VALUES_PER_LEVEL = 1.2,
 	cooldown = 1.5,
     execute = function(attacker, target, damage)
       if math.random(100) < 20 then
@@ -2708,7 +2710,7 @@ US_ENCHANTMENTS = {
     end,
     itemType = US_ITEM_TYPES.WEAPON_ANY,
     minLevel = 10,
-    chance = 0
+    chance = 15
   },
   [57] = {
     name = "Magic Healing on Attack [RUNE]",
