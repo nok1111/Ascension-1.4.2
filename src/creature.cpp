@@ -869,7 +869,7 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 			hasDefense = true;
 		}
 
-		if (checkDefense && hasDefense && canUseDefense) {
+		if (combatType != COMBAT_HEALING && (checkDefense && hasDefense && canUseDefense)) {
 			int32_t defense = getDefense();
 			damage -= uniform_random(defense / 2, defense);
 			if (damage <= 0) {
@@ -899,11 +899,24 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 	}
 
 	if (attacker) {
-		attacker->onAttackedCreature(this);
-		attacker->onAttackedCreatureBlockHit(blockType);
+		if (damage <= 0) {
+			damage = 0;
+			blockType = BLOCK_ARMOR;
+		}
+
+		if (combatType != COMBAT_HEALING) {
+			attacker->onAttackedCreature(this);
+			attacker->onAttackedCreatureBlockHit(blockType);
+			if (attacker->getMaster() && attacker->getMaster()->getPlayer()) {
+				Player* masterPlayer = attacker->getMaster()->getPlayer();
+				masterPlayer->onAttackedCreature(this);
+			}
+		}
 	}
 
-	onAttacked();
+	if (combatType != COMBAT_HEALING) {
+		onAttacked();
+	}
 	return blockType;
 }
 
