@@ -61,14 +61,14 @@ local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty
 local Monster_orb = CreatureEvent("monsterorb")
 function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
     print("Orb")
-    if not killer or not killer:isPlayer() or creature:getMaster() and  creature:getMonsterLevel() and  creature:getMonsterLevel() < 1 then return end
+    if not killer or not killer:isPlayer() or creature:getMaster() then return end
+    if not creature:getMonsterLevel() or not creature:getMonsterLevel() > 1 then return end
     local monsterType = MonsterType(creature:getName())
     if monsterType and monsterType:isBoss() then return end
     
 
     if creature:getStorageValue(purpleorbstorage) == 1 then
         -- Place each orb at a unique adjacent position if possible
-        print("Purple Orb")
 
         local yelloworb = Game.createItem(yellow_orb, 1, getAdjacentPosition(creature:getPosition()))
         local blueorb = Game.createItem(blue_orb, 1, getAdjacentPosition(creature:getPosition()))
@@ -101,8 +101,8 @@ function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjusti
 
     for _, rewardType in ipairs(rewardTypes) do
         local mathrandom = math.random(100)
-        print("mathrandom", mathrandom)
-        print("rewardType.chance", rewardType.chance)
+       -- print("mathrandom", mathrandom)
+       -- print("rewardType.chance", rewardType.chance)
         if mathrandom <= rewardType.chance then
             local orbPosition = getAdjacentPosition(creature:getPosition())
             local rewardOrb = Game.createItem(rewardType.itemId, 1, orbPosition)
