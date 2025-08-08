@@ -67,6 +67,7 @@ ConditionsSubIds = {
     astralburn = 29545,
     highvoltagelevel = 29546,
     blessed = 29547,
+    volatileimpact = 29548,
     
 
 
