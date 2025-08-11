@@ -203,28 +203,93 @@ local function triggering(cid, tid)
     end
 end
  
-function onCastSpell(cid, var)
-    targ = cid:getTarget()
-    local creatureId = cid:getId()
-    local targetId = targ:getId()
-    local dist = targ:getPosition():getDistance(cid:getPosition())
+function onCastSpell(creature, var)
+    local playerPos = creature:getPosition()
+    local direction = creature:getDirection() -- 0=N,1=E,2=S,3=W etc (TFS standard)
+    local maxTiles = 7
+    local effect = 121 -- chain effect
+    local chaintipEffect = 120 -- chain tip effect
 
-    cid:getPosition():sendDistanceEffect(targ:getPosition(), 120)
-	if targ and targ:getSpeed() > 0 then
-    local stopIt = false
-    for x = 0, config.distEffect*dist, 1 do
-        if x < (config.distEffect*dist)/3 then
-            addEvent(goAnimation, config.distTimer*x + config.distTimer, stopIt, creatureId, targetId)
-        else
-            addEvent(goAnimation, config.distTimer*x + config.distTimer, stopIt, targetId, creatureId)
+    local foundTarget = nil
+    local chainPos = Position(playerPos.x, playerPos.y, playerPos.z)
+    for i = 1, maxTiles do
+        chainPos = Position(chainPos.x, chainPos.y, chainPos.z)
+        chainPos = chainPos:getBehindPos(direction, 1)
+        -- Send chain animation
+        playerPos:sendDistanceEffect(chainPos, chaintipEffect)
+        for t = 1, 3 do
+            addEvent(function(px, py, pz, cx, cy, cz, effectId)
+                local fromPos = Position(px, py, pz)
+                local toPos = Position(cx, cy, cz)
+                fromPos:sendDistanceEffect(toPos, effectId)
+            end, t*50, playerPos.x, playerPos.y, playerPos.z, chainPos.x, chainPos.y, chainPos.z, chaintipEffect)
         end
-        if stopIt == true then
-            break
+
+
+        for j = 1, 16 do
+            addEvent(function(px, py, pz, cx, cy, cz, effectId)
+                local fromPos = Position(px, py, pz)
+                local toPos = Position(cx, cy, cz)
+                fromPos:sendDistanceEffect(toPos, effectId)
+            end, 50, playerPos.x, playerPos.y, playerPos.z, chainPos.x, chainPos.y, chainPos.z, effect)
         end
+
+        -- Check for creatures
+        local tile = Tile(chainPos)
+        if tile then
+            local creatures = tile:getCreatures()
+            for _, target in ipairs(creatures) do
+                if (target:isMonster() or (target:isPlayer() and target.uid ~= creature.uid)) and target:getSpeed() > 0 then
+                    foundTarget = target
+                    break
+                end
+            end
+        end
+        if foundTarget then break end
     end
-    addEvent(triggering, dist*100, creatureId, targetId)
-    combat:execute(cid, var)
-	
+
+    if foundTarget then
+        local function getStepDirection(fromPos, toPos)
+            local dx = toPos.x - fromPos.x
+            local dy = toPos.y - fromPos.y
+            if math.abs(dx) > math.abs(dy) then
+                return dx > 0 and DIRECTION_EAST or DIRECTION_WEST
+            elseif dy ~= 0 then
+                return dy > 0 and DIRECTION_SOUTH or DIRECTION_NORTH
+            else
+                return nil
+            end
+        end
+
+        local function moveTargetStep(cid, tx, ty, tz, px, py, pz, effectId)
+            local target = Creature(cid)
+            if not target then return end
+            local tpos = Position(tx, ty, tz)
+            local ppos = Position(px, py, pz)
+            if tpos.x == ppos.x and tpos.y == ppos.y and tpos.z == ppos.z then
+                tpos:sendMagicEffect(CONST_ME_TELEPORT)
+                return
+            end
+            local dir = getStepDirection(tpos, ppos)
+            if dir then
+                local nextPos = Position(tpos.x, tpos.y, tpos.z)
+                if dir == DIRECTION_NORTH then nextPos.y = nextPos.y - 1
+                elseif dir == DIRECTION_SOUTH then nextPos.y = nextPos.y + 1
+                elseif dir == DIRECTION_EAST then nextPos.x = nextPos.x + 1
+                elseif dir == DIRECTION_WEST then nextPos.x = nextPos.x - 1 end
+                -- Only move if tile is walkable
+                if Tile(nextPos) and Tile(nextPos):getGround() then
+                    target:teleportTo(nextPos, true)
+                    tpos:sendDistanceEffect(nextPos, effectId)
+                    addEvent(moveTargetStep, 30, cid, nextPos.x, nextPos.y, nextPos.z, px, py, pz, effectId)
+                else
+                    -- If blocked, stop
+                    tpos:sendMagicEffect(CONST_ME_POFF)
+                end
+            end
+        end
+        addEvent(moveTargetStep, 30, foundTarget:getId(), foundTarget:getPosition().x, foundTarget:getPosition().y, foundTarget:getPosition().z, playerPos.x, playerPos.y, playerPos.z, effect)
+    end
+
     return true
-	end
 end
