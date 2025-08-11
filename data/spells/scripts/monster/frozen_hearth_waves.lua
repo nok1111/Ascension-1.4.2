@@ -688,8 +688,6 @@ if not creature then
 return false
 end
 
-creature:sendProgressbar(5000, true)
-
 local p = {player = creature, var = var, combat = combat}
 
 local position = creature:getPosition()

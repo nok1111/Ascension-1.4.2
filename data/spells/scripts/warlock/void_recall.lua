@@ -74,7 +74,6 @@ local level = player:getLevel()
 	mySummonvoid:setHealth(level * mySummonvoid:getMaxHealth())
     mySummonvoid:registerEvent("Summon_Damage")
 	--mySummonvoid:registerEvent("petheal")
-	mySummonvoid:sendProgressbar(5*60*1000, false)
 
     local deltaSpeed = math.max(player:getBaseSpeed() - mySummonvoid:getBaseSpeed(), 0)
     mySummonvoid:changeSpeed(deltaSpeed)

@@ -82,13 +82,14 @@ function onCastSpell(creature, var)
             end
         end
 
-        local function moveTargetStep(cid, tx, ty, tz, px, py, pz, effectId)
+        local function moveTargetStep(cid, tx, ty, tz, px, py, pz, effectId, playerId)
             local target = Creature(cid)
-            if not target then return end
+            local player = Creature(playerId)
+            if not target or not player then return end
             local tpos = Position(tx, ty, tz)
             local ppos = Position(px, py, pz)
+            local playerPos = player:getPosition()
             if tpos:getDistance(ppos) <= 1 then
-                --tpos:sendMagicEffect(CONST_ME_TELEPORT)
                 return
             end
             local dir = getStepDirection(tpos, ppos)
@@ -101,21 +102,23 @@ function onCastSpell(creature, var)
                 -- Only move if tile is walkable
                 if Tile(nextPos) and Tile(nextPos):getGround() then
                     target:teleportTo(nextPos, true)
-                    doTargetCombatHealth(creature:getId(), target:getId(), COMBAT_DEATHDAMAGE, -minDamagepull, -maxDamagepull, CONST_ME_NONE)
-                    ppos:sendDistanceEffect(nextPos, effectId)
+                    local minDamagepull = (player:getLevel() *0.1) + 1
+                    local maxDamagepull = (player:getLevel() *0.2) + 2
+                    doTargetCombatHealth(player:getId(), target:getId(), COMBAT_DEATHDAMAGE, -minDamagepull, -maxDamagepull, CONST_ME_NONE)
+                    nextPos:sendDistanceEffect(playerPos, effectId)
                     for d = 1, 25 do
                         addEvent(function()
-                            ppos:sendDistanceEffect(nextPos, effectId)
+                            nextPos:sendDistanceEffect(playerPos, effectId)
                         end, d * 2)
                     end
-                    addEvent(moveTargetStep, 10, cid, nextPos.x, nextPos.y, nextPos.z, px, py, pz, effectId)
+                    addEvent(moveTargetStep, 10, cid, nextPos.x, nextPos.y, nextPos.z, px, py, pz, effectId, playerId)
                 else
                     -- If blocked, stop
                     tpos:sendMagicEffect(CONST_ME_POFF)
                 end
             end
         end
-        addEvent(moveTargetStep, 30, foundTarget:getId(), foundTarget:getPosition().x, foundTarget:getPosition().y, foundTarget:getPosition().z, playerPos.x, playerPos.y, playerPos.z, effect)
+        addEvent(moveTargetStep, 30, foundTarget:getId(), foundTarget:getPosition().x, foundTarget:getPosition().y, foundTarget:getPosition().z, playerPos.x, playerPos.y, playerPos.z, effect, creature:getId())
     end
 
     return true

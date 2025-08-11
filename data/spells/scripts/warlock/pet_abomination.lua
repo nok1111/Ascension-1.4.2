@@ -62,7 +62,6 @@ function onCastSpell(cid, var)
 	mySummon:setHealth(halfhp)
     mySummon:registerEvent("Summon_Damage")
 	mySummon:registerEvent("petheal")
-	mySummon:sendProgressbar(1*60*1000, false)
 
     --local deltaSpeed = math.max(player:getBaseSpeed() - mySummon:getBaseSpeed(), 0)
    -- mySummon:changeSpeed(deltaSpeed)

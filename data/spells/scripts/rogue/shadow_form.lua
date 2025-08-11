@@ -75,7 +75,7 @@ function onCastSpell(creature, variant)
 		addEvent(doHealing_shadowform2, 10800, cid, variant, combat)
 		addEvent(doHealing_shadowform2, 12600, cid, variant, combat)
 		addEvent(doHealing_shadowform2, 14400, cid, variant, combat)
-		creature:sendProgressbar(configHeal.timeBetweenHeals*i, false)
+		
 		
   
 	end

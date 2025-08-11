@@ -75,7 +75,6 @@ local position = creature:getPosition()
     positioneffect:sendMagicEffect(367)
    
    combatwarning:execute(creature, var)
-   creature:sendProgressbar(5000, true)
    addEvent(function()  combatwarning:execute(creature, var) end, 1500)
    addEvent(function()  combatwarning:execute(creature, var) end, 3000)
    addEvent(function()  combatwarning:execute(creature, var) end, 4500)

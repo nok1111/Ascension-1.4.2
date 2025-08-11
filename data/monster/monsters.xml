@@ -191,6 +191,8 @@
 	<monster name="Void Sentinel" file="summons/void_archer.xml"/>
 	<monster name="Aery" file="summons/aery.xml"/>
 	<monster name="Zombie Wall" file="summons/zombie_wall.xml"/>
+	<monster name="Plagued Spider" file="summons/plagued_spider.xml"/>
+	<monster name="Blessed Tree" file="summons/blessed_tree.xml"/>
 
 
 

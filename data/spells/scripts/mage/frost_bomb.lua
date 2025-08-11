@@ -67,7 +67,6 @@ function Frost_Explosion(creature, target, onlyMonster)
 						local pos = mobs[i]:getPosition()
 						mainPos:sendDistanceEffect(pos, config.disteffect)
 						addEvent(burncond_mage, 1000, creature:getId(), mobs[i]:getId(), config.timer, rand)	
-						mobs[i]:sendProgressbar(7000, false)
 					end
 				end	
 			else
@@ -97,7 +96,6 @@ function onCastSpell(creature, variant)
 	combat:execute(creature, variant)
 	
 	local targetmonster = creature:getTarget()	
-	targetmonster:sendProgressbar(config.timer * 1000, true)
 	
 	addEvent(Frost_Explosion, config.timer * 1000, creature:getId(), tar:getId(), onlyMonster)
 

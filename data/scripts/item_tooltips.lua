@@ -438,7 +438,7 @@ function formatItemType(itemType)
     elseif weaponType == WEAPON_WAND then
       return "Wand"
     elseif slotPosition == SLOTP_HEAD then
-      return "Helmet"
+      return "Spell"
     elseif slotPosition == SLOTP_NECKLACE then
       return "Necklace"
     elseif slotPosition == SLOTP_ARMOR then

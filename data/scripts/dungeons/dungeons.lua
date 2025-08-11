@@ -124,13 +124,16 @@ DeathEvent:register()
 
 local BossDeathEvent = CreatureEvent("DungeonBossDeath")
 function BossDeathEvent.onDeath(target, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
+	print("BossDeathEvent")
 	if not killer:isPlayer() then
 		return true
 	end
+	print("BossDeathEvent2")
 
 	local dungeons = Game.getDungeons()
 	for _, dungeon in ipairs(dungeons) do
 		if dungeon:getBoss() == target:getName() then
+			print("BossDeathEvent3")
 			local rewards = dungeon:getRewards()
 
 			local difficulty = target:getDifficulty()
@@ -147,6 +150,7 @@ function BossDeathEvent.onDeath(target, corpse, killer, mostDamageKiller, unjust
 
 					local rewardBagId = config.rewardBagId or 9774
 					Dungeons.giveDungeonReward(damager, rewards, rewardBagId, bonus)
+					print("giveDungeonReward")
 				end
 			end
 

@@ -17,12 +17,9 @@ mapshader:register()
 local getmapshader = TalkAction("/gmap", "!gmap")
 
 function getmapshader.onSay(player, words, param)
-	if  param ~= "" then
-		local mapshaderId = player:getMapShader(param)
-		player:say(mapshaderId)
-	else
-		player:sendTextMessage(MESSAGE_STATUS_CONSOLE_BLUE, "wrong id")
-	end
+	local mapshaderId = player:getMapShader()
+	print(mapshaderId)
+	player:say(mapshaderId)
 	return false
 end
 

@@ -1,5 +1,5 @@
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 
 -- Set area
 local arr = {

@@ -439,7 +439,7 @@
 	<instant group="healing" spellid="202" name="Great Heal" words="great heal" lvl="50" mana="120" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="1100" needlearn="0" script="healing/great healing.lua">
 	</instant>
 	
-	<instant group="support" spellid="203" name="Shield Wall" words="Shield Wall" lvl="27" mana="0" prem="0"  aggressive="0" selftarget="1"  cooldown="15000" groupcooldown="1100" needlearn="0" script="warrior/shield_wall.lua">
+	<instant group="support" spellid="203" name="Shield Wall" words="Shield Wall" lvl="27" mana="0" prem="0"  aggressive="0" selftarget="1"  cooldown="15000" groupcooldown="1100" needlearn="1" script="warrior/shield_wall.lua">
 	<vocation name="Dragon Knight" />
 	<vocation name="Templar" />
 	</instant>
@@ -454,7 +454,7 @@
 	<instant group="support" spellid="206" name="Sphere" words="sphere" lvl="100" mana="100" faith="40" intelligence="55" selftarget="1" needweapon="0" cooldown="10000" groupcooldown="1100" needlearn="0" script="mastery/earth_sphere.lua">
 	</instant>
 	
-	<instant group="attack" spellid="207" name="Quick Chains" words="quick chains" lvl="50" dexterity="65"  mana="250" premium="0" direction="0" range="7" needtarget="1" needweapon="0" cooldown="17000" groupcooldown="1900" script="mastery/get_over_here.lua">
+	<instant group="attack" spellid="207" name="Quick Chains" words="quick chains" lvl="50" dexterity="65"  mana="250" premium="0" direction="1" range="7" needtarget="0" needweapon="0" cooldown="17000" groupcooldown="1900" script="mastery/get_over_here.lua">
 	</instant>
 
 	<instant group="support" spellid="208" name="Magic Shield" words="Magic Shield" lvl="14" faith="0" intelligence="25" mana="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_shield.lua">
@@ -503,9 +503,6 @@
 
 		
 
-	<instant group="attack" spellid="500" name="Earthquake" words="earthquake" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/earthquake.lua">
-	 <vocation name="None" />
-	</instant>
 
 	<instant group="attack" spellid="501" name="Water Wave" words="water wave" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/water_wave.lua">
     <vocation name="None" />
@@ -513,53 +510,82 @@
 		<instant group="support" spellid="502" name="mad" words="mad" lvl="1" mana="0" range="1" aggressive="0" blockwalls="0" needtarget="0" cooldown="1000" groupcooldown="0" needweapon="0" needlearn="0" script="mad.lua">
     </instant>
 	
-	
-	<instant group="attack" spellid="503" name="Bouncing Sphere" words="bouncing sphere" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/pingpong.lua">
+
+	<instant group="attack" spellid="504" name="cage" words="cage" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="1" script="test/cage.lua">
 	<vocation name="None" />
 	</instant>
-	<instant group="attack" spellid="504" name="cage" words="cage" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/cage.lua">
-	<vocation name="None" />
-	</instant>
-	<instant group="attack" spellid="505" name="explo" words="explo" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="0" script="test/poison_explosion.lua">
+	<instant group="attack" spellid="505" name="explo" words="explo" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" needlearn="1" script="test/poison_explosion.lua">
 	<vocation name="None" />
 	</instant>	
-	<instant group="attack" spellid="506" name="Burning Ice" words="burning ic" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" selftarget="1" needlearn="0" script="test/double_wave.lua">
+	<instant group="attack" spellid="506" name="Burning Ice" words="burning ic" lvl="1" mana="150" prem="0" cooldown="2000" groupcooldown="1200" selftarget="1" needlearn="1" script="test/double_wave.lua">
 	<vocation name="None" />
 	</instant>
 
-	<instant group="attack" spellid="507" name="anihilation" words="anihilation" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_judment.lua">
+	<instant group="attack" spellid="507" name="anihilation" words="anihilation" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="1" script="new spells/mass_judment.lua">
 	<vocation name="None" />
 	</instant>
-	<instant group="attack" spellid="508" name="mass ani" words="mass ani" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_annihilation.lua">
-	<vocation name="None" />
-	</instant>
-	
-	<instant group="attack" spellid="509" name="mass ani mon" words="mass ani mon" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="new spells/mass_annihilation_monster.lua">
+	<instant group="attack" spellid="508" name="mass ani" words="mass ani" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="1" script="new spells/mass_annihilation.lua">
 	<vocation name="None" />
 	</instant>
 	
-	<instant group="support" spellid="510" name="push" words="push" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/push_out.lua">
+	<instant group="attack" spellid="509" name="mass ani mon" words="mass ani mon" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="1" script="new spells/mass_annihilation_monster.lua">
+	<vocation name="None" />
+	</instant>
+	
+	<instant group="support" spellid="510" name="push" words="push" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="1" script="test/push_out.lua">
 	<vocation name="None" />
 	</instant>	
 
-	<instant group="support" spellid="511" name="rune" words="rune" lvl="1" mana="20" soul="0" cooldown="35000" groupcooldown="1000" needlearn="0" script="test/uh_create.lua">
+	<instant group="support" spellid="511" name="rune" words="rune" lvl="1" mana="20" soul="0" cooldown="35000" groupcooldown="1000" needlearn="1" script="test/uh_create.lua">
 	<vocation name="None" />
 	</instant>
-	<instant group="attack" spellid="512" name="flat" words="flat" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900"  script="test/flat_percent.lua">
+	<instant group="attack" spellid="512" name="flat" words="flat" lvl="8" mana="20" selftarget="1" aggressive="1" blockwalls="1" cooldown="3000" groupcooldown="1900" needlearn="1" script="test/flat_percent.lua">
 	<vocation name="None" />
 	</instant>
-	<instant group="support" spellid="513" name="pull" words="pull" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="test/pull_in.lua">
+	<instant group="support" spellid="513" name="pull" words="pull" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="1" script="test/pull_in.lua">
 	<vocation name="None" />
 	</instant>		
 	
-	 <instant group="attack" spellid="514" name="Cryo Eruption" words="cryo" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="0" script="mage/cryo_eruption.lua">
+	 <instant group="attack" spellid="514" name="Cryo Eruption" words="cryo" lvl="42" mana="115" direction="1" cooldown="12000" groupcooldown="1900" needlearn="1" script="mage/cryo_eruption.lua">
     <vocation name="None" />
 	</instant>
-	
 
-	
 
+	<!-- boots spells -->
+	<rune group="support" spellid="700" name="boots of teleportation" id="33267" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" needtarget="0" script="boots/boots_of_teleportation.lua" />
+	<rune group="support" spellid="701" name="boots of the wild" id="33348" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" needtarget="1" script="boots/boots_of_the_wild.lua" />
+	<rune group="support" spellid="702" name="boots of timewalking" id="33378" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" selftarget="1" script="boots/boots_of_timewalking.lua" />
+	<rune group="support" spellid="703" name="boots of winter" id="2642" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" selftarget="1" script="boots/boots_of_winter.lua" />
+	<rune group="support" spellid="704" name="boots of Levitation" id="33328" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" selftarget="1" script="boots/boots_of_levitation.lua" />
+	<rune group="support" spellid="705" name="boots of the void" id="32497" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" selftarget="1" script="boots/boots_of_the_void.lua" />
+	<rune group="support" spellid="706" name="boots of the salamander" id="9933" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" needtarget="0" script="boots/boots_of_the_salamander.lua" />
+	<rune group="support" spellid="707" name="boots of the dreamer" id="6132" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" selftarget="1" script="boots/boots_of_the_dreamer.lua" />
 	
+	<!-- active spells (head)-->
+    <rune group="special" spellid="800" name="magnetic orb" id="38167" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/magnetic_orb.lua" />
+    <rune group="special" spellid="801" name="celestial sigil" id="38149" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/celestial_sigil.lua" />
+    <rune group="special" spellid="802" name="absolute defense" id="38177" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" selftarget="1" script="head/absolute_defense.lua" />
+	<rune group="special" spellid="803" name="bouncing sphere" id="38169" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="1" script="head/bouncing_sphere.lua" />
+	<rune group="special" spellid="804" name="earthquake" id="38168" allowfaruse="0" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" selftarget="1" script="head/earthquake.lua" />
+	<rune group="special" spellid="805" name="blessed tree" id="38157" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/blessed_tree.lua" />
+	<rune group="special" spellid="806" name="spider web" id="38165" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="1" script="head/spider_web.lua" />
+	<rune group="special" spellid="807" name="meteor spell" id="38152" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/meteor.lua" />
+	<rune group="special" spellid="808" name="water wave" id="38194" allowfaruse="1" lvl="1" maglv="0" cooldown="30000" groupcooldown="30000" blocktype="solid" direction="1" needtarget="0" script="head/water_wave.lua" />
+	<rune group="special" spellid="809" name="thunder chain" id="38153" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="1" script="head/thunder_chain.lua" />
+	<rune group="special" spellid="810" name="water torrent" id="38178" allowfaruse="0" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" selftarget="1" script="head/water_torrent.lua" />
+	<rune group="special" spellid="811" name="shark teeth" id="34003" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/shark_teeth.lua" />
+	<rune group="special" spellid="812" name="wild vines" id="38188" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/wild_vines.lua" />
+
+
+
+
+
+
+
+
+
+
+
 		<!-- Oils -->
 	<rune group="attack" spellid="330" name="oilbomb" id="31819" allowfaruse="1" charges="20" lvl="8" maglv="0" cooldown="2000" groupcooldown="2000" blocktype="solid" script="attack/oil_bomb.lua" />
 	
@@ -894,6 +920,7 @@
 	<instant name="summonshadowclone" words="###913" aggressive="1" range="4" blockwalls="1" needtarget="0" needlearn="0"  script="monster/summonshadowclone.lua"/>
 	<instant name="summonaeryheal" words="###914" aggressive="1" range="4" blockwalls="1" needtarget="1" needlearn="0"  script="monster/summonaeryheal.lua"/>
 	<instant name="explosive barrel2" words="###915" aggressive="1" selftarget="1" range="4" blockwalls="1"  needlearn="0"  script="monster/explosive_barrel.lua"/>
+	<instant name="orb_corrosive" words="###916" aggressive="1" range="1" blockwalls="1" needtarget="1"  needlearn="0"  script="monster/orb_corrosive.lua"/>
 	
 	
 	

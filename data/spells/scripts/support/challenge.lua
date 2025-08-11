@@ -11,6 +11,5 @@ combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 function onCastSpell(creature, variant)
 	local targetmonster = creature:getTarget()
 	
-	targetmonster:sendProgressbar(2000, false)
 	return combat:execute(creature, variant)
 end

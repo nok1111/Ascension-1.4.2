@@ -80,7 +80,6 @@ function onTargetCreature(creature, target)
 	
     if not isExcludedTarget(creature, target) then
 	
-	target:sendProgressbar(stunDuration, true)
 	target:attachEffectById(27, true)
 	--target:detachEffectById(27)
 	target:attachEffectById(28, true)

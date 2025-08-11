@@ -7,8 +7,23 @@ function onCastSpell(creature, variant)
 	local targetmonster = creature:getTarget()
 
 	targetmonster:setFollowCreature(creature)
-	addEvent(function() targetmonster:setFollowCreature(creature) end, 1000)
-	addEvent(function() targetmonster:setFollowCreature(creature) end, 1700)
-	targetmonster:sendProgressbar(2000, false)
+    local targetId = targetmonster and targetmonster:getId() or nil
+    local creatureId = creature and creature:getId() or nil
+    if targetId and creatureId then
+        addEvent(function(tid, cid)
+            local t = Creature(tid)
+            local c = Creature(cid)
+            if t and c then
+                t:setFollowCreature(c)
+            end
+        end, 1000, targetId, creatureId)
+        addEvent(function(tid, cid)
+            local t = Creature(tid)
+            local c = Creature(cid)
+            if t and c then
+                t:setFollowCreature(c)
+            end
+        end, 1700, targetId, creatureId)
+    end
 	return combat:execute(creature, variant)
 end

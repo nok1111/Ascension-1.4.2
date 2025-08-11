@@ -54,28 +54,28 @@ local effect_out = 6
 
 
 local combat1 = Combat()
-combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat1:setParameter(COMBAT_PARAM_EFFECT, effect_out)
 combat1:setArea(createCombatArea(arr1))
 
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, effect_out)
 combat2:setArea(createCombatArea(arr2))
 
 local combat3 = Combat()
-combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat3:setParameter(COMBAT_PARAM_EFFECT, effect_out)
 combat3:setArea(createCombatArea(arr3))
 
 local combat4 = Combat()
-combat4:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat4:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat4:setParameter(COMBAT_PARAM_EFFECT, effect_out)
 combat4:setArea(createCombatArea(arr4))
 
 local combat5 = Combat()
-combat5:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat5:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat5:setArea(createCombatArea(arr5))
 
 local conditionburn_within = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
@@ -155,7 +155,6 @@ local function burning_within(creatureId, variant)
 	combat3:addCondition(conditionburn_within)
 	combat4:addCondition(conditionburn_within)
 	combat5:addCondition(conditionburn_within)
-	--creature:getTarget():sendProgressbar(7.5 * 1.5, false)
 end
 
 function onCastSpell(creature, variant)

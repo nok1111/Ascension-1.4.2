@@ -23,6 +23,36 @@ function Player:onLook(thing, position, distance)
                 description = string.format("%s\n Artifacts Mastery: %s", description, rankTask)
             end
         end
+
+		if thing:isCreature() and thing:isMonster() then
+			local owner = thing:getMaster()
+	
+			if owner ~= nil and owner:isPlayer() then
+				local playerName = (owner:getId() == self:getId()) and "you" or owner:getName()
+				local description = "You see a " .. tostring(thing:getName()) .. ", it's belongs to " .. playerName .. "."
+				if owner:getPet() ~= nil then
+					local pet = owner:getPet()
+					local ownerpetlevel = owner:getStorageValue(STORAGEVALUE_PET_LVL)
+					local petExp = owner:getStorageValue(STORAGEVALUE_PET_EXP)
+	
+					if thing:getId() == pet.monsterId then
+						description = description .. "\nNickname: " .. tostring(pet.name) .. "."
+						description = description .. "\nPet Level: " .. tostring(ownerpetlevel) .. "."
+						if ownerpetlevel >= 10 then
+							description = description .. "\nPet Experience: Max / Max."
+						else
+							description = description .. "\nPet Experience: " .. tostring(petExp) .. "/ " .. tostring(getPetMaxExpByLevel(ownerpetlevel)) .. "."
+						end
+					end
+				end
+				if self:getGroup():getAccess() then
+					local position = thing:getPosition()
+					description = string.format("%s\nPosition: %d, %d, %d", description, position.x, position.y, position.z)
+				end
+				self:sendTextMessage(MESSAGE_INFO_DESCR, description)
+				return false
+			end
+		end
     end
     
     self:sendTextMessage(MESSAGE_INFO_DESCR, description)
@@ -241,6 +271,22 @@ function Player:onGainExperience(source, exp, rawExp)
 		elseif staminaMinutes <= 840 then
 			exp = exp * 0.5
 		end
+	end
+
+	--pet system
+
+
+	if self:getStorageValue(petfoodlevel1) >= os.time() then
+		exp = exp * 1.10
+	end
+	if self:getStorageValue(petfoodlevel2) >= os.time() then --food exp
+		exp = exp * 1.05
+	end
+	if self:getStorageValue(petfoodlevel3) >= os.time() then --food exp
+		exp = exp * 1.08
+	end
+	if self:getStorageValue(petfoodlevel4) >= os.time() then --food exp
+		exp = exp * 1.10
 	end
 
 	return hasEventCallback(EVENT_CALLBACK_ONGAINEXPERIENCE) and EventCallback(EVENT_CALLBACK_ONGAINEXPERIENCE, self, source, exp, rawExp) or exp

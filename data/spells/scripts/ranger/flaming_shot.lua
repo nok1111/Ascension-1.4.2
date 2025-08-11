@@ -59,7 +59,6 @@ end
 function onCastSpell(creature, var, tar)
     CastSpellburningarrow(creature:getId(), var)
 	local targetmonster = creature:getTarget()	
-	--targetmonster:sendProgressbar(16500, false)
 	
 	if targetmonster:getCondition(CONDITION_DRUNK, 0, ConditionsSubIds.beerbarrel) and creature then
 	combat:execute(creature, var)

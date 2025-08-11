@@ -25,6 +25,8 @@ function onLogin(player)
 		player:setVocation(vocation:getDemotion())
 	end
 
+	player:setStorageValue(STORAGEVALUE_PET_ID, 0);
+
 	-- Events
 	player:registerEvent("PlayerDeath")
 	player:registerEvent("DropLoot")

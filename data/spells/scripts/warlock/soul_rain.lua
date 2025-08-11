@@ -56,7 +56,6 @@ function onCastSpell(creature, variant, targetPos)
 
     for i=0, config.amount, 1 do
         addEvent(doDamage_rain_warlock, i*200, combat, creatureId, targetPos, variant)
-        creature:sendProgressbar(i*200, false)
     end
 
     return true

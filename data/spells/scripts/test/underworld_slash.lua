@@ -70,7 +70,6 @@ local function applyBlindness(target)
     local condition = Condition(CONDITION_STUN)
     condition:setParameter(CONDITION_PARAM_TICKS, config.blindnessDuration)
     target:addCondition(condition)
-    target:sendProgressbar(config.blindnessDuration, false)
     target:getPosition():sendMagicEffect(CONST_ME_PURPLESMOKE)
 end
 

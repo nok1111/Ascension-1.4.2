@@ -5534,7 +5534,6 @@
 		<attribute key="weight" value="800" />
 		<attribute key="slotType" value="feet" />
 		<attribute key="decayTo" value="10021" />
-		<attribute key="transformDeEquipTo" value="6132" />
 		<attribute key="duration" value="14400" />
 		<attribute key="healthGain" value="15" />
 		<attribute key="healthTicks" value="2000" />
@@ -5550,10 +5549,7 @@
 		<attribute key="armor" value="2" />
 		<attribute key="slotType" value="feet" />
 	</item>
-	<item id="2642" name="sandals">
-		<attribute key="weight" value="600" />
-		<attribute key="slotType" value="feet" />
-	</item>
+
 	<item id="2643" name="leather boots">
 		<attribute key="weight" value="900" />
 		<attribute key="armor" value="1" />
@@ -12021,13 +12017,6 @@
 		<attribute key="weight" value="5200" />
 		<attribute key="defense" value="26" />
 		<attribute key="weaponType" value="shield" />
-	</item>
-	<item id="6132" name="pair of soft boots">
-		<attribute key="weight" value="800" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="transformEquipTo" value="2640" />
-		<attribute key="stopduration" value="1" />
-		<attribute key="showduration" value="1" />
 	</item>
 	<item fromid="6133" toid="6159" article="a" name="tree wall" />
 	<item fromid="6160" toid="6172" article="a" name="grass roof" />
@@ -19346,21 +19335,12 @@
 		<attribute key="armor" value="2" />
 		<attribute key="slotType" value="feet" />
 		<attribute key="decayTo" value="10022" />
-		<attribute key="transformDeEquipTo" value="9933" />
 		<attribute key="fieldabsorbPercentEnergy" value="90" />
 		<attribute key="duration" value="3600" />
 		<attribute key="showduration" value="1" />
 		<attribute key="showattributes" value="1" />
 	</item>
-	<item id="9933" article="a" name="firewalker boots">
-		<attribute key="description" value="Wearing these boots reduces the damage gotten from fiery ground." />
-		<attribute key="weight" value="950" />
-		<attribute key="armor" value="2" />
-		<attribute key="slotType" value="feet" />
-		<attribute key="transformEquipTo" value="9932" />
-		<attribute key="stopduration" value="1" />
-		<attribute key="showduration" value="1" />
-	</item>
+
 	<item id="9934" article="" name="old worn firewalker boots">
 		<attribute key="description" value="They can be recharged with an enchanted ruby." />
 		<attribute key="weight" value="950" />
@@ -39688,211 +39668,7 @@
 		<attribute key="weight" value="5" />
 	</item>
 	
-	<item id="38149" article="a" name="Celestial Burn on hit">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="75%% to cast Celestial Burn on hit dealing  .. value .. %% max health damage + half your magic level [shield]" />
-	</item>
-	<item id="38150" article="a" name="Celestial Iron Skin">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="20%% to get  .. value .. %% Celestial Iron Skin Buff buff for 20 sec. on Kill [shield]" />
-	</item>
-	<item id="38151" article="a" name="Bob Bomb on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value.. %% Chance to spawn Bob Bomb!. [weapons]" />
-	</item>
-	<item id="38152" article="a" name="Meteor on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="5%% to cast Meteor on Attack dealing .. value ..  damage [weapons]" />
-	</item>
-	<item id="38153" article="a" name="Thunder on Hit">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="13%% to strike with lightning on Hit all nearby enemies dealing  .. value .. %% target Max Health damage [shield]" />
-	</item>
-	<item id="38154" article="a" name="Mezmerize on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="%% to Mezmerize enemy monsters on Attack for 45 seconds. [weapons]" />
-	</item>
-	<item id="38155" article="a" name="Frost Aura on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="cast Frost Aura on Kill dealing  .. value .. %% Magic Damage [weapons]" />
-	</item>
-	<item id="38156" article="a" name="Execute on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value .. %% to execute targets below 25% health on Attack [weapons]" />
-	</item>
-	<item id="38157" article="a" name="Mass Healing on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value .. %% to cast Mass Healing on Attack [weapons]" />
-	</item>
-	<item id="38158" article="a" name="Flame Strike on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="5%% to cast Flame Strike on Attack dealing 1- .. value ..  damage [weapons]" />
-	</item>
-	<item id="38159" article="a" name="Critical Damage on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="10%% on Kill to get  .. value .. %% Critical Damage buff for 20 sec. [weapons][Knecklace][ring]" />
-	</item>
-	<item id="38160" article="a" name="Moonfire on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="6%% to cast Moonfire on Attack dealing 1- .. value ..  damage and recover  .. value*0.1 .. mana [weapons]" />
-	</item>
-	<item id="38161" article="a" name="Frost Storm on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="5%% to cast frost Storm on Attack dealing .. value ..  damage [weapons]" />
-	</item>
-	<item id="38162" article="a" name="Poison Explosion on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="10%% to create a Poison Area on Kill dealing .. value .. %% Max HP%% for 4 seconds. [weapon]" />
-	</item>
-	<item id="38163" article="a" name="Increased Healing">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value .. %% more healing from all sources [shield][Knecklace][ring]" />
-	</item>
-	<item id="38164" article="a" name="Soul Mirror">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value .. %% to deal double damage [weapons]" />
-	</item>
-	<item id="38165" article="a" name="Treasure Goblin on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value.. %% Chance to find Treasure Goblins on Kill [Knecklace][ring]" />
-	</item>
-	<item id="38167" article="a" name="Damage Buff on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="20%% to get  .. value .. %% damage buff for 8 sec. on Kill [Knecklace][ring]" />
-	</item>
-	<item id="38169" article="a" name="Mana Essence Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value.. %% to create a life essence near the player for 10 seconds wich heal 15% max mana. [Knecklace][shields]" />
-	</item>
-	<item id="38170" article="a" name="Broken Mirror">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="enchanters may want this." />
-	</item>
-	<item id="38171" article="a" name="Fame Monster on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value ..%% to find fame monsters on Kill. [Knecklace][ring]" />
-	</item>
-	<item id="38172" article="a" name="Razor Leaf on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value .. %% to cast Razor Leaf on Attack dealing massive physical damage [weapons]" />
-	</item>
-	<item id="38173" article="a" name="Alchemist Grial">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="increase mana and health potion effects by .. value .. %% [Knecklace][ring]" />
-	</item>
-	<item id="38175" article="a" name="Life Essence Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value.. %% to create a life essence near the player for 10 seconds wich heal 15% max mana. [Knecklace][shields]" />
-	</item>
-	<item id="38176" article="a" name="Adventurer's Balluart">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Experience gain increased by + .. value .. %% [Knecklace][ring]" />
-	</item>
-	<item id="38177" article="a" name="Emperor's Gift">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="4%% to get .. value ..  fame and  .. value ..  gold points on Kill. [Knecklace]" />
-	</item>
-
-	<item id="38180" article="a" name="Celestial Burn on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="35%% to cast Celestial Burn on Attack dealing  .. value .. %% max health damage + half your magic level [weapons]" />
-	</item>
-	<item id="38181" article="a" name="Iron Skin Buff on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="20%% to get .. value .. %% Deflect Buff buff for 20 sec. on Kill [shield]"  />
-	</item>
-	<item id="38183" article="a" name="Flame Blast on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="5%% to cast Flame Blast on Attack dealing 1- .. value ..  damage [weapons]" />
-	</item>
-	<item id="38184" article="a" name="Electrocute on Attack">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="20%% to cast a Chain of lightning on Attack dealing  .. value .. %% damage to the target and all nearby enemies around the target [weapons]" />
-	</item>
-	<item id="38186" article="a" name="Freeze on hit">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value ..%% to freeze attackers for 2 seconds buff for 20 sec. [shield][Knecklace][ring]" />
-	</item>
-	<item id="38187" article="a" name="Revive on death">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="value .. %% to be revived [Knecklace][ring]" />
-	</item>
-	<item id="38188" article="a" name="Health on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Regenerate  .. value ..  Health on Kill [shield][Knecklace][ring][relics]" />
-	</item>
-	<item id="38190" article="a" name="Thor's Might on hit">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="5%% to descend into the attacker dealing  .. value .. Aoe damage. [shield][weapons]" />
-	</item>
-	<item id="38194" article="a" name="Mana on Kill">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Regenerate .. value ..  Mana on Kill [shield][Knecklace][ring][relics]" />
-	</item>
 	
-	
-	
-	
-	<item id="38148" article="a" name="Melee Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Melee + .. Value [ALL SLOTS]" />
-	</item>
-		<item id="38179" article="a" name="Celestial Melee Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Celestial Melee + .. value [Knecklace][ring][relics]" />
-	</item>
-	
-	
-	
-	<item id="38195" article="a" name="Distance Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Distance + .. Value [ALL SLOTS]" />
-	</item>
-	<item id="38196" article="a" name="Celestial Distance Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Distance + .. Value [Knecklace][ring][relics]" />
-	</item>
-	<item id="38197" article="a" name="Defence Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Defence + .. Value [ALL SLOTS]" />
-	</item>
-	<item id="38198" article="a" name="Celestial Defence Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Defence + .. Value [Knecklace][ring][relics]" />
-	</item>
-	<item id="38199" article="a" name="Magic Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Magic + .. Value [ALL SLOTS]" />
-	</item>
-	<item id="38200" article="a" name="Celestial Magic Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Magic + .. Value [Knecklace][ring][relics]" />
-	</item>
-	<item id="38201" article="a" name="Physical Protection Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Physical Protection + .. Value [ALL SLOTS]" />
-	</item>
-	<item id="38202" article="a" name="Celestial Physical Protection Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Physical Protection + .. Value [Knecklace][ring][relics]" />
-	</item>
-	<item id="38203" article="a" name="Magic Protection Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Magic Protection + .. Value [ALL SLOTS]" />
-	</item>
-	<item id="38204" article="a" name="Celestial Magic Protection Enchantment Orb">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Magic Protection + .. Value [Knecklace][ring][relics]" />
-	</item>
-	
-	<item id="38205" article="a" name="Mana on Hit">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Restore .. value ..  Mana on Hit [shield][Knecklace][ring][relics]" />
-	</item>
-	<item id="38206" article="a" name="Heal on Hit">
-		<attribute key="weight" value="1" />
-		<attribute key="description" value="Restore .. value ..  Health on Hit [shield][Knecklace][ring][relics]" />
-	</item>
 	
 	<item id="xxxxx" article="a" name="xxxxsample">
 		<attribute key="weight" value="80" />
@@ -41636,6 +41412,12 @@
 		<attribute key="duration" value="7" />
 	</item>
 
+	<item id="40258" article="a" name="salamander wall">
+		<attribute key="decayTo" value="0" />
+		<attribute key="duration" value="10" />
+	</item>
+
+
 	<item id="40096" article="a" name="Lily's Shattered Mirror">
         <attribute key="description" value="this item is part of a quest." />
         <attribute key="weight" value="55" />
@@ -41775,6 +41557,181 @@
 	<item id="40233" article="a" name="Potion of nature">
 		<attribute key="description" value="Drinking grants a 5% elemental damage resistance buff. this effects lasts 10 minutes." />
 		<attribute key="weight" value="60" />
+	</item>
+
+
+
+<item id="33267" name="boots of teleportation">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Teleport to your targeted position." />
+	</item>
+	<item id="33348" name="boots of the wild">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Charge to your current targeted enemy." />
+	</item>
+	<item id="33378" name="boots of timewalking">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Mark your current self and rewind to it after 4 seconds." />
+	</item>
+	<item id="2642" name="boots of winter">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Place ice traps on the ground while moving that will slow down the enemies." />
+	</item>
+	<item id="33328" name="boots of levitation">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Levitate into the air removing all paralysed effects and dashing towards the direction you are facing." />
+	</item>
+	<item id="32497" name="boots of the void">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Instantly trap all nearby enemies in a void field." />
+	</item>
+	<item id="9933" name="boots of the salamander">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Place fire pillars in your targeted position wich can block line of sight." />
+	</item>
+	<item id="6132" name="boots of the dreamer">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="[onUse] Restore 15% maximum mana of all nearby friendly players." /> 
+	</item>
+	<item id="xxxxxx" name="boots of xxxxxxxxx">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	</item>
+	<item id="xxxxxx" name="boots of xxxxxxxxx">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	</item>
+	<item id="xxxxxx" name="boots of xxxxxxxxx">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	</item>
+	<item id="xxxxxx" name="boots of xxxxxxxxx">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	</item>
+	<item id="xxxxxx" name="boots of xxxxxxxxx">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="feet" />
+		<attribute key="armor" value="10" />
+		<attribute key="speed" value="25" />
+		<attribute key="showattributes" value="1" />
+		<attribute key="description" value="xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	</item>
+	
+	
+<item id="38167" name="magnetic orb">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="place a magnetic orb to create a magnetic field that damages nearby enemies" />
+	</item>
+	<item id="38149" name="celestial sigil">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Shoots a celestial mark into the targeted position wich deals damage and increases your magic level percent by 20% for 4 seconds" />
+	</item>
+	<item id="38177" name="absolute defense">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Shoots a celestial mark into the targeted position wich deals damage and increases your magic level percent by 20% for 4 seconds" />
+	</item>
+	<item id="38169" name="bouncing sphere">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a bouncing sphere that bounces between you and your target dealing damage and healing yourself, the sphere speed is based on the distance between you and your target" />
+	</item>
+	<item id="38168" name="earthquake">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a bouncing sphere that bounces between you and your target dealing damage and healing yourself, the sphere speed is based on the distance between you and your target" />
+	</item>
+	<item id="38157" name="blessed tree">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a blessed tree in the targeted position, wich restores health and mana to all nearby players if destroyed." />
+	</item>
+
+	<item id="38165" name="spider web">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="throw a spider web on your target wich stuns it for 2 seconds." />
+	</item>
+    <item id="38152" name="meteor">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="throw a meteor on your target dealing fire damage to nearby enemies." />
+	</item>
+	<item id="38194" name="water wave">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create 3 water tides wich deal ice damage and stun the enemies for 1 second." />
+	</item>
+	<item id="38153" name="thunder chain">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a energy chain reaction will travel through all nearby enemies." />
+	</item>
+	<item id="38178" name="water torrent">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a water torrent wich repell enemies around yourself." />
+	</item>
+	<item id="34003" name="shark teeth">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a dangerous area wich later will be devoured by a giant shark." />
+	</item>
+	<item id="38188" name="wild vines"> 
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create wild vines around yourself that pulls nearby monsters into you." />
 	</item>
 
 	

@@ -264,9 +264,6 @@
 	<spawn centerx="1092" centery="1028" centerz="13" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="13" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="1099" centery="991" centerz="14" radius="1">
-		<monster name="Lucella" x="0" y="0" z="14" spawntime="60" />
-	</spawn>
 	<spawn centerx="1099" centery="1000" centerz="14" radius="1">
 		<monster name="Skeleton" x="0" y="0" z="14" spawntime="60" />
 	</spawn>

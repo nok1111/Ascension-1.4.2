@@ -63,7 +63,6 @@ function onCastSpell(creature, var, tar)
     addEvent(stunAnimation, 0, stunCreature.uid, stunCreature:getPosition(), (stunDuration / 1000) * 2)
 	local targetmonster = creature:getTarget()
 	
-	targetmonster:sendProgressbar(stunDuration, false)
 	targetmonster:getPosition():sendMagicEffect(581)
 	targetmonster:attachEffectById(23, true)
 	

@@ -38,7 +38,6 @@ local magic = creature:getMagicLevel()
 	creature:addHealth(math.random(FormulaHealthMin, FormulaHealthMax))
 	creature:addCondition(condition)	
 	addEvent(healing, config.timer, creature:getId(), config.rounds)
-	creature:sendProgressbar(7000, false)
 	local player = Player(creature)
 	 if player then
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND

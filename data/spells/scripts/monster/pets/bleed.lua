@@ -43,7 +43,6 @@ function onCastSpell(creature, var, tar)
     if targetmonster then
         local targetpos = targetmonster:getPosition()
         targetpos:sendMagicEffect(432) -- Keeping original effect
-        targetmonster:sendProgressbar(15000, false)
     end
     
     return combatpet2:execute(creature, var)

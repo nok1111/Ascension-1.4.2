@@ -108,7 +108,6 @@ function onCastSpell(creature, variant, tid)
 
     for i=0, config.amount, 1 do
         addEvent(doDamage_Arrows, i*75, combat, creatureId, targetPos, variant)
-        creature:sendProgressbar(2500, false)
     end
 
     return true

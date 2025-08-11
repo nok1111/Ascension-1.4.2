@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<monster name="Blessed Tree" nameDescription="a blessed tree" race="venom" experience="0" speed="0" manacost="0" summonwalk="true">
+    <health now="50" max="50"/>
+    <look typeex="37586"/> 
+    <targetchange interval="4000" chance="10"/>
+
+    <script>
+        <event name="BlessedTreeDeath"/>
+    </script>
+    <flags>
+        <flag summonable="0"/>
+        <flag attackable="1"/>
+        <flag hostile="0"/>
+        <flag pushable="0"/>
+        <flag canpushitems="0"/>
+        <flag canpushcreatures="0"/>
+        <flag staticattack="90"/>
+        <flag targetdistance="1"/>
+        <flag runonhealth="0"/>
+    </flags>
+    
+</monster>

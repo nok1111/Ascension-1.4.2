@@ -12,7 +12,6 @@ function onTargetCreature(creature, target)
 local targetpos = target:getPosition()
 	targetpos:sendMagicEffect(465)
 	targetpos:sendMagicEffect(464)
-	target:sendProgressbar(8000, false)
 	return true
 end
 

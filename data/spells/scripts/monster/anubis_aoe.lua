@@ -161,7 +161,6 @@ creature:say("they cannot let go of their lies!", TALKTYPE_ORANGE_2)
     positioneffect:sendMagicEffect(352)
    
     combatwarning:execute(creature, variant)
-    creature:sendProgressbar(5000, true)
 	
 	addEvent(castcombatwarning1, 1500, creature:getId(), variant)
     addEvent(castcombataoe1, 3000, creature:getId(), variant)

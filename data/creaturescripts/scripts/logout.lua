@@ -3,5 +3,6 @@ function onLogout(player)
 	if nextUseStaminaTime[playerId] then
 		nextUseStaminaTime[playerId] = nil
 	end
+	player:setStorageValue(STORAGEVALUE_PET_ID, 0);
 	return true
 end

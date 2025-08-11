@@ -50,19 +50,21 @@ local function orbeffectLoop(position, text, color, loops)
 end
 
 local rewardTypes = {
-    {type = "Gold", itemId = yellow_orb, chance = 10, textcolor = TEXTCOLOR_YELLOW},
-    {type = "Loot", itemId = blue_orb, chance = 8, textcolor = TEXTCOLOR_BLUE},
-    {type = "Experience", itemId = green_orb, chance = 8, textcolor = TEXTCOLOR_LIGHTGREEN},
-    {type = "Death", itemId = purple_orb, chance = 2, textcolor = TEXTCOLOR_PURPLE}
+    {type = "Gold", itemId = yellow_orb, chance = 8, textcolor = TEXTCOLOR_YELLOW},
+    {type = "Loot", itemId = blue_orb, chance = 6, textcolor = TEXTCOLOR_BLUE},
+    {type = "Experience", itemId = green_orb, chance = 5, textcolor = TEXTCOLOR_LIGHTGREEN},
+    {type = "Death", itemId = purple_orb, chance = 20, textcolor = TEXTCOLOR_PURPLE}
 }
 
 local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty]", "[Terra]"}
 
 local Monster_orb = CreatureEvent("monsterorb")
 function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjustified, mostDamageUnjustified)
-    print("Orb")
     if not killer or not killer:isPlayer() or creature:getMaster() then return end
-    if not creature:getMonsterLevel() or not creature:getMonsterLevel() > 1 then return end
+    if not creature:isMonster() then return end
+    local monsterLevel = creature:getMonsterLevel() or 0
+    if monsterLevel < 1 then return end
+
     local monsterType = MonsterType(creature:getName())
     if monsterType and monsterType:isBoss() then return end
     
@@ -78,21 +80,21 @@ function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjusti
             yelloworb:setCustomAttribute("ownerId", killer:getId())
             yelloworb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
             yelloworb:setCustomAttribute("rewardType", "Gold")
-            orbeffectLoop(yelloworb:getPosition(), "Gold", TEXTCOLOR_YELLOW, 10)
+            orbeffectLoop(yelloworb:getPosition(), "Gold", TEXTCOLOR_YELLOW, 60)
         end
 
         if blueorb then 
             blueorb:setCustomAttribute("ownerId", killer:getId())
             blueorb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
             blueorb:setCustomAttribute("rewardType", "Loot")
-            orbeffectLoop(blueorb:getPosition(), "Loot", TEXTCOLOR_BLUE, 10)
+            orbeffectLoop(blueorb:getPosition(), "Loot", TEXTCOLOR_BLUE, 60)
         end
         
         if greenorb then 
             greenorb:setCustomAttribute("ownerId", killer:getId())
             greenorb:setCustomAttribute("monsterLevel", creature:getMonsterLevel() or 1)
             greenorb:setCustomAttribute("rewardType", "Experience")
-            orbeffectLoop(greenorb:getPosition(), "Experience", TEXTCOLOR_LIGHTGREEN, 10)
+            orbeffectLoop(greenorb:getPosition(), "Experience", TEXTCOLOR_LIGHTGREEN, 60)
         end
         return true
     end
@@ -112,7 +114,7 @@ function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjusti
             if rewardType.type == "Death" then
                 rewardOrb:setCustomAttribute("MonsterName", creature:getName())
             end
-            orbeffectLoop(orbPosition, rewardType.type, rewardType.textcolor, 10)
+            orbeffectLoop(orbPosition, rewardType.type, rewardType.textcolor, 60)
             droppedAny = true
         end
     end
@@ -127,25 +129,68 @@ local explosiveArea = createCombatArea({
 })
 
 
+
+
+
+
 local eliteBehaviors = {
-    ["[Vampiric]"] = function(attacker, creature, primaryDamage)
-    if primaryDamage < 0 and math.random(100) <= 70 then
-        local healed = math.floor(-primaryDamage * 0.25)
-        doSendDistanceShoot(attacker:getPosition(), creature:getPosition(), 83)
-        attacker:getPosition():sendMagicEffect(438)
+["[Vampiric]"] = function(attacker, creature, primaryDamage)
+    -- Classic Lifesteal: 30% chance
+    if primaryDamage < 0 and math.random(100) <= 30 then
+        local healed = math.floor(-primaryDamage * 0.3)
         attacker:addHealth(healed)
+        doSendDistanceShoot(creature:getPosition(), attacker:getPosition(), 83)
+        attacker:getPosition():sendMagicEffect(438)
         creature:getPosition():sendMagicEffect(305)
-        print("[Vampiric] Healed", attacker:getName(), "for", healed)
+        if attacker:isMonster() then
+            attacker:say("Your life is mine!", TALKTYPE_MONSTER_YELL)
+        end
+    end
+
+    local function performVampiricAreaDrain(bid, drainRadius, drainPct)
+        local boss = Creature(bid)
+        if not boss then return end
+        local bossPos = boss:getPosition()
+        local drainAmount = 0
+        local spectators = Game.getSpectators(bossPos, false, true, drainRadius, drainRadius, drainRadius, drainRadius)
+        local playersfound = #spectators or 1
+        
+        for _, p in ipairs(spectators) do
+            if p:isPlayer() and p:getHealth() > 1 then
+                local dmg = math.max(1, math.floor(p:getMaxHealth() * drainPct))
+                doSendDistanceShoot(p:getPosition(), bossPos, 83)
+                p:getPosition():sendMagicEffect(781)
+                drainAmount = drainAmount + dmg
+                p:say("Your life is drained!", TALKTYPE_MONSTER_YELL)
+            end
+        end
+        if drainAmount > 0 then
+            boss:addHealth(drainAmount)
+            bossPos:sendMagicEffect(438)
+            boss:say("I feast on all your blood!", TALKTYPE_MONSTER_YELL)
+        end
+
+       doAreaCombatHealth(boss, COMBAT_LIFEDRAIN, bossPos, AREA_SQUARE2X2, -math.floor((boss:getMonsterLevel() * 3.5) * playersfound), -math.floor((boss:getMonsterLevel() * 4) * playersfound), 781)
+    end
+    -- Area Life Drain Pulse: 10% chance
+    if primaryDamage < 0 and math.random(100) <= 20 and attacker:isMonster() then
+        local drainRadius = 2
+        local drainPct = 0.10
+        local bossId = attacker:getId()
+        local bossPos = attacker:getPosition()
+        attacker:say("The air grows cold as I drain your life!", TALKTYPE_MONSTER_YELL)
+        attacker:attachEffectById(189, true)
+        addEvent(performVampiricAreaDrain, 3000, bossId, drainRadius, drainPct)
     end
 end,
 
    ["[Sacred]"] = function(attacker, creature, primaryDamage, secondaryDamage)
-    if math.random(100) <= 50 then
-        local nearby = Game.getSpectators(creature:getPosition(), false, true, 5, 5, 5, 5)
+    if math.random(100) <= 30 then
+        local nearby = Game.getSpectators(attacker:getPosition(), false, true, 5, 5, 5, 5)
         local candidates = {}
 
         for _, target in ipairs(nearby) do
-            if target:isPlayer() and target ~= creature then
+            if target:isPlayer() and target ~= attacker then
                 table.insert(candidates, target)
             end
         end
@@ -153,47 +198,48 @@ end,
         if #candidates == 0 then return primaryDamage, secondaryDamage end
 
         local selected = candidates[math.random(#candidates)]
+        local posplayer = selected:getPosition()
         local pos = selected:getPosition()
-        pos:sendMagicEffect(CONST_ME_HOLYDAMAGE) -- warning effect
 
-        local creatureId = creature:getId()
+        local positioneffect = posplayer 
+        positioneffect.x = posplayer.x + 2
+        positioneffect.y = posplayer.y + 1
+        positioneffect:sendMagicEffect(1107)
 
-        addEvent(function()
-            local caster = Creature(creatureId)
-            if not caster or not caster:isMonster() then return end
-
-            -- Always show the holy effect in the area
-            doAreaCombatHealth(caster, COMBAT_HOLYDAMAGE, pos, explosiveArea, 0, 0, CONST_ME_HOLYAREA)
+        local creatureId = attacker:getId()
+        
+        function sacredHolyBlastEvent(casterId, pos, casterLevel)
+            local caster = Creature(casterId)
+            if not caster or not caster:isMonster() or not pos then return end
 
             local affected = Game.getSpectators(pos, false, true, 1, 1, 1, 1)
+            local dmg = math.floor(casterLevel * 4)
             local landed = false
             for _, target in ipairs(affected) do
                 if target:isPlayer() then
-                    local dmg = math.floor(target:getMaxHealth() * 0.05)
-                    target:addHealth(-dmg)
-                    print("[Sacred] Holy blast hit", target:getName(), "for", dmg)
+                    --print("[Sacred] Holy blast hit", target:getName(), "for", dmg)
                     landed = true
                 end
             end
-
+            doAreaCombatHealth(caster, COMBAT_HOLYDAMAGE, pos, explosiveArea, -dmg, -dmg, CONST_ME_HOLYAREA)
             if landed then
-                local heal = math.floor(caster:getMaxHealth() * 0.25)
+                local heal = math.floor(casterLevel * 10)
                 caster:addHealth(heal)
-                caster:getPosition():sendMagicEffect(CONST_ME_MAGIC_BLUE)
-                print("[Sacred] Healed", caster:getName(), "for", heal)
+                caster:getPosition():sendMagicEffect(701)
+               -- print("[Sacred] Healed", caster:getName(), "for", heal)
             end
-        end, 1500)
+        end
+
+        addEvent(sacredHolyBlastEvent, 1500, creatureId, pos, attacker:getMonsterLevel())
+
     end  
 
     return primaryDamage, secondaryDamage
 end,
 
-
-
-
-    ["[Arcane]"] = function(attacker, creature, primaryDamage, secondaryDamage)
+["[Arcane]"] = function(attacker, creature, primaryDamage, secondaryDamage)
     if primaryDamage < 0 and math.random(100) <= 35 then
-        local nearby = Game.getSpectators(creature:getPosition(), false, true, 5, 5, 5, 5)
+        local nearby = Game.getSpectators(attacker:getPosition(), false, true, 5, 5, 5, 5)
         local targets = {}
 
         for _, target in ipairs(nearby) do
@@ -226,15 +272,17 @@ end,
         end
 
         if dest then
-            creature:teleportTo(dest)
+            attacker:teleportTo(dest)
             dest:sendMagicEffect(CONST_ME_TELEPORT)
 
-            local cid = creature:getId()
+            local cid = attacker:getId()
             addEvent(function()
                 local caster = Creature(cid)
                 if not caster or not caster:isMonster() then return end
+                local mindamage =caster:getMonsterLevel() * 3
+                local maxdamage =caster:getMonsterLevel() * 3.3
 
-                doAreaCombatHealth(caster, COMBAT_ENERGYDAMAGE, caster:getPosition(), explosiveArea, -50, -100, 677)
+                doAreaCombatHealth(cid, COMBAT_ENERGYDAMAGE, caster:getPosition(), explosiveArea, -mindamage, -maxdamage, 677)
             end, 1000)
         end
     end
@@ -243,165 +291,352 @@ end,
 end,
 
 
-    ["[Corrosive]"] = function(attacker, creature, primaryDamage, secondaryDamage)
-        if math.random(100) <= 40 and primaryDamage < 0 then
-            creature:getPosition():sendMagicEffect(CONST_ME_GREEN_RINGS)
-            creature:addHealth(-math.floor(creature:getMaxHealth() * 0.02))
-            return primaryDamage, secondaryDamage
-        end
-        return primaryDamage, secondaryDamage
-    end,
-
-    ["[Frostbound]"] = function(attacker, creature)
+    ["[Frostbound]"] = function(attacker, creature, primaryDamage, secondaryDamage)
         if math.random(100) <= 30 then
-            creature:getPosition():sendMagicEffect(CONST_ME_ICEATTACK)
-            if creature:isPlayer() then
-                creature:addCondition(Condition(CONDITION_PARALYZE, 4))
+            local nearby = Game.getSpectators(attacker:getPosition(), false, true, 5, 5, 5, 5)
+            local candidates = {}
+    
+            for _, target in ipairs(nearby) do
+                if target:isPlayer() and target ~= attacker then
+                    table.insert(candidates, target)
+                end
+            end
+    
+            if #candidates == 0 then return primaryDamage, secondaryDamage end
+    
+            local selected = candidates[math.random(#candidates)]
+            local posplayer = selected:getPosition()
+            local pos = selected:getPosition()
+    
+            local positioneffect = posplayer 
+            positioneffect.x = posplayer.x + 1
+            positioneffect.y = posplayer.y + 1
+            positioneffect:sendMagicEffect(646)
+    
+            local attackerId = attacker:getId()
+            
+            function frostboundEvent(casterId, pos, casterLevel)
+                local caster = Creature(casterId)
+                if not caster or not caster:isMonster() or not pos then return end
+    
+                local affected = Game.getSpectators(pos, false, true, 1, 1, 1, 1)
+                local dmg = math.floor(casterLevel * 4)
+                local landed = false
+                for _, target in ipairs(affected) do
+                    if target:isPlayer() then
+                        local stunDuration = 2000
+                        local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
+                        stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
+                        target:addCondition(stun)
+                        target:attachEffectById(190, true)
+
+                        landed = true
+                    end
+                end
+
+                doAreaCombatHealth(caster, COMBAT_ICEDAMAGE, pos, explosiveArea, -dmg, -dmg, 42)
+                local positioneffect = posplayer 
+                positioneffect.x = posplayer.x + 0
+                positioneffect.y = posplayer.y + 0
+                positioneffect:sendMagicEffect(53)
+            end
+    
+            addEvent(frostboundEvent, 1500, attackerId, pos, attacker:getMonsterLevel())
+        end
+    end,
+
+    ["[Plagued]"] = function(attacker, creature, primaryDamage, secondaryDamage)
+        if math.random(100) <= 20 then
+            --create a summon
+            local function getRandomNearbyPosition(center, radius)
+                local try = 0
+                while try < 10 do
+                    local dx = math.random(-radius, radius)
+                    local dy = math.random(-radius, radius)
+                    local pos = Position(center.x + dx, center.y + dy, center.z)
+                    if Tile(pos) and Tile(pos):getThingCount() < 4 then
+                        return pos
+                    end
+                    try = try + 1
+                end
+                return center -- fallback
+            end
+            local summonPos = getRandomNearbyPosition(attacker:getPosition(), 3)
+            local summon = Game.createMonster("plagued spider", summonPos)
+            if summon then
+                attacker:addSummon(summon)
+                --set 10% of creature max health
+                summon:setMaxHealth(attacker:getMaxHealth() * 0.1)
+                summon:addHealth(summon:getMaxHealth())
+                summon:attachEffectById(188, true)
+                doSendDistanceShoot(attacker:getPosition(), summon:getPosition(), 112)
             end
         end
     end,
 
-    ["[Plagued]"] = function(attacker, creature)
-        if math.random(100) <= 40 then
-            creature:getPosition():sendMagicEffect(CONST_ME_POISONAREA)
-            creature:addCondition(Condition(CONDITION_POISON, 4))
+   ["[Burning]"] = function(attacker, creature, primaryDamage, secondaryDamage)
+    local CHAINDURATION = 6000 -- duration in ms, adjust as needed for your mechanic
+    local conditionChain = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
+    conditionChain:setParameter(CONDITION_PARAM_TICKS, CHAINDURATION)
+    conditionChain:setParameter(CONDITION_PARAM_DELAYED, 1)
+    conditionChain:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+    conditionChain:setParameter(CONDITION_PARAM_PERIODICDAMAGE, -5)
+    conditionChain:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.burningchain)
+
+    if math.random(100) <= 20 then
+    local function getChainTargets(nearby, max)
+        local targets = {}
+        for _, p in ipairs(nearby) do
+            if p:isPlayer() and #targets < max then
+                if p:getCondition(CONDITION_FIRE, 0, ConditionsSubIds.burningchain) then
+                    return nil -- abort if anyone is already chained
+                end
+                table.insert(targets, p)
+            elseif p:getCondition(CONDITION_FIRE, 0, ConditionsSubIds.burningchain) then
+                return nil
+            end
         end
-    end,
+        return targets
+    end
 
-   ["[Burning]"] = function(attacker, creature, primaryDamage)
-    if math.random(100) <= 40 and creature then
-        local originPos = creature:getPosition()
-        local targets = Game.getSpectators(originPos, false, true, 3, 3, 3, 3)
-        local burned = {}
+    local nearby = Game.getSpectators(attacker:getPosition(), false, true, 7, 7, 7, 7)
+    local chainTargets = getChainTargets(nearby, 3)
+    if not chainTargets or #chainTargets == 0 then return end
 
-        -- Main fire missile to the attacker
-        doSendDistanceShoot(originPos, attacker:getPosition(), CONST_ANI_FIRE)
-        attacker:getPosition():sendMagicEffect(CONST_ME_HITBYFIRE)
-        table.insert(burned, attacker)
+    -- If only one player, chain to boss
+    if #chainTargets == 1 and attacker and attacker:isMonster() then
+        print("[Burning] Chaining to boss", attacker:getName())
+        table.insert(chainTargets, attacker)
+        -- Print all names in the chain
+        print("[Burning] Chain participants:")
+        for i, p in ipairs(chainTargets) do
+            if p and p.getName then
+                print(i, p:getName())
+            end
+        end
+    end
 
-        -- Fire missiles from attacker to nearby targets
-        local nearby = Game.getSpectators(attacker:getPosition(), false, true, 3, 3, 3, 3)
-        for _, target in ipairs(nearby) do
-            if target ~= creature and target ~= attacker and (target:isMonster() or target:isPlayer()) then
-                doSendDistanceShoot(attacker:getPosition(), target:getPosition(), CONST_ANI_FIRE)
-                target:getPosition():sendMagicEffect(CONST_ME_HITBYFIRE)
-                table.insert(burned, target)
+    -- Apply burning chain condition to all affected players (NOT the boss)
+    for _, p in ipairs(chainTargets) do
+        if p and p:isPlayer() then
+            p:addCondition(conditionChain:clone())
+        end
+    end
+
+        -- Boss phrase when chaining starts
+        local bossPhrases = {
+            "You cannot escape the burning chains!",
+            "Feel the searing pain of unity!",
+            "Let the flames bind your souls!",
+            "Burn together, or fall apart!"
+        }
+        if attacker and attacker:isMonster() then
+            attacker:say(bossPhrases[math.random(#bossPhrases)], TALKTYPE_MONSTER_YELL)
+        end
+
+        -- Gather safe IDs for all chain targets
+        local ids = {}
+        for i = 1, #chainTargets do
+            ids[i] = chainTargets[i]:getId()
+        end
+        local chainCount = #ids
+
+        -- Player warnings (above head)
+        for i = 1, chainCount do
+            local p = Creature(ids[i])
+            if p and p:isPlayer() then
+                p:say("You are chained! Stay close or suffer!", TALKTYPE_MONSTER_YELL)
             end
         end
 
-            -- Apply burning condition to all affected targets
-            for _, target in ipairs(burned) do
-                local burn = Condition(CONDITION_FIRE)
-                burn:setTicks(3000) -- 3 seconds
-                burn:setParameter(CONDITION_PARAM_PERIODICDAMAGE, -math.floor(target:getMaxHealth() * 0.03)) -- 3% max hp
-                burn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
-                burn:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-                target:addCondition(burn)
-                print("[Burning] Applied burn to " .. target:getName())
+        -- Visual effect loop: fire chains every 200ms for the duration of the chain
+        local function burningVisualChain(ids, chainCount, running)
+            if not running() then return end
+            for i=1,chainCount-1 do
+                local p1 = Creature(ids[i])
+                local p2 = Creature(ids[i+1])
+                if p1 and p2 then
+                    doSendDistanceShoot(p1:getPosition(), p2:getPosition(), CONST_ANI_FIRE)
+                    doSendDistanceShoot(p2:getPosition(), p1:getPosition(), CONST_ANI_FIRE)
+                    p1:getPosition():sendMagicEffect(CONST_ME_FIREATTACK)
+                end
             end
-        end
-    end,
-
-
-    ["[Shocking]"] = function(attacker, creature)
-    if math.random(100) <= 35 then
-        local center = creature:getPosition()
-        --center:sendMagicEffect(259)
-
-        local targets = Game.getSpectators(center, false, true, 3, 3, 3, 3)
-        for _, target in ipairs(targets) do
-            if target ~= creature and (target:isPlayer() or (target:isMonster() and target:getMaster() and target:getMaster():isPlayer())) then
-                doSendDistanceShoot(center, target:getPosition(), 143)
-                target:getPosition():sendMagicEffect(419)
-                local dmg = math.floor(target:getMaxHealth() * 0.06)
-                print("[Shocking] Hit", target:getName(), "for", dmg, "damage.")
-                target:addHealth(-dmg)
-            end
+            addEvent(burningVisualChain, 200, ids, chainCount, running)
         end
 
-        local condition = Condition(CONDITION_DAZZLED)
-        condition:setTicks(4000)
-        creature:addCondition(condition)
+        -- This flag closure will be set to false when the chain ends
+        local chainActive = true
+        local function isChainActive() return chainActive end
+        burningVisualChain(ids, chainCount, isChainActive)
+
+        local function burningCheckChains(ids, chainCount, tick)
+            tick = tick + 1
+            local broken = false
+            if tick >= 10 then
+                for i=1,chainCount-1 do
+                    local p1 = Creature(ids[i])
+                    local p2 = Creature(ids[i+1])
+                    if p1 and p2 then
+                        local dist = getDistanceBetween(p1:getPosition(), p2:getPosition())
+                        if dist > 3 then
+                            -- Only punish players, not boss
+                            if p1:isPlayer() then
+                                p1:removeCondition(conditionChain)
+                                p1:say("The burning chain snaps! You are scorched by the backlash!", TALKTYPE_MONSTER_YELL)
+                                p1:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
+                                local burn = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
+                                burn:setParameter(CONDITION_PARAM_TICKS, 4000)
+                                burn:setParameter(CONDITION_PARAM_PERIODICDAMAGE, -math.floor(p1:getMaxHealth() * 0.075))
+                                burn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+                                burn:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
+                                burn:setParameter(CONDITION_PARAM_DELAYED, 1)
+                                p1:addCondition(burn)
+
+                                local stunDuration = 2000
+                                local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
+                                stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
+                                p1:addCondition(stun)
+                                p1:attachEffectById(66, true)
+
+                            end
+                            if p2:isPlayer() then
+                                p2:removeCondition(conditionChain)
+                                p2:say("The burning chain snaps! You are scorched by the backlash!", TALKTYPE_MONSTER_YELL)
+                                p2:getPosition():sendMagicEffect(CONST_ME_FIREAREA)
+                                local burn = Condition(CONDITION_FIRE, CONDITIONID_COMBAT)
+                                burn:setParameter(CONDITION_PARAM_TICKS, 4000)
+                                burn:setParameter(CONDITION_PARAM_PERIODICDAMAGE, -math.floor(p2:getMaxHealth() * 0.075))
+                                burn:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
+                                burn:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
+                                burn:setParameter(CONDITION_PARAM_DELAYED, 1)
+                                p2:addCondition(burn)
+
+                                local stunDuration = 2000
+                                local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
+                                stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
+                                p2:addCondition(stun)
+                                p2:attachEffectById(66, true)
+
+
+                            end
+                            broken = true
+                        end
+                    end
+                end
+            end
+            if broken or tick >= 10 then
+                for i = 1, chainCount do
+                    local p = Creature(ids[i])
+                    if p and p:isPlayer() then
+                        p:removeCondition(conditionChain)
+                    end
+                end
+                chainActive = false
+                if not broken then
+                    -- Reward: heal or shield only players
+                    for i = 1, chainCount do
+                        local p = Creature(ids[i])
+                        if p and p:isPlayer() then
+                            p:say("You are healed by the burning chain!", TALKTYPE_MONSTER_YELL)
+                            p:addHealth(math.floor(p:getMaxHealth() * 0.15))
+                            p:getPosition():sendMagicEffect(CONST_ME_MAGIC_GREEN)
+                            --remove condition
+                            p:removeCondition(conditionChain)
+                        end
+                    end
+                end
+                return
+            end
+            addEvent(burningCheckChains, 500, ids, chainCount, tick)
+        end
+        -- No storage needed; all tracking is via condition
+        -- (intentionally left blank)
+        burningCheckChains(ids, chainCount, 0)
     end
 end,
 
 
-    ["[Leeching]"] = function(attacker, creature, primaryDamage)
-        if primaryDamage < 0 and math.random(100) <= 65 then
-            attacker:addHealth(math.floor(-primaryDamage * 0.15))
-            attacker:addMana(math.floor(-primaryDamage * 0.15))
-            creature:getPosition():sendMagicEffect(517)
-        end
-    end,
+   ["[Darkness]"] = function(attacker, creature, primaryDamage, secondaryDamage)
+    if not attacker or not creature then return end
 
-    ["[Reaper]"] = function(attacker, creature, primaryDamage)
-        if creature:getHealthPercent() < 50 and math.random(100) <= 80 then
-            creature:getPosition():sendMagicEffect(CONST_ME_MORTAREA)
-            return math.floor(primaryDamage * 1.4)
-        end
-        return primaryDamage
-    end,
 
-    ["[Bulwark]"] = function(attacker, creature, primaryDamage)
-        if primaryDamage < 0 and math.random(100) <= 50 then
-            creature:getPosition():sendMagicEffect(340)
-            doTargetCombatHealth(creature, attacker, COMBAT_PHYSICALDAMAGE,
-                math.floor(-primaryDamage * 0.1),
-                math.floor(-primaryDamage * 0.15),
-                573)
-        end
-    end,
-
-    ["[Juggernaut]"] = function(attacker, creature, primaryDamage)
-        if primaryDamage < 0 and math.random(100) <= 90 then
-            creature:getPosition():sendMagicEffect(10)
-            return math.floor(primaryDamage * 1.4)
-        end
-        return primaryDamage
-    end,
-
-    ["[Unholy]"] = function(attacker, creature, primaryDamage, secondaryDamage)
-        if math.random(100) <= 60 and primaryDamage < 0 then
-            creature:getPosition():sendMagicEffect(678)
-            creature:addHealth(-math.floor(creature:getMaxHealth() * 0.05))
-            return primaryDamage, secondaryDamage + 50
-        end
-        return primaryDamage, secondaryDamage
-    end,
-
-     ["[Explosive]"] = function(attacker, creature)
-    if math.random(100) <= 45 then
-        local pos = creature:getPosition()
-        pos:sendMagicEffect(5)
-        addEvent(function()
-            if creature and creature:isCreature() then
-                pos:sendMagicEffect(CONST_ME_EXPLOSIONAREA)
-                doAreaCombatHealth(attacker, COMBAT_FIREDAMAGE, pos, explosiveArea,
-                    -math.floor(creature:getMaxHealth() * 0.05),
-                    -math.floor(creature:getMaxHealth() * 0.1),
-                    CONST_ME_FIREAREA)
-            end
-        end, 1000)
+    if math.random(100) <= 25 then
+        local pos = attacker:getPosition()
+        pos:sendMagicEffect(CONST_ME_EXPLOSIONAREA)
+        doAreaCombatHealth(attacker:getId(), COMBAT_DEATHDAMAGE, pos, explosiveArea, -math.floor(attacker:getMonsterLevel() * 2), -math.floor(attacker:getMonsterLevel() * 2.5), 18)
     end
+    if math.random(100) <= 45 then
+        print("Darkness swap check")
+        local boss = attacker
+        if not boss or not creature then return end
+
+        local conditionDarkness = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
+        conditionDarkness:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
+        conditionDarkness:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.darkness)
+        conditionDarkness:setParameter(CONDITION_PARAM_TICKS, 8000)
+
+        local bossPos = boss:getPosition()
+        
+        -- Find a random nearby player (excluding the boss itself if polymorphed)
+        local nearby = Game.getSpectators(bossPos, false, true, 5, 5, 5, 5)
+        local candidates = {}
+        for _, target in ipairs(nearby) do
+            if target:isPlayer() and target ~= boss and not target:getCondition(CONDITION_ATTRIBUTES, 0, ConditionsSubIds.darkness) then
+                table.insert(candidates, target)
+            end
+        end
+        if #candidates == 0 then return end
+        local selected = candidates[math.random(#candidates)]
+        local player = selected
+        local playerPos = player:getPosition()
+        local currentmapshader = player:getMapShader()
+
+        playerPos:sendMagicEffect(CONST_ME_MORTAREA)
+        bossPos:sendMagicEffect(CONST_ME_MORTAREA)
+        boss:say("Embrace the shadows!", TALKTYPE_MONSTER_YELL)
+
+        if currentmapshader ~= "Map - blind" then
+            player:setMapShader("Map - blind", true)
+            player:addCondition(conditionDarkness)
+            print("Darkness applied")
+        end
+        
+        local function performShadowSwap(bossId, playerId)
+            local boss2 = Creature(bossId)
+            local player2 = Player(playerId)
+            if not boss2 or not player2 then return end
+            local pos1 = boss2:getPosition()
+            local pos2 = player2:getPosition()
+            -- Swap positions
+            boss2:teleportTo(pos2, false)
+            player2:teleportTo(pos1, false)
+            pos1:sendMagicEffect(CONST_ME_MORTAREA)
+            pos2:sendMagicEffect(CONST_ME_MORTAREA)
+            player2:say("You are engulfed by shadows and feel your position shift!", TALKTYPE_MONSTER_YELL)
+
+            player:setMapShader(currentmapshader, true)
+        end
+
+        addEvent(function()
+            performShadowSwap(boss:getId(), player:getId(), currentmapshader)
+        end, 3000)
+
+     print("Darkness check 2")
+ 
+    end
+    
 end
 }
 
 -- Elite Variations Table
 local eliteVariations = {
-    {name = "[Vampiric]",    storage = MonsterStorage.Vampiric,    shader = "Blood Leech"},
-    {name = "[Sacred]",      storage = MonsterStorage.Sacred,      shader = "Divine Shine"},
-    {name = "[Arcane]",      storage = MonsterStorage.Arcane,      shader = "Arcane Pulse"},
-    {name = "[Corrosive]",   storage = MonsterStorage.Corrosive,   shader = "Toxic Mist"},
-    {name = "[Frostbound]",  storage = MonsterStorage.Frostbound,  shader = "Frost Cloak"},
-    {name = "[Plagued]",     storage = MonsterStorage.Plagued,     shader = "Sickly Aura"},
-    {name = "[Burning]",     storage = MonsterStorage.Burning,     shader = "Flame Skin"},
-    {name = "[Shocking]",    storage = MonsterStorage.Shocking,    shader = "Spark Field"},
-    {name = "[Leeching]",    storage = MonsterStorage.Leeching,    shader = "Mana Drain"},
-    {name = "[Reaper]",      storage = MonsterStorage.Reaper,      shader = "Death Mark"},
-    {name = "[Bulwark]",     storage = MonsterStorage.Bulwark,     shader = "Reflect Armor"},
-    {name = "[Juggernaut]",  storage = MonsterStorage.Juggernaut,  shader = "Stone Hide"},
-    {name = "[Unholy]",      storage = MonsterStorage.Unholy,      shader = "Death Veil"},
-    {name = "[Explosive]",   storage = MonsterStorage.Explosive,   shader = "Volatile Core"}
+    {name = "[Vampiric]",    storage = MonsterStorage.Vampiric,    shader = "Blood Leech", effect = 179},
+    {name = "[Sacred]",      storage = MonsterStorage.Sacred,      shader = "Divine Shine", effect = 180},
+    {name = "[Arcane]",      storage = MonsterStorage.Arcane,      shader = "Arcane Pulse", effect = 181},
+    {name = "[Frostbound]",  storage = MonsterStorage.Frostbound,  shader = "Frost Cloak", effect = 183},
+    {name = "[Plagued]",     storage = MonsterStorage.Plagued,     shader = "Sickly Aura", effect = 184},
+    {name = "[Burning]",     storage = MonsterStorage.Burning,     shader = "Flame Skin", effect = 185},
+    {name = "[Darkness]",    storage = MonsterStorage.Darkness,    shader = "Mana Drain", effect = 187},
 }
 
 
@@ -425,15 +660,40 @@ local function modifyDamage(creature, attacker, primaryDamage, primaryType, seco
     return primaryDamage, primaryType, secondaryDamage, secondaryType
 end
 
+local allowedDefendTypes = {
+    [COMBAT_ICEDAMAGE] = true,
+    [COMBAT_PHYSICALDAMAGE] = true,
+    [COMBAT_FIREDAMAGE] = true,
+    [COMBAT_EARTHDAMAGE] = true,
+    [COMBAT_ENERGYDAMAGE] = true,
+    [COMBAT_HOLYDAMAGE] = true,
+    [COMBAT_DEATHDAMAGE] = true,
+    [COMBAT_LIFEDRAIN] = true,
+    [COMBAT_MANADRAIN] = true
+  }
 
 local eliteCombatHp = CreatureEvent("EliteMonsterCombatHP")
 function eliteCombatHp.onHealthChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
+    if not creature or not creature:isMonster() then
+        return primaryDamage, primaryType, secondaryDamage, secondaryType
+    end
+    
+    if not allowedDefendTypes[primaryType] then
+        return primaryDamage, primaryType, secondaryDamage, secondaryType
+    end    
     return modifyDamage(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
 end
 eliteCombatHp:register()
 
 local eliteCombatMana = CreatureEvent("EliteMonsterCombatMana")
 function eliteCombatMana.onManaChange(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
+    if not creature or not creature:isMonster() then
+        return primaryDamage, primaryType, secondaryDamage, secondaryType
+    end
+    
+    if not allowedDefendTypes[primaryType] then
+        return primaryDamage, primaryType, secondaryDamage, secondaryType
+    end    
     return modifyDamage(creature, attacker, primaryDamage, primaryType, secondaryDamage, secondaryType, origin)
 end
 eliteCombatMana:register()
@@ -610,15 +870,16 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
         local bossName = monsterName .. " " .. variation.name
         local boss = Game.createMonster(monsterName, position, true)
         if boss then
-            boss:setMaxHealth(boss:getMaxHealth() * 2)
+            boss:setMaxHealth(boss:getMaxHealth() * 5)
             boss:addHealth(boss:getMaxHealth())
             boss:rename(bossName)
             boss:setStorageValue(variation.storage, 1)
             boss:setStorageValue(purpleorbstorage, 1)
-            boss:setShader(variation.shader)
+            --boss:setShader(variation.shader)
             boss:attachEffectById(9, true)
-            boss:attachEffectById(25, true)
-            boss:attachEffectById(26, true)
+            boss:attachEffectById(variation.effect, true)
+            --boss:attachEffectById(25, true)
+            
         end
         creature:sendTextMessage(MESSAGE_INFO_DESCR, "A death orb has summoned a stronger boss!")
     end

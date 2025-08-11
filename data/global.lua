@@ -310,3 +310,55 @@ function isPartyMember(player, target)
     
     return false
 end
+
+-- Get position behind target
+function Position:getBehindPos(direction, steps)
+	local offset = Position.directionOffset[direction]
+	if offset then
+		steps = steps or 1
+		self.x = self.x + offset.x * steps
+		self.y = self.y + offset.y * steps
+	end
+	return self
+	end
+	
+	-- For shuffling the secondaryPosition table
+	function shuffle(t)
+	local rand = math.random
+	assert(t, "table.shuffle() expected a table, got nil")
+	local iterations = #t
+	local j
+	
+	for i = iterations, 2, -1 do
+		j = rand(i)
+		t[i], t[j] = t[j], t[i]
+	end
+	end
+	
+	-- Get 8-Axis direction of fromPos -> toPos
+	function Position:getDirectionTo(toPosition)
+	local dir = DIRECTION_NORTH
+	if(self.x > toPosition.x) then
+		dir = DIRECTION_WEST
+		if(self.y > toPosition.y) then
+			dir = DIRECTION_NORTHWEST
+		elseif(self.y < toPosition.y) then
+			dir = DIRECTION_SOUTHWEST
+		end
+	elseif(self.x < toPosition.x) then
+		dir = DIRECTION_EAST
+		if(self.y > toPosition.y) then
+			dir = DIRECTION_NORTHEAST
+		elseif(self.y < toPosition.y) then
+			dir = DIRECTION_SOUTHEAST
+		end
+	else
+		if(self.y > toPosition.y) then
+			dir = DIRECTION_NORTH
+		elseif(self.y < toPosition.y) then
+			dir = DIRECTION_SOUTH
+		end
+	end
+	return dir
+	end
+	

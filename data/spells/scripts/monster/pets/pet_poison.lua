@@ -40,7 +40,6 @@ function onCastSpell(creature, var, tar)
     Castpetpoison(creature:getId(), var)
 	
 	local targetmonster = creature:getTarget()	
-	targetmonster:sendProgressbar(15000, false)
 	
 	local frogLines = {
 		"if love is poison, i have alot..",

@@ -82,7 +82,6 @@ function castSpellchargepet(cid, variant)
 			creature:move(path[1])
             creature:changeSpeed(-400)
 			addEvent(castSpellchargepet, 0, creature:getName(), target:getId())
-			target:sendProgressbar(stunDuration, false)
 		end
 	else
 		combat:execute(creature, varTable[1])

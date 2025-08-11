@@ -45,7 +45,7 @@ local function sendEffcDragon(cid, max_iterations, iterations)
 		local vit = pid:getMaxHealth() / 100
 		local min = (level/5) + (vit * 0.5) + (magic * 2) + 10
 		local max = (level/5) + (vit * 1.0) + (magic * 3.5) + 15
-        doAreaCombatHealth(pid, COMBAT_ENERGYDAMAGE, pos, {1}, min, max, magiceffect_flame)
+        doAreaCombatHealth(pid, COMBAT_FIREDAMAGE, pos, {1}, min, max, magiceffect_flame)
 		pid:addHealth(math.random(min/20, max/18))
 	--	doAreaCombatCondition(pid, pos, AREA_SQUARE1X1, condition, CONST_ME_NONE)
 		

@@ -82,7 +82,7 @@ function onCastSpell(creature, var)
     positioneffect.y = position.y + 1
 	
     positioneffect:sendMagicEffect(436)
-	--target:sendProgressbar(10000, false)
+	
     end
     return combat:execute(creature, var)
 end

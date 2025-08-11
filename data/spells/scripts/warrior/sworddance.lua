@@ -66,8 +66,6 @@ function onCastSpell(creature, variant)
        return false
    end
    
-	--creature:sendProgressbar(18500, false)
-	--player:sendAddBuffNotification(65, 17, 'Dragon Aura', 5, 0)
 	
     local times_to_run = 14 * #positions
     addEvent(sendEffcDragon, 150, creature.uid, times_to_run, times_to_run)

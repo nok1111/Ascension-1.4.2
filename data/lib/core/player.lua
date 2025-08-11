@@ -375,3 +375,22 @@ end
 function Player.getTotalMoney(self)
 	return self:getMoney() + self:getBankBalance()
 end
+
+function Player.getPetLevel(self)
+	local activePet = self:getStorageValue(STORAGEVALUE_PET_ID)
+	if activePet > 0 then
+		local level = self:getStorageValue(STORAGEVALUE_PET_LVL)
+		return level
+	else
+		return 0
+	end
+end
+
+function Player.setPetExp(self, exp)
+	local activePet = self:getStorageValue(STORAGEVALUE_PET_ID)
+	if activePet > 0 then
+		local currentExp = self:getStorageValue(STORAGEVALUE_PET_EXP)
+		currentExp = currentExp + exp
+		self:setStorageValue(STORAGEVALUE_PET_EXP, currentExp)
+	end
+end

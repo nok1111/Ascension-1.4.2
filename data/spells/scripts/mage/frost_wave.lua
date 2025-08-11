@@ -73,7 +73,6 @@ function onTargetCreature(creature, target)
     Position(pos.x - 1, pos.y + 1, pos.z):sendDistanceEffect(pos, config.distanceEffect)
     target:addCondition(condition)
     pos:sendMagicEffect(config.effect)
-    target:sendProgressbar(stunDuration, false)
     addEvent(unfreeze, stunDuration, target:getId())
 
     return true

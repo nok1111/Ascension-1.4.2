@@ -1210,7 +1210,7 @@ function passiveEvent.onHealthChange(creature, attacker, primaryDamage, primaryT
                           (passiveData.config.subid and player:getCondition(CONDITION_ATTRIBUTES, 0, passiveData.config.subid))
           
           if meetsReq and passiveData.trigger(player, attacker, primaryDamage, primaryType, origin) and allowedDefendTypes[primaryType] then
-            print("[Passive System] Defend passive triggered: " .. passiveName)
+            --print("[Passive System] Defend passive triggered: " .. passiveName)
             
 
             -- Handle chance-based passives

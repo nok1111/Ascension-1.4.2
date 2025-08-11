@@ -388,7 +388,6 @@ return false
 end
 
 creature:say("PREPARING ANNIHILATION PROTOCOL IN 5 SECONDS!", TALKTYPE_ORANGE_2)
-creature:sendProgressbar(5000, true)
 
 local p = {player = creature, var = var, combat = combat}
 

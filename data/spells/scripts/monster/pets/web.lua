@@ -26,10 +26,13 @@ function onCastSpell(creature, var)
     
     local targetId = targetmonster:getId()
     local targetposition = targetmonster:getPosition()
-    targetmonster:sendProgressbar(1500, false)
     
-    addEvent(function() sendEffectIfTargetExists(targetId, 433) end, 500)
-    addEvent(function() sendEffectIfTargetExists(targetId, 433) end, 1000)
+    addEvent(function(tid, eff)
+        sendEffectIfTargetExists(tid, eff)
+    end, 500, targetId, 433)
+    addEvent(function(tid, eff)
+        sendEffectIfTargetExists(tid, eff)
+    end, 1000, targetId, 433)
 
    	       	local paralyze_lines = {
 "Got 'em! They're not moving!",

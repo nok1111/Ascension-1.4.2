@@ -45,7 +45,6 @@ function onTargetCreature(creature, target)
     target:addCondition(condition)
     pos:sendMagicEffect(config.effect)
    -- target:say("FROZEN", TALKTYPE_MONSTER_SAY)
-    target:sendProgressbar(4000, false)
 	if creature and pos then
     addEvent(unfreeze, 4000, target.uid)
 	else return false

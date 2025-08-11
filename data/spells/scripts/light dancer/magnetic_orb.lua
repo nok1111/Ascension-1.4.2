@@ -33,7 +33,7 @@ function onCastSpell(creature, variant)
             summonedMonster:attachEffectById(128, true)
             targetPos:sendMagicEffect(config.effectOnSummon)
 			addEvent(Removeorb, 5 * 1000, summonedMonster:getId())
-			 summonedMonster:sendProgressbar(5 * 1000, false)
+			 
         end
     end, 300) -- Adjust the delay as needed for the distance effect to reach the target
 

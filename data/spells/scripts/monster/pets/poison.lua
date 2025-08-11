@@ -38,10 +38,5 @@ end
 function onCastSpell(creature, var, tar)
     Castpetpoison(creature:getId(), var)
     
-    local targetmonster = creature:getTarget()
-    if targetmonster then
-        targetmonster:sendProgressbar(15000, false)
-    end
-    
     return combatpet1:execute(creature, var)
 end

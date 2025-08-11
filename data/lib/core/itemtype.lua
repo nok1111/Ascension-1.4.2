@@ -145,7 +145,7 @@ end
 
 function ItemType:getEquipTypeString()
   if self:isHelmet() then
-    return "Helmet"
+    return "Spell"
   elseif self:isArmor() then
     return "Armor"
   elseif self:isLegs() then

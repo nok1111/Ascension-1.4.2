@@ -4,7 +4,7 @@ local time_between_hits2 = 0.4 --seconds
 local time_between_hits3 = 0.6 --seconds
 local time_between_hits4 = 0.8 --seconds
 
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combat:setParameter(COMBAT_PARAM_EFFECT, 480)

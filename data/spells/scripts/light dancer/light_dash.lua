@@ -75,7 +75,6 @@ function onCastSpell(creature, var)
         combat2:execute(creature, var)
         target:getPosition():sendMagicEffect(CONST_ME_STUN)
         addEvent(lightdashanimation, 0, targetUid, target:getPosition(), adjustedStunDuration)
-        target:sendProgressbar(adjustedStunDuration, false)
     else
         combat:execute(creature, var)
     end

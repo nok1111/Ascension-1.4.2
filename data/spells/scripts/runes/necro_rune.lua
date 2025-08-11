@@ -35,7 +35,6 @@ function onTargetCreature(creature, target)
 
 	local actualAmount = creature:getStorageValue(config.Heal)
 	creature:setStorageValue(config.Heal, actualAmount+1)
-	target:sendProgressbar(4000, false)
 	return true
 end
 

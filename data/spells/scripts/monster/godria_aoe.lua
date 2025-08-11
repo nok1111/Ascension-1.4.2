@@ -762,7 +762,6 @@ local summoncount = creature:getSummons()
 	
 
 creature:say("THE ROOM IS GETTING HOT!", TALKTYPE_ORANGE_2)
-creature:sendProgressbar(10000, true)
 
 
 

@@ -100,7 +100,6 @@ local function seeddruidExplosion(creature, target, onlyMonster)
                 local pos = mobs[i]:getPosition()
                 mainPos:sendDistanceEffect(pos, config.disteffect)
                 addEvent(burncondseed, 1000, creature:getId(), mobs[i]:getId(), config.timer, rand)
-                mobs[i]:sendProgressbar(config.timer * 1000, false)
                 mobs[i]:registerEvent("livingseed")
             end
         end

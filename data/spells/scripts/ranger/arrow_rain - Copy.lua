@@ -92,7 +92,6 @@ local targetId = creature:getTarget():getId()
 	end
 	
 	for i=0, config.amount, 1 do
-	creature:sendProgressbar(2500, false)
 		addEvent(sendRainAnimation, i*65, creatureId)
 		addEvent(rain, i*120, creatureId, targetId, variant)
 		addEvent(doDamage, i*150, combat, creatureId, targetId, variant)

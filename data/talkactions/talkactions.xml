@@ -50,6 +50,8 @@
 	
 	<!-- player custom -->
 	<talkaction words="!spells" script="removespell.lua"/>
+	<!-- pet -->
+	 <talkaction words="!petname" separator=" " script="petname.lua" />
 	
 	<talkaction words="!forgetspell" separator=" " script="forget_test.lua" />
 

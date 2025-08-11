@@ -26,4 +26,10 @@
 	
 	<event type="kill" name="PlayerKill_quests" script="kill_quests.lua" />
 	
+	<!-- New Summons (Pets) -->	
+	<event type="login" name="PetsLogin" script="petsave.lua" />
+	<event type="logout" name="PetsLogout" script="petsave.lua" />
+	<event type="kill" name="PetsKill" script="petsave.lua" />
+	<event type="death" name="PetsDeath" script="petsave.lua" />
+	
 </creaturescripts>

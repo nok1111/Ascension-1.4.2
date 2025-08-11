@@ -101,7 +101,6 @@ local position = creature:getPosition()
     positioneffect:sendMagicEffect(364)
    
    combatwarning:execute(creature, variant)
-   creature:sendProgressbar(5000, true)
    addEvent(castcombatwarning, 1500, creature:getId(), variant, startingPosition)
    addEvent(castcombataoe, 3000, creature:getId(), variant, startingPosition)
 
