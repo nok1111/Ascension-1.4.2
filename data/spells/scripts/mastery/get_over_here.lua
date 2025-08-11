@@ -211,27 +211,24 @@ function onCastSpell(creature, var)
     local chaintipEffect = 120 -- chain tip effect
 
     local foundTarget = nil
+    local stopChain = false
     local chainPos = Position(playerPos.x, playerPos.y, playerPos.z)
     for i = 1, maxTiles do
+        if stopChain then break end
         chainPos = Position(chainPos.x, chainPos.y, chainPos.z)
         chainPos = chainPos:getBehindPos(direction, 1)
         -- Send chain animation
-        playerPos:sendDistanceEffect(chainPos, chaintipEffect)
-        for t = 1, 3 do
-            addEvent(function(px, py, pz, cx, cy, cz, effectId)
-                local fromPos = Position(px, py, pz)
-                local toPos = Position(cx, cy, cz)
-                fromPos:sendDistanceEffect(toPos, effectId)
-            end, t*50, playerPos.x, playerPos.y, playerPos.z, chainPos.x, chainPos.y, chainPos.z, chaintipEffect)
+        for d = 0, 24 do
+            if stopChain then break end
+            addEvent(function()
+                playerPos:sendDistanceEffect(chainPos, chaintipEffect)
+            end, d * 2)
         end
-
-
-        for j = 1, 16 do
-            addEvent(function(px, py, pz, cx, cy, cz, effectId)
-                local fromPos = Position(px, py, pz)
-                local toPos = Position(cx, cy, cz)
-                fromPos:sendDistanceEffect(toPos, effectId)
-            end, 50, playerPos.x, playerPos.y, playerPos.z, chainPos.x, chainPos.y, chainPos.z, effect)
+        for d = 0, 24 do
+            if stopChain then break end
+            addEvent(function()
+                playerPos:sendDistanceEffect(chainPos, effect)
+            end, d * 2)
         end
 
         -- Check for creatures
@@ -241,6 +238,7 @@ function onCastSpell(creature, var)
             for _, target in ipairs(creatures) do
                 if (target:isMonster() or (target:isPlayer() and target.uid ~= creature.uid)) and target:getSpeed() > 0 then
                     foundTarget = target
+                    stopChain = true
                     break
                 end
             end
@@ -280,8 +278,13 @@ function onCastSpell(creature, var)
                 -- Only move if tile is walkable
                 if Tile(nextPos) and Tile(nextPos):getGround() then
                     target:teleportTo(nextPos, true)
-                    tpos:sendDistanceEffect(nextPos, effectId)
-                    addEvent(moveTargetStep, 30, cid, nextPos.x, nextPos.y, nextPos.z, px, py, pz, effectId)
+                    ppos:sendDistanceEffect(nextPos, effectId)
+                    for d = 1, 25 do
+                        addEvent(function()
+                            ppos:sendDistanceEffect(nextPos, effectId)
+                        end, d * 2)
+                    end
+                    addEvent(moveTargetStep, 10, cid, nextPos.x, nextPos.y, nextPos.z, px, py, pz, effectId)
                 else
                     -- If blocked, stop
                     tpos:sendMagicEffect(CONST_ME_POFF)
