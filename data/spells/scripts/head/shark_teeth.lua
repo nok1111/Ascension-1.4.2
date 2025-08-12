@@ -89,7 +89,7 @@ function onCastSpell(creature, variant, isHotkey)
 		positionWarning:sendMagicEffect(config.dance_effect)
     
         --addEvent(castSharkEffect, 300, player:getId(), variant)
-        addEvent(castSharkDamage, 1000, player:getId(), variant)
+        addEvent(castSharkDamage, 1000, creature:getId(), variant)
 
     return true
 end

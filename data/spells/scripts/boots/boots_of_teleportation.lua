@@ -20,7 +20,7 @@ function onCastSpell(creature, variant, isHotkey)
     end
 
     local tile = Tile(targetPos)
-    if not tile or tile:hasFlag(TILESTATE_BLOCKSOLID) then
+    if not tile or tile:hasFlag(TILESTATE_BLOCKSOLID) or tile:hasFlag(TILESTATE_PROTECTIONZONE) then
         player:sendCancelMessage("You can't teleport there.")
         return false
     end

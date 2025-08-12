@@ -100,6 +100,12 @@ function onCastSpell(creature, variant, isHotkey)
         player:sendCancelMessage("No target position.")
         return false
     end
+
+    local tile = Tile(targetPos)
+    if not tile or tile:hasFlag(TILESTATE_BLOCKSOLID) or tile:hasFlag(TILESTATE_PROTECTIONZONE) then
+        player:sendCancelMessage("You can't do this here.")
+        return false
+    end
     
     combat:execute(player, variant)
     player:attachEffectById(176, true)

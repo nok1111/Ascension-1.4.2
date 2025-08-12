@@ -89,8 +89,8 @@ function onCastSpell(creature, variant, isHotkey)
     
 		positionWarning:sendMagicEffect(config.warning_effect)
     
-        addEvent(castMeteorEffect, 300, player:getId(), variant)
-        addEvent(castMeteorDamage, 1000, player:getId(), variant)
+        addEvent(castMeteorEffect, 300, creature:getId(), variant)
+        addEvent(castMeteorDamage, 1000, creature:getId(), variant)
 
     return true
 end

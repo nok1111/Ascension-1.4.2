@@ -41734,6 +41734,44 @@
 		<attribute key="description" value="create wild vines around yourself that pulls nearby monsters into you." />
 	</item>
 
+	<item id="38156" name="quick chains">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a dangerous area wich later will be devoured by a giant shark." />
+	</item>
+
+	<item id="38202" name="boomerang">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Throw a magical boomerang that deals damage in a straight line and returns to you." />
+	</item>
+	<item id="33995" name="smashing blow">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Unleash a powerful blow that damages and heals you based on the damage dealt." />
+	</item>
+	<item id="34015" name="sniper shot">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="A precise, long-range attack that deals damage based on the distance traveled." />
+	</item>
+	<item id="34077" name="toxic spores">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="A helmet that emanates poisonous spores, enabling the Toxic Spores spell when equipped." />
+	</item>
+	<item id="38190" name="thunder leap">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="A helmet crackling with thunderous energy. Grants the ability to leap and stun foes." />
+	</item>
+
+	<item id="38158" name="chain of flames"> 
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="create a fire chain reaction will travel through all nearby enemies." />
+	</item>
+
 	
 	
 

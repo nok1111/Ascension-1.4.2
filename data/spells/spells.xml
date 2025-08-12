@@ -453,9 +453,6 @@
 	</instant>
 	<instant group="support" spellid="206" name="Sphere" words="sphere" lvl="100" mana="100" faith="40" intelligence="55" selftarget="1" needweapon="0" cooldown="10000" groupcooldown="1100" needlearn="0" script="mastery/earth_sphere.lua">
 	</instant>
-	
-	<instant group="attack" spellid="207" name="Quick Chains" words="quick chains" lvl="50" dexterity="65"  mana="250" premium="0" direction="1" range="7" needtarget="0" needweapon="0" cooldown="17000" groupcooldown="1900" script="mastery/get_over_here.lua">
-	</instant>
 
 	<instant group="support" spellid="208" name="Magic Shield" words="Magic Shield" lvl="14" faith="0" intelligence="25" mana="0" aggressive="0" selftarget="1" cooldown="2000" groupcooldown="2000" needlearn="0" script="support/magic_shield.lua">
 	<vocation name="Magician" />
@@ -575,7 +572,13 @@
 	<rune group="special" spellid="810" name="water torrent" id="38178" allowfaruse="0" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" selftarget="1" script="head/water_torrent.lua" />
 	<rune group="special" spellid="811" name="shark teeth" id="34003" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/shark_teeth.lua" />
 	<rune group="special" spellid="812" name="wild vines" id="38188" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/wild_vines.lua" />
-
+	<rune group="special" spellid="813" name="quick chains" id="38156" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/quick_chains.lua" />
+	<rune group="special" spellid="814" name="boomerang" id="38202" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/boomerang.lua" />
+	<rune group="special" spellid="815" name="smashing blow" id="33995" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/smashing_blow.lua" />
+	<rune group="special" spellid="816" name="sniper shot" id="34015" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/sniper_shot.lua" />
+	<rune group="special" spellid="817" name="thunder leap" id="38190" allowfaruse="1" lvl="60" maglv="0" cooldown="15000" groupcooldown="3000" blocktype="solid" needtarget="0" script="head/thunder_leap.lua" />
+	<rune group="special" spellid="818" name="chain of flames" id="38158" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="1" script="head/chain_of_flames.lua" />
+	
 
 
 
