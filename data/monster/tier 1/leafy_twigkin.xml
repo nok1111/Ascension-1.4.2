@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Leafy Twigkin" nameDescription="a Leafy Twigkin" race="venom" experience="20" speed="180">
 	<health now="6" max="6" />
-	<!--- Level --><level min="20" max="27" />
+	<!--- Level --><level min="14" max="18" />
 	<look type="2485" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -18,10 +18,11 @@
 		<flag runonhealth="5" />
 		<flag canwalkonfire="0" />
 		<flag canwalkonpoison="0" />
+		<flag passive="1" />
 	</flags>
 	<attacks>
 		
-		<attack name="melee" interval="2000" min="-2" max="-54" />
+		<attack name="melee" interval="2000" min="-2" max="-36" />
 		<attack name="earth" interval="1000" chance="10" range="4" radius="1" target="1" min="-3" max="-65">
 			<attribute key="shootEffect" value="earth" />
 			<attribute key="areaEffect" value="carniphila" />

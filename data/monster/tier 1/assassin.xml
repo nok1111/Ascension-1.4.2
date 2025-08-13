@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<monster name="Assassin" nameDescription="a assassin" race="blood" experience="20" speed="230" manacost="420">
+	<health now="6" max="6" />
+	<level min="25" max="28" />
+	<look type="2891" corpse="37129" />
+	<targetchange interval="4000" chance="0" />
+	<flags>
+		<flag summonable="0" />
+		<flag attackable="1" />
+		<flag hostile="1" />
+		<flag illusionable="1" />
+		<flag convinceable="1" />
+		<flag pushable="1" />
+		<flag canpushitems="1" />
+		<flag canpushcreatures="0" />
+		<flag staticattack="60" />
+		<flag targetdistance="4" />
+		<flag runonhealth="10" />
+		<flag canwalkonenergy="0" />
+		<flag canwalkonfire="0" />
+		<flag canwalkonpoison="0" />
+	</flags>
+	<attacks>
+<attack name="melee" interval="2000" min="0" max="-56" />	
+
+    <!-- Poisoned blade (DoT effect) -->
+    <attack name="earth" interval="2000" chance="22" range="1" target="1" min="-10" max="-64">
+    		<attribute key="areaEffect" value="effect516" />
+    </attack>
+
+</attacks>
+<defenses armor="1" defense="1" >
+
+		<defense name="speed" interval="2000" chance="15" speedchange="200" duration="5000">
+			<attribute key="areaEffect" value="redshimmer" />
+		</defense>
+
+		<defense name="invisible" interval="2000" chance="10" duration="5000">
+    			<attribute key="areaEffect" value="effect243" />
+     		</defense>
+	</defenses>
+	
+	<voices interval="5000" chance="10">
+		<voice sentence="Die!" />
+		<voice sentence="Feel the hand of death!" />
+		<voice sentence="You are on my deathlist!" />
+	</voices>
+	<loot>
+		<item id="2110" chance="520" />  <!-- doll -->
+		<item id="13537" chance="800" /> <!-- mount -->
+
+		<item id="39137" countmax="2" chance="5000" /><!-- sell -->
+		<item id="39152" countmax="2" chance="10000" /><!-- sell -->
+	</loot>
+</monster>

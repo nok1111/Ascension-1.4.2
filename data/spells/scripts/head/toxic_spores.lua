@@ -78,6 +78,7 @@ local function CastSpellsporesDot(cid, var)
 end
 
 function onCastSpell(creature, variant, isHotkey)
+    print("onCastSpell")
     local player = creature:getPlayer()
     if not player then return false end
     local item = player:getSlotItem(CONST_SLOT_HEAD)

@@ -169,8 +169,8 @@ local zones = {
 
     [10] = { --unfinished wrong monsters
         id = 10,
-        name = "Mines of xxxxx",
-        monsters = {"troll", "dark troll", "apprentice witch", "witch"},
+        name = "Fields of torture",
+        monsters = {"rogue", "thief", "assassin", "bounty hunter"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
     
@@ -179,13 +179,13 @@ local zones = {
         onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name on entering
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
     },
     [11] = { --unfinished wrong monsters
         id = 11,
-        name = "Mines of xxxxx",
-        monsters = {"troll", "dark troll", "apprentice witch", "witch"},
+        name = "Fields of torture",
+        monsters = {"rogue", "thief", "assassin", "apprentice witch", "bounty hunter"},
         spawnIntervalMin = 1000,
         spawnIntervalMax = 1000,
     
@@ -194,7 +194,7 @@ local zones = {
         onStartup = true, -- This will trigger monster spawn at startup    
         spawnedMonsters = {}, 
         spawnEvent = nil,
-        showZoneName = false, -- Whether to show the zone name on entering
+        showZoneName = true, -- Whether to show the zone name on entering
         despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
     },
     [12] = { 
@@ -750,7 +750,7 @@ local zones = {
 }
 
 local activePlayers = {}
-local zonemax_monsters_divider = 85 --higher less monsters
+local zonemax_monsters_divider = 40 --higher less monsters
 
 
 local function tablelength(T)

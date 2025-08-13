@@ -642,6 +642,12 @@
 	<spawn centerx="296" centery="751" centerz="7" radius="1">
 		<monster name="Cow" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="303" centery="751" centerz="7" radius="1">
+		<monster name="Dog" x="-1" y="-1" z="7" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="317" centery="751" centerz="7" radius="1">
+		<npc name="blacksmith Sam" x="-1" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="330" centery="751" centerz="7" radius="1">
 		<monster name="Chicken" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -657,14 +663,8 @@
 	<spawn centerx="299" centery="752" centerz="7" radius="1">
 		<npc name="Eldric the Woodwise" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="316" centery="752" centerz="7" radius="1">
-		<npc name="blacksmith Sam" x="0" y="-1" z="7" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="514" centery="752" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
-	<spawn centerx="303" centery="754" centerz="7" radius="1">
-		<monster name="Dog" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="324" centery="755" centerz="7" radius="1">
 		<npc name="Lucy" x="0" y="0" z="7" spawntime="60" direction="2" />

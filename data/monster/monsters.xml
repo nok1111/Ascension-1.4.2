@@ -50,6 +50,8 @@
 	<monster name="Bear Cub" file="tier 1/bear cub.xml" />
 	<monster name="Thief" file="tier 1/thief.xml" />
 	<monster name="Rogue" file="tier 1/rogue.xml" />
+	<monster name="Assassin" file="tier 1/assassin.xml" />
+	<monster name="Bounty Hunter" file="tier 1/bounty hunter.xml" />
 	<monster name="Witch" file="tier 1/witch.xml" />
 	<monster name="Witch Apprentice" file="tier 1/witch_apprentice.xml" />
 	<monster name="Skeleton" file="tier 1/skeleton.xml" />

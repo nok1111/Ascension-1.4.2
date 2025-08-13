@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Twigkin" nameDescription="a Twigkin" race="venom" experience="20" speed="180">
 	<health now="6" max="6" />
-	<!--- Level --><level min="20" max="27" />
+	<!--- Level --><level min="12" max="15" />
 	<look type="2493" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -18,10 +18,11 @@
 		<flag runonhealth="5" />
 		<flag canwalkonfire="0" />
 		<flag canwalkonpoison="0" />
+		<flag passive="1" />
 	</flags>
 	<attacks>
 		
-		<attack name="melee" interval="2000" min="-2" max="-54" />
+		<attack name="melee" interval="2000" min="-2" max="-30" />
 
 	</attacks>
 <defenses armor="1" defense="1"/>
