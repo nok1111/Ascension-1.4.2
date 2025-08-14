@@ -1,7 +1,7 @@
 
 -- Frames (1 = Area, 2 = Player, 3 = Player + Self Damaging)
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
 combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 30)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)

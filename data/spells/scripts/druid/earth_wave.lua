@@ -2,7 +2,7 @@ local config = {
     speed = 150,
     mfx = 230,
     dfx = 111,
-    element = COMBAT_ENERGYDAMAGE,
+    element = COMBAT_EARTHDAMAGE,
     xradius = 3,
     yradius = 3
 }

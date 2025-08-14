@@ -39,7 +39,7 @@ local function CastSpell(cid, var)
 end
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 combat2:setArea(createCombatArea(AREA_CIRCLE2X2))
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 

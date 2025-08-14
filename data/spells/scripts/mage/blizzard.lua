@@ -4,14 +4,12 @@ local config = {
 }
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setArea(createCombatArea(AREA_CROSS1X1))
 
 local slowCombat = Combat()
-slowCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-slowCombat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 slowCombat:setParameter(COMBAT_PARAM_AGGRESSIVE, true)
 
 local slowCondition = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)

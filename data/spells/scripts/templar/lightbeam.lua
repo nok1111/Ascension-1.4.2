@@ -1,7 +1,7 @@
 local effect_damage = 600
 local effect_damage2 = 511
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, effect_damage)
 combat:setArea(createCombatArea(AREA_SQUAREWAVE51, AREADIAGONAL_SQUAREWAVE5))
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -9,7 +9,7 @@ combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 local combat2 = Combat()
 local time_between_hits2 = 0.3 --seconds
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, effect_damage2)
 combat2:setArea(createCombatArea(AREA_SQUAREWAVE52, AREADIAGONAL_SQUAREWAVE5))
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -17,7 +17,7 @@ combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 local combat3 = Combat()
 local time_between_hits3 = 0.5 --seconds
-combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat3:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat3:setParameter(COMBAT_PARAM_EFFECT, effect_damage)
 combat3:setArea(createCombatArea(AREA_SQUAREWAVE53, AREADIAGONAL_SQUAREWAVE5))
 combat3:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -25,7 +25,7 @@ combat3:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 local combat4 = Combat()
 local time_between_hits4 = 0.5 --seconds
-combat4:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat4:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 combat4:setParameter(COMBAT_PARAM_EFFECT, effect_damage)
 combat4:setArea(createCombatArea(AREA_SQUAREWAVE53, AREADIAGONAL_SQUAREWAVE5))
 combat4:setParameter(COMBAT_PARAM_BLOCKARMOR, true)

@@ -1,7 +1,7 @@
 local monsterName, monsterCount = "Creep", 3 -- time is in seconds
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_POISONDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_EARTHDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, 302)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)

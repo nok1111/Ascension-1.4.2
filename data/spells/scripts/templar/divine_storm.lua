@@ -39,7 +39,7 @@ combatheal:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 
 
 local Center = Combat()
-Center:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+Center:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 --Center:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NEWHOLY1)
 Center:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 Center:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -67,7 +67,7 @@ end
 Center:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 local Outside = Combat()
-Outside:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+Outside:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
 Outside:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 Outside:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 

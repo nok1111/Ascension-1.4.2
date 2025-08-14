@@ -3,7 +3,7 @@ local config = {
     damageEffect = 543, -- Effect for damage
     stunEffect = 543, -- Effect for the stun
     distanceEffect = 176, -- Distance effect for the AoE explosion 163
-    damageType = COMBAT_ENERGYDAMAGE, -- Damage type
+    damageType = COMBAT_ICEDAMAGE, -- Damage type
     stunDuration = 2000, -- Stun duration in milliseconds
     aoeRadius = 3, -- Radius of the AoE
 }

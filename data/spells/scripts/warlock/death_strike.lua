@@ -1,5 +1,5 @@
 local combat1 = Combat()
-combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat1:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 combat1:setParameter(COMBAT_PARAM_EFFECT, 311)
 combat1:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_DEATH) --CONST_ME_FIREATTACK, CONST_ME_RAGIAZ_BONECAPSULE, CONST_ANI_DEATH, CONST_ANI_SUDDENDEATH
 combat1:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -30,7 +30,7 @@ combat1:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 
 local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, 311)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, false)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)

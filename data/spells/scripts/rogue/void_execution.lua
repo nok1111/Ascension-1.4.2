@@ -1,11 +1,11 @@
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, 512)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 local executeCombat = Combat()
-executeCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+executeCombat:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 executeCombat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_MAGIC_RED)
 
 function onGetInitialDamageValues(player, skill, attack, factor)

@@ -79,8 +79,8 @@ function onTargetCreature(creature, target)
 end
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_BIGFROST)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, 239)
 combat:setArea(createCombatArea(AREA_WAVE4, AREADIAGONAL_WAVE4))
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)

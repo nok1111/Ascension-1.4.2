@@ -7,7 +7,7 @@ stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
 stun:setParameter(CONDITION_PARAM_SUBID, MonsterStorage.frostbarrel)
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_BIGFROST)
+combat:setParameter(COMBAT_PARAM_EFFECT, 239)
 combat:setArea(createCombatArea(AREA_SQUARE2X2))
 combat:addCondition(stun)
 

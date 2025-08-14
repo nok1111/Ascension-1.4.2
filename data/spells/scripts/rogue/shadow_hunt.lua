@@ -1,7 +1,7 @@
 local combat = Combat()
 
 
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, 533)
 
 
