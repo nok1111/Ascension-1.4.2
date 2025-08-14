@@ -25,13 +25,13 @@
 	<instant group="attack" spellid="8" name="Phoenix Wrath" words="phoenix wrath" lvl="125" mana="115" direction="1" cooldown="17000" groupcooldown="1900" blockwalls="1" needlearn="0" script="warrior/phoenix_wrath.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="attack" spellid="9" name="Dragon Aura" words="dragon aura" lvl="50" mana="75" selftarget="1" prem="0" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/sworddance.lua">
+	<instant group="attack" spellid="9" name="Dragon Aura" words="dragon aura" lvl="50" mana="75" selftarget="1" prem="0" needweapon="0" cooldown="20000" groupcooldown="1900" needlearn="0" script="warrior/dragon_aura.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-		<instant group="attack" spellid="10" name="Dragons Call" words="dragons call" lvl="100" mana="85" needtarget="1" needweapon="1" range="2" cooldown="30000" groupcooldown="1900" needlearn="0" script="warrior/dragon_decend.lua">
+		<instant group="attack" spellid="10" name="Dragons Call" words="dragons call" lvl="100" mana="85" needtarget="1" needweapon="1" range="2" cooldown="30000" groupcooldown="1900" needlearn="0" script="warrior/dragons_call.lua">
 	<vocation name="Dragon Knight" />
 	</instant>
-	<instant group="support" spellid="11" name="Draconic Chains" words="draconic chains" lvl="150" mana="325" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_shrine.lua">
+	<instant group="support" spellid="11" name="Draconic Chains" words="draconic chains" lvl="65" mana="300" premium="0" aggressive="1" selftarget="1" cooldown="18000" groupcooldown="1900" needlearn="0" script="warrior/dragon_chain.lua">
 	<vocation name="Dragon Knight" />
 	</instant>	
 	<instant group="attack" spellid="12" name="Shockwave" words="shockwave" lvl="30" mana="75" premium="0" direction="0" range="8" selftarget="1"  cooldown="6000" groupcooldown="1900" needlearn="0" script="warrior/shockwave.lua">
@@ -48,7 +48,7 @@
 	
 	
 	<!-- Templar -->		
-	<instant group="attack" spellid="20" name="Divine Punishment" words="divine punishment" lvl="100" mana="200"  range="3" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="1" script="templar/divine_clock.lua">
+	<instant group="attack" spellid="20" name="Divine Punishment" words="divine punishment" lvl="100" mana="200"  range="3" needtarget="1" cooldown="30000" groupcooldown="1900" needlearn="1" script="templar/divine_punishment.lua">
 	<vocation name="Templar" />
 	</instant>
 	<instant group="attack" spellid="21" name="Penitence" words="penitence" lvl="25" mana="60" range="5" aggressive="1" blockwalls="1" needtarget="1" cooldown="7000" groupcooldown="1900" needweapon="0" needlearn="0" script="templar/penitence.lua">
