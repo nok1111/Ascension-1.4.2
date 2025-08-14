@@ -6634,4 +6634,22 @@
 
 		<movevent event="Equip" itemid="38158" slot="head" function="onEquipItem" />
 		<movevent event="DeEquip" itemid="38158" slot="head" function="onDeEquipItem" />
+
+		<movevent event="Equip" itemid="33996" slot="head" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="33996" slot="head" function="onDeEquipItem" />
+
+		<movevent event="Equip" itemid="38191" slot="head" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="38191" slot="head" function="onDeEquipItem" />
+
+		<movevent event="Equip" itemid="38179" slot="head" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="38179" slot="head" function="onDeEquipItem" />
+
+		<movevent event="Equip" itemid="38162" slot="head" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="38162" slot="head" function="onDeEquipItem" />
+
+		<movevent event="Equip" itemid="38182" slot="head" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="38182" slot="head" function="onDeEquipItem" />
+		
+		<movevent event="Equip" itemid="33997" slot="head" function="onEquipItem" />
+		<movevent event="DeEquip" itemid="33997" slot="head" function="onDeEquipItem" />
 </movements>

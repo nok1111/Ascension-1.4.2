@@ -41745,10 +41745,10 @@
 		<attribute key="slotType" value="head" />
 		<attribute key="description" value="Throw a magical boomerang that deals damage in a straight line and returns to you." />
 	</item>
-	<item id="33995" name="smashing blow">
+	<item id="33995" name="wild spikes">
 		<attribute key="weight" value="250" />
 		<attribute key="slotType" value="head" />
-		<attribute key="description" value="Unleash a powerful blow that damages and heals you based on the damage dealt." />
+		<attribute key="description" value="Unleash two wild spikes in front of you, healing yourself and dealing damage to the target." />
 	</item>
 	<item id="34015" name="sniper shot">
 		<attribute key="weight" value="250" />
@@ -41758,18 +41758,54 @@
 	<item id="34077" name="toxic spores">
 		<attribute key="weight" value="250" />
 		<attribute key="slotType" value="head" />
-		<attribute key="description" value="A helmet that emanates poisonous spores, enabling the Toxic Spores spell when equipped." />
+		<attribute key="description" value="emanate toxic spores poisoning all nearby enemies for 8 seconds." />
 	</item>
 	<item id="38190" name="thunder leap">
 		<attribute key="weight" value="250" />
 		<attribute key="slotType" value="head" />
-		<attribute key="description" value="A helmet crackling with thunderous energy. Grants the ability to leap and stun foes." />
+		<attribute key="description" value="leap into your targeted position dealing damage and stuning nearby enemies for 1 second." />
 	</item>
 
 	<item id="38158" name="chain of flames"> 
 		<attribute key="weight" value="250" />
 		<attribute key="slotType" value="head" />
 		<attribute key="description" value="create a fire chain reaction will travel through all nearby enemies." />
+	</item>
+
+	<item id="33996" name="final sentence">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Setence your target dealing massive holy damage in a small area increasing its damage based on the target's missing health." />
+	</item>
+
+	<item id="38191" name="healing prisma">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Heals you and nearby allies in a wider area" />
+	</item>
+
+	<item id="38179" name="fire tornado">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Summon a raging fire tornado that repeatedly burns enemies in an area and slows their movement." />
+	</item>
+
+	<item id="38162" name="opelus">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Unleash repeated bursts of energy damage at a target location, striking all enemies in the area multiple times." />
+	</item>
+
+	<item id="38182" name="voltstorm">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="Unleash a storm of constant energy damage at your targeted location, striking all enemies in the area multiple times." />
+	</item>
+
+	<item id="33997" name="blood aura">
+		<attribute key="weight" value="250" />
+		<attribute key="slotType" value="head" />
+		<attribute key="description" value="wield a blood aura draining life force from all nearby enemies." />
 	</item>
 
 	

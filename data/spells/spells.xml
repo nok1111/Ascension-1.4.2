@@ -576,9 +576,15 @@
 	<rune group="special" spellid="814" name="boomerang" id="38202" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/boomerang.lua" />
 	<rune group="special" spellid="815" name="smashing blow" id="33995" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/smashing_blow.lua" />
 	<rune group="special" spellid="816" name="sniper shot" id="34015" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="0" script="head/sniper_shot.lua" />
-	<rune group="special" spellid="817" name="thunder leap" id="38190" allowfaruse="1" lvl="60" maglv="0" cooldown="15000" groupcooldown="3000" blocktype="solid" needtarget="0" script="head/thunder_leap.lua" />
+	<rune group="special" spellid="817" name="thunder leap" id="38190" allowfaruse="1" lvl="1" maglv="0" cooldown="15000" groupcooldown="3000" blocktype="solid" needtarget="0" script="head/thunder_leap.lua" />
 	<rune group="special" spellid="818" name="chain of flames" id="38158" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="1" script="head/chain_of_flames.lua" />
 	<rune group="special" spellid="819" name="toxic spores" id="34077" allowfaruse="1" lvl="1" maglv="0" cooldown="60000" groupcooldown="30000" blocktype="solid" needtarget="1" script="head/toxic_spores.lua" />
+	<rune group="special" spellid="820" name="final sentence" id="33996" allowfaruse="0" lvl="1" maglv="0" cooldown="20000" groupcooldown="4000" blocktype="solid" needtarget="1" script="head/final_sentence.lua" />
+	<rune group="special" spellid="821" name="healing prisma" id="38191" allowfaruse="0" lvl="1" maglv="0" cooldown="20000" groupcooldown="4000" blocktype="solid" selftarget="1" script="head/healing_prisma.lua" />
+	<rune group="special" spellid="822" name="fire tornado" id="38179" allowfaruse="0" lvl="1" maglv="0" cooldown="20000" groupcooldown="4000" blocktype="solid" selftarget="1" script="head/fire_tornado.lua" />
+	<rune group="special" spellid="823" name="opelus" id="38162" allowfaruse="1" lvl="1" maglv="0" cooldown="20000" groupcooldown="4000" blocktype="solid" needtarget="1" script="head/opelus.lua" />
+<rune group="special" spellid="824" name="voltstorm" id="38182" allowfaruse="1" lvl="1" maglv="0" cooldown="20000" groupcooldown="4000" blocktype="solid" needtarget="0" script="head/voltstorm.lua" />
+<rune group="special" spellid="825" name="blood aura" id="33997" allowfaruse="0" lvl="1" maglv="0" cooldown="20000" groupcooldown="4000" blocktype="solid" selftarget="1" script="head/blood_aura.lua" />
 
 
 
