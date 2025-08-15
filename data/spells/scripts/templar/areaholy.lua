@@ -65,15 +65,17 @@ local function doAnimation(creatureId, pos)
         return
     end
 
+    applyConsecratedProtection(pos, creatureId)
+
     for i = 1, 3 do
         local randomPos = Position(pos.x + math.random(-2, 2), pos.y + math.random(-2, 2), pos.z)
         if pos:isSightClear(randomPos, true) then
             randomPos:sendMagicEffect(595)
-            combat:execute(creature, Variant(randomPos))
+            combat:execute(creature, Variant(pos))
         end
     end
     -- Apply ConsecratedProtection to players in area
-    applyConsecratedProtection(pos, creatureId)
+    
 end
 
 local function apply_floor(creatureId, positionnube)  	

@@ -1,7 +1,5 @@
 local stunDuration = 1000
 
-
-
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HITAREA)
@@ -9,7 +7,7 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 local stun = Condition(CONDITION_STUN, CONDITIONID_COMBAT)
-stun:setParameter(CONDITION_PARAM_TICKS, 1000)
+stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
 
 
 local arr1 = {
@@ -78,6 +76,10 @@ function castSpellchargedk(playerName, targetId)
 		end
 	else
 		combat:execute(player, varTable[1])
+		if Creature(varTable[1].number) then
+		local stunCreature = Creature(varTable[1].number)
+		stunCreature:attachEffectById(205, true)
+		end
 	end
 return true
 end

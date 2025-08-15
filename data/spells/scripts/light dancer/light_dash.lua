@@ -73,8 +73,7 @@ function onCastSpell(creature, var)
 
         target:addCondition(stun)
         combat2:execute(creature, var)
-        target:getPosition():sendMagicEffect(CONST_ME_STUN)
-        addEvent(lightdashanimation, 0, targetUid, target:getPosition(), adjustedStunDuration)
+        target:attachEffectById(206, true)
     else
         combat:execute(creature, var)
     end
@@ -83,14 +82,4 @@ function onCastSpell(creature, var)
 end
 
 
-function lightdashanimation(targetUid, targetPos, remainingTime)
-    if remainingTime > 0 then
-        local target = Creature(targetUid)  -- Retrieve the target creature using its UID
-        if target then  -- Check if the creature still exists
-            targetPos:sendMagicEffect(CONST_ME_STUN)
-            -- Schedule the next animation frame after 500 milliseconds if the target still exists
-            addEvent(lightdashanimation, 500, targetUid, targetPos, remainingTime - 500)
-        end
-    end
-end
 

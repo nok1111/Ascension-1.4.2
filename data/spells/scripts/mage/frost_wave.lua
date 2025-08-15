@@ -35,22 +35,21 @@ stun:setParameter(CONDITION_PARAM_TICKS, stunDuration)
 
 local config = {
     effect = 44,
-    distanceEffect = 29
+    distanceEffect = 29,
+    breakEffect = 843
 }
 
-local condition = Condition(CONDITION_OUTFIT)
-condition:setParameter(CONDITION_PARAM_TICKS, 3500)
-condition:setOutfit({lookTypeEx = 33861})
 
 local function unfreeze(cid, variant)
     local creature = Creature(cid)
     if creature then
         local pos = creature:getPosition()
+        --Position(pos.x + 1, pos.y + 1, pos.z):sendMagicEffect(config.breakEffect)
         pos:sendDistanceEffect(Position(pos.x + 1, pos.y + 1, pos.z), config.distanceEffect)
         pos:sendDistanceEffect(Position(pos.x + 1, pos.y - 1, pos.z), config.distanceEffect)
         pos:sendDistanceEffect(Position(pos.x - 1, pos.y - 1, pos.z), config.distanceEffect)
         pos:sendDistanceEffect(Position(pos.x - 1, pos.y + 1, pos.z), config.distanceEffect)
-        pos:sendMagicEffect(config.effect)
+        
     else
         return false
     end
@@ -71,8 +70,8 @@ function onTargetCreature(creature, target)
     Position(pos.x + 1, pos.y - 1, pos.z):sendDistanceEffect(pos, config.distanceEffect)
     Position(pos.x - 1, pos.y - 1, pos.z):sendDistanceEffect(pos, config.distanceEffect)
     Position(pos.x - 1, pos.y + 1, pos.z):sendDistanceEffect(pos, config.distanceEffect)
-    target:addCondition(condition)
     pos:sendMagicEffect(config.effect)
+    target:attachEffectById(207, true)
     addEvent(unfreeze, stunDuration, target:getId())
 
     return true
@@ -86,9 +85,7 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combat:addCondition(stun)
 
-local combat1 = Combat()
-combat1:setArea(createCombatArea(AREA_WAVE4, AREADIAGONAL_WAVE4))
-combat1:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
+combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 
 function onGetFormulaValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
@@ -103,7 +100,6 @@ end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 function onCastSpell(creature, variant, target)
-    combat1:execute(creature, variant)
     combat:execute(creature, variant)
     return true
 end
