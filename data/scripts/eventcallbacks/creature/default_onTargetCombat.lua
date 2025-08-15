@@ -1,10 +1,11 @@
-local ec = EventCallback
+local OriginOnTargetCombatEvent = EventCallback
 
-ec.onTargetCombat = function(creature, target)
+OriginOnTargetCombatEvent.onTargetCombat = function(creature, target)
+
 	if not creature then
         return RETURNVALUE_NOERROR
     end
-	
+	print("onTargetCombat")
     
 -- Get attacker and target information
 local selfIsPlayer = creature:isPlayer()
@@ -37,6 +38,7 @@ end
 -- Check summon vs. player interactions
 if selfIsPlayer and TargetMaster then
     local targetMasterIsPlayer = TargetMaster:isPlayer()
+    print("TargetMasterIsPlayer", targetMasterIsPlayer)
 
     -- Check if the attacker's player cannot attack other party members' summons
     if targetMasterIsPlayer and (TargetMaster ~= MyMaster or creature:hasSecureMode()) then
@@ -77,14 +79,13 @@ end
 if creature and target and creature:isPlayer() and target:isMonster() then -- and target:isMonster()
     print("Registering events for", target:getName())
 
-	target:registerEvent("quests_kill_drops") 
-	target:registerEvent("LuckDrops") 
+	
 end
 --ScarabDeath
 
 
-
+return true
 
 end
 
-ec:register()
+OriginOnTargetCombatEvent:register()
