@@ -916,6 +916,9 @@ BlockType_t Creature::blockHit(Creature* attacker, CombatType_t combatType, int3
 
 	if (combatType != COMBAT_HEALING) {
 		onAttacked();
+		g_game.sendAttachedEffect(this, 208); // 'attached effect when damagin a creature
+
+
 	}
 	return blockType;
 }
