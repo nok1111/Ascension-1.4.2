@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 <houses>
-	<house name="" houseid="106" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="0" />
 	<house name="" houseid="200" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="36" />
 	<house name="" houseid="201" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
 	<house name="" houseid="202" entryx="0" entryy="0" entryz="0" rent="0" townid="0" size="50" />
