@@ -50,10 +50,10 @@ local function orbeffectLoop(position, text, color, loops)
 end
 
 local rewardTypes = {
-    {type = "Gold", itemId = yellow_orb, chance = 8, textcolor = TEXTCOLOR_YELLOW},
-    {type = "Loot", itemId = blue_orb, chance = 6, textcolor = TEXTCOLOR_BLUE},
-    {type = "Experience", itemId = green_orb, chance = 5, textcolor = TEXTCOLOR_LIGHTGREEN},
-    {type = "Death", itemId = purple_orb, chance = 20, textcolor = TEXTCOLOR_PURPLE}
+    {type = "Gold", itemId = yellow_orb, chance = 4, textcolor = TEXTCOLOR_YELLOW},
+    {type = "Loot", itemId = blue_orb, chance = 2, textcolor = TEXTCOLOR_BLUE},
+    {type = "Experience", itemId = green_orb, chance = 2, textcolor = TEXTCOLOR_LIGHTGREEN},
+    {type = "Death", itemId = purple_orb, chance = 1, textcolor = TEXTCOLOR_PURPLE}
 }
 
 local nameVariations = {"[Shadow]", "[Aqua]", "[Volcanic]", "[Sacred]", "[Mighty]", "[Terra]"}
@@ -102,7 +102,7 @@ function Monster_orb.onDeath(creature, corpse, killer, mostDamageKiller, unjusti
     
 
     for _, rewardType in ipairs(rewardTypes) do
-        local mathrandom = math.random(100)
+        local mathrandom = math.random(150)
        -- print("mathrandom", mathrandom)
        -- print("rewardType.chance", rewardType.chance)
         if mathrandom <= rewardType.chance then
@@ -755,16 +755,10 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
             {itemId = 32721, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
 
 
-            --helms
-            {itemId = 36251, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
-            {itemId = 2462, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
-            {itemId = 2662, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
-            {itemId = 36193, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
-            {itemId = 36355, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
-            {itemId = 2501, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
             --boots
             {itemId = 31879, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
             {itemId = 31890, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
+
             --armor
             {itemId = 32859, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
             {itemId = 32867, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
@@ -772,11 +766,6 @@ function StepOnOrb.onStepIn(creature, item, position, fromPosition)
             {itemId = 32863, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
             {itemId = 32865, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
 
-            --legs
-            {itemId = 32873, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
-            {itemId = 2477, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
-            {itemId = 2488, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
-            {itemId = 2648, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},  
 
             --ring
             {itemId = 38323, minLevel = 11, maxLevel = 100, chance = 10, minAmount = 1, maxAmount = 1},   
