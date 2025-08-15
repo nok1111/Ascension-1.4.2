@@ -647,15 +647,15 @@ end
 local baseChance = 1000
 
 local enchantitems = {
-	[1] = {itemid = 38149, chance = 2},  --trash
-	[2] = {itemid = 38151, chance = 3},  --trash
-	[3] = {itemid = 38152, chance = 4},  --trash
-	[4] = {itemid = 38153, chance = 5},  --trash
-	[5] = {itemid = 38154, chance = 6},  --item loots
-	[6] = {itemid = 38155, chance = 7},  --item loots(fame)
-	[7] = {itemid = 38156, chance = 8},  --item loots(fame)
+	[1] = {itemid = 38167, chance = 2},  --trash
+	[2] = {itemid = 38149, chance = 3},  --trash
+	[3] = {itemid = 38177, chance = 4},  --trash
+	[4] = {itemid = 38169, chance = 5},  --trash
+	[5] = {itemid = 38168, chance = 6},  --item loots
+	[6] = {itemid = 38157, chance = 7},  --item loots(fame)
+	[7] = {itemid = 38165, chance = 8},  --item loots(fame)
 	[8] = {itemid = 38157, chance = 9},  --item loots
-	[9] = {itemid = 38159, chance = 10},  --item loots
+	[9] = {itemid = 38165, chance = 10},  --item loots
 	[10] = {itemid = 38160, chance = 11},  --item loots
 	[11] = {itemid = 38161, chance = 12},  --item loots
 	[12] = {itemid = 38162, chance = 13},  --item loots
@@ -686,12 +686,11 @@ function us_CheckCorpse(monsterType, corpsePosition, killerId)
   if killer and killer:isPlayer() and corpse and corpse:isContainer() then
   
 
-  for i = 1, #enchantitems do
-        if math.random(1, baseChance) == enchantitems[i].chance then
+  
+    if math.random(1, #enchantitems) == enchantitems[i].chance then
             corpse:addItem(enchantitems[i].itemid, 1)
-			
-        end
-    end	
+    end
+ 
 	
   
   
