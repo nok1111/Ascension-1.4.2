@@ -495,7 +495,7 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Divine Punishment",
-						description = "Learn the spell Divine Punishment (Requires Level 100)",
+						description = "Learn the spell Divine Punishment",
 						effect = {{type = "spell", name = "Divine Punishment"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
@@ -543,7 +543,7 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Kings Blessing",
-						description = "Learn spell Kings Blessing (requires level 60)",
+						description = "Learn spell Kings Blessing",
 						effect = {{type = "spell", name = "Kings Blessing"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 10
@@ -625,14 +625,14 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Sacred Ground",
-						description = "Learn spell Sacred Ground (requires level 40)",
+						description = "Learn spell Sacred Ground",
 						effect = {{type = "spell", name = "Sacred Ground"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
 					},
 					[6] = {
 						name = "Angelic Form",
-						description = "Learn spell Angelic Form (requires level 90)",
+						description = "Learn spell Angelic Form",
 						effect = {{type = "spell", name = "Angelic Form"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 1
@@ -703,7 +703,7 @@ PassiveSkills.treeData = {
 					
 					[6] = {
 						name = "Assassination",
-						description = "Learn spell Assassination (requires level 70)",
+						description = "Learn spell Assassination",
 						effect = {
 							{type = "spell", name = "Assassination"}
 						},
@@ -737,7 +737,7 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Blackout",
-						description = "Learn spell Blackout (requires level 50)",
+						description = "Learn spell Blackout",
 						effect = {{type = "spell", name = "Blackout"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 10
@@ -2209,9 +2209,9 @@ PassiveSkills.treeData = {
 						maxLevel = 5,
 					},
 					[3] = {
-						name = "Ice Barrel",
-						description = "Learn Ice Barrel\nPlace a barrel at your location exploding after a short delay, freezing all enemies nearby.",
-						effect = {{type = "spell", name = "Ice Barrel"}},
+						name = "Frost Barrel",
+						description = "Learn Frost Barrel\nPlace a barrel at your location exploding after a short delay, freezing all enemies nearby.",
+						effect = {{type = "spell", name = "Frost Barrel"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
 					},
@@ -2369,7 +2369,7 @@ PassiveSkills.treeData = {
 					},
 					[3] = {
 						name = "Shockwave",
-						description = "Learn spell Shockwave (requires level 50)",
+						description = "Learn spell Shockwave",
 						effect = {{type = "spell", name = "Shockwave"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 4
