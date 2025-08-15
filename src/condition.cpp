@@ -288,41 +288,40 @@ Condition* Condition::createCondition(PropStream& propStream)
 
 bool Condition::startCondition(Creature* creature)
 {
-    
+
+	switch (conditionType) {
+
+
+	case CONDITION_FREEZING:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
+		}
+		break;
+
+	case CONDITION_DAZZLED:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_714);
+		}
+		break;
+	case CONDITION_STUN:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_703);
+		}
+		break;
+	case CONDITION_FEAR:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_702);
+		}
+		break;
+	case CONDITION_PARALYZE:
+		if (creature && !creature->isRemoved()) {
+			g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
+		}
+		break;
+	}
 
     if (ticks > 0) {
         endTime = ticks + OTSYS_TIME();
-
-		switch (conditionType) {
-		
-		
-		case CONDITION_FREEZING:
-			if (creature && !creature->isRemoved()) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
-			}
-			break;
-		
-		case CONDITION_DAZZLED:
-			if (creature && !creature->isRemoved()) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_714);
-			}
-			break;
-		case CONDITION_STUN:
-			if (creature && !creature->isRemoved()) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_703);
-			}
-			break;
-		case CONDITION_FEAR:
-			if (creature && !creature->isRemoved()) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_702);
-			}
-			break;
-		case CONDITION_PARALYZE:
-			if (creature && !creature->isRemoved()) {
-				g_game.addMagicEffect(creature->getPosition(), CONST_ME_710);
-			}
-			break;
-		}
     }
     return true;
 }
