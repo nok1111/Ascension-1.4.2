@@ -550,7 +550,7 @@ PassiveSkills.treeData = {
 					},		
 					[6] = {
 						name = "Guardian of Light",
-						description = "Learn spell Guardian of Light (requires level 80)",
+						description = "Learn spell Guardian of Light",
 						effect = {{type = "spell", name = "Guardian of Light"}},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 1
