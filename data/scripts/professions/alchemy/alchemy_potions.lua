@@ -231,7 +231,7 @@ local function applyPotionCondition(player, itemId)
             -- player:setGroup(Group(1))
         end, baseDuration * 1000)
         player:attachEffectById(156, true)
-        player:sendAddBuffNotification(93, baseDuration, 'Stealth', 5, 0)
+        player:sendAddBuffNotification(1, baseDuration, 'Stealth', 5, 0)
 
 
 
