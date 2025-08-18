@@ -51,9 +51,10 @@
 	<action fromid="26098" toid="26099" script="other/decayto.lua" />
 
 	<!-- Food -->
+	<action itemid="2328" script="other/food.lua" />
 	<action itemid="2362" script="other/food.lua" />
 	<action fromid="2666" toid="2691" script="other/food.lua" />
-	<action fromid="2695" toid="2696" script="other/food.lua" />
+	<action itemid="2696" script="other/food.lua" />
 	<action fromid="2787" toid="2796" script="other/food.lua" />
 	<action itemid="5097" script="other/food.lua" />
 	<action itemid="6125" script="other/food.lua" />
@@ -83,13 +84,12 @@
 	<action itemid="15405" script="other/food.lua" />
 	<action fromid="15487" toid="15488" script="other/food.lua" />
 	<action itemid="16014" script="other/food.lua" />
-	<action itemid="18397" script="other/food.lua" />
+	<action itemid="18305" script="other/food.lua" />
+	<action itemid="18306" script="other/food.lua" />	
+	<action fromid="35338" toid="35349" script="other/food.lua" />
 	<action itemid="19737" script="other/food.lua" />
 	<action fromid="20100" toid="20101" script="other/food.lua" />
-	<action itemid="24841" script="other/food.lua" />
-	<action itemid="24843" script="other/food.lua" />
-	<action itemid="26191" script="other/food.lua" />
-	<action itemid="26201" script="other/food.lua" />
+	<action itemid="23517" script="other/food.lua" />
 
 	<!-- Music -->
 	<action fromid="2070" toid="2085" script="other/music.lua" />
