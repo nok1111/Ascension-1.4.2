@@ -39,7 +39,7 @@ function creatureSayCallback(cid, type, msg)
         local blessedCondition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
         blessedCondition:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
         blessedCondition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.blessed)
-        blessedCondition:setParameter(CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, 120)
+        blessedCondition:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 120)
         blessedCondition:setParameter(CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, 120)
         blessedCondition:setParameter(CONDITION_PARAM_TICKS, 1200000) --20 minutes
         player:addCondition(blessedCondition)
