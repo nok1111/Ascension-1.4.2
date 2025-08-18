@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <monster name="Flaming Twigkin" nameDescription="a Flaming Twigkin" race="venom" experience="20" speed="180">
 	<health now="6" max="6" />
-	<!--- Level --><level min="18" max="23" />
+	<!--- Level --><level min="18" max="20" />
 	<look type="2487" corpse="37129" />
 	<targetchange interval="4000" chance="10" />
 	<flags>
@@ -21,7 +21,7 @@
 	</flags>
 	<attacks>
 		
-		<attack name="fire" interval="2000" chance="100" range="3" min="-1" max="-46">
+		<attack name="fire" interval="2000" chance="100" range="3" min="-1" max="-33">
 			<attribute key="shootEffect" value="fire" />
 			<attribute key="areaEffect" value="fire" />
 		</attack>
