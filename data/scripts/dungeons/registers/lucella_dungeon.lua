@@ -17,8 +17,8 @@ lucella_dungeon:setRequiredLevel(35)
 lucella_dungeon:addRequiredItem(37795, 1) -- citadel key
 
 -- Boss Loot
-lucella_dungeon:addReward(2152, 25, 100) -- platinum coin
-lucella_dungeon:addReward(29032, 50, 100) -- orb of performance
+lucella_dungeon:addReward(2152, 25, 100) -- itemid, amount, chance
+lucella_dungeon:addReward(29032, 3, 100) -- itemid, amount, chance
 
 
 -- Challenges
