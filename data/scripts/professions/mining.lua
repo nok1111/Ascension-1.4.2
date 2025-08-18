@@ -150,23 +150,16 @@ for i, tree in ipairs(cfg.ores) do
         end
 
 			
-			if currOre.bonusore and math.random(1, 100) <= 50 then
-
-
-             local it2
-             local bonusore = currOre.ore 
+		if currOre.bonusore and math.random(1, 100) <= 50 then
+             local bonusore = currOre.bonusore 
              local bonusamount = math.random(1,3)
 
                 if bag then
-                    it2 = bag:addItem(bonusore, bonusamount)
-                    if not it2 then
-                        it2 = player:addItem(bonusore, bonusamount)
-                    end
+                    bag:addItem(bonusore, bonusamount)
                 else
-                    it2 = player:addItem(bonusore, bonusamount)
+                    player:addItem(bonusore, bonusamount)
                 end
-
-			end
+		end
 
              --badge Recolección Eficiente
             local badgeSlotItem = player:getSlotItem(CONST_SLOT_BADGE)
