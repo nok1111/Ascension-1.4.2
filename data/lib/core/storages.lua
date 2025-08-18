@@ -10,6 +10,11 @@ STORAGEVALUE_PET_LVL = 45001
 STORAGEVALUE_PET_EXP = 45002
 STORAGEVALUE_PET_MONSTER_ID = 45003
 
+petfoodlevel1 = 45004
+petfoodlevel2 = 45005
+petfoodlevel3 = 45006
+petfoodlevel4 = 45007
+
 PlayerStorageKeys = {
 	annihilatorReward = 30015,
 	promotion = 30018,
@@ -80,6 +85,10 @@ ConditionsSubIds = {
     darkness = 29551,
     spider_web = 29552,
     water_wave = 29553,
+    arrowbarragesslow = 29554,
+    momentum = 29555,
+    scorchedmark = 29556,
+    TeleportDistanceMagic = 29557,
     
 
 
