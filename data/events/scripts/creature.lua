@@ -78,6 +78,10 @@ function Creature:coreCombatProtection(target)
 end
 
 function Creature:onTargetCombat(target)
+    if not self then
+        print("[Warning] Creature:onTargetCombat called with nil self")
+        return RETURNVALUE_NOERROR
+    end
 
 	local result = self:coreCombatProtection(target)
     if result ~= RETURNVALUE_NOERROR then
