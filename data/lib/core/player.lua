@@ -1,13 +1,9 @@
 
 
 function Player.feed(self, food)
-	local foodCondition = Condition(CONDITION_REGENERATION)
-	foodCondition:setParameter(CONDITION_PARAM_SUBID, 9990)
-
-	local condition = self:getCondition(CONDITION_REGENERATION, CONDITIONID_DEFAULT, 9990)
+	local condition = self:getCondition(CONDITION_REGENERATION, CONDITIONID_DEFAULT)
 	if condition then
 		condition:setTicks(condition:getTicks() + (food * 1000))
-		print("Condition ticks: " .. condition:getTicks())
 	else
 		local vocation = self:getVocation()
 		if not vocation then
@@ -19,7 +15,6 @@ function Player.feed(self, food)
 		foodCondition:setParameter(CONDITION_PARAM_HEALTHTICKS, vocation:getHealthGainTicks() * 1000)
 		foodCondition:setParameter(CONDITION_PARAM_MANAGAIN, vocation:getManaGainAmount())
 		foodCondition:setParameter(CONDITION_PARAM_MANATICKS, vocation:getManaGainTicks() * 1000)
-		print("else Condition ticks: " .. foodCondition:getTicks())
 
 		self:addCondition(foodCondition)
 	end
