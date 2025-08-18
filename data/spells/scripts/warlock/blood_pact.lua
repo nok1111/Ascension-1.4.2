@@ -22,9 +22,11 @@ local function bloodPactTick(cid, count)
 
     local hpToLose = math.floor(creature:getMaxHealth() * (config.percent / 100))
 	local storage = creature:getStorageValue(PassiveSkills.PactmasterGift)
-	local manaToGain = 0
+    
+	local manaToGain = 1
 	if storage > 0 then
-		manaToGain = math.floor(1 * (storage / 100))
+		manaToGain = 1 + (storage / 100)
+        
 	end
 	
     if creature:getHealth() <= hpToLose then
@@ -34,7 +36,7 @@ local function bloodPactTick(cid, count)
 
     creature:addHealth(-hpToLose)
     creature:addMana(hpToLose * manaToGain)
-    creature:getPosition():sendMagicEffect(config.effect)
+    creature:attachEffectById(221, true)
 
     if count > 1 then
         addEvent(bloodPactTick, config.timer, cid, count - 1)
@@ -44,7 +46,7 @@ end
 function onCastSpell(creature, variant)
     if creature:getCondition(CONDITION_REGENERATION, CONDITIONID_COMBAT, ConditionsSubIds.bloodpact) then
         creature:sendCancelMessage("Spell is already active.")
-        creature:getPosition():sendMagicEffect(CONST_ME_POFF)
+        --creature:getPosition():sendMagicEffect(CONST_ME_POFF)
         return false
     end
 
@@ -56,5 +58,5 @@ function onCastSpell(creature, variant)
 
     creature:addCondition(condition)
     bloodPactTick(creature:getId(), config.rounds)
-    return combat:execute(creature, variant)
+    return true
 end

@@ -18,8 +18,8 @@ combatstart:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 function onGetFormulaValuesstart(player, skill, attack, factor)
     local level = player:getLevel()
 
-    local min = (level * 1.5) + 5
-    local max = (level * 1.6) + 5
+    local min = (level * 3.0) + 15
+    local max = (level * 3.6) + 25
     return -min, -max
 end
 
@@ -34,8 +34,8 @@ combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 function onGetFormulaValues(player, skill, attack, factor)
     local level = player:getLevel()
 
-    local min = (level * 1.5) + 5
-    local max = (level * 1.6) + 5
+    local min = (level * 3.0) + 15
+    local max = (level * 3.6) + 25
     return -min, -max
 end
 

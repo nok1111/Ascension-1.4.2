@@ -110,7 +110,7 @@ function onCastSpell(creature, var, isHotkey)
 	local player = Player(creature)
   if player then
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(12, 60, 'Full Moon', 5, 0)
+    player:sendAddBuffNotification(5, 60, 'Full Moon', 5, 0)
   end
     return true
 end

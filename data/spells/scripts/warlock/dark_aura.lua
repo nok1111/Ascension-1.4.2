@@ -33,7 +33,7 @@ function onCastSpell(creature, variant)
   combat:execute(creature, variant)
   player:attachEffectById(87, true)
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(104, (duration / 1000), 'Dark Aura', 5, 0)
+    player:sendAddBuffNotification(29, (duration / 1000), 'Dark Aura', 5, 0)
 
 
     

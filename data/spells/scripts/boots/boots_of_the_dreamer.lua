@@ -56,7 +56,7 @@ local function healtargets(player, target)
     return false
 end
 
-function onTargetCreatureVoid(creature, target)
+function onTargetCreatureDreamer(creature, target)
 	if not creature then
         return
     end	
@@ -64,14 +64,14 @@ function onTargetCreatureVoid(creature, target)
 	
     if healtargets(creature, target) then
     -- add 15% max mana
-    target:addManaSpent(target:getMaxMana() * 0.15)
+    target:addMana(target:getMaxMana() * 0.15)
     target:attachEffectById(177, true)
     end
     	
 	return true
 end
 
-combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreatureVoid")
+combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreatureDreamer")
 
 function onCastSpell(creature, variant, isHotkey)
     local player = creature:getPlayer()

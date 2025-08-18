@@ -67,7 +67,7 @@ end
 	
 	addEvent(foresthealing, config.timer, creature:getId(), config.rounds)
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(110, 1200, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
+    player:sendAddBuffNotification(7, 1200, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
 
         return true
     end
@@ -109,7 +109,7 @@ forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.fores
 	--end effect
 
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(110, 1200, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
+    player:sendAddBuffNotification(7, 1200, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
         return true
     end
 
@@ -152,7 +152,7 @@ forest_condition_mana:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.fores
 	
 	
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(110, 600, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
+    player:sendAddBuffNotification(7, 600, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
         return true
     end
 
@@ -213,7 +213,7 @@ end
 	--end effect
 
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    targetPlayer:sendAddBuffNotification(110, 1200, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
+    targetPlayer:sendAddBuffNotification(7, 1200, 'Health and mana restoration: 1% every 2 seconds', 3, 0)
     end
     return true
 end

@@ -65,7 +65,7 @@ end
 -- Fire damage combat
 local combatFire = Combat()
 combatFire:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
-combatFire:setParameter(COMBAT_PARAM_EFFECT, 41)
+combatFire:setParameter(COMBAT_PARAM_EFFECT, 201)
 
 -- Skill-based formula for Cyclone Sweep
 function onGetFormulaValues_Fire(player, skill, attack, factor)

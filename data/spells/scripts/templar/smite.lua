@@ -1,7 +1,7 @@
 
 local combat2 = Combat()
 local time_between_hits2 = 0.5 --seconds
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_HOLYDAMAGE)
+combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, 40)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -9,8 +9,7 @@ combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 
 function onGetFormulaValues2(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 

@@ -15,8 +15,8 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local level = player:getLevel()
 
 
-	local min = (level / 5) + (power * 0.045) + attack
-	local max = (level / 5) + (power * 0.065) + attack * 1.5
+	local min = (level / 5) + (power * 0.035) + attack
+	local max = (level / 5) + (power * 0.045) + attack * 1.15
 	return -min, -max
 end
 
@@ -29,8 +29,13 @@ function restoreMana(player)
     end
 
     local maxMana = player:getMaxMana() -- Get the player's maximum mana
-    local manaToRestore = math.floor(maxMana * 0.03) -- Calculate 3% of total mana
+
     
+    local manaToRestore = math.floor(maxMana * 0.03) -- Calculate 3% of total mana
+    local storage = player:getStorageValue(PassiveSkills.SurgeRecovery) or 0
+    if storage > 0 then
+        manaToRestore = math.floor(maxMana * (1 + storage / 100))
+    end
     -- Use addMana to add the calculated mana to the player's current mana
     player:addMana(manaToRestore)
 
@@ -40,7 +45,7 @@ function restoreMana(player)
     -- Get player's position for the magic effect
     local pos = player:getPosition()
     -- Create the 'mana up' magic effect at the player's position
-    doSendMagicEffect(pos, CONST_ME_MANAUP) -- Adjust CONST_ME_MAGIC_BLUE to your effect constant
+    doSendMagicEffect(pos, 1173) -- Adjust CONST_ME_MAGIC_BLUE to your effect constant
 
     
     return true

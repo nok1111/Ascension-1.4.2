@@ -61,7 +61,7 @@ function onCastSpell(creature, variant)
   player:attachEffectById(153, true)
   player:attachEffectById(154, true)
  
-  player:sendAddBuffNotification(48, 4, 'Shadow Form', 5, 0)
+  player:sendAddBuffNotification(24, 4, 'Shadow Form', 5, 0)
 
 	local cid = creature:getId()
 

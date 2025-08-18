@@ -43,7 +43,7 @@ combat:addCondition(condition)
 	
 
 	creature:attachEffectById(24, true)
-    creature:sendAddBuffNotification(8, 15, 'shield wall', 5, 0)
+    creature:sendAddBuffNotification(33, 15, 'shield wall', 5, 0)
 
 
 	return combat:execute(creature, variant)

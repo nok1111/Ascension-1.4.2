@@ -32,6 +32,6 @@ function onCastSpell(creature, variant)
     combat:execute(creature, variant)
     player:attachEffectById(63, true)
     creature:addHealth(creature:getMaxHealth())
-    player:sendAddBuffNotification(104, 15, 'Blood Wall', 5, 0)
+    player:sendAddBuffNotification(28, 15, 'Blood Wall', 5, 0)
 	return true
 end

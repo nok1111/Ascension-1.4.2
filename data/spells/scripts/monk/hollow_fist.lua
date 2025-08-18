@@ -44,7 +44,7 @@ end
    combat:execute(creature, var)
    -- Apply initial burst heal using combat:execute
    creature:addHealth(maxHealth * 8)
-   creature:getPosition():sendMagicEffect(CONST_ME_HPUP)
+   creature:getPosition():sendMagicEffect(701)
 
 	if creature:getStorageValue(aura_counter) < 10  then
 		local targetpos = target:getPosition()

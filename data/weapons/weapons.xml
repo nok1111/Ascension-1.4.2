@@ -3,16 +3,16 @@
 
 	<wand id="2163" mana="1"  swing="true" script="wands/moon.lua" />
 
-	<wand id="2187" mana="4" level="15" swing="true" script="wands/fire_explode.lua" /> <!-- Wand Of Endless Fire 22/15 -->
-	<wand id="2184" mana="4" level="15" swing="true" script="wands/moon.lua" /> <!-- crystal wand 25/15 -->
+	<wand id="2187" mana="4" level="1" swing="true" script="wands/fire_explode.lua" /> <!-- Wand Of Endless Fire 22/15 -->
+	<wand id="2184" mana="4" level="1" swing="true" script="wands/moon.lua" /> <!-- crystal wand 25/15 -->
 
-	<wand id="2182" mana="5" level="25" swing="true" script="wands/earth.lua" />	<!-- Terra Rod 25/12 -->
+	<wand id="2182" mana="5" level="1" swing="true" script="wands/earth.lua" />	<!-- Terra Rod 25/12 -->
 	
-	<wand id="2190" mana="7" level="30" swing="true" script="wands/energy.lua" /> <!-- Wand of Vortex  30/16-->
-	<wand id="2181" mana="7" level="30" swing="true" script="wands/earth.lua" />	<!-- Rod of the Earthflow 2719/12 -->
+	<wand id="2190" mana="7" level="1" swing="true" script="wands/energy.lua" /> <!-- Wand of Vortex  30/16-->
+	<wand id="2181" mana="7" level="1" swing="true" script="wands/earth.lua" />	<!-- Rod of the Earthflow 2719/12 -->
 
-	<wand id="2185" mana="9" level="40" swing="true" script="wands/death.lua" />  <!-- garona wand 40/20-->
-	<wand id="2186" mana="8" level="36" swing="true" script="wands/energy_moon.lua" /> <!-- Moonlight 38/15-->
+	<wand id="2185" mana="9" level="1" swing="true" script="wands/death.lua" />  <!-- garona wand 40/20-->
+	<wand id="2186" mana="8" level="1" swing="true" script="wands/energy_moon.lua" /> <!-- Moonlight 38/15-->
 	
 	
 
@@ -130,7 +130,7 @@
 	<vocation name="Archer" />
 	</distance>
 
-	<distance id="32058"  swing="true" script="longbow.lua" ><!-- longbow 45/20 -->
+	<distance id="32058"  script="longbow.lua" ><!-- longbow 45/20 -->
 	<vocation name="Nightblade"/>
 	<vocation name="Templar"/>
 	<vocation name="Magician" />

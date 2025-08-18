@@ -28,6 +28,18 @@ function teleportAttempt(creature, playerPos, teleportPos, pathing)
     position.x = position.x + 1
     position.y = position.y + 1
     position:sendMagicEffect(354)
+
+    local TeleportDistanceMagic = creature:getStorageValue(PassiveSkills.TeleportDistance) or 0
+    if TeleportDistanceMagic > 0 then
+        local condition = Condition(CONDITION_ATTRIBUTES)
+        condition:setParameter(CONDITION_PARAM_TICKS, 5000)
+        condition:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, 100 + (TeleportDistanceMagic * 10))
+        condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
+        condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.TeleportDistanceMagic)
+        creature:addCondition(condition)
+        creature:sendAddBuffNotification(36, 5, 'Riftwalker: Magic level increased by ' .. TeleportDistanceMagic * 10 .. '%', 5, 0)
+    end
+
     return true
 end
 

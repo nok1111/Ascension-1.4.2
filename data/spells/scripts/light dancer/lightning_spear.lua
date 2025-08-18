@@ -63,6 +63,11 @@ function onCastSpell(creature, var)
         end
         --grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)
         addBuffStack(creature, "ElusiveCharge", 1, 10000)
+        local ElusiveCharge = math.max(getBuffStack(creature, "ElusiveCharge") or 0, 0)
+        --print("ElusiveCharge: ", ElusiveCharge)
+        creature:sendAddBuffNotification(35, 10, 'Elusive Charge.', 3, ElusiveCharge)
+
+
     end
 	
 	local target = creature:getTarget()

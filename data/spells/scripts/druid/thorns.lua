@@ -36,7 +36,7 @@ food:setParameter(CONDITION_PARAM_TICKS, t)
 	player:addCondition(food)
 	player:setStorageValue(12, 10)
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(109, 1800, 'physical damage deflection by: 10%', 3, 0)
+    player:sendAddBuffNotification(11, 1800, 'physical damage deflection by: 10%', 3, 0)
 
         return true
     end
@@ -66,7 +66,7 @@ food:setParameter(CONDITION_PARAM_TICKS, t)
 	player:addCondition(food)
 	player:setStorageValue(12, 10)
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(109, 1800, 'physical damage deflection by: 10%', 3, 0)
+    player:sendAddBuffNotification(11, 1800, 'physical damage deflection by: 10%', 3, 0)
         return true
     end
 
@@ -99,7 +99,7 @@ combat:addCondition(skill)
 	player:addCondition(food)
 	player:setStorageValue(12, 10)
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(109, 1800, 'physical damage deflection by: 10%', 3, 0)
+    player:sendAddBuffNotification(11, 1800, 'physical damage deflection by: 10%', 3, 0)
         return true
     end
 
@@ -134,7 +134,7 @@ combat:addCondition(skill)
     targetPlayer:addCondition(food)
 	targetPlayer:setStorageValue(12, 10)
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    targetPlayer:sendAddBuffNotification(109, 1800, 'physical damage deflection by: 10%', 3, 0)
+    targetPlayer:sendAddBuffNotification(11, 1800, 'physical damage deflection by: 10%', 3, 0)
     end
     return true
 end

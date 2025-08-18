@@ -60,7 +60,7 @@ function onCastSpell(creature, variant, isHotkey)
         player:addCondition(forest_condition_hp)
         player:addCondition(forest_condition_mana)
         player:attachEffectById(125, true)
-        player:sendAddBuffNotification(115, 6, 'Health and mana restoration: 7% every seconds', 3, 0)
+        player:sendAddBuffNotification(9, 6, 'Health and mana restoration: 7% every seconds', 3, 0)
         return true
     end
 
@@ -68,14 +68,14 @@ function onCastSpell(creature, variant, isHotkey)
     for _, member in ipairs(player:getParty():getMembers()) do
         member:addCondition(forest_condition_mana)
 		member:attachEffectById(125, true)
-		member:sendAddBuffNotification(115, 6, 'Health and mana restoration: 7% every seconds', 3, 0)
+		member:sendAddBuffNotification(9, 6, 'Health and mana restoration: 7% every seconds', 3, 0)
     end
 
     -- Visual effect for the caster
     player:attachEffectById(125, true)
 
     -- Buff notification (customize message as needed)
-    player:sendAddBuffNotification(115, 6, 'Health and mana restoration: 7% every seconds', 3, 0)
+    player:sendAddBuffNotification(9, 6, 'Health and mana restoration: 7% every seconds', 3, 0)
 
     return true
 end

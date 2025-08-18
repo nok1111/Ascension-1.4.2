@@ -13,7 +13,7 @@ player:addCondition(blood_blades)
 
 	player:attachEffectById(16, true)
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(83, 8, 'Blood Blades: Life steal effect 1.5% target max health.', 3, 0)
+    player:sendAddBuffNotification(23, 8, 'Blood Blades: Life steal effect 1.5% target max health.', 3, 0)
 end
     return true
 end

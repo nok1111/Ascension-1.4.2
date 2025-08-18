@@ -56,7 +56,7 @@ function onCastSpell(creature, variant)
     sword.y = sword.y + 1
     sword:sendMagicEffect(444)
     
-    creature:sendAddBuffNotification(115, 6, 'Rejuvenation healing for: ' .. healthGainPerTick, 5, 0)
+    creature:sendAddBuffNotification(10, 6, 'Rejuvenation healing for: ' .. healthGainPerTick, 5, 0)
 
     return true
 end

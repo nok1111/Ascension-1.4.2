@@ -154,7 +154,7 @@ function onCastSpell(creature, var, isHotkey)
 
     addEvent(fullMoonDuration, 0, creature.uid, math.floor(duration / ticks))
 
-    player:sendAddBuffNotification(116, duration / 1000, 'Full Moon', 5, 0)
+    player:sendAddBuffNotification(5, duration / 1000, 'Full Moon', 5, 0)
 
     return true
 end

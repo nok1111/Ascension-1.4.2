@@ -33,7 +33,7 @@ local area1 = createCombatArea(area)
 local area22 = createCombatArea(area2)
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
 combat:setParameter(COMBAT_PARAM_EFFECT, 562)
 combat:setArea(createCombatArea(area))
 
@@ -52,6 +52,62 @@ condition2:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, 120)
 condition2:setParameter(CONDITION_PARAM_DISABLE_DEFENSE, true)
 condition2:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 
+local function healtargets(player, target)
+    -- Check if player is valid
+    if not player then
+        return false
+    end
+
+	if target:isNpc() then
+		return false
+	end
+
+    -- Check if the target is the player or is nil (indicating a self-heal)
+    if target == player or target == nil then
+        return true
+    end
+
+    -- Check if the target is a player
+    if target:isPlayer() then
+        -- Check if the target is in the same party as the player's leader
+        if target:getParty() and target:getParty():getLeader() == player then
+            return true
+        end
+
+        -- Check if the player has secure mode enabled (always heal)
+        if player:hasSecureMode() then
+            return true
+        end
+
+        -- Check if the target is in the same guild as the player's guild leader
+        if target:getGuild() and target:getGuild():getLeader() == player then
+            return true
+        end
+    end
+
+    -- Check if the target has a master (summoned creature)
+    if target:getMaster()  and target:getMaster():isPlayer() then -- Check if the target has a master (summon) then
+        -- Check if the target is the player's master (heal own summons)
+        if target:getMaster() == player then
+            return true
+        end
+
+        -- Check if the target's master is a player and is in the same party as the player
+        if target:getMaster():isPlayer() and player:getParty() and player:getParty() == target:getMaster():getParty() then
+            -- Heal friendly party summoned creature
+            return true
+        end
+
+        -- Check if the player has secure mode enabled (always heal non-friendly summons)
+        if player:hasSecureMode() then
+            return true
+        end
+    end
+
+    -- If none of the conditions are met, the target is not a valid heal target
+    return false
+end
+
 mainPos = 0
 	
 function onTargetTile(cid, pos)
@@ -65,9 +121,9 @@ local playa = tila:getCreatures()
 	if playa then
 		if #playa > 0 then
 			for i = 1, #playa do
-				if playa[i]:isPlayer() then
+				if playa[i]:isPlayer() and healtargets(cid, playa[i]) then
 				playa[i]:addMana(math.random(min,max))
-				playa[i]:sendAddBuffNotification(93, 1, 'Mana Distortion 20% increased magic level', 5, 0)
+				playa[i]:sendAddBuffNotification(16, 1, 'Mana Distortion 20% increased magic level', 5, 0)
 				playa[i]:addCondition(condition)
 				playa[i]:addCondition(condition2)
 				playa[i]:attachEffectById(19, true)
@@ -88,8 +144,8 @@ local function castaoe(creatureId, variant)
 	end
 	local min = ((creature:getLevel() / 5) + (creature:getMagicLevel() * 0.3)) + 3
 	local max = ((creature:getLevel() / 5) + (creature:getMagicLevel() * 0.5)) + 6
-    doAreaCombatHealth(creature, COMBAT_ENERGYDAMAGE, mainPos, area22, 0, 0, config.ffx1)			
-	doAreaCombatHealth(creature, COMBAT_ENERGYDAMAGE, mainPos, area22, 0, 0, config.ffx2)
+    doAreaCombatHealth(creature, COMBAT_HEALING, mainPos, area22, 0, 0, config.ffx1)			
+	doAreaCombatHealth(creature, COMBAT_HEALING, mainPos, area22, 0, 0, config.ffx2)
 	combat:execute(creature, variant)
 end
 

@@ -69,7 +69,7 @@ function onCastSpell(creature, variant)
             -- Heal the player
 			player:getPosition():sendMagicEffect(11)
 			player:addHealth(healing)
-			player:getPosition():sendMagicEffect(CONST_ME_HPUP)
+			player:getPosition():sendMagicEffect(701)
 			
 
             -- Create distance effect from target to player

@@ -151,6 +151,58 @@ end
 
 combat5:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues5")
 
+local function healtargets(player, target)
+    -- Check if player is valid
+    if not player then
+        return false
+    end
+
+    -- Check if the target is the player or is nil (indicating a self-heal)
+    if target == player or target == nil then
+        return true
+    end
+
+    -- Check if the target is a player
+    if target:isPlayer() then
+        -- Check if the target is in the same party as the player's leader
+        if target:getParty() and target:getParty():getLeader() == player then
+            return true
+        end
+
+        -- Check if the player has secure mode enabled (always heal)
+        if player:hasSecureMode() then
+            return true
+        end
+
+        -- Check if the target is in the same guild as the player's guild leader
+        if target:getGuild() and target:getGuild():getLeader() == player then
+            return true
+        end
+    end
+
+    -- Check if the target has a master (summoned creature)
+    if target:getMaster()  and target:getMaster():isPlayer() then -- Check if the target has a master (summon) then
+        -- Check if the target is the player's master (heal own summons)
+        if target:getMaster() == player then
+            return true
+        end
+
+        -- Check if the target's master is a player and is in the same party as the player
+        if target:getMaster():isPlayer() and player:getParty() and player:getParty() == target:getMaster():getParty() then
+            -- Heal friendly party summoned creature
+            return true
+        end
+
+        -- Check if the player has secure mode enabled (always heal non-friendly summons)
+        if player:hasSecureMode() then
+            return true
+        end
+    end
+
+    -- If none of the conditions are met, the target is not a valid heal target
+    return false
+end
+
 
 local function SpellAnimation(cid, combat1, combat2, combat3, combat4, combat5)
 	local creature = Creature(cid)
@@ -340,7 +392,7 @@ local AREA_Damage = {
 					local tile = Tile(Position(posArray[i]))
 					if tile ~= nil then
 						local creatures = tile:getCreatures()
-						if creatures ~= nil then
+						if creatures ~= nil and not healtargets(player, creatures[1]) then
 							if #creatures > 0 then
 							
 								local times = dmgArray[i]

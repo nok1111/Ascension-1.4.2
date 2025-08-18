@@ -3,16 +3,14 @@ local config = {
 }
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_EARTH)
-combat:setParameter(COMBAT_PARAM_CREATEITEM, ITEM_WILDGROWTH)
+combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ENERGYBALL)
+combat:setParameter(COMBAT_PARAM_CREATEITEM, 8753)
 
-local combat1 = Combat()
-combat1:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ENERGYBALL)
-combat1:setParameter(COMBAT_PARAM_CREATEITEM, ITEM_MAGICWALL)
 
 local function expandWall(cid, combatParam, pos)
 	local creature = Creature(cid)
 	if creature then
+		creature:say("You cast grow.", TALKTYPE_MONSTER_SAY)
 		local dir = creature:getDirection()
 		if dir == 0 then
 			pos.y = pos.y - 1
@@ -23,11 +21,27 @@ local function expandWall(cid, combatParam, pos)
 		elseif dir == 3 then
 			pos.x = pos.x - 1
 		end
-		if creature:getPosition():isSightClear(pos, true) or combatParam == combat1 then
-			if getTilePzInfo(pos) == FALSE then
+		local tile = Tile(pos)
+		if tile and not tile:hasFlag(TILESTATE_BLOCKSOLID) then
+			local isPzNearby = false
+			for dx = -1, 1 do
+				for dy = -1, 1 do
+					if not (dx == 0 and dy == 0) then
+						local checkPos = Position(pos.x + dx, pos.y + dy, pos.z)
+						if getTilePzInfo(checkPos) == TRUE then
+							isPzNearby = true
+							break
+						end
+					end
+				end
+				if isPzNearby then break end
+			end
+			if not isPzNearby and getTilePzInfo(pos) == FALSE then
 				if creature:getPathTo(pos) ~= false then
 					variant = positionToVariant(pos)
-					combatParam:execute(creature, variant)
+					combat:execute(creature, variant)
+				else
+					creature:say("You can't move there.", TALKTYPE_MONSTER_SAY)
 				end
 			end
 		end
@@ -37,22 +51,10 @@ end
 function onCastSpell(creature, variant, isHotkey)
 
 	local cid = creature:getId()
-
-	local Thingy = variant:getString()
-	local combatParam = 0
-	if Thingy == "wg" or Thingy == "wild growth" or Thingy == "" then
-		combatParam = combat
-	elseif Thingy == "mw" or Thingy == "magic wall" then
-		combatParam = combat1
-	else
-		Creature(cid):sendCancelMessage(RETURNVALUE_NOTPOSSIBLE)
-		Creature(cid):getPosition():sendMagicEffect(CONST_ME_POFF)
-		return false
-	end
 	
 	local pos = Creature(cid):getPosition()
 	for i = 0, config.amount, 1 do
-		addEvent(expandWall, i*500, cid, combatParam, pos)
+		addEvent(expandWall, i*500, cid, combat, pos)
 	end
 	return true
 end

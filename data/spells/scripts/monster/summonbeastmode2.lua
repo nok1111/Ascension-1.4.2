@@ -13,7 +13,7 @@ function onCastSpell(cid, variant)
 	
 	cid:addHealth(math.random(minheal,maxheal))
 	local petposition = cid:getPosition()
-	petposition:sendMagicEffect(CONST_ME_HPUP)
+	petposition:sendMagicEffect(701)
 	
 	local position = target:getPosition()
     local positioneffect = position

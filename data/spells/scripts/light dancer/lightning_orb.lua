@@ -63,6 +63,6 @@ function onCastSpell(creature, variant)
 
     local times_to_run = 8 * #positions
     addEvent(sendEffc, 60, creature.uid, times_to_run, times_to_run)
-	 creature:sendAddBuffNotification(29, 7, 'Blood Blades: Life steal effect 1.5% target max health.', 3, 0)
+	 creature:sendAddBuffNotification(13, 7, 'Blood Blades: Life steal effect 1.5% target max health.', 3, 0)
     return true
 end

@@ -26,13 +26,13 @@ local specs = Game.getSpectators(variant:getPosition(), false, false, 3, 3, 3, 3
 			
 			 creature:getPosition():sendDistanceEffect(specs[i]:getPosition(), 109)
 			 specs[i]:getPosition():sendMagicEffect(241)
-			 specs[i]:getPosition():sendMagicEffect(CONST_ME_MANAUP)
+			 specs[i]:getPosition():sendMagicEffect(1173)
 			 specs[i]:addMana(math.random(min1 / 2, max2 / 2))
           end
         end
       end
 	creature:getPosition():sendMagicEffect(241)
-	creature:getPosition():sendMagicEffect(CONST_ME_MANAUP)
+	creature:getPosition():sendMagicEffect(1173)
 	creature:addMana(math.random(min1, max2))
 	
 	return combat:execute(creature, variant)

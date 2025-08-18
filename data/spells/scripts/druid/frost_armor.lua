@@ -44,7 +44,7 @@ function onCastSpell(creature, variant)
     local frost_armor = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
     frost_armor:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
     frost_armor:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.frostarmor)
-    frost_armor:setParameter(CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, 125)
+    frost_armor:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 125)
 
     --local durationLevel = math.max(player:getStorageValue(PassiveSkills.StormfistDuration) or 0, 0)
     local duration = 8000 --+ (durationLevel * 1000)
@@ -56,7 +56,7 @@ function onCastSpell(creature, variant)
     player:attachEffectById(121, true)
 
       -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(120, duration / 1000, 'Reduce Damage taken by 20% and deals ice damage back to the attacker.', 3, 0)
+    player:sendAddBuffNotification(8, duration / 1000, 'Reduce Damage taken by 20% and deals ice damage back to the attacker.', 3, 0)
       
     local frostAuraLevel =  player:getStorageValue(PassiveSkills.FrostAura) or 0
     if frostAuraLevel > 0 then

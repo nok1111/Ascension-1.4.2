@@ -44,7 +44,7 @@ creature:say(randomLine, TALKTYPE_SAY)
     owner:setStorageValue(5, resistanceIncrease / 3)
 
     owner:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Physical damage reduction increased by " .. resistanceIncrease .. " for 10 secs.")
-    owner:sendAddBuffNotification(124, 10, 'Physical damage resistance by: ' .. resistanceIncrease / 3, 3, 0)
+    owner:sendAddBuffNotification(22, 10, 'Physical damage resistance by: ' .. resistanceIncrease / 3, 3, 0)
     
     return true
 end

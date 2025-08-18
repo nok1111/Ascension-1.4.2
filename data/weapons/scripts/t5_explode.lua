@@ -21,51 +21,64 @@ local area = createCombatArea({
 })
 combat:setArea(area)
 
---DEMOLITION MODE START FORMULA
-local ASPECT_MODE = 50010 -- Adjust the storage value as needed
-local MANA_DEDUCTION_PERCENTAGE = 6 -- Percentage of max mana to deduct
-local combatDemo = Combat()
-combatDemo:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-combatDemo:setParameter(COMBAT_PARAM_DISTANCEEFFECT, CONST_ANI_ICELONG)
-combatDemo:setParameter(COMBAT_PARAM_EFFECT, 480)
-combatDemo:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
-function onGetFormulaValuesDemolition(player, skill, attack, factor)
-local distancefactor = player:getEffectiveSkillLevel(SKILL_DISTANCE)
-local magic = player:getMagicLevel()
-	local damage = (player:getLevel() / 5) + ((distancefactor * attack) * 0.085) 
-	return -(damage * 0.8)
-end
-combatDemo:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValuesDemolition")
-local areamode = createCombatArea{
-    {0, 0, 1, 0, 0},
-    {0, 1, 1, 1, 0},
-    {1, 1, 3, 1, 1},
-    {0, 1, 1, 1, 0},
-    {0, 0, 1, 0, 0}
-}
-combatDemo:setArea(areamode)
---DEMOLITION END FORMULA
+
 
 function onUseWeapon(player, variant)
 	if not combat:execute(player, variant) then
 		return false
 	end
 	
---DEMOLITION CHECK START
-	 local currentMode = player:getStorageValue(ASPECT_MODE)	
-		if currentMode == 1 then
-            -- Deduct 3% of max mana if player has more than 3% mana
-            local manaDeduction = math.ceil(player:getMaxMana() * (MANA_DEDUCTION_PERCENTAGE / 100))
-            if player:getMana() > manaDeduction then
-                player:addMana(-manaDeduction)
-				combatDemo:execute(player, variant)	
-                -- Apply demolition mode damage to targets in the area
-               
-            else
-              --  player:sendCancelMessage("Not enough mana to use Demolition Mode.")
-                player:getPosition():sendMagicEffect(CONST_ME_POFF)
-            end
+ 
+
+    
+    
+
+
+	local target = player:getTarget()
+	   -- Your auto attacks now have a 50% chance to grant you Momentum, which increases your attack speed
+	local momentumLevel = math.max(player:getStorageValue(PassiveSkills.Momentum) or 0, 0)
+	local currentattackspeed = player:getSpecialSkill(SPECIALSKILL_ATTACKSPEED)
+	local stack = getBuffStack(player, "Momentum") or 1
+
+	if momentumLevel > 0 then
+		if math.random(100) <= 20 + momentumLevel then
+				if momentumLevel > 0 and currentattackspeed < (100 - momentumLevel) then
+
+
+				addBuffStack(player, "Momentum", 1, 6000)
+				
+				local conditionmomentum = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
+				conditionmomentum:setParameter(CONDITION_PARAM_TICKS, 6000)
+				conditionmomentum:setParameter(CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED, momentumLevel * stack)
+				conditionmomentum:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.momentum)
+				player:addCondition(conditionmomentum)
+				player:detachEffectById(210, true)
+				player:attachEffectById(210, true)
+				end
 		end
-	--DEMOLITION CHECK END	
+	end
+
+	local FrostQuiverStorage = math.max(player:getStorageValue(PassiveSkills.FrostQuiver) or 0, 0)
+	if FrostQuiverStorage > 0 then
+		addBuffStack(player, "FrostQuiver", 1)
+		if getBuffStack(player, "FrostQuiver") >= 4 then
+		local level = math.max(player:getStorageValue(PassiveSkills.FrostQuiver) or 0, 0)
+		local chance = level -- 5% per level
+		
+			if math.random(100) <= chance then
+				-- Trigger the Frost Quiver effect here
+				--send distance effect from player to target
+				local playerlevel = player:getLevel()
+				local playerSkill = player:getSkillLevel(SKILL_DISTANCE)
+				local playerBonus = (playerlevel * 0.8) + (playerSkill * 1.0) + 20
+				local totalDamage = playerBonus
+				doSendDistanceShoot(player:getPosition(), target:getPosition(), 106)
+				target:attachEffectById(209, true)
+				doTargetCombatHealth(player, target, COMBAT_ICEDAMAGE, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+				
+			end
+			clearBuffStack(player, "FrostQuiver")
+		end
+	end
 	return true
 end

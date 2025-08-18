@@ -42,7 +42,7 @@ function onCastSpell(cid, var)
     end
 
     local position = target:getPosition()
-    position:sendMagicEffect(CONST_ME_HPUP)
+    position:sendMagicEffect(701)
     cid:getPosition():sendDistanceEffect(position, 112)
     target:addHealth(math.random(min, max))
 

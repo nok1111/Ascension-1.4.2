@@ -48,7 +48,7 @@ function onCastSpell(cid, var)
 		local player = Player(creature)
 	 if player then
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    player:sendAddBuffNotification(37, 20, 'Holy Guardian', 5, 0)
+    player:sendAddBuffNotification(25, 20, 'Holy Guardian', 5, 0)
   end
     return combat:execute(player, var)
 end

@@ -60,6 +60,9 @@ function onCastSpell(creature, variant)
     if DancingEdgeLevel > 0 and random <= DancingEdgeLevel then
         addEvent(castSpell2, 500, creature:getId(), variant)
         addBuffStack(creature, "ElusiveCharge", 1, 10000)
+        local ElusiveCharge = math.max(getBuffStack(creature, "ElusiveCharge") or 0, 0)
+        creature:sendAddBuffNotification(35, 10, 'Elusive Charge.', 3, ElusiveCharge)
+
         target:attachEffectById(145, true)
     else
         target:attachEffectById(144, true)

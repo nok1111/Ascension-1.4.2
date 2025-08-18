@@ -34,7 +34,7 @@ combat:addCondition(condition)
   player:attachEffectById(75, true)
 	
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-   player:sendAddBuffNotification(70, 15, 'Blood Rage: increase Melee skill by 50% for 8 seconds', 5, 0)
+   player:sendAddBuffNotification(31, 15, 'Blood Rage: increase Melee skill by 50% for 8 seconds', 5, 0)
   end
   
 	return combat:execute(creature, variant)

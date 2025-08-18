@@ -34,13 +34,18 @@ combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 
 
-local function castSpell2(creatureId, variant)
+local function castSpell2(creatureId, variant, targetId)
 	local creature = Creature(creatureId)
 	if not creature then
 		return
 	end
 	
     combat2:execute(creature, variant)
+	local target = Creature(targetId)
+	if not target then
+		return
+	end
+	target:attachEffectById(219, true)
 end
 
 
@@ -48,8 +53,12 @@ function onCastSpell(creature, variant)
 if not creature then
         return false
     end
-   combat:execute(creature, variant)
-  	addEvent(castSpell2, 700, creature:getId(), variant)
+   local target = creature:getTarget()
+   if not target then
+    return false
+   end
+   target:attachEffectById(218, true)
+   	addEvent(castSpell2, 700, creature:getId(), variant, target:getId())
 
   return true
 end

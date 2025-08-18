@@ -43,7 +43,7 @@ local function sendEffcDragon(cid, max_iterations, iterations)
 		local max = (level/5) + (vit * 1.0) + (magic * 3.5) + 15
         doAreaCombatHealth(pid, COMBAT_FIREDAMAGE, pos, {1}, min, max, 585)
 
-        local DragonHeart = pid:getStorageValue(PassiveSkills.DragonHeart)
+        local DragonHeart = pid:getStorageValue(PassiveSkills.DragonHeart) or 0
 		if DragonHeart > 0 then
             --increases the healing effectiveness by 10% per talent
             local healingproc = math.random(min/20, max/18) * (1 + DragonHeart/100)
@@ -71,6 +71,7 @@ function onCastSpell(creature, variant)
     addEvent(sendEffcDragon, 150, creature.uid, times_to_run, times_to_run)
     player:attachEffectById(73, true)
     player:attachEffectById(74, true)
+    player:sendAddBuffNotification(32, 17, 'Dragon Aura', 5, 0)
     return true
 end
 

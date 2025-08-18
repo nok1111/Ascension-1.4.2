@@ -65,8 +65,8 @@ local function getLowHealthTargets(player, radius)
     for _, spectator in ipairs(spectators) do
         if not isExcludedTarget(player, spectator) then
             local healthPercent = (spectator:getHealth() / spectator:getMaxHealth()) * 100
-            if (spectator:getSkull() == SKULL_NONE and healthPercent <= 35) or
-               (spectator:getSkull() ~= SKULL_NONE and healthPercent <= 20) then
+            if (spectator:isMonster() and healthPercent <= 35) or
+               (spectator:isPlayer() and healthPercent <= 20) then
                 table.insert(targets, spectator)
             end
         end

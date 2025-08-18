@@ -29,10 +29,10 @@ local function Starfall(creatureId, targetId)
 	local maxburn =  ((level / 5) + (magic * 1.6) + 2) + 3
 
     local AstralBurnDurationLevel = math.max(creature:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
-    print("AstralBurnDurationLevel: " .. AstralBurnDurationLevel)
+  --  print("AstralBurnDurationLevel: " .. AstralBurnDurationLevel)
     local conditionastralburn = Condition(CONDITION_ENERGY, CONDITIONID_COMBAT)
     local duration = AstralBurnDurationLevel + 1
-    print("duration: " .. duration)
+  --  print("duration: " .. duration)
 
     
     conditionastralburn:addDamage(duration, 1000, math.random(minburn, maxburn))

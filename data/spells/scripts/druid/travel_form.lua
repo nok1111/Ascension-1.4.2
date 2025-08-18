@@ -69,7 +69,7 @@ function onCastSpell(creature, variant)
 	combat6:execute(creature, variant)
 	combat7:execute(creature, variant)
 	
-    player:sendAddBuffNotification(116, 15, 'travel Form', 5, 0)
+    player:sendAddBuffNotification(12, 15, 'travel Form', 5, 0)
   
 	
 

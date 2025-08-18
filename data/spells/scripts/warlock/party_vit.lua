@@ -30,7 +30,7 @@ skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(skill)
 
 player:addCondition(skill)
- player:sendAddBuffNotification(107, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
+ player:sendAddBuffNotification(30, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
 
         return true
     end
@@ -57,7 +57,7 @@ local positioneffect = position
     positioneffect:sendMagicEffect(365)
 	
 player:addCondition(skill)
- player:sendAddBuffNotification(107, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
+ player:sendAddBuffNotification(30, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
         return true
     end
 
@@ -87,7 +87,7 @@ local positioneffect = position
     positioneffect:sendMagicEffect(365)
 	
 player:addCondition(skill)
- player:sendAddBuffNotification(107, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
+ player:sendAddBuffNotification(30, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
         return true
     end
 
@@ -116,7 +116,7 @@ combat:addCondition(skill)
 
 
 	targetPlayer:addCondition(skill)
-	targetPlayer:sendAddBuffNotification(107, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
+	targetPlayer:sendAddBuffNotification(30, 1200, 'Max Health increased 20% for 20 min!', 5, 0)
     end
     return true
 end

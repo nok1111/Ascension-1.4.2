@@ -85,7 +85,7 @@ local function heal(playerId, variant)
         healAmount = healAmount * (1 + (extrahealing / 100))
     end
     player:addHealth(healAmount)
-    player:getPosition():attachEffectById(110, true)
+    player:attachEffectById(110, true)
 
    -- restore 1.2% of your maximum health and 2% of your maximum mana.", PassiveSkills.MeditativeRecovery * level
    local MeditativeRecovery_level = math.max(player:getStorageValue(PassiveSkills.MeditativeRecovery) or 0, 0)

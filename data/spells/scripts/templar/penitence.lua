@@ -83,7 +83,7 @@ local function tauntEffect(cid, target)
         maxheal = maxheal * (1 + (extrahealing / 100))
     end
     creature:addHealth(math.random(minheal, maxheal))
-    creature:getPosition():sendMagicEffect(CONST_ME_HPUP)
+    creature:getPosition():sendMagicEffect(701)
 end
 
 local function tauntCreature(cid, target)

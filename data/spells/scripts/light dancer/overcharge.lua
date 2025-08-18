@@ -22,7 +22,7 @@ creature:addCondition(conditionstats)
   -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
   creature:attachEffectById(17, true) 
   
-  creature:sendAddBuffNotification(51, 8, 'overcharged, all offensive stats increased by 40%. you will loose health due to its effects.', 5, 0)
+  creature:sendAddBuffNotification(15, 8, 'overcharged, all offensive stats increased by 40%. you will loose health due to its effects.', 5, 0)
 
   
 return combat:execute(creature, variant)		

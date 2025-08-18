@@ -17,6 +17,7 @@ function createCloneAtPosition(player, offsetX, offsetY)
         clone:rename(player:getName())  -- Rename the boss with the new name
         clone:setMaxHealth(player:getMaxHealth() * 0.4) 
         clone:addHealth(player:getMaxHealth() * 0.4)
+        clone:attachEffectById(214, true)
         addEvent(function() if clone then clone:remove() end end, CLONE_LIFETIME)
     end
 end

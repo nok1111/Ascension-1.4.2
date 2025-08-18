@@ -22,8 +22,8 @@ combat:setArea(area)
 
 function onGetFormulaValues(player, skill, attack, factor)
     local level = player:getLevel()
-    local min = (level * 0.45) + 10 
-    local max = (level * 0.60) + 20
+    local min = (level * 2.1) + 10 
+    local max = (level * 2.6) + 20
     return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")

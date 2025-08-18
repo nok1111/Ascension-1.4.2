@@ -2,7 +2,7 @@
 
 local config = {
     rounds = 8, -- amount of ticks
-    timer = 1500, -- time between ticks (ms)
+    timer = 1000, -- time between ticks (ms)
     effect = CONST_ME_SKULLHORIZONTAL -- visual effect
 }
 
@@ -20,7 +20,7 @@ condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.manaflowtick)
 local function manaFlowTick(cid, count)
     local creature = Creature(cid)
     if not creature then return end
-    local base = creature:getMaxMana() * 0.020
+    local base = creature:getMaxMana() * 0.03
     local surgeLevel = math.max(creature:getStorageValue(PassiveSkills.SurgeRecovery) or 0, 0)
     local bonus = 1 + (surgeLevel / 100)
     local manaAmount = base * bonus
@@ -48,7 +48,7 @@ function onCastSpell(creature, variant)
     if player then
         -- Visual and notification
         player:attachEffectById(18, true)
-        player:sendAddBuffNotification(13, (config.timer / 1000) * config.rounds, 'Mana Flow', 5, 0)
+        player:sendAddBuffNotification(17, ((config.timer * config.rounds) / 1000), 'Mana Flow', 5, 0)
     end
 
     return combat:execute(creature, variant)

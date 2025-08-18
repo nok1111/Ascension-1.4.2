@@ -51,7 +51,7 @@ local player = Player(creature)
 	creature:attachEffectById(29, true)
 	creature:attachEffectById(30, true)
 	
-	player:sendAddBuffNotification(72, 15, 'Holy Form', 5, 0)
+	player:sendAddBuffNotification(26, 15, 'Holy Form', 5, 0)
   
 	
 

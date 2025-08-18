@@ -18,7 +18,7 @@ combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
 local solar_blessing = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 solar_blessing:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
 solar_blessing:setParameter(CONDITION_PARAM_SUBID, 29509)
-solar_blessing:setParameter(CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, 165)
+solar_blessing:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 165)
 solar_blessing:setParameter(CONDITION_PARAM_TICKS, 8000)
 
 local function onAttach(creatureid, variant)

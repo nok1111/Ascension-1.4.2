@@ -17,6 +17,13 @@ function onGetFormulaValues(player, skill, attack, factor)
 
 	local min = ((level / 5) + (power * 0.045) + attack) + 50
 	local max = ((level / 5) + (power * 0.065) + attack * 1.3) + 65
+
+    local arrowbarrage = player:getStorageValue(PassiveSkills.ArrowBarrage) or 0
+    if arrowbarrage > 0 then
+        min = min * (1 + arrowbarrage / 100)
+        max = max * (1 + arrowbarrage / 100)
+    end
+    
 	return -min, -max
 end
 

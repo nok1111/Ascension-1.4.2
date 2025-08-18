@@ -12,7 +12,7 @@ combat:addCondition(condition)
 
 function onCastSpell(creature, variant)
 local player = Player(creature)
-player:sendAddBuffNotification(85, 33, 'Haste', 4, 0)
+player:sendAddBuffNotification(21, 33, 'Haste', 4, 0)
 	return combat:execute(creature, variant)
 	 
 end

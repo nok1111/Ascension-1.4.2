@@ -54,7 +54,7 @@ function onCastSpell(creature, variant, isHotkey)
 condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.shieldwall)
 condition:setParameter(CONDITION_PARAM_TICKS, 8000)
 condition:setParameter(CONDITION_PARAM_SKILL_SHIELD, 130)
-condition:setParameter(CONDITION_PARAM_STAT_MAXHEALTHPOINTSPERCENT, 130)
+condition:setParameter(CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, 130)
 condition:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(condition)
 

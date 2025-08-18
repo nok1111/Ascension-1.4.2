@@ -19,6 +19,6 @@ function onCastSpell(creature, variant, isHotkey)
         player:setGhostMode(false)
         player:setGroup(Group(1))
     end, totalDuration * 1000)
-	 player:sendAddBuffNotification(93, totalDuration, 'Stealth', 5, 0)
+	 player:sendAddBuffNotification(1, totalDuration, 'Stealth', 5, 0)
     return combat:execute(creature, variant)
 end

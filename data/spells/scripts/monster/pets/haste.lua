@@ -16,6 +16,6 @@ owner:addCondition(condition)
 
 
 	 -------------------------------- ID IMAGE, SECONDS, TEXT, BACKGROUND
-    owner:sendAddBuffNotification(85, 2 + min, 'movement speed increased for : ' .. 2 + min .. ' seconds', 3, 0)
+    owner:sendAddBuffNotification(21, 2 + min, 'movement speed increased for : ' .. 2 + min .. ' seconds', 3, 0)
 	return true
 end

@@ -89,14 +89,14 @@ combats[5]:addCondition(outfit_bear)
             combat:execute(creature, variant)
         end
         player:addHealth(maxhealth)
-        player:sendAddBuffNotification(118, 15, 'Bear Form', 5, 0)
+        player:sendAddBuffNotification(6, 15, 'Bear Form', 5, 0)
     else
 			player:removeCondition(outfit_bear)
 			player:removeCondition(regen_bear)
 			player:removeCondition(stunSpellAttacks)
 			player:removeCondition(maxhp_bear_bear)
 			player:removeCondition(haste_bear)
-			player:sendRemoveBuffNotification(118)
+			player:sendRemoveBuffNotification(6)
 
     end
 

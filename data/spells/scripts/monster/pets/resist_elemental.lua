@@ -45,7 +45,7 @@ creature:say(randomLine, TALKTYPE_SAY)
     owner:setStorageValue(5, resistanceIncrease)
 
     owner:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Elemental damage reduction increased by " .. resistanceIncrease .. " for 7 secs.")
-    owner:sendAddBuffNotification(2, 7, 'Elemental damage reduction by: ' .. resistanceIncrease, 3, 0)
+    owner:sendAddBuffNotification(22, 7, 'Elemental damage reduction by: ' .. resistanceIncrease, 3, 0)
     
     return true
 end

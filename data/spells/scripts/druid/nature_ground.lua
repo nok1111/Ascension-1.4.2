@@ -135,7 +135,7 @@ function doHeal_living_ground(creature, target)
     local FinalHealth = math.random(min, max)
 
     target:addHealth(FinalHealth)
-    target:getPosition():sendMagicEffect(CONST_ME_HPUP)
+    target:getPosition():sendMagicEffect(701)
 		return true
 	elseif not healtargets(player, target) and not target:isNpc() then
 		--PassiveSkills.ThornedSanctuary as % of players max hp as damage

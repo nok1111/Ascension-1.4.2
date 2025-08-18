@@ -1,7 +1,7 @@
 
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, 231)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combat:setArea(createCombatArea(AREA_SQUARE1X1))
@@ -32,11 +32,15 @@ local function mysticPunch(playerId, variant, targetId)
     local creature = Creature(targetId)
     if not player or not creature then return true end
 
-    local pos = creature:getPosition()
+    
     local playerpos = player:getPosition()
+    local pos = creature:getPosition()
     --pos:sendMagicEffect(6)
-    -- Position(pos.x + 1, pos.y + 1, pos.z):sendMagicEffect(341)
+    
     combat:execute(player, variant)
+    Position(pos.x + 2, pos.y + 2, pos.z):sendMagicEffect(1117)
+    Position(pos.x + 1, pos.y + 1, pos.z):sendMagicEffect(848)
+    
 
     creature:attachEffectById(113, true)
     return true
@@ -52,6 +56,8 @@ function onCastSpell(player, variant)
 
     local target = player:getTarget()
     if target then
+        local pos = target:getPosition()
+        
         mysticPunch(player:getId(), variant, target:getId())
         -- Remove the spent orbs from the player's boosters
         ClearBooster(player)

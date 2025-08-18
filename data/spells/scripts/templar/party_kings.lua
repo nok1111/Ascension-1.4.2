@@ -28,12 +28,13 @@ skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, slvl)
+skill:setParameter(CONDITION_PARAM_SKILL_AXEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(skill)
 
 player:addCondition(skill)
- player:sendAddBuffNotification(60, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
+ player:sendAddBuffNotification(27, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
 
         return true
     end
@@ -52,6 +53,7 @@ skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, slvl)
+skill:setParameter(CONDITION_PARAM_SKILL_AXEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(skill)
@@ -63,7 +65,7 @@ local positioneffect = position
     positioneffect:sendMagicEffect(369)
 	
 player:addCondition(skill)
- player:sendAddBuffNotification(60, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
+ player:sendAddBuffNotification(27, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
         return true
     end
 
@@ -85,6 +87,7 @@ skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, slvl)
+skill:setParameter(CONDITION_PARAM_SKILL_AXEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(skill)
@@ -96,7 +99,7 @@ local positioneffect = position
     positioneffect:sendMagicEffect(369)
 	
 player:addCondition(skill)
- player:sendAddBuffNotification(60, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
+ player:sendAddBuffNotification(27, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
         return true
     end
 
@@ -122,13 +125,14 @@ skill:setParameter(CONDITION_PARAM_TICKS, time)
 skill:setParameter(CONDITION_PARAM_SKILL_SWORDPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_DISTANCEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_SKILL_SHIELDPERCENT, slvl)
+skill:setParameter(CONDITION_PARAM_SKILL_AXEPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_STAT_MAGICPOINTSPERCENT, slvl)
 skill:setParameter(CONDITION_PARAM_BUFF_SPELL, true)
 combat:addCondition(skill)
 
 
 	targetPlayer:addCondition(skill)
-	targetPlayer:sendAddBuffNotification(60, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
+	targetPlayer:sendAddBuffNotification(27, 1200, 'Offensive Skills  increased 10% for 20 min!', 5, 0)
     end
     return true
 end

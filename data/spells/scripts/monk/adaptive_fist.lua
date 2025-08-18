@@ -120,7 +120,7 @@ end
 windfist:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_WindPunch")
 
 local healingfist = Combat()
-healingfist:setParameter(COMBAT_PARAM_EFFECT, 15)
+healingfist:setParameter(COMBAT_PARAM_EFFECT, 675)
 healingfist:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 healingfist:setParameter(COMBAT_PARAM_DISPEL, CONDITION_PARALYZE)
 healingfist:setArea(createCombatArea(AREA_CIRCLE3X3))
@@ -332,7 +332,9 @@ function onCastSpell(player, variant)
             frostbloomCombat:execute(player, Variant(target:getPosition()))
             
             player:addCondition(damageReductionCondition)
+            player:sendAddBuffNotification(34, 8, 'Frostbloom Fist: reduce damage taken by 20% for 8 seconds', 5, 0)
             target:getPosition():sendMagicEffect(53) -- Visual effect
+            player:attachEffectById(215, true)
         end
         
         player:say("Frostbloom Fist!", TALKTYPE_MONSTER_SAY)

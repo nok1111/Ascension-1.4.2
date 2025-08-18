@@ -14,24 +14,38 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 
-function onGetFormulaValues(player, skill, attack, factor)
-    local magic = player:getMagicLevel()
-    local power = skill * attack 
-    local level = player:getLevel()
 
-    local min = (level / 5) + (power * 0.10) + (attack * 4.0) + 300
-    local max = (level / 5) + (power * 0.11) + (attack * 4.1) + 350
-    return -min, -max
-end
 
-combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
-
-function shootArrow(cid, target)
+function shootArrow(cid, target, variant)
     local creature = Creature(cid)
     local target = Creature(target)
     if creature and target then
+
         
-        combat:execute(creature, Variant(target:getPosition()))
+
+        local skill = creature:getSkillLevel(SKILL_DISTANCE)
+        local attack = getDistanceWeaponAttack(creature:getId())
+        local level = creature:getLevel()
+        local min = (level / 5) + (skill * attack * 0.050) + (attack * 1.5) + 50
+        local max = (level / 5) + (skill * attack * 0.061) + (attack * 1.65) + 65
+ 
+
+        local hunterMercy = creature:getStorageValue(PassiveSkills.HunterMercy) or 0
+        if hunterMercy > 0 and target:getHealth() < target:getMaxHealth() * 0.5 then
+           -- creature:say("Hunter's Mercy", TALKTYPE_MONSTER_SAY)
+            min = min + (min * (hunterMercy / 100))
+            max = max + (max * (hunterMercy / 100))
+        end
+
+        local focusedFire = math.max(creature:getStorageValue(PassiveSkills.FocusedFire) or 0, 0)
+        if focusedFire > 0 then
+            min = min + (min * (focusedFire / 100))
+            max = max + (max * (focusedFire / 100))
+        end
+
+        combat:setFormula(COMBAT_FORMULA_SKILL, 0, min, 0, max)
+        
+        combat:execute(creature, variant)
 		--target:getPosition():sendMagicEffect(522)
     end
 end
@@ -45,6 +59,8 @@ function sendEffect(cid, target)
         positioneffect.x = creatureposition.x + 2
         positioneffect.y = creatureposition.y + 1
         positioneffect:sendMagicEffect(1054)
+
+        creature:getPosition():sendDistanceEffect(target:getPosition(), config.arrowEffectId)
     end
 end
 
@@ -70,18 +86,7 @@ function onCastSpell(creature, variant)
 
     creature:attachEffectById(168, true)
     target:attachEffectById(170, true)
-    addEvent(function()
-        if target then
-            shootArrow(creature:getId(), target:getId())
-        end
-    end, config.stunDuration)
-
-    addEvent(function()
-        if target then
-            creature:getPosition():sendDistanceEffect(target:getPosition(), config.arrowEffectId)
-            sendEffect(creature:getId(), target:getId())
-        end
-    end, config.stunDuration * 0.85)
-
+    addEvent(shootArrow, config.stunDuration, creature:getId(), target:getId(), variant)
+    addEvent(sendEffect, config.stunDuration * 0.95, creature:getId(), target:getId())
     return true
 end

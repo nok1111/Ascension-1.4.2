@@ -32,6 +32,10 @@ local function isExcludedTarget(creature, target)
         return true
     end
 
+    if target:isNpc() then
+        return true
+    end
+
     -- Exclude party members and their summons
     if creature:isPlayer() and target:isPlayer() then
         local creatureParty = creature:getParty()
