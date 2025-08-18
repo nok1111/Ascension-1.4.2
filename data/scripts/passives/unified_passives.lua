@@ -94,7 +94,59 @@ function doDemolition(playerid, targetid, baseDamage)
   doAreaCombatHealth(player:getId(), COMBAT_FIREDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
 end
 
+
+
 local PASSIVES = {
+
+
+  DeadFromAbove = {
+    config = {
+      type = "OnAttack",
+      storage = PassiveSkills.DeadFromAbove,
+    },
+    trigger = function(player, target, damage, primaryType, origin)
+      if primaryType ~= COMBAT_PHYSICALDAMAGE then
+        return false
+      end
+      local level = math.max(player:getStorageValue(PassiveSkills.DeadFromAbove) or 0, 0)
+      if level > 0 then
+        local chance = level -- 2% per level
+        return math.random(100) <= chance 
+      end
+      return false
+    end,
+    effect = function(player, target, damage)
+      if not player or not target or not damage then
+        return
+      end
+      local fromPos = player:getPosition()
+      local toPos = target:getPosition()
+      -- Calculate damage formula using player level and magic level
+      local level = player:getLevel()
+      local distance = player:getEffectiveSkillLevel(SKILL_DISTANCE) * 1
+      local bonus = (level * 0.8) + (level * ((distance * 2) / 100)) + 50
+      local totalDamage = bonus
+      -- Apply fire damage to area
+      
+      doAreaCombatHealth(player:getId(), COMBAT_FIREDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+      local positioneffect = toPos
+      positioneffect.x = toPos.x + 2
+      positioneffect.y = toPos.y + 1
+      positioneffect:sendMagicEffect(990)
+
+      local ScorchedMarkLevel = math.max(player:getStorageValue(PassiveSkills.ScorchedMark) or 0, 0)
+      if ScorchedMarkLevel > 0 then
+        local condition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
+        condition:setParameter(CONDITION_PARAM_TICKS, 5000)
+        condition:setParameter(CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, ScorchedMarkLevel)
+        condition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.scorchedmark)
+        player:addCondition(condition)
+      end
+      return damage
+    end,
+  },
+
+
 
     -- Demolition Passive: Fire damage has a 2% chance per level to trigger AoE physical damage
     demolition = {
