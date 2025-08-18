@@ -1296,7 +1296,7 @@ function globalevent.onThink()
     return true
 end
 
-globalevent:interval(10000) -- Runs every 60 seconds
+globalevent:interval(180000) -- Runs every 60 seconds
 globalevent:register()
 
 
