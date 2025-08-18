@@ -51,7 +51,7 @@ local config = {
 
 local antidote = Combat()
 antidote:setParameter(COMBAT_PARAM_TYPE, COMBAT_HEALING)
-antidote:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HPUP)
+antidote:setParameter(COMBAT_PARAM_EFFECT, 701)
 antidote:setParameter(COMBAT_PARAM_TARGETCASTERORTOPMOST, true)
 antidote:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 antidote:setParameter(COMBAT_PARAM_DISPEL, CONDITION_POISON)
