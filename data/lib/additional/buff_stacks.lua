@@ -60,7 +60,7 @@ function addBuffStack(player, stackName, amount, durationMs)
         -- Start a single timer for all stacks
         local timer = addEvent(function()
             setBuffStack(player, stackName, 0)
-            player:say(stackName .. ': 0')
+            --player:say(stackName .. ': 0')
         end, durationMs)
         table.insert(stacks[stackName].timers, timer)
     else
@@ -69,7 +69,7 @@ function addBuffStack(player, stackName, amount, durationMs)
     end
 
     local count = getBuffStack(player, stackName)
-    player:say(stackName .. ": " .. count)
+    --player:say(stackName .. ": " .. count)
 end
 
 -- Removes stacks from a named buff for the player (cannot go below 0).
@@ -99,7 +99,7 @@ function removeBuffStack(player, stackName, amount, fromDecay)
     end
 
     local count = getBuffStack(player, stackName)
-    player:say(stackName .. ": " .. count)
+    --player:say(stackName .. ": " .. count)
 end
 
 -- Sets the stack count for a named buff for the player.
