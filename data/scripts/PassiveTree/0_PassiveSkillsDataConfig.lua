@@ -230,9 +230,10 @@ PassiveSkills.FrostQuiver = 875659
 --ranger 4
 PassiveSkills.HunterMercy = 875660
 PassiveSkills.Arrowstorm = 875661
-PassiveSkills.FocusedFire = 875662
-PassiveSkills.DeadFromAbove = 875663
-PassiveSkills.ScorchedMark = 875664
+PassiveSkills.ArrowstormcastTime = 875662
+PassiveSkills.FocusedFire = 875663
+PassiveSkills.DeadFromAbove = 875664
+PassiveSkills.ScorchedMark = 875665
 
 
 PassiveSkills.resetCost = {
@@ -369,9 +370,9 @@ PassiveSkills.treeData = {
 					},
 					[5] = {
 						name = "Riftwalker",
-						description = "Increses the distance traveled of teleport by 1 tile per level",
+						description = "Increses the distance traveled of teleport by 1 tile (per level) and increases your magic level percent by 10% (per level) for 5 seconds",
 						effect = {
-							{ type = "storage", name = "TeleportDistance", storage = PassiveSkills.TeleportDistance, value = 1 },
+							{ type = "storage", name = "TeleportDistance", storage = PassiveSkills.TeleportDistance, value = 1 }, 
 						},
 						maxLevel = 3,
 						prevNodeLevelNeeded = 7
@@ -761,7 +762,8 @@ PassiveSkills.treeData = {
 							},
 						
 						},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 4
 					},
 					[6] = {
 						name = "Stealth",
@@ -769,7 +771,8 @@ PassiveSkills.treeData = {
 						effect = {
 							{type = "storage", name = "StealthDuration", storage = PassiveSkills.StealthDuration, value = 1},
 							},
-						maxLevel = 3
+						maxLevel = 3,
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -836,20 +839,21 @@ PassiveSkills.treeData = {
 						name = "Scaled Rupture",
 						description = "Increase Rend damage by 5% (per level)",
 						effect = {{type = "storage", name = "ScaledRupture", storage = PassiveSkills.ScaledRupture, value = 5}},
-						maxLevel = 10
+						maxLevel = 8
 					},
 					[2] = {
 						name = "Colossal Blows",
 						description = "Increase physical damage done by 5% per level",
 						effect = {{type = "storage", name = "UnyieldingStrength", storage = PassiveSkills.UnyieldingStrength, value = 5}},
-						maxLevel = 4
+						maxLevel = 5,
+						prevNodeLevelNeeded = 8
 					},
 					[3] = {
 						name = "Shockwave",
 						description = "Learn spell Shockwave",
 						effect = {{type = "spell", name = "Shockwave"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 4
+						prevNodeLevelNeeded = 5
 					},
 					[4] = {
 						name = "Lifeblood Strike",
@@ -862,22 +866,22 @@ PassiveSkills.treeData = {
 								value = 25
 							}
 						},
-						maxLevel = 2,
-						prevNodeLevelNeeded = 4
+						maxLevel = 3,
+						prevNodeLevelNeeded = 1
 					},
 					[5] = {
 						name = "Heartseeker",
-						description = "Increase critical strike chance by 2% (per level)",
+						description = "Increase critical strike chance by 3% (per level)",
 						effect = {
 							{
 								type = "condition",
 								name = "Critical Strike",
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 2}}
+								params = {{param = CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, value = 3}}
 							}
 						},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 2
+						maxLevel = 5, 
+						prevNodeLevelNeeded = 3
 					},
 					[6] = {
 						name = "Bloodlust",
@@ -886,7 +890,7 @@ PassiveSkills.treeData = {
 							{type = "spell", name = "Bloodlust"}
 						},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						prevNodeLevelNeeded = 5
 					}
 				},
 			},
@@ -906,8 +910,7 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 5}}
 							}
 						},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 3
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Bloodthirst",
@@ -945,7 +948,8 @@ PassiveSkills.treeData = {
 						name = "Survival Instincts",
 						description = "Auto attacks heals you per missing health, the heal is increased 1% per missing % health per level",
 						effect = {{type = "storage", name = "SurvivalInstincts", storage = PassiveSkills.SurvivalInstincts, value = 1}},
-						maxLevel = 5
+						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					},
 					[6] = {
 						name = "Draconic Chains",
@@ -980,7 +984,7 @@ PassiveSkills.treeData = {
 						description = "Brutal swing has 20% chance to trigger a second strike and create a second hit in front of the main area",
 						effect = {{type = "storage", name = "ReboundStrike", storage = PassiveSkills.ReboundStrike, value = 20}},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 2
 					},
 					[4] = {
 						name = "Flame Eater",
@@ -1170,14 +1174,14 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 8,
-						prevNodeLevelNeeded = 6 
+						prevNodeLevelNeeded = 5 
 					},
 					[4] = {
 						name = "Void Sentinel",
 						description = "Learn Spell Summon Void Sentinel",
 						effect = {{type = "spell", name = "Summon Void Sentinel"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 8
 					},
 					[5] = {
 						name = "Abyssal Refund",
@@ -1194,7 +1198,7 @@ PassiveSkills.treeData = {
 							{type = "spell", name = "Summon Void Mender"}
 						},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 6
 					}
 				},
 			},
@@ -1206,19 +1210,22 @@ PassiveSkills.treeData = {
 						name = "Pactmaster's Gift",
 						description = "Increase the mana transfer from blood pact by 10% per level",
 						effect = {{type = "storage", name = "PactmasterGift", storage = PassiveSkills.PactmasterGift, value = 10}},
-						maxLevel = 4
+						maxLevel = 4,
+						prevNodeLevelNeeded = 0
 					},
 					[2] = {
 						name = "Sanguine Shield",
-						description = "Increases the effectiveness of Blood Wall by 10% per level",
+						description = "Increases the effectiveness of Blood Wall by 10% per level\n\n\nThis node does not require a previous node to be unlocked",
 						effect = {{type = "storage", name = "BloodWall", storage = PassiveSkills.BloodWall, value = 10}},
-						maxLevel = 3
+						maxLevel = 3,
+						prevNodeLevelNeeded = 0
 					},
 					[3] = {
 						name = "Zombie Wall",
-						description = "Learn Spell Zombie Wall",
+						description = "Learn Spell Zombie Wall\n\n\nThis node does not require a previous node to be unlocked",
 						effect = {{type = "spell", name = "Zombie Wall"}},
 						maxLevel = 1,
+						prevNodeLevelNeeded = 0
 					},
 				},
 			},
@@ -1243,7 +1250,8 @@ PassiveSkills.treeData = {
 						name = "Astral Burn",
 						description = "Starfall now applies a damaging condition to the target wich deal energy damage for 1 seconds per level",
 						effect = {{type = "storage", name = "AstralBurn", storage = PassiveSkills.AstralBurn, value = 1}},
-						maxLevel = 4
+						maxLevel = 4,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Falling Stars", --missing
@@ -1269,7 +1277,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 4
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						
@@ -1298,7 +1306,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 3
 					},
 					[7] = {
 						name = "Full Moon", --missing
@@ -1351,7 +1359,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 3,
-						prevNodeLevelNeeded = 1
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Moonshower",
@@ -1371,7 +1379,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 2
+						prevNodeLevelNeeded = 3
 					},
 					[4] = {
 						name = "Luminous Bond",
@@ -1429,7 +1437,7 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Mana Feather", 
-						description = "Aery now restores 0.5% (per level) of your max mana per basic attack",
+						description = "Aery now restores 0.5% (per level) of your max mana per basic attack\n\n\nThis node does not require a previous node to be unlocked",
 						effect = {
 							{
 								type = "storage",
@@ -1439,10 +1447,11 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
+						prevNodeLevelNeeded = 0
 					},
 					[3] = {
 						name = "Sacred Constitution",
-						description = "Increases max health by 5.0% per level",
+						description = "Increases max health by 5.0% per level\n\n\nThis node does not require a previous node to be unlocked",
 						effect = {
 							{
 								type = "condition",
@@ -1452,7 +1461,8 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 5.0}}
 							}
 						},
-						maxLevel = 6
+						maxLevel = 6,
+						prevNodeLevelNeeded = 0
 					},					
 				},
 			},
@@ -1567,7 +1577,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						prevNodeLevelNeeded = 3
 					},
 					[4] = {
 						name = "Glacial Palm",
@@ -1582,7 +1592,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 1
 					},
 					[5] = {
 						name = "Frozen Lotus",
@@ -1676,7 +1686,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 3
 					},
 					[5] = {
 						name = "Zen Barrier",
@@ -1900,9 +1910,9 @@ PassiveSkills.treeData = {
 					},
 					[2] = {
 						name = "Bear Form",
-						description = "Learn Bear Form spell",
+						description = "Learn Bear Form spell\n\n\nThis node does not require a previous node to be unlocked",
 						effect = {{type = "spell", name = "Bear Form"}},
-						prevNodeLevelNeeded = 6,
+						prevNodeLevelNeeded = 0,
 						maxLevel = 1,
 					},
 					[3] = {
@@ -2023,7 +2033,7 @@ PassiveSkills.treeData = {
 						description = "Learn Magnetic Shield spell\nGain damage immunity for 5 seconds to all damage types but reduce your damage done by 80%",
 						effect = {{type = "spell", name = "Magnetic Shield"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 3
 					},				
 				},
 			},
@@ -2058,7 +2068,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 3
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Dancing Edge",
@@ -2091,7 +2101,7 @@ PassiveSkills.treeData = {
 							{type = "storage", name = "Reverberation", storage = PassiveSkills.Reverberation, value = 10}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 1
 					}
 				},
 			},
@@ -2125,7 +2135,7 @@ PassiveSkills.treeData = {
 	},
 	[10] = {			-- Tree 4
 		name = "Archer Talents",
-		background = "7",
+		background = "16",
 		branches = {
 			[1] = {
 				color = '#134f1c',
@@ -2168,7 +2178,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 4
 					},
 					[5] = {
 						name = "Explosive Barrel",
@@ -2197,7 +2207,6 @@ PassiveSkills.treeData = {
 						description = "Learn Ice Arrow\nShoot a powerful ice arrow that slows the target for 5 seconds, if target is already slowed or frozen, it will deal double damage.",
 						effect = {{type = "spell", name = "Ice Arrow"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 5
 					},
 
 					[2] = {
@@ -2207,6 +2216,7 @@ PassiveSkills.treeData = {
 							{ type = "storage", name = "FrostDamage", storage = PassiveSkills.FrostDamage, value = 8 }
 						},
 						maxLevel = 5,
+						prevNodeLevelNeeded = 1
 					},
 					[3] = {
 						name = "Frost Barrel",
@@ -2218,7 +2228,7 @@ PassiveSkills.treeData = {
 
 					[4] = {
 						name = "Frost Barrage",
-						description = "Increase the number of arrows you send when using rapid fire by 1 (per level)\nArrow Barrage now deals ice damage and slows all enemies for 4 seconds.",
+						description = "Arrow Barrage now deals ice damage and slows all enemies for 4 seconds\nIncrease the damage of Ice Arrow and Arrow Barrage by an aditional 5% (per level)",
 						effect = {
 							{type = "storage", name = "FrostBarrage", storage = PassiveSkills.FrostBarrage, value = 1}
 						},
@@ -2228,18 +2238,18 @@ PassiveSkills.treeData = {
 					
 					[5] = {
 						name = "Momentum",
-						description = "Your auto attacks now have a 50% chance to grant you Momentum, which increases your attack speed for 1% (per level)  to a maximum of 200% for 5 seconds every time your attacks hit an enemy, this effect last until duration is over. Attacks will refresh the duration of momentum.",
+						description = "Your auto attacks now have a 20% + 1% (per level) chance to grant you Momentum, which increases your attack speed for 1% (per level)  to a maximum of 95% for 4 seconds every time your attacks hit an enemy, this effect last until duration is over. Attacks will refresh the duration of momentum.",
 						effect = {
 							{type = "storage", name = "Momentum", storage = PassiveSkills.Momentum, value = 1}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 1
+						prevNodeLevelNeeded = 5
 					},
 					[6] = {
 						name = "Frost Quiver",
-						description = "Every fourth attack you shoot a ice arrow wich 25% more damage as ice damage.",
+						description = "Every fourth attack you have a 5% (per level) chance to trigger Frost Quiver, wich deals shoots a fronzen bolt to the target dealing ice damage.",
 						effect = {
-							{type = "storage", name = "FrostQuiver", storage = PassiveSkills.FrostQuiver, value = 25}
+							{type = "storage", name = "FrostQuiver", storage = PassiveSkills.FrostQuiver, value = 5}
 						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 5
@@ -2273,16 +2283,11 @@ PassiveSkills.treeData = {
 						maxLevel = 5
 					},
 					[2] = {
-						name = "Beast Shot",
-						description = "Learn Beast Shot\nShoot a powerful shot that deals physical damage to the target and and stuns it for 3 seconds",
-						effect = {{type = "spell", name = "Beast Shot"}},
-						maxLevel = 1,
-					},
-					[3] = {
 						name = "Falcon Shot",
-						description = "Learn Falcon Shot\nShoot a powerful shot that deals physical damage to the target and nearby enemies slowing them for 3 seconds",
+						description = "Learn Falcon Shot\nShoot a powerful shot that deals physical damage to the target and nearby enemies slowing them for 3 seconds\n\n\nThis node does not require a previous node to be unlocked",
 						effect = {{type = "spell", name = "Falcon Shot"}},
 						maxLevel = 1,
+						prevNodeLevelNeeded = 0
 					},
 					
 				},
@@ -2301,7 +2306,7 @@ PassiveSkills.treeData = {
 						name = "Hunter's Mercy",
 						description = "Your phantom shot now deals 12% (per level) additional damage if the target is below 50% health.",
 						effect = {
-							{type = "storage", name = "HunterMercy", storage = PassiveSkills.HunterMercy, value = 1}
+							{type = "storage", name = "HunterMercy", storage = PassiveSkills.HunterMercy, value = 12}
 						},
 						maxLevel = 4, 
 						prevNodeLevelNeeded = 1
@@ -2310,7 +2315,8 @@ PassiveSkills.treeData = {
 						name = "Arrowstorm",
 						description = "Increase the shots from rapid fire by 1 (per level) and reduces its cast time.",
 						effect = {
-							{type = "storage", name = "Arrowstorm", storage = PassiveSkills.Arrowstorm, value = 1}
+							{type = "storage", name = "Arrowstorm", storage = PassiveSkills.Arrowstorm, value = 1},
+							{type = "storage", name = "Arrowstorm", storage = PassiveSkills.ArrowstormcastTime, value = 10}
 						},
 						maxLevel = 5,
 						prevNodeLevelNeeded = 4
@@ -2335,7 +2341,7 @@ PassiveSkills.treeData = {
 					},
 					[6] = {
 						name = "Scorched Mark",
-						description = "Dead from above now increases your critical strike chance by 6% (per level) every time it triggers",
+						description = "Dead from above now increases your critical strike chance by 6% (per level) every time it triggers (this effect does not stack)",
 						effect = {
 							{type = "storage", name = "DeadFromAbove", storage = PassiveSkills.ScorchedMark, value = 6}
 						},
