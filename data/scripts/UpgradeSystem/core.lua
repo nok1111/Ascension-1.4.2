@@ -351,7 +351,7 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
 									attr.execute(attacker, creature, value[2])
 									if attr.cooldown ~= nil then
 										attacker:setStorageValue(value[1], os.time() + attr.cooldown)
-										attacker:sendAddBuffNotification(16, attr.cooldown, 'Power Rune Internal Cooldown', 1, 0)
+										attacker:sendAddBuffNotification(4, attr.cooldown, 'Internal Cooldown', 1, 0)
 									--	print(tostring("on cooldown"))
 									end
 								end
@@ -449,7 +449,7 @@ function us_onDamaged(creature, attacker, primaryDamage, primaryType, secondaryD
 									attr.execute(creature, attacker, value[2])
 									if attr.cooldown ~= nil then
 										attacker:setStorageValue(value[1], os.time() + attr.cooldown)
-										attacker:sendAddBuffNotification(16, attr.cooldown, 'Power Rune Internal Cooldown', 1, 0)
+										attacker:sendAddBuffNotification(4, attr.cooldown, 'Internal Cooldown', 1, 0)
 									--	print(tostring("on cooldown"))
 									end
 								end
@@ -606,6 +606,44 @@ local rarityList = {
     {bag = 37133, effect = 374, tier = "CORRUPTED", textcolor = TEXTCOLOR_LIGHTGREEN},
 }
 
+local baseChance = 1200
+
+local enchantitems = {
+	[1] = {itemid = 38167, chance = 1},  --trash
+	[2] = {itemid = 38149, chance = 2},  --trash
+	[3] = {itemid = 38177, chance = 3},  --trash
+	[4] = {itemid = 38169, chance = 4},  --trash
+	[5] = {itemid = 38168, chance = 5},  --item loots
+	[6] = {itemid = 38157, chance = 6},  --item loots(fame)
+	[7] = {itemid = 38165, chance = 7},  --item loots(fame)
+	[8] = {itemid = 38157, chance = 8},  --item loots
+	[9] = {itemid = 38165, chance = 9},  --item loots
+	[10] = {itemid = 38160, chance = 10},  --item loots
+	[11] = {itemid = 38161, chance = 11},  --item loots
+	[12] = {itemid = 38162, chance = 12},  --item loots
+	[13] = {itemid = 38163, chance = 13},  --item loots
+	[14] = {itemid = 38165, chance = 14},  --item loots
+	[15] = {itemid = 33997, chance = 15},  --item loots
+	[16] = {itemid = 38194, chance = 16},  --item loots
+	[17] = {itemid = 38153, chance = 17},  --item loots
+	[18] = {itemid = 34097, chance = 18},  --item loots
+	[19] = {itemid = 34003, chance = 19},  --item loots
+	[20] = {itemid = 38188, chance = 20},  --item loots
+	[21] = {itemid = 38156, chance = 21},  --item loots
+	[22] = {itemid = 38202, chance = 22},  --item loots
+	[23] = {itemid = 33995, chance = 23},  --item loots
+	[24] = {itemid = 34015, chance = 24},  --item loots
+	[25] = {itemid = 34077, chance = 25},  --item loots
+	[26] = {itemid = 38190, chance = 26},  --item loots
+	[27] = {itemid = 33996, chance = 27},  --item loots
+	[28] = {itemid = 38162, chance = 28},  --item loots
+	[29] = {itemid = 38191, chance = 29},  --item loots
+	[30] = {itemid = 38179, chance = 30},  --item loots
+	[31] = {itemid = 38158, chance = 31},  --item loots
+  [32] = {itemid = 38152, chance = 32},  --item loots
+  [33] = {itemid = 38182, chance = 33},  --item loots
+}
+
 local function classifyLoot(position)
     local corpse = Tile(position):getTopDownItem()
     if not corpse or not corpse:getType():isContainer() then
@@ -620,9 +658,14 @@ local function classifyLoot(position)
              if rarityIndex > foundRarity then
                 foundRarity = rarityIndex
 			       end
-        			if item:getId() > 38146 and item:getId() < 38207 then			
-        				foundRarity = 2
+
+            for _, v in pairs(enchantitems) do
+              if item:getId() == v.itemid then
+                foundRarity = 2
+                break
               end
+            end
+
           if item:isUnique() then     
             foundRarity = 5
           end
@@ -644,41 +687,7 @@ local function classifyLoot(position)
     end
 end
 
-local baseChance = 1000
 
-local enchantitems = {
-	[1] = {itemid = 38167, chance = 2},  --trash
-	[2] = {itemid = 38149, chance = 3},  --trash
-	[3] = {itemid = 38177, chance = 4},  --trash
-	[4] = {itemid = 38169, chance = 5},  --trash
-	[5] = {itemid = 38168, chance = 6},  --item loots
-	[6] = {itemid = 38157, chance = 7},  --item loots(fame)
-	[7] = {itemid = 38165, chance = 8},  --item loots(fame)
-	[8] = {itemid = 38157, chance = 9},  --item loots
-	[9] = {itemid = 38165, chance = 10},  --item loots
-	[10] = {itemid = 38160, chance = 11},  --item loots
-	[11] = {itemid = 38161, chance = 12},  --item loots
-	[12] = {itemid = 38162, chance = 13},  --item loots
-	[13] = {itemid = 38163, chance = 14},  --item loots
-	[14] = {itemid = 38165, chance = 15},  --item loots
-	[15] = {itemid = 38166, chance = 16},  --item loots
-	[16] = {itemid = 38167, chance = 17},  --item loots
-	[17] = {itemid = 38170, chance = 18},  --item loots
-	[18] = {itemid = 38171, chance = 19},  --item loots
-	[19] = {itemid = 38172, chance = 20},  --item loots
-	[20] = {itemid = 38173, chance = 21},  --item loots
-	[21] = {itemid = 38176, chance = 22},  --item loots
-	[22] = {itemid = 38177, chance = 23},  --item loots
-	[23] = {itemid = 38179, chance = 25},  --item loots
-	[24] = {itemid = 38180, chance = 26},  --item loots
-	[25] = {itemid = 38181, chance = 27},  --item loots
-	[26] = {itemid = 38182, chance = 28},  --item loots
-	[27] = {itemid = 38183, chance = 29},  --item loots
-	[28] = {itemid = 38184, chance = 30},  --item loots
-	[29] = {itemid = 38185, chance = 31},  --item loots
-	[30] = {itemid = 38186, chance = 32},  --item loots
-	[31] = {itemid = 38187, chance = 33}  --item loots
-}
 
 function us_CheckCorpse(monsterType, corpsePosition, killerId)
    local killer = Player(killerId)
@@ -687,8 +696,11 @@ function us_CheckCorpse(monsterType, corpsePosition, killerId)
   
 
   
-    if math.random(1, #enchantitems) == enchantitems[i].chance then
-            corpse:addItem(enchantitems[i].itemid, 1)
+    for i = 1, #enchantitems do
+      if math.random(1, baseChance) == enchantitems[i].chance then
+        corpse:addItem(enchantitems[i].itemid, 1)
+        break -- Only add one enchantment per monster death
+      end
     end
  
 	
