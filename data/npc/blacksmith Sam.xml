@@ -9,8 +9,6 @@
 			Longbow Blueprint,38669,35;
 			axe,2386,5;
 			chain armor,2464,5;
-			chain helmet,2458,2;
-			chain legs,2648,3;
 			dagger,2379,3;
 			mace,2398,3;
 			spike sword,2383,6;
@@ -24,13 +22,9 @@
 			battle shield,2513,2;
 			bone sword,2450,2;
 			brass armor,2465,4;
-			brass helmet,2460,2;
-			brass legs,2478,2;
 			brass shield,2511,2;
 			carlin sword,2395,3;
 			chain armor,2464,2;
-			chain helmet,2458,1;
-			chain legs,2648,1;
 			copper shield,2530,2;
 			dagger,2379,1;
 			double axe,2387,5;
@@ -40,39 +34,25 @@
 			halberd,2381,7;
 			hand axe,2380,1;
 			hatchet,2388,1;
-			iron helmet,2459,4;
 			katana,2412,2;
 			leather armor,2467,1;
 			leather boots,2643,1;
-			leather helmet,2461,1;
-			leather legs,2649,2;
-			legion helmet,2480,2;
 			longsword,2397,2;
 			mace,2398,1;
-			morning star,2394,3;
-			orcish axe,2428,5;
 			plate armor,2463,4;
-			plate legs,2647,5;
 			plate shield,2510,2;
 			rapier,2384,1;
 			sabre,2385,1;
 			scale armor,2483,2;
 			short sword,2406,1;
-			soldier helmet,2481,1;
 			spike sword,2383,3;
-			steel helmet,2457,3;
 			steel shield,2509,2;
 			studded armor,2484,1;
 			studded club,2448,1;
-			studded helmet,2482,1;
-			studded legs,2468,1;
 			studded shield,2526,1;
-			swampling club,20104,1;
 			sword,2376,1;
 			two handed sword,2377,5;
-			viking helmet,2473,2;
 			viking shield,2531,2;
-			war hammer,2391,5;
 			wooden shield,2512,1;" />
 	</parameters>
 </npc>

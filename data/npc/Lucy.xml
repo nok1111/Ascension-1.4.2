@@ -1,25 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<npc name="Lucy" script="Lubo.lua" walkinterval="2000" floorchange="0" speechbubble="2">
+<npc name="Lucy" script="Lucy.lua" walkinterval="0" floorchange="0" speechbubble="2">
 	<health now="100" max="100" />
 	<look type="1676" head="78" body="111" legs="116" feet="114"/>
 	<parameters>
 		<parameter key="module_shop" value="1" />
-		<parameter key="shop_buyable" value="
-			expedition bag,11242,1;
-			backpack,1988,2;
-			basket,1989,1,0;			
-			candelabrum,2057,2;
-			candlestick,2047,2;		
-			woodcutting axe,39975,1;
-			fishing rod,2580,5;
-			machete,2420,1;
-			pick,2553,1;
-			present,1990,1;
-			rope,2120,1;
-			scythe,2550,1;
-			shovel,2554,1;
-			watch,2036,1;
-			worm,3976,1;" />
+	
 		<parameter key="shop_sellable" value="
 		rotten meat,39039,2;
 preserved meat,39040,3;
