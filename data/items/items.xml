@@ -38047,7 +38047,6 @@
 		<attribute key="weight" value="20" />
 	</item>
 	<item id="35343" article="a" name="piece of cheese">
-		<attribute key="description" value="chefs may want this." />
 		<attribute key="weight" value="10" />
 	</item>
 	
