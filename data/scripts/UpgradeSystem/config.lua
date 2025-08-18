@@ -1928,14 +1928,14 @@ US_ENCHANTMENTS = {
           player:addCondition(US_BUFFS[pid][buffId].condition)
           player:sendTextMessage(MESSAGE_INFO_DESCR, "Critical Damage Buff applied for 7 seconds!")
           US_BUFFS[pid][buffId].event = addEvent(us_RemoveBuff, 12000, pid, buffId, "Critical Damage Buff")
-		  player:sendAddBuffNotification(44, 12, 'Critical Damage Buff for' ..value ..'%', 5, 0)
+		  player:sendAddBuffNotification(2, 12, 'Critical Damage Buff for' ..value ..'%', 5, 0)
         else
           stopEvent(US_BUFFS[pid][buffId].event)
           player:sendTextMessage(MESSAGE_INFO_DESCR, "Critical Damage Buff reapplied for 7 seconds!")
           US_BUFFS[pid][buffId].event = addEvent(us_RemoveBuff, 12000, pid, buffId, "Critical Damage Buff")
           player:removeCondition(US_BUFFS[pid][buffId].condition)
           player:addCondition(US_BUFFS[pid][buffId].condition)
-		  player:sendAddBuffNotification(44, 12, 'Critical Damage Buff for' ..value ..'%', 5, 0)
+		  player:sendAddBuffNotification(2, 12, 'Critical Damage Buff for' ..value ..'%', 5, 0)
         end
       end
     end,
@@ -3071,8 +3071,7 @@ US_ENCHANTMENTS = {
          
 		  target:getPosition():sendMagicEffect(239)	
 		  target:addCondition(stun)    
-          target:addCondition(condition)    
-		  attacker:sendAddBuffNotification(85, 6, 'stun', 3, 0)				
+          target:addCondition(condition)    			
       end
     end,
     format = function(value)
