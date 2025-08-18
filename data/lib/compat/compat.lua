@@ -357,6 +357,30 @@ function getCreatureHideHealth(cid) local c = Creature(cid) return c and c:isHea
 function getCreatureSkullType(cid) local c = Creature(cid) return c and c:getSkull() or false end
 function getCreatureNoMove(cid) local c = Creature(cid) return c and c:isMovementBlocked() or false end
 
+
+-- Returns the highest attack value among equipped distance weapons in both hands, or 1 if only 1 is found
+function getDistanceWeaponAttack(cid)
+    local c = Creature(cid)
+    if not c then return 0 end
+    local attack = 0
+    local slots = {CONST_SLOT_RIGHT, CONST_SLOT_LEFT}
+    for _, slot in ipairs(slots) do
+        local weapon = c:getSlotItem(slot)
+        if weapon then
+            local itemType = weapon:getType()
+            if itemType:getWeaponType() == WEAPON_DISTANCE then
+                local atk = itemType:getAttack()
+                if atk > attack then
+                    attack = atk
+                else
+                    attack = 1
+                end
+            end
+        end
+    end
+    return attack
+end
+
 function getCreatureTarget(cid)
 	local c = Creature(cid)
 	if c then
