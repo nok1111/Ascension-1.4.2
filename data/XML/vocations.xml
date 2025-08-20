@@ -11,7 +11,7 @@
 		<skill id="6" multiplier="1.1" />
 	</vocation>
 	<vocation id="1" clientid="1" name="Magician" description="a Magician" gaincap="10" gainhp="5" gainmana="20" gainhpticks="6" gainhpamount="16" gainmanaticks="3" gainmanaamount="24" manamultiplier="1.1" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="1">
-		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" dualwield="false" />
 		<skill id="0" multiplier="1.5" /> <!-- Fist Fighting -->
 		<skill id="1" multiplier="1.1" /> <!-- Club Fighting -->
 		<skill id="2" multiplier="2.0" /> <!-- Sword Fighting -->
@@ -21,7 +21,7 @@
 		<skill id="6" multiplier="1.4" /> <!-- Fishing -->
 	</vocation>
 	<vocation id="2" clientid="2" name="Templar" description="a templar" gaincap="10" gainhp="15" gainmana="5" gainhpticks="3" gainhpamount="16" gainmanaticks="4" gainmanaamount="36" manamultiplier="3.0" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="2">
-		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" />
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" dualwield="true" />
 		<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
@@ -31,7 +31,7 @@
 		<skill id="6" multiplier="1.1" />
 	</vocation>
 	<vocation id="3" clientid="3" name="Nightblade" description="a Nightblade" gaincap="10" gainhp="10" gainmana="12" gainhpticks="4" gainhpamount="16" gainmanaticks="4" gainmanaamount="24" manamultiplier="1.7" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="3">
-		<formula meleeDamage="1.5" distDamage="1.0" defense="1.0" armor="1.0" />
+		<formula meleeDamage="1.5" distDamage="1.0" defense="1.0" armor="1.0" dualwield="true"/>
 		<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
@@ -41,7 +41,7 @@
 		<skill id="6" multiplier="1.4" />
 	</vocation>
 	<vocation id="4" clientid="4" name="Dragon Knight" description="a Dragon Knight" gaincap="10" gainhp="15" gainmana="5" gainhpticks="3" gainhpamount="16" gainmanaticks="4" gainmanaamount="24" manamultiplier="3.0" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="4">
-		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" />
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" dualwield="true" />
 		<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
@@ -51,7 +51,7 @@
 		<skill id="6" multiplier="1.1" />
 	</vocation>
 	<vocation id="5" clientid="5" name="Warlock" description="a warlock" gaincap="10" gainhp="5" gainmana="20" gainhpticks="6" gainhpamount="16" gainmanaticks="3" gainmanaamount="24" manamultiplier="1.1" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="5">
-		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" dualwield="false"/>
 		<skill id="0" multiplier="1.5" />
 		<skill id="1" multiplier="1.8" />
 		<skill id="2" multiplier="1.8" />
@@ -61,7 +61,7 @@
 		<skill id="6" multiplier="1.4" />
 	</vocation>
 		<vocation id="6" clientid="6" name="Stellar" description="a Stellar" gaincap="10" gainhp="5" gainmana="22" gainhpticks="6" gainhpamount="16" gainmanaticks="2" gainmanaamount="42" manamultiplier="1.1" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="6">
-		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" dualwield="false"/>
 		<skill id="0" multiplier="1.4" />
 		<skill id="1" multiplier="1.4" />
 		<skill id="2" multiplier="1.4" />
@@ -71,7 +71,7 @@
 		<skill id="6" multiplier="1.4" />
 	</vocation>
 		<vocation id="7" clientid="7" name="Monk" description="a Monk" gaincap="10" gainhp="15" gainmana="5" gainhpticks="3" gainhpamount="16" gainmanaticks="3" gainmanaamount="34" manamultiplier="3.0" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="7">
-		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" />
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.2" armor="1.2" dualwield="true"/>
 	<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
@@ -81,7 +81,7 @@
 		<skill id="6" multiplier="1.1" />
 	</vocation>
 	<vocation id="8" clientid="8" name="Druid" description="a Druid" gaincap="10" gainhp="5" gainmana="22" gainhpticks="3" gainhpamount="16" gainmanaticks="2" gainmanaamount="24" manamultiplier="1.1" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="8">
-		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" />
+		<formula meleeDamage="1.0" distDamage="1.0" defense="1.0" armor="1.0" dualwield="false"/>
 	<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="2.0" />
@@ -91,7 +91,7 @@
 		<skill id="6" multiplier="1.4" />
 	</vocation>
 		<vocation id="9" clientid="9" name="Light Dancer" description="a Light Dancer" gaincap="10" gainhp="10" gainmana="15" gainhpticks="4" gainhpamount="16" gainmanaticks="3" gainmanaamount="24" manamultiplier="1.7" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="9">
-		<formula meleeDamage="1.5" distDamage="1.0" defense="1.0" armor="1.0" />
+		<formula meleeDamage="1.5" distDamage="1.0" defense="1.0" armor="1.0" dualwield="true" />
 		<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
@@ -101,7 +101,7 @@
 		<skill id="6" multiplier="1.2" />
 	</vocation>
 		<vocation id="10" clientid="10" name="Archer" description="an Archer" gaincap="10" gainhp="10" gainmana="15" gainhpticks="4" gainhpamount="16" gainmanaticks="2" gainmanaamount="24" manamultiplier="1.8" attackspeed="2000" basespeed="250" soulmax="100" gainsoulticks="120" fromvoc="10">
-		<formula meleeDamage="1.0" distDamage="1.2" defense="1.0" armor="1.0" />
+		<formula meleeDamage="1.0" distDamage="1.2" defense="1.0" armor="1.0" dualwield="false"/>
 		<skill id="0" multiplier="1.1" />
 		<skill id="1" multiplier="1.1" />
 		<skill id="2" multiplier="1.1" />
