@@ -31,7 +31,7 @@ function doExtraFireball(playerid, targetid, baseDamage)
   -- Calculate damage formula using player level and magic level
   local level = player:getLevel()
   local magic = player:getMagicLevel()
-  local bonus = (level * 0.8) + (magic * 3.0)
+  local bonus = (level * 0.2) + (magic /10) + 1
   local totalDamage = baseDamage + bonus
   -- Apply fire damage to area
   
