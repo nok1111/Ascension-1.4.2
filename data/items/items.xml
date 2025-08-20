@@ -2745,7 +2745,7 @@
 		<attribute key="showduration" value="1" />
 	</item>
 	<item id="2163" article="a" name="magic light wand">
-		<attribute key="attack" value="22" />
+		<attribute key="attack" value="20" />
 		<attribute key="weight" value="290" />
 		<attribute key="weaponType" value="axe" />
 		<attribute key="hitChance" value="75" />	
@@ -3856,12 +3856,12 @@
 	</item>
 	<item id="2376" article="a" name="sword">
 		<attribute key="weight" value="3500" />
-		<attribute key="attack" value="22" />
+		<attribute key="attack" value="20" />
 		<attribute key="weaponType" value="sword" />
 	</item>
 	<item id="2377" article="a" name="two handed sword">
 		<attribute key="weight" value="7000" />
-		<attribute key="attack" value="44" />
+		<attribute key="attack" value="32" />
 		<attribute key="weaponType" value="sword" />
 		<attribute key="slotType" value="two-handed" />		
 	</item>
@@ -4782,7 +4782,7 @@
 
 	<item id="2512" article="a" name="wooden shield">
 		<attribute key="weight" value="4000" />
-		<attribute key="defense" value="22" />
+		<attribute key="defense" value="20" />
 		<attribute key="weaken" value="25" />
 		<attribute key="absorbPercentAll" value="15" />
 		<attribute key="weaponType" value="shield" />
@@ -10972,7 +10972,7 @@
 	</item>
 	<item id="5947" name="sturdy crossbow">
 		<attribute key="weight" value="200" />
-		<attribute key="attack" value="44" />
+		<attribute key="attack" value="32" />
 		<attribute key="hitChance" value="75" />
 		<attribute key="weaponType" value="distance" />
 		<attribute key="slotType" value="two-handed" />
@@ -37669,7 +37669,7 @@
 	</item>
 	<item id="32723" article="a" name="Magic Practice Book">
 		<attribute key="weight" value="1800" />
-		<attribute key="defense" value="18" />
+		<attribute key="defense" value="20" />
 		<attribute key="maxmanapoints" value="80" />
 		<attribute key="weaponType" value="shield" />		
 	</item>
