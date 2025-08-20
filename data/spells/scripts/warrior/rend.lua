@@ -1,7 +1,7 @@
 --AREA_WAVE3
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 
@@ -20,13 +20,13 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (skill * 0.045) + attack
-	local max = (level / 5) + (skill * 0.085) + attack * 1.5
+	local min = (level / 5) + (power * 0.045) + attack
+	local max = (level / 5) + (power * 0.085) + attack * 1.5
 
     local scaledrupture = player:getStorageValue(PassiveSkills.ScaledRupture)
     if scaledrupture > 0 then
-        min = min + (min * scaledrupture / 100)
-        max = max + (max * scaledrupture / 100)
+        min = min * (1 + scaledrupture / 100)
+        max = max * (1 + scaledrupture / 100)
     end
 	return -min, -max
 end

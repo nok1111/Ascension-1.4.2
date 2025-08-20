@@ -29,12 +29,13 @@ combat3:addCondition(condition)
 function onGetFormulaValues(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-	local level = player:getLevel()
+    local power = skill * attack
+    local magicpower = magic * skill
+    local level = player:getLevel()
+    
 
-
-	local min = (level / 5) + (power * 0.045) + (attack/2)
-	local max = (level / 5) + (power * 0.055) + attack
+    local min = (level / 5) + (power * 0.045) + (magicpower * 0.12) + 10
+    local max = (level / 5) + (power * 0.055) + (magicpower * 0.14) + 10
 	return -min, -max
 end
 
@@ -43,12 +44,13 @@ combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 function onGetFormulaValues2(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-	local level = player:getLevel()
+    local power = skill * attack
+    local magicpower = magic * skill
+    local level = player:getLevel()
+    
 
-
-	local min = (level / 5) + (power * 0.045) + (attack/2)
-	local max = (level / 5) + (power * 0.055) + attack
+    local min = (level / 5) + (power * 0.045) + (magicpower * 0.12) + 10
+    local max = (level / 5) + (power * 0.055) + (magicpower * 0.14) + 10
 	return -min, -max
 end
 

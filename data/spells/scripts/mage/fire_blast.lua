@@ -16,13 +16,20 @@ combat:setArea(areaSmall)
 -- Primary damage formula.
 function onGetFormulaValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
-    local power = magic * attack
+    local power = skill * attack
+    local magicpower = magic * skill
     local level = player:getLevel()
+    
+
+    local min = (level / 5) + (power * 0.045) + (magicpower * 0.12) + 10
+    local max = (level / 5) + (power * 0.055) + (magicpower * 0.14) + 10
+
     local emberSurgeLevel = math.max(player:getStorageValue(PassiveSkills.EmberSurge) or 0, 0)
     local emberSurgeBonus = 1 + (emberSurgeLevel / 100)
-    print("emberSurgeBonus: " .. emberSurgeBonus)
-    local min = ((level / 5) + (power * 0.045) + attack) * emberSurgeBonus
-    local max = ((level / 5) + (power * 0.065) + attack * 1.5) * emberSurgeBonus
+    if emberSurgeBonus > 1 then
+        min = min * emberSurgeBonus
+        max = max * emberSurgeBonus
+    end
     return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
