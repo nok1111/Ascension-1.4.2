@@ -42,6 +42,8 @@ Monster::Monster(MonsterType* mType) :
 	baseSpeed = mType->info.baseSpeed;
 	internalLight = mType->info.light;
 	hiddenHealth = mType->info.hiddenHealth;
+	baseArmor = mType->info.armor;
+	baseDefense = mType->info.defense;
 
 	if (level > 0) {
 		float bonusHp = g_config.getFloat(ConfigManager::MLVL_BONUSHP) * level;
@@ -53,7 +55,21 @@ Monster::Monster(MonsterType* mType) :
 		if (bonusSpeed != 0.0) {
 			baseSpeed += baseSpeed * bonusSpeed;
 		}
+		float bonusArmor = g_config.getFloat(ConfigManager::MLVL_BONUSARMOR) * level;
+		if (bonusArmor != 0.0) {
+			baseArmor += baseArmor * bonusArmor;
+			baseArmor = std::max(1, static_cast<int>(baseArmor));
+		}
+		float bonusDefense = g_config.getFloat(ConfigManager::MLVL_BONUSDEFENSE) * level;
+		if (bonusDefense != 0.0) {
+			baseDefense += baseDefense * bonusDefense;
+			baseDefense = std::max(1, static_cast<int>(baseDefense));
+		}
 	}
+
+	//std::cout << "Monster created: " << mType->name << " | Level: " << level
+			  //<< " | Armor: " << baseArmor
+			 // << " | Defense: " << baseDefense << std::endl;
 
 	// register creature events
 	for (const std::string& scriptName : mType->info.scripts) {

@@ -531,6 +531,8 @@ class Creature : virtual public Thing
 		int32_t health = 1000;
 		int32_t healthMax = 1000;
 		uint8_t drunkenness = 0;
+		int32_t baseArmor = 1;
+		int32_t baseDefense = 1;
 
 		Outfit_t currentOutfit;
 		Outfit_t defaultOutfit;

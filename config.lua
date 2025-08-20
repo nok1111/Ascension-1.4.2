@@ -29,13 +29,13 @@ dualWieldingAttackSpeed = 1500
 monsterBonusHealth = 3.80  --0.75 default
 monsterBonusSpeed = 0.001
 monsterBonusDamage = 0.0017
-monsterBonusArmor = 1.0
+monsterBonusArmor = 0.6
 monsterBonusDefense = 0.2
 
 -- Connection Config
 -- NOTE: maxPlayers set to 0 means no limit
 -- NOTE: allowWalkthrough is only applicable to players
-ip = "127.0.0.1"
+ip = "25.44.98.238"
 bindOnlyGlobalAddress = false
 loginProtocolPort = 7171
 gameProtocolPort = 7172
@@ -140,17 +140,17 @@ serverSaveShutdown = true
 -- maxlevel is OPTIONAL, but is considered infinite by default
 -- to disable stages, create a stage with minlevel 1 and no maxlevel
 experienceStages = {
-	{ minlevel = 1, maxlevel = 8, multiplier = 7 },
-	{ minlevel = 9, maxlevel = 20, multiplier = 6 },
-	{ minlevel = 21, maxlevel = 50, multiplier = 5 },
-	{ minlevel = 51, maxlevel = 100, multiplier = 4 },
-	{ minlevel = 101, multiplier = 3 }
+	{ minlevel = 1, maxlevel = 8, multiplier = 6 },
+	{ minlevel = 9, maxlevel = 20, multiplier = 5 },
+	{ minlevel = 21, maxlevel = 50, multiplier = 4 },
+	{ minlevel = 51, maxlevel = 100, multiplier = 3 },
+	{ minlevel = 101, multiplier = 2 }
 }
 
 -- Rates
 -- NOTE: rateExp is not used if you have enabled stages above
 rateExp = 1
-rateSkill = 8
+rateSkill = 6
 rateLoot = 1
 rateMagic = 5
 rateSpawn = 2
