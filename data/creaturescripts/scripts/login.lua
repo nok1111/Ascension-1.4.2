@@ -38,6 +38,7 @@ function onLogin(player)
 	player:registerEvent("PlayerKill_quests")
 	player:registerEvent("VocationPassiveRegen")
 	player:registerEvent("RegisterPassives")
+	player:registerEvent("PartyOpcode")
 
 	--character stats
 	player:registerEvent("CharacterStatsExtended")

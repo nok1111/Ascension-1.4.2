@@ -31,5 +31,7 @@
 	<event type="logout" name="PetsLogout" script="petsave.lua" />
 	<event type="kill" name="PetsKill" script="petsave.lua" />
 	<event type="death" name="PetsDeath" script="petsave.lua" />
+
+	<event type="extendedopcode" name="PartyOpcode" script="party_opcode.lua"/>
 	
 </creaturescripts>
