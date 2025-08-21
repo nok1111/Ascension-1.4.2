@@ -1357,6 +1357,7 @@ TargetCombatEventpassives.onTargetCombat = function(creature, target)
     target:registerEvent("EliteMonsterCombatHP")
     target:registerEvent("EliteMonsterCombatMana")
     target:registerEvent("LucellaTransform")
+    target:registerEvent("monster_ressistance")
     target:registerEvent("quests_kill_drops") 
 	target:registerEvent("LuckDrops") 
   return true
