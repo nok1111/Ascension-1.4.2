@@ -22,8 +22,8 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local power = skill * attack 
 	local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + attack
-	local max = (level / 5) + (power * 0.085) + attack * 1.5
+	local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.7
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.7
 
 	local jackpot = player:getStorageValue(PassiveSkills.Jackpot) or 0
 	local luck = player:getStorageValue(PassiveSkills.GamblerLuck) or 0
@@ -41,8 +41,8 @@ function onGetFormulaValues2(player, skill, attack, factor)
 	local power = skill * attack 
 	local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.035) + attack
-	local max = (level / 5) + (power * 0.055) + attack * 1.5
+	local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.7
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.7
 
 	local jackpot = player:getStorageValue(PassiveSkills.Jackpot) or 0
 	local luck = player:getStorageValue(PassiveSkills.GamblerLuck) or 0

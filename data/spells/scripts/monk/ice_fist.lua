@@ -2,11 +2,11 @@ local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 
 function onGetFormulaValues(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
-    local power = sword * attack
+    local power = skill * attack 
     local level = player:getLevel()
-    local min = (level / 5) + (power * 0.045) + attack
-    local max = (level / 5) + (power * 0.085) + attack * 1.5
+
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.32
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.36
 
      -- Increases the damage of your elemental fists (Fire, Ice, Life) by 3% per level when used in combination
      local level = math.max(player:getStorageValue(PassiveSkills.ElementalHarmony) or 0, 0)

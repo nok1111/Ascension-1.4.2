@@ -24,7 +24,7 @@ function shootArrow(cid, target, variant)
         
 
         local skill = creature:getSkillLevel(SKILL_DISTANCE)
-        local attack = getDistanceWeaponAttack(creature:getId())
+        local attack = getDistanceAttack(creature:getId())
         local level = creature:getLevel()
         local min = (level / 5) + (skill * attack * 0.050) + (attack * 1.5) + 50
         local max = (level / 5) + (skill * attack * 0.061) + (attack * 1.65) + 65

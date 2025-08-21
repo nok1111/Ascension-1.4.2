@@ -3,9 +3,15 @@ combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 
 -- Damage formula (adjust values as needed)
-function onGetFormulaValues(player, level, magicLevel)
-    local min = (level / 5) + (magicLevel * 1.8) + 10
-    local max = (level / 5) + (magicLevel * 3.0) + 20
+function onGetFormulaValues(player, skill, attack, factor)
+    local magic = player:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = ((level / 5) + (power * 0.010) + (magicpower * 0.12) + 5) * 0.45
+    local max = ((level / 5) + (power * 0.015) + (magicpower * 0.14) + 10) * 0.55
 
      -- Increases the damage of your elemental fists (Fire, Ice, Life) by 3% per level when used in combination
      local level = math.max(player:getStorageValue(PassiveSkills.ElementalHarmony) or 0, 0)
@@ -16,7 +22,7 @@ function onGetFormulaValues(player, level, magicLevel)
      
     return -min, -max  -- Negative values indicate damage
 end
-combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
+combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 
 local lifeFistCounter = lifeFistCounter or {}
@@ -76,10 +82,21 @@ end
 local function heal(playerId, variant)
     local player = Player(playerId)
     if not player then return true end
-    local magicLevel = player:getMagicLevel()
+    local skill = player:getEffectiveSkillLevel(SKILL_SWORD)
+    local attack = getMeleeAttack(playerId)
+    local magic = player:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
     local level = player:getLevel()
-    local base = ((level / 10) + (magicLevel * 2)) + level
-    local healAmount = math.floor(base * player:getMaxHealth())
+    
+
+    local min = ((level / 5) + (power * 0.010) + (magicpower * 0.12) + level) * 1
+    local max = ((level / 5) + (power * 0.015) + (magicpower * 0.14) + level) * 1.2
+
+    local base = math.random(min, max)
+    player:say(base, TALKTYPE_MONSTER_SAY)
+
+    local healAmount = math.floor(base)
     local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
     if extrahealing > 0 then
         healAmount = healAmount * (1 + (extrahealing / 100))

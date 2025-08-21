@@ -17,11 +17,11 @@ combat:setArea(arearend)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
+    local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + attack
-	local max = (level / 5) + (power * 0.085) + attack * 1.5
+    local min = (level / 5) + (power * 0.060) + attack
+    local max = (level / 5) + (power * 0.0705) + attack * 1.3
 
     local scaledrupture = player:getStorageValue(PassiveSkills.ScaledRupture)
     if scaledrupture > 0 then

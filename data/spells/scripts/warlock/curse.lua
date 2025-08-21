@@ -11,12 +11,13 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 function onGetFormulaValues(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-	local level = player:getLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
 
-
-	local min = (level / 5) + (power * 0.045) + attack
-	local max = (level / 5) + (power * 0.065) + attack * 1.5
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 15) * 0.65
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.14) + 20) * 0.75
 
     local persistenceLevel = math.max(player:getStorageValue(PassiveSkills.MaleficPersistencedamage) or 0, 0)
     local damageMultiplier = 1 + ( persistenceLevel / 100)
@@ -28,8 +29,9 @@ setCombatCallback(combat, CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 local function CastCurse_wl(cid, var)
     local player = Player(cid)
-    local level = player:getLevel()
-    local maglevel = player:getMagicLevel()
+
+
+    
 
     -- Get Malefic Persistence passive levels
     local persistenceDamage = math.max(player:getStorageValue(PassiveSkills.MaleficPersistencedamage) or 0, 0)
@@ -46,8 +48,18 @@ local function CastCurse_wl(cid, var)
     
 
     -- Damage: increase by 10% per level
-    local min = (level / 5) + (maglevel * 1.2) + 2
-    local max = (level / 5) + (maglevel * 1.8) + 4
+    local skill = player:getEffectiveSkillLevel(SKILL_AXE)
+    local attack = getWandAttack(cid)
+    local magic = player:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+
+    local min = ((level / 5) + (power * 0.010) + (magicpower * 0.12) + level) * 0.30
+    local max = ((level / 5) + (power * 0.015) + (magicpower * 0.14) + level) * 0.35
+
+    player:say(min, TALKTYPE_MONSTER_SAY)
+
     local damageMultiplier = 1 + ( persistenceDamage / 100)
     min = min * damageMultiplier
     max = max * damageMultiplier

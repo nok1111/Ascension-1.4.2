@@ -10,11 +10,11 @@ combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues2(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
+    local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + attack
-	local max = (level / 5) + (power * 0.085) + attack * 1.5
+    local min = (level / 5) + (power * 0.062) + attack
+    local max = (level / 5) + (power * 0.0705) + attack * 1.3
 	return -min, -max
 end
 combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")

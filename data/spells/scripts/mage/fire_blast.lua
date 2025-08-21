@@ -17,12 +17,12 @@ combat:setArea(areaSmall)
 function onGetFormulaValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
     local power = skill * attack
-    local magicpower = magic * skill
+    local magicpower = magic * attack
     local level = player:getLevel()
     
 
-    local min = (level / 5) + (power * 0.045) + (magicpower * 0.12) + 10
-    local max = (level / 5) + (power * 0.055) + (magicpower * 0.14) + 10
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 15) * 1
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.14) + 20) * 1
 
     local emberSurgeLevel = math.max(player:getStorageValue(PassiveSkills.EmberSurge) or 0, 0)
     local emberSurgeBonus = 1 + (emberSurgeLevel / 100)
