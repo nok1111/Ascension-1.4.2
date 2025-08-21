@@ -359,7 +359,7 @@ function getCreatureNoMove(cid) local c = Creature(cid) return c and c:isMovemen
 
 
 -- Returns the highest attack value among equipped distance weapons in both hands, or 1 if only 1 is found
-function getDistanceWeaponAttack(cid)
+function getDistanceAttack(cid)
     local c = Creature(cid)
     if not c then return 0 end
     local attack = 0
@@ -379,6 +379,61 @@ function getDistanceWeaponAttack(cid)
         end
     end
     return attack
+end
+
+function getWandAttack(cid)
+    local c = Creature(cid)
+    if not c then return 0 end
+    local attack = 0
+    local slots = {CONST_SLOT_RIGHT, CONST_SLOT_LEFT}
+    for _, slot in ipairs(slots) do
+        local weapon = c:getSlotItem(slot)
+        if weapon then
+            local itemType = weapon:getType()
+            if itemType:getWeaponType() == WEAPON_AXE then
+                local atk = itemType:getAttack()
+                if atk > attack then
+                    attack = atk
+                else
+                    attack = 1
+                end
+            end
+        end
+    end
+    return attack
+end
+
+function getMeleeAttack(cid)
+    local c = Creature(cid)
+    if not c then return 0 end
+    local attackSum = 0
+    local weaponCount = 0
+    local slots = {CONST_SLOT_RIGHT, CONST_SLOT_LEFT}
+    local twoHanded = false
+
+    for _, slot in ipairs(slots) do
+        local weapon = c:getSlotItem(slot)
+        if weapon then
+            local itemType = weapon:getType()
+            if itemType:isWeapon() then
+                if itemType:isTwoHanded() then
+                    attackSum = itemType:getAttack()
+                    weaponCount = 1
+                    twoHanded = true
+                    break -- Only count the two-handed weapon
+                else
+                    attackSum = attackSum + itemType:getAttack()
+                    weaponCount = weaponCount + 1
+                end
+            end
+        end
+    end
+
+    if weaponCount == 2 and not twoHanded then
+        return math.floor(attackSum / 2)
+    else
+        return attackSum
+    end
 end
 
 function getCreatureTarget(cid)
