@@ -794,7 +794,7 @@ bool Player::canWalkthrough(const Creature* creature) const
 	// Check if creature is a summon and summonwalk is enabled
 	if (creature->isSummon()) {
 		const Monster* monster = dynamic_cast<const Monster*>(creature);
-		if (monster && monster->getMonsterType() && monster->getMonsterType()->info.summonWalk) {
+		if (monster && monster->isSummonWalkable()) {
 			return true;
 		}
 	}

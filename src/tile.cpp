@@ -495,7 +495,7 @@ ReturnValue Tile::queryAdd(int32_t, const Thing& thing, uint32_t, uint32_t flags
 
 		if (const Monster* monster = creature->getMonster()) {
 			// Allow summons with summonWalk to walk through all players
-			if (monster->isSummon() && monster->getMonsterType() && monster->getMonsterType()->info.summonWalk) {
+			if (monster->isSummon() && monster->isSummonWalkable()) {
 				// skip all player collision checks for this summon
 				return RETURNVALUE_NOERROR;
 			}

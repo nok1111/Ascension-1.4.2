@@ -109,6 +109,10 @@ class Monster final : public Creature
 		bool isPassive() const {
 			return mType->info.isPassive;
 		}
+		// Returns true if this summon is walkable by its owner (summonWalk XML attribute)
+		bool isSummonWalkable() const {
+			return mType->info.summonWalk;
+		}
 		bool canSee(const Position& pos) const override;
 		bool canSeeInvisibility() const override {
 			return isImmune(CONDITION_INVISIBLE);

@@ -969,11 +969,11 @@ int_fast32_t AStarNodes::getTileWalkCost(const Creature& creature, const Tile* t
 			const Monster* tileMonster = tileCreature->getMonster();
 
 			// Player pathfinding: ignore summonWalk summons
-			if (pathPlayer && tileMonster && tileMonster->isSummon() && tileMonster->getMonsterType() && tileMonster->getMonsterType()->info.summonWalk) {
+			if (pathPlayer && tileMonster && tileMonster->isSummon() && tileMonster->isSummonWalkable()) {
 				continue;
 			}
 			// SummonWalk summon pathfinding: ignore players
-			if (pathMonster && pathMonster->isSummon() && pathMonster->getMonsterType() && pathMonster->getMonsterType()->info.summonWalk && tilePlayer) {
+			if (pathMonster && pathMonster->isSummon() && pathMonster->isSummonWalkable() && tilePlayer) {
 				continue;
 			}
 
