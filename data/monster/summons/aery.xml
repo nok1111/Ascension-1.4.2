@@ -12,6 +12,7 @@
         <flag canpushitems="1"/>
         <flag canpushcreatures="0"/>
         <flag targetdistance="3"/>  
+        <flag summonwalk="true"/>
     </flags>
 
     <attacks>

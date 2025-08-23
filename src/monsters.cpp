@@ -937,7 +937,12 @@ MonsterType* Monsters::loadMonster(const std::string& file, const std::string& m
 				mType->info.isHostile = attr.as_bool();
 			} else if (strcasecmp(attrName, "passive") == 0) {
 				mType->info.isPassive = attr.as_bool();
-			} else if (strcasecmp(attrName, "ignorespawnblock") == 0) {
+			} 
+			else if (strcasecmp(attrName, "summonwalk") == 0) {
+				mType->info.summonWalk = attr.as_bool();
+			} 
+			
+			else if (strcasecmp(attrName, "ignorespawnblock") == 0) {
 				mType->info.isIgnoringSpawnBlock = attr.as_bool();
 			} else if (strcasecmp(attrName, "illusionable") == 0) {
 				mType->info.isIllusionable = attr.as_bool();

@@ -568,6 +568,12 @@ ReturnValue Tile::queryAdd(int32_t, const Thing& thing, uint32_t, uint32_t flags
 		if (const Player* player = creature->getPlayer()) {
 			if (creatures && !creatures->empty() && !hasBitSet(FLAG_IGNOREBLOCKCREATURE, flags) && !player->isAccessPlayer()) {
 				for (const Creature* tileCreature : *creatures) {
+						if (const Monster* monster = tileCreature->getMonster()) {
+							if (monster->isSummonWalkable()) {
+								continue;
+							}
+						}
+					
 					if (!player->canWalkthrough(tileCreature)) {
 						return RETURNVALUE_NOTPOSSIBLE;
 					}

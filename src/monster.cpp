@@ -2138,10 +2138,10 @@ void Monster::getPathSearchParams(const Creature* creature, FindPathParams& fpp)
 	}
 }
 
-bool Monster::isSummonWalkable() const
-{
-	return mType->info.summonWalk;
-}
+//bool Monster::isSummonWalkable() const
+//{
+//	return mType->info.summonWalk;
+//}
 
 bool Monster::canPushItems() const
 {

@@ -792,9 +792,8 @@ bool Player::canWalkthrough(const Creature* creature) const
 	}
 
 	// Check if creature is a summon and summonwalk is enabled
-	if (creature->isSummon()) {
-		const Monster* monster = dynamic_cast<const Monster*>(creature);
-		if (monster && monster->isSummonWalkable()) {
+	if (const Monster* monster = creature->getMonster()) {
+		if (monster->isSummonWalkable()) {
 			return true;
 		}
 	}
@@ -829,6 +828,14 @@ bool Player::canWalkthroughEx(const Creature* creature) const
 	if (group->access) {
 		return true;
 	}
+
+	
+	if (const Monster* monster = creature->getMonster()) {
+		if (monster->isSummonWalkable()) {
+			return true;
+		}
+	}
+	
 
 	const Player* player = creature->getPlayer();
 	if (!player || !g_config.getBoolean(ConfigManager::ALLOW_WALKTHROUGH)) {
