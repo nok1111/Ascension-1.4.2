@@ -864,6 +864,9 @@ MonsterType* Monsters::loadMonster(const std::string& file, const std::string& m
 	if ((attr = monsterNode.attribute("skull"))) {
 		mType->info.skull = getSkullType(asLowerCaseString(attr.as_string()));
 	}
+	if ((attr = monsterNode.attribute("summonwalk"))) {
+		mType->info.summonWalk = attr.as_bool();
+	}
 
 	if ((attr = monsterNode.attribute("script"))) {
 		if (!scriptInterface) {

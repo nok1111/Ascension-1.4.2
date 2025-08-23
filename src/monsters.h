@@ -150,6 +150,7 @@ class MonsterType
 		bool canWalkOnFire = true;
 		bool canWalkOnPoison = true;
 		bool isPassive = false;
+		bool summonWalk = false; // custom: allow owner to walk through this summon
 
 		MonstersEvent_t eventType = MONSTERS_EVENT_NONE;
 	};
