@@ -954,9 +954,33 @@ int_fast32_t AStarNodes::getMapWalkCost(AStarNode* node, const Position& neighbo
 int_fast32_t AStarNodes::getTileWalkCost(const Creature& creature, const Tile* tile)
 {
 	int_fast32_t cost = 0;
-	if (tile->getTopVisibleCreature(&creature) != nullptr) {
-		//destroy creature cost
-		cost += MAP_NORMALWALKCOST * 3;
+
+	// Custom pathfinding filter for summonWalk and player interactions
+	const CreatureVector* creatures = tile->getCreatures();
+	if (creatures) {
+		for (const Creature* tileCreature : *creatures) {
+			if (tileCreature->isInGhostMode()) {
+				continue; // never block
+			}
+
+			const Player* pathPlayer = creature.getPlayer();
+			const Monster* pathMonster = creature.getMonster();
+			const Player* tilePlayer = tileCreature->getPlayer();
+			const Monster* tileMonster = tileCreature->getMonster();
+
+			// Player pathfinding: ignore summonWalk summons
+			if (pathPlayer && tileMonster && tileMonster->isSummon() && tileMonster->getMonsterType() && tileMonster->getMonsterType()->info.summonWalk) {
+				continue;
+			}
+			// SummonWalk summon pathfinding: ignore players
+			if (pathMonster && pathMonster->isSummon() && pathMonster->getMonsterType() && pathMonster->getMonsterType()->info.summonWalk && tilePlayer) {
+				continue;
+			}
+
+			// Otherwise, this creature blocks pathfinding
+			cost += MAP_NORMALWALKCOST * 3;
+			break; // Only count first blocking creature (matches original logic)
+		}
 	}
 
 	if (const MagicField* field = tile->getFieldItem()) {
