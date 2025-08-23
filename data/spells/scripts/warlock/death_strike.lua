@@ -16,12 +16,13 @@ combat1:setArea(area)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-	local level = player:getLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
 
-
-	local min = (level / 5) + (power * 0.045) + (attack * 2.3) + 50
-	local max = (level / 5) + (power * 0.075) + (attack * 2.5) + 70
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 15) * 1.20
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.14) + 20) * 1.22
 	return -min, -max
 	
 end

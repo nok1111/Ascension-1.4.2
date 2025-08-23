@@ -6,10 +6,12 @@ setCombatParam(combat, COMBAT_PARAM_BLOCKARMOR, true)
 setCombatParam(combat, COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues(player, skill, attack, factor)
-    local level = player:getLevel()
-    local power = (player:getEffectiveSkillLevel(SKILL_DISTANCE) * attack)
-    local min = (level / 5) + (power * 0.0032) + attack
-    local max = (level / 5) + (power * 0.0053) + attack
+    local power = skill * attack 
+	local level = player:getLevel()
+	local magic = player:getMagicLevel()
+
+	local min = ((level / 5) + (power * 0.060) + attack) * 0.40
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.41
 
     local focusedFire = math.max(player:getStorageValue(PassiveSkills.FocusedFire) or 0, 0)
     if focusedFire > 0 then
@@ -21,8 +23,8 @@ end
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
-local maxCasts = 6
-local baseInterval = 120
+local maxCasts = 4
+local baseInterval = 200
 
 local function startIceBarrage(playerId, targetId, count, maxCasts, delay)
     local player = Creature(playerId)

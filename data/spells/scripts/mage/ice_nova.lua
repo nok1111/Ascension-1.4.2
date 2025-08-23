@@ -20,10 +20,13 @@ stunCondition:setFormula(-0.7, 0, -0.7, 0)
 function onGetFormulaValues(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-	local level = player:getLevel()
-	local min = (level / 5) + (power * 0.045) + (attack/2)
-	local max = (level / 5) + (power * 0.055) + attack
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.3
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.4
 	return -min, -max
 end
 

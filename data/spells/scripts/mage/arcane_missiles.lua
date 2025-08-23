@@ -12,10 +12,23 @@ local function arcaneDamage(player, var, target, missileEffectpos, animationroll
     local player = Player(player)
     local creature = Creature(target)
     if player and creature then
-        local level = player:getLevel()
-        local magiclevel = player:getMagicLevel()
-        local min = (level / 10) + (magiclevel * 0.15) + 12
-        local max = (level / 10) + (magiclevel * 0.22) + 18
+        local skill = player:getSkillLevel(SKILL_AXE)
+	    local attack = getWandAttack(player:getId())
+	    local magic = player:getMagicLevel()
+	    local power = skill * attack
+	    local magicpower = magic * attack
+	    local level = player:getLevel()
+    
+
+        local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 0.38
+        local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 0.41
+
+        local arcaneBarrageLevel = math.max(player:getStorageValue(PassiveSkills.ArcaneBarrage) or 0, 0)
+        if arcaneBarrageLevel > 0 then
+            min = min * (1 + (arcaneBarrageLevel / 100))
+            max = max * (1 + (arcaneBarrageLevel / 100))
+        end
+
         combat:setFormula(COMBAT_FORMULA_LEVELMAGIC, 0, -min, 0, -max)
         Position(missileEffectpos):sendDistanceEffect(creature:getPosition(), CONST_ANI_ENERGYBALL)
         combat:execute(player, var)
@@ -98,14 +111,25 @@ function onCastSpell(player, var)
     local magiclevel = player:getMagicLevel()
 	
 	local level = player:getLevel()
-    local arcaneBarrageLevel = math.max(player:getStorageValue(PassiveSkills.ArcaneBarrage) or 0, 0)
-    print("arcaneBarrageLevel" .. arcaneBarrageLevel)
-    local missileCount = minMissiles + arcaneBarrageLevel
+    
+   -- print("arcaneBarrageLevel" .. arcaneBarrageLevel)
+
+   local arcanesurgestack = getBuffStack(player, "ArcaneSurge") or 0
+
+    local missileCount = minMissiles + arcanesurgestack
     local count = 1
     for i = 1, missileCount do
         addEvent(arcaneBolt, 150 * (i - 1), player.uid, var, target.uid, count)
         count = count + 1
+        removeBuffStack(player, "ArcaneSurge", 1)
+        player:sendRemoveBuffNotification(37)
+        local currentCharges = getBuffStack(player, "ArcaneSurge") or 0
+        if currentCharges > 0 then
+        player:sendAddBuffNotification(37, -1, 'Arcane Surge', 5, currentCharges)
+        end
+        
     end
+    
     return true
 end
 

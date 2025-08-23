@@ -7,13 +7,12 @@ combat:setParameter(COMBAT_PARAM_EFFECT, 533)
 
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
+	local power = skill * attack 
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = ((level / 5) + (power * 0.045) + (attack * 2.5) + 50) * 0.33
-	local max = ((level / 5) + (power * 0.085) + (attack * 3.5) + 65) * 0.35
+	local min = ((level / 5) + (power * 0.060) + attack) * 0.38
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.45
 	return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")

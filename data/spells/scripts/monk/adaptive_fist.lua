@@ -6,11 +6,12 @@ earthfist:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 earthfist:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues_RockPunch(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
-    local power = sword * attack
-    local level = player:getLevel()
-    local min = (level / 5) + (power * 0.035) + attack * 0.8
-    local max = (level / 5) + (power * 0.065) + attack * 1.3
+    local power = skill * attack 
+	local level = player:getLevel()
+	local magic = player:getMagicLevel()
+
+	local min = ((level / 5) + (power * 0.060) + attack) * 1.75
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.85
     return -min, -max
 end
 earthfist:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_RockPunch")
@@ -22,11 +23,12 @@ firefist:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 firefist:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues_BlazingPunch(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
-    local power = sword * attack
-    local level = player:getLevel()
-    local min = (level / 4) + (power * 0.055) + attack * 1.1
-    local max = (level / 4) + (power * 0.095) + attack * 1.7
+    local power = skill * attack 
+	local level = player:getLevel()
+	local magic = player:getMagicLevel()
+
+	local min = ((level / 5) + (power * 0.060) + attack) * 0.50
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.55
     return -min, -max
 end
 
@@ -40,11 +42,12 @@ icefist:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 icefist:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues_IcePunch(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
-    local power = sword * attack
-    local level = player:getLevel()
-    local min = (level / 4) + (power * 0.055) + attack * 1.1
-    local max = (level / 4) + (power * 0.095) + attack * 1.7
+    local power = skill * attack 
+	local level = player:getLevel()
+	local magic = player:getMagicLevel()
+
+	local min = ((level / 5) + (power * 0.060) + attack) * 1.55
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.65
     return -min, -max
 end
 
@@ -109,11 +112,12 @@ windfist:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 windfist:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues_WindPunch(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
-    local power = sword * attack
-    local level = player:getLevel()
-    local min = (level / 4) + (power * 0.055) + attack * 1.1
-    local max = (level / 4) + (power * 0.095) + attack * 1.7
+    local power = skill * attack 
+	local level = player:getLevel()
+	local magic = player:getMagicLevel()
+
+	local min = ((level / 5) + (power * 0.060) + attack) * 1.55
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.65
     return -min, -max
 end
 
@@ -130,13 +134,31 @@ local healnonparty = false
 
 function onTargetCreature_healingfist(creature, target)
 	local player = creature:getPlayer()
-	local min = (player:getLevel() / 5) + (player:getMagicLevel() * 4.6) + 100
-	local max = (player:getLevel() / 5) + (player:getMagicLevel() * 9.6) + 125
+	local skill = player:getEffectiveSkillLevel(SKILL_SWORD)
+    local attack = getMeleeAttack(player:getId())
+    local magic = player:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = ((level / 5) + (power * 0.010) + (magicpower * 0.50) + level) * 1
+    local max = ((level / 5) + (power * 0.015) + (magicpower * 0.55) + level) * 1.2
 
     --Increase the healing effectiveness of your adaptive punch (life + life) by 10% (per level)
     local vitalpalm_level = math.max(player:getStorageValue(PassiveSkills.VitalPalm) or 0, 0)
+    if vitalpalm_level > 0 then
     min = min * (1 + (vitalpalm_level / 100))
     max = max * (1 + (vitalpalm_level / 100))
+    end
+
+    local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+    if extrahealing > 0 then
+        min = min * (1 + (extrahealing / 100))
+        max = max * (1 + (extrahealing / 100))
+    end
+
+    print("min: " .. min .. " max: " .. max)
 
 	if not healMonsters then
 		local master = target:getMaster()

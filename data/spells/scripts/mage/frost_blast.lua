@@ -2,7 +2,7 @@ local combat = Combat()
 local time_between_hits = 0.2 --seconds
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEATTACK)
-combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 106)
+combat:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 176)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
@@ -11,7 +11,7 @@ local time_between_hits2 = 0.2 --seconds
 
 combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 combat2:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_ICEATTACK)
-combat2:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 106)
+combat2:setParameter(COMBAT_PARAM_DISTANCEEFFECT, 176)
 combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
@@ -28,14 +28,14 @@ combat3:addCondition(condition)
 
 function onGetFormulaValues(player, skill, attack, factor)
 
-	local magic = player:getMagicLevel()
+    local magic = player:getMagicLevel()
     local power = skill * attack
-    local magicpower = magic * skill
+    local magicpower = magic * attack
     local level = player:getLevel()
     
 
-    local min = (level / 5) + (power * 0.045) + (magicpower * 0.12) + 10
-    local max = (level / 5) + (power * 0.055) + (magicpower * 0.14) + 10
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 15) * 0.55
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.14) + 20) * 0.65
 	return -min, -max
 end
 
@@ -45,12 +45,12 @@ function onGetFormulaValues2(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
     local power = skill * attack
-    local magicpower = magic * skill
+    local magicpower = magic * attack
     local level = player:getLevel()
     
 
-    local min = (level / 5) + (power * 0.045) + (magicpower * 0.12) + 10
-    local max = (level / 5) + (power * 0.055) + (magicpower * 0.14) + 10
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 15) * 0.55
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.14) + 20) * 0.65
 	return -min, -max
 end
 

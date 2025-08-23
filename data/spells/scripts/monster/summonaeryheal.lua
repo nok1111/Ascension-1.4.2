@@ -37,8 +37,19 @@ function onCastSpell(cid, var)
         return false
     end
 
-    local min = (owner:getLevel() / 5) + (owner:getMagicLevel() * 0.25) + 5
-    local max = (owner:getLevel() / 5) + (owner:getMagicLevel() * 0.32) + 8
+    local skill = owner:getSkillLevel(SKILL_AXE)
+	local attack = getWandAttack(owner:getId())
+	local magic = owner:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = owner:getLevel()
+    
+
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 5) * 0.30) + 1
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 5) * 0.30) + 2
+
+    print("min: " .. min)
+    print("max: " .. max)
 
     local LuminousBond = owner:getStorageValue(PassiveSkills.LuminousBond) or 0
     if LuminousBond > 0 then

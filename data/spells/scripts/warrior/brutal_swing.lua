@@ -520,13 +520,14 @@ function onCastSpell(creature, var)
     end
     
     -- Damage formula
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local skill = player:getEffectiveSkillLevel(SKILL_SWORD)
+    local attack = getMeleeAttack(player:getId())
+	local power = skill * attack 
+    local level = player:getLevel()
+    local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 50
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 65
+    local min = ((level / 5) + (power * 0.060) + attack) * 1.6
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.8
     combats[weapon]:setFormula(COMBAT_FORMULA_SKILL, 0, min, 0, max)
     
     -- Collate animation

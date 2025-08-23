@@ -10,13 +10,11 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setArea(createCombatArea(AREA_CIRCLE1X2))
 
 function onGetFormulaValues(player, skill, attack, factor)
+    local power = skill * attack 
+    local level = player:getLevel()
 
-	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
-
-	local min = (level / 5) + (power * 0.045) + (attack * 2.5) + 50
-	local max = (level / 5) + (power * 0.085) + (attack * 3.5) + 65
+    local min = ((level / 5) + (power * 0.0550) + attack * 1.0) * 1.5
+    local max = ((level / 5) + (power * 0.0675) + attack * 1.3) * 1.6
 	return -min, -max
 end
 

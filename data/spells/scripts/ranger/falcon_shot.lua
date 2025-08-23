@@ -23,11 +23,10 @@ combat:addCondition(conditionSlowfalcon)
 function onGetFormulaValues(player, skill, attack, factor)
 
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = ((level / 5) + (power * 0.035) + attack) + 40
-	local max = ((level / 5) + (power * 0.045) + (attack * 1.1)) + 55
+    local min = ((level / 5) + (power * 0.0550) + attack * 1.0) * 1.0
+    local max = ((level / 5) + (power * 0.0675) + attack * 1.3) * 1.1
 
     local focusedFire = math.max(player:getStorageValue(PassiveSkills.FocusedFire) or 0, 0)
     if focusedFire > 0 then

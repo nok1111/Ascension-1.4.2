@@ -12,10 +12,9 @@ combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 function onGetFormulaValues2(player, skill, attack, factor)
 	local power = skill * attack 
 	local level = player:getLevel()
-	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.075) + attack * 1.5
-	local max = (level / 5) + (power * 0.085) + attack * 1.6
+	local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.1
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.2
 
     -- extra damage
     local assassinMastery = player:getStorageValue(PassiveSkills.AssassinsMastery) or 0
@@ -35,10 +34,9 @@ combatteleport:setParameter(COMBAT_PARAM_TYPE, COMBAT_DEATHDAMAGE)
 function onGetFormulaValuesTeleport(player, skill, attack, factor)
 	local power = skill * attack 
 	local level = player:getLevel()
-	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.035) + attack * 1.1
-	local max = (level / 5) + (power * 0.045) + attack * 1.2
+	local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.8
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.8
 	return -min, -max
 end
 combatteleport:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValuesTeleport")
@@ -52,9 +50,12 @@ local function bleed_mastery(cid, var)
     local player = Player(cid)
     local level = player:getLevel()
     local skill = player:getEffectiveSkillLevel(SKILL_SWORD)
+    local attack = getDistanceAttack(cid)
 	
-	min = (level / 5) + (skill * 0.025) + level
-    max = (level / 5) + (skill * 0.028) + level
+    local power = skill * attack 
+
+    local min = (((level / 5) + (power * 0.060) + attack * 1.0) * 0.33) + 2
+    local max = (((level / 5) + (power * 0.0705) + attack * 1.3) * 0.35) + 3
 	
     condition2:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))
     combat:addCondition(condition2)
@@ -69,7 +70,7 @@ function onCastSpell(creature, variant, target)
 		return
 	end
 	local AssassinsMasteryBleed = creature:getStorageValue(PassiveSkills.AssassinsMastery) or 0
-    print("AssassinsMasteryBleed: " .. AssassinsMasteryBleed)
+   -- print("AssassinsMasteryBleed: " .. AssassinsMasteryBleed)
 	if AssassinsMasteryBleed > 0 then
 		if math.random(1, 100) <= (AssassinsMasteryBleed * 4) then 	
 				bleed_mastery(creature:getId(), var)

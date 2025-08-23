@@ -11,12 +11,13 @@ combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 function onGetFormulaValues(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-	local level = player:getLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
 
-
-	local min = (level / 5) + (power * 0.035) + attack
-	local max = (level / 5) + (power * 0.045) + attack * 1.15
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 15) * 0.6
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.14) + 20) * 0.7
 	return -min, -max
 end
 
@@ -59,5 +60,13 @@ end
 function onCastSpell(creature, var)
    combat:execute(creature, var)
    restoreMana(creature)
+   --max 6 charges
+   local maxCharges = 6
+   local currentCharges = getBuffStack(creature, "ArcaneSurge")
+   if currentCharges <= maxCharges then
+      addBuffStack(creature, "ArcaneSurge", 1)
+      local updatedCharges = getBuffStack(creature, "ArcaneSurge")
+      creature:sendAddBuffNotification(37, -1, 'Arcane Surge', 5, updatedCharges)
+   end
   return true
 end

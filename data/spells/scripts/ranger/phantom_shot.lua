@@ -26,8 +26,10 @@ function shootArrow(cid, target, variant)
         local skill = creature:getSkillLevel(SKILL_DISTANCE)
         local attack = getDistanceAttack(creature:getId())
         local level = creature:getLevel()
-        local min = (level / 5) + (skill * attack * 0.050) + (attack * 1.5) + 50
-        local max = (level / 5) + (skill * attack * 0.061) + (attack * 1.65) + 65
+        local power = skill * attack 
+
+        local min = ((level / 5) + (power * 0.0550) + attack * 1.0) * 1.3
+        local max = ((level / 5) + (power * 0.0675) + attack * 1.3) * 1.4
  
 
         local hunterMercy = creature:getStorageValue(PassiveSkills.HunterMercy) or 0

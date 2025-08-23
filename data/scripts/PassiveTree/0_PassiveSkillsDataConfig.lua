@@ -235,6 +235,9 @@ PassiveSkills.FocusedFire = 875663
 PassiveSkills.DeadFromAbove = 875664
 PassiveSkills.ScorchedMark = 875665
 
+--arcane
+PassiveSkills.ArcaneSurge = 875666
+
 
 PassiveSkills.resetCost = {
 	gold = 50,
@@ -339,44 +342,47 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_STAT_MAXMANAPOINTSPERCENT, value = 2.0}}
 							}
 						},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
-						name = "Surge Recovery",
-						description = "Increase the mana recovery of when using energy blast and mana flow 10% per level",
-						effect = {
-							{ type = "storage", name = "SurgeRecovery", storage = PassiveSkills.SurgeRecovery, value = 10 }
-						},
-						maxLevel = 5,
-						prevNodeLevelNeeded = 10
-					},
-					[3] = {
 						name = "Arcane Missiles",
-						description = "Unlocks the spell Arcane Missiles", -- if no totalBuffsDesc existing then description is used
+						description = "Unlocks the spell Arcane Missiles\nEnergy Blast grants 1 charge of Arcane Surge for 15 seconds, stacking up to 6 charges. Each Arcane Surge charge increases the number of Arcane Missiles fired.", -- if no totalBuffsDesc existing then description is used
 						effect = {
-							{ type = "spell", name = "Arcane Missiles" }
+							{ type = "spell", name = "Arcane Missiles" },
+							{ type = "storage", name = "ArcaneBarrage", storage = PassiveSkills.ArcaneSurge, value = 1 }
 						},
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
 					},
-					[4] = {
+
+					[3] = {
 						name = "Arcane Barrage",
-						description = "Increse the amount of shots of Arcane Missiles by 1 per level",
+						description = "Increases the damage of Arcane Missiles by 3% per level",
 						effect = {
-							{ type = "storage", name = "ArcaneBarrage", storage = PassiveSkills.ArcaneBarrage, value = 1 }
+							{ type = "storage", name = "ArcaneBarrage", storage = PassiveSkills.ArcaneBarrage, value = 3 }
 						},
-						maxLevel = 7,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 1
 					},
+					[4] = {
+						name = "Surge Recovery",
+						description = "Increase the mana recovery of when using energy blast and mana flow 5% per level\nIncreases your energy damage by 2% (per level).",
+						effect = {
+							{ type = "storage", name = "SurgeRecovery", storage = PassiveSkills.SurgeRecovery, value = 5 },
+							{ type = "storage", name = "CosmicFocus", storage = PassiveSkills.CosmicFocus, value = 2 }
+						},
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
+					},			
 					[5] = {
 						name = "Riftwalker",
-						description = "Increses the distance traveled of teleport by 1 tile (per level) and increases your magic level percent by 10% (per level) for 5 seconds",
+						description = "Increses the distance traveled of teleport by 1 tile (per level) \nIncrease your magic level percent by 10% (per level) for 5 seconds",
 						effect = {
 							{ type = "storage", name = "TeleportDistance", storage = PassiveSkills.TeleportDistance, value = 1 }, 
 						},
 						maxLevel = 3,
-						prevNodeLevelNeeded = 7
-					},
+						prevNodeLevelNeeded = 5
+					}, 
 					[6] = {
 						name = "Magic Echo",
 						description = "Chance to echo your last spell", -- if no totalBuffsDesc existing then description is used

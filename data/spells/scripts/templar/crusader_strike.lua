@@ -12,8 +12,8 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.5) + 50
-	local max = (level / 5) + (power * 0.085) + (attack * 3.5) + 65
+	local min = ((level / 5) + (power * 0.060) + attack) * 1.6
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.8
 
 	local finalLevel = player:getStorageValue(PassiveSkills.FinalVeredict) or 0
 	local target = player:getTarget()
