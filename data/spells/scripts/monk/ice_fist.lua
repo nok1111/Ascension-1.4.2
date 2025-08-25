@@ -34,7 +34,7 @@ local function arcaneDamage(playerId, variant, targetId, effectId)
 
     -- Add paralyze condition
     local paralyze = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
-    paralyze:setParameter(CONDITION_PARAM_TICKS, 3000) -- 3 seconds paralyze
+    paralyze:setParameter(CONDITION_PARAM_TICKS, 1000) -- 3 seconds paralyze
     paralyze:setFormula(-0.5, 0, -0.5, 0) -- Movement speed reduction
     creature:addCondition(paralyze)
 

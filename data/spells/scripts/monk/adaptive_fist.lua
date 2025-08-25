@@ -10,8 +10,8 @@ function onGetFormulaValues_RockPunch(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = ((level / 5) + (power * 0.060) + attack) * 1.75
-    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.85
+	local min = ((level / 5) + (power * 0.060) + attack) * 0.9
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.0
     return -min, -max
 end
 earthfist:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_RockPunch")
@@ -27,15 +27,15 @@ function onGetFormulaValues_BlazingPunch(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = ((level / 5) + (power * 0.060) + attack) * 0.50
-    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.55
+	local min = ((level / 5) + (power * 0.060) + attack) * 0.56
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.62
     return -min, -max
 end
 
 firefist:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_BlazingPunch")
 
 local icefist = Combat()
-icefist:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
+icefist:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
 icefist:setParameter(COMBAT_PARAM_EFFECT, 53)
 icefist:setArea(createCombatArea(AREA_WAVE4, AREADIAGONAL_WAVE4))
 icefist:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
@@ -116,8 +116,8 @@ function onGetFormulaValues_WindPunch(player, skill, attack, factor)
 	local level = player:getLevel()
 	local magic = player:getMagicLevel()
 
-	local min = ((level / 5) + (power * 0.060) + attack) * 1.55
-    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.65
+	local min = ((level / 5) + (power * 0.060) + attack) * 0.3
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.35
     return -min, -max
 end
 
@@ -144,6 +144,8 @@ function onTargetCreature_healingfist(creature, target)
 
     local min = ((level / 5) + (power * 0.010) + (magicpower * 0.50) + level) * 1
     local max = ((level / 5) + (power * 0.015) + (magicpower * 0.55) + level) * 1.2
+
+    player:say("min: " .. min .. " max: " .. max)
 
     --Increase the healing effectiveness of your adaptive punch (life + life) by 10% (per level)
     local vitalpalm_level = math.max(player:getStorageValue(PassiveSkills.VitalPalm) or 0, 0)
@@ -202,7 +204,7 @@ setCombatCallback(frostbloomCombat, CALLBACK_PARAM_SKILLVALUE, "onGetFrostbloomV
 local damageReductionCondition = Condition(CONDITION_ATTRIBUTES, CONDITIONID_COMBAT)
 damageReductionCondition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.frostbloom) -- Unique subid for frostbloom
 damageReductionCondition:setParameter(CONDITION_PARAM_BUFF_SPELL, 1)
-damageReductionCondition:setParameter(CONDITION_PARAM_TICKS, 8000)
+damageReductionCondition:setParameter(CONDITION_PARAM_TICKS, 5000)
 
 function onCastSpell(player, variant)
     local orb1, orb2 = getActiveOrbs(player)
@@ -298,8 +300,10 @@ function onCastSpell(player, variant)
 
             -- Check if target is within 1 square range
         if target and getDistanceBetween(player:getPosition(), target:getPosition()) > 2 then
+           -- player:say("You need to be adjacent to the target to use Blazing Punch.", TALKTYPE_MONSTER_SAY)
             player:sendCancelMessage("You need to be adjacent to the target to use Blazing Punch.")
-            return true
+            player:getPosition():sendMagicEffect(CONST_ME_POOF)
+            return false
         end
         
         local function executeDelayedFirefist(playerId, targetPos, count, effectnumber)
@@ -354,7 +358,7 @@ function onCastSpell(player, variant)
             frostbloomCombat:execute(player, Variant(target:getPosition()))
             
             player:addCondition(damageReductionCondition)
-            player:sendAddBuffNotification(34, 8, 'Frostbloom Fist: reduce damage taken by 20% for 8 seconds', 5, 0)
+            player:sendAddBuffNotification(34, 5, 'Frostbloom Fist: reduce damage taken by 20% for 8 seconds', 5, 0)
             target:getPosition():sendMagicEffect(53) -- Visual effect
             player:attachEffectById(215, true)
         end

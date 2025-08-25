@@ -63,7 +63,7 @@ function onCastSpell(creature, var)
    --max 6 charges
    local maxCharges = 6
    local currentCharges = getBuffStack(creature, "ArcaneSurge")
-   if currentCharges <= maxCharges then
+   if currentCharges < maxCharges then
       addBuffStack(creature, "ArcaneSurge", 1)
       local updatedCharges = getBuffStack(creature, "ArcaneSurge")
       creature:sendAddBuffNotification(37, -1, 'Arcane Surge', 5, updatedCharges)

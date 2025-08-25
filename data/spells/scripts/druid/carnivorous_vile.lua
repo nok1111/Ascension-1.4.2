@@ -20,7 +20,7 @@ function onGetFormulaValues(player, skill, attack, factor)
     
 
     local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.65
-    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.65
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.75
 	return -min, -max
 	
 end
@@ -33,8 +33,8 @@ function onGetFormulaValues2(player, skill, attack, factor)
     local level = player:getLevel()
     
 
-    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.35
-    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.45
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.55
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.65
 	return -min, -max
 	
 end
