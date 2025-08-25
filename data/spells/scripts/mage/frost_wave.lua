@@ -79,7 +79,7 @@ end
 
 local combat = Combat()
 combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_ICEDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, 239)
+combat:setParameter(COMBAT_PARAM_EFFECT, 43)
 combat:setArea(createCombatArea(AREA_WAVE4, AREADIAGONAL_WAVE4))
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
@@ -89,11 +89,13 @@ combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 
 function onGetFormulaValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
-    local power = magic * attack
+    local power = skill * attack
+    local magicpower = magic * attack
     local level = player:getLevel()
+    
 
-    local min = ((level / 5) + (power * 0.07) + (attack * 2.8) + 200)
-    local max = ((level / 5) + (power * 0.08) + (attack * 3.0) + 230)
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 15) * 1.3
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.14) + 20) * 1.4
     return -min, -max
 end
 

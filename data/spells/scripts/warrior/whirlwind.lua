@@ -86,48 +86,43 @@ conditionburn_within:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
 function onGetFormulaValues1(player, skill, attack, factor)
 
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.0
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.1
 	return -min, -max
 end
 function onGetFormulaValues2(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.0
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.1
 	return -min, -max
 end
 function onGetFormulaValues3(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.0
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.1
 	return -min, -max
 end
 function onGetFormulaValues4(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.0
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.1
 	return -min, -max
 end
 
 function onGetFormulaValues5(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 55
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 80
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.0
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.1
 	return -min, -max
 end
 
@@ -139,15 +134,18 @@ combat5:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues5")
 
 
 local function burning_within(creatureId, variant)
-    local creature = Creature(creatureId)
-	if not creature then
+    local player = Player(creatureId)
+	if not player then
 		return
 	end
-    local level = creature:getLevel()
-    local maglevel = creature:getMagicLevel()
+	local level = player:getLevel()
+    local skill = player:getEffectiveSkillLevel(SKILL_SWORD)
+    local attack = getMeleeAttack(creatureId)
 	
-	min = (level / 3)
-    max = (level / 3)
+    local power = skill * attack 
+
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.22
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.25
 	
     conditionburn_within:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))
     combat1:addCondition(conditionburn_within)
