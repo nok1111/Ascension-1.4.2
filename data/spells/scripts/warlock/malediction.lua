@@ -25,12 +25,13 @@ MaleficPestilenceCondition:setParameter(CONDITION_PARAM_SUBID, ConditionsSubIds.
 function onGetFormulaValues(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
-	local power = skill * attack 
-	local level = player:getLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
 
-
-	local min = (level / 5) + (power * 0.145) + magic * 1.2
-	local max = (level / 5) + (power * 0.165) + magic * 2.2
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 0.50) + 2
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 0.60) + 3
 	return -min, -max
 end
 
@@ -39,12 +40,13 @@ setCombatCallback(combat1, CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 function onGetFormulaValuesMaleficPestilence(player, skill, attack, factor)
 
 	local magic = player:getMagicLevel()
-	local power = skill * attack 
-	local level = player:getLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
 
-
-	local min = (level / 5) + (power * 0.145) + magic * 1.2
-	local max = (level / 5) + (power * 0.165) + magic * 2.2
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.23) + 2
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.26) + 3
 	return -min, -max
 end
 
@@ -52,13 +54,23 @@ setCombatCallback(combatMaleficPestilence, CALLBACK_PARAM_SKILLVALUE, "onGetForm
 
 local function CastMaledictionDot(cid, var)
     local player = Player(cid)
-    local level = player:getLevel()
-    local maglevel = player:getMagicLevel()
     local target = player:getTarget()
+    if not target or not player then
+        return
+    end
     local pos = target:getPosition()
+
+    local skill = player:getEffectiveSkillLevel(SKILL_AXE)
+    local attack = getWandAttack(player:getId())
+    local magic = player:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = (((level / 5) + (power * 0.010) + (magicpower * 0.50) + level) * 0.22) + 2
+    local max = (((level / 5) + (power * 0.015) + (magicpower * 0.55) + level) * 0.24) + 3
 	
-	min = (level / 5) + (maglevel * 1.2) + 2
-    max = (level / 5) + (maglevel * 1.8) + 4
 
     local LastingBlight = math.max(player:getStorageValue(PassiveSkills.LastingBlight) or 0, 0)
 
@@ -85,8 +97,8 @@ local function CastMaledictionDot(cid, var)
             pos:sendMagicEffect(306)
         end
     end
-
-    local sword = target:getPosition()
+    
+        local sword = target:getPosition()
         sword.x = sword.x + 1
         sword.y = sword.y + 1
     sword:sendMagicEffect(833, "turn into bones!")	

@@ -16,26 +16,22 @@ combat2:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+	local power = skill * attack 
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 1.2) + 40
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 45
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.0
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.15
 	return -min, -max
 	
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 function onGetFormulaValues2(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+	local power = skill * attack 
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.065) + (attack * 2.5) + 80
-	local max = (level / 5) + (power * 0.085) + (attack * 2.8) + 90
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.65
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.75
 	return -min, -max
 	
 end
@@ -102,7 +98,7 @@ local VirulentRupture = creature:getStorageValue(PassiveSkills.VirulentRupture) 
 		end
 	end
   
-  if target:getCondition(CONDITION_STUN, 0) or target:getSkull() > 0 then
+  if target:getCondition(CONDITION_STUN, 0)then
   --combat2:execute(creature, var) 
   target:attachEffectById(140, true)
   

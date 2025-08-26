@@ -421,17 +421,26 @@ PassiveSkills.treeData = {
 						effect = {
 							{ type = "storage", name = "WandDamage", storage = PassiveSkills.WandDamage, value = 10 }
 						},
-						maxLevel = 10,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 1
 					},
 					[4] = {
+						name = "Frost Wave",
+						description = "Unlocks the spell Frost Wave",
+						effect = {
+							{ type = "spell", name = "Frost Wave" }
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
+					},
+					[5] = {
 						name = "Frost Shards",
 						description = "Increse the amount of shots of Ice Barrage by 1 per level",
 						effect = {
 							{ type = "storage", name = "IceBarrage", storage = PassiveSkills.IceBarrage, value = 1 }
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 1
 					},
 					[5] = {
 						name = "Ice Clones",
@@ -525,14 +534,14 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_STAT_MAXHITPOINTSPERCENT, value = 3.0}}
 							}
 						},
-						maxLevel = 10
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Echoing Command",
 						description = "Your Taunt spell now deals Holy damage equal to 5% of your max health (per level)",
 						effect = {{type = "storage", name = "EchoingCommand", storage = PassiveSkills.EchoingCommand, value = 5}},
-						maxLevel = 3,
-						prevNodeLevelNeeded = 10
+						maxLevel = 5,
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Consecrated Protection",
@@ -929,7 +938,7 @@ PassiveSkills.treeData = {
 								params = {{param = CONDITION_PARAM_SPECIALSKILL_LIFELEECHAMOUNT, value = 2}}
 							}
 						},
-						maxLevel = 10,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 5
 					},
 					[3] = {
@@ -939,7 +948,7 @@ PassiveSkills.treeData = {
 							{type = "storage", name = "DragonHeart", storage = PassiveSkills.DragonHeart, value = 10},
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 5
 					},
 					[4] = {
 						name = "Fire Within",
@@ -1084,14 +1093,14 @@ PassiveSkills.treeData = {
 						description = "Increases the duration of Curse by 0.5 second (per level) \nIncreases curse damage by 10% (per level)",
 						effect = {{type = "storage", name = "MaleficPersistencedamage", storage = PassiveSkills.MaleficPersistencedamage, value = 10}},
 						effect = {{type = "storage", name = "MaleficPersistenceDuration", storage = PassiveSkills.MaleficPersistenceDuration, value = 5}},
-						maxLevel = 6
+						maxLevel = 5
 					},
 					[2] = {
 						name = "Malediction",
 						description = "Learn spell Malediction",
 						effect = {{type = "spell", name = "Malediction"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 6
+						prevNodeLevelNeeded = 5
 					},
 					[3] = {
 						name = "Plague Detonation",
@@ -1145,12 +1154,12 @@ PassiveSkills.treeData = {
 						name = "Demonic Bulwark",
 						description = "Increase the max health of your summons by an aditional 15% per level",
 						effect = {{type = "storage", name = "DemonicBulwark", storage = PassiveSkills.DemonicBulwark, value = 15}},
-						maxLevel = 6
+						maxLevel = 5
 					},
 					
 					[2] = {
 						name = "Legion Mastery", 
-						description = "Increase the maximum number of Servants you can control by 1 per level and increase your chance to successfully summon by 100% per level.",
+						description = "Increase the maximum number of Servants you can control by 1 (per level) and increase your chance to successfully summon by 100% per level.",
 						effect = {
 							{
 								type = "storage",
@@ -1166,7 +1175,7 @@ PassiveSkills.treeData = {
 							}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 6
+						prevNodeLevelNeeded = 1
 					},
 					[3] = {
 						name = "Infernal Command",
@@ -1738,7 +1747,7 @@ PassiveSkills.treeData = {
 					[3] = {
 						name = "Swarn of Insects",
 						description = "Learn spell Swarn of Insects\nPlace a swarm of insects on a target increasing it's damage received by 10% (per level) from all sources.",
-						effect = {{type = "spell", name = "Swarn of Insects"}}, 
+						effect = {{type = "spell", name = "Insect Swarm"}}, 
 						maxLevel = 1,
 						prevNodeLevelNeeded = 4
 					},

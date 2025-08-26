@@ -31,19 +31,25 @@ stun:setParameter(CONDITION_PARAM_TICKINTERVAL, 500)
  bleedpierce:setParameter(COMBAT_PARAM_EFFECT, 448)
 bleedpierce:setTicks(3000)
 bleedpierce:setParameter(CONDITION_PARAM_DELAYED, 1)
-bleedpierce:setParameter(CONDITION_PARAM_TICKINTERVAL, 500)
+bleedpierce:setParameter(CONDITION_PARAM_TICKINTERVAL, 1000)
  
 
 
 
 
-function onGetFormulaValues(player, level, maglevel)
-    local min = (level / 5) + (maglevel * 4.9) + 40
-    local max = (level / 5) + (maglevel * 9.4) + 80
+function onGetFormulaValues(player, skill, attack, factor)
+    local magic = player:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.2) + 2
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.3) + 3
     return -min, -max
 end
 
-combat:setCallback(CALLBACK_PARAM_LEVELMAGICVALUE, "onGetFormulaValues")
+combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
 
 function onTargetCreature(creature, target)
@@ -69,11 +75,16 @@ combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 
 local function CastSpell(cid, var)
     local player = Player(cid)
-    local level = player:getLevel()
+    local skill = player:getEffectiveSkillLevel(SKILL_AXE)
+    local attack = getWandAttack(player:getId())
     local magic = player:getMagicLevel()
-	
-	min = (level / 5) + (magic * 1.4) + 22
-    max = (level / 5) + (magic * 1.8) + 35 
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = (((level / 5) + (power * 0.010) + (magicpower * 0.50) + level) * 0.22) + 2
+    local max = (((level / 5) + (power * 0.015) + (magicpower * 0.55) + level) * 0.24) + 3
 	
 	
     bleedpierce:setParameter(CONDITION_PARAM_PERIODICDAMAGE, math.random(-min,-max))

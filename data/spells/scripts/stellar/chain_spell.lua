@@ -16,11 +16,14 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues(player, skill, attack, factor)
-    local level = player:getLevel()
     local magic = player:getMagicLevel()
-    local power = magic * attack 
-    local min = ((level / 5) + (power * 0.085) + (attack * 1.5) + 100) / 2
-    local max =  ((level / 5) + (power * 0.085) + (attack * 1.5) + 120) / 1.5
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 0.60) + 2
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 0.65) + 3
 
 
     local AstralCommandLevel = math.max(player:getStorageValue(PassiveSkills.AstralCommand) or 0, 0)
@@ -64,6 +67,10 @@ local function isExcludedTarget(creature, target)
         return true
     end
 
+    if target:isNpc() then
+        return true
+    end
+
     -- Exclude party members and their summons
     if creature:isPlayer() and target:isPlayer() then
         local creatureParty = creature:getParty()
@@ -90,18 +97,13 @@ local function isExcludedTarget(creature, target)
     return false
 end
 
-local function chainAttack(creatureId, targetId, chainCount, hitTargets)
-
+local function AerychainAttack(creatureId, currentPos, chainCount, hitTargets)
     local creature = Creature(creatureId)
-    local target = Creature(targetId)
-    if not creature or not target then
+    if not creature or not currentPos then
         return
     end
 
-    hitTargets[targetId] = true
-
-    local targetPos = target:getPosition()
-    local specs = Game.getSpectators(targetPos, false, false, config.xradius, config.xradius, config.yradius, config.yradius)
+    local specs = Game.getSpectators(currentPos, false, false, config.searchRadius, config.searchRadius, config.searchRadius, config.searchRadius)
     local nextVictims = {}
 
     for _, spec in ipairs(specs) do
@@ -110,19 +112,21 @@ local function chainAttack(creatureId, targetId, chainCount, hitTargets)
         end
     end
 
-    table.sort(nextVictims, function(a, b) return a:getPosition():getDistance(targetPos) < b:getPosition():getDistance(targetPos) end)
+    table.sort(nextVictims, function(a, b)
+        return a:getPosition():getDistance(currentPos) < b:getPosition():getDistance(currentPos)
+    end)
 
     local nextTarget = nextVictims[1]
     if nextTarget then
-        targetPos:sendDistanceEffect(nextTarget:getPosition(), config.dfx)
-        combat:execute(creature, positionToVariant(nextTarget:getPosition()))
-        --attached effect
+        local nextTargetPos = nextTarget:getPosition()
+        currentPos:sendDistanceEffect(nextTargetPos, config.chainEffect)
+        hitTargets[nextTarget:getId()] = true
+        addEvent(AerychainAttack, config.speed, creatureId, nextTargetPos, chainCount + 1, hitTargets)
+        combat:execute(creature, positionToVariant(nextTargetPos))
         nextTarget:attachEffectById(88, true)
-
-        addEvent(chainAttack, config.speed, creatureId, nextTarget:getId(), chainCount + 1, hitTargets)
+        
     else
-        -- Send a distance effect from the last victim back to the caster
-        targetPos:sendDistanceEffect(creature:getPosition(), config.dfx)
+        currentPos:sendDistanceEffect(creature:getPosition(), config.dfx)
         sendAery(creatureId)
     end
 end
@@ -151,7 +155,11 @@ function onCastSpell(creature, variant)
 
     combat:execute(creature, positionToVariant(target:getPosition()))
     target:attachEffectById(88, true)
-    addEvent(chainAttack, config.speed, creature:getId(), target:getId(), 1, {})
+    local targetPos = target:getPosition()
+    local hitTargets = {}
+    hitTargets[target:getId()] = true
+    addEvent(AerychainAttack, config.speed, creature:getId(), targetPos, 1, hitTargets)
+    
 	
 	-- Send a distance effect from the creature's position to the target's position
     creature:getPosition():sendDistanceEffect(target:getPosition(), config.dfx)

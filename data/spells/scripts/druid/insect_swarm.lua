@@ -70,14 +70,12 @@ local function infect(casterId, targetId, timeLeft, hiveQueenLevel, critcount)
     target:addCondition(cooldownCondition)
     target:attachEffectById(114, true)
 
-    print("infect", critcount)
 
     local ticks = math.floor(timeLeft / TICK_INTERVAL)
 
     local function doTick(casterId, targetId, count, critcount)
         local caster = Creature(casterId)
         local target = Creature(targetId)
-        print("doTick", caster, target, count, critcount)
         if not target or not caster then
 
             return
@@ -94,21 +92,25 @@ local function infect(casterId, targetId, timeLeft, hiveQueenLevel, critcount)
 
         -- Apply crit buff
         local hiveQueenLeveldoTick = caster:getStorageValue(PassiveSkills.HiveQueen) or 0
-        print("hiveQueenLeveldoTick", hiveQueenLeveldoTick)
         if hiveQueenLeveldoTick and hiveQueenLeveldoTick > 0 then
             critcount = critcount + hiveQueenLeveldoTick
-            print("critcount", critcount)
             local critCond = Condition(CONDITION_ATTRIBUTES)
             critCond:setParameter(CONDITION_PARAM_TICKS, DURATION)
             critCond:setParameter(CONDITION_PARAM_SPECIALSKILL_CRITICALHITCHANCE, critcount)
             caster:addCondition(critCond)
         end
 
-        local level = caster:getLevel()
+        local skill = caster:getEffectiveSkillLevel(SKILL_AXE)
+        local attack = getWandAttack(caster:getId())
         local magic = caster:getMagicLevel()
-        local min = (level / 5 + magic * 2 + 20)
-        local max = (level / 5 + magic * 3 + 40)
-        target:say("You have been infected by the insect swarm!", TALKTYPE_MONSTER_SAY)
+        local power = skill * attack
+        local magicpower = magic * attack
+        local level = caster:getLevel()
+    
+
+        local min = (((level / 5) + (power * 0.010) + (magicpower * 0.50) + level) * 0.22) + 2
+        local max = (((level / 5) + (power * 0.015) + (magicpower * 0.55) + level) * 0.24) + 3
+        
         doTargetCombatHealth(caster, target, COMBAT_EARTHDAMAGE, min, max, CONST_ME_POISONAREA)
 
         -- Spread infection
@@ -144,7 +146,6 @@ function onCastSpell(creature, var)
         return true
     end
     local hiveQueenLevel = creature:getStorageValue(PassiveSkills.HiveQueen) or 0
-    print("hiveQueenLevel", hiveQueenLevel)
     infect(creature:getId(), target:getId(), DURATION, hiveQueenLevel)
     return true
 end

@@ -8,11 +8,11 @@ combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_NONE)
 combat:setArea(createCombatArea(AREA_SQUARE2X2))
 
 function onGetFormulaValues(player, skill, attack, factor)
-    local power = skill * attack
+    local power = skill * attack 
     local level = player:getLevel()
-    local min = (level / 5) + (power * 0.035) + (attack * 1.2) + 75
-    local max = (level / 5) + (power * 0.055) + (attack * 1.5) + 85
 
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.6
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.6
 
     local Reverberation = math.max(player:getStorageValue(PassiveSkills.Reverberation) or 0, 0)
     if Reverberation > 0 then

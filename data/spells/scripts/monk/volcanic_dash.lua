@@ -3,8 +3,8 @@ local stunDuration = 1000
 
 
 local combat = Combat()
-combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_PHYSICALDAMAGE)
-combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_HITAREA)
+combat:setParameter(COMBAT_PARAM_TYPE, COMBAT_FIREDAMAGE)
+combat:setParameter(COMBAT_PARAM_EFFECT, CONST_ME_FIREAREA)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 
@@ -16,13 +16,11 @@ combat:addCondition(stun)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + 50
-	local max = (level / 5) + (power * 0.085) + 75
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.75
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.85
 	return -min, -max
-
 end
 
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
@@ -33,7 +31,7 @@ local maxRange = 8
 
 local varTable = {}
 
-local function castwindstep(playerId, targetId)
+local function castwindstep(playerId, targetId, variant)
 	local player = Player(playerId)
 	local target = Creature(targetId)
 
@@ -52,7 +50,7 @@ local function castwindstep(playerId, targetId)
 		end
 	else
 		player:detachEffectById(97, true)
-		--combat:execute(player, variant)
+		combat:execute(player, Variant(target:getPosition()))
 	end
 	return true
 end
@@ -63,7 +61,7 @@ function onCastSpell(creature, variant)
 		if target then
 			if Position(creature:getPosition()):getDistance(target:getPosition()) >= minRange and Position(creature:getPosition()):getDistance(target:getPosition()) <= maxRange then
 				varTable[1] = variant
-				addEvent(castwindstep, 0, creature:getId(), target:getId())
+				addEvent(castwindstep, 0, creature:getId(), target:getId(), variant)
 			end
 		end
 	end

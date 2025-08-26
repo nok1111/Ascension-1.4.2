@@ -33,18 +33,12 @@ function onCastSpell(creature, variant, isHotkey)
 	local bloomingWisdom = player:getStorageValue(PassiveSkills.BloomingWisdom) or 0
 	requiredMana = requiredMana - (requiredMana * (bloomingWisdom / 100))
 
-    print("actual mana: " .. player:getMana())
-    print("required mana: " .. requiredMana)
 	if player:getMana() < requiredMana then
 		player:sendCancelMessage(RETURNVALUE_NOTENOUGHMANA)
 		return false
         else
             player:addMana(-requiredMana)
 	end
-
-    print("Health percent: " .. healthpercent)
-    print("Mana percent: " .. manapercent)
-    print("Magic level: " .. magic)
 
 
     local Life_bloom_hp = Condition(CONDITION_REGENERATION, CONDITIONID_DEFAULT)

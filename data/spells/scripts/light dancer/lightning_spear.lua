@@ -29,6 +29,8 @@ function onGetFormulaValues(player, skill, attack, factor)
 	local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.1
     local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.2
 
+    
+
 
     local StormpiercerLevel = player:getStorageValue(PassiveSkills.Stormpiercer) or 0
     if StormpiercerLevel > 0 then

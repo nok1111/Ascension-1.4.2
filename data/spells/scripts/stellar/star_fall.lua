@@ -11,8 +11,8 @@ function onGetFormulaValues(player, skill, attack, factor)
     local level = player:getLevel()
     
 
-    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.0
-    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.0
+    local min = ((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * .75
+    local max = ((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * .80
     return -min, -max
 end
 
@@ -25,17 +25,20 @@ local function Starfall(creatureId, targetId)
         return
     end
 
+    local skill = creature:getEffectiveSkillLevel(SKILL_AXE)
+    local attack = getWandAttack(creature:getId())
+    local magic = creature:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
     local level = creature:getLevel()
-	local magic = creature:getMagicLevel()
+    
 
-	local minburn = ((level / 5) + (magic * 1.5) + 2) + 2
-	local maxburn =  ((level / 5) + (magic * 1.6) + 2) + 3
+    local minburn = (((level / 5) + (power * 0.010) + (magicpower * 0.50) + level) * 0.15) + 2
+    local maxburn = (((level / 5) + (power * 0.015) + (magicpower * 0.55) + level) * 0.20) + 3
 
     local AstralBurnDurationLevel = math.max(creature:getStorageValue(PassiveSkills.AstralBurn) or 0, 0)
-  --  print("AstralBurnDurationLevel: " .. AstralBurnDurationLevel)
     local conditionastralburn = Condition(CONDITION_ENERGY, CONDITIONID_COMBAT)
     local duration = AstralBurnDurationLevel + 1
-  --  print("duration: " .. duration)
 
     
     conditionastralburn:addDamage(duration, 1000, math.random(minburn, maxburn))

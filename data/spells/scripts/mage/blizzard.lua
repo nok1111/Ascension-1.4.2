@@ -19,11 +19,14 @@ slowCondition:setFormula(-0.7, 0, -0.7, 0) -- Adjust the values to set the speed
 slowCombat:addCondition(slowCondition)
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local level = player:getLevel()
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-	local min = ((level / 5) + (power * 0.085) + (attack * 1.5) + 150) / 8
-	local max =  ((level / 5) + (power * 0.085) + (attack * 1.5) + 150) / 7
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
+
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 0.23) + 2
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 0.26) + 3
     return -min, -max
 end
 
@@ -73,10 +76,10 @@ function onCastSpell(creature, variant, targetPos)
     local targetPos = target:getPosition()
 	
 	 for i=0, config.amount2, 1 do
-	 addEvent(sendRainAnimation, i*50, creatureId)
+	 addEvent(sendRainAnimation, i*150, creatureId)
 	end
     for i=0, config.amount, 1 do
-        addEvent(doDamage, i*50, combat, slowCombat, creatureId, targetPos, variant)
+        addEvent(doDamage, i*150, combat, slowCombat, creatureId, targetPos, variant)
     end
 
     return true
