@@ -14,12 +14,14 @@ combat:setArea(createCombatArea(AREA_CIRCLE2X2))
 
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local power = skill * attack 
 	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+		local magic = player:getMagicLevel()
+		local vit = player:getMaxHealth() / 100
+        local magic = player:getMagicLevel()
+        local magicpower = magic * attack
 
-	local min = ((level / 5) + (power * 0.025) + level) 
-	local max =  ((level / 5) + (power * 0.028) + level) 
+        local min = (((level / 5) + (vit * 0.8) + (magicpower * 0.12) + level) * 0.22) + 2
+        local max = (((level / 5) + (vit * 0.9) + (magicpower * 0.13) + level) * 0.24) + 3
 
     local level = player:getStorageValue(PassiveSkills.SanctifiedPower) or 0
     if level > 0 then

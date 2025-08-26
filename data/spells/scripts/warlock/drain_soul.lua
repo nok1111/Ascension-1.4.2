@@ -13,13 +13,15 @@ combat:setParameter(COMBAT_PARAM_EFFECT, config.mfx)
 combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 
 function onGetFormulaValues(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-    local power = sword * attack
-    local level = player:getLevel()
     local magic = player:getMagicLevel()
+    local power = skill * attack
+    local magicpower = magic * attack
+    print("magicpower: " .. magicpower)
+    local level = player:getLevel()
+    
 
-    local min = ((level / 5) + (power * 0.10) + (attack * 4.0) + 300) / 13.25
-    local max = ((level / 5) + (power * 0.11) + (attack * 4.5) + 400) / 13.15
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 0.33) + 2
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 0.35) + 3
     return -min, -max
 end
 
@@ -36,8 +38,14 @@ local function castNextSpell(cid, victims, count)
             return false
         end
         if creature:getId() and victim:getId() then
-            local min = ((creature:getLevel() / 5) + (creature:getMagicLevel() * 6.0) + 20) / 3.2
-			local max = ((creature:getLevel() / 5) + (creature:getMagicLevel() * 6.5) + 25) / 3.1
+            local level = creature:getLevel()
+		    local magic = creature:getMagicLevel()
+		    local vit = creature:getMaxHealth() / 100
+            local attack = getWandAttack(creature:getId())
+            local magicpower = magic * attack
+
+        local min = (((level / 5) + (vit * 0.3) + (magicpower * 0.12) + level) * 0.22) + 2
+        local max = (((level / 5) + (vit * 0.3) + (magicpower * 0.13) + level) * 0.24) + 3
 
 			local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
             if extrahealing > 0 then

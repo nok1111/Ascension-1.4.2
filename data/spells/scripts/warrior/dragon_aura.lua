@@ -39,8 +39,12 @@ local function sendEffcDragon(cid, max_iterations, iterations)
 		local level = pid:getLevel()
 		local magic = pid:getMagicLevel()
 		local vit = pid:getMaxHealth() / 100
-		local min = (level/5) + (vit * 0.5) + (magic * 2) + 10
-		local max = (level/5) + (vit * 1.0) + (magic * 3.5) + 15
+        local attack = getMeleeAttack(pid:getId())
+        local magic = pid:getMagicLevel()
+        local magicpower = magic * attack
+
+        local min = (((level / 5) + (vit * 0.8) + (magicpower * 0.12) + level) * 0.22) + 2
+        local max = (((level / 5) + (vit * 0.9) + (magicpower * 0.13) + level) * 0.24) + 3
         doAreaCombatHealth(pid, COMBAT_FIREDAMAGE, pos, {1}, min, max, 585)
 
         local DragonHeart = pid:getStorageValue(PassiveSkills.DragonHeart) or 0
