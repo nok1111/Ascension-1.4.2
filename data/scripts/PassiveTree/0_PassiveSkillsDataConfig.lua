@@ -748,7 +748,7 @@ PassiveSkills.treeData = {
 							params = {{param = CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED, value = 2}}
 						},
 					},
-					maxLevel = 10,
+					maxLevel = 7,
 					prevNodeLevelNeeded = 3
 					},
 					[3] = {
@@ -756,7 +756,7 @@ PassiveSkills.treeData = {
 						description = "Learn spell Blackout",
 						effect = {{type = "spell", name = "Blackout"}},
 						maxLevel = 1,
-						prevNodeLevelNeeded = 10
+						prevNodeLevelNeeded = 7
 					},
 					[4] = {
 						name = "Death's Approach",
@@ -1954,7 +1954,7 @@ PassiveSkills.treeData = {
 				nodes = {
 					[1] = {
 						name = "Short Circuit",
-						description = "Your attacks deal extra 20% (per level) damage to enemies affected by Static Shock.",
+						description = "During static shock, your attacks have a 20% (per level) chance to deal extra damage to enemies affected by Static Shock. (this effect is increased by magic level and base weapon damage)",
 						effect = {{type = "storage", name = "ShortCircuit", storage = PassiveSkills.ShortCircuit, value = 20}},
 						maxLevel = 5
 					},
@@ -2066,7 +2066,7 @@ PassiveSkills.treeData = {
 								name = "Skill Sword",
 								percent = true,
 								conditionType = CONDITION_ATTRIBUTES,
-								params = {{param = CONDITION_PARAM_SKILL_SWORDPERCENT, value = 10}}
+								params = {{param = CONDITION_PARAM_SKILL_SWORDPERCENT, value = 5}}
 							}
 						},
 						maxLevel = 5
@@ -2086,15 +2086,27 @@ PassiveSkills.treeData = {
 						prevNodeLevelNeeded = 5
 					},
 					[3] = {
+						name = "Elusibe Blade",
+						description = "Learn Elusive Blade spell",
+						effect = {
+							{
+								type = "spell",
+								name = "Elusive Blade"
+							}
+						},
+						maxLevel = 1,
+						prevNodeLevelNeeded = 5
+					},
+					[4] = {
 						name = "Dancing Edge",
-						description = "Elusive Blade now has a 20% (per level) chance to trigger a second time at 50% effectiveness and grants you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
+						description = "Elusive Blade now has a 20% (per level) chance to trigger a second time at 50% effectiveness granting you a Elusive Charge for 10 seconds. (this will refresh old charges of Elusive Charge)",
 						effect = {
 							{type = "storage", name = "DancingEdge", storage = PassiveSkills.DancingEdge, value = 20}
 						},
 						maxLevel = 5,
-						prevNodeLevelNeeded = 5
+						prevNodeLevelNeeded = 1
 					},
-					[4] = {
+					[5] = {
 						name = "Veil of Echos",
 						description = "If you have 2 or more Elusive Charges, Veil of swords now turns into veil of Echos. Veil of Echos consume all Elusive Charges and  deals high amounts of physical damage.",
 						effect = {
@@ -2109,7 +2121,7 @@ PassiveSkills.treeData = {
 						maxLevel = 1,
 						prevNodeLevelNeeded = 5
 					}, 
-					[5] = {
+					[6] = {
 						name = "Reverberation",
 						description = "Increase Veil of Echos and Veil of Swords damage by an aditional 10% (per level)",
 						effect = {
