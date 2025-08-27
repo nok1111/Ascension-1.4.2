@@ -1524,7 +1524,7 @@ class Player final : public Creature, public Cylinder
 		}
 		void updateBaseSpeed() {
 			if (!hasFlag(PlayerFlag_SetMaxSpeed)) {
-				baseSpeed = vocation->getBaseSpeed() + (2 * (level - 1));
+				baseSpeed = vocation->getBaseSpeed();
 			} else {
 				baseSpeed = PLAYER_MAX_SPEED;
 			}
