@@ -89,6 +89,7 @@ ConditionsSubIds = {
     momentum = 29555,
     scorchedmark = 29556,
     TeleportDistanceMagic = 29557,
+    rejuvenation = 29558,
     
 
 
