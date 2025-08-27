@@ -4,31 +4,17 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 combat:setParameter(COMBAT_PARAM_EFFECT, 443)
 
-local combat2 = Combat()
-combat2:setParameter(COMBAT_PARAM_TYPE, COMBAT_ENERGYDAMAGE)
-combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
-combat2:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
-combat2:setParameter(COMBAT_PARAM_EFFECT, 443)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 1.5) + 50
-	local max = (level / 5) + (power * 0.085) + (attack * 2.0) + 65
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.5
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.55
 	return -min, -max
 end
 combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
 
-function onGetFormulaValues2(player, skill, attack, factor)
-	local power = skill * attack 
-	local level = player:getLevel()
-
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 50
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 65
-	return -min, -max
-end
-combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")
 
 
 function onCastSpell(creature, var)
@@ -65,18 +51,9 @@ function onCastSpell(creature, var)
     targetPosition:sendMagicEffect(CONST_ME_MAGIC_BLUE)
     creature:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
 
-    if target:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge) then
-        local stunDuration = 1800
-        local adjustedStunDuration = target:isPlayer() and (stunDuration / 3) or stunDuration
-        local stun = Condition(CONDITION_STUN)
-        stun:setParameter(CONDITION_PARAM_TICKS, adjustedStunDuration)
 
-        target:addCondition(stun)
-        combat2:execute(creature, var)
-        target:attachEffectById(206, true)
-    else
-        combat:execute(creature, var)
-    end
+    combat:execute(creature, var)
+    
 
     return true
 end

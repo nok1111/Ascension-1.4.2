@@ -23,7 +23,7 @@ function onCastSpell(creature, variant)
     if player:getMana() < requiredMana then
         player:sendTextMessage(MESSAGE_STATUS_SMALL, "You need at least 12% of your max mana to cast this spell (" .. requiredMana .. ").")
         player:getPosition():sendMagicEffect(CONST_ME_POFF)
-        return true
+        return false
     end
     -- Subtract the mana cost
     player:addMana(-requiredMana)

@@ -8,14 +8,21 @@ combat:setArea(createCombatArea(AREA_SQUARE2X2))
 local condition = Condition(CONDITION_HASTE)
 condition:setParameter(CONDITION_PARAM_TICKS, 6000)
 condition:setParameter(CONDITION_PARAM_SUBID, MonsterStorage.windbarrel)
-condition:setFormula(2.0, -70, 2, -70)
+condition:setFormula(1.4, -70, 1.4, -70)
 
 local function healtargets(player, target)
     -- Check if player is valid
     if not player then
         return false
     end
+    if not target then
+        return false
+    end
 
+    if target:isNpc() then
+        return false
+    end
+    
     -- Check if the target is the player or is nil (indicating a self-heal)
     if target == player or target == nil then
         return true
@@ -70,7 +77,11 @@ function onTargetCreature(creature, target)
 	if target and healtargets(creature, target) then
     target:addCondition(condition)
     target:attachEffectById(165, true)
-    target:attachEffectById(166, true)
+
+    if target:isPlayer() then
+    target:sendAddBuffNotification(21, 6, 'you feel light', 5, 0)
+    end
+    
 	end
 	
 	return true
@@ -81,8 +92,6 @@ combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
 
 function onCastSpell(creature, variant, target)	
         combat:execute(creature:getMaster(), variant)
-        creature:remove()
-		
-    
+        creature:remove()	 
     return true
 end

@@ -15,6 +15,45 @@ local paralyzed = Condition(CONDITION_PARALYZE, CONDITIONID_COMBAT)
 paralyzed:setParameter(CONDITION_PARAM_TICKS, paralyzedDuration)
 paralyzed:setFormula(-0.5, 0, -0.5, 0)
 
+local function isExcludedTarget(creature, target)
+    if not creature or not target then
+        return true
+    end
+
+    if target:isNpc() then
+        return true
+    end
+
+    if target == creature then
+        return true
+    end
+
+    -- Exclude party members and their summons
+    if creature:isPlayer() and target:isPlayer() then
+        local creatureParty = creature:getParty()
+        local targetParty = target:getParty()
+        if creatureParty and targetParty and creatureParty == targetParty then
+            return true
+        end
+    end
+    if target:isMonster() and target:getMaster() then
+        local master = target:getMaster()
+        if master:isPlayer() and creature:getParty() and master:getParty() == creature:getParty() then
+            return true
+        end
+    end
+
+    -- Secure mode check to exclude non-party players and their summons
+    local player = creature:isPlayer() and creature or creature:getMaster()
+    if player and player:hasSecureMode() then
+        if target:isPlayer() or (target:isMonster() and target:getMaster() and target:getMaster():isPlayer()) then
+            return true
+        end
+    end
+    
+    return false
+end
+
 -- Helper function to extract creature IDs
 local function getCreatureIds(creatures)
     local ids = {}
@@ -69,11 +108,11 @@ combatFire:setParameter(COMBAT_PARAM_EFFECT, 201)
 
 -- Skill-based formula for Cyclone Sweep
 function onGetFormulaValues_Fire(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
-    local power = sword * attack
+    local power = skill * attack 
     local level = player:getLevel()
-    local min = (level / 4) + (power * 0.055) + attack * 1.1
-    local max = (level / 4) + (power * 0.095) + attack * 1.7
+
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.7
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.7
     return -min, -max
 end
 combatFire:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues_Fire")
@@ -85,11 +124,11 @@ combatIce:setParameter(COMBAT_PARAM_EFFECT, 42)
 
 -- Skill-based formula for Cyclone Sweep
 function onGetFormulaValues_Ice(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD)
-    local power = sword * attack
+    local power = skill * attack 
     local level = player:getLevel()
-    local min = (level / 4) + (power * 0.055) + attack * 1.1
-    local max = (level / 4) + (power * 0.095) + attack * 1.7
+
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.7
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.7
     return -min, -max
 end
 
@@ -104,7 +143,7 @@ local function getNearbyEnemies(player, radius)
             local tile = Tile(checkPos)
             if tile then
                 local creature = tile:getTopCreature()
-                if creature and creature ~= player and (creature:isPlayer() or creature:isMonster()) then
+                if creature and not isExcludedTarget(player, creature) then
                     table.insert(enemies, creature)
                 end
             end
@@ -178,7 +217,7 @@ function onCastSpell(player, variant)
     
     -- Visual start
     player:getPosition():sendMagicEffect(49) -- Swirl effect
-    player:say("Cyclone Sweep!", TALKTYPE_MONSTER_SAY)
+    
 
     -- Effect position logic
     local effectPos = Position(player:getPosition())

@@ -16,7 +16,6 @@ function onGetFormulaValues(player, skill, attack, factor)
     local magic = player:getMagicLevel()
     local power = skill * attack
     local magicpower = magic * attack
-    print("magicpower: " .. magicpower)
     local level = player:getLevel()
     
 

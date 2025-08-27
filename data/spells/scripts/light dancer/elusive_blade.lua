@@ -7,10 +7,10 @@ combat:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.075) + (attack * 3.5) + 75
-	local max = (level / 5) + (power * 0.085) + (attack * 4.5) + 85
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.1
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.1
 	return -min, -max
 	
 end
@@ -22,14 +22,12 @@ combat2:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat2:setParameter(COMBAT_PARAM_USECHARGES, true)
 
 function onGetFormulaValues2(player, skill, attack, factor)
-	local power = skill * attack 
-	local level = player:getLevel()
+    local power = skill * attack 
+    local level = player:getLevel()
 
-	local min2 = ((level / 5) + (power * 0.075) + (attack * 3.5) + 75) / 2
-	local max2 = ((level / 5) + (power * 0.085) + (attack * 4.5) + 85) / 2
-
-
-	return -min2, -max2
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.1
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.1
+	return -min, -max
 	
 end
 combat2:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues2")

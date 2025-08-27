@@ -1,8 +1,8 @@
 
 
 local config = {
-	Duration = 7,
-	RainEffectDuration = 5,
+	Duration = 15,
+	RainEffectDuration = 13,
 	Ticks_Between = 800,
 	Ticks_Effect = 100,
 	Effect = CONST_ME_LOSEENERGY,
@@ -95,34 +95,31 @@ local function healtargets(player, target)
     return false
 end
 
-
-function onTargetCreature(creature, target)
-	local player = creature:getPlayer()
+function onGetFormulaValues(player, skill, attack, factor)
 	local level = player:getLevel()
-	local magicLevel = player:getMagicLevel()
-	local min = (level / 10) + (magicLevel * 3.3) + 10
-	local max = (level / 8) + (magicLevel * 5.4) + 15
-
-	local RainFallHealing = player:getStorageValue(PassiveSkills.RainFallHealing) or 0
-    if RainFallHealing > 0 then
-		min = min * (1 + (RainFallHealing / 100))
-		max = max * (1 + (RainFallHealing / 100))
-	end
-
-    local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
-    if extrahealing > 0 then
-        min = min * (1 + (extrahealing / 100))
-        max = max * (1 + (extrahealing / 100))
-    end
+		local magic = player:getMagicLevel()
 
 
-	if healtargets(player, target) then
-		target:addHealth(math.random(min,max))
-	end
-	return true
+        local min = (level / 5) + (magic * 1.0) + 2
+        local max = (level / 5) + (magic * 1.1) + 3
+
+        local RainFallHealing = player:getStorageValue(PassiveSkills.RainFallHealing) or 0
+        if RainFallHealing > 0 then
+            min = min * (1 + (RainFallHealing / 100))
+            max = max * (1 + (RainFallHealing / 100))
+        end
+    
+        local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+        if extrahealing > 0 then
+            min = min * (1 + (extrahealing / 100))
+            max = max * (1 + (extrahealing / 100))
+        end
+    return min, max
 end
 
-combat:setCallback(CALLBACK_PARAM_TARGETCREATURE, "onTargetCreature")
+
+combat:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues")
+
 
 
 local function HealEvent(creatureId, variant)
