@@ -988,19 +988,34 @@ local PASSIVES = {
     },
     trigger = function(player, target, damage, primaryType, origin)
       if origin ~= ORIGIN_MELEE then
-        print("Origin is not melee")
         return
       end
-      return target:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge)
+      local ShortCircuitLevel = math.max(player:getStorageValue(PassiveSkills.ShortCircuit) or 0, 0)
+      if not ShortCircuitLevel or ShortCircuitLevel < math.random(1, 100) then
+        return
+      end
+      return target:getCondition(CONDITION_ENERGY, 0, ConditionsSubIds.static_charge)  
     end,
     effect = function(player, target, damage)
       if not player or not target or not damage then
         return
       end
       
-      local ShortCircuitLevel = math.max(player:getStorageValue(PassiveSkills.ShortCircuit) or 0, 0)
+      
+
+        local attack = getMeleeAttack(player:getId())
+        local magic = player:getMagicLevel()
+        local magicpower = magic * attack
+        local level = player:getLevel()
+        local min = (((level / 5) + (magicpower * 0.10)) + 1)
+        local max = (((level / 5) + (magicpower * 0.15)) + 1)
+
+        print("magicpower: " .. magicpower)
+
+        print("min: " .. min .. " max: " .. max)
+        local randomDamage = math.random(min, max)
       --Your attacks deal extra 20% damage (per level)
-      local extraDamage = damage * (1 + (ShortCircuitLevel / 100))
+      local extraDamage = randomDamage
 
       doTargetCombatHealth(player:getId(), target:getId(), COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
       target:attachEffectById(147, true)
@@ -1026,7 +1041,7 @@ local PASSIVES = {
       player:addMana(mana)
     end
 
-      return 0
+      return damage
     end
   },
   
