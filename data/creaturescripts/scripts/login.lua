@@ -70,7 +70,28 @@ function onLogin(player)
 			end
 		end
 	end
-	
+
+
+	--add speed based on vocation id from 1 to 10
+	local vocationSpeeds = {
+		[1] = 250,   -- Magician
+		[2] = 280,   -- Templar
+		[3] = 300,   -- Nightblade
+		[4] = 280,   -- Dragon Knight
+		[5] = 250,   -- Warlock
+		[6] = 250,   -- Stellar
+		[7] = 290,   -- Monk
+		[8] = 250,   -- Druid
+		[9] = 300,   -- Light Dancer
+		[10] = 260,  -- Archer
+	}
+	local vocId = player:getVocation():getId()
+	-- Ignore GMs (group id >= 2)
+	if player:getGroup():getId() < 2 and vocationSpeeds[vocId] then
+		print("base speed: " .. player:getBaseSpeed())
+		print("vocation speed: " .. vocationSpeeds[vocId])
+		--player:changeSpeed(vocationSpeeds[vocId] - player:getBaseSpeed())
+	end
 
 	return true
 end
