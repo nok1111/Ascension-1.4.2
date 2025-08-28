@@ -35,7 +35,7 @@ function doExtraFireball(playerid, targetid, baseDamage)
   local totalDamage = baseDamage + bonus
   -- Apply fire damage to area
   
-  doAreaCombatHealth(player:getId(), COMBAT_FIREDAMAGE, toPos, blazingdecree_area, -math.floor(totalDamage), -math.floor(totalDamage), 7)
+  doAreaCombatHealth(player, COMBAT_FIREDAMAGE, toPos, blazingdecree_area, -math.floor(totalDamage), -math.floor(totalDamage), 7)
 end
 
 local function StarfallPassive(playerId, targetId)
@@ -74,7 +74,7 @@ local function StarfallPassive(playerId, targetId)
   local playerBonus = (playerLevel * 0.8) + (playerMagic * 3.0)
   local totalDamage = playerBonus
 
-  doAreaCombatHealth(player:getId(), COMBAT_ENERGYDAMAGE, target:getPosition(), 0, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+  doAreaCombatHealth(player, COMBAT_ENERGYDAMAGE, target:getPosition(), 0, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
 
 end
 
@@ -91,7 +91,7 @@ function doDemolition(playerid, targetid, baseDamage)
   local totalDamage = baseDamage + bonus
   -- Apply fire damage to area
   
-  doAreaCombatHealth(player:getId(), COMBAT_FIREDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+  doAreaCombatHealth(player, COMBAT_FIREDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
 end
 
 
@@ -128,7 +128,7 @@ local PASSIVES = {
       local totalDamage = bonus
       -- Apply fire damage to area
       
-      doAreaCombatHealth(player:getId(), COMBAT_FIREDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+      doAreaCombatHealth(player, COMBAT_FIREDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
       local positioneffect = toPos
       positioneffect.x = toPos.x + 2
       positioneffect.y = toPos.y + 1
@@ -178,7 +178,7 @@ local PASSIVES = {
         local totalDamage = bonus
         -- Apply fire damage to area
         
-        doAreaCombatHealth(player:getId(), COMBAT_PHYSICALDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
+        doAreaCombatHealth(player, COMBAT_PHYSICALDAMAGE, toPos, demolition_area, -math.floor(totalDamage), -math.floor(totalDamage), CONST_ME_NONE)
         local positioneffect = toPos
         positioneffect.x = toPos.x + 1
         positioneffect.y = toPos.y + 1
@@ -256,12 +256,12 @@ local PASSIVES = {
       if not player or not target or not damage then
         return
       end
-      print("permafrost trap")
+      
       local playerlevel = player:getLevel()
       local playerMagic = player:getMagicLevel()
       local playerBonus = ((playerlevel / 5) + (playerMagic * 1.5) + 2)
       -- Deal doarea damage dotarget
-      doTargetCombatHealth(player:getId(), target:getId(), COMBAT_ICEDAMAGE, -playerBonus, -playerBonus, CONST_ME_NONE)
+      doTargetCombatHealth(player, target, COMBAT_ICEDAMAGE, -playerBonus, -playerBonus, CONST_ME_NONE)
       target:attachEffectById(119, true)   
       return damage -- Prevent double damage application
     end,
@@ -328,7 +328,7 @@ local PASSIVES = {
       -- Deflect: reduce incoming damage by 30% (customizable)
       local reducedDamage = damage * 0.7
       -- Reflect: send a portion (20% of reduced damage + scaling) as energy damage
-      doTargetCombatHealth(player:getId(), attacker:getId(), COMBAT_ENERGYDAMAGE, -reducedDamage, -reducedDamage, CONST_ME_ENERGYAREA)
+      doTargetCombatHealth(player, attacker, COMBAT_ENERGYDAMAGE, -reducedDamage, -reducedDamage, CONST_ME_ENERGYAREA)
       player:attachEffectById(148, true)
       player:attachEffectById(149, true) 
       return 0
@@ -349,7 +349,7 @@ local PASSIVES = {
       end
       
 
-      doTargetCombatHealth(player:getId(), attacker:getId(), COMBAT_ICEDAMAGE, -(damage * 0.25), -(damage * 0.35), CONST_ME_NONE)
+      doTargetCombatHealth(player, attacker, COMBAT_ICEDAMAGE, -(damage * 0.25), -(damage * 0.35), CONST_ME_NONE)
       --send distance effect from player to attacker
       player:getPosition():sendDistanceEffect(attacker:getPosition(), 37)
       player:getPosition():sendMagicEffect(543)
@@ -465,7 +465,7 @@ local PASSIVES = {
       local extraDamage = damage * 1.5
       local mysticEffects = {100, 101, 102, 103}
       local effectId = mysticEffects[math.random(#mysticEffects)]
-      doTargetCombatHealth(player:getId(), target:getId(), COMBAT_PHYSICALDAMAGE, -math.floor(extraDamage), -math.floor(extraDamage), CONST_ME_NONE)
+      doTargetCombatHealth(player, target, COMBAT_PHYSICALDAMAGE, -math.floor(extraDamage), -math.floor(extraDamage), CONST_ME_NONE)
       target:attachEffectById(effectId, true)
       target:say(effectId, TALKTYPE_MONSTER_SAY)
       --Landing a mystic punch increases your attack speed by 8% (per level) for 5 seconds CONDITION_PARAM_SPECIALSKILL_ATTACKSPEED
@@ -506,14 +506,14 @@ local PASSIVES = {
       end
       
       -- Deal damage to main target
-      doTargetCombatHealth(player:getId(), target:getId(), COMBAT_PHYSICALDAMAGE, -math.floor(ampDamage), -math.floor(ampDamage), CONST_ME_HITAREA)
+      doTargetCombatHealth(player, target, COMBAT_PHYSICALDAMAGE, -math.floor(ampDamage), -math.floor(ampDamage), CONST_ME_HITAREA)
       target:attachEffectById(9, true)
       -- Deal damage to nearby monsters (radius 2)
       local pos = target:getPosition()
       local spectators = Game.getSpectators(pos, false, false, 2, 2, 2, 2)
       for _, creature in ipairs(spectators) do
         if creature ~= target and not creature:isNpc() then
-          doTargetCombatHealth(player:getId(), creature:getId(), COMBAT_PHYSICALDAMAGE, -math.floor(ampDamage), -math.floor(ampDamage), CONST_ME_HITAREA)
+          doTargetCombatHealth(player, creature, COMBAT_PHYSICALDAMAGE, -math.floor(ampDamage), -math.floor(ampDamage), CONST_ME_HITAREA)
           creature:attachEffectById(9, true)
         end
       end
@@ -844,7 +844,7 @@ local PASSIVES = {
       end
       -- Deal extra holy damage equal to double the original primary damage
       local holyDamage = damage * 2
-      doTargetCombatHealth(player:getId(), target:getId(), COMBAT_HOLYDAMAGE, -holyDamage, -holyDamage, CONST_ME_HOLYAREA)
+      doTargetCombatHealth(player, target, COMBAT_HOLYDAMAGE, -holyDamage, -holyDamage, CONST_ME_HOLYAREA)
       target:getPosition():sendMagicEffect(CONST_ME_HOLYAREA)
       return damage
     end,
@@ -1017,7 +1017,7 @@ local PASSIVES = {
       --Your attacks deal extra 20% damage (per level)
       local extraDamage = randomDamage
 
-      doTargetCombatHealth(player:getId(), target:getId(), COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
+      doTargetCombatHealth(player, target, COMBAT_ENERGYDAMAGE, -extraDamage, -extraDamage, CONST_ME_NONE)
       target:attachEffectById(147, true)
 
     local HighVoltageLevel = math.max(player:getStorageValue(PassiveSkills.HighVoltage) or 0, 0)
@@ -1065,7 +1065,7 @@ local PASSIVES = {
       if level > 0 then
         if math.random(1, 100) <= level then
           local new_damage = damage * extraDamage
-          doTargetCombatHealth(player:getId(), target:getId(), COMBAT_DEATHDAMAGE, -new_damage, -new_damage, 18)
+          doTargetCombatHealth(player, target, COMBAT_DEATHDAMAGE, -new_damage, -new_damage, 18)
           local min = (damage * 0.35)
           local max = (damage * 0.4)
           player:addMana(math.random(min, max))
