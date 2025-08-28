@@ -742,6 +742,95 @@ local zones = {
         forceWeather = false, -- If true, weather will always stay the same
         activeWeather = nil, -- Stores the currently active weather
     },
+    [41] = {
+        id = 41,
+        name = "Skully Ruins",
+        monsters = {"skully", "twin skully", "winged skully", "bandit skully"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+    
+        tiles = 0,
+        maxMonsters = 0,
+    
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Fog"}, -- Possible weather types
+        forceWeather = true, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
+    [42] = {
+        id = 42,
+        name = "Skully Ruins - Deep Floor",
+        monsters = {"burning skully", "twin skully", "winged skully", "bandit skully", "edged skully", "shielded skully", "frenzyed skully"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+    
+        tiles = 0,
+        maxMonsters = 0,
+    
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Fog"}, -- Possible weather types
+        forceWeather = true, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
+    [43] = {
+        id = 43,
+        name = "Skully Ruins - Deep Floor",
+        monsters = {"burning skully", "twin skully", "winged skully", "bandit skully", "edged skully", "shielded skully", "frenzyed skully"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+    
+        tiles = 0,
+        maxMonsters = 0,
+    
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Fog"}, -- Possible weather types
+        forceWeather = true, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
+
+    [44] = {
+        id = 44,
+        name = "starter forest",
+        monsters = {"twigkin", "leafy twigkin"},
+        spawnIntervalMin = 1000,
+        spawnIntervalMax = 1000,
+    
+        tiles = 0,
+        maxMonsters = 0,
+    
+        spawnedMonsters = {}, 
+        spawnEvent = nil,
+        showZoneName = true, -- Whether to show the zone name on entering
+        despawnmonsters = false, -- -- Whether to despawn monster when no players are in area
+        onStartup = true, -- This will trigger monster spawn at startup
+
+
+         -- WEATHER SETTINGS
+        weather = {"Map - Fog"}, -- Possible weather types
+        forceWeather = true, -- If true, weather will always stay the same
+        activeWeather = nil, -- Stores the currently active weather
+    },
 
 
 

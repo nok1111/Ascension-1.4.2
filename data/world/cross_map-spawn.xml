@@ -3,6 +3,9 @@
 	<spawn centerx="779" centery="1078" centerz="4" radius="1">
 		<npc name="Hermit of Wyrmfang" x="0" y="0" z="4" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="255" centery="711" centerz="5" radius="1">
+		<npc name="Arcanist Veyron" x="0" y="0" z="5" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="789" centery="776" centerz="5" radius="1">
 		<monster name="Snake" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
@@ -151,6 +154,47 @@
 	<spawn centerx="926" centery="1187" centerz="5" radius="1">
 		<npc name="Daya Swiftwind" x="0" y="0" z="5" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="225" centery="679" centerz="6" radius="1">
+		<npc name="frodo" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="223" centery="680" centerz="6" radius="1">
+		<monster name="Dog" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="229" centery="681" centerz="6" radius="1">
+		<monster name="Dog" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="190" centery="688" centerz="6" radius="1">
+		<npc name="Merchant Tobias" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="339" centery="688" centerz="6" radius="1">
+		<npc name="Priestess Shamil" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="216" centery="691" centerz="6" radius="1">
+		<monster name="Dog" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="222" centery="694" centerz="6" radius="1">
+		<npc name="blacksmith Sam" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="257" centery="695" centerz="6" radius="1" />
+	<spawn centerx="231" centery="702" centerz="6" radius="1">
+		<monster name="Dog" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="263" centery="703" centerz="6" radius="1">
+		<npc name="Lucy" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="258" centery="704" centerz="6" radius="1">
+		<npc name="alchemist hanna" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="250" centery="707" centerz="6" radius="1">
+		<monster name="Dog" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="259" centery="710" centerz="6" radius="1">
+		<npc name="Sage Liora" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="205" centery="721" centerz="6" radius="1" />
+	<spawn centerx="218" centery="725" centerz="6" radius="1">
+		<monster name="Dog" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="728" centery="735" centerz="6" radius="1">
 		<monster name="Snake" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
@@ -178,17 +222,17 @@
 	<spawn centerx="727" centery="754" centerz="6" radius="1">
 		<monster name="Snake" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="315" centery="758" centerz="6" radius="1">
-		<npc name="Arcanist Veyron" x="0" y="0" z="6" spawntime="60" direction="2" />
-	</spawn>
 	<spawn centerx="788" centery="758" centerz="6" radius="1">
 		<monster name="Snake" x="0" y="0" z="6" spawntime="60" direction="2" />
+	</spawn>
+	<spawn centerx="315" centery="759" centerz="6" radius="1">
+		<npc name="Arcanist Veyron" x="0" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="755" centery="759" centerz="6" radius="1">
 		<monster name="Snake" x="0" y="0" z="6" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="311" centery="761" centerz="6" radius="1">
-		<npc name="xodet" x="0" y="0" z="6" spawntime="60" direction="2" />
+	<spawn centerx="311" centery="762" centerz="6" radius="1">
+		<npc name="xodet" x="0" y="-1" z="6" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="740" centery="778" centerz="6" radius="1">
 		<monster name="Snake" x="0" y="0" z="6" spawntime="60" direction="2" />
@@ -328,6 +372,7 @@
 	<spawn centerx="428" centery="655" centerz="7" radius="1">
 		<monster name="Bug" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="207" centery="658" centerz="7" radius="1" />
 	<spawn centerx="408" centery="659" centerz="7" radius="1">
 		<monster name="Squirrel" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -380,6 +425,9 @@
 	<spawn centerx="552" centery="691" centerz="7" radius="1">
 		<monster name="Wolf" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
+	<spawn centerx="211" centery="692" centerz="7" radius="1">
+		<npc name="Brunna the Miner" x="0" y="0" z="7" spawntime="60" direction="2" />
+	</spawn>
 	<spawn centerx="592" centery="694" centerz="7" radius="1">
 		<monster name="Rabbit" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
@@ -387,11 +435,13 @@
 		<monster name="Snake" x="0" y="0" z="7" spawntime="60" direction="2" />
 		<monster name="Snake" x="1" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="364" centery="695" centerz="7" radius="1">
-		<monster name="Snake" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="365" centery="695" centerz="7" radius="1">
+		<monster name="Snake" x="-1" y="0" z="7" spawntime="60" direction="2" />
+		<monster name="Snake" x="1" y="1" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="366" centery="696" centerz="7" radius="1">
-		<monster name="Snake" x="0" y="0" z="7" spawntime="60" direction="2" />
+	<spawn centerx="366" centery="696" centerz="7" radius="1" />
+	<spawn centerx="281" centery="697" centerz="7" radius="1">
+		<npc name="Sheriff Gordon" x="1" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
 	<spawn centerx="346" centery="697" centerz="7" radius="1">
 		<monster name="Snake" x="0" y="0" z="7" spawntime="60" direction="2" />
@@ -645,9 +695,7 @@
 	<spawn centerx="287" centery="752" centerz="7" radius="1">
 		<monster name="Dog" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>
-	<spawn centerx="289" centery="752" centerz="7" radius="1">
-		<npc name="Sheriff Gordon" x="1" y="0" z="7" spawntime="60" direction="2" />
-	</spawn>
+	<spawn centerx="289" centery="752" centerz="7" radius="1" />
 	<spawn centerx="299" centery="752" centerz="7" radius="1">
 		<npc name="Eldric the Woodwise" x="0" y="0" z="7" spawntime="60" direction="2" />
 	</spawn>

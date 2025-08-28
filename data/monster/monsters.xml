@@ -34,6 +34,28 @@
 	<monster name="Saranor" file="tier 1/bosses/saranor.xml" />
 	
 	<!--TIER 1-->
+
+	<monster name="Skully" file="tier 1/skully.xml" />
+	<monster name="Twin Skully" file="tier 1/twin_skully.xml" />
+	<monster name="Winged Skully" file="tier 1/winged_skully.xml" />
+	<monster name="Bandit Skully" file="tier 1/bandit_skully.xml" />
+	<monster name="Shielded Skully" file="tier 1/shielded_skully.xml" />
+	<monster name="Frenzyed Skully" file="tier 1/frenzyed_skully.xml" />
+	<monster name="Edged Skully" file="tier 1/edged_skully.xml" />
+	<monster name="Burning Skully" file="tier 1/burning_skully.xml" />
+
+
+
+
+
+
+
+
+
+
+
+
+
 	<monster name="Rat" file="tier 1/rat.xml" />
 	<monster name="Spider" file="tier 1/spider.xml" />
 	<monster name="Tarantula" file="tier 1/tarantula.xml" />
