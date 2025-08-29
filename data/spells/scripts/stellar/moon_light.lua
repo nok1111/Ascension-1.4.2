@@ -7,6 +7,12 @@ combat:setParameter(COMBAT_PARAM_AGGRESSIVE, false)
 function onGetFormulaValues(player, level, magicLevel)
 	local min = (level / 5) + (magicLevel * 6.3) + 45
 	local max = (level / 5) + (magicLevel * 14.4) + 90
+
+	local extrahealing = player:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
+	if extrahealing > 0 then
+		min = min * (1 + (extrahealing / 100))
+		max = max * (1 + (extrahealing / 100))
+	end
 	return min, max
 end
 

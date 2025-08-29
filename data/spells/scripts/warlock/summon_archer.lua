@@ -17,7 +17,7 @@ local function getSummonCount(player)
     local summons = player:getSummons()
     for i = 1, #summons do
         local summon = summons[i]
-        if summon:getName():lower() == "void guard" or summon:getName():lower() == "void mender" or summon:getName():lower() == "void sentinel" then
+        if summon:getName():lower() == "void sentinel" then
             undeadCount = undeadCount + 1
         end
     end
@@ -33,7 +33,7 @@ function onCastSpell(cid, var)
     if not player then return false end
 
     local level = player:getLevel()
-    local maxSummons = getMaxSummons(level)
+    local maxSummons = 1
 
     if getSummonCount(player) >= maxSummons then
         player:sendCancelMessage("You can't have more of these summons.")
@@ -46,6 +46,10 @@ function onCastSpell(cid, var)
 
     local mySummonvoid = Game.createMonster(summonName, player:getPosition())
     if not mySummonvoid then return false end
+
+    local summonpos = mySummonvoid:getPosition()
+    --send magic effect
+    summonpos:sendMagicEffect(170)
     
     player:addSummon(mySummonvoid)
     if player:getTarget() then
@@ -69,5 +73,5 @@ function onCastSpell(cid, var)
     player:say("arise!", TALKTYPE_MONSTER_SAY)
     addEvent(removePetArcher, 5 * 60 * 1000, mySummonvoid:getId())
     
-    return combat:execute(player, var)
+    return true
 end

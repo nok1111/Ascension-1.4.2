@@ -25,11 +25,10 @@ combat:addCondition(stun)
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + 50
-	local max = (level / 5) + (power * 0.085) + 75
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.7
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.7
 	return -min, -max
 
 end

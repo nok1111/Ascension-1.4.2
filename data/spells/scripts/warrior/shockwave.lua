@@ -17,11 +17,10 @@ local stunDuration = 2000
  
  function onGetFormulaValues1(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.030) + (magic * 12.0) + 50
-	local max = (level / 5) + (power * 0.035) + (magic * 16.5) + 60
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.2
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.2
 	return -min, -max
 end
 combat1:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValues1")

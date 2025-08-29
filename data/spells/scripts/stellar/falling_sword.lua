@@ -47,11 +47,13 @@ end
 
 function onGetFormulaValues(player, skill, attack, factor)
 	local magic = player:getMagicLevel()
-	local power = magic * attack 
-    local maxmana = player:getMaxMana()
+    local power = skill * attack
+    local magicpower = magic * attack
+    local level = player:getLevel()
+    
 
-    local min = (maxmana * 0.03) + (power * 0.065) + (attack * 1.5) + 35
-    local max = (maxmana * 0.03) + (power * 0.065) + (attack * 2.3) + 56
+    local min = (((level / 5) + (power * 0.045) + (magicpower * 0.12) + 8) * 1.4) + 20
+    local max = (((level / 5) + (power * 0.055) + (magicpower * 0.13) + 12) * 1.4) + 35
     return -min, -max
 end
 

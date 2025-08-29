@@ -95,10 +95,9 @@ local function animation(pos, playerpos)
 			newposition.x = newposition.x + 1
 			newposition.y = newposition.y + 1
 	
+			newposition:sendMagicEffect(661)
+	
 			newposition:sendMagicEffect(362)
-		
-		--Position(pos):sendMagicEffect(362)
-        Position(pos):sendMagicEffect(CONST_ME_NEWEARTHQUAKE)
         --end
     else
         Position(pos):sendMagicEffect(CONST_ME_BLOCKHIT)
@@ -126,10 +125,9 @@ combatrebound:setArea(createCombatArea(reboundArea))
 function onGetFormulaValuesRebound(player, skill, attack, factor)
     local power = skill * attack 
 	local level = player:getLevel()
-	local magic = player:getMagicLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 2.0) + 50
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 65
+	local min = ((level / 5) + (power * 0.060) + attack) * 1.6
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.8
 	return -min, -max
 end
 combatrebound:setCallback(CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValuesRebound")

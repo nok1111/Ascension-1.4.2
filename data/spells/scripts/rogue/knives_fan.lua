@@ -25,28 +25,17 @@ conditioncursed:setTicks(15000)
 conditioncursed:setParameter(CONDITION_PARAM_DELAYED, 1)
 conditioncursed:setParameter(CONDITION_PARAM_TICKINTERVAL, 1500)
 
-
-
-function onGetFormulaValuesdot(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
-
-	local min = (level / 5) + (power * 0.08) + (attack * 0.2) + 150
-	local max = (level / 5) + (power * 0.09) + (attack * 0.25) + 180
-	return -min, -max
-end
-
-setCombatCallback(combat, CALLBACK_PARAM_SKILLVALUE, "onGetFormulaValuesdot")
-
 local function CastSpell(cid, var)
     local player = Player(cid)
     local level = player:getLevel()
     local magic = player:getMagicLevel()
-	
-	min = (level / 1) + (magic * 3.3)
-    max = (level / 1) + (magic * 4.35)
+	local attack = getMeleeAttack(player:getId())
+	local skill = player:getEffectiveSkillLevel(SKILL_SWORD)
+	local magicpower = magic * attack
+	local power = skill * attack 
+
+    local min = ((level / 5) + (power * 0.030) + (magicpower * 2.12)) * 0.2
+    local max = ((level / 5) + (power * 0.0405) + (magicpower * 2.13)) * 0.2
 
 	local Deathwind = player:getStorageValue(PassiveSkills.Deathwind) or 0
 	if Deathwind > 0 then
@@ -74,11 +63,10 @@ combat1:setParameter(COMBAT_PARAM_EFFECT, 1)
 function onGetFormulaValues1(player, skill, attack, factor)
 
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.08) + (attack * 0.2) + 25
-	local max = (level / 5) + (power * 0.09) + (attack * 0.25) + 32
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.01
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.05
 	return -min, -max
 end
 
@@ -91,11 +79,10 @@ combat2:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 function onGetFormulaValues2(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.08) + (attack * 0.2) + 25
-	local max = (level / 5) + (power * 0.09) + (attack * 0.25) + 32
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.3
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.3
 	return -min, -max
 end
 
@@ -108,11 +95,10 @@ combat3:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 function onGetFormulaValues3(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.08) + (attack * 0.2) + 25
-	local max = (level / 5) + (power * 0.09) + (attack * 0.25) + 32
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.3
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.3
 	return -min, -max
 end
 
@@ -125,11 +111,10 @@ combat4:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 function onGetFormulaValues4(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.08) + (attack * 0.2) + 25
-	local max = (level / 5) + (power * 0.09) + (attack * 0.25) + 32
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.3
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.3
 	return -min, -max
 end
 
@@ -141,11 +126,10 @@ combat5:setParameter(COMBAT_PARAM_EFFECT, 10)
 
 function onGetFormulaValues5(player, skill, attack, factor)
 	local power = skill * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.08) + (attack * 0.2) + 25
-	local max = (level / 5) + (power * 0.09) + (attack * 0.25) + 32
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.3
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.3
 	return -min, -max
 end
 

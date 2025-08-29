@@ -1188,15 +1188,15 @@ PassiveSkills.treeData = {
 								value = 8
 							}
 						},
-						maxLevel = 8,
+						maxLevel = 5,
 						prevNodeLevelNeeded = 5 
 					},
 					[4] = {
-						name = "Void Sentinel",
-						description = "Learn Spell Summon Void Sentinel",
-						effect = {{type = "spell", name = "Summon Void Sentinel"}},
+						name = "Void Mender",
+						description = "Learn Spell Summon Void Mender",
+						effect = {{type = "spell", name = "Summon Void Mender"}}, 
 						maxLevel = 1,
-						prevNodeLevelNeeded = 8
+						prevNodeLevelNeeded = 5
 					},
 					[5] = {
 						name = "Abyssal Refund",

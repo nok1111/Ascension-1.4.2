@@ -5,13 +5,11 @@ combat:setParameter(COMBAT_PARAM_BLOCKARMOR, true)
 combat:setParameter(COMBAT_PARAM_BLOCKSHIELD, true)
 
 function onGetFormulaValues(player, skill, attack, factor)
-	local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-	local power = sword * attack 
-	local level = player:getLevel()
-	local magic = player:getMagicLevel()
+	local power = skill * attack 
+    local level = player:getLevel()
 
-	local min = (level / 5) + (power * 0.045) + (attack * 1.2) + 40
-	local max = (level / 5) + (power * 0.085) + (attack * 2.5) + 45
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 0.75
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 0.85
 	return -min, -max
 end
 

@@ -9,25 +9,26 @@ local config = {
 }
 
 local function onGetFormulaValues5(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-    local power = sword * attack 
+    local power = skill * attack 
     local level = player:getLevel()
-    local magic = player:getMagicLevel()
 
-    local min = ((level / 5) + (power * 0.045) + (attack * 2.0) + 35) / 3
-    local max = ((level / 5) + (power * 0.065) + (attack * 2.4) + 45) / 2.5
+    local min = ((level / 5) + (power * 0.060) + attack * 1.0) * 1.3
+    local max = ((level / 5) + (power * 0.0705) + attack * 1.3) * 1.3
     return -min, -max
 end
 
 local function heal(player, skill, attack, factor)
-    local sword = player:getEffectiveSkillLevel(SKILL_SWORD) * 1
-    local power = sword * attack 
+    local power = skill * attack 
     local level = player:getLevel()
     local magic = player:getMagicLevel()
+    local magicpower = magic * attack
 
-    local minheal = ((level / 5) + (power * 0.045) + (attack * 2.0) + 35) / 3
-    local maxheal = ((level / 5) + (power * 0.065) + (attack * 2.0) + 45) / 2.5
-    return minheal, maxheal
+    local min = ((level / 5) + (power * 0.030) + (magicpower * 2.12)) * 1.1
+    local max = ((level / 5) + (power * 0.0405) + (magicpower * 2.13)) * 1.1
+
+    
+
+    return min, max
 end
 
 local function isExcludedTarget(creature, target)
@@ -69,7 +70,7 @@ local function tauntEffect(cid, target)
 
     -- Get damage values using the new formula
     local skill = creature:getEffectiveSkillLevel(SKILL_SWORD) -- or any relevant skill
-    local attack = 1 -- adjust this as necessary for your use case
+    local attack = getMeleeAttack(creature:getId())
     local factor = 1 -- adjust this as necessary for your use case
     local min, max = onGetFormulaValues5(creature, skill, attack, factor)
     local minheal, maxheal = heal(creature, skill, attack, factor)
@@ -79,10 +80,11 @@ local function tauntEffect(cid, target)
     doTargetCombatHealth(creature, target, config.element, min, max, config.mfx)
 	local extrahealing = creature:getSpecialSkill(SPECIALSKILL_EXTRAHEALING)
     if extrahealing > 0 then
-        minheal = minheal * (1 + (extrahealing / 100))
-        maxheal = maxheal * (1 + (extrahealing / 100))
+        min = min * (1 + (extrahealing / 100))
+        max = max * (1 + (extrahealing / 100))
     end
     creature:addHealth(math.random(minheal, maxheal))
+    print("heal",minheal, maxheal)
     creature:getPosition():sendMagicEffect(701)
 end
 
